@@ -19,7 +19,7 @@ const Navbar = () => {
             </div>
 
             <div className="hidden lg:block">
-              <ul className="flex text-[#13a772] gap-3 xl:gap-5 text-[1.2vw]">
+              <ul className="flex text-[#13a772] gap-3 xl:gap-5 text-[1.2vw] 2xl:text-xl">
                 <li>our heritage</li>
                 <li>business divisions</li>
                 <li>brands & products</li>
