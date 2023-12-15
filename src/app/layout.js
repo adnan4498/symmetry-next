@@ -12,7 +12,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="md:mx-12 2xl:container 2xl:mx-auto"> {/*** Custom Container applied from md with mx-12 ***/}
+    <html lang="en" className=""> {/*** Custom Container applied ***/}
       <body className={inter.className}>
         <Navbar />
         {children}

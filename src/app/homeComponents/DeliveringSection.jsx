@@ -7,9 +7,10 @@ import Image from "next/image";
 const DeliveringSection = () => {
   return (
     <>
-      <div className="mx-3 my-2">
+    <div className="bg-black">
+      <div className="mx-3 py-14  md:mx-12">
         <div className="relative">
-          <div className=" mt-14 md:max-w-[600px] 2xl:max-w-[800px] w-full">
+          <div className="md:max-w-[600px] 2xl:max-w-[800px] w-full">
             <span className="text-[#13a772] text-4xl sm:text-6xl md:text-5xl lg:text-7xl 2xl:text-8xl ">
               <span className="">
                 delivering digital experiences that make the world <br></br>
@@ -32,10 +33,11 @@ const DeliveringSection = () => {
               innovation
             </span>
           </div>
-          <div className="absolute right-0 md:top-[20%] lg:top-[50%] md:block hidden md:w-[20vw] lg:w-[30vw] tranform rotate-[20deg]">
+          <div className="absolute right-0 md:top-[20%] lg:top-[50%] md:block hidden md:w-[20vw] lg:w-[30vw] tranform rotate-[15deg]">
             <Image src={square} alt="animation square" className="" />
           </div>
         </div>
+      </div>
       </div>
     </>
   );

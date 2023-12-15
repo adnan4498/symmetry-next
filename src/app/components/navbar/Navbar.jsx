@@ -7,8 +7,8 @@ import hamburger from "../../../../public/hamburger-icon-3.png";
 const Navbar = () => {
   return (
     <>
-      <div className="">
-        <div className="my-5 mx-2">
+      <div className="bg-black ">
+        <div className="py-5 mx-2 md:mx-12">
           <div className="flex justify-between items-center gap-3">
             <div className="ml-1">
               <Image
