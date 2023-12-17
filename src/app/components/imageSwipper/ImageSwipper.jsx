@@ -6,17 +6,16 @@ import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 
-const HeadingAndSwipper = ({
+const ImageSwipper = ({
   hasH3,
   hasH2,
   hasP,
   hasKnowMore,
   swipperContent,
   slidesPerView,
+  irisLogo,
+  swipperGap
 }) => {
-
-  
-
   return (
     <>
       <div className="md:mx-12 mx-3 lg:mx-auto lg:w-[55%]">
@@ -31,7 +30,7 @@ const HeadingAndSwipper = ({
 
             {/*********  Laptop  *********/}
 
-            <span className="border-l border-gray-400 text-black text-xs 2xl:text-sm pl-4 ml-3 w-[55%] 2xl:w-[45%] xl:max-w-[600px] 2xl:leading-[15px] mt-3 lg:inline-block hidden ">
+            <span className=" text-black text-xs 2xl:text-sm 2xl:leading-[15px] mt-6 lg:block hidden ">
               <span className="w-[100%] ">
                 {hasP}
                 <span className="font-bold"> {hasKnowMore}</span>
@@ -66,7 +65,7 @@ const HeadingAndSwipper = ({
               },
               1024: {
                 slidesPerView: slidesPerView,
-                spaceBetween: 20,
+                spaceBetween: swipperGap,
               },
             }}
             speed={2000}
@@ -79,16 +78,11 @@ const HeadingAndSwipper = ({
             {swipperContent.map((item, index) => (
               <>
                 <SwiperSlide>
-                  <div className="h-[500px]  ">
-                    <div className="border border-gray-400 rounded-lg flex flex-col justify-start items-start py-[35px] px-[20px] h-[300px] hover:bg-green-400">
-                      <div className="">
-                        <h2 className="text-3xl w-[120px] xl:w-[170px] text-[#13a772] custom-font-family flex items-end min-h-[110px] mb-2 leading-[30px]">
-                          {item.h2}
-                        </h2>
-                        <p className="text-gray-500 text-xs leading-[17px] ">{item.text}</p>
-                      </div>
-                      <div>
-                      </div>
+                  <div className="h-[300px] ">
+                    <div className='border border-gray-400 rounded-md'>
+                        <div>
+                            <Image src={item.img} />
+                        </div>
                     </div>
                   </div>
                 </SwiperSlide>
@@ -101,4 +95,4 @@ const HeadingAndSwipper = ({
   );
 };
 
-export default HeadingAndSwipper;
+export default ImageSwipper;

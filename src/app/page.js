@@ -1,3 +1,6 @@
+import Footer from "./components/footer/Footer";
+import AboutUs from "./homeComponents/AboutUs";
+import BrandsProducts from "./homeComponents/BrandsProducts";
 import BusinessDivision from "./homeComponents/BusinessDivision";
 import DeliveringSection from "./homeComponents/DeliveringSection";
 import HeritageSection from "./homeComponents/HeritageSection";
@@ -10,6 +13,9 @@ export default function Home() {
       <HeritageSection />
       <BusinessDivision />
       {/* <InteractiveMarketing /> */}
+      <BrandsProducts />
+      <AboutUs />
+      <Footer />
     </>
   );
 }

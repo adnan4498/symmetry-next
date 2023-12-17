@@ -9,12 +9,12 @@
 
 .swiper-button-prev {
   left: 43% !important;
-  top: 67% !important;
+  top: 95% !important;
 }
 
 .swiper-button-next {
   right: 43% !important;
-  top: 67% !important;
+  top: 95% !important;
 }
 
 .swiper-button-prev::after {
