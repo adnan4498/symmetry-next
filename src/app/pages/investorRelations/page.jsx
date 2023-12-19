@@ -6,6 +6,7 @@ import React from "react";
 import Image from "next/image";
 import Collapsible from "react-collapsible";
 import square from "../../../../public/square-neon.png";
+import pdfImg from "../../../../public/pdf-img.png";
 
 const page = () => {
   const aboutH2 = "investors relations";
@@ -196,19 +197,52 @@ const page = () => {
   const financialReportsData = [
     {
       id: 0,
-      title: "2024",
+      title: (
+        <>
+          <div className="flex justify-between gap-5 border-b border-green-400 mt-2 md:text-lg">
+            <div>2024</div>
+            <div>+</div>
+          </div>
+        </>
+      ),
+      firstQuarter: "1st quarter",
+      secondQuarter: "2nd quarter",
+      thirdQuarter: "3rd quarter",
+      annualReport: "annual report",
     },
     {
       id: 1,
-      title: "2023",
+      title: (
+        <>
+          <div className="flex justify-between gap-5 border-b border-green-400 mt-2 md:text-lg">
+            <div>2023</div>
+            <div>+</div>
+          </div>
+        </>
+      ),
+      secondQuarter: "2nd quarter",
     },
     {
       id: 2,
-      title: "2022",
+      title: (
+        <>
+          <div className="flex justify-between gap-5 border-b border-green-400 mt-2 md:text-lg">
+            <div>2022</div>
+            <div>+</div>
+          </div>
+        </>
+      ),
     },
     {
       id: 3,
-      title: "2021",
+      title: (
+        <>
+          <div className="flex justify-between gap-5 border-b border-green-400 mt-2 md:text-lg">
+            <div>2021</div>
+            <div>+</div>
+          </div>
+        </>
+      ),
     },
   ];
 
@@ -354,27 +388,83 @@ const page = () => {
               </h2>
             </div>
 
-            {/* <div className="">
-              <div className="text flex flex-col">
-                {financialReportsData.map((item, index) => (
-                  <>
-                    <div className="flex justify-between gap-5 border-b border-green-400 mt-2 md:text-sm">
-                      <div className="">{item.title}</div>
-                      <div className="text-lg font-bold">+</div>
-                    </div>
-                  </>
-                ))}
-              </div>
-            </div> */}
-
             <div className="">
-              <div className="text flex flex-col">
+              <div className="text flex flex-col text-black">
                 {financialReportsData.map((item, index) => (
                   <>
-                    <Collapsible triggerTagName="<h1> hello </h1">
-                      <div className="flex justify-between gap-5 border-b border-green-400 mt-2 md:text-sm">
-                        <div className="text-black">{item.title}</div>
-                        <div className="text-lg text-black font-bold">+</div>
+                    <Collapsible trigger={item.title}>
+                      <div className="grid grid-cols-2 gap-8 my-10 mx-10">
+                        {item.firstQuarter ||
+                        item.secondQuarter ||
+                        item.thirdQuarter ||
+                        item.annualReport ? (
+                          <>
+                            <div className="text-center max-w-[100px]">
+                              <div className="border border-green-400 flex flex-col justify-center items-center rounded-md py-5">
+                                <div>
+                                  <Image src={pdfImg} className="w-14" />
+                                </div>
+                              </div>
+                              <div>
+                                <p>
+                                  {item.firstQuarter ||
+                                    item.secondQuarter ||
+                                    item.thirdQuarter ||
+                                    item.annualReport}
+                                </p>
+                              </div>
+                            </div>
+                          </>
+                        ) : (
+                          ""
+                        )}
+
+                        {/* {["firstQuarter", "secondQuarter", "thirdQuarter", "annualReport"].map((quarter, index) => (
+        data[quarter] && (
+          <div key={index} className="text-center max-w-[100px]">
+            <div className="border border-green-400 flex flex-col justify-center items-center rounded-md py-5">
+              <div>
+                <img src={pdfImg} alt="PDF" className="w-14" />
+              </div>
+            </div>
+            <div>
+              <p>{data[quarter]}</p>
+            </div>
+          </div>
+        )
+      ))} */}
+
+                        {/* {item.secondQuarter && (
+                          <div className="border border-green-400 flex flex-col justify-center items-center rounded-md py-5">
+                            <div>
+                              <Image src={pdfImg} className="w-14" />
+                            </div>
+                            <div>
+                              <p>{item.secondQuarter}</p>
+                            </div>
+                          </div>
+                        )}
+                        {item.thirdQuarter && (
+                          <div className="border border-green-400 flex flex-col justify-center items-center rounded-md py-5">
+                            <div>
+                              <Image src={pdfImg} className="w-14" />
+                            </div>
+                            <div>
+                              <p>{item.thirdQuarter}</p>
+                            </div>
+                          </div>
+                        )}
+
+                        {item.annualReport && (
+                          <div className="border border-green-400 flex flex-col justify-center items-center rounded-md py-5">
+                            <div>
+                              <Image src={pdfImg} className="w-14" />
+                            </div>
+                            <div>
+                              <p>{item.annualReport}</p>
+                            </div>
+                          </div>
+                        )} */}
                       </div>
                     </Collapsible>
                   </>
