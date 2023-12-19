@@ -1,8 +1,10 @@
+"use client";
 import AnimationTextReversing from "@/app/components/animationTextReversing/AnimationTextReversing";
 import BlackBannerComponent from "@/app/components/blackBannerComponent/BlackBannerComponent";
 import Tabs from "@/app/components/tabs/Tabs";
 import React from "react";
 import Image from "next/image";
+import Collapsible from "react-collapsible";
 import square from "../../../../public/square-neon.png";
 
 const page = () => {
@@ -157,39 +159,58 @@ const page = () => {
 
   const auditCommitte = [
     {
-        id: 0,
-        name : "mr.najeeb agarwalla",
-        post : "chairperson",
+      id: 0,
+      name: "mr.najeeb agarwalla",
+      post: "chairperson",
     },
     {
-        id: 1,
-        name : "mr.zaheer h.dodhia",
-        post : "member",
+      id: 1,
+      name: "mr.zaheer h.dodhia",
+      post: "member",
     },
     {
-        id: 2,
-        name : "mr.asim zafar",
-        post : "member",
+      id: 2,
+      name: "mr.asim zafar",
+      post: "member",
     },
-  ]
+  ];
 
   const remunirationCommitte = [
     {
-        id : 0,
-        name : "ms.musharaf hai",
-        post : "chairperson",
+      id: 0,
+      name: "ms.musharaf hai",
+      post: "chairperson",
     },
     {
-        id : 1,
-        name : "ms.jibran jamshad",
-        post : "member",
+      id: 1,
+      name: "ms.jibran jamshad",
+      post: "member",
     },
     {
-        id : 2,
-        name : "ms.sarocsh ahmed",
-        post : "member",
+      id: 2,
+      name: "ms.sarocsh ahmed",
+      post: "member",
     },
-  ]
+  ];
+
+  const financialReportsData = [
+    {
+      id: 0,
+      title: "2024",
+    },
+    {
+      id: 1,
+      title: "2023",
+    },
+    {
+      id: 2,
+      title: "2022",
+    },
+    {
+      id: 3,
+      title: "2021",
+    },
+  ];
 
   return (
     <>
@@ -220,7 +241,7 @@ const page = () => {
           </div>
         </AnimationTextReversing>
 
-        <AnimationTextReversing flexDierction={""}>
+        <AnimationTextReversing flexDirection={"row-reverse"}>
           <div className="mission-div flex flex-col gap-5 lg:w-6/12">
             <div className="text-black">
               <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light">
@@ -261,68 +282,110 @@ const page = () => {
                 our commitment to high-quality management and governance.
               </p>
             </div>
+            <div className="text-center mt-10">
+              <h className="font-bold text-sm ">board members</h>
+            </div>
+
+            <div className="mt-1">
+              {boardMembers.map((item, index) => (
+                <>
+                  <div className="border-b border-green-300 flex flex-col lg:flex-row text-center lg:text-start lg:justify-between leading-[20px] pb-5 mt-5">
+                    <div className="lg:w-6/12 font-semibold text-sm">
+                      {item.name}
+                    </div>
+                    <div className="lg:w-6/12 text-gray-500 font-[300] text-sm">
+                      {item.post}
+                    </div>
+                  </div>
+                </>
+              ))}
+            </div>
+
+            <div className="text-center my-3 lg:mt-7">
+              <h className="font-bold text-sm ">audit committee (bac)</h>
+            </div>
+
+            <div className="">
+              {auditCommitte.map((item, index) => (
+                <>
+                  <div className="border-b border-green-300 flex flex-col lg:flex-row text-center lg:text-start lg:justify-between leading-[20px] pb-5 mt-5">
+                    <div className="lg:w-6/12 font-semibold text-sm">
+                      {item.name}
+                    </div>
+                    <div className="lg:w-6/12 text-gray-500 font-[300] text-sm">
+                      {item.post}
+                    </div>
+                  </div>
+                </>
+              ))}
+            </div>
+
+            <div className="text-center my-3">
+              <h className="font-bold text-sm ">
+                hr & remuneration committee (hrrc)
+              </h>
+            </div>
+
+            <div className="mt-1">
+              {remunirationCommitte.map((item, index) => (
+                <>
+                  <div className="border-b border-green-300 flex flex-col lg:flex-row text-center lg:text-start lg:justify-between leading-[20px] pb-5 mt-5">
+                    <div className="lg:w-6/12 font-semibold text-sm">
+                      {item.name}
+                    </div>
+                    <div className="lg:w-6/12 text-gray-500 font-[300] text-sm">
+                      {item.post}
+                    </div>
+                  </div>
+                </>
+              ))}
+            </div>
           </div>
           <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
             <Image src={square} width={200} alt="animation here" />
           </div>
         </AnimationTextReversing>
 
-        <div className="text-center">
-          <h className="font-semibold text-sm ">board members</h>
-        </div>
+        <AnimationTextReversing>
+          <div className="vision-div flex flex-col gap-5 lg:w-6/12 my-10">
+            <div className="text-black">
+              <h2 className="text-5xl lg:text-6xl 2xl:text-7xl font-light">
+                financial reports
+              </h2>
+            </div>
 
-        <div className="mt-10">
-          {boardMembers.map((item, index) => (
-            <>
-              <div className="border-b border-green-300 flex flex-col lg:flex-row text-center lg:text-start lg:justify-between leading-[20px] pb-5 mt-5">
-                <div className="lg:w-6/12 font-semibold text-sm">
-                  {item.name}
-                </div>
-                <div className="lg:w-6/12 text-gray-500 font-[300] text-sm">
-                  {item.post}
-                </div>
+            {/* <div className="">
+              <div className="text flex flex-col">
+                {financialReportsData.map((item, index) => (
+                  <>
+                    <div className="flex justify-between gap-5 border-b border-green-400 mt-2 md:text-sm">
+                      <div className="">{item.title}</div>
+                      <div className="text-lg font-bold">+</div>
+                    </div>
+                  </>
+                ))}
               </div>
-            </>
-          ))}
-        </div>
+            </div> */}
 
-        <div className="text-center my-10">
-          <h className="font-semibold text-sm ">audit committee (bac)</h>
-        </div>
-
-        <div className="mt-10">
-          {auditCommitte.map((item, index) => (
-            <>
-              <div className="border-b border-green-300 flex flex-col lg:flex-row text-center lg:text-start lg:justify-between leading-[20px] pb-5 mt-5">
-                <div className="lg:w-6/12 font-semibold text-sm">
-                  {item.name}
-                </div>
-                <div className="lg:w-6/12 text-gray-500 font-[300] text-sm">
-                  {item.post}
-                </div>
+            <div className="">
+              <div className="text flex flex-col">
+                {financialReportsData.map((item, index) => (
+                  <>
+                    <Collapsible triggerTagName="<h1> hello </h1">
+                      <div className="flex justify-between gap-5 border-b border-green-400 mt-2 md:text-sm">
+                        <div className="text-black">{item.title}</div>
+                        <div className="text-lg text-black font-bold">+</div>
+                      </div>
+                    </Collapsible>
+                  </>
+                ))}
               </div>
-            </>
-          ))}
-        </div>
-
-        <div className="text-center my-10">
-          <h className="font-semibold text-sm ">hr & remuneration committee (hrrc)</h>
-        </div>
-
-        <div className="mt-10">
-          {remunirationCommitte.map((item, index) => (
-            <>
-              <div className="border-b border-green-300 flex flex-col lg:flex-row text-center lg:text-start lg:justify-between leading-[20px] pb-5 mt-5">
-                <div className="lg:w-6/12 font-semibold text-sm">
-                  {item.name}
-                </div>
-                <div className="lg:w-6/12 text-gray-500 font-[300] text-sm">
-                  {item.post}
-                </div>
-              </div>
-            </>
-          ))}
-        </div>
+            </div>
+          </div>
+          <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
+            <Image src={square} width={200} alt="animation here" />
+          </div>
+        </AnimationTextReversing>
       </div>
     </>
   );
