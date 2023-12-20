@@ -7,6 +7,7 @@ import Image from "next/image";
 import Collapsible from "react-collapsible";
 import square from "../../../../public/square-neon.png";
 import pdfImg from "../../../../public/pdf-img.png";
+import CollapsibleComp from "@/app/components/collapsibleComponent/Collapsible";
 
 const page = () => {
   const aboutH2 = "investors relations";
@@ -206,9 +207,6 @@ const page = () => {
         </>
       ),
       firstQuarter: "1st quarter",
-      secondQuarter: "2nd quarter",
-      thirdQuarter: "3rd quarter",
-      annualReport: "annual report",
     },
     {
       id: 1,
@@ -220,7 +218,10 @@ const page = () => {
           </div>
         </>
       ),
+      firstQuarter: "1st quarter",
       secondQuarter: "2nd quarter",
+      thirdQuarter: "3rd quarter",
+      annualReport: "annual report",
     },
     {
       id: 2,
@@ -232,6 +233,9 @@ const page = () => {
           </div>
         </>
       ),
+      firstQuarter: "1st quarter",
+      thirdQuarter: "3rd quarter",
+      annualReport: "annual report",
     },
     {
       id: 3,
@@ -243,8 +247,24 @@ const page = () => {
           </div>
         </>
       ),
+      annualReport: "annual report",
     },
   ];
+
+  const corporateBrifiengsData = [
+    {
+      id:0 ,
+      title: (
+        <>
+          <div className="flex justify-between gap-5 border-b border-green-400 mt-2 md:text-lg">
+            <div>2023</div>
+            <div>+</div>
+          </div>
+        </>
+      ),
+      briefing: "briefing 2023",
+    }
+  ]
 
   return (
     <>
@@ -390,85 +410,26 @@ const page = () => {
 
             <div className="">
               <div className="text flex flex-col text-black">
-                {financialReportsData.map((item, index) => (
-                  <>
-                    <Collapsible trigger={item.title}>
-                      <div className="grid grid-cols-2 gap-8 my-10 mx-10">
-                        {item.firstQuarter ||
-                        item.secondQuarter ||
-                        item.thirdQuarter ||
-                        item.annualReport ? (
-                          <>
-                            <div className="text-center max-w-[100px]">
-                              <div className="border border-green-400 flex flex-col justify-center items-center rounded-md py-5">
-                                <div>
-                                  <Image src={pdfImg} className="w-14" />
-                                </div>
-                              </div>
-                              <div>
-                                <p>
-                                  {item.firstQuarter ||
-                                    item.secondQuarter ||
-                                    item.thirdQuarter ||
-                                    item.annualReport}
-                                </p>
-                              </div>
-                            </div>
-                          </>
-                        ) : (
-                          ""
-                        )}
-
-                        {/* {["firstQuarter", "secondQuarter", "thirdQuarter", "annualReport"].map((quarter, index) => (
-        data[quarter] && (
-          <div key={index} className="text-center max-w-[100px]">
-            <div className="border border-green-400 flex flex-col justify-center items-center rounded-md py-5">
-              <div>
-                <img src={pdfImg} alt="PDF" className="w-14" />
+                <CollapsibleComp dataArr={financialReportsData} />
               </div>
             </div>
-            <div>
-              <p>{data[quarter]}</p>
-            </div>
           </div>
-        )
-      ))} */}
+          <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
+            <Image src={square} width={200} alt="animation here" />
+          </div>
+        </AnimationTextReversing>
 
-                        {/* {item.secondQuarter && (
-                          <div className="border border-green-400 flex flex-col justify-center items-center rounded-md py-5">
-                            <div>
-                              <Image src={pdfImg} className="w-14" />
-                            </div>
-                            <div>
-                              <p>{item.secondQuarter}</p>
-                            </div>
-                          </div>
-                        )}
-                        {item.thirdQuarter && (
-                          <div className="border border-green-400 flex flex-col justify-center items-center rounded-md py-5">
-                            <div>
-                              <Image src={pdfImg} className="w-14" />
-                            </div>
-                            <div>
-                              <p>{item.thirdQuarter}</p>
-                            </div>
-                          </div>
-                        )}
+        <AnimationTextReversing flexDirection={"row-reverse"}>
+          <div className="vision-div flex flex-col gap-5 lg:w-6/12 my-10">
+            <div className="text-black">
+              <h2 className="text-5xl lg:text-6xl 2xl:text-7xl font-light">
+                corporate briefings
+              </h2>
+            </div>
 
-                        {item.annualReport && (
-                          <div className="border border-green-400 flex flex-col justify-center items-center rounded-md py-5">
-                            <div>
-                              <Image src={pdfImg} className="w-14" />
-                            </div>
-                            <div>
-                              <p>{item.annualReport}</p>
-                            </div>
-                          </div>
-                        )} */}
-                      </div>
-                    </Collapsible>
-                  </>
-                ))}
+            <div className="">
+              <div className="text flex flex-col text-black">
+                <CollapsibleComp dataArr={corporateBrifiengsData} />
               </div>
             </div>
           </div>
