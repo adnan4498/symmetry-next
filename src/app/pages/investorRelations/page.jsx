@@ -4,10 +4,13 @@ import BlackBannerComponent from "@/app/components/blackBannerComponent/BlackBan
 import Tabs from "@/app/components/tabs/Tabs";
 import React from "react";
 import Image from "next/image";
+import CollapsibleComp from "@/app/components/collapsibleComponent/Collapsible";
 import Collapsible from "react-collapsible";
 import square from "../../../../public/square-neon.png";
 import pdfImg from "../../../../public/pdf-img.png";
-import CollapsibleComp from "@/app/components/collapsibleComponent/Collapsible";
+import disclaimerImg from "../../../../public/disclaimer-img.png"
+import ConnectWithUs from "@/app/components/connectWithUsComponent/ConnectWithUs";
+import Footer from "@/app/components/footer/Footer";
 
 const page = () => {
   const aboutH2 = "investors relations";
@@ -253,7 +256,7 @@ const page = () => {
 
   const corporateBrifiengsData = [
     {
-      id:0 ,
+      id: 0,
       title: (
         <>
           <div className="flex justify-between gap-5 border-b border-green-400 mt-2 md:text-lg">
@@ -263,8 +266,61 @@ const page = () => {
         </>
       ),
       briefing: "briefing 2023",
-    }
-  ]
+    },
+  ];
+
+  const noticesAndAnnouncementsData = [
+    {
+      id: 0,
+      title: (
+        <>
+          <div className="flex justify-between gap-5 border-b border-green-400 mt-2 md:text-lg">
+            <div>2023</div>
+            <div>+</div>
+          </div>
+        </>
+      ),
+      agm: "2023",
+      boardMeeting: "board meeting 2023",
+      financialResults: "financial results 2023",
+      disclosureInterest: "disclosure interest 18 oct 2023",
+      materialInfo: "material info 10 oct 2023",
+      materialInfo2: "material info 05 sep 2023",
+    },
+  ];
+
+  const importantDocumentsData = [
+    {
+      id: 0,
+      companyProfile: "company profile",
+      requestLetter: "request letter for financial statements through email",
+      requestLetter2: "request letter for annual report through hard copy",
+      dividened: "e-devidend mandate letter",
+    },
+  ];
+
+  const investorContacts = [
+    {
+      id: 0,
+      title: "comapany secretary",
+      desc: "mr.ayaz ahmed",
+    },
+    {
+      id: 1,
+      title: "address",
+      desc: "56-a, street 2, khalid commercial area, phase 7 ext., dha,karachi",
+    },
+    {
+      id: 2,
+      title: "phone",
+      desc: "+92 21 3517 1991",
+    },
+    {
+      id: 3,
+      title: "email",
+      desc: "[email protected]",
+    },
+  ];
 
   return (
     <>
@@ -295,7 +351,7 @@ const page = () => {
           </div>
         </AnimationTextReversing>
 
-        <AnimationTextReversing flexDirection={"row-reverse"}>
+        <AnimationTextReversing flexDirection="row-reverse">
           <div className="mission-div flex flex-col gap-5 lg:w-6/12">
             <div className="text-black">
               <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light">
@@ -419,7 +475,7 @@ const page = () => {
           </div>
         </AnimationTextReversing>
 
-        <AnimationTextReversing flexDirection={"row-reverse"}>
+        <AnimationTextReversing flexDirection="row-reverse">
           <div className="vision-div flex flex-col gap-5 lg:w-6/12 my-10">
             <div className="text-black">
               <h2 className="text-5xl lg:text-6xl 2xl:text-7xl font-light">
@@ -437,6 +493,144 @@ const page = () => {
             <Image src={square} width={200} alt="animation here" />
           </div>
         </AnimationTextReversing>
+
+        <AnimationTextReversing>
+          <div className="vision-div flex flex-col gap-5 lg:w-6/12 my-10">
+            <div className="text-black">
+              <h2 className="text-5xl lg:text-6xl 2xl:text-7xl font-light">
+                notices & announcements
+              </h2>
+            </div>
+
+            <div className="">
+              <div className="text flex flex-col text-black">
+                <CollapsibleComp dataArr={noticesAndAnnouncementsData} />
+              </div>
+            </div>
+          </div>
+          <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
+            <Image src={square} width={200} alt="animation here" />
+          </div>
+        </AnimationTextReversing>
+
+        <AnimationTextReversing flexDirection="row-reverse">
+          <div className="vision-div flex flex-col gap-5 lg:w-6/12 my-10">
+            <div className="text-black">
+              <h2 className="text-5xl lg:text-6xl 2xl:text-7xl font-light">
+                important documents
+              </h2>
+            </div>
+
+            <div className="">
+              <div className="text flex flex-col text-black">
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-3 xl:grid-cols-4 lg:gap-10  max-w-[1000px] ">
+                  {importantDocumentsData.map((item, index) => (
+                    <>
+                      {[
+                        "companyProfile",
+                        "requestLetter",
+                        "requestLetter2",
+                        "dividened",
+                      ].map(
+                        (checkItem, checkItemIndex) =>
+                          item[checkItem] && (
+                            <>
+                              <div className=" mx-auto my-10 flex justify-center">
+                                <div
+                                  key={checkItemIndex}
+                                  className="text-center min-w-[130px]"
+                                >
+                                  <div className="border border-green-400 flex flex-col justify-center items-center rounded-md py-5">
+                                    <div>
+                                      <Image
+                                        src={pdfImg}
+                                        className="w-16 sm:w-20"
+                                      />
+                                    </div>
+                                  </div>
+                                  <div className="w-36">
+                                    <p className="text-sm !leading-[20px] mt-3 text-gray-600 lg:text-lg text-center">
+                                      {item[checkItem]}
+                                    </p>
+                                  </div>
+                                </div>
+                              </div>
+                            </>
+                          )
+                      )}
+                    </>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
+            <Image src={square} width={200} alt="animation here" />
+          </div>
+        </AnimationTextReversing>
+
+        <AnimationTextReversing>
+          <div className="vision-div flex flex-col gap-5 lg:w-6/12 my-10">
+            <div className="text-black">
+              <h2 className="text-5xl lg:text-6xl 2xl:text-7xl font-light">
+                investor contacts
+              </h2>
+            </div>
+            <div className="mt-10">
+              <div className="text-center lg:text-start mt-5 mb-12">
+                <h className="font-bold text-sm lg:text-lg ">
+                  shareholder's contact
+                </h>
+              </div>
+              {investorContacts.map((item, index) => (
+                <>
+                  <div className="border-b border-green-300 flex flex-col lg:flex-row text-center lg:text-start lg:justify-between leading-[20px] pb-5 mt-5">
+                    <div className="lg:w-6/12 text-gray-500 ">{item.title}</div>
+                    <div className="lg:w-6/12 font-semibold">{item.desc}</div>
+                  </div>
+                </>
+              ))}
+            </div>
+
+            <div className="mt-10">
+              <div className="text-center lg:text-start mt-5 mb-12">
+                <h className="font-bold text-sm lg:text-lg ">complaints</h>
+              </div>
+              {investorContacts.map((item, index) => (
+                <>
+                  <div className="border-b border-green-300 flex flex-col lg:flex-row text-center lg:text-start lg:justify-between leading-[20px] pb-5 mt-5">
+                    <div className="lg:w-6/12 text-gray-500 ">{item.title}</div>
+                    <div className="lg:w-6/12 font-semibold">{item.desc}</div>
+                  </div>
+                </>
+              ))}
+            </div>
+
+            <div className="mt-20">
+              <p className="text-gray-500">
+                <span className="font-semibold text-black">disclaimer :</span>{" "}
+                in case your complaint has not been properly redressed by us,
+                you may lodge your complaint with Securities and Exchange
+                Commission of Pakistan (the “SECP”). However, please note that
+                SECP will entertain only those complaints which were at first
+                directly requested to be redressed by the company and the
+                company has failed to redress the same. Further, the complaints
+                that are not relevant to SECP’s regulatory domain/competence
+                shall not be entertained by the SECP.
+              </p>
+            </div>
+
+            <div>
+              <Image src={disclaimerImg} alt="dislaimer img" />
+            </div>
+          </div>
+          <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
+            <Image src={square} width={200} alt="animation here" />
+          </div>
+        </AnimationTextReversing>
+
+        <ConnectWithUs/>
+        <Footer/>
       </div>
     </>
   );

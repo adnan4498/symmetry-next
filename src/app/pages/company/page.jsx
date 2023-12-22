@@ -1,8 +1,8 @@
 import React from "react";
 import Image from "next/image";
-import Tabs from "@/app/components/tabs/Tabs";
-import BlackBannerComponent from "@/app/components/blackBannerComponent/BlackBannerComponent";
-import AnimationTextReversing from "@/app/components/animationTextReversing/AnimationTextReversing";
+import Tabs from "../../components/tabs/Tabs";
+import BlackBannerComponent from "../../components/blackBannerComponent/BlackBannerComponent";
+import AnimationTextReversing from "../../components/animationTextReversing/AnimationTextReversing";
 import square from "../../../../public/square-neon.png";
 import director1 from "../../../../public/board-director-img-1.webp";
 import director2 from "../../../../public/board-director-img-2.webp";
@@ -11,8 +11,8 @@ import director4 from "../../../../public/board-director-img-4.webp";
 import director5 from "../../../../public/board-director-img-5.webp";
 import director6 from "../../../../public/board-director-img-6.webp";
 import director7 from "../../../../public/board-director-img-7.webp";
-import ConnectWithUs from "@/app/components/connectWithUsComponent/ConnectWithUs";
-import Footer from "@/app/components/footer/Footer";
+import ConnectWithUs from "../../components/connectWithUsComponent/ConnectWithUs";
+import Footer from "../../components/footer/Footer";
 
 const Company = () => {
   const aboutH2 = "about us";
@@ -134,7 +134,7 @@ const Company = () => {
             <Image src={square} width={200} alt="animation here" />
           </div>
         </AnimationTextReversing>
-        <AnimationTextReversing flexDierction={"row-reverse"}>
+        <AnimationTextReversing flexDirection="row-reverse">
           <div className="vision-div flex flex-col gap-5 lg:w-6/12">
             <div className="text-black">
               <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light">
@@ -166,7 +166,7 @@ const Company = () => {
               <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light">
                 mission
               </h2>
-              <h3 className="font-semibold mt-3">
+              <h3 className="font-semibold mt-3"> 
                 create market-leading digital experiences that power our
                 partners’ success.
               </h3>
@@ -184,7 +184,7 @@ const Company = () => {
             <Image src={square} width={200} alt="animation here" />
           </div>
         </AnimationTextReversing>
-        <AnimationTextReversing flexDierction={"row-reverse"}>
+        <AnimationTextReversing flexDirection="row-reverse">
           <div className="board-directors-div flex flex-col gap-5 lg:w-6/12">
             <div className="text-black">
               <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light">
@@ -271,7 +271,7 @@ const Company = () => {
         </AnimationTextReversing>
 
         
-        <ConnectWithUs  />
+        <ConnectWithUs bgColor="bg-black" textColor="text-white" />
         <Footer />
       </div>
     </>

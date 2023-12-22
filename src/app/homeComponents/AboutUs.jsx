@@ -1,11 +1,11 @@
 import React from "react";
 
-const AboutUs = () => {
+const AboutUs = ({titleWidth , autoMx}) => {
   return (
     <div>
       <div className="my-10 border-b border-green-400 pb-14">
         <div className="text-black">
-          <div className="text-xl sm:text-6xl lg:text-5xl text-center">
+          <div className={`text-xl sm:text-6xl lg:text-5xl text-center w-[100%] ${titleWidth} ${autoMx}`}>
             <h2>connect with us today to transform your business</h2>
           </div>
           <div className="text-center text-gray-600 sm:mt-12 mt-4 sm:text-lg lg:text-2xl lg:flex justify-center items-center gap-10 lg:gap-[12vw]">

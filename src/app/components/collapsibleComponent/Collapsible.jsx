@@ -11,24 +11,29 @@ const CollapsibleComp = ({ dataArr }) => {
   //   setOpenId(id)
   // };
 
-
   // console.log(openId , "openId")
 
   return (
     <>
-        {dataArr.map((item, index) => (
-          <Collapsible key={item.id} trigger={item.title} >
-            <div className="grid grid-cols-2 sm:grid-cols-3 max-w-[1000px] ">
-              {[
-                "annualReport",
-                "firstQuarter",
-                "secondQuarter",
-                "thirdQuarter",
-                "briefing",
-              ].map(
-                (quarter, quarterIndex) =>
-                  item[quarter] && (
-                    <>
+      {dataArr.map((item, index) => (
+        <Collapsible key={item.id} trigger={item.title}>
+          <div className="grid grid-cols-2 sm:grid-cols-3 max-w-[1000px] ">
+            {[
+              "annualReport",
+              "firstQuarter",
+              "secondQuarter",
+              "thirdQuarter",
+              "briefing",
+              "agm",
+              "boardMeeting",
+              "financialResults",
+              "disclosureInterest",
+              "materialInfo",
+              "materialInfo2",
+            ].map(
+              (quarter, quarterIndex) =>
+                item[quarter] && (
+                  <>
                     <div className=" mx-auto my-10 flex justify-center">
                       <div
                         key={quarterIndex}
@@ -39,18 +44,18 @@ const CollapsibleComp = ({ dataArr }) => {
                             <Image src={pdfImg} className="w-16 sm:w-20" />
                           </div>
                         </div>
-                        <div>
-                          <p className="text-sm">{item[quarter]}</p>
+                        <div className="w-36">
+                          <p className="text-sm !leading-[20px] mt-3 text-gray-600 lg:text-lg text-center">{item[quarter]}</p>
                           {/* {console.log(item.id, "collapsed id")} */}
                         </div>
                       </div>
-                      </div>
-                    </>
-                  )
-              )}
-            </div>
-          </Collapsible>
-        ))}
+                    </div>
+                  </>
+                )
+            )}
+          </div>
+        </Collapsible>
+      ))}
     </>
   );
 };
