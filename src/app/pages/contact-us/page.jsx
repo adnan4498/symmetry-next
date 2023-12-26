@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+import { useEffect, useRef } from "react";
+import LocomotiveScroll from "locomotive-scroll";
 import BlackBannerComponent from "../../components/blackBannerComponent/BlackBannerComponent";
 import Tabs from "../../components/tabs/Tabs";
 import AnimationTextReversing from "../../components/animationTextReversing/AnimationTextReversing";
@@ -7,9 +9,29 @@ import square from "../../../../public/square-neon.png";
 import ConnectWithUs from "../../components/connectWithUsComponent/ConnectWithUs";
 import AboutUs from "../../homeComponents/AboutUs";
 import Footer from "../../components/footer/Footer";
-import { useRouter } from "next/navigation";
 
 const page = () => {
+  const scrollContainerRef = useRef(null);
+
+  useEffect(() => {
+    // Initialize Locomotive Scroll
+    const scroll = new LocomotiveScroll({
+      el: scrollContainerRef.current,
+      smooth: true,
+      inertia: 0.5, // Adjust the inertia for smoother deceleration
+      getSpeed: true, // Enable speed calculation for parallax effects
+      lerp: 0.01,
+      smoothMobile: true
+    });
+
+    // Clean up when the component is unmounted
+    return () => {
+      if (scroll) {
+        scroll.destroy();
+      }
+    };
+  }, []);
+
   const aboutH2 = "affiliations & partnerships";
   const aboutText =
     "through our network, we are integrating you with a world that keeps pace with technology and change, enables simplicity from complexity and shapes the future.";
@@ -35,7 +57,7 @@ const page = () => {
 
   return (
     <>
-      <div>
+      <div  className="h-[100vh] ">
         <div>
           <div>
             <BlackBannerComponent aboutH2={aboutH2} aboutText={aboutText} />
@@ -43,7 +65,7 @@ const page = () => {
           </div>
         </div>
 
-        <div>
+        <div ref={scrollContainerRef} className="">
           <AnimationTextReversing>
             <div className="company-div flex flex-col gap-5 lg:w-6/12">
               <div className="text-black">

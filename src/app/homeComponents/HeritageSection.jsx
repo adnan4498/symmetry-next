@@ -52,7 +52,7 @@ const HeritageSection = () => {
             <p className="text-3xl mb-2 text-black">our heriage</p>
           </div>
           <div>
-            <p className="text-4xl mt-2 text-[#13a772]">
+            <p className="text-3xl md:text-4xl mt-2 text-[#13a772]">
               legacy of unlocking possibilities
             </p>
             <p className="text-[13px] mt-5 text-black">

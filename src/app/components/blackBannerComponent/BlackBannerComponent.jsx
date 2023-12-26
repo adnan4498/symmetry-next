@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const BlackBannerComponent = ({aboutH2 , aboutText}) => {
   return (
-    <div className="text-gray-200 bg-black h-[160px]">
+    <div className="text-gray-200 bg-black ">
       <div className="mx-3 md:mx-12 flex justify-between">
         <div>
           <div>

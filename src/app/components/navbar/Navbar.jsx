@@ -10,7 +10,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="bg-black ">
+      <div className="bg-black fixed w-full z-50">
         <div className="py-5 mx-2 md:mx-12">
           <div className="flex justify-between items-center gap-3">
             <Link href="/">
@@ -23,7 +23,7 @@ const Navbar = () => {
               </div>
             </Link>
 
-            <div className="ss lg:block">
+            <div className="ss lg:block hidden">
               <ul className="flex text-[#13a772] gap-3 xl:gap-5 text-[1.2vw] 2xl:text-xl">
                 <li>our heritage</li>
                 <li>business divisions</li>

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useRef, useEffect } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger"; // Import the ScrollTrigger plugin
@@ -8,33 +8,35 @@ import Image from "next/image";
 gsap.registerPlugin(ScrollTrigger); // Register the ScrollTrigger plugin
 
 const DeliveringSection = () => {
-
-
-  const heading = useRef()
+  const heading = useRef();
 
   useEffect(() => {
-    gsap.to( heading.current , {
-      scrollTrigger : heading.current,
-      duration : 3,
+    gsap.to(heading.current, {
+      scrollTrigger: {
+        trigger: heading.current,
+        toggleActions: "restart restart none none",
+        end : 450,
+      },
+      duration: 2,
       opacity: 1,
-      y : -100,
-    })
-  }, [])
+      y: 0,
+    });
+  }, []);
 
   return (
     <>
       <div className="bg-black h-[700px]">
         <div className="mx-3 py-14  md:mx-12">
           <div className="relative">
-            <div className="md:max-w-[600px] 2xl:max-w-[800px] w-full">
+            <div className="md:max-w-[600px] 2xl:max-w-[800px] w-full opacity-0 transform translate-y-[200px]"  ref={heading}>
               <span className="text-[#13a772] text-4xl sm:text-6xl md:text-5xl lg:text-7xl 2xl:text-8xl ">
-                <span className="opacity-0 heading" ref={heading}>
+                <span className=" heading">
                   delivering digital experiences that make the world <br></br>
                   better
                 </span>
               </span>
               <span className="border-l border-white text-white text-xs 2xl:text-sm leading-4 inline-block pl-4 ml-3 w-[60%]">
-                <span className="w-[100%] lg:inline-block hidden ">
+                <span className="w-[100%] lg:inline-block hidden">
                   we are reimagining the way business is done and product is
                   consumed. we have committed ourselves to transforming business
                   into an experience driven by data, technology, creativity and
