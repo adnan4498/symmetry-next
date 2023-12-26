@@ -7,6 +7,7 @@ import square from "../../../../public/square-neon.png";
 import ConnectWithUs from "../../components/connectWithUsComponent/ConnectWithUs";
 import AboutUs from "../../homeComponents/AboutUs";
 import Footer from "../../components/footer/Footer";
+import { useRouter } from "next/navigation";
 
 const page = () => {
   const aboutH2 = "affiliations & partnerships";
@@ -134,7 +135,7 @@ const page = () => {
 
           {/* <ConnectWithUs bgColor="bg-white" textColor="text-black" /> */}
           <div className="mt-36">
-            <AboutUs  titleWidth="lg:w-[60%]" autoMx="mx-auto"/>
+            <AboutUs titleWidth="lg:w-[60%]" autoMx="mx-auto" />
           </div>
           <Footer />
         </div>

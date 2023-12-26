@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import investorImg from "../../../../public/footer-investors-img.webp";
 import linkdinImg from "../../../../public/footer-linkdin-img.webp";
 
@@ -135,7 +136,7 @@ const Footer = () => {
                 </h2>
                 <ul className="text-gray-500 flex flex-col gap-2">
                   <li>karachi</li>
-                  <li>islamabad</li>
+                 <Link href="/pages/dummy?islamabad"><li>islamabad</li></Link> 
                   <li>lahore</li>
                   <li>general & media inquiries</li>
                 </ul>

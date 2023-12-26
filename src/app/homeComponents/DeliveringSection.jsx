@@ -1,9 +1,26 @@
-import React from "react";
+"use client"
+import React, { useRef, useEffect } from "react";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger"; // Import the ScrollTrigger plugin
 // import square from "../../public/square-neon.png";
 import square from "../../../public/square-neon.png";
 import Image from "next/image";
+gsap.registerPlugin(ScrollTrigger); // Register the ScrollTrigger plugin
 
 const DeliveringSection = () => {
+
+
+  const heading = useRef()
+
+  useEffect(() => {
+    gsap.to( heading.current , {
+      scrollTrigger : heading.current,
+      duration : 3,
+      opacity: 1,
+      y : -100,
+    })
+  }, [])
+
   return (
     <>
       <div className="bg-black h-[700px]">
@@ -11,7 +28,7 @@ const DeliveringSection = () => {
           <div className="relative">
             <div className="md:max-w-[600px] 2xl:max-w-[800px] w-full">
               <span className="text-[#13a772] text-4xl sm:text-6xl md:text-5xl lg:text-7xl 2xl:text-8xl ">
-                <span className="">
+                <span className="opacity-0 heading" ref={heading}>
                   delivering digital experiences that make the world <br></br>
                   better
                 </span>
