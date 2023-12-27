@@ -7,15 +7,19 @@ import HeritageSection from "./homeComponents/HeritageSection";
 import InteractiveMarketing from "./homeComponents/InteractiveMarketing";
 
 export default function Home() {
+ 
+
   return (
     <>
-      <DeliveringSection />
-      <HeritageSection />
-      <BusinessDivision />
-      {/* <InteractiveMarketing /> */}
-      <BrandsProducts />
-      <AboutUs />
-      <Footer />
+      <div className="">
+        <DeliveringSection />
+        <HeritageSection />
+        <BusinessDivision />
+        {/* <InteractiveMarketing /> */}
+        <BrandsProducts />
+        <AboutUs />
+        <Footer />
+      </div>
     </>
   );
 }

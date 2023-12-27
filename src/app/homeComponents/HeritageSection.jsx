@@ -46,7 +46,7 @@ const heritageSwipperContent = [
 const HeritageSection = () => {
   return (
     <>
-      <div className="border border-gray-400 rounded-2xl -mt-52  bg-white lg:w-[70%] lg:mx-auto px-5 ">
+      <div className="border border-gray-400 rounded-2xl -mt-52 lg:mt-[-300px]  bg-white lg:w-[70%] lg:mx-auto px-5 ">
         <div className=" mx-3 ">
           <div className="border-b border-green-500 pt-6">
             <p className="text-3xl mb-2 text-black">our heriage</p>

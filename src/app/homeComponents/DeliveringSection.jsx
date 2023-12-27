@@ -15,9 +15,11 @@ const DeliveringSection = () => {
       scrollTrigger: {
         trigger: heading.current,
         toggleActions: "restart restart none none",
-        end : 450,
+        // start : ,
+        // end : 400,
+        // markers : true
       },
-      duration: 2,
+      duration: 4,
       opacity: 1,
       y: 0,
     });
@@ -25,10 +27,11 @@ const DeliveringSection = () => {
 
   return (
     <>
-      <div className="bg-black h-[700px]">
-        <div className="mx-3 py-14  md:mx-12">
+    <div className="bg-black">
+      <div className="h-[570px] sm:h-[650px] lg:h-[850px] 2xl:h-[950px] pt-16 lg:pt-28 ">
+        <div className="mx-3 sm:py-12 py-8 md:mx-12">
           <div className="relative">
-            <div className="md:max-w-[600px] 2xl:max-w-[800px] w-full opacity-0 transform translate-y-[200px]"  ref={heading}>
+            <div className="md:max-w-[600px] 2xl:max-w-[800px] w-full opacity-0 "  ref={heading}>
               <span className="text-[#13a772] text-4xl sm:text-6xl md:text-5xl lg:text-7xl 2xl:text-8xl ">
                 <span className=" heading">
                   delivering digital experiences that make the world <br></br>
@@ -56,6 +59,7 @@ const DeliveringSection = () => {
             </div>
           </div>
         </div>
+      </div>
       </div>
     </>
   );
