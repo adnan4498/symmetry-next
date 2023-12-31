@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
+import Lottie from "react-lottie-player";
 import square from "../../../../public/square-neon.png";
 
 const AnimationAndSwipper = ({
@@ -13,18 +14,19 @@ const AnimationAndSwipper = ({
   aasP,
   aasKnowMore,
   swipperContent,
+  animation,
 }) => {
   return (
     <>
-      <div className="md:mx-12 mx-3 lg:w-[%]">
-        <div className="lg:flex justify-between items-center">
+      <div className="relative mx-3 md:mx-12 lg:ml-12 lg:mr-[2px] lg:w-[%]">
+        <div className=" lg:flex justify-between items-center">
           <div className="lg:w-[62%]">
             <div className="mt-5">
               <div className="border-b border-green-500 pt-6">
-                <p className="text-3xl 2xl:text-4xl mb-4 text-black">{aasH3}</p>
+                <p className="text-3xl 2xl:text-4xl mb-4 text-black pillat-normal">{aasH3}</p>
               </div>
               <div className=" w-full mt-4">
-                <span className="text-[#13a772] text-4xl sm:text-6xl md:text-5xl lg:text-5xl 2xl:text-7xl ">
+                <span className="rainbow-text text-4xl sm:text-6xl md:text-5xl lg:text-5xl 2xl:text-7xl pillat-normal">
                   <span
                     className=""
                     dangerouslySetInnerHTML={{ __html: aasH2 }}
@@ -33,7 +35,7 @@ const AnimationAndSwipper = ({
 
                 {/*********  Laptop  *********/}
 
-                <span className="border-l border-gray-400 text-black text-xs 2xl:text-sm pl-4 ml-3 w-[55%] 2xl:w-[45%] xl:max-w-[600px] 2xl:leading-[15px] mt-3 lg:inline-block hidden ">
+                <span className="border-l border-gray-400 text-black text-xs 2xl:text-sm pl-4 ml-3 w-[55%] 2xl:w-[45%] xl:max-w-[600px] 2xl:leading-[15px] mt-3 lg:inline-block hidden pillat-thin">
                   <span className="w-[100%] ">
                     {aasP}
                     <span className="font-bold"> {aasKnowMore}</span>
@@ -42,7 +44,7 @@ const AnimationAndSwipper = ({
 
                 {/*********  Mobile  *********/}
 
-                <span className="w-[100%] lg:hidden block text-black text-xs sm:text-sm mt-2">
+                <span className="w-[100%] lg:hidden block text-black text-xs sm:text-sm mt-2 pillat-thin">
                   {aasP}
                   <span className="font-bold"> {aasKnowMore}</span>
                 </span>
@@ -96,9 +98,15 @@ const AnimationAndSwipper = ({
               </Swiper>
             </div>
           </div>
-            <div className="tranform rotate-[15deg] lg:block hidden w-60">
-              <Image src={square} alt="animation square" className="full" />
-            </div>
+          <div className="absolute hidden lg:block lg:w-[25vw] 2xl:w-[17vw] top-0 right-0">
+            {/* <Image src={square} alt="animation square" className="full" /> */}
+            <Lottie
+              loop
+              animationData={animation}
+              play
+              // style={{ width: 350, height: 350 }}
+            />
+          </div>
         </div>
       </div>
     </>

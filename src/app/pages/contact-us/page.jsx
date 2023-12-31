@@ -9,6 +9,8 @@ import square from "../../../../public/square-neon.png";
 import ConnectWithUs from "../../components/connectWithUsComponent/ConnectWithUs";
 import AboutUs from "../../homeComponents/AboutUs";
 import Footer from "../../components/footer/Footer";
+import Lottie from "react-lottie-player";
+import islamabadAnimation from "../../../../public/symmetryAnimations/islamabadAnimation.json";
 
 const page = () => {
   const scrollContainerRef = useRef(null);
@@ -96,8 +98,12 @@ const page = () => {
               </div>
             </div>
             <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-              <Image src={square} width={200} alt="animation here" />
-            </div>
+            <Lottie
+              loop
+              animationData={islamabadAnimation}
+              play
+              // style={{ width: 350, height: 350 }}
+            />            </div>
           </AnimationTextReversing>
 
           <AnimationTextReversing flexDirection="row-reverse">
@@ -126,8 +132,12 @@ const page = () => {
               </div>
             </div>
             <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-              <Image src={square} width={200} alt="animation here" />
-            </div>
+            <Lottie
+              loop
+              animationData={islamabadAnimation}
+              play
+              // style={{ width: 350, height: 350 }}
+            />             </div>
           </AnimationTextReversing>
 
           <AnimationTextReversing>
@@ -151,8 +161,12 @@ const page = () => {
               </div>
             </div>
             <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-              <Image src={square} width={200} alt="animation here" />
-            </div>
+            <Lottie
+              loop
+              animationData={islamabadAnimation}
+              play
+              // style={{ width: 350, height: 350 }}
+            />             </div>
           </AnimationTextReversing>
 
           {/* <ConnectWithUs bgColor="bg-white" textColor="text-black" /> */}

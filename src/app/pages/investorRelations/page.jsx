@@ -1,16 +1,23 @@
 "use client";
-import AnimationTextReversing from "@/app/components/animationTextReversing/AnimationTextReversing";
-import BlackBannerComponent from "@/app/components/blackBannerComponent/BlackBannerComponent";
-import Tabs from "@/app/components/tabs/Tabs";
+import AnimationTextReversing from "../../components/animationTextReversing/AnimationTextReversing";
+import BlackBannerComponent from "../../components/blackBannerComponent/BlackBannerComponent";
+import Tabs from "../../components/tabs/Tabs";
 import React from "react";
 import Image from "next/image";
-import CollapsibleComp from "@/app/components/collapsibleComponent/Collapsible";
-import Collapsible from "react-collapsible";
+import CollapsibleComp from "../../components/collapsibleComponent/Collapsible";
 import square from "../../../../public/square-neon.png";
 import pdfImg from "../../../../public/pdf-img.png";
 import disclaimerImg from "../../../../public/disclaimer-img.png"
-import ConnectWithUs from "@/app/components/connectWithUsComponent/ConnectWithUs";
-import Footer from "@/app/components/footer/Footer";
+import ConnectWithUs from "../../components/connectWithUsComponent/ConnectWithUs";
+import Lottie from "react-lottie-player";
+import Footer from "../../components/footer/Footer";
+import investorinformationAnimation from "../../../../public/symmetryAnimations/investorInformationAnimation.json"
+import governanceAnimation from "../../../../public/symmetryAnimations/governanceAnimation.json"
+import financialAnimation from "../../../../public/symmetryAnimations/financialAnimation.json"
+import corporateAnimation from "../../../../public/symmetryAnimations/corporateBriefings.json"
+import noticesAnimation from "../../../../public/symmetryAnimations/noticesAnimation.json"
+import importantAnimation from "../../../../public/symmetryAnimations/importantAnimation.json"
+import contactAnimation from "../../../../public/symmetryAnimations/contactsAnimation.json"
 
 const page = () => {
   const aboutH2 = "investors relations";
@@ -339,15 +346,20 @@ const page = () => {
               {invesorsInfo.map((item, index) => (
                 <>
                   <div className="border-b border-green-300 flex flex-col lg:flex-row text-center lg:text-start lg:justify-between leading-[20px] pb-5 mt-5">
-                    <div className="lg:w-6/12 ">{item.title}</div>
-                    <div className="lg:w-6/12 font-semibold">{item.desc}</div>
+                    <div className="lg:w-6/12 text-gray-600 ">{item.title}</div>
+                    <div className="lg:w-6/12 font-semibold text-black">{item.desc}</div>
                   </div>
                 </>
               ))}
             </div>
           </div>
           <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-            <Image src={square} width={200} alt="animation here" />
+          <Lottie
+              loop
+              animationData={investorinformationAnimation}
+              play
+              // style={{ width: 350, height: 350 }}
+            />
           </div>
         </AnimationTextReversing>
 
@@ -400,7 +412,7 @@ const page = () => {
               {boardMembers.map((item, index) => (
                 <>
                   <div className="border-b border-green-300 flex flex-col lg:flex-row text-center lg:text-start lg:justify-between leading-[20px] pb-5 mt-5">
-                    <div className="lg:w-6/12 font-semibold text-sm">
+                    <div className="lg:w-6/12 font-semibold text-sm text-black">
                       {item.name}
                     </div>
                     <div className="lg:w-6/12 text-gray-500 font-[300] text-sm">
@@ -419,7 +431,7 @@ const page = () => {
               {auditCommitte.map((item, index) => (
                 <>
                   <div className="border-b border-green-300 flex flex-col lg:flex-row text-center lg:text-start lg:justify-between leading-[20px] pb-5 mt-5">
-                    <div className="lg:w-6/12 font-semibold text-sm">
+                    <div className="lg:w-6/12 font-semibold text-smm text-black">
                       {item.name}
                     </div>
                     <div className="lg:w-6/12 text-gray-500 font-[300] text-sm">
@@ -440,7 +452,7 @@ const page = () => {
               {remunirationCommitte.map((item, index) => (
                 <>
                   <div className="border-b border-green-300 flex flex-col lg:flex-row text-center lg:text-start lg:justify-between leading-[20px] pb-5 mt-5">
-                    <div className="lg:w-6/12 font-semibold text-sm">
+                    <div className="lg:w-6/12 font-semibold text-sm text-black">
                       {item.name}
                     </div>
                     <div className="lg:w-6/12 text-gray-500 font-[300] text-sm">
@@ -452,8 +464,12 @@ const page = () => {
             </div>
           </div>
           <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-            <Image src={square} width={200} alt="animation here" />
-          </div>
+          <Lottie
+              loop
+              animationData={governanceAnimation}
+              play
+              // style={{ width: 350, height: 350 }}
+            />          </div>
         </AnimationTextReversing>
 
         <AnimationTextReversing>
@@ -471,8 +487,12 @@ const page = () => {
             </div>
           </div>
           <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-            <Image src={square} width={200} alt="animation here" />
-          </div>
+          <Lottie
+              loop
+              animationData={financialAnimation}
+              play
+              // style={{ width: 350, height: 350 }}
+            />           </div>
         </AnimationTextReversing>
 
         <AnimationTextReversing flexDirection="row-reverse">
@@ -490,8 +510,12 @@ const page = () => {
             </div>
           </div>
           <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-            <Image src={square} width={200} alt="animation here" />
-          </div>
+          <Lottie
+              loop
+              animationData={corporateAnimation}
+              play
+              // style={{ width: 350, height: 350 }}
+            />             </div>
         </AnimationTextReversing>
 
         <AnimationTextReversing>
@@ -509,8 +533,12 @@ const page = () => {
             </div>
           </div>
           <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-            <Image src={square} width={200} alt="animation here" />
-          </div>
+          <Lottie
+              loop
+              animationData={noticesAnimation}
+              play
+              // style={{ width: 350, height: 350 }}
+            />            </div>
         </AnimationTextReversing>
 
         <AnimationTextReversing flexDirection="row-reverse">
@@ -565,8 +593,12 @@ const page = () => {
             </div>
           </div>
           <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-            <Image src={square} width={200} alt="animation here" />
-          </div>
+          <Lottie
+              loop
+              animationData={importantAnimation}
+              play
+              // style={{ width: 350, height: 350 }}
+            />            </div>
         </AnimationTextReversing>
 
         <AnimationTextReversing>
@@ -625,8 +657,12 @@ const page = () => {
             </div>
           </div>
           <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-            <Image src={square} width={200} alt="animation here" />
-          </div>
+          <Lottie
+              loop
+              animationData={contactAnimation}
+              play
+              // style={{ width: 350, height: 350 }}
+            />             </div>
         </AnimationTextReversing>
 
         <ConnectWithUs/>

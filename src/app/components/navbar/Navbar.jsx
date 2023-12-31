@@ -6,6 +6,7 @@ import logo from "../../../../public/logo.webp";
 import hamburger from "../../../../public/hamburger-icon-3.png";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import gsap from "gsap";
+import "../navbar/Navbar.css"
 gsap.registerPlugin(ScrollTrigger); // Register the ScrollTrigger plugin
 
 const Navbar = () => {
@@ -66,11 +67,11 @@ const Navbar = () => {
                   alt="logo"
                   className="w-[45vw] md:w-[30vw] lg:w-[25vw]"
                 />
-              </div>
+              </div>  
             </Link>
 
-            <div className="ss lg:block hidden">
-              <ul className="flex text-[#13a772] gap-3 xl:gap-5 text-[1.2vw] 2xl:text-xl">
+            <div className="ss pillat-thin lg:block hidden">
+              <ul className="flex gap-3 xl:gap-5 text-[1.2vw] 2xl:text-xl rainbow-text ">
                 <li>our heritage</li>
                 <li>business divisions</li>
                 <li>brands & products</li>

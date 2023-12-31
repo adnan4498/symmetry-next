@@ -2,6 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Pilat Thin";
+  src: url("/fonts/pilatNarrow-font.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "PillatFont";
+  src: url("/fonts/pillat-fonts/PilatNarrow-Light.ttf") format("truetype");
+}
+
+.pillat-thin {
+  font-family: "Pilat Thin", sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.8px;
+}
+
+.pillat-normal {
+  font-family: "PillatFont", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  letter-spacing: 0.8px;
+}
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -19,5 +41,30 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: white
+  background: white;
+}
+
+.rainbow-text {
+  background-image: linear-gradient(
+    45deg,
+    rgba(13, 83, 189, 1) 0%,
+    rgba(19, 176, 168, 1) 20%,
+    rgba(21, 176, 60, 1) 30%,
+    rgba(93, 156, 17, 1) 45%,
+    rgb(152, 186, 18) 65%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 150% 150%;
+  animation: rainbow-text-simple-animation 10s linear infinite;
+}
+
+@keyframes rainbow-text-simple-animation {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
 }

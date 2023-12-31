@@ -53,14 +53,14 @@ const TextSlidingComponent = ({
             isBorder ? "border-b border-green-500 pb-1" : ""
           }  w-[40%]` }
         >
-          <h2 className="text-gray-600 text-2xl lg:text-3xl opacity-0" ref={heading3}>
+          <h2 className="text-gray-600 text-2xl lg:text-3xl opacity-0 pillat-normal" ref={heading3}>
             {sliderheading}
           </h2>
         </div>
 
         <div className="mt-2">
           <h2
-            className="sm:text-[10vw] text-5xl my-0 text-[#13a772] leading-[10vw] opacity-0"
+            className="sm:text-[10vw] text-5xl my-0 rainbow-text leading-[10vw] opacity-0 pillat-normal"
             ref={heading2}
           >
             {sliderText}
@@ -68,7 +68,7 @@ const TextSlidingComponent = ({
         </div>
 
         <div className="sm:w-[80%] lg:max-w-[600px]">
-          <p className="text-xs lg:text-sm text-gray-600 font-[300] mt-3 leading-[16px]">
+          <p className="text-xs lg:text-sm text-gray-600 font-[300] mt-3 leading-[16px] pillat-normal">
             {sliderP}
             <span className="text-xs lg:text-sm font-bold text-black">
               {" "}

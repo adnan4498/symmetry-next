@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import BlackBannerComponent from "../../components/blackBannerComponent/BlackBannerComponent";
 import Tabs from "../../components/tabs/Tabs";
@@ -6,6 +7,8 @@ import Image from "next/image";
 import square from "../../../../public/square-neon.png";
 import ConnectWithUs from "../../components/connectWithUsComponent/ConnectWithUs";
 import Footer from "../../components/footer/Footer";
+import Lottie from "react-lottie-player";
+import microsoftAnimation from "../../../../public/symmetryAnimations/microsoftAnimation.json";
 
 const page = () => {
   const aboutH2 = "affiliations & partnerships";
@@ -56,7 +59,12 @@ const page = () => {
             </div>
           </div>
           <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-            <Image src={square} width={200} alt="animation here" />
+            <Lottie
+              loop
+              animationData={microsoftAnimation}
+              play
+              // style={{ width: 350, height: 350 }}
+            />{" "}
           </div>
         </AnimationTextReversing>
 
@@ -78,7 +86,12 @@ const page = () => {
             </div>
           </div>
           <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-            <Image src={square} width={200} alt="animation here" />
+            <Lottie
+              loop
+              animationData={microsoftAnimation}
+              play
+              // style={{ width: 350, height: 350 }}
+            />{" "}
           </div>
         </AnimationTextReversing>
 
@@ -117,7 +130,12 @@ const page = () => {
             </div>
           </div>
           <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-            <Image src={square} width={200} alt="animation here" />
+            <Lottie
+              loop
+              animationData={microsoftAnimation}
+              play
+              // style={{ width: 350, height: 350 }}
+            />{" "}
           </div>
         </AnimationTextReversing>
 
@@ -141,7 +159,12 @@ const page = () => {
             </div>
           </div>
           <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-            <Image src={square} width={200} alt="animation here" />
+            <Lottie
+              loop
+              animationData={microsoftAnimation}
+              play
+              // style={{ width: 350, height: 350 }}
+            />{" "}
           </div>
         </AnimationTextReversing>
 

@@ -1,11 +1,19 @@
+"use client"
 import React from "react";
 import Image from "next/image";
 import square from "../../../../public/square-neon.png";
-import Tabs from "@/app/components/tabs/Tabs";
-import AnimationTextReversing from "@/app/components/animationTextReversing/AnimationTextReversing";
-import BlackBannerComponent from "@/app/components/blackBannerComponent/BlackBannerComponent";
-import ConnectWithUs from "@/app/components/connectWithUsComponent/ConnectWithUs";
-import Footer from "@/app/components/footer/Footer";
+import Tabs from "../../components/tabs/Tabs";
+import AnimationTextReversing from "../../components/animationTextReversing/AnimationTextReversing";
+import BlackBannerComponent from "../../components/blackBannerComponent/BlackBannerComponent";
+import ConnectWithUs from "../../components/connectWithUsComponent/ConnectWithUs";
+import Footer from "../../components/footer/Footer";
+import Lottie from "react-lottie-player";
+import dataScienceAnimation from "../../../../public/symmetryAnimations/dataScienceAnimation.json";
+import webSoftwareAnimation from "../../../../public/symmetryAnimations/webSoftwareAnimation.json";
+import iotAnimation from "../../../../public/symmetryAnimations/iotAnimation.json";
+import digitalAnimation from "../../../../public/symmetryAnimations/digitalStrategy.json";
+import techConsultingAnimation from "../../../../public/symmetryAnimations/techConsultingAnimation.json";
+import consultancyAnimation from "../../../../public/symmetryAnimations/consultancyAnimation.json";
 
 const page = () => {
   const aboutH2 = "transformation";
@@ -92,7 +100,12 @@ const page = () => {
                 </div>
               </div>
               <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-                <Image src={square} width={200} alt="animation here" />
+                <Lottie
+                  loop
+                  animationData={dataScienceAnimation}
+                  play
+                  // style={{ width: 350, height: 350 }}
+                />{" "}
               </div>
             </AnimationTextReversing>
 
@@ -141,8 +154,12 @@ const page = () => {
                 </div>
               </div>
               <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-                <Image src={square} width={200} alt="animation here" />
-              </div>
+              <Lottie
+                  loop
+                  animationData={webSoftwareAnimation}
+                  play
+                  // style={{ width: 350, height: 350 }}
+                />              </div>
             </AnimationTextReversing>
 
             <AnimationTextReversing>
@@ -173,8 +190,12 @@ const page = () => {
                 </div>
               </div>
               <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-                <Image src={square} width={200} alt="animation here" />
-              </div>
+              <Lottie
+                  loop
+                  animationData={iotAnimation}
+                  play
+                  // style={{ width: 350, height: 350 }}
+                />               </div>
             </AnimationTextReversing>
 
             <AnimationTextReversing flexDirection="row-reverse">
@@ -223,8 +244,12 @@ const page = () => {
                 </div>
               </div>
               <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-                <Image src={square} width={200} alt="animation here" />
-              </div>
+              <Lottie
+                  loop
+                  animationData={digitalAnimation}
+                  play
+                  // style={{ width: 350, height: 350 }}
+                />                </div>
             </AnimationTextReversing>
 
             <AnimationTextReversing>
@@ -261,8 +286,12 @@ const page = () => {
                 </div>
               </div>
               <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-                <Image src={square} width={200} alt="animation here" />
-              </div>
+              <Lottie
+                  loop
+                  animationData={techConsultingAnimation}
+                  play
+                  // style={{ width: 350, height: 350 }}
+                />                 </div>
             </AnimationTextReversing>
 
             <AnimationTextReversing flexDirection="row-reverse">
@@ -300,13 +329,17 @@ const page = () => {
                 </div>
               </div>
               <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-                <Image src={square} width={200} alt="animation here" />
-              </div>
+              <Lottie
+                  loop
+                  animationData={consultancyAnimation}
+                  play
+                  // style={{ width: 350, height: 350 }}
+                />                 </div>
             </AnimationTextReversing>
           </div>
 
           <ConnectWithUs bgColor="bg-black" textColor="text-white" />
-        <Footer />
+          <Footer />
         </div>
       </div>
     </>

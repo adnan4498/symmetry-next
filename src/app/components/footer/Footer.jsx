@@ -49,10 +49,10 @@ const Footer = () => {
           <div className="hidden lg:block mx-10">
             <div className="gap-4 grid grid-cols-7">
               <div className="text-black ">
-                <h2 className="font-semibold text-lg min-h-[70px] mb-2">
+                <h2 className="font-bold text-lg min-h-[70px] mb-2 pillat-normal">
                   about us
                 </h2>
-                <ul className="text-gray-500 flex flex-col gap-2">
+                <ul className="text-gray-500 flex flex-col gap-2 pillat-thin">
                   <li>company</li>
                   <li>vision</li>
                   <li>mission</li>

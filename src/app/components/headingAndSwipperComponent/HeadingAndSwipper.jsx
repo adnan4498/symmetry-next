@@ -22,16 +22,16 @@ const HeadingAndSwipper = ({
       <div className="md:mx-12 mx-3 lg:mx-auto lg:w-[55%]">
         <div className="mt-5">
           <div className="border-b border-green-500 pt-6">
-            <p className="text-3xl 2xl:text-4xl mb-4 text-black">{hasH3}</p>
+            <p className="text-3xl 2xl:text-4xl mb-4 text-black pillat-normal">{hasH3}</p>
           </div>
           <div className=" w-full mt-4">
-            <span className="text-[#13a772] text-4xl sm:text-6xl md:text-5xl lg:text-5xl 2xl:text-7xl ">
+            <span className="rainbow-text text-4xl sm:text-6xl md:text-5xl lg:text-5xl 2xl:text-7xl pillat-normal">
               <span className="" dangerouslySetInnerHTML={{ __html: hasH2 }} />
             </span>
 
             {/*********  Laptop  *********/}
 
-            <span className="border-l border-gray-400 text-black text-xs 2xl:text-sm pl-4 ml-3 w-[55%] 2xl:w-[45%] xl:max-w-[600px] 2xl:leading-[15px] mt-3 lg:inline-block hidden ">
+            <span className="border-l border-gray-400 text-black text-xs 2xl:text-sm pl-4 ml-3 w-[55%] 2xl:w-[45%] xl:max-w-[600px] 2xl:leading-[15px] mt-3 lg:inline-block hidden pillat-thin">
               <span className="w-[100%] ">
                 {hasP}
                 <span className="font-bold"> {hasKnowMore}</span>
@@ -40,7 +40,7 @@ const HeadingAndSwipper = ({
 
             {/*********  Mobile  *********/}
 
-            <span className="w-[100%] lg:hidden block text-black text-xs sm:text-sm mt-2">
+            <span className="w-[100%] lg:hidden block text-black text-xs sm:text-sm mt-2 pillat-thin">
               {hasP}
               <span className="font-bold"> {hasKnowMore}</span>
             </span>

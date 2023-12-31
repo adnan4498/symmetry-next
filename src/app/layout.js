@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
             lerp: 0.1,
             smoothTouch: true,
             smoothWheel: true,
-            duration: 1.5,
+            duration: 1,
           },
         });
       } catch (error) {

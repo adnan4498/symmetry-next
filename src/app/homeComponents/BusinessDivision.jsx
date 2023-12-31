@@ -2,7 +2,8 @@ import React from "react";
 import TextSlidingComponent from "../components/textSlidingComponent/TextSlidingComponent";
 import HeadingAndSwipper from "../components/headingAndSwipperComponent/HeadingAndSwipper";
 import AnimationAndSwipper from "../components/animationAndSwipperComponent/AnimationAndSwipper";
-import ImageSwipper from "../components/imageSwipper/ImageSwipper";
+import interactiveAnimation from "../../../public/symmetryAnimations/interacticeAnimation.json"
+import mobilityAnimation from "../../../public/symmetryAnimations/mobilityAnimation.json"
 
 const BusinessDivision = () => {
   {
@@ -72,8 +73,8 @@ const BusinessDivision = () => {
   const aasP =
     "Our unrivaled insights, innovative thinking, strategic approach, content services and technology solutions can help you create meaningful and lasting relationships with your customers.";
   const aasKnowmore = "know more --";
-
-  const swipperAnimationContent = [{}]; /*******   add content   *******/
+  const interactiveAnima = interactiveAnimation
+  
 
   const slidesPerView = "3";
   const swipperGap = "20";
@@ -103,6 +104,7 @@ const BusinessDivision = () => {
         swipperContent={swipperContent}
         slidesPerView={slidesPerView}
         swipperGap={swipperGap}
+        animation={interactiveAnima}
       />
       <HeadingAndSwipper
         hasH3={hasH3}
@@ -114,13 +116,14 @@ const BusinessDivision = () => {
         swipperGap={swipperGap}
       />
       <AnimationAndSwipper
-        aasH3={aasH3}
+        aasH3={"mobility"}
         aasH2={aasH2}
         aasP={aasP}
         aasKnowmore={aasKnowmore}
         swipperContent={swipperContent}
         slidesPerView={slidesPerView}
         swipperGap={swipperGap}
+        animation={mobilityAnimation}
       />
       {/* <ImageSwipper /> */}
     </>

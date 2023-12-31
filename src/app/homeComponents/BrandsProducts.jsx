@@ -1,11 +1,10 @@
 import React from "react";
-import HeadingAndSwipper from "../components/headingAndSwipperComponent/HeadingAndSwipper";
 import ImageSwipper from "../components/imageSwipper/ImageSwipper";
 import irisLogo from "../../../public/iris-small-logo.webp";
 import influenseLogo from "../../../public/influense-small-logo.webp";
 import TextSlidingComponent from "../components/textSlidingComponent/TextSlidingComponent";
-import AnimationAndSwipper from "../components/animationAndSwipperComponent/AnimationAndSwipper";
 import AnimationAndImages from "../components/animationAndImagesComponent/AnimationAndImages";
+import affiliationAnimation from "../../../public/symmetryAnimations/affiliationAnimation.json"
 
 const BrandsProducts = () => {
   {
@@ -131,6 +130,7 @@ const BrandsProducts = () => {
           slidesPerView={5}
           swipperGap={100}
           navigation={false}
+          animation={affiliationAnimation}
         />
       </div>
     </>

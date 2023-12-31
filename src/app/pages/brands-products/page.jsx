@@ -1,11 +1,22 @@
+"use client"
 import React from "react";
 import Image from "next/image";
 import square from "../../../../public/square-neon.png";
-import Tabs from "@/app/components/tabs/Tabs";
-import AnimationTextReversing from "@/app/components/animationTextReversing/AnimationTextReversing";
-import BlackBannerComponent from "@/app/components/blackBannerComponent/BlackBannerComponent";
-import ConnectWithUs from "@/app/components/connectWithUsComponent/ConnectWithUs";
-import Footer from "@/app/components/footer/Footer";
+import Tabs from "../../components/tabs/Tabs";
+import AnimationTextReversing from "../../components/animationTextReversing/AnimationTextReversing";
+import BlackBannerComponent from "../../components/blackBannerComponent/BlackBannerComponent";
+import ConnectWithUs from "../../components/connectWithUsComponent/ConnectWithUs";
+import Footer from "../../components/footer/Footer";
+import Lottie from "react-lottie-player";
+import symmetryAnimation from "../../../../public/symmetryAnimations/brandsSymmetryAnimation.json"
+import irisAnimation from "../../../../public/symmetryAnimations/irisAnimation.json"
+import symmetryTradeAnimation from "../../../../public/symmetryAnimations/symmetryTradeAnimation.json"
+import coralAnimation from "../../../../public/symmetryAnimations/coralAnimation.json"
+import coralPerformanceAnimation from "../../../../public/symmetryAnimations/coralPerformanceAnimation.json"
+import appabilitiesAnimation from "../../../../public/symmetryAnimations/appabilitiesAnimation.json"
+import survitAnimation from "../../../../public/symmetryAnimations/survitAnimation.json"
+import mobitsAnimation from "../../../../public/symmetryAnimations/mobitsAnimation.json"
+import influenceAiAnimation from "../../../../public/symmetryAnimations/influenceAiAnimation.json"
 
 const page = () => {
   const aboutH2 = "brands & products";
@@ -66,7 +77,7 @@ const page = () => {
                     Symmetry
                   </h2>
                 </div>
-                <div className="text-gray-500 text-[14px] ">
+                <div className="text-gray-500 text-[14px]">
                   <p className="">
                     pakistan’s premier full service digital marketing agency,
                     symmetry digital specializes in data-driven and
@@ -78,8 +89,12 @@ const page = () => {
                 </div>
               </div>
               <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-                <Image src={square} width={200} alt="animation here" />
-              </div>
+              <Lottie
+                  loop
+                  animationData={symmetryAnimation}
+                  play
+                  // style={{ width: 350, height: 350 }}
+                />              </div>
             </AnimationTextReversing>
 
             <AnimationTextReversing flexDirection="row-reverse">
@@ -100,8 +115,12 @@ const page = () => {
                 </div>
               </div>
               <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-                <Image src={square} width={200} alt="animation here" />
-              </div>
+              <Lottie
+                  loop
+                  animationData={irisAnimation}
+                  play
+                  // style={{ width: 350, height: 350 }}
+                />                </div>
             </AnimationTextReversing>
 
             <AnimationTextReversing>
@@ -122,8 +141,12 @@ const page = () => {
                 </div>
               </div>
               <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-                <Image src={square} width={200} alt="animation here" />
-              </div>
+              <Lottie
+                  loop
+                  animationData={symmetryTradeAnimation}
+                  play
+                  // style={{ width: 350, height: 350 }}
+                />                 </div>
             </AnimationTextReversing>
 
             <AnimationTextReversing flexDirection="row-reverse">
@@ -146,8 +169,12 @@ const page = () => {
                 </div>
               </div>
               <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-                <Image src={square} width={200} alt="animation here" />
-              </div>
+              <Lottie
+                  loop
+                  animationData={coralAnimation}
+                  play
+                  // style={{ width: 350, height: 350 }}
+                />                 </div>
             </AnimationTextReversing>
 
             <AnimationTextReversing>
@@ -172,8 +199,12 @@ const page = () => {
                 </div>
               </div>
               <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-                <Image src={square} width={200} alt="animation here" />
-              </div>
+              <Lottie
+                  loop
+                  animationData={coralPerformanceAnimation}
+                  play
+                  // style={{ width: 350, height: 350 }}
+                />                </div>
             </AnimationTextReversing>
 
             <AnimationTextReversing flexDirection="row-reverse">
@@ -193,8 +224,12 @@ const page = () => {
                 </div>
               </div>
               <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-                <Image src={square} width={200} alt="animation here" />
-              </div>
+              <Lottie
+                  loop
+                  animationData={appabilitiesAnimation}
+                  play
+                  // style={{ width: 350, height: 350 }}
+                />               </div>
             </AnimationTextReversing>
 
             <AnimationTextReversing>
@@ -247,8 +282,12 @@ const page = () => {
                 </div>
               </div>
               <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-                <Image src={square} width={200} alt="animation here" />
-              </div>
+              <Lottie
+                  loop
+                  animationData={survitAnimation}
+                  play
+                  // style={{ width: 350, height: 350 }}
+                />               </div>
             </AnimationTextReversing>
 
             <AnimationTextReversing flexDirection="row-reverse">
@@ -275,8 +314,12 @@ const page = () => {
                 </div>
               </div>
               <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-                <Image src={square} width={200} alt="animation here" />
-              </div>
+              <Lottie
+                  loop
+                  animationData={mobitsAnimation}
+                  play
+                  // style={{ width: 350, height: 350 }}
+                />                 </div>
             </AnimationTextReversing>
 
             <AnimationTextReversing>
@@ -293,8 +336,12 @@ const page = () => {
                 </div>
               </div>
               <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-                <Image src={square} width={200} alt="animation here" />
-              </div>
+              <Lottie
+                  loop
+                  animationData={influenceAiAnimation}
+                  play
+                  // style={{ width: 350, height: 350 }}
+                />                 </div>
             </AnimationTextReversing>
           </div>
         </div>

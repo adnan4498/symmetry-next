@@ -14,7 +14,9 @@ export default function Home() {
       <div className="">
         <DeliveringSection />
         <HeritageSection />
+        <div className="md:pt-[300px]">
         <BusinessDivision />
+        </div>
         {/* <InteractiveMarketing /> */}
         <BrandsProducts />
         <AboutUs />

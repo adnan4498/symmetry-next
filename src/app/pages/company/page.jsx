@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 import Tabs from "../../components/tabs/Tabs";
@@ -13,6 +14,13 @@ import director6 from "../../../../public/board-director-img-6.webp";
 import director7 from "../../../../public/board-director-img-7.webp";
 import ConnectWithUs from "../../components/connectWithUsComponent/ConnectWithUs";
 import Footer from "../../components/footer/Footer";
+import companyAnimation from "../../../../public/symmetryAnimations/companyAnimation.json";
+import visionAnimation from "../../../../public/symmetryAnimations/visionAnimation.json";
+import missionAnimation from "../../../../public/symmetryAnimations/missionAnimation.json";
+import directorsAnimation from "../../../../public/symmetryAnimations/directorsAnimation.json";
+import initiativeAnimation from "../../../../public/symmetryAnimations/initiativeAnimation.json";
+
+import Lottie from "react-lottie-player";
 
 const Company = () => {
   const aboutH2 = "about us";
@@ -93,7 +101,7 @@ const Company = () => {
         <div>
           <div>
             <BlackBannerComponent aboutH2={aboutH2} aboutText={aboutText} />
-            <Tabs tabsData={tabsData} slidesPerView={4}/>
+            <Tabs tabsData={tabsData} slidesPerView={4} />
           </div>
         </div>
         <AnimationTextReversing>
@@ -131,7 +139,13 @@ const Company = () => {
             </div>
           </div>
           <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-            <Image src={square} width={200} alt="animation here" />
+            {/* <Image src={square} width={200} alt="animation here" /> */}
+            <Lottie
+              loop
+              animationData={companyAnimation}
+              play
+              // style={{ width: 350, height: 350 }}
+            />
           </div>
         </AnimationTextReversing>
         <AnimationTextReversing flexDirection="row-reverse">
@@ -157,7 +171,12 @@ const Company = () => {
             </div>
           </div>
           <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-            <Image src={square} width={200} alt="animation here" />
+            <Lottie
+              loop
+              animationData={visionAnimation}
+              play
+              // style={{ width: 350, height: 350 }}
+            />
           </div>
         </AnimationTextReversing>
         <AnimationTextReversing>
@@ -166,7 +185,7 @@ const Company = () => {
               <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light">
                 mission
               </h2>
-              <h3 className="font-semibold mt-3"> 
+              <h3 className="font-semibold mt-3">
                 create market-leading digital experiences that power our
                 partners’ success.
               </h3>
@@ -181,7 +200,12 @@ const Company = () => {
             </div>
           </div>
           <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-            <Image src={square} width={200} alt="animation here" />
+            <Lottie
+              loop
+              animationData={missionAnimation}
+              play
+              // style={{ width: 350, height: 350 }}
+            />{" "}
           </div>
         </AnimationTextReversing>
         <AnimationTextReversing flexDirection="row-reverse">
@@ -209,7 +233,12 @@ const Company = () => {
             </div>
           </div>
           <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-            <Image src={square} width={200} alt="animation here" />
+            <Lottie
+              loop
+              animationData={directorsAnimation}
+              play
+              // style={{ width: 350, height: 350 }}
+            />{" "}
           </div>
         </AnimationTextReversing>
         <AnimationTextReversing>
@@ -266,11 +295,15 @@ const Company = () => {
             </div>
           </div>
           <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-            <Image src={square} width={200} alt="animation here" />
+            <Lottie
+              loop
+              animationData={initiativeAnimation}
+              play
+              // style={{ width: 350, height: 350 }}
+            />{" "}
           </div>
         </AnimationTextReversing>
 
-        
         <ConnectWithUs bgColor="bg-black" textColor="text-white" />
         <Footer />
       </div>

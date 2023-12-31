@@ -1,11 +1,12 @@
 "use client";
 import React, { useRef, useEffect } from "react";
 import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger"; // Import the ScrollTrigger plugin
-// import square from "../../public/square-neon.png";
+import ScrollTrigger from "gsap/ScrollTrigger"; 
+import Lottie from "react-lottie-player";
+import HomeBannerAnimation from "../../../public/symmetryAnimations/homeBannerAnimation.json"
 import square from "../../../public/square-neon.png";
 import Image from "next/image";
-gsap.registerPlugin(ScrollTrigger); // Register the ScrollTrigger plugin
+gsap.registerPlugin(ScrollTrigger); 
 
 const DeliveringSection = () => {
   const heading = useRef();
@@ -27,13 +28,13 @@ const DeliveringSection = () => {
 
   return (
     <>
-    <div className="bg-black">
+    <div className="bg-black overflow-hidden">
       <div className="h-[570px] sm:h-[650px] lg:h-[850px] 2xl:h-[950px] pt-16 lg:pt-28 ">
         <div className="mx-3 sm:py-12 py-8 md:mx-12">
           <div className="relative">
-            <div className="md:max-w-[600px] 2xl:max-w-[800px] w-full opacity-0 "  ref={heading}>
-              <span className="text-[#13a772] text-4xl sm:text-6xl md:text-5xl lg:text-7xl 2xl:text-8xl ">
-                <span className=" heading">
+            <div className="md:max-w-[600px] 2xl:max-w-[800px] w-full opacity-0 rainbow-text"  ref={heading}>
+              <span className="text-4xl sm:text-6xl md:text-5xl lg:text-7xl 2xl:text-8xl ">
+                <span className=" heading pillat-normal">
                   delivering digital experiences that make the world <br></br>
                   better
                 </span>
@@ -54,8 +55,13 @@ const DeliveringSection = () => {
                 innovation
               </span>
             </div>
-            <div className="absolute right-0 md:top-[20%] lg:top-[10%] md:block hidden md:w-[20vw] lg:w-[30vw] tranform rotate-[15deg]">
-              <Image src={square} alt="animation square" className="" />
+            <div className="hidden md:block absolute md:w-[30vw] lg:w-[40vw] top-0 md:right-[-50px] lg:right-[-100px]">
+              {/* <Image src={square} alt="animation square" className="" /> */}
+              <Lottie 
+                animationData={HomeBannerAnimation}
+                loop
+                play
+              />
             </div>
           </div>
         </div>
