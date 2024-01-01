@@ -45,11 +45,11 @@ const page = () => {
         <AnimationTextReversing>
           <div className="company-div flex flex-col gap-5 lg:w-6/12">
             <div className="text-black">
-              <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light">
+              <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light pillat-normal">
                 google
               </h2>
             </div>
-            <div className="text-gray-500 text-[14px] ">
+            <div className="text-gray-500 text-[14px] pillat-normal">
               <p>
                 Symmetry Group Limited is a Google Partner with expert-level
                 Google Ad products knowledge. Partners receive training,
@@ -71,11 +71,11 @@ const page = () => {
         <AnimationTextReversing flexDirection="row-reverse">
           <div className="company-div flex flex-col gap-5 lg:w-6/12">
             <div className="text-black">
-              <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light">
+              <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light pillat-normal">
                 microsoft
               </h2>
             </div>
-            <div className="text-gray-500 text-[14px] ">
+            <div className="text-gray-500 text-[14px] pillat-normal">
               <p>
                 Symmetry Group is a Microsoft Partner. This partnership helps
                 the Company in bringing efficiency to its processes and
@@ -96,7 +96,7 @@ const page = () => {
         </AnimationTextReversing>
 
         <AnimationTextReversing>
-          <div className="company-div flex flex-col gap-5 lg:w-6/12">
+          <div className="company-div flex flex-col gap-5 lg:w-6/12 pillat-normal">
             <div className="text-black">
               <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light">
                 ali baba
@@ -140,7 +140,7 @@ const page = () => {
         </AnimationTextReversing>
 
         <AnimationTextReversing flexDirection="row-reverse">
-          <div className="company-div flex flex-col gap-5 lg:w-6/12">
+          <div className="company-div flex flex-col gap-5 lg:w-6/12 pillat-normal">
             <div className="text-black">
               <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light">
                 iso

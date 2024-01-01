@@ -107,11 +107,11 @@ const Company = () => {
         <AnimationTextReversing>
           <div className="company-div flex flex-col gap-5 lg:w-6/12">
             <div className="text-black">
-              <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light">
+              <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light pillat-normal">
                 company
               </h2>
             </div>
-            <div className="text-gray-500 text-[14px] ">
+            <div className="text-gray-500 text-[14px] pillat-normal">
               <p>
                 with expertise in digital strategy, consulting, transformation,
                 digital commerce, data science, mobility, retail/research &
@@ -120,7 +120,7 @@ const Company = () => {
                 ensure our partner's success, we focus on four core areas:
               </p>
             </div>
-            <div className="text-gray-500">
+            <div className="text-gray-500 pillat-normal">
               <ul className="flex flex-col gap-2">
                 <li>
                   <span className="text-green-500 mr-1">O</span> transformation
@@ -151,14 +151,14 @@ const Company = () => {
         <AnimationTextReversing flexDirection="row-reverse">
           <div className="vision-div flex flex-col gap-5 lg:w-6/12">
             <div className="text-black">
-              <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light">
+              <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light pillat-normal">
                 vision
               </h2>
-              <h3 className="font-semibold mt-3">
+              <h3 className="font-semibold mt-3 pillat-normal">
                 we exist to integrate the world better.
               </h3>
             </div>
-            <div className="text-gray-500 text-[14px] ">
+            <div className="text-gray-500 text-[14px] pillat-normal ">
               <p className="">
                 we believe that human possibilities can be enhanced through
                 digital experiences. whether it is finding new ways to solve old
@@ -182,15 +182,15 @@ const Company = () => {
         <AnimationTextReversing>
           <div className="mission-div flex flex-col gap-5 lg:w-6/12">
             <div className="text-black">
-              <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light">
+              <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light pillat-normal">
                 mission
               </h2>
-              <h3 className="font-semibold mt-3">
+              <h3 className="font-semibold mt-3 pillat-normal">
                 create market-leading digital experiences that power our
                 partners’ success.
               </h3>
             </div>
-            <div className="text-gray-500 text-[14px]">
+            <div className="text-gray-500 text-[14px] pillat-normal">
               <p className="">
                 symmetry group is a digital technology and experiences company
                 that specializes in digital products and services. Our prime
@@ -211,7 +211,7 @@ const Company = () => {
         <AnimationTextReversing flexDirection="row-reverse">
           <div className="board-directors-div flex flex-col gap-5 lg:w-6/12">
             <div className="text-black">
-              <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light">
+              <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light pillat-normal">
                 board of directors
               </h2>
             </div>
@@ -223,10 +223,10 @@ const Company = () => {
                     <div className="border border-green-700 rounded-md min-w-[100px] max-w-[100px] py-[3px] px-1">
                       <Image src={item.img} />
                     </div>
-                    <p className="mt-2 min-h-[40px] leading-[18px] ">
+                    <p className="mt-2 min-h-[40px] leading-[18px] pillat-normal">
                       {item.name}
                     </p>
-                    <p className="text-gray-500 text-xs">{item.post}</p>
+                    <p className="text-gray-500 text-xs pillat-normal">{item.post}</p>
                   </div>
                 </>
               ))}
@@ -244,13 +244,13 @@ const Company = () => {
         <AnimationTextReversing>
           <div className="vision-div flex flex-col gap-5 lg:w-6/12">
             <div className="text-black">
-              <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light">
+              <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light pillat-normal">
                 initiatives
               </h2>
               <div className="flex flex-col gap-3 mt-2">
                 <div className="text-gray-500 text-[14px]  mt-2">
-                  <p className="">
-                    <span className="font-bold text-black">
+                  <p className="pillat-normal">
+                    <span className="font-bold text-black ">
                       #narrativestransformed
                     </span>{" "}
                     is a series of podcasts on prevalent themes that can disrupt
@@ -259,7 +259,7 @@ const Company = () => {
                     expertise on the topic of discussion.
                   </p>
                 </div>
-                <div className="text-gray-500 text-[14px]  mt-2">
+                <div className="text-gray-500 text-[14px] mt-2  pillat-normal">
                   <p className="">
                     <span className="font-bold text-black">djoint</span> is a
                     flagship initiative launched by Symmetry Group and has since
@@ -271,7 +271,7 @@ const Company = () => {
                     training & development.
                   </p>
                 </div>
-                <div className="text-gray-500 text-[14px]  mt-2">
+                <div className="text-gray-500 text-[14px]  mt-2 pillat-normal">
                   <p className="">
                     <span className="font-bold text-black">digital minds</span>{" "}
                     is a first of its kind competition, in which students from
@@ -282,7 +282,7 @@ const Company = () => {
                   </p>
                 </div>
 
-                <div className="text-gray-500 text-[14px]  mt-2">
+                <div className="text-gray-500 text-[14px]  mt-2 pillat-normal">
                   <p>
                     this program helps youth to get acquainted with digital
                     world, expand their knowledge with latest digital

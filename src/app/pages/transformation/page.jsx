@@ -62,11 +62,11 @@ const page = () => {
             <AnimationTextReversing>
               <div className="company-div flex flex-col gap-5 lg:w-6/12">
                 <div className="text-black">
-                  <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light">
+                  <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light pillat-normal">
                     data science
                   </h2>
                 </div>
-                <div className="text-gray-500 text-[14px] ">
+                <div className="text-gray-500 text-[14px] pillat-normal">
                   <p>
                     data makes insight actionable. your data is often scattered
                     across multiple sources and formats. we help you make sense
@@ -75,7 +75,7 @@ const page = () => {
                   </p>
                 </div>
                 <div className="text-gray-500">
-                  <ul className="flex flex-col gap-2">
+                  <ul className="flex flex-col gap-2 pillat-normal">
                     <li>
                       <span className="text-green-500 mr-1">O</span> data
                       organization
@@ -112,11 +112,11 @@ const page = () => {
             <AnimationTextReversing flexDirection="row-reverse">
               <div className="company-div flex flex-col gap-5 lg:w-6/12">
                 <div className="text-black">
-                  <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light">
+                  <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light pillat-normal">
                     web, software & application
                   </h2>
                 </div>
-                <div className="text-gray-500 text-[14px] ">
+                <div className="text-gray-500 text-[14px] pillat-normal">
                   <p>
                     we love leveraging technology to tell stories that capture
                     user's imagination and help brands succeed. we create out of
@@ -125,7 +125,7 @@ const page = () => {
                   </p>
                 </div>
                 <div className="text-gray-500">
-                  <ul className="flex flex-col gap-2">
+                  <ul className="flex flex-col gap-2 pillat-normal">
                     <li>
                       <span className="text-green-500 mr-1">O</span> needs
                       assessment & advising
@@ -165,11 +165,11 @@ const page = () => {
             <AnimationTextReversing>
               <div className="company-div flex flex-col gap-5 lg:w-6/12">
                 <div className="text-black">
-                  <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light">
+                  <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light pillat-normal">
                     iot devices
                   </h2>
                 </div>
-                <div className="text-gray-500 text-[14px] ">
+                <div className="text-gray-500 text-[14px] pillat-normal">
                   <p>
                     we envision a world where all our devices seamlessly
                     connect, learn from each other, and work together. a world
@@ -177,7 +177,7 @@ const page = () => {
                   </p>
                 </div>
                 <div className="text-gray-500">
-                  <ul className="flex flex-col gap-2">
+                  <ul className="flex flex-col gap-2 pillat-normal">
                     <li>
                       <span className="text-green-500 mr-1">O</span> commerce
                       devices
@@ -201,11 +201,11 @@ const page = () => {
             <AnimationTextReversing flexDirection="row-reverse">
               <div className="company-div flex flex-col gap-5 lg:w-6/12">
                 <div className="text-black">
-                  <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light">
+                  <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light pillat-normal">
                     digital strategy
                   </h2>
                 </div>
-                <div className="text-gray-500 text-[14px] ">
+                <div className="text-gray-500 text-[14px] pillat-normal">
                   <p>
                     technology and data are the bridges between new media and
                     how consumers live their lives. with insights, we can
@@ -215,7 +215,7 @@ const page = () => {
                   </p>
                 </div>
                 <div className="text-gray-500">
-                  <ul className="flex flex-col gap-2">
+                  <ul className="flex flex-col gap-2 pillat-normal">
                     <li>
                       <span className="text-green-500 mr-1">O</span> brand
                       strategy
@@ -255,11 +255,11 @@ const page = () => {
             <AnimationTextReversing>
               <div className="company-div flex flex-col gap-5 lg:w-6/12">
                 <div className="text-black">
-                  <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light">
+                  <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light pillat-normal">
                     technology consulting
                   </h2>
                 </div>
-                <div className="text-gray-500 text-[14px] ">
+                <div className="text-gray-500 text-[14px] pillat-normal">
                   <p>
                     blockchain, metaverse, cryptocurrency and nfts are more than
                     just buzz words for us. we address complex technology
@@ -269,7 +269,7 @@ const page = () => {
                   </p>
                 </div>
                 <div className="text-gray-500">
-                  <ul className="flex flex-col gap-2">
+                  <ul className="flex flex-col gap-2 pillat-normal">
                     <li>
                       <span className="text-green-500 mr-1">O</span> new &
                       emerging technology
@@ -297,11 +297,11 @@ const page = () => {
             <AnimationTextReversing flexDirection="row-reverse">
               <div className="company-div flex flex-col gap-5 lg:w-6/12">
                 <div className="text-black">
-                  <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light">
+                  <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light pillat-normal">
                     digital consulting
                   </h2>
                 </div>
-                <div className="text-gray-500 text-[14px] ">
+                <div className="text-gray-500 text-[14px] pillat-normal">
                   <p>
                     as the world shifts to a digital economy and virtual social
                     networks, we help your business adapt quickly and stay ahead
@@ -312,7 +312,7 @@ const page = () => {
                   </p>
                 </div>
                 <div className="text-gray-500">
-                  <ul className="flex flex-col gap-2">
+                  <ul className="flex flex-col gap-2 pillat-normal">
                     <li>
                       <span className="text-green-500 mr-1">O</span> new &
                       emerging technology

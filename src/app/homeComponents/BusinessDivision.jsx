@@ -2,16 +2,19 @@ import React from "react";
 import TextSlidingComponent from "../components/textSlidingComponent/TextSlidingComponent";
 import HeadingAndSwipper from "../components/headingAndSwipperComponent/HeadingAndSwipper";
 import AnimationAndSwipper from "../components/animationAndSwipperComponent/AnimationAndSwipper";
-import interactiveAnimation from "../../../public/symmetryAnimations/interacticeAnimation.json"
-import mobilityAnimation from "../../../public/symmetryAnimations/mobilityAnimation.json"
+import interactiveAnimation from "../../../public/symmetryAnimations/interacticeAnimation.json";
+import mobilityAnimation from "../../../public/symmetryAnimations/mobilityAnimation.json";
+import gsap from "gsap";
+
 
 const BusinessDivision = () => {
+
   {
     /******** Ease Slide Content  ********/
   }
 
   const sliderheading = "business divisions";
-  const sliderText = "Skillfully solvi";
+  const sliderText = "skillfully solving challanges";
   const sliderP =
     "we provide digital products and services that solve today’s challenges by leveraging your organization’s unique potential to create tomorrow’s opportunities and deliver real business results.";
 
@@ -73,8 +76,7 @@ const BusinessDivision = () => {
   const aasP =
     "Our unrivaled insights, innovative thinking, strategic approach, content services and technology solutions can help you create meaningful and lasting relationships with your customers.";
   const aasKnowmore = "know more --";
-  const interactiveAnima = interactiveAnimation
-  
+  const interactiveAnima = interactiveAnimation;
 
   const slidesPerView = "3";
   const swipperGap = "20";

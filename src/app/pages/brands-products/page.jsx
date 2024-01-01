@@ -73,11 +73,11 @@ const page = () => {
             <AnimationTextReversing>
               <div className="vision-div flex flex-col gap-5 lg:w-6/12">
                 <div className="text-black">
-                  <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light">
+                  <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light pillat-normal">
                     Symmetry
                   </h2>
                 </div>
-                <div className="text-gray-500 text-[14px]">
+                <div className="text-gray-500 text-[14px] pillat-normal">
                   <p className="">
                     pakistan’s premier full service digital marketing agency,
                     symmetry digital specializes in data-driven and
@@ -100,11 +100,11 @@ const page = () => {
             <AnimationTextReversing flexDirection="row-reverse">
               <div className="vision-div flex flex-col gap-5 lg:w-6/12">
                 <div className="text-black">
-                  <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light">
+                  <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light pillat-normal">
                     iris
                   </h2>
                 </div>
-                <div className="text-gray-500 text-[14px] ">
+                <div className="text-gray-500 text-[14px] pillat-normal">
                   <p className="">
                     a fast-paced company that is powered by bright minds and big
                     ideas, iris believes in the future of digital and offers a
@@ -126,11 +126,11 @@ const page = () => {
             <AnimationTextReversing>
               <div className="vision-div flex flex-col gap-5 lg:w-6/12">
                 <div className="text-black">
-                  <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light">
+                  <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light pillat-normal">
                     Symmetry trade
                   </h2>
                 </div>
-                <div className="text-gray-500 text-[14px] ">
+                <div className="text-gray-500 text-[14px] pillat-normal">
                   <p className="">
                     as an authorized channel partner & gold supplier of
                     alibaba.com, they act as a bridge between pakistani brands
@@ -152,11 +152,11 @@ const page = () => {
             <AnimationTextReversing flexDirection="row-reverse">
               <div className="vision-div flex flex-col gap-5 lg:w-6/12">
                 <div className="text-black">
-                  <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light">
+                  <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light pillat-normal">
                     coral
                   </h2>
                 </div>
-                <div className="text-gray-500 text-[14px] ">
+                <div className="text-gray-500 text-[14px] pillat-normal">
                   <p className="">
                     built on the belief that good insights lead to better
                     decisions, and better decisions lead to better businesses,
@@ -180,11 +180,11 @@ const page = () => {
             <AnimationTextReversing>
               <div className="vision-div flex flex-col gap-5 lg:w-6/12">
                 <div className="text-black">
-                  <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light">
+                  <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light pillat-normal">
                     coral performance
                   </h2>
                 </div>
-                <div className="text-gray-500 text-[14px] ">
+                <div className="text-gray-500 text-[14px] pillat-normal">
                   <p className="">
                     corral performance is a comprehensive and insightful unified
                     analytics platform that frees advertisers from manually
@@ -210,11 +210,11 @@ const page = () => {
             <AnimationTextReversing flexDirection="row-reverse">
               <div className="vision-div flex flex-col gap-5 lg:w-6/12">
                 <div className="text-black">
-                  <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light">
+                  <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light pillat-normal">
                     appabilities
                   </h2>
                 </div>
-                <div className="text-gray-500 text-[14px] ">
+                <div className="text-gray-500 text-[14px] pillat-normal">
                   <p className="">
                     delivering cutting-edge user interface design (ui) and user
                     experience (ux), appabilities builds world class mobile apps
@@ -235,11 +235,11 @@ const page = () => {
             <AnimationTextReversing>
               <div className="vision-div flex flex-col gap-5 lg:w-6/12">
                 <div className="text-black">
-                  <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light">
+                  <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light pillat-normal">
                     survit
                   </h2>
                 </div>
-                <div className="text-gray-500 text-[14px] ">
+                <div className="text-gray-500 text-[14px] pillat-normal">
                   <p className="">
                     survit is an end-to-end saas solution that enables
                     organizations to measure satisfaction level of their
@@ -254,7 +254,7 @@ const page = () => {
                   </p>
                 </div>
                 <div className="text-gray-500">
-                  <ul className="flex flex-col gap-2">
+                  <ul className="flex flex-col gap-2 pillat-normal">
                     <li>
                       <span className="text-green-500 mr-1">O</span> mobile
                       interface
@@ -293,11 +293,11 @@ const page = () => {
             <AnimationTextReversing flexDirection="row-reverse">
               <div className="vision-div flex flex-col gap-5 lg:w-6/12">
                 <div className="text-black">
-                  <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light">
+                  <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light pillat-normal">
                     mobits
                   </h2>
                 </div>
-                <div className="text-gray-500 text-[14px] ">
+                <div className="text-gray-500 text-[14px] pillat-normal">
                   <p className="">
                     mobits is a cloud-based platform to manage mobile marketing,
                     reporting and user engagement. it enables clients to manage
@@ -325,11 +325,11 @@ const page = () => {
             <AnimationTextReversing>
               <div className="vision-div flex flex-col gap-5 lg:w-6/12">
                 <div className="text-black">
-                  <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light">
+                  <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light pillat-normal">
                     influence.ai
                   </h2>
                 </div>
-                <div className="text-gray-500 text-[14px] ">
+                <div className="text-gray-500 text-[14px] pillat-normal">
                   <p className="">
                   one-stop shop ai powered influencer marketing solution for the data-driven age. a unified influencer marketing platform to make discovery, engagement, audience analysis, campaign management, real-time reporting and growth simple while giving you access to over 100 million influencers.
                   </p>

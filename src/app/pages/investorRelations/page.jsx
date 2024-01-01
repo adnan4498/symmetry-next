@@ -21,8 +21,10 @@ import contactAnimation from "../../../../public/symmetryAnimations/contactsAnim
 
 const page = () => {
   const aboutH2 = "investors relations";
-  const aboutText =
-    "we are dedicated to providing timely and accurate information about our company's performance, financial health, and strategic initiatives. explore the resources here to stay informed and connected as we navigate the journey of growth together.";
+  const aboutText ="we are dedicated to providing timely and accurate information about our company's performance, financial health, and strategic initiatives. explore the resources here to stay informed and connected as we navigate the journey of growth together.";
+
+  const bgColor = "bg-black"
+  const textColor = "text-white"
 
   const tabsData = [
     {
@@ -338,7 +340,7 @@ const page = () => {
         <AnimationTextReversing>
           <div className="vision-div flex flex-col gap-5 lg:w-6/12 my-10">
             <div className="text-black">
-              <h2 className="text-5xl lg:text-6xl 2xl:text-7xl font-light">
+              <h2 className="text-5xl lg:text-6xl 2xl:text-7xl font-light pillat-normal">
                 investor information
               </h2>
             </div>
@@ -346,8 +348,8 @@ const page = () => {
               {invesorsInfo.map((item, index) => (
                 <>
                   <div className="border-b border-green-300 flex flex-col lg:flex-row text-center lg:text-start lg:justify-between leading-[20px] pb-5 mt-5">
-                    <div className="lg:w-6/12 text-gray-600 ">{item.title}</div>
-                    <div className="lg:w-6/12 font-semibold text-black">{item.desc}</div>
+                    <div className="lg:w-6/12 text-gray-600 pillat-normal">{item.title}</div>
+                    <div className="lg:w-6/12 font-semibold text-black ">{item.desc}</div>
                   </div>
                 </>
               ))}
@@ -366,17 +368,17 @@ const page = () => {
         <AnimationTextReversing flexDirection="row-reverse">
           <div className="mission-div flex flex-col gap-5 lg:w-6/12">
             <div className="text-black">
-              <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light">
+              <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light pillat-normal">
                 governance
               </h2>
-              <h3 className="font-[400] mt-10 text-gray-500 text-xs">
+              <h3 className="font-[400] mt-10 text-gray-500 text-xs md:text-sm pillat-normal">
                 our governance framework is built on independence, diversity,
                 and ethical practices.
               </h3>
             </div>
             <div className="text-black">
               <h3 className="font-semibold"> independent board </h3>
-              <p className="text-gray-500 text-xs">
+              <p className="text-gray-500 text-xs pillat-normal">
                 the company has an independent board where five out of the total
                 seven members are independent directors. These directors are all
                 experienced corporate leaders or entrepreneurs and are highly
@@ -385,21 +387,21 @@ const page = () => {
             </div>
             <div className="text-black">
               <h3 className="font-semibold"> diverse board </h3>
-              <p className="text-gray-500 text-xs">
+              <p className="text-gray-500 text-xs pillat-normal">
                 the company has a diverse board where the members reflect age,
                 gender, industry experience, and geographic diversity.
               </p>
             </div>
             <div className="text-black">
               <h3 className="font-semibold"> board committees </h3>
-              <p className="text-gray-500 text-xs">
+              <p className="text-gray-500 text-xs pillat-normal">
                 the board sub-committees, led by independent directors, enforce
                 our Code of Corporate Governance.
               </p>
             </div>
             <div className="text-black">
               <h3 className="font-semibold">ISO 9001:2015 Certification</h3>
-              <p className="text-gray-500 text-xs">
+              <p className="text-gray-500 text-xs pillat-normal">
                 The company has achieved this certification that demonstrates
                 our commitment to high-quality management and governance.
               </p>
@@ -415,7 +417,7 @@ const page = () => {
                     <div className="lg:w-6/12 font-semibold text-sm text-black">
                       {item.name}
                     </div>
-                    <div className="lg:w-6/12 text-gray-500 font-[300] text-sm">
+                    <div className="lg:w-6/12 text-gray-500 font-[300] text-sm pillat-normal">
                       {item.post}
                     </div>
                   </div>
@@ -455,7 +457,7 @@ const page = () => {
                     <div className="lg:w-6/12 font-semibold text-sm text-black">
                       {item.name}
                     </div>
-                    <div className="lg:w-6/12 text-gray-500 font-[300] text-sm">
+                    <div className="lg:w-6/12 text-gray-500 font-[300] text-sm pillat-normal">
                       {item.post}
                     </div>
                   </div>
@@ -475,7 +477,7 @@ const page = () => {
         <AnimationTextReversing>
           <div className="vision-div flex flex-col gap-5 lg:w-6/12 my-10">
             <div className="text-black">
-              <h2 className="text-5xl lg:text-6xl 2xl:text-7xl font-light">
+              <h2 className="text-5xl lg:text-6xl 2xl:text-7xl font-light pillat-normal">
                 financial reports
               </h2>
             </div>
@@ -498,7 +500,7 @@ const page = () => {
         <AnimationTextReversing flexDirection="row-reverse">
           <div className="vision-div flex flex-col gap-5 lg:w-6/12 my-10">
             <div className="text-black">
-              <h2 className="text-5xl lg:text-6xl 2xl:text-7xl font-light">
+              <h2 className="text-5xl lg:text-6xl 2xl:text-7xl font-light pillat-normal">
                 corporate briefings
               </h2>
             </div>
@@ -521,7 +523,7 @@ const page = () => {
         <AnimationTextReversing>
           <div className="vision-div flex flex-col gap-5 lg:w-6/12 my-10">
             <div className="text-black">
-              <h2 className="text-5xl lg:text-6xl 2xl:text-7xl font-light">
+              <h2 className="text-5xl lg:text-6xl 2xl:text-7xl font-light pillat-normal">
                 notices & announcements
               </h2>
             </div>
@@ -544,14 +546,14 @@ const page = () => {
         <AnimationTextReversing flexDirection="row-reverse">
           <div className="vision-div flex flex-col gap-5 lg:w-6/12 my-10">
             <div className="text-black">
-              <h2 className="text-5xl lg:text-6xl 2xl:text-7xl font-light">
+              <h2 className="text-5xl lg:text-6xl 2xl:text-7xl font-light pillat-normal">
                 important documents
               </h2>
             </div>
 
             <div className="">
               <div className="text flex flex-col text-black">
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-3 xl:grid-cols-4 lg:gap-10  max-w-[1000px] ">
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-3 xl:grid-cols-4 lg:gap-10  max-w-[1000px] pillat-normal">
                   {importantDocumentsData.map((item, index) => (
                     <>
                       {[
@@ -577,7 +579,7 @@ const page = () => {
                                     </div>
                                   </div>
                                   <div className="w-36">
-                                    <p className="text-sm !leading-[20px] mt-3 text-gray-600 lg:text-lg text-center">
+                                    <p className="text-sm !leading-[20px] mt-3 text-gray-600 lg:text-lg text-center pillat-normal">
                                       {item[checkItem]}
                                     </p>
                                   </div>
@@ -604,7 +606,7 @@ const page = () => {
         <AnimationTextReversing>
           <div className="vision-div flex flex-col gap-5 lg:w-6/12 my-10">
             <div className="text-black">
-              <h2 className="text-5xl lg:text-6xl 2xl:text-7xl font-light">
+              <h2 className="text-5xl lg:text-6xl 2xl:text-7xl font-light pillat-normal">
                 investor contacts
               </h2>
             </div>
@@ -617,7 +619,7 @@ const page = () => {
               {investorContacts.map((item, index) => (
                 <>
                   <div className="border-b border-green-300 flex flex-col lg:flex-row text-center lg:text-start lg:justify-between leading-[20px] pb-5 mt-5">
-                    <div className="lg:w-6/12 text-gray-500 ">{item.title}</div>
+                    <div className="lg:w-6/12 text-gray-500 pillat-normal ">{item.title}</div>
                     <div className="lg:w-6/12 font-semibold">{item.desc}</div>
                   </div>
                 </>
@@ -631,7 +633,7 @@ const page = () => {
               {investorContacts.map((item, index) => (
                 <>
                   <div className="border-b border-green-300 flex flex-col lg:flex-row text-center lg:text-start lg:justify-between leading-[20px] pb-5 mt-5">
-                    <div className="lg:w-6/12 text-gray-500 ">{item.title}</div>
+                    <div className="lg:w-6/12 text-gray-500 pillat-normal">{item.title}</div>
                     <div className="lg:w-6/12 font-semibold">{item.desc}</div>
                   </div>
                 </>
@@ -639,7 +641,7 @@ const page = () => {
             </div>
 
             <div className="mt-20">
-              <p className="text-gray-500">
+              <p className="text-gray-500 pillat-normal">
                 <span className="font-semibold text-black">disclaimer :</span>{" "}
                 in case your complaint has not been properly redressed by us,
                 you may lodge your complaint with Securities and Exchange
@@ -665,7 +667,7 @@ const page = () => {
             />             </div>
         </AnimationTextReversing>
 
-        <ConnectWithUs/>
+        <ConnectWithUs bgColor={bgColor} textColor={textColor}/>
         <Footer/>
       </div>
     </>

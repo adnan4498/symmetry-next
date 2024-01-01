@@ -71,7 +71,7 @@ const Navbar = () => {
             </Link>
 
             <div className="ss pillat-thin lg:block hidden">
-              <ul className="flex gap-3 xl:gap-5 text-[1.2vw] 2xl:text-xl rainbow-text ">
+              <ul className="flex gap-3 xl:gap-5 text-[1.2vw] 2xl:text-xl rainbow-text cursor-pointer">
                 <li>our heritage</li>
                 <li>business divisions</li>
                 <li>brands & products</li>

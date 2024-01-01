@@ -49,7 +49,7 @@ const Footer = () => {
           <div className="hidden lg:block mx-10">
             <div className="gap-4 grid grid-cols-7">
               <div className="text-black ">
-                <h2 className="font-bold text-lg min-h-[70px] mb-2 pillat-normal">
+                <h2 className="font-bold text-lg min-h-[70px] mb-2 ">
                   about us
                 </h2>
                 <ul className="text-gray-500 flex flex-col gap-2 pillat-thin">
@@ -65,7 +65,7 @@ const Footer = () => {
                 <h2 className="font-semibold text-lg min-h-[70px] mb-2">
                   investor relations
                 </h2>
-                <ul className="text-gray-500 flex flex-col gap-2 ">
+                <ul className="text-gray-500 flex flex-col gap-2 pillat-thin ">
                   <li>company information</li>
                   <li>governance</li>
                   <li>financial reports</li>
@@ -80,7 +80,7 @@ const Footer = () => {
                 <h2 className="font-semibold text-lg min-h-[70px] mb-2">
                   business divisions
                 </h2>
-                <ul className="text-gray-500 flex flex-col gap-2">
+                <ul className="text-gray-500 flex flex-col gap-2 pillat-thin">
                   <li>transformation</li>
                   <li>interactive marketing</li>
                   <li>commerce</li>
@@ -92,7 +92,7 @@ const Footer = () => {
                 <h2 className="font-semibold text-lg min-h-[70px] mb-2">
                   brands & products
                 </h2>
-                <ul className="text-gray-500 flex flex-col gap-2">
+                <ul className="text-gray-500 flex flex-col gap-2 pillat-thin">
                   <li>symmetry digital</li>
                   <li>iris digital</li>
                   <li>coral</li>
@@ -108,7 +108,7 @@ const Footer = () => {
                 <h2 className="font-semibold text-lg min-h-[70px] mb-2">
                   clients
                 </h2>
-                <ul className="text-gray-500 flex flex-col gap-2">
+                <ul className="text-gray-500 flex flex-col gap-2 pillat-thin">
                   <li>telecom</li>
                   <li>banking & finance</li>
                   <li>fmcg</li>
@@ -122,7 +122,7 @@ const Footer = () => {
                 <h2 className="font-semibold text-lg min-h-[70px] mb-2">
                   affiliation & partnerships
                 </h2>
-                <ul className="text-gray-500 flex flex-col gap-2">
+                <ul className="text-gray-500 flex flex-col gap-2 pillat-thin">
                   <li>google</li>
                   <li>microsoft</li>
                   <li>alibaba</li>
@@ -134,7 +134,7 @@ const Footer = () => {
                 <h2 className="font-semibold text-lg min-h-[70px] mb-2">
                   contact us
                 </h2>
-                <ul className="text-gray-500 flex flex-col gap-2">
+                <ul className="text-gray-500 flex flex-col gap-2 pillat-thin">
                   <li>karachi</li>
                  <Link href="/pages/dummy?islamabad"><li>islamabad</li></Link> 
                   <li>lahore</li>
@@ -153,7 +153,7 @@ const Footer = () => {
               </div>
               <div className="text-black">
                 <h2 className="font-[500] text-lg">investors complaints</h2>
-                <div className="flex gap-10 text-sm">
+                <div className="flex gap-10 text-sm pillat-normal">
                   <p>+92 21 3534 0688 ext. 105</p>
                   <p>[email protected]</p>
                 </div>
@@ -161,7 +161,7 @@ const Footer = () => {
             </div>
 
             <div className="text-black">
-              <h2 className="text-xl">follow us</h2>
+              <h2 className="text-xl pillat-normal">follow us</h2>
               <div className="flex justify-center items-center gap-2">
                 <div className="border border-gray-400 rounded-md">
                   <Image src={linkdinImg} width={30} />

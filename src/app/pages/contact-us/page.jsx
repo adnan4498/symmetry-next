@@ -71,12 +71,12 @@ const page = () => {
           <AnimationTextReversing>
             <div className="company-div flex flex-col gap-5 lg:w-6/12">
               <div className="text-black">
-                <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light">
+                <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light pillat-normal">
                   karachi
                 </h2>
               </div>
               <div className="text-gray-500">
-                <ul className="flex flex-col gap-2">
+                <ul className="flex flex-col gap-2 pillat-normal">
                   <li>
                     <span className="text-green-500 mr-1">O</span> Plot No.
                     56-A, Khalid Commercial, Street 2, Phase 7 Ext., D.H.A,
@@ -107,7 +107,7 @@ const page = () => {
           </AnimationTextReversing>
 
           <AnimationTextReversing flexDirection="row-reverse">
-            <div className="company-div flex flex-col gap-5 lg:w-6/12">
+            <div className="company-div flex flex-col gap-5 lg:w-6/12 pillat-normal">
               <div className="text-black">
                 <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light">
                   islamabad
@@ -141,7 +141,7 @@ const page = () => {
           </AnimationTextReversing>
 
           <AnimationTextReversing>
-            <div className="company-div flex flex-col gap-5 lg:w-6/12">
+            <div className="company-div flex flex-col gap-5 lg:w-6/12 pillat-normal">
               <div className="text-black">
                 <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light">
                   lahore

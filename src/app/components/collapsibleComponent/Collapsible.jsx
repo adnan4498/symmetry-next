@@ -16,7 +16,7 @@ const CollapsibleComp = ({ dataArr }) => {
   return (
     <>
       {dataArr.map((item, index) => (
-        <Collapsible key={item.id} trigger={item.title}>
+        <Collapsible key={item.id} trigger={item.title} className="pillat-normal">
           <div className="grid grid-cols-2 sm:grid-cols-3 max-w-[1000px] ">
             {[
               "annualReport",
@@ -45,7 +45,7 @@ const CollapsibleComp = ({ dataArr }) => {
                           </div>
                         </div>
                         <div className="w-36">
-                          <p className="text-sm !leading-[20px] mt-3 text-gray-600 lg:text-lg text-center">{item[quarter]}</p>
+                          <p className="text-sm !leading-[20px] mt-3 text-gray-600 lg:text-lg text-center pillat-normal">{item[quarter]}</p>
                           {/* {console.log(item.id, "collapsed id")} */}
                         </div>
                       </div>

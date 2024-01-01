@@ -239,7 +239,7 @@ const page = () => {
 
         <div className="md:mx-12 sm:ml-2 ml-2">
           <div className="mx-auto lg:mt-10 ">
-            <h2 className="text-4xl lg:text-6xl mt-10">telecom</h2>
+            <h2 className="text-4xl lg:text-6xl mt-10 pillat-normal">telecom</h2>
             <div className="w-[90%] mx-auto sm:mt-12 mt-3">
               <SimpleSwipper
                 swipperContent={telecomSwipperContent}
@@ -252,7 +252,7 @@ const page = () => {
 
         <div className="md:mx-12 sm:ml-2 ml-2 mt-14">
           <div className="mx-auto">
-            <h2 className="text-4xl lg:text-6xl">banking & finance</h2>
+            <h2 className="text-4xl lg:text-6xl pillat-normal">banking & finance</h2>
             <div className="w-[90%] mx-auto sm:mt-12 mt-3">
               <SimpleSwipper
                 swipperContent={bankingSwipperContent}
@@ -265,7 +265,7 @@ const page = () => {
 
         <div className="md:mx-12 sm:ml-2 ml-2 mt-14">
           <div className="mx-auto lg:mt-10 ">
-            <h2 className="text-4xl lg:text-6xl">fmcg</h2>
+            <h2 className="text-4xl lg:text-6xl pillat-normal">fmcg</h2>
             <div className="w-[90%] mx-auto sm:mt-12 mt-3">
               <SimpleSwipper
                 swipperContent={fmcgSwipperContent}
@@ -278,7 +278,7 @@ const page = () => {
 
         <div className="md:mx-12 sm:ml-2 ml-2 mt-14">
           <div className="mx-auto lg:mt-10 ">
-            <h2 className="text-4xl lg:text-6xl">real estate</h2>
+            <h2 className="text-4xl lg:text-6xl pillat-normal">real estate</h2>
             <div className="w-[90%] mx-auto flex items-center gap-11 mt-12">
               {realEstateContent.map((item, index) => (
                 <>
@@ -297,7 +297,7 @@ const page = () => {
 
         <div className="md:mx-12 sm:ml-2 ml-2 mt-14 lg:mt-44">
           <div className="mx-auto lg:mt-10 ">
-            <h2 className="text-4xl lg:text-6xl">pharmaceutical</h2>
+            <h2 className="text-4xl lg:text-6xl pillat-normal">pharmaceutical</h2>
             <div className="w-[90%] mx-auto flex items-center gap-11 mt-12">
               {pharmaceuticalContent.map((item, index) => (
                 <>
@@ -317,7 +317,7 @@ const page = () => {
 
         <div className="md:mx-12 sm:ml-2 ml-2 mt-14 lg:mt-44">
           <div className="mx-auto lg:mt-10 ">
-            <h2 className="text-4xl lg:text-6xl">others</h2>
+            <h2 className="text-4xl lg:text-6xl pillat-normal">others</h2>
             <div className="w-[90%] mx-auto sm:mt-12 mt-3">
               <SimpleSwipper
                 swipperContent={othersSwipperContent}
