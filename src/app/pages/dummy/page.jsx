@@ -9,46 +9,39 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Page = () => {
   useEffect(() => {
-    var colors = ["#f38630", "#6fb936", "#ccc", "#6fb936"];
+    const root = document.documentElement;
+    const marqueeElementsDisplayed = getComputedStyle(root).getPropertyValue(
+      "--marquee-elements-displayed"
+    );
+    const marqueeContent = document.querySelector("ul.marquee-content");
 
-    //initially colorize each box and position in a row
-    gsap.set(".box", {
-      backgroundColor: (i) => colors[i % colors.length],
-      x: (i) => i * 50,
-    });
+    root.style.setProperty(
+      "--marquee-elements",
+      marqueeContent.children.length
+    );
 
-    gsap.to(".box", {
-      duration: 600,
-      ease: "none",
-      x: "+=500",
-      modifiers: {
-        x: gsap.utils.unitize((x) => x % 500),
-      },
-      repeat: -1,
-      onUpdate: () => {
-        document.querySelectorAll('.box').forEach((box, index) => {
-          console.log(`Box ${index + 1}: ${gsap.getProperty(box, 'x')}`);
-        });
-      },
-    });
-    
+    for (let i = 0; i < marqueeElementsDisplayed; i++) {
+      marqueeContent.appendChild(marqueeContent.children[i].cloneNode(true));
+    }
   }, []);
 
   return (
     <>
-      <div class="wrapper">
-        <div class="boxes">
-          <div class="box">1</div>
-          <div class="box">2</div>
-          <div class="box">3</div>
-          <div class="box">4</div>
-          <div class="box">5</div>
-          <div class="box">6</div>
-          <div class="box">7</div>
-          <div class="box">8</div>
-          <div class="box">9</div>
-          <div class="box">10</div>
-        </div>
+      <div class="marquee">
+        <ul class="marquee-content gap-10">
+          <li className="!text-[160px] !2xl:text-[200px] ">skillfully</li>
+          <li className="!text-[160px] !2xl:text-[200px] ">solving</li>
+          <li className="!text-[160px] !2xl:text-[200px]  ">challenges</li> 
+          <li className="!text-[160px] !2xl:text-[200px] ">skillfully</li>
+          <li className="!text-[160px] !2xl:text-[200px] ">solving</li>
+          <li className="!text-[160px] !2xl:text-[200px] ">challenges</li>
+          <li className="!text-[160px] !2xl:text-[200px] ">skillfully</li>
+          <li className="!text-[160px] !2xl:text-[200px] ">solving</li>
+          <li className="!text-[160px] !2xl:text-[200px] ">challenges</li>
+          <li className="!text-[160px] !2xl:text-[200px] ">skillfully</li>
+          <li className="!text-[160px] !2xl:text-[200px] ">solving</li>
+          <li className="!text-[160px] !2xl:text-[200px] ">challenges</li>
+        </ul>
       </div>
     </>
   );

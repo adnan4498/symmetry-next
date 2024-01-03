@@ -12,6 +12,9 @@ module.exports = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+        backgroundColor: {
+        'swipper-custom': 'radial-gradient(at right top, rgb(241, 229, 34) 10%, rgb(90, 166, 61) 35%, rgb(13, 110, 133) 72%)',
+      },
     },
   },
   plugins: [],

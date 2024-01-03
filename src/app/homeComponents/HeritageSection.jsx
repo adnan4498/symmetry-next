@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
+import {Autoplay ,Navigation } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -99,11 +99,14 @@ const HeritageSection = () => {
                 spaceBetween: 35,
               },
             }}
+            modules={[Autoplay ,Navigation]}
             speed={2000}
             loop={true}
             navigation={true}
+            autoplay={{
+              delay : 500
+            }}
             centeredSlides={true}
-            modules={[Navigation]}
             className="mySwiper "
           >
             {heritageSwipperContent.map((item, index) => (

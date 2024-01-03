@@ -1,8 +1,8 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
+import { Autoplay, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 
@@ -15,7 +15,12 @@ const HeadingAndSwipper = ({
   slidesPerView,
 }) => {
 
-  
+  const [active, setActive] = useState(0)
+
+  const handleActive = (swiper) =>{
+    setActive(swiper.realIndex)
+  }
+
 
   return (
     <>
@@ -69,23 +74,27 @@ const HeadingAndSwipper = ({
                 spaceBetween: 20,
               },
             }}
+            modules={[Autoplay , Navigation]}
             speed={2000}
             loop={true}
-            navigation={true}
+            onSlideChange={handleActive}
+            autoplay = {{
+              delay : 1000
+            }}
+            // navigation={true}
             centeredSlides={true}
-            modules={[Navigation]}
             className="mySwiper "
           >
             {swipperContent.map((item, index) => (
               <>
-                <SwiperSlide>
-                  <div className="h-[500px]  ">
-                    <div className="border border-gray-400 rounded-lg flex flex-col justify-start items-start py-[35px] px-[20px] h-[300px] hover:bg-green-400">
+                <SwiperSlide key={item.id}>
+                  <div className={` rounded-lg swipper-hover-class transition-all ease-in-out duration-300 `}>
+                    <div className={`border border-gray-400 rounded-lg flex flex-col justify-start items-start py-[35px] px-[20px] h-[300px]   ${active == item.id ? 'swipper-active-class transition-all duration-500 ease-in-out' : ''} `}>
                       <div className="">
-                        <h2 className="text-3xl w-[120px] xl:w-[170px] text-[#13a772] custom-font-family flex items-end min-h-[110px] mb-2 leading-[30px]">
+                        <h2 className="text-3xl w-[120px] xl:w-[170px]  flex items-end min-h-[110px] mb-2 leading-[30px] pillat-thin">
                           {item.h2}
                         </h2>
-                        <p className="text-gray-500 text-xs leading-[17px] ">{item.text}</p>
+                        <p className=" text-xs leading-[17px] pillat-normal">{item.text}</p>
                       </div>
                       <div>
                       </div>
