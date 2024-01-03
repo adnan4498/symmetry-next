@@ -18,14 +18,20 @@ const Page = () => {
     });
 
     gsap.to(".box", {
-      duration: 5,
+      duration: 600,
       ease: "none",
-      x: "+=500", //move each box 500px to right
+      x: "+=500",
       modifiers: {
-        x: gsap.utils.unitize((x) => x % 500), //force x value to be between 0 and 500 using modulus
+        x: gsap.utils.unitize((x) => x % 500),
       },
       repeat: -1,
+      onUpdate: () => {
+        document.querySelectorAll('.box').forEach((box, index) => {
+          console.log(`Box ${index + 1}: ${gsap.getProperty(box, 'x')}`);
+        });
+      },
     });
+    
   }, []);
 
   return (
