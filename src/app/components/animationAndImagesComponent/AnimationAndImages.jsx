@@ -17,7 +17,7 @@ const AnimationAndImages = ({
   slidesPerView,
   swipperGap,
   navigation,
-  animation
+  animation,
 }) => {
   return (
     <>
@@ -26,7 +26,9 @@ const AnimationAndImages = ({
           <div className="lg:w-[62%]">
             <div className="mt-5">
               <div className="border-b border-green-500 pt-6">
-                <p className="text-3xl lg:text-5xl 2xl:text-7xl mb-4 text-black pillat-normal">{aasH3}</p>
+                <p className="text-3xl lg:text-5xl 2xl:text-7xl mb-4 text-black pillat-normal">
+                  {aasH3}
+                </p>
               </div>
               <div className=" w-full mt-4">
                 <span className="rainbow-text text-4xl sm:text-6xl md:text-5xl lg:text-6xl 2xl:text-8xl pillat-normal">
@@ -54,7 +56,7 @@ const AnimationAndImages = ({
               </div>
             </div>
 
-            <div className="mb-10 mt-10 md:mx-auto">
+            <div className="mb-10 mt-10 md:mx-auto swipper-icons-color-toggle cursor-pointer">
               <Swiper
                 spaceBetween={20}
                 slidesPerView={slidesPerView}
@@ -69,14 +71,14 @@ const AnimationAndImages = ({
                   },
                   1024: {
                     slidesPerView: slidesPerView,
-                    spaceBetween: 20,
+                    spaceBetween: 60,
                   },
                 }}
                 speed={2000}
                 loop={true}
-                navigation={true}
-                centeredSlides={true}
-                modules={[Navigation]}
+                // navigation={true}
+                centeredSlides={false}
+                // modules={[Navigation]}
                 className="mySwiper "
               >
                 {swipperContent.map((item, index) => (
@@ -100,17 +102,17 @@ const AnimationAndImages = ({
                       }}
                       speed={2000}
                       loop={true}
-                      navigation={true}
+                      navigation={false}
                       centeredSlides={true}
-                      modules={[Navigation]}
+                      // modules={[Navigation]}
                       className="mySwiper "
                     >
                       {swipperContent.map((item, index) => (
                         <>
                           <SwiperSlide>
                             <div className="h-[300px] ">
-                              <div className="border border-gray-400 rounded-md">
-                                <div>
+                              <div className="flex justify-center items-center border border-gray-400 rounded-md">
+                                <div className=" md:w-8/12 md:h-28 flex justify-center items-center ">
                                   <Image src={item.img} />
                                 </div>
                               </div>

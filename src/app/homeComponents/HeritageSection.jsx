@@ -19,7 +19,7 @@ const heritageSwipperContent = [
   {
     id: 1,
     h2: "1000",
-    h3: "s",
+    h3: "",
     text: "of experiences delivered",
   },
   {

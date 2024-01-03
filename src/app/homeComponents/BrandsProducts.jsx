@@ -5,6 +5,7 @@ import influenseLogo from "../../../public/influense-small-logo.webp";
 import TextSlidingComponent from "../components/textSlidingComponent/TextSlidingComponent";
 import AnimationAndImages from "../components/animationAndImagesComponent/AnimationAndImages";
 import affiliationAnimation from "../../../public/symmetryAnimations/affiliationAnimation.json"
+import symmetryImg from "../../../public/symmetry-swipper-img.webp"
 
 const BrandsProducts = () => {
   {
@@ -28,7 +29,7 @@ const BrandsProducts = () => {
     },
     {
       id: 2,
-      img: irisLogo,
+      img: symmetryImg,
     },
     {
       id: 3,
@@ -44,7 +45,7 @@ const BrandsProducts = () => {
     },
     {
       id: 6,
-      img: irisLogo,
+      img: symmetryImg,
     },
     {
       id: 7,
@@ -56,7 +57,7 @@ const BrandsProducts = () => {
     },
     {
       id: 9,
-      img: influenseLogo,
+      img: symmetryImg,
     },
     {
       id: 10,
@@ -64,7 +65,7 @@ const BrandsProducts = () => {
     },
     {
       id: 11,
-      img: influenseLogo,
+      img: symmetryImg,
     },
   ];
 
@@ -128,7 +129,7 @@ const BrandsProducts = () => {
           aasKnowmore={aasKnowmore}
           swipperContent={swipperContent}
           slidesPerView={5}
-          swipperGap={100}
+          swipperGap={40}
           navigation={false}
           animation={affiliationAnimation}
         />

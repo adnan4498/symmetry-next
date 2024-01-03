@@ -44,28 +44,60 @@ body {
   background: white;
 }
 
+@keyframes rainbow-text-simple-animation {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+.swipper-icons-color-toggle img {
+  -webkit-filter: grayscale(100%) contrast(0.8);
+  filter: grayscale(100%);
+  opacity: 50%;
+  transition: all ease-in-out;
+  transition-duration: 500ms;
+}
+
 .swipper-hover-class {
-  background: radial-gradient(at right top, rgb(250, 250, 250) 0%, rgb(250, 250, 250) 35%, rgb(250, 250, 250) 100%);
+  background: radial-gradient(
+    at right top,
+    rgb(250, 250, 250) 0%,
+    rgb(250, 250, 250) 35%,
+    rgb(250, 250, 250) 100%
+  );
   transition: all ease-in-out 500ms; /* Combine transition properties */
   transition-duration: 500ms;
-  color: rgb(102, 102, 102) ;
+  color: rgb(102, 102, 102);
 }
 
 .swipper-hover-class:hover {
-  background: radial-gradient(at right top, rgb(241, 229, 34) 10%, rgb(90, 166, 61) 35%, rgb(13, 110, 133) 72%);
+  background: radial-gradient(
+    at right top,
+    rgb(241, 229, 34) 10%,
+    rgb(90, 166, 61) 35%,
+    rgb(13, 110, 133) 72%
+  );
   color: white;
   transition: all ease-in-out 500ms; /* Combine transition properties */
   transition-duration: 500ms;
 }
 
 .swipper-active-class {
-  background: radial-gradient(at right top, rgb(241, 229, 34) 10%, rgb(90, 166, 61) 35%, rgb(13, 110, 133) 72%);
+  background: radial-gradient(
+    at right top,
+    rgb(241, 229, 34) 10%,
+    rgb(90, 166, 61) 35%,
+    rgb(13, 110, 133) 72%
+  );
   color: white;
   transition: all ease-in-out 500ms; /* Combine transition properties */
   transition-duration: 500ms;
 }
 
-.active-slide{
+.active-slide {
   background-color: blue !important;
 }
 
@@ -85,11 +117,40 @@ body {
   animation: rainbow-text-simple-animation 10s linear infinite;
 }
 
-@keyframes rainbow-text-simple-animation {
-  0% {
-    background-position: 0% 0%;
-  }
-  100% {
-    background-position: 100% 100%;
-  }
+.swipper-icons-color-toggle img:hover {
+  -webkit-filter: grayscale(0%);
+  filter: grayscale(0%);
+  opacity: 100%;
+}
+
+.footer-text-color-toggle:hover {
+  background-image: linear-gradient(
+    45deg,
+    rgba(13, 83, 189, 1) 0%,
+    rgba(19, 176, 168, 1) 30%,
+    rgba(21, 176, 60, 1) 50%,
+    rgba(93, 156, 17, 1) 70%,
+    rgba(242, 213, 0, 1) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.lets-discuss-btn {
+  color: black;
+  transition: all ease-in-out 500ms, background 500ms; /* Combine transition properties */
+  background: white; /* Set default background color */
+}
+
+.lets-discuss-btn:hover {
+  transition: all ease-in-out 500ms, background 500ms; /* Combine transition properties */
+  background: radial-gradient(
+    at right top,
+    rgb(241, 229, 34) 10%,
+    rgb(90, 166, 61) 35%,
+    rgb(13, 110, 133) 72%
+  );
+  color: white;
+  /* transition-duration: 500ms; */
 }

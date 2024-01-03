@@ -86,9 +86,9 @@ const AboutUs = ({titleWidth , autoMx}) => {
           </div>
         </div>
 
-        <div className="flex justify-center mt-20">
-          <div className="border border-gray-400 rounded-lg w-40 flex justify-center items-center pillat-normal">
-            <button className="text-black py-2">let's discuss</button>
+        <div className="flex justify-center mt-20 ">
+          <div className="border border-gray-400 rounded-lg w-40 flex justify-center items-center pillat-normal cursor-pointer lets-discuss-btn">
+            <button className="py-2">let's discuss</button>
           </div>
         </div>
       </div>

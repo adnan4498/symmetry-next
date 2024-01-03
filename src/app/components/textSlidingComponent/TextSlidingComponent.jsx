@@ -4,7 +4,7 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
+import { Autoplay , Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "../../homeComponents/Dummy.css";
@@ -108,18 +108,42 @@ const TextSlidingComponent = ({
 
         <div class="marquee">
           <ul class="marquee-content gap-10">
-            <li className="!text-[160px] !2xl:text-[200px]  !text-black">skillfully</li>
-            <li className="!text-[160px] !2xl:text-[200px] rainbow-text ">solving</li>
-            <li className="!text-[160px] !2xl:text-[200px]  rainbow-text  ">challenges</li>
-            <li className="!text-[160px] !2xl:text-[200px]  !text-black">skillfully</li>
-            <li className="!text-[160px] !2xl:text-[200px]     rainbow-text">solving</li>
-            <li className="!text-[160px] !2xl:text-[200px]  rainbow-text ">challenges</li>
-            <li className="!text-[160px] !2xl:text-[200px]  !text-black">skillfully</li>
-            <li className="!text-[160px] !2xl:text-[200px]    rainbow-text">solving</li>
-            <li className="!text-[160px] !2xl:text-[200px]  rainbow-text ">challenges</li>
-            <li className="!text-[160px] !2xl:text-[200px]  !text-black">skillfully</li>
-            <li className="!text-[160px] !2xl:text-[200px]   rainbow-text">solving</li>
-            <li className="!text-[160px] !2xl:text-[200px]   rainbow-text">challenges</li>
+            <li className="!text-[160px] !2xl:text-[200px]  !text-black">
+              skillfully
+            </li>
+            <li className="!text-[160px] !2xl:text-[200px] rainbow-text ">
+              solving
+            </li>
+            <li className="!text-[160px] !2xl:text-[200px]  rainbow-text  ">
+              challenges
+            </li>
+            <li className="!text-[160px] !2xl:text-[200px]  !text-black">
+              skillfully
+            </li>
+            <li className="!text-[160px] !2xl:text-[200px]     rainbow-text">
+              solving
+            </li>
+            <li className="!text-[160px] !2xl:text-[200px]  rainbow-text ">
+              challenges
+            </li>
+            <li className="!text-[160px] !2xl:text-[200px]  !text-black">
+              skillfully
+            </li>
+            <li className="!text-[160px] !2xl:text-[200px]    rainbow-text">
+              solving
+            </li>
+            <li className="!text-[160px] !2xl:text-[200px]  rainbow-text ">
+              challenges
+            </li>
+            <li className="!text-[160px] !2xl:text-[200px]  !text-black">
+              skillfully
+            </li>
+            <li className="!text-[160px] !2xl:text-[200px]   rainbow-text">
+              solving
+            </li>
+            <li className="!text-[160px] !2xl:text-[200px]   rainbow-text">
+              challenges
+            </li>
           </ul>
         </div>
 
@@ -134,7 +158,7 @@ const TextSlidingComponent = ({
         </div>
 
         {isImageSwipper && (
-          <div className="mt-9">
+          <div className="mt-9 swipper-icons-color-toggle">
             <Swiper
               spaceBetween={20}
               slidesPerView={1.5}
@@ -154,17 +178,20 @@ const TextSlidingComponent = ({
               }}
               speed={2000}
               loop={true}
-              navigation={true}
+              // navigation={true}
               centeredSlides={true}
-              modules={[Navigation]}
+              modules={[Autoplay]}
+              autoplay = {{
+                delay : 500
+              }}
               className="mySwiper "
             >
               {swipperContent.map((item, index) => (
                 <>
                   <SwiperSlide>
-                    <div className="h-[300px] ">
-                      <div className="border border-gray-400 rounded-md">
-                        <div>
+                    <div className="cursor-pointer">
+                      <div className="flex justify-center items-center border border-gray-400 rounded-md">
+                        <div className=" md:w-10/12 md:h-24 flex justify-center items-center ">
                           <Image src={item.img} />
                         </div>
                       </div>

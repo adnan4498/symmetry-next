@@ -49,96 +49,96 @@ const Footer = () => {
           <div className="hidden lg:block mx-10">
             <div className="gap-4 grid grid-cols-7">
               <div className="text-black ">
-                <h2 className="font-bold text-lg min-h-[70px] mb-2 ">
+                <h2 className="font-bold text-lg min-h-[70px] mb-2 footer-text-color-toggle cursor-pointer">
                   about us
                 </h2>
                 <ul className="text-gray-500 flex flex-col gap-2 pillat-thin">
-                  <li>company</li>
-                  <li>vision</li>
-                  <li>mission</li>
-                  <li>board of directors</li>
-                  <li>initiatives</li>
+                  <li className="footer-text-color-toggle cursor-pointer">company</li>
+                  <li className="footer-text-color-toggle cursor-pointer">vision</li>
+                  <li className="footer-text-color-toggle cursor-pointer">mission</li>
+                  <li className="footer-text-color-toggle cursor-pointer">board of directors</li>
+                  <li className="footer-text-color-toggle cursor-pointer">initiatives</li>
                 </ul>
               </div>
 
               <div className="text-black">
-                <h2 className="font-semibold text-lg min-h-[70px] mb-2">
+                <h2 className="font-semibold text-lg min-h-[70px] mb-2 footer-text-color-toggle cursor-pointer ">
                   investor relations
                 </h2>
                 <ul className="text-gray-500 flex flex-col gap-2 pillat-thin ">
-                  <li>company information</li>
-                  <li>governance</li>
-                  <li>financial reports</li>
-                  <li>corporate briefings</li>
-                  <li>notices & annoucements</li>
-                  <li>important documents</li>
-                  <li>investor contacts</li>
+                  <li className="footer-text-color-toggle cursor-pointer">company information</li>
+                  <li className="footer-text-color-toggle cursor-pointer">governance</li>
+                  <li className="footer-text-color-toggle cursor-pointer">financial reports</li>
+                  <li className="footer-text-color-toggle cursor-pointer">corporate briefings</li>
+                  <li className="footer-text-color-toggle cursor-pointer">notices & annoucements</li>
+                  <li className="footer-text-color-toggle cursor-pointer">important documents</li>
+                  <li className="footer-text-color-toggle cursor-pointer">investor contacts</li>
                 </ul>
               </div>
 
               <div className="text-black">
-                <h2 className="font-semibold text-lg min-h-[70px] mb-2">
+                <h2 className="font-semibold text-lg min-h-[70px] mb-2 footer-text-color-toggle cursor-pointer">
                   business divisions
                 </h2>
                 <ul className="text-gray-500 flex flex-col gap-2 pillat-thin">
-                  <li>transformation</li>
-                  <li>interactive marketing</li>
-                  <li>commerce</li>
-                  <li>mobility</li>
+                  <li className="footer-text-color-toggle cursor-pointer">transformation</li>
+                  <li className="footer-text-color-toggle cursor-pointer">interactive marketing</li>
+                  <li className="footer-text-color-toggle cursor-pointer">commerce</li>
+                  <li className="footer-text-color-toggle cursor-pointer">mobility</li>
                 </ul>
               </div>
 
               <div className="text-black">
-                <h2 className="font-semibold text-lg min-h-[70px] mb-2">
+                <h2 className="font-semibold text-lg min-h-[70px] mb-2 footer-text-color-toggle cursor-pointer">
                   brands & products
                 </h2>
                 <ul className="text-gray-500 flex flex-col gap-2 pillat-thin">
-                  <li>symmetry digital</li>
-                  <li>iris digital</li>
-                  <li>coral</li>
-                  <li>coral performance</li>
-                  <li>appabilities</li>
-                  <li>survit</li>
-                  <li>mobits</li>
-                  <li>influense ai</li>
+                  <li className="footer-text-color-toggle cursor-pointer">symmetry digital</li>
+                  <li className="footer-text-color-toggle cursor-pointer">iris digital</li>
+                  <li className="footer-text-color-toggle cursor-pointer">coral</li>
+                  <li className="footer-text-color-toggle cursor-pointer">coral performance</li>
+                  <li className="footer-text-color-toggle cursor-pointer">appabilities</li>
+                  <li className="footer-text-color-toggle cursor-pointer">survit</li>
+                  <li className="footer-text-color-toggle cursor-pointer">mobits</li>
+                  <li className="footer-text-color-toggle cursor-pointer">influense ai</li>
                 </ul>
               </div>
 
               <div className="text-black">
-                <h2 className="font-semibold text-lg min-h-[70px] mb-2">
+                <h2 className="font-semibold text-lg min-h-[70px] mb-2 footer-text-color-toggle cursor-pointer">
                   clients
                 </h2>
                 <ul className="text-gray-500 flex flex-col gap-2 pillat-thin">
-                  <li>telecom</li>
-                  <li>banking & finance</li>
-                  <li>fmcg</li>
-                  <li>real estate</li>
-                  <li>pharmaceutical</li>
-                  <li>others</li>
+                  <li className="footer-text-color-toggle cursor-pointer">telecom</li>
+                  <li className="footer-text-color-toggle cursor-pointer">banking & finance</li>
+                  <li className="footer-text-color-toggle cursor-pointer">fmcg</li>
+                  <li className="footer-text-color-toggle cursor-pointer">real estate</li>
+                  <li className="footer-text-color-toggle cursor-pointer">pharmaceutical</li>
+                  <li className="footer-text-color-toggle cursor-pointer">others</li>
                 </ul>
               </div>
 
               <div className="text-black">
-                <h2 className="font-semibold text-lg min-h-[70px] mb-2">
+                <h2 className="font-semibold text-lg min-h-[70px] mb-2 footer-text-color-toggle cursor-pointer">
                   affiliation & partnerships
                 </h2>
                 <ul className="text-gray-500 flex flex-col gap-2 pillat-thin">
-                  <li>google</li>
-                  <li>microsoft</li>
-                  <li>alibaba</li>
-                  <li>iso 9001:2015</li>
+                  <li className="footer-text-color-toggle cursor-pointer">google</li>
+                  <li className="footer-text-color-toggle cursor-pointer">microsoft</li>
+                  <li className="footer-text-color-toggle cursor-pointer">alibaba</li>
+                  <li className="footer-text-color-toggle cursor-pointer">iso 9001:2015</li>
                 </ul>
               </div>
 
               <div className="text-black">
-                <h2 className="font-semibold text-lg min-h-[70px] mb-2">
+                <h2 className="font-semibold text-lg min-h-[70px] mb-2 footer-text-color-toggle cursor-pointer">
                   contact us
                 </h2>
                 <ul className="text-gray-500 flex flex-col gap-2 pillat-thin">
-                  <li>karachi</li>
+                  <li className="footer-text-color-toggle cursor-pointer">karachi</li>
                  <Link href="/pages/dummy?islamabad"><li>islamabad</li></Link> 
-                  <li>lahore</li>
-                  <li>general & media inquiries</li>
+                  <li className="footer-text-color-toggle cursor-pointer">lahore</li>
+                  <li className="footer-text-color-toggle cursor-pointer">general & media inquiries</li>
                 </ul>
               </div>
             </div>
