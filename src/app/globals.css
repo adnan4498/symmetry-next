@@ -44,6 +44,31 @@ body {
   background: white;
 }
 
+.swipper-hover-class {
+  background: radial-gradient(at right top, rgb(250, 250, 250) 0%, rgb(250, 250, 250) 35%, rgb(250, 250, 250) 100%);
+  transition: all ease-in-out 500ms; /* Combine transition properties */
+  transition-duration: 500ms;
+  color: rgb(102, 102, 102) ;
+}
+
+.swipper-hover-class:hover {
+  background: radial-gradient(at right top, rgb(241, 229, 34) 10%, rgb(90, 166, 61) 35%, rgb(13, 110, 133) 72%);
+  color: white;
+  transition: all ease-in-out 500ms; /* Combine transition properties */
+  transition-duration: 500ms;
+}
+
+.swipper-active-class {
+  background: radial-gradient(at right top, rgb(241, 229, 34) 10%, rgb(90, 166, 61) 35%, rgb(13, 110, 133) 72%);
+  color: white;
+  transition: all ease-in-out 500ms; /* Combine transition properties */
+  transition-duration: 500ms;
+}
+
+.active-slide{
+  background-color: blue !important;
+}
+
 .rainbow-text {
   background-image: linear-gradient(
     45deg,

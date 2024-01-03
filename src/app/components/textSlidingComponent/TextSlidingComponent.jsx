@@ -7,7 +7,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
-gsap.registerPlugin(ScrollTrigger); 
+import "../../homeComponents/Dummy.css";
+gsap.registerPlugin(ScrollTrigger);
 
 const TextSlidingComponent = ({
   sliderheading,
@@ -37,52 +38,50 @@ const TextSlidingComponent = ({
     gsap.to(heading3.current, {
       scrollTrigger: {
         trigger: heading3.current,
-        toggleActions: "restart restart none none", 
+        toggleActions: "restart restart none none",
       },
       duration: 4,
       opacity: 1,
-      y: -20,
+      y: -5,
     });
 
-    var colors = ["#f38630", "#6fb936", "#ccc", "#6fb936"];
+    const root = document.documentElement;
+    const marqueeElementsDisplayed = getComputedStyle(root).getPropertyValue(
+      "--marquee-elements-displayed"
+    );
+    const marqueeContent = document.querySelector("ul.marquee-content");
 
-    //initially colorize each box and position in a row
-    // gsap.set(".heading2", {
-    //   backgroundColor: (i) => colors[i % colors.length],
-    //   x: (i) => i * 50,
-    // });
-  
-    gsap.to(".heading2", {
-      duration: 5,
-      ease: "none",
-      x: "+=500", //move each box 500px to right
-      modifiers: {
-        x: gsap.utils.unitize((x) => parseFloat(x) % 500), //force x value to be between 0 and 500 using modulus
-      },
-      repeat: -1,
-    });
+    root.style.setProperty(
+      "--marquee-elements",
+      marqueeContent.children.length
+    );
 
+    for (let i = 0; i < marqueeElementsDisplayed; i++) {
+      marqueeContent.appendChild(marqueeContent.children[i].cloneNode(true));
+    }
   }, []);
 
   return (
     <div>
-      <div className="mx-3 mb-10 mt-36 md:mx-12">
+      <div className="mx-3 mb-10 mt-36 md:mx-12 overflow-hidden">
         <div
           className={`w-full ${
             isBorder ? "border-b border-green-500 pb-1" : ""
-          }  w-[40%]` }
+          }  w-[40%]`}
         >
-          <h2 className="text-gray-600 text-2xl lg:text-3xl opacity-0 pillat-normal" ref={heading3}>
+          <h2
+            className="text-gray-600 text-2xl lg:text-4xl opacity-0 pillat-normal"
+            ref={heading3}
+          >
             {sliderheading}
           </h2>
         </div>
 
-        <div className="mt-2 overflow-hidden">
+        {/* <div className="mt-2 overflow-hidden">
           <h2
             className="sm:text-[8vw] text-5xl my-0 rainbow-text leading-[10vw] opacity-0 pillat-normal heading2   "
             ref={heading2}
           >
-            {/* {sliderText} */}
             <span>1</span>
             <span>2</span>
             <span>3</span>
@@ -105,6 +104,23 @@ const TextSlidingComponent = ({
             <span>16</span>
             <span>16</span>
           </h2>
+        </div> */}
+
+        <div class="marquee">
+          <ul class="marquee-content gap-10">
+            <li className="!text-[160px] !2xl:text-[200px]  !text-black">skillfully</li>
+            <li className="!text-[160px] !2xl:text-[200px] rainbow-text ">solving</li>
+            <li className="!text-[160px] !2xl:text-[200px]  rainbow-text  ">challenges</li>
+            <li className="!text-[160px] !2xl:text-[200px]  !text-black">skillfully</li>
+            <li className="!text-[160px] !2xl:text-[200px]     rainbow-text">solving</li>
+            <li className="!text-[160px] !2xl:text-[200px]  rainbow-text ">challenges</li>
+            <li className="!text-[160px] !2xl:text-[200px]  !text-black">skillfully</li>
+            <li className="!text-[160px] !2xl:text-[200px]    rainbow-text">solving</li>
+            <li className="!text-[160px] !2xl:text-[200px]  rainbow-text ">challenges</li>
+            <li className="!text-[160px] !2xl:text-[200px]  !text-black">skillfully</li>
+            <li className="!text-[160px] !2xl:text-[200px]   rainbow-text">solving</li>
+            <li className="!text-[160px] !2xl:text-[200px]   rainbow-text">challenges</li>
+          </ul>
         </div>
 
         <div className="sm:w-[80%] lg:max-w-[600px]">

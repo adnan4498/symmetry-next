@@ -40,7 +40,7 @@ export default function RootLayout({ children }) {
       {" "}
       {/*** Custom Container applied ***/}
       <body className={inter.className}>
-        {/* <Navbar className="" /> */}
+        <Navbar className="" />
         <div className="">{children}</div>
       </body>
     </html>

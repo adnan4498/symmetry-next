@@ -9,57 +9,39 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Page = () => {
   useEffect(() => {
-    // var colors = ["#f38630", "#6fb936", "#ccc", "#6fb936"];
+    const root = document.documentElement;
+    const marqueeElementsDisplayed = getComputedStyle(root).getPropertyValue(
+      "--marquee-elements-displayed"
+    );
+    const marqueeContent = document.querySelector("ul.marquee-content");
 
-    // //initially colorize each box and position in a row
-    // gsap.set(".box", {
-    //   backgroundColor: (i) => colors[i % colors.length],
-    //   x: (i) => i * 50,
-    // });
+    root.style.setProperty(
+      "--marquee-elements",
+      marqueeContent.children.length
+    );
 
-    // gsap.set(".box", {
-    //   backgroundColor: (i) => colors[i % colors.length],
-    //   x: (i) => i * 50,
-    // });
-
-    gsap.to(".box", {
-      duration: 5,
-      ease: "none",
-      x: "+=100", //move each box 500px to right
-      modifiers: {
-        x: gsap.utils.unitize((x) => parseFloat(x) % 100), //force x value to be between 0 and 500 using modulus
-      },
-      repeat: -1,
-    });
+    for (let i = 0; i < marqueeElementsDisplayed; i++) {
+      marqueeContent.appendChild(marqueeContent.children[i].cloneNode(true));
+    }
   }, []);
 
   return (
     <>
-      <div class="wrapper">
-        <div class="boxes">
-          <div class="box left-[150px]">skillfully</div>
-          <div class="box">accepting</div>
-          <div class="box right-[5px]">challanges</div>
-          {/* <div class="box">4</div>
-          <div class="box">5</div>
-          <div class="box">6</div>
-          <div class="box">7</div>
-          <div class="box">8</div>
-          <div class="box">9</div>
-          <div class="box">10</div> */}
-        </div>
-        <div class="boxes">
-          <div class="box left-[150px]">skillfully</div>
-          <div class="box">accepting</div>
-          <div class="box right-[5px]">challanges</div>
-          {/* <div class="box">4</div>
-          <div class="box">5</div>
-          <div class="box">6</div>
-          <div class="box">7</div>
-          <div class="box">8</div>
-          <div class="box">9</div>
-          <div class="box">10</div> */}
-        </div>
+      <div class="marquee">
+        <ul class="marquee-content gap-10">
+          <li className="!text-[160px] !2xl:text-[200px] ">skillfully</li>
+          <li className="!text-[160px] !2xl:text-[200px] ">solving</li>
+          <li className="!text-[160px] !2xl:text-[200px]  ">challenges</li> 
+          <li className="!text-[160px] !2xl:text-[200px] ">skillfully</li>
+          <li className="!text-[160px] !2xl:text-[200px] ">solving</li>
+          <li className="!text-[160px] !2xl:text-[200px] ">challenges</li>
+          <li className="!text-[160px] !2xl:text-[200px] ">skillfully</li>
+          <li className="!text-[160px] !2xl:text-[200px] ">solving</li>
+          <li className="!text-[160px] !2xl:text-[200px] ">challenges</li>
+          <li className="!text-[160px] !2xl:text-[200px] ">skillfully</li>
+          <li className="!text-[160px] !2xl:text-[200px] ">solving</li>
+          <li className="!text-[160px] !2xl:text-[200px] ">challenges</li>
+        </ul>
       </div>
     </>
   );
