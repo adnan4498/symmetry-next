@@ -1,7 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Pathway+Gothic+One&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Pathway+Gothic+One&display=swap");
 
-
-.custom-font-family{
+.custom-font-family {
   font-family: "Nanum Gothic", sans-serif;
   font-family: "Pathway Gothic One", sans-serif;
   font-weight: 400;
@@ -9,12 +8,12 @@
 
 .swiper-button-prev {
   left: 43% !important;
-  top: 95% !important;
+  top: 67% !important;
 }
 
 .swiper-button-next {
   right: 43% !important;
-  top: 95% !important;
+  top: 67% !important;
 }
 
 .swiper-button-prev::after {
