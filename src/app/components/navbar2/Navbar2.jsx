@@ -13,12 +13,7 @@ const Navbar2 = () => {
   const navRef = useRef();
 
   useEffect(() => {
-    gsap.to(navRef.current, {
-      scrollTrigger: {
-        trigger: navRef.current,
-      },
-      y: "-=100",
-    });
+
   }, []);
 
   return (
