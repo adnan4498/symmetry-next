@@ -14,7 +14,7 @@ const AboutUs = ({titleWidth , autoMx}) => {
               <p>phone</p>
             </div>
             <div className="">
-              <h3>[email protected]</h3>
+              <h3>info@symmetrygroup.biz</h3>
               <p>email</p>
             </div>
           </div>

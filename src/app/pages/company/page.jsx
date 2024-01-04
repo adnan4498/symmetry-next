@@ -21,6 +21,7 @@ import directorsAnimation from "../../../../public/symmetryAnimations/directorsA
 import initiativeAnimation from "../../../../public/symmetryAnimations/initiativeAnimation.json";
 
 import Lottie from "react-lottie-player";
+import Navbar2 from "../../components/navbar2/Navbar2";
 
 const Company = () => {
   const aboutH2 = "about us";
@@ -97,6 +98,8 @@ const Company = () => {
 
   return (
     <>
+      <Navbar2 className="" />
+
       <div className="">
         <div>
           <div>
@@ -226,7 +229,9 @@ const Company = () => {
                     <p className="mt-2 min-h-[40px] leading-[18px] pillat-normal">
                       {item.name}
                     </p>
-                    <p className="text-gray-500 text-xs pillat-normal">{item.post}</p>
+                    <p className="text-gray-500 text-xs pillat-normal">
+                      {item.post}
+                    </p>
                   </div>
                 </>
               ))}

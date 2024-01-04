@@ -37,10 +37,7 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en" className="">
-      {" "}
-      {/*** Custom Container applied ***/}
       <body className={inter.className}>
-        <Navbar className="" />
         <div className="">{children}</div>
       </body>
     </html>

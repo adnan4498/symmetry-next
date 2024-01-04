@@ -99,10 +99,10 @@ const HeritageSection = () => {
                 spaceBetween: 35,
               },
             }}
-            modules={[Autoplay ,Navigation]}
+            modules={[Autoplay]}
             speed={2000}
             loop={true}
-            navigation={true}
+            // navigation={true}
             autoplay={{
               delay : 500
             }}

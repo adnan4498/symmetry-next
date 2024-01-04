@@ -155,7 +155,7 @@ const Footer = () => {
                 <h2 className="font-[500] text-lg">investors complaints</h2>
                 <div className="flex gap-10 text-sm pillat-normal">
                   <p>+92 21 3534 0688 ext. 105</p>
-                  <p>[email protected]</p>
+                  <p>info@symmetrygroup.biz</p>
                 </div>
               </div>
             </div>

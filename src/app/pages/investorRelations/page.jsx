@@ -327,7 +327,7 @@ const page = () => {
     {
       id: 3,
       title: "email",
-      desc: "[email protected]",
+      desc: "info@symmetrygroup.biz",
     },
   ];
 
