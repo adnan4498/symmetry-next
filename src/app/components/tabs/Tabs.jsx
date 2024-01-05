@@ -27,9 +27,9 @@ const Tabs = ({ tabsData , slidesPerView }) => {
             }}
             speed={2000}
             loop={true}
-            navigation={true}
+            // navigation={true}
             // centeredSlides={true}
-            modules={[Navigation]}
+            // modules={[Navigation]}
             className="mySwiper "
           >
             <>
@@ -37,7 +37,7 @@ const Tabs = ({ tabsData , slidesPerView }) => {
                 <>
                   <SwiperSlide>
                     <div className="">
-                      <div className="text-black text-center">
+                      <div className="text-black text-center ">
                         <div className="">{item.item}</div>
                       </div>
                     </div>
