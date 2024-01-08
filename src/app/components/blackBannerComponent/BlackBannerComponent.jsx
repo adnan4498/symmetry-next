@@ -127,7 +127,7 @@ const BlackBannerComponent = ({ aboutH2, aboutText }) => {
   return (
     <div
       ref={blackDiv}
-      className="bg-black h-96 text-white pt-10 md:pl-10 pl-3 fixed w-full z-50"
+      className="bg-black h-[450px] text-white pt-10 md:pl-10 pl-3 fixed w-full z-50"
     >
       <div className="">
         <div className="flex justify-between items-center gap-3">

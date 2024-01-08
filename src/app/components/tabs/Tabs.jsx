@@ -1,11 +1,23 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 
-const Tabs = ({ tabsData , slidesPerView }) => {
+const Tabs = ({ tabsData, slidesPerView }) => {
+  const [tabRounded, setTabRounded] = useState();
+  const [shownArray, setShownArray] = useState([0, 1, 2, 3]);
+
+  const tabHovered = (id) => {
+    setTabRounded(id);
+  };
+
+  const updateShownArray = (swiper) => {
+    const newShownArray = Array.from({ length: slidesPerView }, (_, i) => i);
+
+    setShownArray(newShownArray);
+  };
+
   return (
     <div className="text-black">
       <div className="w-[80%] mx-auto">
@@ -26,23 +38,23 @@ const Tabs = ({ tabsData , slidesPerView }) => {
               },
             }}
             speed={2000}
-            loop={true}
-            // navigation={true}
-            // centeredSlides={true}
-            // modules={[Navigation]}
-            className="mySwiper "
+            onSlideChange={(swiper) => updateShownArray(swiper)}
+            className="mySwiper"
           >
             <>
-              {tabsData.map((item, index) => (
-                <>
-                  <SwiperSlide>
-                    <div className="">
-                      <div className="text-black text-center ">
-                        <div className="">{item.item}</div>
-                      </div>
+              {tabsData.map((item, index, array) => (
+                <SwiperSlide key={index}>
+                  <div
+                    onMouseOver={() => tabHovered(item.id)}
+                    // className={`tabs-custom-bg ${shownArray[0] ? "!bg-red-500" : !shownArray ? "!bg-blue-500" : ""} py-[10px]`}
+                    className={`tabs-custom-bg ${index === array.length - 1 ? "rounded-e-full" : index === 0 ?   "rounded-s-full" : ""}
+                    py-[10px]`}
+                  >
+                    <div className="text-center">
+                      <div className="">{item.item}</div>
                     </div>
-                  </SwiperSlide>
-                </>
+                  </div>
+                </SwiperSlide>
               ))}
             </>
           </Swiper>
