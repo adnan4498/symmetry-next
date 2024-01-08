@@ -6,10 +6,15 @@ import "swiper/css";
 import "swiper/css/navigation";
 
 const Tabs = ({ tabsData , slidesPerView }) => {
+
+  const tabHovered = (id) =>{
+    console.log(id , "id hovered")
+  }
+
   return (
     <div className="text-black">
       <div className="w-[80%] mx-auto">
-        <div className="mt-9 border border-green-400 rounded-full py-3">
+        <div className="mt-9 border border-green-400 rounded-full ">
           <Swiper
             breakpoints={{
               500: {
@@ -36,7 +41,7 @@ const Tabs = ({ tabsData , slidesPerView }) => {
               {tabsData.map((item, index) => (
                 <>
                   <SwiperSlide>
-                    <div className="">
+                    <div onMouseOver={()=> tabHovered(item.id)} className="tabs-custom-bg rounded-full py-[10px]">
                       <div className="text-black text-center ">
                         <div className="">{item.item}</div>
                       </div>

@@ -32,7 +32,6 @@ import BlackBannerComponent from "../../components/blackBannerComponent/BlackBan
 gsap.registerPlugin(ScrollTrigger);
 
 const Page = () => {
-
   const blackDiv = useRef();
   const redDiv = useRef();
   const aboutDiv = useRef();
@@ -40,7 +39,7 @@ const Page = () => {
   const textDiv = useRef();
   const pinkDiv = useRef();
   const animationDiv = useRef();
-  
+
   useEffect(() => {
     let mm = gsap.matchMedia();
 
@@ -56,36 +55,23 @@ const Page = () => {
               isMobile: "(min-width : 300px)",
               isTablet: "(min-width : 768px)",
               isDesktop: "(min-width : 1024px)",
-              is2xl : "(min-width : 1600px)",
+              is2xl: "(min-width : 1600px)",
             },
             (context) => {
-              let { isMobile, isTablet, isDesktop , is2xl } = context.conditions;
+              let { isMobile, isTablet, isDesktop, is2xl } = context.conditions;
               gsap.to(blackDiv.current, {
                 height: ((isMobile = "200px"), (isTablet = "220px")),
               });
+              gsap.to(pinkDiv.current, {
+                marginTop:  "-255px",
+              });
             }
           );
-          mm.add(
-            {
-              isMobile: "(min-width : 300px)",
-              isTablet: "(min-width : 768px)",
-              isDesktop: "(min-width : 1024px)",
-            },
-            (context) => {
-              let { isMobile, isTablet, isDesktop } = context.conditions;
-              // gsap.to(symmetryDiv.current, {
-              //   width:
-              //     ((isMobile = "40vw"),
-              //     (isTablet = "25vw"),
-              //     (isDesktop = "17vw")),
-              // });
-            }
-          );
-          gsap.to(animationDiv.current , {
+          gsap.to(animationDiv.current, {
             opacity: "0",
             transition: "all  0.1s",
             delay: 0.1,
-          })
+          });
           gsap.to(aboutDiv.current, {
             fontSize: "60px",
           });
@@ -93,50 +79,42 @@ const Page = () => {
             opacity: "0",
             transition: "all  0.1s",
             delay: 0.1,
-          });
-          gsap.to(pinkDiv.current, {
-            marginTop: "-255px",
           });
         },
         onEnterBack: () => {
           gsap.to(blackDiv.current, {
             height: "384px",
           });
-          gsap.to(symmetryDiv.current, {
-            fontSize: "60px",
-          });
+          // gsap.to(symmetryDiv.current, {
+          //   fontSize: "60px",
+          // });
           gsap.to(aboutDiv.current, {
             fontSize: "96px",
           });
           gsap.to(textDiv.current, {
             opacity: "1",
             transition: "all  0.1s",
-            delay: 0.1, 
-          });
-          gsap.to(pinkDiv.current, {
-            marginTop: "-100px",
+            delay: 0.1,
           });
           mm.add(
             {
-              isMobile: "(min-width : 300px)",
-              isTablet: "(min-width : 768px)",
+              is2xl: "(min-width : 1600px)",
               isDesktop: "(min-width : 1024px)",
+              isTablet: "(min-width : 768px)",
+              isMobile: "(min-width : 300px)",
             },
             (context) => {
-              let { isMobile, isTablet, isDesktop } = context.conditions;
-              // gsap.to(symmetryDiv.current, {
-              //   width:
-              //     ((isMobile = "40vw"),
-              //     (isTablet = "30vw"),
-              //     (isDesktop = "20vw")),
-              // });
+              let {is2xl , isDesktop , isTablet, isMobile } = context.conditions;
+              gsap.to(pinkDiv.current, {
+                marginTop:  is2xl ? "-80px" : "-100px"
+              });
             }
           );
-          gsap.to(animationDiv.current , {
+          gsap.to(animationDiv.current, {
             opacity: "1",
             transition: "all  0.1s",
-            delay: 0.1, 
-          })
+            delay: 0.1,
+          });
         },
       },
     });
@@ -234,11 +212,11 @@ const Page = () => {
 
   return (
     <>
-    <BlackBannerComponent aboutText={aboutText} aboutH2={aboutH2} />
+      <BlackBannerComponent aboutText={aboutText} aboutH2={aboutH2} />
       <div ref={redDiv} className="bg-white  pt-[450px]">
         <div
           ref={pinkDiv}
-          className="bg-white h-[130px] md:h-[130px] mt-[-80px] text-black fixed w-full z-50"
+          className="bg-white h-[130px] md:h-[130px] mt-[-80px] 2xl:mt-[-50px] text-black fixed w-full z-50"
         >
           <Tabs tabsData={tabsData} slidesPerView={4} />
         </div>

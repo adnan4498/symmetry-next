@@ -31,37 +31,18 @@ const BlackBannerComponent = ({ aboutH2, aboutText }) => {
         onEnter: () => {
           mm.add(
             {
-              isMobile: "(min-width : 300px)",
-              isTablet: "(min-width : 768px)",
-              isDesktop: "(min-width : 1024px)",
               is2xl: "(min-width : 1600px)",
-            },
-            (context) => {
-              let { isMobile, isTablet, isDesktop, is2xl } = context.conditions;
-              gsap.to(blackDiv.current, {
-                height: ((isMobile = "200px"), (isTablet = "220px")),
-              });
-            }
-          );
-          mm.add(
-            {
-              isMobile: "(min-width : 300px)",
-              isTablet: "(min-width : 768px)",
               isDesktop: "(min-width : 1024px)",
+              isTablet: "(min-width : 768px)",
+              isMobile: "(min-width : 300px)",
             },
             (context) => {
-              let { isMobile, isTablet, isDesktop } = context.conditions;
-              {
-                console.log(context.conditions, "context contidions");
-              }
+              let {is2xl , isDesktop , isTablet , isMobile} = context.conditions;
+              gsap.to(blackDiv.current, {
+                height:  "220px" ,
+              });
               gsap.to(symmetryDiv.current, {
-                width: isMobile
-                  ? "35vw"
-                  : isTablet
-                  ? "25vw"
-                  : isDesktop
-                  ? "17vw"
-                  : "100%", // Adjust the fallback value as needed
+                width: is2xl ? "12vw" : isDesktop ? "15vw" : isTablet ? "25vw" : isMobile ? "35vw" : "0%", 
               });
             }
           );
@@ -83,21 +64,27 @@ const BlackBannerComponent = ({ aboutH2, aboutText }) => {
             marginTop: "-255px",
           });
         },
+
+        /******* On Enter Back  ********/
+
         onEnterBack: () => {
           gsap.to(blackDiv.current, {
             height: "384px",
           });
           mm.add(
             {
-              isMobile: "(min-width : 300px)",
-              isTablet: "(min-width : 768px)",
-              isDesktop: "(min-width : 1024px)",
               is2xl: "(min-width : 1600px)",
+              isDesktop: "(min-width : 1024px)",
+              isTablet: "(min-width : 768px)",
+              isMobile: "(min-width : 300px)",
             },
             (context) => {
-              let { isMobile, isTablet, isDesktop, is2xl } = context.conditions;
+              let { is2xl,  isDesktop,  isTablet,  isMobile,  } = context.conditions;
               gsap.to(aboutDiv.current, {
-                fontSize: is2xl ? "150px" : isDesktop ? "128px" : isTablet ? "96px" : isMobile ? "96px" : "100px",
+                fontSize: is2xl ? "130px" : isDesktop ? "100px" : isTablet ? "96px" : isMobile ? "96px" : "100px",
+              });
+              gsap.to(symmetryDiv.current, {
+                width: is2xl ? "17vw" : isDesktop ? "20vw" : isTablet ? "30vw" : isMobile ? "45vw" : "0%", 
               });
             }
           );
@@ -110,25 +97,6 @@ const BlackBannerComponent = ({ aboutH2, aboutText }) => {
           gsap.to(pinkDiv.current, {
             marginTop: "-100px",
           });
-          mm.add(
-            {
-              isMobile: "(min-width : 300px)",
-              isTablet: "(min-width : 768px)",
-              isDesktop: "(min-width : 1024px)",
-            },
-            (context) => {
-              let { isMobile, isTablet, isDesktop } = context.conditions;
-              gsap.to(symmetryDiv.current, {
-                width: isMobile
-                  ? "40vw"
-                  : isTablet
-                  ? "30vw"
-                  : isDesktop
-                  ? "20vw"
-                  : "100%", // Adjust the fallback value as needed
-              });
-            }
-          );
           gsap.to(animationDiv.current, {
             opacity: "1",
             transition: "all  0.1s",
@@ -164,11 +132,12 @@ const BlackBannerComponent = ({ aboutH2, aboutText }) => {
       <div className="">
         <div className="flex justify-between items-center gap-3">
           <Link href="/">
-            <div className="ml-1" ref={symmetryDiv}>
+            <div className="ml-1">
               <Image
                 src={logo}
                 alt="logo"
                 className="w-[45vw] md:w-[30vw] lg:w-[20vw]"
+                ref={symmetryDiv}
               />
             </div>
           </Link>
@@ -183,7 +152,7 @@ const BlackBannerComponent = ({ aboutH2, aboutText }) => {
       </div>
       <div
         ref={aboutDiv}
-        className="text-8xl lg:text-9xl 2xl:text-[150px] pt-10 pillat-normal relative z-50"
+        className="text-7xl lg:text-8xl 2xl:text-[150px] pt-10 pillat-normal relative z-50"
       >
         {aboutH2}
       </div>
