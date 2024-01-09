@@ -25,9 +25,11 @@ import missionAnimation from "../../../../public/symmetryAnimations/missionAnima
 import directorsAnimation from "../../../../public/symmetryAnimations/directorsAnimation.json";
 import initiativeAnimation from "../../../../public/symmetryAnimations/initiativeAnimation.json";
 import aboutBannerAnimation from "../../../../public/symmetryAnimations/aboutBannerAnimation.json";
+import dummyRiv from "../../../../public/symmetryAnimations/home-banner.riv"
 
 import Lottie from "react-lottie-player";
 import BlackBannerComponent from "../../components/blackBannerComponent/BlackBannerComponent";
+import Rive from '@rive-app/react-canvas';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -263,12 +265,19 @@ const Page = () => {
             </div>
             <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
               {/* <Image src={square} width={200} alt="animation here" /> */}
-              <Lottie
+              {/* <Lottie
                 loop
                 animationData={companyAnimation}
                 play
                 // style={{ width: 350, height: 350 }}
-              />
+              /> */}
+                <Rive
+    src={dummyRiv}
+    // stateMachines="bumpy"
+    autoplay={true}  // Or play={true}
+    play = {true}
+
+  />
             </div>
           </AnimationTextReversing>
           <AnimationTextReversing flexDirection="row-reverse">
