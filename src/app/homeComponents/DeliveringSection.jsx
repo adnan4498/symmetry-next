@@ -7,6 +7,8 @@ import HomeBannerAnimation from "../../../public/symmetryAnimations/homeBannerAn
 import square from "../../../public/square-neon.png";
 import Image from "next/image";
 gsap.registerPlugin(ScrollTrigger); 
+import Rive from "@rive-app/react-canvas";
+import riveHomeAnimation from "../../../public/symmetryAnimations/dummy-guy.riv"
 
 const DeliveringSection = () => {
   const heading = useRef();
@@ -57,11 +59,11 @@ const DeliveringSection = () => {
             </div>
             <div className="hidden md:block absolute md:w-[30vw] lg:w-[40vw] top-0 md:right-[-50px] lg:right-[-100px]">
               {/* <Image src={square} alt="animation square" className="" /> */}
-              <Lottie 
+              {/* <Lottie 
                 animationData={HomeBannerAnimation}
                 loop
                 play
-              />
+              /> */}
             </div>
           </div>
         </div>
