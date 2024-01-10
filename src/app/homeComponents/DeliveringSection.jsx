@@ -6,9 +6,10 @@ import Lottie from "react-lottie-player";
 import HomeBannerAnimation from "../../../public/symmetryAnimations/homeBannerAnimation.json"
 import square from "../../../public/square-neon.png";
 import Image from "next/image";
+import Rive from "@rive-app/react-canvas";
+import RiveAnimation from "../../../public/symmetryAnimations/banner-Rive.riv"
+
 gsap.registerPlugin(ScrollTrigger); 
-// import Rive from "@rive-app/react-canvas";
-// import riveHomeAnimation from "../../../public/symmetryAnimations/dummy-guy.riv"
 
 const DeliveringSection = () => {
   const heading = useRef();
@@ -57,12 +58,13 @@ const DeliveringSection = () => {
                 innovation
               </span>
             </div>
-            <div className="hidden md:block absolute md:w-[30vw] lg:w-[40vw] top-0 md:right-[-50px] lg:right-[-100px]">
+            <div className="hidden md:block absolute md:w-[40vw] lg:w-[45vw] h-screen top-[-10%] md:right-[-50px] lg:right-[-100px]">
               {/* <Image src={square} alt="animation square" className="" /> */}
-              <Lottie 
-                animationData={HomeBannerAnimation}
-                loop
-                play
+              <Rive
+                src={RiveAnimation}
+                // stateMachines="bumpy"
+                autoplay={true} // Or play={true}
+                play={true}
               />
             </div>
           </div>

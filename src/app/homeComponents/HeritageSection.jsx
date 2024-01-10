@@ -13,7 +13,7 @@ const heritageSwipperContent = [
   {
     id: 0,
     h2: "100",
-    h3: "s",
+    h3: "",
     text: "of brands transformed",
   },
   {

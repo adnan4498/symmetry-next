@@ -1,0 +1,7 @@
+.swiper.swiper-initialized.swiper-horizontal.mySwiper.swiper-backface-hidden{
+    height: 350px !important;
+}
+
+.swiper-button-prev, .swiper-button-next{
+    width: 10% !important;
+}

@@ -25,11 +25,11 @@ import missionAnimation from "../../../../public/symmetryAnimations/missionAnima
 import directorsAnimation from "../../../../public/symmetryAnimations/directorsAnimation.json";
 import initiativeAnimation from "../../../../public/symmetryAnimations/initiativeAnimation.json";
 import aboutBannerAnimation from "../../../../public/symmetryAnimations/aboutBannerAnimation.json";
-import dummyRiv from "../../../../public/symmetryAnimations/home-banner.riv"
+import dummyRiv from "../../../../public/symmetryAnimations/home-banner.riv";
 
 import Lottie from "react-lottie-player";
 import BlackBannerComponent from "../../components/blackBannerComponent/BlackBannerComponent";
-import Rive from '@rive-app/react-canvas';
+import Rive from "@rive-app/react-canvas";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -65,7 +65,7 @@ const Page = () => {
                 height: ((isMobile = "200px"), (isTablet = "220px")),
               });
               gsap.to(pinkDiv.current, {
-                marginTop:  "-255px",
+                marginTop: "-255px",
               });
             }
           );
@@ -106,9 +106,9 @@ const Page = () => {
               isMobile: "(min-width : 300px)",
             },
             (context) => {
-              let {is2xl , isDesktop , isTablet, isMobile } = context.conditions;
+              let { is2xl, isDesktop, isTablet, isMobile } = context.conditions;
               gsap.to(pinkDiv.current, {
-                marginTop:  is2xl ? "-80px" : "-100px"
+                marginTop: is2xl ? "-80px" : "-100px",
               });
             }
           );
@@ -271,13 +271,12 @@ const Page = () => {
                 play
                 // style={{ width: 350, height: 350 }}
               /> */}
-                <Rive
-    src={dummyRiv}
-    // stateMachines="bumpy"
-    autoplay={true}  // Or play={true}
-    play = {true}
-
-  />
+              <Rive
+                src={dummyRiv}
+                // stateMachines="bumpy"
+                autoplay={true} // Or play={true}
+                play={true}
+              />
             </div>
           </AnimationTextReversing>
           <AnimationTextReversing flexDirection="row-reverse">

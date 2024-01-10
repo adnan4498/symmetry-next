@@ -2,8 +2,8 @@ import React from "react";
 import TextSlidingComponent from "../components/textSlidingComponent/TextSlidingComponent";
 import HeadingAndSwipper from "../components/headingAndSwipperComponent/HeadingAndSwipper";
 import AnimationAndSwipper from "../components/animationAndSwipperComponent/AnimationAndSwipper";
-import interactiveAnimation from "../../../public/symmetryAnimations/interacticeAnimation.json";
-import mobilityAnimation from "../../../public/symmetryAnimations/mobilityAnimation.json";
+import interactiveAnimation from "../../../public/symmetryAnimations/interactive-riv-animation-3.riv";
+import mobilityAnimation from "../../../public/symmetryAnimations/mobility-Rive.riv";
 import gsap from "gsap";
 
 

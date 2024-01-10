@@ -4,7 +4,7 @@ import irisLogo from "../../../public/iris-small-logo.webp";
 import influenseLogo from "../../../public/influense-small-logo.webp";
 import TextSlidingComponent from "../components/textSlidingComponent/TextSlidingComponent";
 import AnimationAndImages from "../components/animationAndImagesComponent/AnimationAndImages";
-import affiliationAnimation from "../../../public/symmetryAnimations/affiliationAnimation.json"
+import affiliationAnimation from "../../../public/symmetryAnimations/affiliation-animation-Rive-2.riv"
 import symmetryImg from "../../../public/symmetry-swipper-img.webp"
 
 const BrandsProducts = () => {

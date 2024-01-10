@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
+import "../headingAndSwipperComponent/HeadingAndSwipper.css"
 
 const HeadingAndSwipper = ({
   hasH3,
@@ -78,10 +79,10 @@ const HeadingAndSwipper = ({
             speed={2000}
             loop={true}
             onSlideChange={handleActive}
-            autoplay = {{
-              delay : 1000
-            }}
-            // navigation={true}
+            // autoplay = {{
+            //   delay : 1000
+            // }}
+            navigation={true}
             centeredSlides={true}
             className="mySwiper "
           >
