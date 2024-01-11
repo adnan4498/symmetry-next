@@ -439,6 +439,10 @@ const Page = () => {
             </div>
           </AnimationTextReversing>
 
+          <div className="bg-red-500 w-16 h-16 rotate-[50deg] rounded-md flex justify-center items-center ml-20 mt-10 border border-black">
+            <p className="rotate-[-50deg]">a</p>
+          </div>
+
           <ConnectWithUs bgColor="bg-black" textColor="text-white" />
           <Footer />
         </div>
