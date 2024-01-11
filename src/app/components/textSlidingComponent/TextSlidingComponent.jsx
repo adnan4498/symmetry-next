@@ -4,7 +4,7 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay , Navigation } from "swiper/modules";
+import { Autoplay, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "../../homeComponents/Dummy.css";
@@ -181,8 +181,8 @@ const TextSlidingComponent = ({
               // navigation={true}
               centeredSlides={true}
               modules={[Autoplay]}
-              autoplay = {{
-                delay : 500
+              autoplay={{
+                delay: 500,
               }}
               className="mySwiper "
             >

@@ -9,6 +9,43 @@ import "swiper/css/navigation";
 import "../homeComponents/HeritageSection.css";
 import infinity from "../../../public/infinity-sign.webp";
 
+<<<<<<< HEAD
+=======
+const heritageSwipperContent = [
+  {
+    id: 0,
+    h2: "100",
+    h3: "",
+    text: "of brands transformed",
+  },
+  {
+    id: 1,
+    h2: "1000",
+    h3: "",
+    text: "of experiences delivered",
+  },
+  {
+    id: 2,
+    h2: "100",
+    h3: "s",
+    text: "of posibillities transformed",
+    img: infinity,
+  },
+  {
+    id: 3,
+    h2: "20",
+    h3: "s",
+    text: "years in business",
+  },
+  {
+    id: 4,
+    h2: "2023",
+    // h3: "s",
+    text: "listed on the pakistan stock exchange",
+  },
+];
+
+>>>>>>> dev
 const HeritageSection = () => {
   const [borderHover, setBorderHover] = useState();
   const [borderHover2, setBorderHover2] = useState();

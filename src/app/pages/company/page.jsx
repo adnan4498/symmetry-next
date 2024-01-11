@@ -98,13 +98,13 @@ const Company = () => {
 
   return (
     <>
-      <Navbar2 className="" />
+      {/* <Navbar2 className="" /> */}
 
       <div className="">
         <div>
           <div>
             <BlackBannerComponent aboutH2={aboutH2} aboutText={aboutText} />
-            <Tabs tabsData={tabsData} slidesPerView={4} />
+            {/* <Tabs tabsData={tabsData} slidesPerView={4} /> */}
           </div>
         </div>
         <AnimationTextReversing>

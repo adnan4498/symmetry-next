@@ -7,6 +7,8 @@ import "swiper/css";
 import "swiper/css/navigation";
 import square from "../../../../public/square-neon.png";
 import Lottie from "react-lottie-player";
+import dummyRiv from "../../../../public/symmetryAnimations/home-banner.riv";
+import Rive from "@rive-app/react-canvas";
 
 const AnimationAndImages = ({
   aasH3,
@@ -126,13 +128,14 @@ const AnimationAndImages = ({
               </Swiper>
             </div>
           </div>
-          <div className="absolute hidden lg:block lg:w-[25vw] 2xl:w-[17vw] top-0 right-0">
+          <div className="absolute hidden lg:block lg:w-[23vw] xl:w-[20vw] 2xl:w-[17vw]  h-full  top-0 right-0">
             {/* <Image src={square} alt="animation square" className="full" /> */}
-            <Lottie
-              loop
-              animationData={animation}
-              play
-              // style={{ width: 350, height: 350 }}
+            <Rive
+              src={animation}
+              // stateMachines="bumpy"
+              autoplay={true} // Or play={true}
+              play={true}
+              className=""
             />
           </div>
         </div>
