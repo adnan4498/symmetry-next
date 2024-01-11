@@ -1,7 +1,23 @@
-.swiper.swiper-initialized.swiper-horizontal.mySwiper.swiper-backface-hidden{
-    height: 350px !important;
+.swiper-button-prev::after {
+  font-size: 10px !important;
+  rotate: -45deg;
 }
 
-.swiper-button-prev, .swiper-button-next{
-    width: 10% !important;
+.swiper-button-next::after {
+  font-size: 10px !important;
+  rotate: -45deg;
+}
+
+.arrows-bg {
+  background-image: radial-gradient(at top right, #f1e522 25%, #5aa63d 60%);
+}
+
+.arrows-border-bg {
+  background-image: radial-gradient(at top right, #f1e522 25%, #5aa63d 60%);
+}
+
+.bb {
+  border-image: linear-gradient(#f6b73c, #4d9f0c) 10;
+  border-width: 2px;
+  border-style: solid;
 }
