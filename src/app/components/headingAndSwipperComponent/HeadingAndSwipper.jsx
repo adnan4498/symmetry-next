@@ -5,7 +5,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
-// import "../headingAndSwipperComponent/HeadingAndSwipper.css";
 
 const HeadingAndSwipper = ({
   hasH3,
@@ -126,18 +125,18 @@ const HeadingAndSwipper = ({
             ))}
           </Swiper>
 
-          <div className="swiper-navigation-buttons flex justify-center gap-2 w-full mt-10">
+          <div className="swiper-navigation-buttons flex justify-center gap-2 lg:gap-[10px] 2xl:gap-3 w-full mt-10">
             <button
               onClick={() => handleArrowPrevActive()}
               className={`swiper-button-prev ${
                 arrowPrevActive ? "arrows-bg after:!text-white " : ""
-              } !static bb rounded-md rotate-[45deg] !w-7 !h-7`}
+              } !static custom-arrow-border rounded-md rotate-[45deg] !w-7 !h-7 md:!w-8 md:!h-8 lg:!w-8 lg:!h-8 `}
             ></button>
             <button
               onClick={() => handleArrowNextActive()}
               className={`swiper-button-next ${
                 arrowNextActive ? "arrows-bg  after:!text-white " : ""
-              } !static border rounded-md rotate-[45deg] !w-7 !h-7`}
+              } !static custom-arrow-border  rounded-md rotate-[45deg] !w-7 !h-7 md:!w-8 md:!h-8 lg:!w-8 lg:!h-8`}
             ></button>
           </div>
         </div>

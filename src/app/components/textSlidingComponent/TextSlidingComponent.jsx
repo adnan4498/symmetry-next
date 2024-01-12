@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import Image from "next/image";
@@ -21,6 +21,10 @@ const TextSlidingComponent = ({
   swipperGap,
   swipperContent,
 }) => {
+
+  const [arrowPrevActive, setArrowPrevActive] = useState(false);
+  const [arrowNextActive, setArrowNextActive] = useState(false);
+
   const heading2 = useRef();
   const heading3 = useRef();
 
@@ -61,8 +65,17 @@ const TextSlidingComponent = ({
     }
   }, []);
 
+  const handleArrowPrevActive = () => {
+    setArrowNextActive(false);
+    setArrowPrevActive(true);
+  };
+
+  const handleArrowNextActive = () => {
+    setArrowPrevActive(false);
+    setArrowNextActive(true);
+  };
   return (
-    <div>
+    <div className="bg-[#fafafa]">
       <div className="mx-3 mb-10 mt-36 md:mx-12 overflow-hidden">
         <div
           className={`w-full ${
@@ -76,35 +89,6 @@ const TextSlidingComponent = ({
             {sliderheading}
           </h2>
         </div>
-
-        {/* <div className="mt-2 overflow-hidden">
-          <h2
-            className="sm:text-[8vw] text-5xl my-0 rainbow-text leading-[10vw] opacity-0 pillat-normal heading2   "
-            ref={heading2}
-          >
-            <span>1</span>
-            <span>2</span>
-            <span>3</span>
-            <span>4</span>
-            <span>5</span>
-            <span>6</span>
-            <span>7</span>
-            <span>8</span>
-            <span>9</span>
-            <span>11</span>
-            <span>12</span>
-            <span>13</span>
-            <span>14</span>
-            <span>15</span>
-            <span>16</span>
-            <span>16</span>
-            <span>16</span>
-            <span>16</span>
-            <span>16</span>
-            <span>16</span>
-            <span>16</span>
-          </h2>
-        </div> */}
 
         <div class="marquee">
           <ul class="marquee-content gap-10">
@@ -200,6 +184,21 @@ const TextSlidingComponent = ({
                 </>
               ))}
             </Swiper>
+
+            <div className="swiper-navigation-buttons flex justify-center  gap-2 lg:gap-[10px] 2xl:gap-3 w-full mt-16 mb-3">
+            <button
+              onClick={() => handleArrowPrevActive()}
+              className={`swiper-button-prev ${
+                arrowPrevActive ? "arrows-bg after:!text-white " : ""
+              } !static custom-arrow-border rounded-md rotate-[45deg] !w-7 !h-7 md:!w-8 md:!h-8 lg:!w-8 lg:!h-8 `}
+            ></button>
+            <button
+              onClick={() => handleArrowNextActive()}
+              className={`swiper-button-next ${
+                arrowNextActive ? "arrows-bg  after:!text-white " : ""
+              } !static custom-arrow-border  rounded-md rotate-[45deg] !w-7 !h-7 md:!w-8 md:!h-8 lg:!w-8 lg:!h-8`}
+            ></button>
+          </div>
           </div>
         )}
 
