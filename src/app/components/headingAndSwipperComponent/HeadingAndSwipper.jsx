@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
-import "../headingAndSwipperComponent/HeadingAndSwipper.css";
+// import "../headingAndSwipperComponent/HeadingAndSwipper.css";
 
 const HeadingAndSwipper = ({
   hasH3,
