@@ -2,63 +2,78 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-import {Autoplay ,Navigation } from "swiper/modules";
+import { Autoplay, Navigation } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/navigation";
 import "../homeComponents/HeritageSection.css";
 import infinity from "../../../public/infinity-sign.webp";
 
-const heritageSwipperContent = [
-  {
-    id: 0,
-    h2: "100",
-    h3: "",
-    text: "of brands transformed",
-  },
-  {
-    id: 1,
-    h2: "1000",
-    h3: "",
-    text: "of experiences delivered",
-  },
-  {
-    id: 2,
-    h2: "100",
-    h3: "s",
-    text: "of posibillities transformed",
-    img: infinity,
-  },
-  {
-    id: 3,
-    h2: "20",
-    h3: "s",
-    text: "years in business",
-  },
-  {
-    id: 4,
-    h2: "2023",
-    // h3: "s",
-    text: "listed on the pakistan stock exchange",
-  },
-];
-
 const HeritageSection = () => {
+  const [activeAni , setActiveAni] = useState()
+  const [arrowPrevActive, setArrowPrevActive] = useState(false);
+  const [arrowNextActive, setArrowNextActive] = useState(false);
+
   const [borderHover, setBorderHover] = useState();
   const [borderHover2, setBorderHover2] = useState();
-  const [borderHoverOut, setBorderHoverOut] = useState();
 
-  const hoverFunc = () => {
-    setBorderHoverOut("");
+  const handleArrowPrevActive = () => {
+    setArrowNextActive(false);
+    setArrowPrevActive(true);
+  };
+
+  const handleArrowNextActive = () => {
+    setArrowPrevActive(false);
+    setArrowNextActive(true);
+  };
+
+  const hoverFunc = (id) => {
     setBorderHover("right-[-200px] transition-all ease-in-out duration-500");
-    setBorderHover2("right-[-230px] transition-all ease-in-out duration-500");
+    setBorderHover2("right-[-229px] transition-all ease-in-out duration-500");
+    setActiveAni(id)
   };
 
   const hoverFuncOut = () => {
-    setBorderHoverOut("")
-    setBorderHover("right-[-180px] transition-all ease-in-out duration-500")
-    setBorderHover2("right-[-240px] transition-all ease-in-out duration-500")
+    setBorderHover("right-[-180px] transition-all ease-in-out duration-500");
+    setBorderHover2("right-[-240px] transition-all ease-in-out duration-500");
   };
+
+  console.log(borderHover , "b1")
+  console.log(borderHover2 , "b2")
+
+  const heritageSwipperContent = [
+    {
+      id: 0,
+      h2: "100",
+      h3: "",
+      text: "of brands transformed",
+    },
+    {
+      id: 1,
+      h2: "1000",
+      h3: "",
+      text: "of experiences delivered",
+    },
+    {
+      id: 2,
+      h2: "100",
+      h3: "s",
+      text: "of posibillities transformed",
+      img: infinity,
+    },
+    {
+      id: 3,
+      h2: "20",
+      h3: "s",
+      text: "years in business",
+    },
+    {
+      id: 4,
+      h2: "2023",
+      // h3: "s",
+      text: "listed on the pakistan stock exchange",
+    },
+  ];
 
   return (
     <>
@@ -81,7 +96,7 @@ const HeritageSection = () => {
           </div>
         </div>
 
-        <div className="mb-10 mt-5 md:max-w-[800px] md:mx-auto lg:max-w-[97%] cursor-grab ">
+        <div className="mb-10 mt-5 md:max-w-[800px] md:mx-auto lg:max-w-[97%] ">
           <Swiper
             spaceBetween={20}
             slidesPerView={1.5}
@@ -99,12 +114,15 @@ const HeritageSection = () => {
                 spaceBetween: 35,
               },
             }}
-            modules={[Autoplay]}
+            modules={[Autoplay , Navigation]}
             speed={2000}
             loop={true}
-            // navigation={true}
+            navigation={{
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+            }}            
             autoplay={{
-              delay : 500
+              delay: 2000000,
             }}
             centeredSlides={true}
             className="mySwiper "
@@ -112,9 +130,9 @@ const HeritageSection = () => {
             {heritageSwipperContent.map((item, index) => (
               <>
                 <SwiperSlide>
-                  <div className="h-[350px] relative overflow-hidden">
+                  <div className="h-[px] relative overflow-hidden">
                     <div
-                      onMouseOver={() => hoverFunc()}
+                      onMouseOver={() => hoverFunc(item.id)}
                       onMouseLeave={() => hoverFuncOut()}
                       className=" border border-gray-400 rounded-lg pl-4 py-10 min-h-[300px] max-w-[px] bg-[#fafafa]"
                     >
@@ -125,9 +143,11 @@ const HeritageSection = () => {
                             <span className="text-3xl ">{item.h3}</span>
                           </h6>
                           <div
-                            className={`absolute top-[-120px] right-[-180px] border border-gray-300 rounded-[50px] w-72 h-72  ${borderHover} `}
+                            className={`absolute top-[-120px] right-[-180px] border border-gray-300 rounded-[50px] w-72 h-72  ${activeAni == index ? borderHover : ""} `}
                           ></div>
-                          <div className={`absolute top-[-70px] right-[-240px] border border-gray-300 rounded-[50px] w-72 h-72 ${borderHover2}`}></div>
+                          <div
+                            className={`absolute top-[-70px] right-[-240px] border border-gray-300 rounded-[50px] w-72 h-72 ${activeAni == index ? borderHover2 : ""}`}
+                          ></div>
                           <p className="text- text-gray-700">{item.text}</p>
                         </>
                       ) : (
@@ -150,6 +170,21 @@ const HeritageSection = () => {
               </>
             ))}
           </Swiper>
+
+          <div className="swiper-navigation-buttons flex justify-center gap-2 lg:gap-[10px] 2xl:gap-3 w-full mt-10">
+            <button
+              onClick={() => handleArrowPrevActive()}
+              className={`swiper-button-prev ${
+                arrowPrevActive ? "arrows-bg after:!text-white " : ""
+              } !static custom-arrow-border rounded-md rotate-[45deg] !w-7 !h-7 md:!w-8 md:!h-8 lg:!w-8 lg:!h-8 2xl:!w-9 2xl:!h-9 `}
+            ></button>
+            <button
+              onClick={() => handleArrowNextActive()}
+              className={`swiper-button-next ${
+                arrowNextActive ? "arrows-bg  after:!text-white " : ""
+              } !static custom-arrow-border  rounded-md rotate-[45deg] !w-7 !h-7 md:!w-8 md:!h-8 lg:!w-8 lg:!h-8 2xl:!w-9 2xl:!h-9`}
+            ></button>
+          </div>
         </div>
       </div>
     </>
