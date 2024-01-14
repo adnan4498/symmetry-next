@@ -8,11 +8,13 @@ import hamburgerSvg from "../../../../public/hamburger.svg";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import gsap from "gsap";
 import "../navbar/Navbar.css";
-
 import Drawer from "react-modern-drawer";
-
-//import styles 👇
 import "react-modern-drawer/dist/index.css";
+
+import Rive from "@rive-app/react-canvas";
+// import RiveAnimation from "../../../public/symmetryAnimations/banner-Rive.riv";
+import RiveAnimation from "../../../../public/symmetryAnimations/banner-Rive.riv";
+
 gsap.registerPlugin(ScrollTrigger); // Register the ScrollTrigger plugin
 
 const Navbar = () => {
@@ -126,7 +128,7 @@ const Navbar = () => {
             <div className="">
               <div class="menu cross menu--1">
                 <label
-                  className="top-[-15px] lg:top-[0px] absolute cursor-pointer w-[50vw] h-[50vw] max-w-[90px] max-h-[150px] !right-[-20px]"
+                  className="top-[-15px] lg:top-[0px] absolute cursor-pointer w-[50vw] h-[50vw] max-w-[90px] max-h-[150px] !right-[-20px] md:!right-[10px]"
                   style={{ zIndex: "99999" }}
                 >
                   <input type="checkbox" onClick={toggleDrawer} />
@@ -154,18 +156,19 @@ const Navbar = () => {
               style={{ height: "130vh" }}
             >
               <>
-                <div className="ml-2 mt-4">
+                <div className="ml-2 mt-4 md:mx-10">
                   <div className="w-[55vw] ml-1">
                     <Image src={logo} />
                   </div>
 
                   <div>
+                    {/*********  Mobile   *********/}
+
                     <div>
-                      <div className="mt-10 md:mx-16 lg:hidden">
+                      <div className="mt-16 lg:hidden">
                         <div className="text-white flex flex-col gap-2 mr-1 text-2xl pillat-normal">
                           <div className="flex justify-between mx-2 ">
                             <div>about us</div>
-                            {/* <div className="text-lg font-bold">+</div> */}
                           </div>
                           <div className="flex justify-between mx-2 text-2xl">
                             <div>investor relations</div>
@@ -185,11 +188,57 @@ const Navbar = () => {
                           </div>
                           <div className="flex justify-between mx-2">
                             <div>affiliation & partnerships</div>
-                            <div className="text-2xl font-bold">+</div>
+                          </div>
+                          <div className="flex justify-between mx-2">
+                            <div>careers</div>
                           </div>
                           <div className="flex justify-between mx-2">
                             <div>contact us</div>
-                            <div className="text-2xl font-bold">+</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/*********  Laptop   *********/}
+
+                    <div>
+                      <div className="mt-16 hidden lg:block">
+                        <div className="flex justify-between items-center">
+                          <div>
+                            <div className="text-white flex flex-col gap-2 mr-1 text-2xl pillat-normal">
+                              <div className="flex justify-between mx-2 ">
+                                <div>about us</div>
+                              </div>
+                              <div className="flex justify-between mx-2 text-2xl">
+                                <div>investor relations</div>
+                              </div>
+                              <div className="flex justify-between mx-2">
+                                <div>business divisions</div>
+                              </div>
+                              <div className="flex justify-between mx-2">
+                                <div>brands & products</div>
+                              </div>
+                              <div className="flex justify-between mx-2">
+                                <div>clients</div>
+                              </div>
+                              <div className="flex justify-between mx-2">
+                                <div>affiliation & partnerships</div>
+                              </div>
+                              <div className="flex justify-between mx-2">
+                                <div>careers</div>
+                              </div>
+                              <div className="flex justify-between mx-2">
+                                <div>contact us</div>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="w-[20vw]">
+                            <Rive
+                              src={RiveAnimation}
+                              // stateMachines="bumpy"
+                              autoplay={true} // Or play={true}
+                              play={true}
+                            />
                           </div>
                         </div>
                       </div>
