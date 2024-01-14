@@ -117,6 +117,8 @@ body {
   animation: rainbow-text-simple-animation 10s linear infinite;
 }
 
+/******* Navbar Square Boxes ********/
+
 @keyframes rainbow-border-animation {
   0% {
     border-image-source: linear-gradient(
@@ -182,8 +184,8 @@ body {
   );
   border-image-slice: 1;
   display: inline-block;
-  width: 14px; /* Adjust the width as needed */
-  height: 14px; /* Adjust the height as needed */
+  width: 12px; /* Adjust the width as needed */
+  height: 12px; /* Adjust the height as needed */
   margin-left: 8px; /* Adjust the margin as needed */
   /* transform: rotate(45deg); */
   animation: rainbow-border-animation 10s linear infinite;

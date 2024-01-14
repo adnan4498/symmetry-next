@@ -1,15 +1,5 @@
 /********  navbar hamburger   ********/
 
-label {
-  display: block;
-  cursor: pointer;
-  position: absolute;
-  width: 50vw;
-  height: 50vw;
-  max-width: 150px;
-  max-height: 150px;
-}
-
 .menu--1 label,
 .menu--2 label {
   bottom: 0;
@@ -28,6 +18,13 @@ label {
 .menu--2 label,
 .menu--4 label {
   left: 0;
+}
+
+/********  this input shows an icon that toggles hamburger to cross  ********/
+/********  displayed none so we dont see the input/checkbox  ********/
+
+input{
+  display: none;
 }
 
 /********  hamburger lines   ********/
@@ -57,7 +54,7 @@ path {
   --offset: -38;
   stroke-dasharray: var(--length) var(--total-length);
   stroke-dashoffset: var(--offset);
-  transition: all 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
 label:hover circle {
@@ -100,3 +97,16 @@ label:hover circle {
     }
   }
 }
+
+
+
+
+/***** React Hamburger *******/
+
+.hamburger-react{
+  rotate: -45deg;
+  height: 30px !important;
+  width: 30px !important;
+  right: 13px;
+}
+/***** React Hamburger *******/

@@ -8,11 +8,34 @@ import hamburgerSvg from "../../../../public/hamburger.svg";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import gsap from "gsap";
 import "../navbar/Navbar.css";
+
+import Drawer from "react-modern-drawer";
+
+//import styles 👇
+import "react-modern-drawer/dist/index.css";
 gsap.registerPlugin(ScrollTrigger); // Register the ScrollTrigger plugin
 
 const Navbar = () => {
   const [activeBg, setActiveBg] = useState(0);
   const navRef = useRef();
+
+  const [isOpen, setIsOpen] = useState(false);
+  const [togglePlay, setTogglePlay] = useState(false);
+
+  const toggleDrawer = () => {
+    const myInterval = setInterval(() => {
+      setIsOpen((prevState) => !prevState);
+    }, 400);
+
+    const killMyInterval = setInterval(() => {
+      clearInterval(myInterval);
+    }, 400);
+
+    setInterval(() =>{
+      clearInterval(killMyInterval)
+      console.log("all intervals")
+    } , 20000 )
+  };
 
   useEffect(() => {
     var actionNav = gsap.to(navRef.current, {
@@ -31,30 +54,10 @@ const Navbar = () => {
       y: "-=100",
       duration: 0.3,
       ease: "power2.inOut",
-      paused: true,
+      // paused: true,
     });
 
-    // ScrollTrigger for the navigation
-    // ScrollTrigger.create({
-
-    // });
-
-    // ScrollTrigger for the images
-    // gsap.utils.toArray("img").forEach(function (elem) {
-    //   ScrollTrigger.create({
-    //     trigger: elem,
-    //     start: "top 80%",
-    //     end: "top -100px",
-    //     onEnter: () =>
-    //       gsap
-    //         .timeline()
-    //         .to(elem, { autoAlpha: 1 })
-    //         .from(elem, { y: "+=50" }, 0),
-    //     onEnterBack: () => gsap.timeline().to(elem, { autoAlpha: 1, y: 0 }),
-    //     onLeave: () => gsap.timeline().to(elem, { autoAlpha: 0, y: "-=50" }),
-    //     onLeaveBack: () => gsap.timeline().set(elem, { autoAlpha: 0, y: 0 }),
-    //   });
-    // });
+    actionNav.paused()
   }, []);
 
   const navHoverFunc = (id) => {
@@ -94,14 +97,14 @@ const Navbar = () => {
                 <Image
                   src={logo}
                   alt="logo"
-                  className="w-[45vw] md:w-[30vw] lg:w-[25vw]"
+                  className="w-[45vw] md:w-[30vw] lg:w-[22vw]"
                 />
               </div>
             </Link>
             {liItems.map((item, index) => (
               <>
                 <div className="ss pillat-thin lg:block hidden">
-                  <ul className="flex items-center gap-3 xl:gap-5 text-[1.2vw] 2xl:text-xl cursor-pointer">
+                  <ul className="flex items-center gap-3 xl:gap-5 text-[1vw] 2xl:text-xl cursor-pointer">
                     <li
                       key={item.id}
                       onMouseOver={() => navHoverFunc(item.id)}
@@ -123,12 +126,19 @@ const Navbar = () => {
                 </div>
               </>
             ))}
-            <div>
+            <div className="">
               <div class="menu cross menu--1">
-                <label>
-                  <input type="checkbox" />
-                  <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="50" cy="50" r="30" />
+                <label
+                  className="top-[-15px] lg:top-[0px] absolute cursor-pointer w-[50vw] h-[50vw] max-w-[90px] max-h-[150px] "
+                  style={{ zIndex: "99999" }}
+                >
+                  <input type="checkbox" onClick={toggleDrawer} />
+                  <svg
+                    viewBox="0 0 100 100"
+                    className=""
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle cx="0" cy="0" r="0" />
                     <path class="line--1" d="M0 40h62c13 0 6 28-4 18L35 35" />
                     <path class="line--2" d="M0 50h70" />
                     <path class="line--3" d="M0 60h62c13 0 6-28-4-18L35 65" />
@@ -136,6 +146,21 @@ const Navbar = () => {
                 </label>
               </div>
             </div>
+
+            {/* <button >Show</button> */}
+            <Drawer
+              open={isOpen}
+              onClose={toggleDrawer}
+              direction="right"
+              className="!bg-red-500"
+              size="100vw"
+              style={{ height: "130vh" }}
+            >
+              <div className="ml-10 mt-10 ">1</div>
+              <div className="ml-10 mt-10 ">2</div>
+              <div className="ml-10 mt-10 ">3</div>
+              <div className="ml-10 mt-10 ">4</div>
+            </Drawer>
           </div>
         </div>
       </div>
