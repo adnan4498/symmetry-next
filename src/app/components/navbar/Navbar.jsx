@@ -20,7 +20,6 @@ const Navbar = () => {
   const navRef = useRef();
 
   const [isOpen, setIsOpen] = useState(false);
-  const [togglePlay, setTogglePlay] = useState(false);
 
   const toggleDrawer = () => {
     const myInterval = setInterval(() => {
@@ -31,10 +30,10 @@ const Navbar = () => {
       clearInterval(myInterval);
     }, 400);
 
-    setInterval(() =>{
-      clearInterval(killMyInterval)
-      console.log("all intervals")
-    } , 20000 )
+    setInterval(() => {
+      clearInterval(killMyInterval);
+      console.log("all intervals");
+    }, 20000);
   };
 
   useEffect(() => {
@@ -56,8 +55,6 @@ const Navbar = () => {
       ease: "power2.inOut",
       // paused: true,
     });
-
-    actionNav.paused()
   }, []);
 
   const navHoverFunc = (id) => {
@@ -129,7 +126,7 @@ const Navbar = () => {
             <div className="">
               <div class="menu cross menu--1">
                 <label
-                  className="top-[-15px] lg:top-[0px] absolute cursor-pointer w-[50vw] h-[50vw] max-w-[90px] max-h-[150px] "
+                  className="top-[-15px] lg:top-[0px] absolute cursor-pointer w-[50vw] h-[50vw] max-w-[90px] max-h-[150px] !right-[-20px]"
                   style={{ zIndex: "99999" }}
                 >
                   <input type="checkbox" onClick={toggleDrawer} />
@@ -152,14 +149,54 @@ const Navbar = () => {
               open={isOpen}
               onClose={toggleDrawer}
               direction="right"
-              className="!bg-red-500"
+              className="!bg-black"
               size="100vw"
               style={{ height: "130vh" }}
             >
-              <div className="ml-10 mt-10 ">1</div>
-              <div className="ml-10 mt-10 ">2</div>
-              <div className="ml-10 mt-10 ">3</div>
-              <div className="ml-10 mt-10 ">4</div>
+              <>
+                <div className="ml-2 mt-4">
+                  <div className="w-[55vw] ml-1">
+                    <Image src={logo} />
+                  </div>
+
+                  <div>
+                    <div>
+                      <div className="mt-10 md:mx-16 lg:hidden">
+                        <div className="text-white flex flex-col gap-2 mr-1 text-2xl pillat-normal">
+                          <div className="flex justify-between mx-2 ">
+                            <div>about us</div>
+                            {/* <div className="text-lg font-bold">+</div> */}
+                          </div>
+                          <div className="flex justify-between mx-2 text-2xl">
+                            <div>investor relations</div>
+                            <div className="text-2xl font-bold">+</div>
+                          </div>
+                          <div className="flex justify-between mx-2">
+                            <div>business divisions</div>
+                            <div className="text-2xl font-bold">+</div>
+                          </div>
+                          <div className="flex justify-between mx-2">
+                            <div>brands & products</div>
+                            <div className="text-2xl font-bold">+</div>
+                          </div>
+                          <div className="flex justify-between mx-2">
+                            <div>clients</div>
+                            <div className="text-2xl font-bold">+</div>
+                          </div>
+                          <div className="flex justify-between mx-2">
+                            <div>affiliation & partnerships</div>
+                            <div className="text-2xl font-bold">+</div>
+                          </div>
+                          <div className="flex justify-between mx-2">
+                            <div>contact us</div>
+                            <div className="text-2xl font-bold">+</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </>
             </Drawer>
           </div>
         </div>
