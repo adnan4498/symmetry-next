@@ -5,6 +5,10 @@ import Image from "next/image";
 import logo from "../../../../public/logo.webp";
 import hamburger from "../../../../public/hamburger-icon-3.png";
 import hamburgerSvg from "../../../../public/hamburger.svg";
+import linkdinLogo from "../../../../public/linkdin-logo.webp";
+import fbLogo from "../../../../public/fb-logo.webp";
+import twitterLogo from "../../../../public/twitter-logo.webp";
+import rightChevron from "../../../../public/right-chevron.png";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import gsap from "gsap";
 import "../navbar/Navbar.css";
@@ -12,31 +16,18 @@ import Drawer from "react-modern-drawer";
 import "react-modern-drawer/dist/index.css";
 
 import Rive from "@rive-app/react-canvas";
-// import RiveAnimation from "../../../public/symmetryAnimations/banner-Rive.riv";
 import RiveAnimation from "../../../../public/symmetryAnimations/banner-Rive.riv";
 
-gsap.registerPlugin(ScrollTrigger); // Register the ScrollTrigger plugin
+gsap.registerPlugin(ScrollTrigger);
 
 const Navbar = () => {
   const [activeBg, setActiveBg] = useState(0);
-  const navRef = useRef();
-
   const [isOpen, setIsOpen] = useState(false);
-
-  const toggleDrawer = () => {
-    const myInterval = setInterval(() => {
-      setIsOpen((prevState) => !prevState);
-    }, 400);
-
-    const killMyInterval = setInterval(() => {
-      clearInterval(myInterval);
-    }, 400);
-
-    setInterval(() => {
-      clearInterval(killMyInterval);
-      console.log("all intervals");
-    }, 20000);
-  };
+  const [chevinState1, setChevinState1] = useState();
+  const [chevinState2, setChevinState2] = useState();
+  const [chevinState3, setChevinState3] = useState();
+  const [chevinState4, setChevinState4] = useState();
+  const navRef = useRef();
 
   useEffect(() => {
     var actionNav = gsap.to(navRef.current, {
@@ -58,6 +49,21 @@ const Navbar = () => {
       // paused: true,
     });
   }, []);
+
+  const toggleDrawer = () => {
+    const myInterval = setInterval(() => {
+      setIsOpen((prevState) => !prevState);
+    }, 400);
+
+    const killMyInterval = setInterval(() => {
+      clearInterval(myInterval);
+    }, 400);
+
+    setInterval(() => {
+      clearInterval(killMyInterval);
+      console.log("all intervals");
+    }, 20000);
+  };
 
   const navHoverFunc = (id) => {
     setActiveBg(id);
@@ -83,6 +89,56 @@ const Navbar = () => {
     {
       id: 4,
       name: "affiliations & partnerships",
+    },
+  ];
+
+  const investorRelationsItems = [
+    {
+      id: 0,
+      name: "company information",
+    },
+    {
+      id: 1,
+      name: "governance",
+    },
+    {
+      id: 2,
+      name: "financial reports",
+    },
+    {
+      id: 3,
+      name: "corporate briefings",
+    },
+    {
+      id: 4,
+      name: "notices & announcements",
+    },
+    {
+      id: 5,
+      name: "important documents",
+    },
+    {
+      id: 6,
+      name: "investor contacts",
+    },
+  ];
+
+  const businessDivisionsItems = [
+    {
+      id: 0,
+      name: "transformation",
+    },
+    {
+      id: 1,
+      name: "interactive marketing",
+    },
+    {
+      id: 2,
+      name: "commerce",
+    },
+    {
+      id: 3,
+      name: "mobility",
     },
   ];
 
@@ -205,39 +261,168 @@ const Navbar = () => {
                       <div className="mt-16 hidden lg:block">
                         <div className="flex justify-between items-center">
                           <div>
-                            <div className="text-white flex flex-col gap-2 mr-1 text-2xl pillat-normal lg:gap-7 ">
-                              <div className="flex justify-between mx-2  footer-text-color-toggle cursor-pointer">
+                            <div className="text-white flex flex-col gap-2 mr-1 text-xl pillat-normal lg:gap-5 ">
+                              <div className="flex justify-between mx-2  footer-text-color-toggle cursor-pointer ">
                                 <div>about us</div>
                               </div>
-                              <div className="flex justify-between mx-2 text-2xl footer-text-color-toggle cursor-pointer">
-                                <div>investor relations</div>
+                              <div
+                                className=" flex justify-between items-center mx-2 cursor-pointer w-[300px] "
+                                onMouseOver={() =>
+                                  setChevinState1(
+                                    "opacity-100 transition-all duration-500 "
+                                  )
+                                }
+                                onMouseOut={() =>
+                                  setChevinState1(
+                                    "opacity-0 transition-all duration-500"
+                                  )
+                                }
+                              >
+                                <div className="footer-text-color-toggle">
+                                  investor relations
+                                </div>
+                                <div
+                                  className={`text-2xl font-bold pt-1 flex gap-10 items-center opacity-0 ${chevinState1}`}
+                                >
+                                  <div>
+                                    <Image src={rightChevron} width={20} />
+                                  </div>
+                                  <div className="absolute left-[400px] top-[190px] flex flex-col gap-5 text-lg">
+                                    {investorRelationsItems.map(
+                                      (item, index) => (
+                                        <>
+                                          <div className="">
+                                            <div className="footer-text-color-toggle">
+                                              {item.name}
+                                            </div>
+                                          </div>
+                                        </>
+                                      )
+                                    )}
+                                  </div>
+                                </div>
                               </div>
-                              <div className="flex justify-between mx-2 footer-text-color-toggle cursor-pointer">
-                                <div>business divisions</div>
+                              <div
+                                onMouseOver={() =>
+                                  setChevinState2(
+                                    "opacity-100 transition-all duration-500"
+                                  )
+                                }
+                                onMouseOut={() =>
+                                  setChevinState2(
+                                    "opacity-0 transition-all duration-500"
+                                  )
+                                }
+                                className="flex justify-between items-center mx-2  cursor-pointer w-[300px]"
+                              >
+                                <div className="footer-text-color-toggle">
+                                  business divisions
+                                </div>
+                                <div className="text-2xl font-bold">
+                                  <div
+                                    className={`text-2xl font-bold opacity-0 ${chevinState2}`}
+                                  >
+                                    <Image src={rightChevron} width={20} />
+                                  </div>
+                                </div>
                               </div>
-                              <div className="flex justify-between mx-2 footer-text-color-toggle cursor-pointer">
-                                <div>brands & products</div>
+                              <div
+                                onMouseOver={() =>
+                                  setChevinState3(
+                                    "opacity-100 transition-all duration-500"
+                                  )
+                                }
+                                onMouseOut={() =>
+                                  setChevinState3(
+                                    "opacity-0 transition-all duration-500"
+                                  )
+                                }
+                                className="flex justify-between items-center mx-2  cursor-pointer w-[300px]"
+                              >
+                                {" "}
+                                <div className="footer-text-color-toggle">
+                                  brands & products
+                                </div>
+                                <div className="text-2xl font-bold">
+                                  <div
+                                    className={`text-2xl font-bold opacity-0 ${chevinState3}`}
+                                  >
+                                    {" "}
+                                    <Image src={rightChevron} width={20} />
+                                  </div>
+                                </div>
                               </div>
-                              <div className="flex justify-between mx-2 footer-text-color-toggle cursor-pointer">
-                                <div>clients</div>
+                              <div
+                                onMouseOver={() =>
+                                  setChevinState4(
+                                    "opacity-100 transition-all duration-500"
+                                  )
+                                }
+                                onMouseOut={() =>
+                                  setChevinState4(
+                                    "opacity-0 transition-all duration-500"
+                                  )
+                                }
+                                className="flex justify-between items-center mx-2  cursor-pointer w-[300px]"
+                              >
+                                {" "}
+                                <div className="footer-text-color-toggle">
+                                  clients
+                                </div>
+                                <div className="text-2xl font-bold">
+                                  <div
+                                    className={`text-2xl font-bold opacity-0 ${chevinState4}`}
+                                  >
+                                    {" "}
+                                    <Image src={rightChevron} width={20} />
+                                  </div>
+                                </div>
                               </div>
-                              <div className="flex justify-between mx-2 footer-text-color-toggle cursor-pointer">
-                                <div>affiliation & partnerships</div>
+                              <div className="flex justify-between  items-center mx-2 cursor-pointer">
+                                <div className="footer-text-color-toggle">
+                                  affiliation & partnerships
+                                </div>
                               </div>
-                              <div className="flex justify-between mx-2 footer-text-color-toggle cursor-pointer">
-                                <div>careers</div>
+                              <div className="flex justify-between  items-center mx-2 cursor-pointer">
+                                <div className="footer-text-color-toggle">
+                                  careers
+                                </div>
                               </div>
-                              <div className="flex justify-between mx-2 footer-text-color-toggle cursor-pointer">
-                                <div>contact us</div>
+                              <div className="flex justify-between  items-center mx-2 cursor-pointer">
+                                <div className="footer-text-color-toggle">
+                                  contact us
+                                </div>
+                              </div>
+
+                              <div className="flex gap-3 ml-2 mt-5  ">
+                                <div className="border border-green-400 rounded-lg my-auto px-1 py-1 cursor-pointer hamburger-social-icons-div">
+                                  <Image
+                                    src={linkdinLogo}
+                                    width={28}
+                                    className="hamburger-social-icon"
+                                  />
+                                </div>
+                                <div className="border border-green-400 rounded-lg my-auto px-1 py-1 cursor-pointer hamburger-social-icons-div">
+                                  <Image
+                                    src={fbLogo}
+                                    width={28}
+                                    className="hamburger-social-icon"
+                                  />
+                                </div>
+                                <div className="border border-green-400 rounded-lg my-auto px-1 py-1 cursor-pointer hamburger-social-icons-div">
+                                  <Image
+                                    src={twitterLogo}
+                                    width={28}
+                                    className="hamburger-social-icon"
+                                  />
+                                </div>
                               </div>
                             </div>
                           </div>
                           <div className="hidden md:block ">
-                            {/* <Image src={square} alt="animation square" className="" /> */}
                             <Rive
                               src={RiveAnimation}
-                              // stateMachines="bumpy"
-                              autoplay={true} // Or play={true}
+                              autoplay={true}
                               play={true}
                               className="lg:w-96 h-96"
                             />
