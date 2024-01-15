@@ -14,11 +14,265 @@ import gsap from "gsap";
 import "../navbar/Navbar.css";
 import Drawer from "react-modern-drawer";
 import "react-modern-drawer/dist/index.css";
+import { Menu } from "antd";
 
 import Rive from "@rive-app/react-canvas";
 import RiveAnimation from "../../../../public/symmetryAnimations/banner-Rive.riv";
 
 gsap.registerPlugin(ScrollTrigger);
+
+function getItem(label, key, children, type) {
+  return {
+    key,
+    children,
+    label,
+    type,
+  };
+}
+const items = [
+  getItem(
+    <div className="footer-text-color-toggle pillat-normal abbo">about</div>,
+    "sub1",
+    [<></>]
+  ),
+
+  getItem(
+    <div className="footer-text-color-toggle pillat-normal">
+      investors relations{" "}
+    </div>,
+    "sub2",
+    [
+      getItem(
+        <>
+          <div className="footer-text-color-toggle text-xl pillat-normal">
+            {" "}
+            company information{" "}
+          </div>
+        </>
+      ),
+      getItem(
+        <>
+          <div className="footer-text-color-toggle text-xl pillat-normal">
+            {" "}
+            governance{" "}
+          </div>
+        </>
+      ),
+      getItem(
+        <>
+          <div className="footer-text-color-toggle text-xl pillat-normal">
+            financial reports
+          </div>
+        </>
+      ),
+
+      getItem(
+        <>
+          <div className="footer-text-color-toggle text-xl pillat-normal">
+            corporate briefings
+          </div>
+        </>
+      ),
+      getItem(
+        <>
+          <div className="footer-text-color-toggle text-xl pillat-normal">
+            notices & announcements
+          </div>
+        </>
+      ),
+      getItem(
+        <>
+          <div className="footer-text-color-toggle text-xl pillat-normal">
+            important documents
+          </div>
+        </>
+      ),
+      getItem(
+        <>
+          <div className="footer-text-color-toggle text-xl pillat-normal">
+            investor contacts
+          </div>
+        </>
+      ),
+    ]
+  ),
+
+  getItem(
+    <div className="footer-text-color-toggle pillat-normal">
+      business divisions{" "}
+    </div>,
+    "sub3",
+    [
+      getItem(
+        <>
+          <div className="footer-text-color-toggle text-xl pillat-normal">
+            transformation
+          </div>
+        </>
+      ),
+      getItem(
+        <>
+          <div className="footer-text-color-toggle text-xl pillat-normal">
+            interactive marketing
+          </div>
+        </>
+      ),
+      getItem(
+        <>
+          <div className="footer-text-color-toggle text-xl pillat-normal">
+            commerce
+          </div>
+        </>
+      ),
+
+      getItem(
+        <>
+          <div className="footer-text-color-toggle text-xl pillat-normal">
+            mobility
+          </div>
+        </>
+      ),
+    ]
+  ),
+
+  getItem(
+    <div className="footer-text-color-toggle pillat-normal">
+      brands & products
+    </div>,
+    "sub4",
+    [
+      getItem(
+        <>
+          <div className="footer-text-color-toggle text-xl pillat-normal">
+            symmetry digital
+          </div>
+        </>
+      ),
+      getItem(
+        <>
+          <div className="footer-text-color-toggle text-xl pillat-normal">
+            iris digital
+          </div>
+        </>
+      ),
+      getItem(
+        <>
+          <div className="footer-text-color-toggle text-xl pillat-normal">
+            symmetry trade
+          </div>
+        </>
+      ),
+
+      getItem(
+        <>
+          <div className="footer-text-color-toggle text-xl pillat-normal">
+            coral
+          </div>
+        </>
+      ),
+      getItem(
+        <>
+          <div className="footer-text-color-toggle text-xl pillat-normal">
+            coral performance
+          </div>
+        </>
+      ),
+      getItem(
+        <>
+          <div className="footer-text-color-toggle text-xl pillat-normal">
+            appabilities
+          </div>
+        </>
+      ),
+      getItem(
+        <>
+          <div className="footer-text-color-toggle text-xl pillat-normal">
+            survit
+          </div>
+        </>
+      ),
+      getItem(
+        <>
+          <div className="footer-text-color-toggle text-xl pillat-normal">
+            mobit
+          </div>
+        </>
+      ),
+    ]
+  ),
+
+  getItem(
+    <div className="footer-text-color-toggle pillat-normal">clients</div>,
+    "sub5",
+    [
+      getItem(
+        <>
+          <div className="footer-text-color-toggle text-xl pillat-normal">
+            telecom
+          </div>
+        </>
+      ),
+      getItem(
+        <>
+          <div className="footer-text-color-toggle text-xl pillat-normal">
+            banking & finance
+          </div>
+        </>
+      ),
+      getItem(
+        <>
+          <div className="footer-text-color-toggle text-xl pillat-normal">
+            fmcg
+          </div>
+        </>
+      ),
+
+      getItem(
+        <>
+          <div className="footer-text-color-toggle text-xl pillat-normal">
+            real estate
+          </div>
+        </>
+      ),
+      getItem(
+        <>
+          <div className="footer-text-color-toggle text-xl pillat-normal">
+            pharmaceutical
+          </div>
+        </>
+      ),
+      getItem(
+        <>
+          <div className="footer-text-color-toggle text-xl pillat-normal">
+            others
+          </div>
+        </>
+      ),
+    ]
+  ),
+
+  getItem(
+    <div className="footer-text-color-toggle pillat-normal abbo">
+      affiliation & partnerships
+    </div>,
+    "sub1",
+    [<></>]
+  ),
+
+  getItem(
+    <div className="footer-text-color-toggle pillat-normal abbo">careers</div>,
+    "sub1",
+    [<></>]
+  ),
+
+  getItem(
+    <div className="footer-text-color-toggle pillat-normal abbo">
+      contact us
+    </div>,
+    "sub1",
+    [<></>]
+  ),
+];
 
 const Navbar = () => {
   const [activeBg, setActiveBg] = useState(0);
@@ -262,136 +516,15 @@ const Navbar = () => {
                         <div className="flex justify-between items-center">
                           <div>
                             <div className="text-white flex flex-col gap-2 mr-1 text-xl pillat-normal lg:gap-5 ">
-                              <div className="flex justify-between mx-2  footer-text-color-toggle cursor-pointer ">
-                                <div>about us</div>
-                              </div>
-                              <div
-                                className=" flex justify-between items-center mx-2 cursor-pointer w-[300px] "
-                                onMouseOver={() =>
-                                  setChevinState1(
-                                    "opacity-100 transition-all duration-500 "
-                                  )
-                                }
-                                onMouseOut={() =>
-                                  setChevinState1(
-                                    "opacity-0 transition-all duration-500"
-                                  )
-                                }
-                              >
-                                <div className="footer-text-color-toggle">
-                                  investor relations
-                                </div>
-                                <div
-                                  className={`text-2xl font-bold pt-1 flex gap-10 items-center opacity-0 ${chevinState1}`}
-                                >
-                                  <div>
-                                    <Image src={rightChevron} width={20} />
-                                  </div>
-                                  <div className="absolute left-[400px] top-[190px] flex flex-col gap-5 text-lg">
-                                    {investorRelationsItems.map(
-                                      (item, index) => (
-                                        <>
-                                          <div className="">
-                                            <div className="footer-text-color-toggle">
-                                              {item.name}
-                                            </div>
-                                          </div>
-                                        </>
-                                      )
-                                    )}
-                                  </div>
-                                </div>
-                              </div>
-                              <div
-                                onMouseOver={() =>
-                                  setChevinState2(
-                                    "opacity-100 transition-all duration-500"
-                                  )
-                                }
-                                onMouseOut={() =>
-                                  setChevinState2(
-                                    "opacity-0 transition-all duration-500"
-                                  )
-                                }
-                                className="flex justify-between items-center mx-2  cursor-pointer w-[300px]"
-                              >
-                                <div className="footer-text-color-toggle">
-                                  business divisions
-                                </div>
-                                <div className="text-2xl font-bold">
-                                  <div
-                                    className={`text-2xl font-bold opacity-0 ${chevinState2}`}
-                                  >
-                                    <Image src={rightChevron} width={20} />
-                                  </div>
-                                </div>
-                              </div>
-                              <div
-                                onMouseOver={() =>
-                                  setChevinState3(
-                                    "opacity-100 transition-all duration-500"
-                                  )
-                                }
-                                onMouseOut={() =>
-                                  setChevinState3(
-                                    "opacity-0 transition-all duration-500"
-                                  )
-                                }
-                                className="flex justify-between items-center mx-2  cursor-pointer w-[300px]"
-                              >
-                                {" "}
-                                <div className="footer-text-color-toggle">
-                                  brands & products
-                                </div>
-                                <div className="text-2xl font-bold">
-                                  <div
-                                    className={`text-2xl font-bold opacity-0 ${chevinState3}`}
-                                  >
-                                    {" "}
-                                    <Image src={rightChevron} width={20} />
-                                  </div>
-                                </div>
-                              </div>
-                              <div
-                                onMouseOver={() =>
-                                  setChevinState4(
-                                    "opacity-100 transition-all duration-500"
-                                  )
-                                }
-                                onMouseOut={() =>
-                                  setChevinState4(
-                                    "opacity-0 transition-all duration-500"
-                                  )
-                                }
-                                className="flex justify-between items-center mx-2  cursor-pointer w-[300px]"
-                              >
-                                {" "}
-                                <div className="footer-text-color-toggle">
-                                  clients
-                                </div>
-                                <div className="text-2xl font-bold">
-                                  <div
-                                    className={`text-2xl font-bold opacity-0 ${chevinState4}`}
-                                  >
-                                    {" "}
-                                    <Image src={rightChevron} width={20} />
-                                  </div>
-                                </div>
-                              </div>
-                              <div className="flex justify-between  items-center mx-2 cursor-pointer">
-                                <div className="footer-text-color-toggle">
-                                  affiliation & partnerships
-                                </div>
-                              </div>
-                              <div className="flex justify-between  items-center mx-2 cursor-pointer">
-                                <div className="footer-text-color-toggle">
-                                  careers
-                                </div>
-                              </div>
-                              <div className="flex justify-between  items-center mx-2 cursor-pointer">
-                                <div className="footer-text-color-toggle">
-                                  contact us
-                                </div>
+                              <div className="">
+                                <Menu
+                                  // onClick={onClick}
+                                  style={{
+                                    width: 256,
+                                  }}
+                                  mode="vertical"
+                                  items={items}
+                                />
                               </div>
 
                               <div className="flex gap-3 ml-2 mt-5  ">

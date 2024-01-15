@@ -3,11 +3,6 @@ import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
 import rightChevron from "../../../../public/right-chevron.png";
 
-import {
-  AppstoreOutlined,
-  MailOutlined,
-  SettingOutlined,
-} from "@ant-design/icons";
 
 import { Menu } from "antd";
 function getItem(label, key, children, type) {
@@ -268,13 +263,9 @@ const items = [
 
 
 ];
-const onClick = (e) => {
-  console.log("click", e);
-};
 
 const page = () => {
   const [showMenu, setShowMenu] = useState();
-  const [investerHover, setInvestorHover] = useState();
 
   const investorRelationsItems = [
     {
@@ -317,37 +308,9 @@ const page = () => {
 
   return (
     <div className="bg-black h-[100vh]">
-      <div className="pt-20 pl-20">
-        <div className="">
-          <div className="flex gap-20 text-lg cursor-pointer footer-text-color-toggle">
-            <div
-              onMouseOver={() => investorHoverInFunc()}
-              onMouseOut={() => investorHoverOutFunc()}
-              className="footer-text-color-toggle"
-            >
-              investors
-            </div>
-            <div>
-              <Image src={rightChevron} width={20} />
-            </div>
-          </div>
-          <div
-            className={`absolute left-[300px] top-[80px] flex flex-col gap-5 text-lg opacity-0 ${showMenu}`}
-          >
-            {investorRelationsItems.map((item, index) => (
-              <>
-                <div className="">
-                  <div className="footer-text-color-toggle">{item.name}</div>
-                </div>
-              </>
-            ))}
-          </div>
-        </div>
-      </div>
-
       <div className="mt-10 ml-10">
         <Menu
-          onClick={onClick}
+          // onClick={onClick}
           style={{
             width: 256,
           }}
