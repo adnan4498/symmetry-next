@@ -205,39 +205,41 @@ const Navbar = () => {
                       <div className="mt-16 hidden lg:block">
                         <div className="flex justify-between items-center">
                           <div>
-                            <div className="text-white flex flex-col gap-2 mr-1 text-2xl pillat-normal">
-                              <div className="flex justify-between mx-2 ">
+                            <div className="text-white flex flex-col gap-2 mr-1 text-2xl pillat-normal lg:gap-7 ">
+                              <div className="flex justify-between mx-2  footer-text-color-toggle cursor-pointer">
                                 <div>about us</div>
                               </div>
-                              <div className="flex justify-between mx-2 text-2xl">
+                              <div className="flex justify-between mx-2 text-2xl footer-text-color-toggle cursor-pointer">
                                 <div>investor relations</div>
                               </div>
-                              <div className="flex justify-between mx-2">
+                              <div className="flex justify-between mx-2 footer-text-color-toggle cursor-pointer">
                                 <div>business divisions</div>
                               </div>
-                              <div className="flex justify-between mx-2">
+                              <div className="flex justify-between mx-2 footer-text-color-toggle cursor-pointer">
                                 <div>brands & products</div>
                               </div>
-                              <div className="flex justify-between mx-2">
+                              <div className="flex justify-between mx-2 footer-text-color-toggle cursor-pointer">
                                 <div>clients</div>
                               </div>
-                              <div className="flex justify-between mx-2">
+                              <div className="flex justify-between mx-2 footer-text-color-toggle cursor-pointer">
                                 <div>affiliation & partnerships</div>
                               </div>
-                              <div className="flex justify-between mx-2">
+                              <div className="flex justify-between mx-2 footer-text-color-toggle cursor-pointer">
                                 <div>careers</div>
                               </div>
-                              <div className="flex justify-between mx-2">
+                              <div className="flex justify-between mx-2 footer-text-color-toggle cursor-pointer">
                                 <div>contact us</div>
                               </div>
                             </div>
                           </div>
-                          <div className="w-[20vw]">
+                          <div className="hidden md:block ">
+                            {/* <Image src={square} alt="animation square" className="" /> */}
                             <Rive
                               src={RiveAnimation}
                               // stateMachines="bumpy"
                               autoplay={true} // Or play={true}
                               play={true}
+                              className="lg:w-96 h-96"
                             />
                           </div>
                         </div>
