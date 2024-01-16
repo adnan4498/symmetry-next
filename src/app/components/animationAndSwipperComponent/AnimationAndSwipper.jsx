@@ -93,11 +93,12 @@ const AnimationAndSwipper = ({
                   },
                 }}
                 modules={[Autoplay, Navigation]}
-                speed={2000}
+                speed={700}
                 loop={true}
                 onSlideChange={handleActive}
                 autoplay={{
                   delay: 1000,
+                  pauseOnMouseEnter : true,
                 }}
                 navigation={{
                   nextEl: ".swiper-button-next",

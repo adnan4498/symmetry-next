@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import square from "../../../../public/square-neon.png";
@@ -21,7 +21,6 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const page = () => {
-
   const blackDiv = useRef();
   const redDiv = useRef();
   const aboutDiv = useRef();
@@ -135,54 +134,57 @@ const page = () => {
     {
       id: 0,
       item: "data science",
-      refId : "#dataScienceTabRef"
+      refId: "#dataScienceTabRef",
     },
     {
       id: 1,
       item: "web,software & application",
-      refId : "#webSoftwareTabRef"
+      refId: "#webSoftwareTabRef",
     },
     {
       id: 2,
       item: "iot devices",
-      refId : "#iosDevicesTabRef"
+      refId: "#iosDevicesTabRef",
     },
     {
       id: 3,
       item: "digital strategy",
-      refId : "#digitalStrategyTabRef"
+      refId: "#digitalStrategyTabRef",
     },
     {
       id: 4,
       item: "technology consulting",
-      refId : "#technologyConsultingTabRef"
+      refId: "#technologyConsultingTabRef",
     },
     {
       id: 5,
       item: "digital consultancy",
-      refId : "#digitalConsultancyTabRef"
+      refId: "#digitalConsultancyTabRef",
     },
     {
       id: 6,
       item: "investor contacts",
-      refId : "#investorContactsTabRef"
+      refId: "#investorContactsTabRef",
     },
   ];
 
   return (
     <>
       <div>
-      <BlackBannerComponent aboutText={aboutText} aboutH2={aboutH2} />
-      <div ref={redDiv} className="bg-white  pt-[450px]">
-        <div
-          ref={pinkDiv}
-          className="bg-white h-[130px] md:h-[130px] mt-[-80px] 2xl:mt-[-50px] text-black fixed w-full z-10"
-        >
-          <Tabs tabsData={tabsData} slidesPerView={4} />
-        </div>
+        <BlackBannerComponent aboutText={aboutText} aboutH2={aboutH2} />
+        <div ref={redDiv} className="bg-white  pt-[450px]">
+          <div
+            ref={pinkDiv}
+            className="bg-white h-[130px] md:h-[130px] mt-[-80px] 2xl:mt-[-50px] text-black fixed w-full z-10"
+          >
+            <Tabs tabsData={tabsData} slidesPerView={4} />
+          </div>
           <div className="my-10">
             <AnimationTextReversing>
-              <div id="dataScienceTabRef" className="company-div flex flex-col gap-5 lg:w-6/12">
+              <div
+                id="dataScienceTabRef"
+                className="company-div flex flex-col gap-5 lg:w-6/12"
+              >
                 <div className="text-black">
                   <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light pillat-normal">
                     data science
@@ -232,7 +234,10 @@ const page = () => {
             </AnimationTextReversing>
 
             <AnimationTextReversing flexDirection="row-reverse">
-              <div id="webSoftwareTabRef" className="company-div flex flex-col gap-5 lg:w-6/12">
+              <div
+                id="webSoftwareTabRef"
+                className="company-div flex flex-col gap-5 lg:w-6/12"
+              >
                 <div className="text-black">
                   <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light pillat-normal">
                     web, software & application
@@ -276,16 +281,20 @@ const page = () => {
                 </div>
               </div>
               <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-              <Lottie
+                <Lottie
                   loop
                   animationData={webSoftwareAnimation}
                   play
                   // style={{ width: 350, height: 350 }}
-                />              </div>
+                />{" "}
+              </div>
             </AnimationTextReversing>
 
             <AnimationTextReversing>
-              <div id="iosDevicesTabRef" className="company-div flex flex-col gap-5 lg:w-6/12">
+              <div
+                id="iosDevicesTabRef"
+                className="company-div flex flex-col gap-5 lg:w-6/12"
+              >
                 <div className="text-black">
                   <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light pillat-normal">
                     iot devices
@@ -312,16 +321,20 @@ const page = () => {
                 </div>
               </div>
               <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-              <Lottie
+                <Lottie
                   loop
                   animationData={iotAnimation}
                   play
                   // style={{ width: 350, height: 350 }}
-                />               </div>
+                />{" "}
+              </div>
             </AnimationTextReversing>
 
             <AnimationTextReversing flexDirection="row-reverse">
-              <div id="digitalStrategyTabRef" className="company-div flex flex-col gap-5 lg:w-6/12">
+              <div
+                id="digitalStrategyTabRef"
+                className="company-div flex flex-col gap-5 lg:w-6/12"
+              >
                 <div className="text-black">
                   <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light pillat-normal">
                     digital strategy
@@ -366,16 +379,20 @@ const page = () => {
                 </div>
               </div>
               <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-              <Lottie
+                <Lottie
                   loop
                   animationData={digitalAnimation}
                   play
                   // style={{ width: 350, height: 350 }}
-                />                </div>
+                />{" "}
+              </div>
             </AnimationTextReversing>
 
             <AnimationTextReversing>
-              <div id="technologyConsultingTabRef" className="company-div flex flex-col gap-5 lg:w-6/12">
+              <div
+                id="technologyConsultingTabRef"
+                className="company-div flex flex-col gap-5 lg:w-6/12"
+              >
                 <div className="text-black">
                   <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light pillat-normal">
                     technology consulting
@@ -408,16 +425,20 @@ const page = () => {
                 </div>
               </div>
               <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-              <Lottie
+                <Lottie
                   loop
                   animationData={techConsultingAnimation}
                   play
                   // style={{ width: 350, height: 350 }}
-                />                 </div>
+                />{" "}
+              </div>
             </AnimationTextReversing>
 
             <AnimationTextReversing flexDirection="row-reverse">
-              <div id="digitalConsultancyTabRef" className="company-div flex flex-col gap-5 lg:w-6/12">
+              <div
+                id="digitalConsultancyTabRef"
+                className="company-div flex flex-col gap-5 lg:w-6/12"
+              >
                 <div className="text-black">
                   <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light pillat-normal">
                     digital consulting
@@ -451,12 +472,13 @@ const page = () => {
                 </div>
               </div>
               <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-              <Lottie
+                <Lottie
                   loop
                   animationData={consultancyAnimation}
                   play
                   // style={{ width: 350, height: 350 }}
-                />                 </div>
+                />{" "}
+              </div>
             </AnimationTextReversing>
           </div>
 

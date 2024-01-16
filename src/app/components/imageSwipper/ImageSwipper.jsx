@@ -84,13 +84,14 @@ const ImageSwipper = ({
                 spaceBetween: swipperGap,
               },
             }}
-            speed={2000}
+            speed={700}
             loop={true}
             // navigation={true}
             centeredSlides={true}
             modules={[Autoplay]}
             autoplay={{
-              delay: 500,
+              delay: 1000,
+              pauseOnMouseEnter : true,
             }}
             className="mySwiper "
           >

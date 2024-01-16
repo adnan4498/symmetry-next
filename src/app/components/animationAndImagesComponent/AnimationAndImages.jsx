@@ -76,7 +76,7 @@ const AnimationAndImages = ({
                     spaceBetween: 60,
                   },
                 }}
-                speed={2000}
+                speed={700}
                 loop={true}
                 // navigation={true}
                 centeredSlides={false}
@@ -102,7 +102,7 @@ const AnimationAndImages = ({
                           spaceBetween: swipperGap,
                         },
                       }}
-                      speed={2000}
+                      speed={700}
                       loop={true}
                       navigation={false}
                       centeredSlides={true}

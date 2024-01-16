@@ -44,7 +44,7 @@ const Tabs = ({ tabsData, slidesPerView }) => {
                 spaceBetween: 0,
               },
             }}
-            speed={2000}
+            speed={700}
             onSlideChange={(swiper) => updateShownArray(swiper)}
             className="mySwiper"
           >

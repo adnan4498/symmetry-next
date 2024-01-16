@@ -83,12 +83,13 @@ const HeadingAndSwipper = ({
               },
             }}
             modules={[Autoplay, Navigation]}
-            speed={2000}
+            speed={700}
             loop={true}
             onSlideChange={handleActive}
-            // autoplay = {{
-            //   delay : 1000
-            // }}
+            autoplay = {{
+              delay: 1000,
+              pauseOnMouseEnter : true,            
+            }}
             navigation={{
               nextEl: ".swiper-button-next",
               prevEl: ".swiper-button-prev",

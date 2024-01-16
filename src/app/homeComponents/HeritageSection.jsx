@@ -10,7 +10,7 @@ import "../homeComponents/HeritageSection.css";
 import infinity from "../../../public/infinity-sign.webp";
 
 const HeritageSection = () => {
-  const [activeAni , setActiveAni] = useState()
+  const [activeAni, setActiveAni] = useState();
   const [arrowPrevActive, setArrowPrevActive] = useState(false);
   const [arrowNextActive, setArrowNextActive] = useState(false);
 
@@ -30,7 +30,7 @@ const HeritageSection = () => {
   const hoverFunc = (id) => {
     setBorderHover("right-[-200px] transition-all ease-in-out duration-500");
     setBorderHover2("right-[-229px] transition-all ease-in-out duration-500");
-    setActiveAni(id)
+    setActiveAni(id);
   };
 
   const hoverFuncOut = () => {
@@ -38,20 +38,20 @@ const HeritageSection = () => {
     setBorderHover2("right-[-240px] transition-all ease-in-out duration-500");
   };
 
-  console.log(borderHover , "b1")
-  console.log(borderHover2 , "b2")
+  console.log(borderHover, "b1");
+  console.log(borderHover2, "b2");
 
   const heritageSwipperContent = [
     {
       id: 0,
       h2: "100",
-      h3: "",
+      h3: "s",
       text: "of brands transformed",
     },
     {
       id: 1,
       h2: "1000",
-      h3: "",
+      h3: "s",
       text: "of experiences delivered",
     },
     {
@@ -64,13 +64,13 @@ const HeritageSection = () => {
     {
       id: 3,
       h2: "20",
-      h3: "s",
+      h3: "+",
       text: "years in business",
     },
     {
       id: 4,
       h2: "2023",
-      // h3: "s",
+      h3: "",
       text: "listed on the pakistan stock exchange",
     },
   ];
@@ -114,15 +114,16 @@ const HeritageSection = () => {
                 spaceBetween: 35,
               },
             }}
-            modules={[Autoplay , Navigation]}
-            speed={2000}
+            modules={[Autoplay, Navigation]}
+            speed={700}
             loop={true}
             navigation={{
               nextEl: ".swiper-button-next",
               prevEl: ".swiper-button-prev",
-            }}            
+            }}
             autoplay={{
-              delay: 2000000,
+              delay: 1000,
+              pauseOnMouseEnter : true,
             }}
             centeredSlides={true}
             className="mySwiper "
@@ -138,17 +139,27 @@ const HeritageSection = () => {
                     >
                       {!item.img ? (
                         <>
-                          <h6 className="text-[110px] m-0 p-0 leading-[120px] text-[#666666] custom-font-family -tracking-[8px]">
+                          <div className="flex items-baseline absolute z-50">
+                            <div className="text-[140px] m-0 p-0 leading-[120px] text-[#666666] custom-font-family NeumaticFont -tracking-[8px] "> {item.h2} </div>
+                            <div className="text-3xl text-[#666666] NeumaticFont font-bold">{item.h3}</div>
+                          </div>
+                          {/* <h6 className="text-[140px] m-0 p-0 leading-[120px] text-[#666666] custom-font-family NeumaticFont -tracking-[8px] ">
                             {item.h2}{" "}
                             <span className="text-3xl ">{item.h3}</span>
-                          </h6>
+                          </h6> */}
                           <div
-                            className={`absolute top-[-120px] right-[-180px] border border-gray-300 rounded-[50px] w-72 h-72  ${activeAni == index ? borderHover : ""} `}
+                            className={`absolute top-[-120px] right-[-180px] border border-gray-300 rounded-[50px] w-72 h-72  ${
+                              activeAni == index ? borderHover : ""
+                            } `}
                           ></div>
                           <div
-                            className={`absolute top-[-70px] right-[-240px] border border-gray-300 rounded-[50px] w-72 h-72 ${activeAni == index ? borderHover2 : ""}`}
+                            className={`absolute top-[-70px] right-[-240px] border border-gray-300 rounded-[50px] w-72 h-72 ${
+                              activeAni == index ? borderHover2 : ""
+                            }`}
                           ></div>
-                          <p className="text- text-gray-700">{item.text}</p>
+                          <p className="text-gray-700 pillat-normal absolute top-[170px]">
+                            {item.text}
+                          </p>
                         </>
                       ) : (
                         ""
@@ -174,7 +185,7 @@ const HeritageSection = () => {
           <div className="swiper-navigation-buttons flex justify-center gap-2 lg:gap-[10px] 2xl:gap-3 w-full mt-10">
             <button
               onClick={() => handleArrowPrevActive()}
-              className={`swiper-button-prev ${
+              className={`swiper-button-prev hover:custom-arrow-border ${
                 arrowPrevActive ? "arrows-bg after:!text-white " : ""
               } !static custom-arrow-border rounded-md rotate-[45deg] !w-7 !h-7 md:!w-8 md:!h-8 lg:!w-8 lg:!h-8 2xl:!w-9 2xl:!h-9 `}
             ></button>
