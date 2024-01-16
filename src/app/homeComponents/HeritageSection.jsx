@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
@@ -9,9 +9,7 @@ import "swiper/css/navigation";
 import "../homeComponents/HeritageSection.css";
 import infinity from "../../../public/infinity-sign.webp";
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
+
 const heritageSwipperContent = [
   {
     id: 0,
@@ -46,9 +44,6 @@ const heritageSwipperContent = [
   },
 ];
 
->>>>>>> dev
-=======
->>>>>>> dev
 const HeritageSection = () => {
   const [activeAni , setActiveAni] = useState()
   const [arrowPrevActive, setArrowPrevActive] = useState(false);
@@ -134,11 +129,7 @@ const HeritageSection = () => {
           </div>
         </div>
 
-<<<<<<< HEAD
-        <div className="mb-10 mt-5 md:max-w-[800px] md:mx-auto">
-=======
         <div className="mb-10 mt-5 md:max-w-[800px] md:mx-auto lg:max-w-[97%] ">
->>>>>>> dev
           <Swiper
             spaceBetween={20}
             slidesPerView={1.5}
@@ -156,10 +147,7 @@ const HeritageSection = () => {
                 spaceBetween: 35,
               },
             }}
-<<<<<<< HEAD
-=======
             modules={[Autoplay , Navigation]}
->>>>>>> dev
             speed={2000}
             loop={true}
             navigation={{
@@ -172,64 +160,6 @@ const HeritageSection = () => {
             centeredSlides={true}
             className="mySwiper "
           >
-<<<<<<< HEAD
-            <SwiperSlide>
-              <div className="h-[500px] ">
-                <div className="border border-gray-400 rounded-md pl-4 py-14 h-[60%] max-w-[340px] ">
-                  <h6 className="text-[130px] m-0 p-0 leading-[120px] text-[#666666] custom-font-family -tracking-[8px]">
-                    100 <span className="text-3xl">s</span>
-                  </h6>
-                  <p className="text-  text-gray-700">
-                    of brands transformed
-                  </p>
-                </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className=" h-[500px] ">
-                <div className="border border-gray-400 rounded-md pl-4 py-14 h-[60%] max-w-[340px]">
-                  <h6 className="text-[130px] m-0 p-0 leading-[120px] text-[#666666] custom-font-family -tracking-[8px]">
-                    1000 <span className="text-3xl">s</span>
-                  </h6>
-                  <p className="text-base  text-gray-700">
-                    of experiences delivered
-                  </p>
-                </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="h-[500px] ">
-                <div className="border border-gray-400 rounded-md pl-4 py-14 h-[60%] max-w-[340px]">
-                  <Image src={infinity} width={130}/>
-                  <p className="text-base  text-gray-700 -mt-[7px]">
-                    possibilities transformed
-                  </p>
-                </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="h-[500px]">
-                <div className="border border-gray-400 rounded-md pl-4 py-14 h-[60%] max-w-[340px]">
-                  <h6 className="text-[130px] m-0 p-0 leading-[120px] text-[#666666] custom-font-family -tracking-[8px]">
-                    20 <span className="text-3xl">+</span>
-                  </h6>
-                  <p className="text-base  text-gray-700">years in business</p>
-                </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="h-[500px]">
-                <div className="border border-gray-400 rounded-md pl-4 py-14 h-[60%] max-w-[340px] ">
-                  <h6 className="text-[130px] m-0 p-0 leading-[120px] text-[#666666] custom-font-family -tracking-[8px]">
-                    2023 <span className="text-3xl"></span>
-                  </h6>
-                  <p className="text-base  text-gray-700">
-                    listed on the pakistan stock exchange
-                  </p>
-                </div>
-              </div>
-            </SwiperSlide>
-=======
             {heritageSwipperContent.map((item, index) => (
               <>
                 <SwiperSlide>
@@ -272,7 +202,6 @@ const HeritageSection = () => {
                 </SwiperSlide>
               </>
             ))}
->>>>>>> dev
           </Swiper>
 
           <div className="swiper-navigation-buttons flex justify-center gap-2 lg:gap-[10px] 2xl:gap-3 w-full mt-10">
