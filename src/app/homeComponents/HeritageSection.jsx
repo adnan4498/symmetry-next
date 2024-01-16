@@ -9,41 +9,6 @@ import "swiper/css/navigation";
 import "../homeComponents/HeritageSection.css";
 import infinity from "../../../public/infinity-sign.webp";
 
-
-const heritageSwipperContent = [
-  {
-    id: 0,
-    h2: "100",
-    h3: "",
-    text: "of brands transformed",
-  },
-  {
-    id: 1,
-    h2: "1000",
-    h3: "",
-    text: "of experiences delivered",
-  },
-  {
-    id: 2,
-    h2: "100",
-    h3: "s",
-    text: "of posibillities transformed",
-    img: infinity,
-  },
-  {
-    id: 3,
-    h2: "20",
-    h3: "s",
-    text: "years in business",
-  },
-  {
-    id: 4,
-    h2: "2023",
-    // h3: "s",
-    text: "listed on the pakistan stock exchange",
-  },
-];
-
 const HeritageSection = () => {
   const [activeAni , setActiveAni] = useState()
   const [arrowPrevActive, setArrowPrevActive] = useState(false);
@@ -112,10 +77,12 @@ const HeritageSection = () => {
 
   return (
     <>
-      <div className="bg-white h-[450vh] mt-24">
+      <div className="md:absolute md:z-10 md:right-0 md:left-0  border border-gray-400 rounded-2xl -mt-52 lg:mt-[-300px]  bg-white lg:w-[70%] lg:mx-auto px-5 ">
         <div className=" mx-3 ">
           <div className="border-b border-green-500 pt-6">
-            <p className="text-3xl mb-2 text-black">our heriage</p>
+            <p className="text-3xl lg:text-4xl mb-2 text-black pillat-normal">
+              our heritage
+            </p>
           </div>
           <div className="">
             <p className="text-3xl md:text-4xl lg:text-7xl mt-2 rainbow-text pillat-normal">
@@ -133,7 +100,7 @@ const HeritageSection = () => {
           <Swiper
             spaceBetween={20}
             slidesPerView={1.5}
-            breakpoints = {{
+            breakpoints={{
               500: {
                 slidesPerView: 2,
                 spaceBetween: 40,
