@@ -16,271 +16,18 @@ import Drawer from "react-modern-drawer";
 import "react-modern-drawer/dist/index.css";
 import { Menu } from "antd";
 
+import { ScrollToPlugin } from "gsap/all";
 import Rive from "@rive-app/react-canvas";
 import RiveAnimation from "../../../../public/symmetryAnimations/banner-Rive.riv";
 
 gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollToPlugin);
 
-function getItem(label, key, children, type) {
-  return {
-    key,
-    children,
-    label,
-    type,
-  };
-}
-const items = [
-  getItem(
-    <div className="footer-text-color-toggle pillat-normal abbo">about</div>,
-    "sub1",
-    [<></>]
-  ),
-
-  getItem(
-    <div className="footer-text-color-toggle pillat-normal">
-      investors relations{" "}
-    </div>,
-    "sub2",
-    [
-      getItem(
-        <>
-          <div className="footer-text-color-toggle text-xl pillat-normal">
-            {" "}
-            company information{" "}
-          </div>
-        </>
-      ),
-      getItem(
-        <>
-          <div className="footer-text-color-toggle text-xl pillat-normal">
-            {" "}
-            governance{" "}
-          </div>
-        </>
-      ),
-      getItem(
-        <>
-          <div className="footer-text-color-toggle text-xl pillat-normal">
-            financial reports
-          </div>
-        </>
-      ),
-
-      getItem(
-        <>
-          <div className="footer-text-color-toggle text-xl pillat-normal">
-            corporate briefings
-          </div>
-        </>
-      ),
-      getItem(
-        <>
-          <div className="footer-text-color-toggle text-xl pillat-normal">
-            notices & announcements
-          </div>
-        </>
-      ),
-      getItem(
-        <>
-          <div className="footer-text-color-toggle text-xl pillat-normal">
-            important documents
-          </div>
-        </>
-      ),
-      getItem(
-        <>
-          <div className="footer-text-color-toggle text-xl pillat-normal">
-            investor contacts
-          </div>
-        </>
-      ),
-    ]
-  ),
-
-  getItem(
-    <div className="footer-text-color-toggle pillat-normal">
-      business divisions{" "}
-    </div>,
-    "sub3",
-    [
-      getItem(
-        <>
-          <div className="footer-text-color-toggle text-xl pillat-normal">
-            transformation
-          </div>
-        </>
-      ),
-      getItem(
-        <>
-          <div className="footer-text-color-toggle text-xl pillat-normal">
-            interactive marketing
-          </div>
-        </>
-      ),
-      getItem(
-        <>
-          <div className="footer-text-color-toggle text-xl pillat-normal">
-            commerce
-          </div>
-        </>
-      ),
-
-      getItem(
-        <>
-          <div className="footer-text-color-toggle text-xl pillat-normal">
-            mobility
-          </div>
-        </>
-      ),
-    ]
-  ),
-
-  getItem(
-    <div className="footer-text-color-toggle pillat-normal">
-      brands & products
-    </div>,
-    "sub4",
-    [
-      getItem(
-        <>
-          <div className="footer-text-color-toggle text-xl pillat-normal">
-            symmetry digital
-          </div>
-        </>
-      ),
-      getItem(
-        <>
-          <div className="footer-text-color-toggle text-xl pillat-normal">
-            iris digital
-          </div>
-        </>
-      ),
-      getItem(
-        <>
-          <div className="footer-text-color-toggle text-xl pillat-normal">
-            symmetry trade
-          </div>
-        </>
-      ),
-
-      getItem(
-        <>
-          <div className="footer-text-color-toggle text-xl pillat-normal">
-            coral
-          </div>
-        </>
-      ),
-      getItem(
-        <>
-          <div className="footer-text-color-toggle text-xl pillat-normal">
-            coral performance
-          </div>
-        </>
-      ),
-      getItem(
-        <>
-          <div className="footer-text-color-toggle text-xl pillat-normal">
-            appabilities
-          </div>
-        </>
-      ),
-      getItem(
-        <>
-          <div className="footer-text-color-toggle text-xl pillat-normal">
-            survit
-          </div>
-        </>
-      ),
-      getItem(
-        <>
-          <div className="footer-text-color-toggle text-xl pillat-normal">
-            mobit
-          </div>
-        </>
-      ),
-    ]
-  ),
-
-  getItem(
-    <div className="footer-text-color-toggle pillat-normal">clients</div>,
-    "sub5",
-    [
-      getItem(
-        <>
-          <div className="footer-text-color-toggle text-xl pillat-normal">
-            telecom
-          </div>
-        </>
-      ),
-      getItem(
-        <>
-          <div className="footer-text-color-toggle text-xl pillat-normal">
-            banking & finance
-          </div>
-        </>
-      ),
-      getItem(
-        <>
-          <div className="footer-text-color-toggle text-xl pillat-normal">
-            fmcg
-          </div>
-        </>
-      ),
-
-      getItem(
-        <>
-          <div className="footer-text-color-toggle text-xl pillat-normal">
-            real estate
-          </div>
-        </>
-      ),
-      getItem(
-        <>
-          <div className="footer-text-color-toggle text-xl pillat-normal">
-            pharmaceutical
-          </div>
-        </>
-      ),
-      getItem(
-        <>
-          <div className="footer-text-color-toggle text-xl pillat-normal">
-            others
-          </div>
-        </>
-      ),
-    ]
-  ),
-
-  getItem(
-    <div className="footer-text-color-toggle pillat-normal abbo">
-      affiliation & partnerships
-    </div>,
-    "sub1",
-    [<></>]
-  ),
-
-  getItem(
-    <div className="footer-text-color-toggle pillat-normal abbo">careers</div>,
-    "sub1",
-    [<></>]
-  ),
-
-  getItem(
-    <div className="footer-text-color-toggle pillat-normal abbo">
-      contact us
-    </div>,
-    "sub1",
-    [<></>]
-  ),
-];
 
 const Navbar = () => {
   const [activeBg, setActiveBg] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
-  const [chevinState1, setChevinState1] = useState();
-  const [chevinState2, setChevinState2] = useState();
-  const [chevinState3, setChevinState3] = useState();
-  const [chevinState4, setChevinState4] = useState();
+  const [getNavRefId, setNavRefId] = useState();
   const navRef = useRef();
 
   useEffect(() => {
@@ -315,34 +62,39 @@ const Navbar = () => {
 
     setInterval(() => {
       clearInterval(killMyInterval);
-      console.log("all intervals");
     }, 20000);
   };
 
-  const navHoverFunc = (id) => {
-    setActiveBg(id);
+  const navHoverFunc = (itemId, refId) => {
+    setActiveBg(itemId);
+    setNavRefId(refId);
   };
 
   const liItems = [
     {
       id: 0,
       name: "our heritage",
+      refId: "#heritageHomeScrollRef",
     },
     {
       id: 1,
       name: "business division",
+      refId: "#businessHomeScrollRef",
     },
     {
       id: 2,
       name: "brands & products",
+      refId: "#brandsHomeScrollRef",
     },
     {
       id: 3,
       name: "clients",
+      refId: "#clientsHomeScrollRef",
     },
     {
       id: 4,
       name: "affiliations & partnerships",
+      refId: "#affiliationsHomeScrollRef",
     },
   ];
 
@@ -396,6 +148,264 @@ const Navbar = () => {
     },
   ];
 
+  /***********  Antd Hamburger Sub Menu Items  ***********/
+
+  const items = [
+    getItem(
+      <div className="footer-text-color-toggle pillat-normal abbo">about</div>,
+      "sub1",
+      [<></>]
+    ),
+
+    getItem(
+      <div className="footer-text-color-toggle pillat-normal">
+        investors relations{" "}
+      </div>,
+      "sub2",
+      [
+        getItem(
+          <>
+            <div className="footer-text-color-toggle text-xl pillat-normal">
+              {" "}
+              company information{" "}
+            </div>
+          </>
+        ),
+        getItem(
+          <>
+            <div className="footer-text-color-toggle text-xl pillat-normal">
+              {" "}
+              governance{" "}
+            </div>
+          </>
+        ),
+        getItem(
+          <>
+            <div className="footer-text-color-toggle text-xl pillat-normal">
+              financial reports
+            </div>
+          </>
+        ),
+
+        getItem(
+          <>
+            <div className="footer-text-color-toggle text-xl pillat-normal">
+              corporate briefings
+            </div>
+          </>
+        ),
+        getItem(
+          <>
+            <div className="footer-text-color-toggle text-xl pillat-normal">
+              notices & announcements
+            </div>
+          </>
+        ),
+        getItem(
+          <>
+            <div className="footer-text-color-toggle text-xl pillat-normal">
+              important documents
+            </div>
+          </>
+        ),
+        getItem(
+          <>
+            <div className="footer-text-color-toggle text-xl pillat-normal">
+              investor contacts
+            </div>
+          </>
+        ),
+      ]
+    ),
+
+    getItem(
+      <div className="footer-text-color-toggle pillat-normal">
+        business divisions{" "}
+      </div>,
+      "sub3",
+      [
+        getItem(
+          <>
+            <div className="footer-text-color-toggle text-xl pillat-normal">
+              transformation
+            </div>
+          </>
+        ),
+        getItem(
+          <>
+            <div className="footer-text-color-toggle text-xl pillat-normal">
+              interactive marketing
+            </div>
+          </>
+        ),
+        getItem(
+          <>
+            <div className="footer-text-color-toggle text-xl pillat-normal">
+              commerce
+            </div>
+          </>
+        ),
+
+        getItem(
+          <>
+            <div className="footer-text-color-toggle text-xl pillat-normal">
+              mobility
+            </div>
+          </>
+        ),
+      ]
+    ),
+
+    getItem(
+      <div className="footer-text-color-toggle pillat-normal">
+        brands & products
+      </div>,
+      "sub4",
+      [
+        getItem(
+          <>
+            <div className="footer-text-color-toggle text-xl pillat-normal">
+              symmetry digital
+            </div>
+          </>
+        ),
+        getItem(
+          <>
+            <div className="footer-text-color-toggle text-xl pillat-normal">
+              iris digital
+            </div>
+          </>
+        ),
+        getItem(
+          <>
+            <div className="footer-text-color-toggle text-xl pillat-normal">
+              symmetry trade
+            </div>
+          </>
+        ),
+
+        getItem(
+          <>
+            <div className="footer-text-color-toggle text-xl pillat-normal">
+              coral
+            </div>
+          </>
+        ),
+        getItem(
+          <>
+            <div className="footer-text-color-toggle text-xl pillat-normal">
+              coral performance
+            </div>
+          </>
+        ),
+        getItem(
+          <>
+            <div className="footer-text-color-toggle text-xl pillat-normal">
+              appabilities
+            </div>
+          </>
+        ),
+        getItem(
+          <>
+            <div className="footer-text-color-toggle text-xl pillat-normal">
+              survit
+            </div>
+          </>
+        ),
+        getItem(
+          <>
+            <div className="footer-text-color-toggle text-xl pillat-normal">
+              mobit
+            </div>
+          </>
+        ),
+      ]
+    ),
+
+    getItem(
+      <div className="footer-text-color-toggle pillat-normal">clients</div>,
+      "sub5",
+      [
+        getItem(
+          <>
+            <div className="footer-text-color-toggle text-xl pillat-normal">
+              telecom
+            </div>
+          </>
+        ),
+        getItem(
+          <>
+            <div className="footer-text-color-toggle text-xl pillat-normal">
+              banking & finance
+            </div>
+          </>
+        ),
+        getItem(
+          <>
+            <div className="footer-text-color-toggle text-xl pillat-normal">
+              fmcg
+            </div>
+          </>
+        ),
+
+        getItem(
+          <>
+            <div className="footer-text-color-toggle text-xl pillat-normal">
+              real estate
+            </div>
+          </>
+        ),
+        getItem(
+          <>
+            <div className="footer-text-color-toggle text-xl pillat-normal">
+              pharmaceutical
+            </div>
+          </>
+        ),
+        getItem(
+          <>
+            <div className="footer-text-color-toggle text-xl pillat-normal">
+              others
+            </div>
+          </>
+        ),
+      ]
+    ),
+
+    getItem(
+      <div className="footer-text-color-toggle pillat-normal abbo">
+        affiliation & partnerships
+      </div>,
+      "sub1",
+      [<></>]
+    ),
+
+    getItem(
+      <div className="footer-text-color-toggle pillat-normal abbo">
+        careers
+      </div>,
+      "sub1",
+      [<></>]
+    ),
+
+    getItem(
+      <div className="footer-text-color-toggle pillat-normal abbo">
+        contact us
+      </div>,
+      "sub1",
+      [<></>]
+    ),
+  ];
+
+  function getItem(label, key, children, type) {
+    return {
+      key,
+      children,
+      label,
+      type,
+    };
+  }
+
   return (
     <>
       <div className="bg-black w-full z-50 fixed" ref={navRef}>
@@ -416,20 +426,30 @@ const Navbar = () => {
                   <ul className="flex items-center gap-3 xl:gap-5 text-[1vw] 2xl:text-xl cursor-pointer">
                     <li
                       key={item.id}
-                      onMouseOver={() => navHoverFunc(item.id)}
+                      onMouseOver={() => navHoverFunc(item.id, item.refId)}
                       onMouseOut={() => setActiveBg(0)}
                       className={`${
                         activeBg == index ? "rainbow-text" : "text-white"
                       } text-white`}
                     >
-                      {item.name}
-                      <span
-                        className={`hidden lg:inline-flex ${
-                          activeBg == index
-                            ? "rotate-[90deg]"
-                            : "rotate-[45deg]"
-                        } rainbow-border transition-all duration-300 `}
-                      ></span>
+                      <div
+                        onClick={() =>
+                          gsap.to(window, {
+                            duration: 1.5,
+                            scrollTo: { y: item.refId, offsetY: 100 },
+                          })
+                        }
+                      >
+                        {item.name}
+                        {/* {console.log(item.refId, "ref id")} */}
+                        <span
+                          className={`hidden lg:inline-flex ${
+                            activeBg == index
+                              ? "rotate-[90deg]"
+                              : "rotate-[45deg]"
+                          } rainbow-border transition-all duration-300 `}
+                        ></span>
+                      </div>
                     </li>
                   </ul>
                 </div>

@@ -4,8 +4,8 @@ import irisLogo from "../../../public/iris-small-logo.webp";
 import influenseLogo from "../../../public/influense-small-logo.webp";
 import TextSlidingComponent from "../components/textSlidingComponent/TextSlidingComponent";
 import AnimationAndImages from "../components/animationAndImagesComponent/AnimationAndImages";
-import affiliationAnimation from "../../../public/symmetryAnimations/affiliation-animation-Rive-2.riv"
-import symmetryImg from "../../../public/symmetry-swipper-img.webp"
+import affiliationAnimation from "../../../public/symmetryAnimations/affiliation-animation-Rive-2.riv";
+import symmetryImg from "../../../public/symmetry-swipper-img.webp";
 
 const BrandsProducts = () => {
   {
@@ -84,7 +84,6 @@ const BrandsProducts = () => {
 
   const knowMore = "see it for yourself --";
 
-
   {
     /******** Animation And Swipper Content  ********/
   }
@@ -97,7 +96,7 @@ const BrandsProducts = () => {
 
   return (
     <>
-      <div>
+      <div id="brandsHomeScrollRef">
         <ImageSwipper
           hasH3={hasH3}
           hasH2={hasH2}
@@ -109,7 +108,8 @@ const BrandsProducts = () => {
           irisLogo={irisLogo}
           swipperGap={swipperGap}
         />
-
+      </div>
+      <div id="clientsHomeScrollRef">
         <TextSlidingComponent
           sliderheading={sliderheading}
           sliderText={sliderText}
@@ -121,7 +121,8 @@ const BrandsProducts = () => {
           swipperGap={30}
           swipperContent={swipperContent}
         />
-
+      </div>
+      <div id="affiliationsHomeScrollRef">
         <AnimationAndImages
           aasH3={aasH3}
           aasH2={aasH2}
