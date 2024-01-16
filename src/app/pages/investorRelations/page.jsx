@@ -2,7 +2,7 @@
 import AnimationTextReversing from "../../components/animationTextReversing/AnimationTextReversing";
 import BlackBannerComponent from "../../components/blackBannerComponent/BlackBannerComponent";
 import Tabs from "../../components/tabs/Tabs";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import CollapsibleComp from "../../components/collapsibleComponent/Collapsible";
 import square from "../../../../public/square-neon.png";
@@ -19,7 +19,119 @@ import noticesAnimation from "../../../../public/symmetryAnimations/noticesAnima
 import importantAnimation from "../../../../public/symmetryAnimations/importantAnimation.json"
 import contactAnimation from "../../../../public/symmetryAnimations/contactsAnimation.json"
 
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
 const page = () => {
+
+  const blackDiv = useRef();
+  const redDiv = useRef();
+  const aboutDiv = useRef();
+  const symmetryDiv = useRef();
+  const textDiv = useRef();
+  const pinkDiv = useRef();
+  const animationDiv = useRef();
+
+  useEffect(() => {
+    let mm = gsap.matchMedia();
+
+    gsap.to(blackDiv.current, {
+      scrollTrigger: {
+        trigger: blackDiv.current,
+        // markers: true,
+        start: "80px",
+        end: "82px",
+        onEnter: () => {
+          mm.add(
+            {
+              isMobile: "(min-width : 300px)",
+              isTablet: "(min-width : 768px)",
+              isDesktop: "(min-width : 1024px)",
+              is2xl: "(min-width : 1600px)",
+            },
+            (context) => {
+              let { isMobile, isTablet, isDesktop, is2xl } = context.conditions;
+              gsap.to(blackDiv.current, {
+                height: ((isMobile = "200px"), (isTablet = "220px")),
+              });
+              gsap.to(pinkDiv.current, {
+                marginTop: "-234px",
+              });
+            }
+          );
+          gsap.to(animationDiv.current, {
+            opacity: "0",
+            transition: "all  0.1s",
+            delay: 0.1,
+          });
+          gsap.to(aboutDiv.current, {
+            fontSize: "60px",
+          });
+          gsap.to(textDiv.current, {
+            opacity: "0",
+            transition: "all  0.1s",
+            delay: 0.1,
+          });
+        },
+        onEnterBack: () => {
+          gsap.to(blackDiv.current, {
+            height: "384px",
+          });
+          // gsap.to(symmetryDiv.current, {
+          //   fontSize: "60px",
+          // });
+          gsap.to(aboutDiv.current, {
+            fontSize: "96px",
+          });
+          gsap.to(textDiv.current, {
+            opacity: "1",
+            transition: "all  0.1s",
+            delay: 0.1,
+          });
+          mm.add(
+            {
+              is2xl: "(min-width : 1600px)",
+              isDesktop: "(min-width : 1024px)",
+              isTablet: "(min-width : 768px)",
+              isMobile: "(min-width : 300px)",
+            },
+            (context) => {
+              let { is2xl, isDesktop, isTablet, isMobile } = context.conditions;
+              gsap.to(pinkDiv.current, {
+                marginTop: is2xl ? "-80px" : "-100px",
+              });
+            }
+          );
+          gsap.to(animationDiv.current, {
+            opacity: "1",
+            transition: "all  0.1s",
+            delay: 0.1,
+          });
+        },
+      },
+    });
+
+    gsap.to(redDiv.current, {
+      scrollTrigger: {
+        trigger: redDiv.current,
+        // markers: true,
+        start: "400px",
+        end: "620px",
+        onEnter: () => {
+          gsap.to(pinkDiv.current, {
+            scrollTrigger: {
+              pin: true,
+            },
+          });
+        },
+      },
+    });
+
+    mm.revert();
+  }, []);
+
   const aboutH2 = "investors relations";
   const aboutText ="we are dedicated to providing timely and accurate information about our company's performance, financial health, and strategic initiatives. explore the resources here to stay informed and connected as we navigate the journey of growth together.";
 
@@ -30,30 +142,37 @@ const page = () => {
     {
       id: 0,
       item: "copy information",
+      refId : "#copyInformationTabRef"
     },
     {
       id: 1,
       item: "governance",
+      refId : "#governanceTabRef"
     },
     {
       id: 2,
       item: "financial reports",
+      refId : "#financialReportsTabRef"
     },
     {
       id: 3,
       item: "corporate briefings",
+      refId : "#corporateBriefingsTabRef"
     },
     {
       id: 4,
       item: "notices & annoucements",
+      refId : "#noticesTabRef"
     },
     {
       id: 5,
       item: "important documents",
+      refId : "#importantDocsTabRef"
     },
     {
       id: 6,
       item: "investor contacts",
+      refId : "#investorContactTabRef"
     },
   ];
 
@@ -333,12 +452,17 @@ const page = () => {
 
   return (
     <>
-      <div>
-        <BlackBannerComponent aboutH2={aboutH2} aboutText={aboutText} />
-        <Tabs tabsData={tabsData} slidesPerView={4} />
+      <BlackBannerComponent aboutText={aboutText} aboutH2={aboutH2} />
+      <div ref={redDiv} className="bg-white  pt-[450px]">
+        <div
+          ref={pinkDiv}
+          className="bg-white h-[130px] md:h-[130px] mt-[-80px] 2xl:mt-[-50px] text-black fixed w-full z-10"
+        >
+          <Tabs tabsData={tabsData} slidesPerView={4} />
+        </div>
 
         <AnimationTextReversing>
-          <div className="vision-div flex flex-col gap-5 lg:w-6/12 my-10">
+          <div id="copyInformationTabRef" className="vision-div flex flex-col gap-5 lg:w-6/12 my-10">
             <div className="text-black">
               <h2 className="text-5xl lg:text-6xl 2xl:text-7xl font-light pillat-normal">
                 investor information
@@ -366,7 +490,7 @@ const page = () => {
         </AnimationTextReversing>
 
         <AnimationTextReversing flexDirection="row-reverse">
-          <div className="mission-div flex flex-col gap-5 lg:w-6/12">
+          <div id="governanceTabRef" className="mission-div flex flex-col gap-5 lg:w-6/12">
             <div className="text-black">
               <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light pillat-normal">
                 governance
@@ -475,7 +599,7 @@ const page = () => {
         </AnimationTextReversing>
 
         <AnimationTextReversing>
-          <div className="vision-div flex flex-col gap-5 lg:w-6/12 my-10">
+          <div id="financialReportsTabRef" className="vision-div flex flex-col gap-5 lg:w-6/12 my-10">
             <div className="text-black">
               <h2 className="text-5xl lg:text-6xl 2xl:text-7xl font-light pillat-normal">
                 financial reports
@@ -498,7 +622,7 @@ const page = () => {
         </AnimationTextReversing>
 
         <AnimationTextReversing flexDirection="row-reverse">
-          <div className="vision-div flex flex-col gap-5 lg:w-6/12 my-10">
+          <div id="corporateBriefingsTabRef" className="vision-div flex flex-col gap-5 lg:w-6/12 my-10">
             <div className="text-black">
               <h2 className="text-5xl lg:text-6xl 2xl:text-7xl font-light pillat-normal">
                 corporate briefings
@@ -521,7 +645,7 @@ const page = () => {
         </AnimationTextReversing>
 
         <AnimationTextReversing>
-          <div className="vision-div flex flex-col gap-5 lg:w-6/12 my-10">
+          <div id="noticesTabRef" className="vision-div flex flex-col gap-5 lg:w-6/12 my-10">
             <div className="text-black">
               <h2 className="text-5xl lg:text-6xl 2xl:text-7xl font-light pillat-normal">
                 notices & announcements
@@ -544,7 +668,7 @@ const page = () => {
         </AnimationTextReversing>
 
         <AnimationTextReversing flexDirection="row-reverse">
-          <div className="vision-div flex flex-col gap-5 lg:w-6/12 my-10">
+          <div id="importantDocsTabRef" className="vision-div flex flex-col gap-5 lg:w-6/12 my-10">
             <div className="text-black">
               <h2 className="text-5xl lg:text-6xl 2xl:text-7xl font-light pillat-normal">
                 important documents
@@ -604,7 +728,7 @@ const page = () => {
         </AnimationTextReversing>
 
         <AnimationTextReversing>
-          <div className="vision-div flex flex-col gap-5 lg:w-6/12 my-10">
+          <div id="investorContactTabRef" className="vision-div flex flex-col gap-5 lg:w-6/12 my-10">
             <div className="text-black">
               <h2 className="text-5xl lg:text-6xl 2xl:text-7xl font-light pillat-normal">
                 investor contacts

@@ -65,7 +65,7 @@ const Page = () => {
                 height: ((isMobile = "200px"), (isTablet = "220px")),
               });
               gsap.to(pinkDiv.current, {
-                marginTop: "-255px",
+                marginTop: "-234px",
               });
             }
           );

@@ -9,20 +9,20 @@ import linkdinLogo from "../../../../public/linkdin-logo.webp";
 import fbLogo from "../../../../public/fb-logo.webp";
 import twitterLogo from "../../../../public/twitter-logo.webp";
 import rightChevron from "../../../../public/right-chevron.png";
-import ScrollTrigger from "gsap/ScrollTrigger";
-import gsap from "gsap";
 import "../navbar/Navbar.css";
 import Drawer from "react-modern-drawer";
 import "react-modern-drawer/dist/index.css";
 import { Menu } from "antd";
 
-import { ScrollToPlugin } from "gsap/all";
 import Rive from "@rive-app/react-canvas";
 import RiveAnimation from "../../../../public/symmetryAnimations/banner-Rive.riv";
 
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+import { ScrollToPlugin } from "gsap/all";
+
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(ScrollToPlugin);
-
 
 const Navbar = () => {
   const [activeBg, setActiveBg] = useState(0);
@@ -50,20 +50,6 @@ const Navbar = () => {
       // paused: true,
     });
   }, []);
-
-  const toggleDrawer = () => {
-    const myInterval = setInterval(() => {
-      setIsOpen((prevState) => !prevState);
-    }, 400);
-
-    const killMyInterval = setInterval(() => {
-      clearInterval(myInterval);
-    }, 400);
-
-    setInterval(() => {
-      clearInterval(killMyInterval);
-    }, 20000);
-  };
 
   const navHoverFunc = (itemId, refId) => {
     setActiveBg(itemId);
@@ -149,6 +135,19 @@ const Navbar = () => {
   ];
 
   /***********  Antd Hamburger Sub Menu Items  ***********/
+  const toggleDrawer = () => {
+    const myInterval = setInterval(() => {
+      setIsOpen((prevState) => !prevState);
+    }, 400);
+
+    const killMyInterval = setInterval(() => {
+      clearInterval(myInterval);
+    }, 400);
+
+    setInterval(() => {
+      clearInterval(killMyInterval);
+    }, 20000);
+  };
 
   const items = [
     getItem(

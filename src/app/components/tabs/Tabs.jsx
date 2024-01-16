@@ -4,6 +4,13 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+import { ScrollToPlugin } from "gsap/all";
+
+gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollToPlugin);
+
 const Tabs = ({ tabsData, slidesPerView }) => {
   const [tabRounded, setTabRounded] = useState();
   const [shownArray, setShownArray] = useState([0, 1, 2, 3]);
@@ -43,18 +50,31 @@ const Tabs = ({ tabsData, slidesPerView }) => {
           >
             <>
               {tabsData.map((item, index, array) => (
-                <SwiperSlide key={index}>
-                  <div
-                    onMouseOver={() => tabHovered(item.id)}
-                    // className={`tabs-custom-bg ${shownArray[0] ? "!bg-red-500" : !shownArray ? "!bg-blue-500" : ""} py-[10px]`}
-                    className={`tabs-custom-bg ${index === array.length - 1 ? "rounded-e-full" : index === 0 ?   "rounded-s-full" : ""}
+                <>
+                  <SwiperSlide key={index}>
+                    <div
+                      onClick={() =>
+                        gsap.to(window, {
+                          duration: 1,
+                          scrollTo: { y: item.refId, offsetY: 330 },
+                        })
+                      }
+                      onMouseOver={() => tabHovered(item.id)}
+                      className={`tabs-custom-bg cursor-pointer ${
+                        index === array.length - 1
+                          ? "rounded-e-full"
+                          : index === 0
+                          ? "rounded-s-full"
+                          : ""
+                      }
                     py-[10px]`}
-                  >
-                    <div className="text-center">
-                      <div className="">{item.item}</div>
+                    >
+                      <div className="text-center">
+                        <div className="">{item.item}</div>
+                      </div>
                     </div>
-                  </div>
-                </SwiperSlide>
+                  </SwiperSlide>
+                </>
               ))}
             </>
           </Swiper>
