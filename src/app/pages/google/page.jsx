@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import BlackBannerComponent from "../../components/blackBannerComponent/BlackBannerComponent";
 import Tabs from "../../components/tabs/Tabs";
 import AnimationTextReversing from "../../components/animationTextReversing/AnimationTextReversing";
@@ -10,7 +10,118 @@ import Footer from "../../components/footer/Footer";
 import Lottie from "react-lottie-player";
 import microsoftAnimation from "../../../../public/symmetryAnimations/microsoftAnimation.json";
 
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
 const page = () => {
+  const blackDiv = useRef();
+  const redDiv = useRef();
+  const aboutDiv = useRef();
+  const symmetryDiv = useRef();
+  const textDiv = useRef();
+  const pinkDiv = useRef();
+  const animationDiv = useRef();
+
+  useEffect(() => {
+    let mm = gsap.matchMedia();
+
+    gsap.to(blackDiv.current, {
+      scrollTrigger: {
+        trigger: blackDiv.current,
+        // markers: true,
+        start: "80px",
+        end: "82px",
+        onEnter: () => {
+          mm.add(
+            {
+              isMobile: "(min-width : 300px)",
+              isTablet: "(min-width : 768px)",
+              isDesktop: "(min-width : 1024px)",
+              is2xl: "(min-width : 1600px)",
+            },
+            (context) => {
+              let { isMobile, isTablet, isDesktop, is2xl } = context.conditions;
+              gsap.to(blackDiv.current, {
+                height: ((isMobile = "200px"), (isTablet = "220px")),
+              });
+              gsap.to(pinkDiv.current, {
+                marginTop: "-234px",
+              });
+            }
+          );
+          gsap.to(animationDiv.current, {
+            opacity: "0",
+            transition: "all  0.1s",
+            delay: 0.1,
+          });
+          gsap.to(aboutDiv.current, {
+            fontSize: "60px",
+          });
+          gsap.to(textDiv.current, {
+            opacity: "0",
+            transition: "all  0.1s",
+            delay: 0.1,
+          });
+        },
+        onEnterBack: () => {
+          gsap.to(blackDiv.current, {
+            height: "384px",
+          });
+          // gsap.to(symmetryDiv.current, {
+          //   fontSize: "60px",
+          // });
+          gsap.to(aboutDiv.current, {
+            fontSize: "96px",
+          });
+          gsap.to(textDiv.current, {
+            opacity: "1",
+            transition: "all  0.1s",
+            delay: 0.1,
+          });
+          mm.add(
+            {
+              is2xl: "(min-width : 1600px)",
+              isDesktop: "(min-width : 1024px)",
+              isTablet: "(min-width : 768px)",
+              isMobile: "(min-width : 300px)",
+            },
+            (context) => {
+              let { is2xl, isDesktop, isTablet, isMobile } = context.conditions;
+              gsap.to(pinkDiv.current, {
+                marginTop: is2xl ? "-80px" : "-100px",
+              });
+            }
+          );
+          gsap.to(animationDiv.current, {
+            opacity: "1",
+            transition: "all  0.1s",
+            delay: 0.1,
+          });
+        },
+      },
+    });
+
+    gsap.to(redDiv.current, {
+      scrollTrigger: {
+        trigger: redDiv.current,
+        // markers: true,
+        start: "400px",
+        end: "620px",
+        onEnter: () => {
+          gsap.to(pinkDiv.current, {
+            scrollTrigger: {
+              pin: true,
+            },
+          });
+        },
+      },
+    });
+
+    mm.revert();
+  }, []);
+
   const aboutH2 = "affiliations & partnerships";
   const aboutText =
     "through our network, we are integrating you with a world that keeps pace with technology and change, enables simplicity from complexity and shapes the future.";
@@ -36,9 +147,12 @@ const page = () => {
 
   return (
     <>
-      <div>
-        <div>
-          <BlackBannerComponent aboutH2={aboutH2} aboutText={aboutText} />
+      <BlackBannerComponent aboutText={aboutText} aboutH2={aboutH2} />
+      <div ref={redDiv} className="bg-white  pt-[450px]">
+        <div
+          ref={pinkDiv}
+          className="bg-white h-[130px] md:h-[130px] mt-[-80px] 2xl:mt-[-50px] text-black fixed w-full z-10"
+        >
           <Tabs tabsData={tabsData} slidesPerView={4} />
         </div>
 

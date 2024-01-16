@@ -6,9 +6,7 @@ import interactiveAnimation from "../../../public/symmetryAnimations/interactive
 import mobilityAnimation from "../../../public/symmetryAnimations/mobility-Rive.riv";
 import gsap from "gsap";
 
-
 const BusinessDivision = () => {
-
   {
     /******** Ease Slide Content  ********/
   }
@@ -83,50 +81,52 @@ const BusinessDivision = () => {
 
   return (
     <>
-      <TextSlidingComponent
-        sliderheading={sliderheading}
-        sliderText={sliderText}
-        sliderP={sliderP}
-        slidesPerView={slidesPerView}
-      />
-      <HeadingAndSwipper
-        hasH3={hasH3}
-        hasH2={hasH2}
-        hasP={hasP}
-        hasKnowmore={hasKnowmore}
-        swipperContent={swipperContent}
-        slidesPerView={slidesPerView}
-        swipperGap={swipperGap}
-      />
-      <AnimationAndSwipper
-        aasH3={aasH3}
-        aasH2={aasH2}
-        aasP={aasP}
-        aasKnowmore={aasKnowmore}
-        swipperContent={swipperContent}
-        slidesPerView={slidesPerView}
-        swipperGap={swipperGap}
-        animation={interactiveAnima}
-      />
-      <HeadingAndSwipper
-        hasH3={hasH3}
-        hasH2={hasH2}
-        hasP={hasP}
-        hasKnowmore={hasKnowmore}
-        swipperContent={swipperContent}
-        slidesPerView={slidesPerView}
-        swipperGap={swipperGap}
-      />
-      <AnimationAndSwipper
-        aasH3={"mobility"}
-        aasH2={aasH2}
-        aasP={aasP}
-        aasKnowmore={aasKnowmore}
-        swipperContent={swipperContent}
-        slidesPerView={slidesPerView}
-        swipperGap={swipperGap}
-        animation={mobilityAnimation}
-      />
+      <div id="businessHomeScrollRef" className="">
+        <TextSlidingComponent
+          sliderheading={sliderheading}
+          sliderText={sliderText}
+          sliderP={sliderP}
+          slidesPerView={slidesPerView}
+        />
+        <HeadingAndSwipper
+          hasH3={hasH3}
+          hasH2={hasH2}
+          hasP={hasP}
+          hasKnowmore={hasKnowmore}
+          swipperContent={swipperContent}
+          slidesPerView={slidesPerView}
+          swipperGap={swipperGap}
+        />
+        <AnimationAndSwipper
+          aasH3={aasH3}
+          aasH2={aasH2}
+          aasP={aasP}
+          aasKnowmore={aasKnowmore}
+          swipperContent={swipperContent}
+          slidesPerView={slidesPerView}
+          swipperGap={swipperGap}
+          animation={interactiveAnima}
+        />
+        <HeadingAndSwipper
+          hasH3={hasH3}
+          hasH2={hasH2}
+          hasP={hasP}
+          hasKnowmore={hasKnowmore}
+          swipperContent={swipperContent}
+          slidesPerView={slidesPerView}
+          swipperGap={swipperGap}
+        />
+        <AnimationAndSwipper
+          aasH3={"mobility"}
+          aasH2={aasH2}
+          aasP={aasP}
+          aasKnowmore={aasKnowmore}
+          swipperContent={swipperContent}
+          slidesPerView={slidesPerView}
+          swipperGap={swipperGap}
+          animation={mobilityAnimation}
+        />
+      </div>
       {/* <ImageSwipper /> */}
     </>
   );

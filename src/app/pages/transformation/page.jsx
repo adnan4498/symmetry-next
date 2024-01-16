@@ -1,5 +1,5 @@
 "use client"
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import square from "../../../../public/square-neon.png";
 import Tabs from "../../components/tabs/Tabs";
@@ -15,7 +15,118 @@ import digitalAnimation from "../../../../public/symmetryAnimations/digitalStrat
 import techConsultingAnimation from "../../../../public/symmetryAnimations/techConsultingAnimation.json";
 import consultancyAnimation from "../../../../public/symmetryAnimations/consultancyAnimation.json";
 
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
 const page = () => {
+
+  const blackDiv = useRef();
+  const redDiv = useRef();
+  const aboutDiv = useRef();
+  const symmetryDiv = useRef();
+  const textDiv = useRef();
+  const pinkDiv = useRef();
+  const animationDiv = useRef();
+
+  useEffect(() => {
+    let mm = gsap.matchMedia();
+
+    gsap.to(blackDiv.current, {
+      scrollTrigger: {
+        trigger: blackDiv.current,
+        // markers: true,
+        start: "80px",
+        end: "82px",
+        onEnter: () => {
+          mm.add(
+            {
+              isMobile: "(min-width : 300px)",
+              isTablet: "(min-width : 768px)",
+              isDesktop: "(min-width : 1024px)",
+              is2xl: "(min-width : 1600px)",
+            },
+            (context) => {
+              let { isMobile, isTablet, isDesktop, is2xl } = context.conditions;
+              gsap.to(blackDiv.current, {
+                height: ((isMobile = "200px"), (isTablet = "220px")),
+              });
+              gsap.to(pinkDiv.current, {
+                marginTop: "-234px",
+              });
+            }
+          );
+          gsap.to(animationDiv.current, {
+            opacity: "0",
+            transition: "all  0.1s",
+            delay: 0.1,
+          });
+          gsap.to(aboutDiv.current, {
+            fontSize: "60px",
+          });
+          gsap.to(textDiv.current, {
+            opacity: "0",
+            transition: "all  0.1s",
+            delay: 0.1,
+          });
+        },
+        onEnterBack: () => {
+          gsap.to(blackDiv.current, {
+            height: "384px",
+          });
+          // gsap.to(symmetryDiv.current, {
+          //   fontSize: "60px",
+          // });
+          gsap.to(aboutDiv.current, {
+            fontSize: "96px",
+          });
+          gsap.to(textDiv.current, {
+            opacity: "1",
+            transition: "all  0.1s",
+            delay: 0.1,
+          });
+          mm.add(
+            {
+              is2xl: "(min-width : 1600px)",
+              isDesktop: "(min-width : 1024px)",
+              isTablet: "(min-width : 768px)",
+              isMobile: "(min-width : 300px)",
+            },
+            (context) => {
+              let { is2xl, isDesktop, isTablet, isMobile } = context.conditions;
+              gsap.to(pinkDiv.current, {
+                marginTop: is2xl ? "-80px" : "-100px",
+              });
+            }
+          );
+          gsap.to(animationDiv.current, {
+            opacity: "1",
+            transition: "all  0.1s",
+            delay: 0.1,
+          });
+        },
+      },
+    });
+
+    gsap.to(redDiv.current, {
+      scrollTrigger: {
+        trigger: redDiv.current,
+        // markers: true,
+        start: "400px",
+        end: "620px",
+        onEnter: () => {
+          gsap.to(pinkDiv.current, {
+            scrollTrigger: {
+              pin: true,
+            },
+          });
+        },
+      },
+    });
+
+    mm.revert();
+  }, []);
   const aboutH2 = "transformation";
   const aboutText =
     "Digital Technology can move mountains, shape culture, and change people’s perceptions. We envision a future that leverages the best of technology to transformative experiences that aren't possible without it.";
@@ -24,43 +135,54 @@ const page = () => {
     {
       id: 0,
       item: "data science",
+      refId : "#dataScienceTabRef"
     },
     {
       id: 1,
       item: "web,software & application",
+      refId : "#webSoftwareTabRef"
     },
     {
       id: 2,
       item: "iot devices",
+      refId : "#iosDevicesTabRef"
     },
     {
       id: 3,
       item: "digital strategy",
+      refId : "#digitalStrategyTabRef"
     },
     {
       id: 4,
       item: "technology consulting",
+      refId : "#technologyConsultingTabRef"
     },
     {
       id: 5,
       item: "digital consultancy",
+      refId : "#digitalConsultancyTabRef"
     },
     {
       id: 6,
       item: "investor contacts",
+      refId : "#investorContactsTabRef"
     },
   ];
 
   return (
     <>
       <div>
-        <div className="">
-          <BlackBannerComponent aboutH2={aboutH2} aboutText={aboutText} />
-          <Tabs tabsData={tabsData} slidesPerView={5} />
-
+      <BlackBannerComponent aboutText={aboutText} aboutH2={aboutH2} />
+      <div ref={redDiv} className="bg-white  pt-[450px]">
+        <div
+          ref={pinkDiv}
+          className="bg-white h-[130px] md:h-[130px] mt-[-80px] 2xl:mt-[-50px] text-black fixed w-full z-10"
+        >
+          <Tabs tabsData={tabsData} slidesPerView={4} />
+        </div>
           <div className="my-10">
             <AnimationTextReversing>
-              <div className="company-div flex flex-col gap-5 lg:w-6/12">
+              <div id="dataScienceTabRef" className="company-div flex flex-col gap-5 lg:w-6/12">
                 <div className="text-black">
                   <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light pillat-normal">
                     data science
@@ -110,7 +232,7 @@ const page = () => {
             </AnimationTextReversing>
 
             <AnimationTextReversing flexDirection="row-reverse">
-              <div className="company-div flex flex-col gap-5 lg:w-6/12">
+              <div id="webSoftwareTabRef" className="company-div flex flex-col gap-5 lg:w-6/12">
                 <div className="text-black">
                   <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light pillat-normal">
                     web, software & application
@@ -163,7 +285,7 @@ const page = () => {
             </AnimationTextReversing>
 
             <AnimationTextReversing>
-              <div className="company-div flex flex-col gap-5 lg:w-6/12">
+              <div id="iosDevicesTabRef" className="company-div flex flex-col gap-5 lg:w-6/12">
                 <div className="text-black">
                   <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light pillat-normal">
                     iot devices
@@ -199,7 +321,7 @@ const page = () => {
             </AnimationTextReversing>
 
             <AnimationTextReversing flexDirection="row-reverse">
-              <div className="company-div flex flex-col gap-5 lg:w-6/12">
+              <div id="digitalStrategyTabRef" className="company-div flex flex-col gap-5 lg:w-6/12">
                 <div className="text-black">
                   <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light pillat-normal">
                     digital strategy
@@ -253,7 +375,7 @@ const page = () => {
             </AnimationTextReversing>
 
             <AnimationTextReversing>
-              <div className="company-div flex flex-col gap-5 lg:w-6/12">
+              <div id="technologyConsultingTabRef" className="company-div flex flex-col gap-5 lg:w-6/12">
                 <div className="text-black">
                   <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light pillat-normal">
                     technology consulting
@@ -295,7 +417,7 @@ const page = () => {
             </AnimationTextReversing>
 
             <AnimationTextReversing flexDirection="row-reverse">
-              <div className="company-div flex flex-col gap-5 lg:w-6/12">
+              <div id="digitalConsultancyTabRef" className="company-div flex flex-col gap-5 lg:w-6/12">
                 <div className="text-black">
                   <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light pillat-normal">
                     digital consulting

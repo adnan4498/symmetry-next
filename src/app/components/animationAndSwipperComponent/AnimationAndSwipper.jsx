@@ -3,11 +3,11 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
+import "../../components/animationAndSwipperComponent/AnimationAndSwipper.css";
 import "swiper/css";
 import "swiper/css/navigation";
 import Lottie from "react-lottie-player";
 import square from "../../../../public/square-neon.png";
-// import dummyRiv from "../../../public/symmetryAnimations/home-banner.riv"
 import rivAnimation from "../../../../public/symmetryAnimations/home-banner.riv";
 import Rive from "@rive-app/react-canvas";
 
@@ -20,9 +20,21 @@ const AnimationAndSwipper = ({
   animation,
 }) => {
   const [active, setActive] = useState(0);
+  const [arrowPrevActive, setArrowPrevActive] = useState(false);
+  const [arrowNextActive, setArrowNextActive] = useState(false);
 
   const handleActive = (swiper) => {
     setActive(swiper.realIndex);
+  };
+
+  const handleArrowPrevActive = () => {
+    setArrowNextActive(false);
+    setArrowPrevActive(true);
+  };
+
+  const handleArrowNextActive = () => {
+    setArrowPrevActive(false);
+    setArrowNextActive(true);
   };
 
   return (
@@ -87,7 +99,10 @@ const AnimationAndSwipper = ({
                 autoplay={{
                   delay: 1000,
                 }}
-                // navigation={true}
+                navigation={{
+                  nextEl: ".swiper-button-next",
+                  prevEl: ".swiper-button-prev",
+                }}
                 centeredSlides={true}
                 className="mySwiper "
               >
@@ -119,6 +134,20 @@ const AnimationAndSwipper = ({
                   </>
                 ))}
               </Swiper>
+              <div className="swiper-navigation-buttons flex justify-center gap-2 lg:gap-[10px] 2xl:gap-3 w-full mt-10">
+                <button
+                  onClick={() => handleArrowPrevActive()}
+                  className={`swiper-button-prev ${
+                    arrowPrevActive ? "arrows-bg after:!text-white " : ""
+                  } !static custom-arrow-border rounded-md rotate-[45deg] !w-7 !h-7 md:!w-8 md:!h-8 lg:!w-8 lg:!h-8 `}
+                ></button>
+                <button
+                  onClick={() => handleArrowNextActive()}
+                  className={`swiper-button-next ${
+                    arrowNextActive ? "arrows-bg  after:!text-white " : ""
+                  } !static custom-arrow-border  rounded-md rotate-[45deg] !w-7 !h-7 md:!w-8 md:!h-8 lg:!w-8 lg:!h-8`}
+                ></button>
+              </div>
             </div>
           </div>
           <div className="absolute hidden lg:block lg:w-[23vw] xl:w-[16vw] 2xl:w-[14vw] h-full  top-0 right-0">
