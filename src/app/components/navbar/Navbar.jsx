@@ -82,6 +82,11 @@ const Navbar = () => {
       name: "affiliations & partnerships",
       refId: "#affiliationsHomeScrollRef",
     },
+    {
+      id: 5,
+      name: "contact us",
+      refId: "#contactUsHomeScrollRef",
+    },
   ];
 
   const investorRelationsItems = [
@@ -157,9 +162,12 @@ const Navbar = () => {
     ),
 
     getItem(
+      <>
+      {/* <Link */}
       <div className="footer-text-color-toggle pillat-normal">
         investors relations{" "}
-      </div>,
+      </div>
+      </>,
       "sub2",
       [
         getItem(

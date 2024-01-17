@@ -282,7 +282,7 @@ const Company = () => {
                 <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light pillat-normal">
                   vision
                 </h2>
-                <h3 className="font-semibold mt-3 pillat-normal">
+                <h3 className="!font-extrabold mt-3 pillat-normal">
                   we exist to integrate the world better.
                 </h3>
               </div>
@@ -313,7 +313,7 @@ const Company = () => {
                 <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light pillat-normal">
                   mission
                 </h2>
-                <h3 className="font-semibold mt-3 pillat-normal">
+                <h3 className="!font-extrabold mt-3 pillat-normal">
                   create market-leading digital experiences that power our
                   partners’ success.
                 </h3>
@@ -380,7 +380,7 @@ const Company = () => {
                 <div className="flex flex-col gap-3 mt-2">
                   <div className="text-gray-500 text-[14px]  mt-2">
                     <p className="pillat-normal">
-                      <span className="font-bold text-black ">
+                      <span className="!font-extrabold text-black ">
                         #narrativestransformed
                       </span>{" "}
                       is a series of podcasts on prevalent themes that can
@@ -391,7 +391,7 @@ const Company = () => {
                   </div>
                   <div className="text-gray-500 text-[14px] mt-2  pillat-normal">
                     <p className="">
-                      <span className="font-bold text-black">djoint</span> is a
+                      <span className="!font-extrabold text-black">djoint</span> is a
                       flagship initiative launched by Symmetry Group and has
                       since been implemented across all our agencies. In Djoint
                       sessions, the senior most management of the Group
@@ -403,7 +403,7 @@ const Company = () => {
                   </div>
                   <div className="text-gray-500 text-[14px]  mt-2 pillat-normal">
                     <p className="">
-                      <span className="font-bold text-black">
+                      <span className="!font-extrabold text-black">
                         digital minds
                       </span>{" "}
                       is a first of its kind competition, in which students from
@@ -435,10 +435,6 @@ const Company = () => {
               />{" "}
             </div>
           </AnimationTextReversing>
-
-          <div className="bg-red-500 w-16 h-16 rotate-[50deg] rounded-md flex justify-center items-center ml-20 mt-10 border border-black">
-            <p className="rotate-[-50deg]">a</p>
-          </div>
 
           <ConnectWithUs bgColor="bg-black" textColor="text-white" />
           <Footer />

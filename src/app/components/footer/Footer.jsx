@@ -50,7 +50,7 @@ const Footer = () => {
             <div className="gap-4 grid grid-cols-7">
               <div className="text-black ">
                 <Link href="pages/company">
-                <h2 className="font-bold text-lg min-h-[70px] mb-2 footer-text-color-toggle cursor-pointer">
+                <h2 className="font-semibold text-lg min-h-[70px] mb-2 footer-text-color-toggle cursor-pointer">
                   about us
                 </h2>
                 </Link>

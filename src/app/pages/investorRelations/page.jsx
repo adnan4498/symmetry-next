@@ -7,17 +7,17 @@ import Image from "next/image";
 import CollapsibleComp from "../../components/collapsibleComponent/Collapsible";
 import square from "../../../../public/square-neon.png";
 import pdfImg from "../../../../public/pdf-img.png";
-import disclaimerImg from "../../../../public/disclaimer-img.png"
+import disclaimerImg from "../../../../public/disclaimer-img.png";
 import ConnectWithUs from "../../components/connectWithUsComponent/ConnectWithUs";
 import Lottie from "react-lottie-player";
 import Footer from "../../components/footer/Footer";
-import investorinformationAnimation from "../../../../public/symmetryAnimations/investorInformationAnimation.json"
-import governanceAnimation from "../../../../public/symmetryAnimations/governanceAnimation.json"
-import financialAnimation from "../../../../public/symmetryAnimations/financialAnimation.json"
-import corporateAnimation from "../../../../public/symmetryAnimations/corporateBriefings.json"
-import noticesAnimation from "../../../../public/symmetryAnimations/noticesAnimation.json"
-import importantAnimation from "../../../../public/symmetryAnimations/importantAnimation.json"
-import contactAnimation from "../../../../public/symmetryAnimations/contactsAnimation.json"
+import investorinformationAnimation from "../../../../public/symmetryAnimations/investorInformationAnimation.json";
+import governanceAnimation from "../../../../public/symmetryAnimations/governanceAnimation.json";
+import financialAnimation from "../../../../public/symmetryAnimations/financialAnimation.json";
+import corporateAnimation from "../../../../public/symmetryAnimations/corporateBriefings.json";
+import noticesAnimation from "../../../../public/symmetryAnimations/noticesAnimation.json";
+import importantAnimation from "../../../../public/symmetryAnimations/importantAnimation.json";
+import contactAnimation from "../../../../public/symmetryAnimations/contactsAnimation.json";
 
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
@@ -25,7 +25,6 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const page = () => {
-
   const blackDiv = useRef();
   const redDiv = useRef();
   const aboutDiv = useRef();
@@ -133,46 +132,47 @@ const page = () => {
   }, []);
 
   const aboutH2 = "investors relations";
-  const aboutText ="we are dedicated to providing timely and accurate information about our company's performance, financial health, and strategic initiatives. explore the resources here to stay informed and connected as we navigate the journey of growth together.";
+  const aboutText =
+    "we are dedicated to providing timely and accurate information about our company's performance, financial health, and strategic initiatives. explore the resources here to stay informed and connected as we navigate the journey of growth together.";
 
-  const bgColor = "bg-black"
-  const textColor = "text-white"
+  const bgColor = "bg-black";
+  const textColor = "text-white";
 
   const tabsData = [
     {
       id: 0,
       item: "copy information",
-      refId : "#copyInformationTabRef"
+      refId: "#copyInformationTabRef",
     },
     {
       id: 1,
       item: "governance",
-      refId : "#governanceTabRef"
+      refId: "#governanceTabRef",
     },
     {
       id: 2,
       item: "financial reports",
-      refId : "#financialReportsTabRef"
+      refId: "#financialReportsTabRef",
     },
     {
       id: 3,
       item: "corporate briefings",
-      refId : "#corporateBriefingsTabRef"
+      refId: "#corporateBriefingsTabRef",
     },
     {
       id: 4,
       item: "notices & annoucements",
-      refId : "#noticesTabRef"
+      refId: "#noticesTabRef",
     },
     {
       id: 5,
       item: "important documents",
-      refId : "#importantDocsTabRef"
+      refId: "#importantDocsTabRef",
     },
     {
       id: 6,
       item: "investor contacts",
-      refId : "#investorContactTabRef"
+      refId: "#investorContactTabRef",
     },
   ];
 
@@ -462,7 +462,10 @@ const page = () => {
         </div>
 
         <AnimationTextReversing>
-          <div id="copyInformationTabRef" className="vision-div flex flex-col gap-5 lg:w-6/12 my-10">
+          <div
+            id="copyInformationTabRef"
+            className="vision-div flex flex-col gap-5 lg:w-6/12 my-10"
+          >
             <div className="text-black">
               <h2 className="text-5xl lg:text-6xl 2xl:text-7xl font-light pillat-normal">
                 investor information
@@ -472,15 +475,19 @@ const page = () => {
               {invesorsInfo.map((item, index) => (
                 <>
                   <div className="border-b border-green-300 flex flex-col lg:flex-row text-center lg:text-start lg:justify-between leading-[20px] pb-5 mt-5">
-                    <div className="lg:w-6/12 text-gray-600 pillat-normal">{item.title}</div>
-                    <div className="lg:w-6/12 font-semibold text-black ">{item.desc}</div>
+                    <div className="lg:w-6/12 text-gray-600 pillat-normal">
+                      {item.title}
+                    </div>
+                    <div className="lg:w-6/12 font-semibold text-black ">
+                      {item.desc}
+                    </div>
                   </div>
                 </>
               ))}
             </div>
           </div>
           <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-          <Lottie
+            <Lottie
               loop
               animationData={investorinformationAnimation}
               play
@@ -490,7 +497,10 @@ const page = () => {
         </AnimationTextReversing>
 
         <AnimationTextReversing flexDirection="row-reverse">
-          <div id="governanceTabRef" className="mission-div flex flex-col gap-5 lg:w-6/12">
+          <div
+            id="governanceTabRef"
+            className="mission-div flex flex-col gap-5 lg:w-6/12"
+          >
             <div className="text-black">
               <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light pillat-normal">
                 governance
@@ -530,15 +540,15 @@ const page = () => {
                 our commitment to high-quality management and governance.
               </p>
             </div>
-            <div className="text-center mt-10">
-              <h className="font-bold text-sm ">board members</h>
+            <div className="mt-10">
+              <h className="font-bold text-base text-black ">board members</h>
             </div>
 
             <div className="mt-1">
               {boardMembers.map((item, index) => (
                 <>
                   <div className="border-b border-green-300 flex flex-col lg:flex-row text-center lg:text-start lg:justify-between leading-[20px] pb-5 mt-5">
-                    <div className="lg:w-6/12 font-semibold text-sm text-black">
+                    <div className="lg:w-6/12 font-semibold text-base text-black">
                       {item.name}
                     </div>
                     <div className="lg:w-6/12 text-gray-500 font-[300] text-sm pillat-normal">
@@ -549,8 +559,10 @@ const page = () => {
               ))}
             </div>
 
-            <div className="text-center my-3 lg:mt-7">
-              <h className="font-bold text-sm ">audit committee (bac)</h>
+            <div className="my-3 lg:mt-7">
+              <h className="font-bold text-base text-black">
+                audit committee (bac)
+              </h>
             </div>
 
             <div className="">
@@ -568,8 +580,8 @@ const page = () => {
               ))}
             </div>
 
-            <div className="text-center my-3">
-              <h className="font-bold text-sm ">
+            <div className="my-3">
+              <h className="font-bold text-base text-black ">
                 hr & remuneration committee (hrrc)
               </h>
             </div>
@@ -590,16 +602,20 @@ const page = () => {
             </div>
           </div>
           <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-          <Lottie
+            <Lottie
               loop
               animationData={governanceAnimation}
               play
               // style={{ width: 350, height: 350 }}
-            />          </div>
+            />{" "}
+          </div>
         </AnimationTextReversing>
 
         <AnimationTextReversing>
-          <div id="financialReportsTabRef" className="vision-div flex flex-col gap-5 lg:w-6/12 my-10">
+          <div
+            id="financialReportsTabRef"
+            className="vision-div flex flex-col gap-5 lg:w-6/12 my-10"
+          >
             <div className="text-black">
               <h2 className="text-5xl lg:text-6xl 2xl:text-7xl font-light pillat-normal">
                 financial reports
@@ -613,16 +629,20 @@ const page = () => {
             </div>
           </div>
           <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-          <Lottie
+            <Lottie
               loop
               animationData={financialAnimation}
               play
               // style={{ width: 350, height: 350 }}
-            />           </div>
+            />{" "}
+          </div>
         </AnimationTextReversing>
 
         <AnimationTextReversing flexDirection="row-reverse">
-          <div id="corporateBriefingsTabRef" className="vision-div flex flex-col gap-5 lg:w-6/12 my-10">
+          <div
+            id="corporateBriefingsTabRef"
+            className="vision-div flex flex-col gap-5 lg:w-6/12 my-10"
+          >
             <div className="text-black">
               <h2 className="text-5xl lg:text-6xl 2xl:text-7xl font-light pillat-normal">
                 corporate briefings
@@ -636,16 +656,20 @@ const page = () => {
             </div>
           </div>
           <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-          <Lottie
+            <Lottie
               loop
               animationData={corporateAnimation}
               play
               // style={{ width: 350, height: 350 }}
-            />             </div>
+            />{" "}
+          </div>
         </AnimationTextReversing>
 
         <AnimationTextReversing>
-          <div id="noticesTabRef" className="vision-div flex flex-col gap-5 lg:w-6/12 my-10">
+          <div
+            id="noticesTabRef"
+            className="vision-div flex flex-col gap-5 lg:w-6/12 my-10"
+          >
             <div className="text-black">
               <h2 className="text-5xl lg:text-6xl 2xl:text-7xl font-light pillat-normal">
                 notices & announcements
@@ -659,16 +683,20 @@ const page = () => {
             </div>
           </div>
           <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-          <Lottie
+            <Lottie
               loop
               animationData={noticesAnimation}
               play
               // style={{ width: 350, height: 350 }}
-            />            </div>
+            />{" "}
+          </div>
         </AnimationTextReversing>
 
         <AnimationTextReversing flexDirection="row-reverse">
-          <div id="importantDocsTabRef" className="vision-div flex flex-col gap-5 lg:w-6/12 my-10">
+          <div
+            id="importantDocsTabRef"
+            className="vision-div flex flex-col gap-5 lg:w-6/12 my-10"
+          >
             <div className="text-black">
               <h2 className="text-5xl lg:text-6xl 2xl:text-7xl font-light pillat-normal">
                 important documents
@@ -719,16 +747,20 @@ const page = () => {
             </div>
           </div>
           <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-          <Lottie
+            <Lottie
               loop
               animationData={importantAnimation}
               play
               // style={{ width: 350, height: 350 }}
-            />            </div>
+            />{" "}
+          </div>
         </AnimationTextReversing>
 
         <AnimationTextReversing>
-          <div id="investorContactTabRef" className="vision-div flex flex-col gap-5 lg:w-6/12 my-10">
+          <div
+            id="investorContactTabRef"
+            className="vision-div flex flex-col gap-5 lg:w-6/12 my-10"
+          >
             <div className="text-black">
               <h2 className="text-5xl lg:text-6xl 2xl:text-7xl font-light pillat-normal">
                 investor contacts
@@ -736,15 +768,19 @@ const page = () => {
             </div>
             <div className="mt-10">
               <div className="text-center lg:text-start mt-5 mb-12">
-                <h className="font-bold text-sm lg:text-lg ">
+                <h className="font-bold text-sm lg:text-lg text-black ">
                   shareholder's contact
                 </h>
               </div>
               {investorContacts.map((item, index) => (
                 <>
                   <div className="border-b border-green-300 flex flex-col lg:flex-row text-center lg:text-start lg:justify-between leading-[20px] pb-5 mt-5">
-                    <div className="lg:w-6/12 text-gray-500 pillat-normal ">{item.title}</div>
-                    <div className="lg:w-6/12 font-semibold">{item.desc}</div>
+                    <div className="lg:w-6/12 text-gray-500 pillat-normal ">
+                      {item.title}
+                    </div>
+                    <div className="lg:w-6/12 font-semibold text-black">
+                      {item.desc}
+                    </div>
                   </div>
                 </>
               ))}
@@ -757,8 +793,12 @@ const page = () => {
               {investorContacts.map((item, index) => (
                 <>
                   <div className="border-b border-green-300 flex flex-col lg:flex-row text-center lg:text-start lg:justify-between leading-[20px] pb-5 mt-5">
-                    <div className="lg:w-6/12 text-gray-500 pillat-normal">{item.title}</div>
-                    <div className="lg:w-6/12 font-semibold">{item.desc}</div>
+                    <div className="lg:w-6/12 text-gray-500 pillat-normal">
+                      {item.title}
+                    </div>
+                    <div className="lg:w-6/12 font-semibold text-black">
+                      {item.desc}
+                    </div>
                   </div>
                 </>
               ))}
@@ -766,7 +806,7 @@ const page = () => {
 
             <div className="mt-20">
               <p className="text-gray-500 pillat-normal">
-                <span className="font-semibold text-black">disclaimer :</span>{" "}
+                <span className="!font-extrabold text-black">disclaimer :</span>{" "}
                 in case your complaint has not been properly redressed by us,
                 you may lodge your complaint with Securities and Exchange
                 Commission of Pakistan (the “SECP”). However, please note that
@@ -783,16 +823,17 @@ const page = () => {
             </div>
           </div>
           <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-          <Lottie
+            <Lottie
               loop
               animationData={contactAnimation}
               play
               // style={{ width: 350, height: 350 }}
-            />             </div>
+            />{" "}
+          </div>
         </AnimationTextReversing>
 
-        <ConnectWithUs bgColor={bgColor} textColor={textColor}/>
-        <Footer/>
+        <ConnectWithUs bgColor={bgColor} textColor={textColor} />
+        <Footer />
       </div>
     </>
   );
