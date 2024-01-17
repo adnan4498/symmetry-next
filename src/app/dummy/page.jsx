@@ -1,10 +1,17 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+import "../../homeComponents/Dummy.css";
+import logo from "../../../../public/logo.webp";
+import Link from "next/link";
+import hamburger from "../../../../public/hamburger-icon-3.png";
 import Image from "next/image";
-import Tabs from "../../components/tabs/Tabs";
-import BlackBannerComponent from "../../components/blackBannerComponent/BlackBannerComponent";
-import AnimationTextReversing from "../../components/animationTextReversing/AnimationTextReversing";
-import square from "../../../../public/square-neon.png";
+import { useEffect, useRef } from "react";
+import Tabs from "../components/tabs/Tabs";
+import ConnectWithUs from "../components/connectWithUsComponent/ConnectWithUs";
+import Footer from "../components/footer/Footer";
+import AnimationTextReversing from "../components/animationTextReversing/AnimationTextReversing";
+// import square from "../../../../public/square-neon.png";
 import director1 from "../../../../public/board-director-img-1.webp";
 import director2 from "../../../../public/board-director-img-2.webp";
 import director3 from "../../../../public/board-director-img-3.webp";
@@ -12,24 +19,21 @@ import director4 from "../../../../public/board-director-img-4.webp";
 import director5 from "../../../../public/board-director-img-5.webp";
 import director6 from "../../../../public/board-director-img-6.webp";
 import director7 from "../../../../public/board-director-img-7.webp";
-import ConnectWithUs from "../../components/connectWithUsComponent/ConnectWithUs";
-import Footer from "../../components/footer/Footer";
-import companyAnimation from "../../../../public/symmetryAnimations/companyAnimation.json";
-import visionAnimation from "../../../../public/symmetryAnimations/visionAnimation.json";
-import missionAnimation from "../../../../public/symmetryAnimations/missionAnimation.json";
-import directorsAnimation from "../../../../public/symmetryAnimations/directorsAnimation.json";
-import initiativeAnimation from "../../../../public/symmetryAnimations/initiativeAnimation.json";
+import companyAnimation from "../../../public/symmetryAnimations/companyAnimation.json";
+import visionAnimation from "../../../public/symmetryAnimations/visionAnimation.json";
+import missionAnimation from "../../../public/symmetryAnimations/missionAnimation.json";
+import directorsAnimation from "../../../public/symmetryAnimations/directorsAnimation.json";
+import initiativeAnimation from "../../../public/symmetryAnimations/initiativeAnimation.json";
+import aboutBannerAnimation from "../../../public/symmetryAnimations/aboutBannerAnimation.json";
 import dummyRiv from "../../../../public/symmetryAnimations/home-banner.riv";
-import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
+
+import Lottie from "react-lottie-player";
+import BlackBannerComponent from "../components/blackBannerComponent/BlackBannerComponent";
+import Rive from "@rive-app/react-canvas";
 
 gsap.registerPlugin(ScrollTrigger);
 
-import Lottie from "react-lottie-player";
-import Navbar2 from "../../components/navbar2/Navbar2";
-import Rive from "@rive-app/react-canvas";
-
-const Company = () => {
+const Page = () => {
   const blackDiv = useRef();
   const redDiv = useRef();
   const aboutDiv = useRef();
@@ -37,83 +41,6 @@ const Company = () => {
   const textDiv = useRef();
   const pinkDiv = useRef();
   const animationDiv = useRef();
-
-  const aboutH2 = "about us";
-  const aboutText =
-    "symmetry group is a digital technology and experiences company that specializes in digital products and services. Our prime focus is on transformation and digitalization of marketing, sales and other consumer centric functions of organizations.";
-
-  const tabsData = [
-    {
-      id: 0,
-      item: "company",
-      refId: "#companyTabRef",
-    },
-    {
-      id: 1,
-      item: "vision",
-      refId: "#visionTabRef",
-    },
-    {
-      id: 2,
-      item: "mission",
-      refId: "#missionTabRef",
-    },
-    {
-      id: 3,
-      item: "board of directors",
-      refId: "#boardDirectorsTabRef",
-    },
-    {
-      id: 4,
-      item: "initiatives",
-      refId: "#initiativesTabRef",
-    },
-  ];
-
-  const boardDirectors = [
-    {
-      id: 0,
-      img: director1,
-      name: "zaheer hussain dodhia",
-      post: "chairman / independent director",
-    },
-    {
-      id: 1,
-      img: director2,
-      name: "musharraf hai",
-      post: "independent director",
-    },
-    {
-      id: 2,
-      img: director3,
-      name: "muhammad najeeb agarwalla",
-      post: "independent director",
-    },
-    {
-      id: 3,
-      img: director4,
-      name: "jibran jamshad",
-      post: "independent director",
-    },
-    {
-      id: 4,
-      img: director5,
-      name: "syed asim zafar",
-      post: "independent director",
-    },
-    {
-      id: 5,
-      img: director6,
-      name: "adil ahmed",
-      post: "executive director / co-founder",
-    },
-    {
-      id: 6,
-      img: director7,
-      name: "sarocsh ahmed",
-      post: "chief executive officer / co-founder",
-    },
-  ];
 
   useEffect(() => {
     let mm = gsap.matchMedia();
@@ -213,19 +140,95 @@ const Company = () => {
     mm.revert();
   }, []);
 
+  const tabsData = [
+    {
+      id: 0,
+      item: "company",
+    },
+    {
+      id: 1,
+      item: "vision",
+    },
+    {
+      id: 2,
+      item: "mission",
+    },
+    {
+      id: 3,
+      item: "board of directors",
+    },
+    {
+      id: 4,
+      item: "initiatives",
+    },
+    {
+      id: 5,
+      item: "dummy1",
+    },
+  ];
+
+  const boardDirectors = [
+    {
+      id: 0,
+      img: director1,
+      name: "zaheer hussain dodhia",
+      post: "chairman / independent director",
+    },
+    {
+      id: 1,
+      img: director2,
+      name: "musharraf hai",
+      post: "independent director",
+    },
+    {
+      id: 2,
+      img: director3,
+      name: "muhammad najeeb agarwalla",
+      post: "independent director",
+    },
+    {
+      id: 3,
+      img: director4,
+      name: "jibran jamshad",
+      post: "independent director",
+    },
+    {
+      id: 4,
+      img: director5,
+      name: "syed asim zafar",
+      post: "independent director",
+    },
+    {
+      id: 5,
+      img: director6,
+      name: "adil ahmed",
+      post: "executive director / co-founder",
+    },
+    {
+      id: 6,
+      img: director7,
+      name: "sarocsh ahmed",
+      post: "chief executive officer / co-founder",
+    },
+  ];
+
+  const aboutH2 = "about us";
+  const aboutText =
+    "symmetry group is a digital technology and experiences company that specializes in digital products and services. Our prime focus is on transformation and digitalization of marketing, sales and other consumer centric functions of organizations.";
+
   return (
     <>
       <BlackBannerComponent aboutText={aboutText} aboutH2={aboutH2} />
       <div ref={redDiv} className="bg-white  pt-[450px]">
         <div
           ref={pinkDiv}
-          className="bg-white h-[130px] md:h-[130px] mt-[-80px] 2xl:mt-[-50px] text-black fixed w-full z-10"
+          className="bg-white h-[130px] md:h-[130px] mt-[-80px] 2xl:mt-[-50px] text-black fixed w-full z-50"
         >
           <Tabs tabsData={tabsData} slidesPerView={4} />
         </div>
         <div className="bg-white h-[1800px] text-black z-0">
           <AnimationTextReversing>
-            <div id="companyTabRef" className="company-div flex flex-col gap-5 lg:w-6/12">
+            <div className="company-div flex flex-col gap-5 lg:w-6/12">
               <div className="text-black">
                 <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light pillat-normal">
                   company
@@ -277,12 +280,12 @@ const Company = () => {
             </div>
           </AnimationTextReversing>
           <AnimationTextReversing flexDirection="row-reverse">
-            <div id="visionTabRef" className="vision-div flex flex-col gap-5 lg:w-6/12">
+            <div className="vision-div flex flex-col gap-5 lg:w-6/12">
               <div className="text-black">
                 <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light pillat-normal">
                   vision
                 </h2>
-                <h3 className="!font-extrabold mt-3 pillat-normal">
+                <h3 className="font-semibold mt-3 pillat-normal">
                   we exist to integrate the world better.
                 </h3>
               </div>
@@ -308,12 +311,12 @@ const Company = () => {
             </div>
           </AnimationTextReversing>
           <AnimationTextReversing>
-            <div id="missionTabRef" className="mission-div flex flex-col gap-5 lg:w-6/12">
+            <div className="mission-div flex flex-col gap-5 lg:w-6/12">
               <div className="text-black">
                 <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light pillat-normal">
                   mission
                 </h2>
-                <h3 className="!font-extrabold mt-3 pillat-normal">
+                <h3 className="font-semibold mt-3 pillat-normal">
                   create market-leading digital experiences that power our
                   partners’ success.
                 </h3>
@@ -337,7 +340,7 @@ const Company = () => {
             </div>
           </AnimationTextReversing>
           <AnimationTextReversing flexDirection="row-reverse">
-            <div id="boardDirectorsTabRef" className="board-directors-div flex flex-col gap-5 lg:w-6/12">
+            <div className="board-directors-div flex flex-col gap-5 lg:w-6/12">
               <div className="text-black">
                 <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light pillat-normal">
                   board of directors
@@ -372,7 +375,7 @@ const Company = () => {
             </div>
           </AnimationTextReversing>
           <AnimationTextReversing>
-            <div id="initiativesTabRef" className="vision-div flex flex-col gap-5 lg:w-6/12">
+            <div className="vision-div flex flex-col gap-5 lg:w-6/12">
               <div className="text-black">
                 <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light pillat-normal">
                   initiatives
@@ -380,7 +383,7 @@ const Company = () => {
                 <div className="flex flex-col gap-3 mt-2">
                   <div className="text-gray-500 text-[14px]  mt-2">
                     <p className="pillat-normal">
-                      <span className="!font-extrabold text-black ">
+                      <span className="font-bold text-black ">
                         #narrativestransformed
                       </span>{" "}
                       is a series of podcasts on prevalent themes that can
@@ -391,7 +394,7 @@ const Company = () => {
                   </div>
                   <div className="text-gray-500 text-[14px] mt-2  pillat-normal">
                     <p className="">
-                      <span className="!font-extrabold text-black">djoint</span> is a
+                      <span className="font-bold text-black">djoint</span> is a
                       flagship initiative launched by Symmetry Group and has
                       since been implemented across all our agencies. In Djoint
                       sessions, the senior most management of the Group
@@ -403,7 +406,7 @@ const Company = () => {
                   </div>
                   <div className="text-gray-500 text-[14px]  mt-2 pillat-normal">
                     <p className="">
-                      <span className="!font-extrabold text-black">
+                      <span className="font-bold text-black">
                         digital minds
                       </span>{" "}
                       is a first of its kind competition, in which students from
@@ -436,6 +439,10 @@ const Company = () => {
             </div>
           </AnimationTextReversing>
 
+          <div className="bg-red-500 w-16 h-16 rotate-[50deg] rounded-md flex justify-center items-center ml-20 mt-10 border border-black">
+            <p className="rotate-[-50deg]">a</p>
+          </div>
+
           <ConnectWithUs bgColor="bg-black" textColor="text-white" />
           <Footer />
         </div>
@@ -444,4 +451,4 @@ const Company = () => {
   );
 };
 
-export default Company;
+export default Page;

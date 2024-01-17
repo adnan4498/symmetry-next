@@ -7,7 +7,7 @@ import "../../components/animationAndSwipperComponent/AnimationAndSwipper.css";
 import "swiper/css";
 import "swiper/css/navigation";
 import Lottie from "react-lottie-player";
-import square from "../../../../public/square-neon.png";
+// import square from "../../../../public/square-neon.png";
 import rivAnimation from "../../../../public/symmetryAnimations/home-banner.riv";
 import Rive from "@rive-app/react-canvas";
 
@@ -44,7 +44,7 @@ const AnimationAndSwipper = ({
           <div className="lg:w-[62%]">
             <div className="mt-5">
               <div className="border-b border-green-500 pt-6">
-                <p className="text-3xl 2xl:text-4xl mb-4 text-black pillat-normal">
+                <p className="text-3xl xl:text-4xl mb-4 text-black pillat-normal">
                   {aasH3}
                 </p>
               </div>

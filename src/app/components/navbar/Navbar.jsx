@@ -163,10 +163,11 @@ const Navbar = () => {
 
     getItem(
       <>
-      {/* <Link */}
-      <div className="footer-text-color-toggle pillat-normal">
-        investors relations{" "}
-      </div>
+        <Link href={"investorRelations"}>
+          <div className="footer-text-color-toggle pillat-normal">
+            investors relations{" "}
+          </div>
+        </Link>
       </>,
       "sub2",
       [
@@ -264,9 +265,13 @@ const Navbar = () => {
     ),
 
     getItem(
-      <div className="footer-text-color-toggle pillat-normal">
-        brands & products
-      </div>,
+      <>
+        <Link href={"brands-products"}>
+          <div className="footer-text-color-toggle pillat-normal">
+            brands & products
+          </div>
+        </Link>
+      </>,
       "sub4",
       [
         getItem(
@@ -330,7 +335,11 @@ const Navbar = () => {
     ),
 
     getItem(
-      <div className="footer-text-color-toggle pillat-normal">clients</div>,
+      <>
+      <Link href={"clients"}>
+      <div className="footer-text-color-toggle pillat-normal">clients</div>
+      </Link>
+      </>,
       "sub5",
       [
         getItem(
@@ -380,25 +389,37 @@ const Navbar = () => {
     ),
 
     getItem(
+      <>
+      <Link href={"google"}>
       <div className="footer-text-color-toggle pillat-normal abbo">
         affiliation & partnerships
-      </div>,
+      </div>
+      </Link>
+      </>,
       "sub1",
       [<></>]
     ),
 
     getItem(
+      <>
+      <Link href={"careers"}>
       <div className="footer-text-color-toggle pillat-normal abbo">
         careers
-      </div>,
+      </div>
+      </Link>
+      </>,
       "sub1",
       [<></>]
     ),
 
     getItem(
+      <>
+      <Link href={"contact-us"}>
       <div className="footer-text-color-toggle pillat-normal abbo">
         contact us
-      </div>,
+      </div>
+      </Link>
+      </>,
       "sub1",
       [<></>]
     ),

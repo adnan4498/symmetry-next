@@ -49,7 +49,7 @@ const Footer = () => {
           <div className="hidden lg:block mx-10">
             <div className="gap-4 grid grid-cols-7">
               <div className="text-black ">
-                <Link href="pages/company">
+                <Link href="company">
                 <h2 className="font-semibold text-lg min-h-[70px] mb-2 footer-text-color-toggle cursor-pointer">
                   about us
                 </h2>
@@ -64,7 +64,7 @@ const Footer = () => {
               </div>
 
               <div className="text-black">
-                <Link href="pages/investorRelations">
+                <Link href="investorRelations">
                 <h2 className="font-semibold text-lg min-h-[70px] mb-2 footer-text-color-toggle cursor-pointer ">
                   investor relations
                 </h2>
@@ -93,7 +93,7 @@ const Footer = () => {
               </div>
 
               <div className="text-black">
-                <Link href="pages/brands-products">
+                <Link href="brands-products">
                 <h2 className="font-semibold text-lg min-h-[70px] mb-2 footer-text-color-toggle cursor-pointer">
                   brands & products
                 </h2>
@@ -111,7 +111,7 @@ const Footer = () => {
               </div>
 
               <div className="text-black">
-                <Link href="pages/clients">
+                <Link href="clients">
                 <h2 className="font-semibold text-lg min-h-[70px] mb-2 footer-text-color-toggle cursor-pointer">
                   clients
                 </h2>
@@ -127,7 +127,7 @@ const Footer = () => {
               </div>
 
               <div className="text-black">
-                <Link href="pages/google">
+                <Link href="google">
                 <h2 className="font-semibold text-lg min-h-[70px] mb-2 footer-text-color-toggle cursor-pointer">
                   affiliation & partnerships
                 </h2>
@@ -141,14 +141,14 @@ const Footer = () => {
               </div>
 
               <div className="text-black">
-                <Link href="pages/contact-us">
+                <Link href="contact-us">
                 <h2 className="font-semibold text-lg min-h-[70px] mb-2 footer-text-color-toggle cursor-pointer">
                   contact us
                 </h2>
                 </Link>
                 <ul className="text-gray-500 flex flex-col gap-2 pillat-thin">
                   <li className="footer-text-color-toggle cursor-pointer">karachi</li>
-                 <Link href="/pages/dummy?islamabad"><li>islamabad</li></Link> 
+                 <Link href="/dummy?islamabad"><li>islamabad</li></Link> 
                   <li className="footer-text-color-toggle cursor-pointer">lahore</li>
                   <li className="footer-text-color-toggle cursor-pointer">general & media inquiries</li>
                 </ul>

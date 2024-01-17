@@ -35,7 +35,7 @@ const ImageSwipper = ({
       <div className="md:mx-12 mx-3 lg:mx-auto lg:w-[55%]">
         <div className="mt-5">
           <div className="border-b border-green-500 pt-6">
-            <p className="text-3xl lg:text-4xl 2xl:text-5xl mb-4 text-black pillat-normal">
+            <p className="text-3xl lg:text-4xl xl:text-5xl mb-4 text-black pillat-normal">
               {hasH3}
             </p>
           </div>

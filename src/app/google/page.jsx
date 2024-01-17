@@ -1,14 +1,14 @@
 "use client";
 import React, { useEffect, useRef } from "react";
-import BlackBannerComponent from "../../components/blackBannerComponent/BlackBannerComponent";
-import Tabs from "../../components/tabs/Tabs";
-import AnimationTextReversing from "../../components/animationTextReversing/AnimationTextReversing";
+import BlackBannerComponent from "../components/blackBannerComponent/BlackBannerComponent";
+import Tabs from "../components/tabs/Tabs";
+import AnimationTextReversing from "../components/animationTextReversing/AnimationTextReversing";
 import Image from "next/image";
-import square from "../../../../public/square-neon.png";
-import ConnectWithUs from "../../components/connectWithUsComponent/ConnectWithUs";
-import Footer from "../../components/footer/Footer";
+// import square from "../../../../public/square-neon.png";
+import ConnectWithUs from "../components/connectWithUsComponent/ConnectWithUs";
+import Footer from "../components/footer/Footer";
 import Lottie from "react-lottie-player";
-import microsoftAnimation from "../../../../public/symmetryAnimations/microsoftAnimation.json";
+import microsoftAnimation from "../../../public/symmetryAnimations/microsoftAnimation.json";
 
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";

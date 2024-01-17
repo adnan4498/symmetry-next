@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
-import square from "../../../../public/square-neon.png";
+// import square from "../../../../public/square-neon.png";
 import Lottie from "react-lottie-player";
 import dummyRiv from "../../../../public/symmetryAnimations/home-banner.riv";
 import Rive from "@rive-app/react-canvas";
@@ -45,7 +45,7 @@ const AnimationAndImages = ({
                 <span className="border-l border-gray-400 text-black text-xs 2xl:text-sm pl-4 ml-3 w-[55%] 2xl:w-[45%] xl:max-w-[600px] 2xl:leading-[15px] mt-3 lg:inline-block hidden pillat-thin">
                   <span className="w-[100%] ">
                     {aasP}
-                    <span className="font-bold"> {aasKnowMore}</span>
+                    <span className="font-bold text-blacks"> {aasKnowMore}</span>
                   </span>
                 </span>
 

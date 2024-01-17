@@ -1,16 +1,16 @@
 "use client";
 import { useEffect, useRef } from "react";
 import LocomotiveScroll from "locomotive-scroll";
-import BlackBannerComponent from "../../components/blackBannerComponent/BlackBannerComponent";
-import Tabs from "../../components/tabs/Tabs";
-import AnimationTextReversing from "../../components/animationTextReversing/AnimationTextReversing";
+import BlackBannerComponent from "../components/blackBannerComponent/BlackBannerComponent";
+import Tabs from "../components/tabs/Tabs";
+import AnimationTextReversing from "../components/animationTextReversing/AnimationTextReversing";
 import Image from "next/image";
-import square from "../../../../public/square-neon.png";
-import ConnectWithUs from "../../components/connectWithUsComponent/ConnectWithUs";
-import AboutUs from "../../homeComponents/AboutUs";
-import Footer from "../../components/footer/Footer";
+// import square from "../../../../public/square-neon.png";
+import ConnectWithUs from "../components/connectWithUsComponent/ConnectWithUs";
+import AboutUs from "../homeComponents/AboutUs";
+import Footer from "../components/footer/Footer";
 import Lottie from "react-lottie-player";
-import islamabadAnimation from "../../../../public/symmetryAnimations/islamabadAnimation.json";
+import islamabadAnimation from "../../../public/symmetryAnimations/islamabadAnimation.json";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
