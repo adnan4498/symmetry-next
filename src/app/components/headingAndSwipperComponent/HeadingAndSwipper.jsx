@@ -32,7 +32,6 @@ const HeadingAndSwipper = ({
     setArrowNextActive(true);
   };
 
-  console.log(hasKnowMore , "KNOW MOREE")
 
   return (
     <>

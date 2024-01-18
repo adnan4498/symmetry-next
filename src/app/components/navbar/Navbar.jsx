@@ -28,7 +28,12 @@ const Navbar = () => {
   const [activeBg, setActiveBg] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
   const [getNavRefId, setNavRefId] = useState();
+  const [toggleGsap, setToggleGsap] = useState(true);
   const navRef = useRef();
+  const hamburgerLogoRef = useRef();
+  const subMenuRef = useRef();
+  const socialLinksRef = useRef()
+  const menuAnimationRef = useRef()
 
   useEffect(() => {
     var actionNav = gsap.to(navRef.current, {
@@ -140,14 +145,15 @@ const Navbar = () => {
   ];
 
   /***********  Antd Hamburger Sub Menu Items  ***********/
+
   const toggleDrawer = () => {
     const myInterval = setInterval(() => {
       setIsOpen((prevState) => !prevState);
-    }, 400);
+    }, 700);
 
     const killMyInterval = setInterval(() => {
       clearInterval(myInterval);
-    }, 400);
+    }, 700);
 
     setInterval(() => {
       clearInterval(killMyInterval);
@@ -336,9 +342,9 @@ const Navbar = () => {
 
     getItem(
       <>
-      <Link href={"clients"}>
-      <div className="footer-text-color-toggle pillat-normal">clients</div>
-      </Link>
+        <Link href={"clients"}>
+          <div className="footer-text-color-toggle pillat-normal">clients</div>
+        </Link>
       </>,
       "sub5",
       [
@@ -390,11 +396,11 @@ const Navbar = () => {
 
     getItem(
       <>
-      <Link href={"google"}>
-      <div className="footer-text-color-toggle pillat-normal abbo">
-        affiliation & partnerships
-      </div>
-      </Link>
+        <Link href={"google"}>
+          <div className="footer-text-color-toggle pillat-normal abbo">
+            affiliation & partnerships
+          </div>
+        </Link>
       </>,
       "sub1",
       [<></>]
@@ -402,11 +408,11 @@ const Navbar = () => {
 
     getItem(
       <>
-      <Link href={"careers"}>
-      <div className="footer-text-color-toggle pillat-normal abbo">
-        careers
-      </div>
-      </Link>
+        <Link href={"careers"}>
+          <div className="footer-text-color-toggle pillat-normal abbo">
+            careers
+          </div>
+        </Link>
       </>,
       "sub1",
       [<></>]
@@ -414,11 +420,11 @@ const Navbar = () => {
 
     getItem(
       <>
-      <Link href={"contact-us"}>
-      <div className="footer-text-color-toggle pillat-normal abbo">
-        contact us
-      </div>
-      </Link>
+        <Link href={"contact-us"}>
+          <div className="footer-text-color-toggle pillat-normal abbo">
+            contact us
+          </div>
+        </Link>
       </>,
       "sub1",
       [<></>]
@@ -433,6 +439,41 @@ const Navbar = () => {
       type,
     };
   }
+
+  /***********  Hamburger GSAP animation toggle  ***********/
+
+  const gsapToggle = () => {
+    setToggleGsap(!toggleGsap)
+
+    gsap.to(hamburgerLogoRef.current, {
+      x: toggleGsap ? 15 : -300,
+      opacity: toggleGsap ? 1 : 0,
+      duration: toggleGsap ?  0.2 : 0.4,
+      delay: toggleGsap ? 1.3 : 0.5,
+    });
+
+    gsap.to(menuAnimationRef.current, {
+      // x: toggleGsap ? 15 : -400,
+      opacity: toggleGsap ? 1 : 0,
+      duration: toggleGsap ?  0.5 : 0.7,
+      delay: toggleGsap ? 1.7 : 0.1,
+    });
+
+    gsap.to(subMenuRef.current, {
+      x: toggleGsap ? 15 : -300,
+      opacity: toggleGsap ? 1 : 0,
+      duration: toggleGsap ?  0.2 : 0.4,
+      delay: toggleGsap ? 2 : 0.3,
+    });
+
+    gsap.to(socialLinksRef.current, {
+      x: toggleGsap ? 15 : -300,
+      opacity: toggleGsap ? 1 : 0,
+      duration: toggleGsap ?  0.2 : 0.4,
+      delay: toggleGsap ? 2.3 : 0,
+    });
+
+  };
 
   return (
     <>
@@ -489,7 +530,13 @@ const Navbar = () => {
                   className="top-[-15px] lg:top-[0px] absolute cursor-pointer w-[50vw] h-[50vw] max-w-[90px] max-h-[150px] !right-[-20px] md:!right-[10px]"
                   style={{ zIndex: "99999" }}
                 >
-                  <input type="checkbox" onClick={toggleDrawer} />
+                  <input
+                    type="checkbox"
+                    onClick={() => {
+                      toggleDrawer();
+                      gsapToggle();
+                    }}
+                  />
                   <svg
                     viewBox="0 0 100 100"
                     className=""
@@ -515,7 +562,7 @@ const Navbar = () => {
             >
               <>
                 <div className="ml-2 mt-4 md:mx-10">
-                  <div className="w-[55vw] ml-1">
+                  <div ref={hamburgerLogoRef} className="w-[55vw] ml-1 opacity-0 translate-x-[-300px]">
                     <Image src={logo} />
                   </div>
 
@@ -564,7 +611,7 @@ const Navbar = () => {
                         <div className="flex justify-between items-center">
                           <div>
                             <div className="text-white flex flex-col gap-2 mr-1 text-xl pillat-normal lg:gap-5 ">
-                              <div className="">
+                              <div  ref={subMenuRef}  className="opacity-0 translate-x-[-300px]">
                                 <Menu
                                   // onClick={onClick}
                                   style={{
@@ -575,7 +622,7 @@ const Navbar = () => {
                                 />
                               </div>
 
-                              <div className="flex gap-3 ml-2 mt-5  ">
+                              <div ref={socialLinksRef} className="flex gap-3 ml-2 mt-5 opacity-0 translate-x-[-300px]">
                                 <div className="border border-green-400 rounded-lg my-auto px-1 py-1 cursor-pointer hamburger-social-icons-div">
                                   <Image
                                     src={linkdinLogo}
@@ -600,7 +647,7 @@ const Navbar = () => {
                               </div>
                             </div>
                           </div>
-                          <div className="hidden md:block ">
+                          <div ref={menuAnimationRef} className="hidden md:block opacity-0">
                             <Rive
                               src={RiveAnimation}
                               autoplay={true}
