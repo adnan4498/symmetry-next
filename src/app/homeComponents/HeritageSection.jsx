@@ -77,22 +77,37 @@ const HeritageSection = () => {
 
   return (
     <>
-      <div className="md:absolute md:z-10 md:right-0 md:left-0  border border-gray-400 rounded-2xl -mt-52 lg:mt-[-300px]  bg-white lg:w-[70%] lg:mx-auto px-5 ">
-        <div className=" mx-3 ">
+      <div className="md:absolute md:z-10 md:right-0 md:left-0  border border-gray-400 rounded-2xl -mt-52 lg:mt-[-300px]  bg-white lg:w-[70%] lg:mx-auto px-5 lg:px-8 ">
+        <div className="mt-5">
           <div className="border-b border-green-500 pt-6">
-            <p className="text-3xl lg:text-4xl mb-2 text-black pillat-normal">
+            <p className="text-3xl xl:text-4xl mb-4 text-black pillat-normal">
               our heritage
             </p>
           </div>
-          <div className="">
-            <p className="text-3xl md:text-4xl lg:text-7xl mt-2 rainbow-text pillat-normal">
+          <div className=" w-full mt-4">
+            <span className="rainbow-text text-4xl sm:text-6xl md:text-5xl lg:text-7xl 2xl:text-7xl pillat-normal">
               legacy of unlocking possibilities
-            </p>
-            <p className="text-[13px] mt-5 text-black">
+            </span>
+
+            {/*********  Laptop  *********/}
+
+            <span className="border-l border-gray-400 text-black text-xs 2xl:text-sm pl-4 ml-3 w-[55%] 2xl:w-[45%] xl:max-w-[600px] 2xl:leading-[15px] mt-3 lg:inline-block hidden pillat-thin">
+              <span className="w-[100%] ">
+                limitless passion, ground-breaking innovation and boundless
+                creativity allow us to create market-leading digital
+                opportunities that continue to power our partners’ success.{" "}
+                <span className="font-bold text-black"> know more</span>
+              </span>
+            </span>
+
+            {/*********  Mobile  *********/}
+
+            <span className="w-[100%] lg:hidden block text-black text-xs sm:text-sm mt-2 pillat-thin">
               limitless passion, ground-breaking innovation and boundless
               creativity allow us to create market-leading digital opportunities
-              that continue to power our partners’ success.
-            </p>
+              that continue to power our partners’ success.{" "}
+              <span className="font-bold"> know more</span>
+            </span>
           </div>
         </div>
 
@@ -123,7 +138,7 @@ const HeritageSection = () => {
             }}
             autoplay={{
               delay: 1000,
-              pauseOnMouseEnter : true,
+              pauseOnMouseEnter: true,
             }}
             centeredSlides={true}
             className="mySwiper "
@@ -140,8 +155,13 @@ const HeritageSection = () => {
                       {!item.img ? (
                         <>
                           <div className="flex items-baseline absolute z-50">
-                            <div className="text-[140px] m-0 p-0 leading-[120px] text-[#666666] custom-font-family NeumaticFont -tracking-[8px] "> {item.h2} </div>
-                            <div className="text-3xl text-[#666666] NeumaticFont font-bold">{item.h3}</div>
+                            <div className="text-[140px] m-0 p-0 leading-[120px] text-[#666666] custom-font-family NeumaticFont -tracking-[8px] ">
+                              {" "}
+                              {item.h2}{" "}
+                            </div>
+                            <div className="text-3xl text-[#666666] NeumaticFont font-bold">
+                              {item.h3}
+                            </div>
                           </div>
                           {/* <h6 className="text-[140px] m-0 p-0 leading-[120px] text-[#666666] custom-font-family NeumaticFont -tracking-[8px] ">
                             {item.h2}{" "}
