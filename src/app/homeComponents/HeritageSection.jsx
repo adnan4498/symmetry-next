@@ -78,7 +78,7 @@ const HeritageSection = () => {
   return (
     <>
       <div className="md:absolute md:z-10 md:right-0 md:left-0  border border-gray-400 rounded-2xl -mt-52 lg:mt-[-300px]  bg-white lg:w-[70%] lg:mx-auto px-5 lg:px-8 ">
-        <div className="mt-5">
+        <div className="mt-5 lg:mb-10">
           <div className="border-b border-green-500 pt-6">
             <p className="text-3xl xl:text-4xl mb-4 text-black pillat-normal">
               our heritage
@@ -86,7 +86,7 @@ const HeritageSection = () => {
           </div>
           <div className=" w-full mt-4">
             <span className="rainbow-text text-4xl sm:text-6xl md:text-5xl lg:text-7xl 2xl:text-7xl pillat-normal">
-              legacy of unlocking possibilities
+              legacy of unlocking <br className="hidden xl:block"></br> possibilities
             </span>
 
             {/*********  Laptop  *********/}
@@ -96,7 +96,7 @@ const HeritageSection = () => {
                 limitless passion, ground-breaking innovation and boundless
                 creativity allow us to create market-leading digital
                 opportunities that continue to power our partners’ success.{" "}
-                <span className="font-bold text-black"> know more</span>
+                {/* <span className="font-bold text-black"> know more</span> */}
               </span>
             </span>
 
@@ -106,7 +106,7 @@ const HeritageSection = () => {
               limitless passion, ground-breaking innovation and boundless
               creativity allow us to create market-leading digital opportunities
               that continue to power our partners’ success.{" "}
-              <span className="font-bold"> know more</span>
+              {/* <span className="font-bold"> know more</span> */}
             </span>
           </div>
         </div>
