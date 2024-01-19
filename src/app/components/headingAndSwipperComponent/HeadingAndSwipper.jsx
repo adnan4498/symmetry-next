@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
+import Link from "next/link";
 
 const HeadingAndSwipper = ({
   hasH3,
@@ -13,6 +14,7 @@ const HeadingAndSwipper = ({
   hasKnowMore,
   swipperContent,
   slidesPerView,
+  knowMoreLink,
 }) => {
   const [active, setActive] = useState(0);
   const [arrowPrevActive, setArrowPrevActive] = useState(false);
@@ -31,7 +33,6 @@ const HeadingAndSwipper = ({
     setArrowPrevActive(false);
     setArrowNextActive(true);
   };
-
 
   return (
     <>
@@ -52,7 +53,11 @@ const HeadingAndSwipper = ({
             <span className="border-l border-gray-400 text-black text-xs 2xl:text-sm pl-4 ml-3 w-[55%] 2xl:w-[45%] xl:max-w-[600px] 2xl:leading-[15px] mt-3 lg:inline-block hidden pillat-thin">
               <span className="w-[100%] ">
                 {hasP}
-                <span className="font-bold text-black"> know more</span>
+                <Link href={`${knowMoreLink}`} class="a-arrow">
+                  {" "}
+                  <span className="text-black font-bold">know more </span>{" "}
+                  <span class="arrow"></span>
+                </Link>{" "}
               </span>
             </span>
 
@@ -87,9 +92,9 @@ const HeadingAndSwipper = ({
             speed={700}
             loop={true}
             onSlideChange={handleActive}
-            autoplay = {{
+            autoplay={{
               delay: 1000,
-              pauseOnMouseEnter : true,            
+              pauseOnMouseEnter: true,
             }}
             navigation={{
               nextEl: ".swiper-button-next",

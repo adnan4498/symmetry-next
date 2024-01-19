@@ -96,6 +96,7 @@ const BusinessDivision = () => {
           swipperContent={swipperContent}
           slidesPerView={slidesPerView}
           swipperGap={swipperGap}
+          knowMoreLink={"transformation"}
         />
         <AnimationAndSwipper
           aasH3={aasH3}

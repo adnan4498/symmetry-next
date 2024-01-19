@@ -9,6 +9,8 @@ import "swiper/css/navigation";
 import Lottie from "react-lottie-player";
 import dummyRiv from "../../../../public/symmetryAnimations/home-banner.riv";
 import Rive from "@rive-app/react-canvas";
+import Link from "next/link";
+import blackArrow from "../../../../public/black-arrow.png"
 
 const AnimationAndImages = ({
   aasH3,
@@ -20,7 +22,11 @@ const AnimationAndImages = ({
   swipperGap,
   navigation,
   animation,
+  knowMoreLink
 }) => {
+
+  // console.log(aasKnowMore , "KNOW MOREEEE affiliation")
+
   return (
     <>
       <div className="relative mx-3 md:mx-12 lg:ml-12 lg:mr-[2px] lg:w-[%]">
@@ -40,12 +46,14 @@ const AnimationAndImages = ({
                   />
                 </span>
 
+
+
                 {/*********  Laptop  *********/}
 
-                <span className="border-l border-gray-400 text-black text-xs 2xl:text-sm pl-4 ml-3 w-[55%] 2xl:w-[45%] xl:max-w-[600px] 2xl:leading-[15px] mt-3 lg:inline-block hidden pillat-thin">
-                  <span className="w-[100%] ">
+                <span className=" border-l border-gray-400 text-black text-xs 2xl:text-sm pl-4 ml-3 w-[55%] 2xl:w-[45%] xl:max-w-[600px] 2xl:leading-[15px] mt-3 lg:inline-block hidden pillat-thin">
+                  <span className="relative w-[100%] ">
                     {aasP}
-                    <span className="font-bold text-blacks"> {aasKnowMore}</span>
+                    <Link href={`${knowMoreLink}`} class="a-arrow"> <span className="text-black font-bold">see to believe </span> <span class="arrow "></span></Link>
                   </span>
                 </span>
 
@@ -53,7 +61,7 @@ const AnimationAndImages = ({
 
                 <span className="w-[100%] lg:hidden block text-black text-xs sm:text-sm mt-2 pillat-thin">
                   {aasP}
-                  <span className="font-bold"> {aasKnowMore}</span>
+                  <Link href={`${knowMoreLink}`} class="a-arrow relative"> <span className="text-black font-bold">see to believe </span> <span class="arrow"></span></Link>
                 </span>
               </div>
             </div>
