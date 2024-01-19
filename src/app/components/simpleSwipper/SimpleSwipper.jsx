@@ -33,7 +33,7 @@ const SimpleSwipper = ({
                 spaceBetween: swipperGap,
               },
             }}
-            speed={2000}
+            speed={700}
             loop={true}
             // navigation={true}
             centeredSlides={true}

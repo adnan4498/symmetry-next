@@ -4,7 +4,7 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import Lottie from "react-lottie-player";
 import HomeBannerAnimation from "../../../public/symmetryAnimations/homeBannerAnimation.json";
-import square from "../../../public/square-neon.png";
+// import square from "../../../public/square-neon.png";
 import Image from "next/image";
 import Rive from "@rive-app/react-canvas";
 import RiveAnimation from "../../../public/symmetryAnimations/banner-Rive.riv";

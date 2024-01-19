@@ -32,12 +32,13 @@ const HeadingAndSwipper = ({
     setArrowNextActive(true);
   };
 
+
   return (
     <>
       <div className="md:mx-12 mx-3 lg:mx-auto lg:w-[55%]">
         <div className="mt-5">
           <div className="border-b border-green-500 pt-6">
-            <p className="text-3xl 2xl:text-4xl mb-4 text-black pillat-normal">
+            <p className="text-3xl xl:text-4xl mb-4 text-black pillat-normal">
               {hasH3}
             </p>
           </div>
@@ -51,7 +52,7 @@ const HeadingAndSwipper = ({
             <span className="border-l border-gray-400 text-black text-xs 2xl:text-sm pl-4 ml-3 w-[55%] 2xl:w-[45%] xl:max-w-[600px] 2xl:leading-[15px] mt-3 lg:inline-block hidden pillat-thin">
               <span className="w-[100%] ">
                 {hasP}
-                <span className="font-bold"> {hasKnowMore}</span>
+                <span className="font-bold text-black"> know more</span>
               </span>
             </span>
 
@@ -83,12 +84,13 @@ const HeadingAndSwipper = ({
               },
             }}
             modules={[Autoplay, Navigation]}
-            speed={2000}
+            speed={700}
             loop={true}
             onSlideChange={handleActive}
-            // autoplay = {{
-            //   delay : 1000
-            // }}
+            autoplay = {{
+              delay: 1000,
+              pauseOnMouseEnter : true,            
+            }}
             navigation={{
               nextEl: ".swiper-button-next",
               prevEl: ".swiper-button-prev",

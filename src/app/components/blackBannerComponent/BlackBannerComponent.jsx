@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import square from "../../../../public/square-neon.png";
+// import square from "../../../../public/square-neon.png";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import Image from "next/image";

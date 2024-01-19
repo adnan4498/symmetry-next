@@ -2,28 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: "Pilat Thin";
-  src: url("/fonts/pilatNarrow-font.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "PillatFont";
-  src: url("/fonts/pillat-fonts/PilatNarrow-Light.ttf") format("truetype");
-}
-
-.pillat-thin {
-  font-family: "Pilat Thin", sans-serif;
-  font-weight: 300;
-  letter-spacing: 0.8px;
-}
-
-.pillat-normal {
-  font-family: "PillatFont", sans-serif;
-  font-weight: 300;
-  font-style: normal;
-  letter-spacing: 0.8px;
-}
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -52,6 +30,43 @@ body {
     background-position: 100% 100%;
   }
 }
+
+/********** Font Families ***********/
+
+@font-face {
+  font-family: "Pilat Thin";
+  src: url("/fonts/pilatNarrow-font.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "PillatFont";
+  src: url("/fonts/pillat-fonts/PilatNarrow-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "NeumaticFont";
+  src: url("../../public//fonts/neumatic-fonts/NeumaticGothic-Light.woff2");
+}
+
+.NeumaticFont{
+  font-family: "NeumaticFont" , sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.8px;
+}
+
+.pillat-thin {
+  font-family: "Pilat Thin", sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.8px;
+}
+
+.pillat-normal {
+  font-family: "PillatFont", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  letter-spacing: 0.8px;
+}
+
 
 .swipper-icons-color-toggle img {
   -webkit-filter: grayscale(100%) contrast(0.8);
@@ -286,9 +301,6 @@ body {
   -webkit-mask-composite: xor;
   mask-composite: exclude;
 }
-
-
-
 
 /***********   Antd OverRiding (Hamburger Sub Menus)    ***********/
 
