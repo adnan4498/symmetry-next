@@ -8,20 +8,23 @@ import { Autoplay, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "../../homeComponents/Dummy.css";
+import Link from "next/link";
 gsap.registerPlugin(ScrollTrigger);
 
 const TextSlidingComponent = ({
-  sliderheading,
-  sliderText,
-  sliderP,
+  businessTitle,
+  businessText,
   knowMore,
+  clientTitle,
+  clientText,
   isBorder,
   isImageSwipper,
   slidesPerView,
   swipperGap,
   swipperContent,
+  clientMarque,
+  businessMarque,
 }) => {
-
   const [arrowPrevActive, setArrowPrevActive] = useState(false);
   const [arrowNextActive, setArrowNextActive] = useState(false);
 
@@ -83,61 +86,178 @@ const TextSlidingComponent = ({
           }  w-[40%]`}
         >
           <h2
-            className="text-gray-600 text-2xl lg:text-4xl opacity-0 pillat-normal"
+            className="text-gray-600 text-4xl lg:text-4xl opacity-0 pillat-normal"
             ref={heading3}
           >
-            {sliderheading}
+            {businessTitle || clientTitle}
           </h2>
         </div>
 
-        <div class="marquee">
-          <ul class="marquee-content gap-10">
-            <li className="!text-[160px] !2xl:text-[200px]  !text-black">
-              skillfully
-            </li>
-            <li className="!text-[160px] !2xl:text-[200px] rainbow-text ">
-              solving
-            </li>
-            <li className="!text-[160px] !2xl:text-[200px]  rainbow-text  ">
-              challenges
-            </li>
-            <li className="!text-[160px] !2xl:text-[200px]  !text-black">
-              skillfully
-            </li>
-            <li className="!text-[160px] !2xl:text-[200px]     rainbow-text">
-              solving
-            </li>
-            <li className="!text-[160px] !2xl:text-[200px]  rainbow-text ">
-              challenges
-            </li>
-            <li className="!text-[160px] !2xl:text-[200px]  !text-black">
-              skillfully
-            </li>
-            <li className="!text-[160px] !2xl:text-[200px]    rainbow-text">
-              solving
-            </li>
-            <li className="!text-[160px] !2xl:text-[200px]  rainbow-text ">
-              challenges
-            </li>
-            <li className="!text-[160px] !2xl:text-[200px]  !text-black">
-              skillfully
-            </li>
-            <li className="!text-[160px] !2xl:text-[200px]   rainbow-text">
-              solving
-            </li>
-            <li className="!text-[160px] !2xl:text-[200px]   rainbow-text">
-              challenges
-            </li>
-          </ul>
-        </div>
+        {businessMarque && (
+          <div class="marquee">
+            <ul class="marquee-content gap-10">
+              <li className="!text-[160px] !2xl:text-[200px]  !text-black">
+                skillfully
+              </li>
+              <li className="!text-[160px] !2xl:text-[200px] rainbow-text ">
+                solving
+              </li>
+              <li className="!text-[160px] !2xl:text-[200px]  rainbow-text  ">
+                challenges
+              </li>
+              <li className="!text-[160px] !2xl:text-[200px]  !text-black">
+                skillfully
+              </li>
+              <li className="!text-[160px] !2xl:text-[200px]     rainbow-text">
+                solving
+              </li>
+              <li className="!text-[160px] !2xl:text-[200px]  rainbow-text ">
+                challenges
+              </li>
+              <li className="!text-[160px] !2xl:text-[200px]  !text-black">
+                skillfully
+              </li>
+              <li className="!text-[160px] !2xl:text-[200px]    rainbow-text">
+                solving
+              </li>
+              <li className="!text-[160px] !2xl:text-[200px]  rainbow-text ">
+                challenges
+              </li>
+              <li className="!text-[160px] !2xl:text-[200px]  !text-black">
+                skillfully
+              </li>
+              <li className="!text-[160px] !2xl:text-[200px]   rainbow-text">
+                solving
+              </li>
+              <li className="!text-[160px] !2xl:text-[200px]   rainbow-text">
+                challenges
+              </li>
+              <li className="!text-[160px] !2xl:text-[200px]  !text-black">
+                skillfully
+              </li>
+              <li className="!text-[160px] !2xl:text-[200px] rainbow-text ">
+                solving
+              </li>
+              <li className="!text-[160px] !2xl:text-[200px]  rainbow-text  ">
+                challenges
+              </li>
+              <li className="!text-[160px] !2xl:text-[200px]  !text-black">
+                skillfully
+              </li>
+              <li className="!text-[160px] !2xl:text-[200px]     rainbow-text">
+                solving
+              </li>
+              <li className="!text-[160px] !2xl:text-[200px]  rainbow-text ">
+                challenges
+              </li>
+            </ul>
+          </div>
+        )}
 
-        <div className="sm:w-[80%] lg:max-w-[600px]">
+        {clientMarque && (
+          <div class="marquee">
+            <ul class="marquee-content gap-10">
+              <li className="!text-[160px] !2xl:text-[200px]  !text-black">
+                transforming
+              </li>
+              <li className="!text-[160px] !2xl:text-[200px] rainbow-text ">
+                your
+              </li>
+              <li className="!text-[160px] !2xl:text-[200px]  rainbow-text  ">
+                possibilities
+              </li>
+              <li className="!text-[160px] !2xl:text-[200px]  !text-black">
+                transforming
+              </li>
+              <li className="!text-[160px] !2xl:text-[200px] rainbow-text ">
+                your
+              </li>
+              <li className="!text-[160px] !2xl:text-[200px]  rainbow-text  ">
+                possibilities
+              </li>
+              <li className="!text-[160px] !2xl:text-[200px]  !text-black">
+                transforming
+              </li>
+              <li className="!text-[160px] !2xl:text-[200px] rainbow-text ">
+                your
+              </li>
+              <li className="!text-[160px] !2xl:text-[200px]  rainbow-text  ">
+                possibilities
+              </li>
+              <li className="!text-[160px] !2xl:text-[200px]  !text-black">
+                transforming
+              </li>
+              <li className="!text-[160px] !2xl:text-[200px] rainbow-text ">
+                your
+              </li>
+              <li className="!text-[160px] !2xl:text-[200px]  rainbow-text  ">
+                possibilities
+              </li>
+              <li className="!text-[160px] !2xl:text-[200px]  !text-black">
+                transforming
+              </li>
+              <li className="!text-[160px] !2xl:text-[200px] rainbow-text ">
+                your
+              </li>
+              <li className="!text-[160px] !2xl:text-[200px]  rainbow-text  ">
+                possibilities
+              </li>
+              <li className="!text-[160px] !2xl:text-[200px]  !text-black">
+                transforming
+              </li>
+              <li className="!text-[160px] !2xl:text-[200px] rainbow-text ">
+                your
+              </li>
+              <li className="!text-[160px] !2xl:text-[200px]  rainbow-text  ">
+                possibilities
+              </li>
+              <li className="!text-[160px] !2xl:text-[200px]  !text-black">
+                transforming
+              </li>
+              <li className="!text-[160px] !2xl:text-[200px] rainbow-text ">
+                your
+              </li>
+              <li className="!text-[160px] !2xl:text-[200px]  rainbow-text  ">
+                possibilities
+              </li>
+              <li className="!text-[160px] !2xl:text-[200px]  !text-black">
+                transforming
+              </li>
+              <li className="!text-[160px] !2xl:text-[200px] rainbow-text ">
+                your
+              </li>
+              <li className="!text-[160px] !2xl:text-[200px]  rainbow-text  ">
+                possibilities
+              </li>
+              <li className="!text-[160px] !2xl:text-[200px]  !text-black">
+                transforming
+              </li>
+              <li className="!text-[160px] !2xl:text-[200px] rainbow-text ">
+                your
+              </li>
+              <li className="!text-[160px] !2xl:text-[200px]  rainbow-text  ">
+                possibilities
+              </li>
+              <li className="!text-[160px] !2xl:text-[200px]  !text-black">
+                transforming
+              </li>
+              <li className="!text-[160px] !2xl:text-[200px] rainbow-text ">
+                your
+              </li>
+              <li className="!text-[160px] !2xl:text-[200px]  rainbow-text  ">
+                possibilities
+              </li>
+            </ul>
+          </div>
+        )}
+
+        <div className="sm:w-[80%] lg:max-w-[600px] ">
           <p className="text-xs lg:text-sm text-gray-600 font-[300] mt-3 leading-[16px] pillat-normal">
-            {sliderP}
-            <span className="text-xs lg:text-sm font-bold text-black">
-              {" "}
-              {knowMore}{" "}
-            </span>
+            {businessText || clientText}
+            <Link href={"clients"} class="a-arrow relative">
+              <span className="text-black font-bold">see it for yourself</span>
+              <span class="arrow"></span>
+            </Link>
           </p>
         </div>
 
@@ -167,7 +287,7 @@ const TextSlidingComponent = ({
               centeredSlides={true}
               autoplay={{
                 delay: 1000,
-                pauseOnMouseEnter : true,
+                pauseOnMouseEnter: true,
               }}
               className="mySwiper "
             >
@@ -176,7 +296,7 @@ const TextSlidingComponent = ({
                   <SwiperSlide>
                     <div className="cursor-pointer">
                       <div className="flex justify-center items-center border border-gray-400 rounded-md">
-                        <div className=" md:w-10/12 md:h-24 flex justify-center items-center ">
+                        <div className=" md:w-5/12 lg:w-8/12 md:h-24 flex justify-center items-center ">
                           <Image src={item.img} />
                         </div>
                       </div>
@@ -187,19 +307,19 @@ const TextSlidingComponent = ({
             </Swiper>
 
             <div className="swiper-navigation-buttons flex justify-center  gap-2 lg:gap-[10px] 2xl:gap-3 w-full mt-16 mb-3">
-            <button
-              onClick={() => handleArrowPrevActive()}
-              className={`swiper-button-prev ${
-                arrowPrevActive ? "arrows-bg after:!text-white " : ""
-              } !static custom-arrow-border rounded-md rotate-[45deg] !w-7 !h-7 md:!w-8 md:!h-8 lg:!w-8 lg:!h-8 `}
-            ></button>
-            <button
-              onClick={() => handleArrowNextActive()}
-              className={`swiper-button-next ${
-                arrowNextActive ? "arrows-bg  after:!text-white " : ""
-              } !static custom-arrow-border  rounded-md rotate-[45deg] !w-7 !h-7 md:!w-8 md:!h-8 lg:!w-8 lg:!h-8`}
-            ></button>
-          </div>
+              <button
+                onClick={() => handleArrowPrevActive()}
+                className={`swiper-button-prev ${
+                  arrowPrevActive ? "arrows-bg after:!text-white " : ""
+                } !static custom-arrow-border rounded-md rotate-[45deg] !w-7 !h-7 md:!w-8 md:!h-8 lg:!w-8 lg:!h-8 `}
+              ></button>
+              <button
+                onClick={() => handleArrowNextActive()}
+                className={`swiper-button-next ${
+                  arrowNextActive ? "arrows-bg  after:!text-white " : ""
+                } !static custom-arrow-border  rounded-md rotate-[45deg] !w-7 !h-7 md:!w-8 md:!h-8 lg:!w-8 lg:!h-8`}
+              ></button>
+            </div>
           </div>
         )}
 

@@ -5,14 +5,19 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
+import Link from "next/link";
 
 const HeadingAndSwipper = ({
-  hasH3,
-  hasH2,
-  hasP,
+  transformationTitle,
+  transformationHeading,
+  transformationText,
+  commerceTitle,
+  commerceHeading,
+  commerceText,
   hasKnowMore,
   swipperContent,
   slidesPerView,
+  knowMoreLink,
 }) => {
   const [active, setActive] = useState(0);
   const [arrowPrevActive, setArrowPrevActive] = useState(false);
@@ -32,35 +37,38 @@ const HeadingAndSwipper = ({
     setArrowNextActive(true);
   };
 
-
   return (
     <>
       <div className="md:mx-12 mx-3 lg:mx-auto lg:w-[55%]">
         <div className="mt-5">
           <div className="border-b border-green-500 pt-6">
             <p className="text-3xl xl:text-4xl mb-4 text-black pillat-normal">
-              {hasH3}
+              {transformationTitle || commerceTitle}
             </p>
           </div>
           <div className=" w-full mt-4">
             <span className="rainbow-text text-4xl sm:text-6xl md:text-5xl lg:text-5xl 2xl:text-7xl pillat-normal">
-              <span className="" dangerouslySetInnerHTML={{ __html: hasH2 }} />
+              <span className="" dangerouslySetInnerHTML={{ __html: transformationHeading || commerceHeading }} />
             </span>
 
             {/*********  Laptop  *********/}
 
             <span className="border-l border-gray-400 text-black text-xs 2xl:text-sm pl-4 ml-3 w-[55%] 2xl:w-[45%] xl:max-w-[600px] 2xl:leading-[15px] mt-3 lg:inline-block hidden pillat-thin">
-              <span className="w-[100%] ">
-                {hasP}
-                <span className="font-bold text-black"> know more</span>
+              <span className="w-[100%] relative ">
+                {transformationText || commerceText}
+                <Link href={`${knowMoreLink}`} class="a-arrow">
+                  {" "}
+                  <span className="text-black font-bold">know more </span>{" "}
+                  <span class="arrow"></span>
+                </Link>{" "}
               </span>
             </span>
 
             {/*********  Mobile  *********/}
 
             <span className="w-[100%] lg:hidden block text-black text-xs sm:text-sm mt-2 pillat-thin">
-              {hasP}
-              <span className="font-bold"> {hasKnowMore}</span>
+              {transformationText || commerceText}
+              <Link href={`${knowMoreLink}`} class="a-arrow relative"> <span className="text-black font-bold">know more </span> <span class="arrow"></span></Link>
             </span>
           </div>
         </div>
@@ -87,9 +95,9 @@ const HeadingAndSwipper = ({
             speed={700}
             loop={true}
             onSlideChange={handleActive}
-            autoplay = {{
+            autoplay={{
               delay: 1000,
-              pauseOnMouseEnter : true,            
+              pauseOnMouseEnter: true,
             }}
             navigation={{
               nextEl: ".swiper-button-next",

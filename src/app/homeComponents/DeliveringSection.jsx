@@ -36,16 +36,16 @@ const DeliveringSection = () => {
           <div className="mx-3 sm:py-12 py-8 md:mx-12">
             <div className="relative">
               <div
-                className="md:max-w-[600px] 2xl:max-w-[800px] w-full opacity-0 rainbow-text"
+                className="md:max-w-[600px] 2xl:max-w-[800px] w-full opacity-0 "
                 ref={heading}
               >
-                <span className="text-4xl sm:text-6xl md:text-5xl lg:text-7xl 2xl:text-8xl ">
+                <span className="text-4xl sm:text-6xl md:text-5xl lg:text-7xl 2xl:text-8xl rainbow-text">
                   <span className=" heading pillat-normal">
                     delivering digital experiences that make the world <br></br>
                     better
                   </span>
                 </span>
-                <span className="border-l border-white text-white text-xs 2xl:text-sm leading-4 inline-block pl-4 ml-3 w-[60%]">
+                <span className="border-l border-white !text-white text-xs 2xl:text-sm leading-4 inline-block pl-4 ml-3 w-[60%]">
                   <span className="w-[100%] lg:inline-block hidden">
                     we are reimagining the way business is done and product is
                     consumed. we have committed ourselves to transforming

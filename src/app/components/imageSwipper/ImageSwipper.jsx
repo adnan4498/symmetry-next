@@ -6,16 +6,18 @@ import { Autoplay, Navigation } from "swiper/modules";
 // import "../imageSwipper/ImageSwipper.css"
 import "swiper/css";
 import "swiper/css/navigation";
+import Link from "next/link";
 
 const ImageSwipper = ({
-  hasH3,
-  hasH2,
-  hasP,
+  brandsTitle,
+  brandsHeading,
+  brandsText,
   hasKnowMore,
   swipperContent,
   slidesPerView,
   irisLogo,
   swipperGap,
+  knowMoreLink,
 }) => {
   const [arrowPrevActive, setArrowPrevActive] = useState(false);
   const [arrowNextActive, setArrowNextActive] = useState(false);
@@ -36,28 +38,40 @@ const ImageSwipper = ({
         <div className="mt-5">
           <div className="border-b border-green-500 pt-6">
             <p className="text-3xl lg:text-4xl xl:text-5xl mb-4 text-black pillat-normal">
-              {hasH3}
+              {brandsTitle}
             </p>
           </div>
           <div className=" w-full mt-4">
             <span className="rainbow-text text-4xl sm:text-6xl md:text-5xl lg:text-7xl 2xl:text-8xl pillat-normal">
-              <span className="" dangerouslySetInnerHTML={{ __html: hasH2 }} />
+              <span className="" dangerouslySetInnerHTML={{ __html: brandsHeading }} />
             </span>
 
             {/*********  Laptop  *********/}
 
-            <span className=" text-black text-sm 2xl:leading-[15px] mt-6 lg:block hidden pillat-thin">
-              <span className="w-[100%] ">
-                {hasP}
-                <span className="font-bold"> {hasKnowMore}</span>
+            <span className="text-black text-sm 2xl:leading-[15px] mt-6 lg:block hidden pillat-thin">
+              <span className="relative w-[100%] ">
+                {brandsText}
+                <Link href={`${knowMoreLink}`} class="a-arrow">
+                  {" "}
+                  <span className="text-black font-bold">
+                    explore our world{" "}
+                  </span>{" "}
+                  <span class="arrow"></span>
+                </Link>
               </span>
             </span>
 
             {/*********  Mobile  *********/}
 
-            <span className="w-[100%] lg:hidden block text-black text-xs sm:text-sm mt-2 pillat-thin">
-              {hasP}
-              <span className="font-bold"> {hasKnowMore}</span>
+            <span className=" w-[100%] lg:hidden block text-black text-xs sm:text-sm mt-2 pillat-thin">
+            {brandsText}
+              <Link href={`${knowMoreLink}`} class="a-arrow relative">
+                {" "}
+                <span className="text-black font-bold">
+                explore our world{" "}
+                </span>{" "}
+                <span class="arrow"></span>
+              </Link>
             </span>
           </div>
         </div>
@@ -91,7 +105,7 @@ const ImageSwipper = ({
             modules={[Autoplay]}
             autoplay={{
               delay: 1000,
-              pauseOnMouseEnter : true,
+              pauseOnMouseEnter: true,
             }}
             className="mySwiper "
           >

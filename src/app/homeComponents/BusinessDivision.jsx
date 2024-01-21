@@ -8,26 +8,36 @@ import gsap from "gsap";
 
 const BusinessDivision = () => {
   {
-    /******** Ease Slide Content  ********/
+    /******* Headings and texts *******/
   }
 
-  const sliderheading = "business divisions";
-  const sliderText = "skillfully solving challanges";
-  const sliderP =
-    "we provide digital products and services that solve today’s challenges by leveraging your organization’s unique potential to create tomorrow’s opportunities and deliver real business results.";
-
-  {
-    /******** Heading And Swipper Content  ********/
-  }
-  {
-    /******** ( has ) stands for Heading And Swipper  ********/
-  }
-
-  const hasH3 = "transformation";
-  const hasH2 = "reinventing digital <br /> experiences";
-  const hasP =
+  const transformationTitle = "transformation";
+  const transformationHeading = "reinventing digital <br /> experiences";
+  const transformationText =
     "digital Technology can move mountains, shape cultures and change people’s perceptions. We envision a future that leverages the best of technology to create transformative experiences that aren't possible without it.";
   const hasKnowmore = "know more --";
+  const businessMarque = true
+
+  const commerceTitle = "commerce";
+  const commerceHeading = "empowering efficient <br /> growth";
+  const commerceText =
+    "digital commerce lets you sell anywhere, anytime, and on any device. we help your customers find your products regardless of whether they are at home, in the office, or in line at the grocery store";
+
+  const mobilityTitle = "mobility";
+  const mobilityHeading = "embracing the mobile <br /> advantage";
+  const mobilityText =
+    "mobile technologies have transformed business processes and capabilities. we operate at the crossroads of mobility, digital technology and operations to help you create value for your customers ";
+
+  const interactiveTitle = "interactive marketing";
+  const interactiveHeading = "enhancing customer <br /> relationships";
+  const interactiveText =
+    "our unrivaled insights, innovative thinking, strategic approach, content services and technology solutions can help you create meaningful and lasting relationships with your customers.";
+  const interactiveAnima = interactiveAnimation
+
+
+  const businessTitle = "business divisions";
+  const businessText =
+    "we provide digital products and services that solve today’s challenges by leveraging your organization’s unique potential to create tomorrow’s opportunities and deliver real business results.";
 
   const swipperContent = [
     {
@@ -62,20 +72,6 @@ const BusinessDivision = () => {
     },
   ];
 
-  {
-    /******** Animation And Swipper Content  ********/
-  }
-  {
-    /******** ( aas ) stands for Animation And Swipper  ********/
-  }
-
-  const aasH3 = "interactive marketing";
-  const aasH2 = "enhancing customer <br /> relationships";
-  const aasP =
-    "Our unrivaled insights, innovative thinking, strategic approach, content services and technology solutions can help you create meaningful and lasting relationships with your customers.";
-  const aasKnowmore = "know more --";
-  const interactiveAnima = interactiveAnimation;
-
   const slidesPerView = "3";
   const swipperGap = "20";
 
@@ -83,44 +79,45 @@ const BusinessDivision = () => {
     <>
       <div id="businessHomeScrollRef" className="">
         <TextSlidingComponent
-          sliderheading={sliderheading}
-          sliderText={sliderText}
-          sliderP={sliderP}
+          businessTitle={businessTitle}
+          businessText={businessText}
           slidesPerView={slidesPerView}
+          businessMarque={businessMarque}
         />
         <HeadingAndSwipper
-          hasH3={hasH3}
-          hasH2={hasH2}
-          hasP={hasP}
+          transformationTitle={transformationTitle}
+          transformationHeading={transformationHeading}
+          transformationText={transformationText}
           hasKnowmore={hasKnowmore}
           swipperContent={swipperContent}
           slidesPerView={slidesPerView}
           swipperGap={swipperGap}
+          knowMoreLink={"transformation"}
         />
         <AnimationAndSwipper
-          aasH3={aasH3}
-          aasH2={aasH2}
-          aasP={aasP}
-          aasKnowmore={aasKnowmore}
+          interactiveTitle={interactiveTitle}
+          interactiveHeading={interactiveHeading}
+          interactiveText={interactiveText}
+          aasKnowmore={"know more"}
           swipperContent={swipperContent}
           slidesPerView={slidesPerView}
           swipperGap={swipperGap}
           animation={interactiveAnima}
         />
         <HeadingAndSwipper
-          hasH3={hasH3}
-          hasH2={hasH2}
-          hasP={hasP}
+          commerceTitle={commerceTitle}
+          commerceHeading={commerceHeading}
+          commerceText={commerceText}
           hasKnowmore={hasKnowmore}
           swipperContent={swipperContent}
           slidesPerView={slidesPerView}
           swipperGap={swipperGap}
         />
         <AnimationAndSwipper
-          aasH3={"mobility"}
-          aasH2={aasH2}
-          aasP={aasP}
-          aasKnowmore={aasKnowmore}
+          mobilityTitle={mobilityTitle}
+          mobilityHeading={mobilityHeading}
+          mobilityText={mobilityText}
+          aasKnowmore={"know more"}
           swipperContent={swipperContent}
           slidesPerView={slidesPerView}
           swipperGap={swipperGap}

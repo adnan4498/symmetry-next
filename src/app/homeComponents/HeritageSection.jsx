@@ -8,6 +8,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "../homeComponents/HeritageSection.css";
 import infinity from "../../../public/infinity-sign.webp";
+import Link from "next/link";
 
 const HeritageSection = () => {
   const [activeAni, setActiveAni] = useState();
@@ -92,11 +93,11 @@ const HeritageSection = () => {
             {/*********  Laptop  *********/}
 
             <span className="border-l border-gray-400 text-black text-xs 2xl:text-sm pl-4 ml-3 w-[55%] 2xl:w-[45%] xl:max-w-[600px] 2xl:leading-[15px] mt-3 lg:inline-block hidden pillat-thin">
-              <span className="w-[100%] ">
+              <span className="w-[100%] relative">
                 limitless passion, ground-breaking innovation and boundless
                 creativity allow us to create market-leading digital
                 opportunities that continue to power our partners’ success.{" "}
-                {/* <span className="font-bold text-black"> know more</span> */}
+                <Link href={"transformation"} class="a-arrow"> <span className="text-black font-bold">know more </span> <span class="arrow "></span></Link>
               </span>
             </span>
 
@@ -106,7 +107,7 @@ const HeritageSection = () => {
               limitless passion, ground-breaking innovation and boundless
               creativity allow us to create market-leading digital opportunities
               that continue to power our partners’ success.{" "}
-              {/* <span className="font-bold"> know more</span> */}
+              <Link href={"transformation"} class="a-arrow relative"> <span className="text-black font-bold">know more </span> <span class="arrow"></span></Link>
             </span>
           </div>
         </div>
