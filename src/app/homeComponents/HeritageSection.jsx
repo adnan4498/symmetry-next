@@ -84,7 +84,7 @@ const HeritageSection = () => {
               our heritage
             </p>
           </div>
-          <div className=" w-full mt-4">
+          <div className=" w-[90%] mt-4">
             <span className="rainbow-text text-4xl sm:text-6xl md:text-5xl lg:text-7xl 2xl:text-7xl pillat-normal">
               legacy of unlocking possibilities
             </span>

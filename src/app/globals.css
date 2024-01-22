@@ -26,6 +26,7 @@ body {
   0% {
     background-position: 0% 0%;
   }
+
   100% {
     background-position: 100% 100%;
   }
@@ -48,8 +49,8 @@ body {
   src: url("../../public//fonts/neumatic-fonts/NeumaticGothic-Light.woff2");
 }
 
-.NeumaticFont{
-  font-family: "NeumaticFont" , sans-serif;
+.NeumaticFont {
+  font-family: "NeumaticFont", sans-serif;
   font-weight: 400;
   letter-spacing: 0.8px;
 }
@@ -77,38 +78,35 @@ body {
 }
 
 .swipper-hover-class {
-  background: radial-gradient(
-    at right top,
-    rgb(250, 250, 250) 0%,
-    rgb(250, 250, 250) 35%,
-    rgb(250, 250, 250) 100%
-  );
-  transition: all ease-in-out 500ms; /* Combine transition properties */
+  background: radial-gradient(at right top,
+      rgb(250, 250, 250) 0%,
+      rgb(250, 250, 250) 35%,
+      rgb(250, 250, 250) 100%);
+  transition: all ease-in-out 500ms;
+  /* Combine transition properties */
   transition-duration: 500ms;
   color: rgb(102, 102, 102);
 }
 
 .swipper-hover-class:hover {
-  background: radial-gradient(
-    at right top,
-    rgb(241, 229, 34) 10%,
-    rgb(90, 166, 61) 35%,
-    rgb(13, 110, 133) 72%
-  );
+  background: radial-gradient(at right top,
+      rgb(241, 229, 34) 10%,
+      rgb(90, 166, 61) 35%,
+      rgb(13, 110, 133) 72%);
   color: white;
-  transition: all ease-in-out 500ms; /* Combine transition properties */
+  transition: all ease-in-out 500ms;
+  /* Combine transition properties */
   transition-duration: 500ms;
 }
 
 .swipper-active-class {
-  background: radial-gradient(
-    at right top,
-    rgb(241, 229, 34) 10%,
-    rgb(90, 166, 61) 35%,
-    rgb(13, 110, 133) 72%
-  );
+  background: radial-gradient(at right top,
+      rgb(241, 229, 34) 10%,
+      rgb(90, 166, 61) 35%,
+      rgb(13, 110, 133) 72%);
   color: white;
-  transition: all ease-in-out 500ms; /* Combine transition properties */
+  transition: all ease-in-out 500ms;
+  /* Combine transition properties */
   transition-duration: 500ms;
 }
 
@@ -117,14 +115,12 @@ body {
 }
 
 .rainbow-text {
-  background-image: linear-gradient(
-    45deg,
-    rgba(13, 83, 189, 1) 0%,
-    rgba(19, 176, 168, 1) 20%,
-    rgba(21, 176, 60, 1) 30%,
-    rgba(93, 156, 17, 1) 45%,
-    rgb(152, 186, 18) 65%
-  );
+  background-image: linear-gradient(45deg,
+      rgba(13, 83, 189, 1) 0%,
+      rgba(19, 176, 168, 1) 20%,
+      rgba(21, 176, 60, 1) 30%,
+      rgba(93, 156, 17, 1) 45%,
+      rgb(152, 186, 18) 65%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -136,72 +132,67 @@ body {
 
 @keyframes rainbow-border-animation {
   0% {
-    border-image-source: linear-gradient(
-      45deg,
-      rgba(13, 83, 189, 1) 0%,
-      rgba(19, 176, 168, 1) 20%,
-      rgba(21, 176, 60, 1) 30%,
-      rgba(93, 156, 17, 1) 45%,
-      rgb(152, 186, 18) 65%
-    );
+    border-image-source: linear-gradient(45deg,
+        rgba(13, 83, 189, 1) 0%,
+        rgba(19, 176, 168, 1) 20%,
+        rgba(21, 176, 60, 1) 30%,
+        rgba(93, 156, 17, 1) 45%,
+        rgb(152, 186, 18) 65%);
   }
+
   25% {
-    border-image-source: linear-gradient(
-      45deg,
-      rgb(152, 186, 18) 0%,
-      rgba(13, 83, 189, 1) 20%,
-      rgba(19, 176, 168, 1) 30%,
-      rgba(21, 176, 60, 1) 45%,
-      rgba(93, 156, 17, 1) 65%
-    );
+    border-image-source: linear-gradient(45deg,
+        rgb(152, 186, 18) 0%,
+        rgba(13, 83, 189, 1) 20%,
+        rgba(19, 176, 168, 1) 30%,
+        rgba(21, 176, 60, 1) 45%,
+        rgba(93, 156, 17, 1) 65%);
   }
+
   50% {
-    border-image-source: linear-gradient(
-      45deg,
-      rgba(93, 156, 17, 1) 0%,
-      rgb(152, 186, 18) 20%,
-      rgba(13, 83, 189, 1) 30%,
-      rgba(19, 176, 168, 1) 45%,
-      rgba(21, 176, 60, 1) 65%
-    );
+    border-image-source: linear-gradient(45deg,
+        rgba(93, 156, 17, 1) 0%,
+        rgb(152, 186, 18) 20%,
+        rgba(13, 83, 189, 1) 30%,
+        rgba(19, 176, 168, 1) 45%,
+        rgba(21, 176, 60, 1) 65%);
   }
+
   75% {
-    border-image-source: linear-gradient(
-      45deg,
-      rgba(21, 176, 60, 1) 0%,
-      rgba(93, 156, 17, 1) 20%,
-      rgb(152, 186, 18) 30%,
-      rgba(13, 83, 189, 1) 45%,
-      rgba(19, 176, 168, 1) 65%
-    );
+    border-image-source: linear-gradient(45deg,
+        rgba(21, 176, 60, 1) 0%,
+        rgba(93, 156, 17, 1) 20%,
+        rgb(152, 186, 18) 30%,
+        rgba(13, 83, 189, 1) 45%,
+        rgba(19, 176, 168, 1) 65%);
   }
+
   100% {
-    border-image-source: linear-gradient(
-      45deg,
-      rgba(19, 176, 168, 1) 0%,
-      rgba(21, 176, 60, 1) 20%,
-      rgba(93, 156, 17, 1) 30%,
-      rgb(152, 186, 18) 45%,
-      rgba(13, 83, 189, 1) 65%
-    );
+    border-image-source: linear-gradient(45deg,
+        rgba(19, 176, 168, 1) 0%,
+        rgba(21, 176, 60, 1) 20%,
+        rgba(93, 156, 17, 1) 30%,
+        rgb(152, 186, 18) 45%,
+        rgba(13, 83, 189, 1) 65%);
   }
 }
 
 .rainbow-border {
   border: 1px solid transparent;
-  border-image: linear-gradient(
-    45deg,
-    rgba(13, 83, 189, 1) 0%,
-    rgba(19, 176, 168, 1) 20%,
-    rgba(21, 176, 60, 1) 30%,
-    rgba(93, 156, 17, 1) 45%,
-    rgb(152, 186, 18) 65%
-  );
+  border-image: linear-gradient(45deg,
+      rgba(13, 83, 189, 1) 0%,
+      rgba(19, 176, 168, 1) 20%,
+      rgba(21, 176, 60, 1) 30%,
+      rgba(93, 156, 17, 1) 45%,
+      rgb(152, 186, 18) 65%);
   border-image-slice: 1;
   display: inline-block;
-  width: 12px; /* Adjust the width as needed */
-  height: 12px; /* Adjust the height as needed */
-  margin-left: 8px; /* Adjust the margin as needed */
+  width: 12px;
+  /* Adjust the width as needed */
+  height: 12px;
+  /* Adjust the height as needed */
+  margin-left: 8px;
+  /* Adjust the margin as needed */
   /* transform: rotate(45deg); */
   animation: rainbow-border-animation 10s linear infinite;
 }
@@ -216,14 +207,12 @@ body {
 }
 
 .footer-text-color-toggle:hover {
-  background-image: linear-gradient(
-    45deg,
-    rgba(13, 83, 189, 1) 0%,
-    rgba(19, 176, 168, 1) 30%,
-    rgba(21, 176, 60, 1) 50%,
-    rgba(93, 156, 17, 1) 70%,
-    rgba(242, 213, 0, 1) 100%
-  );
+  background-image: linear-gradient(45deg,
+      rgba(13, 83, 189, 1) 0%,
+      rgba(19, 176, 168, 1) 30%,
+      rgba(21, 176, 60, 1) 50%,
+      rgba(93, 156, 17, 1) 70%,
+      rgba(242, 213, 0, 1) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -231,18 +220,19 @@ body {
 
 .lets-discuss-btn {
   color: black;
-  transition: all ease-in-out 500ms, background 500ms; /* Combine transition properties */
-  background: white; /* Set default background color */
+  transition: all ease-in-out 500ms, background 500ms;
+  /* Combine transition properties */
+  background: white;
+  /* Set default background color */
 }
 
 .lets-discuss-btn:hover {
-  transition: all ease-in-out 500ms, background 500ms; /* Combine transition properties */
-  background: radial-gradient(
-    at right top,
-    rgb(241, 229, 34) 10%,
-    rgb(90, 166, 61) 35%,
-    rgb(13, 110, 133) 72%
-  );
+  transition: all ease-in-out 500ms, background 500ms;
+  /* Combine transition properties */
+  background: radial-gradient(at right top,
+      rgb(241, 229, 34) 10%,
+      rgb(90, 166, 61) 35%,
+      rgb(13, 110, 133) 72%);
   color: white;
   /* transition-duration: 500ms; */
 }
@@ -253,12 +243,10 @@ body {
   -moz-transition: all ease-in-out 0.3s;
   -ms-transition: all ease-in-out 0.3s;
   -o-transition: all ease-in-out 0.3s;
-  background: radial-gradient(
-    at top right,
-    #f1e522 20%,
-    #5aa63d 50%,
-    #0d6e85 70%
-  );
+  background: radial-gradient(at top right,
+      #f1e522 20%,
+      #5aa63d 50%,
+      #0d6e85 70%);
   background-size: 150% 150%;
   color: white;
 }
@@ -304,30 +292,73 @@ body {
 
 /***********   Antd OverRiding (Hamburger Sub Menus)    ***********/
 
-ul.ant-menu.ant-menu-root.ant-menu-vertical.ant-menu-light.css-dev-only-do-not-override-zl9ks2{
+ul.ant-menu.ant-menu-root.ant-menu-vertical.ant-menu-light.css-dev-only-do-not-override-zl9ks2 {
   background-color: black;
   color: white;
   font-size: 20px;
   width: 400px !important;
 }
 
-ul.ant-menu.ant-menu-root.ant-menu-vertical.ant-menu-light.css-dev-only-do-not-override-zl9ks2:hover{
+ul.ant-menu.ant-menu-root.ant-menu-vertical.ant-menu-light.css-dev-only-do-not-override-zl9ks2:hover {
   /* color: red !important; */
 }
 
-.ul#rc-menu-uuid-20010-1-sub2-popup{
+.ul#rc-menu-uuid-20010-1-sub2-popup {
   background-color: blue !important;
 }
 
-li.ant-menu-item.ant-menu-item-only-child{
+li.ant-menu-item.ant-menu-item-only-child {
   /* background-color: red !important; */
 }
 
-:where(.css-dev-only-do-not-override-zl9ks2).ant-menu-light.ant-menu-submenu-popup>.ant-menu, :where(.css-dev-only-do-not-override-zl9ks2).ant-menu-light>.ant-menu.ant-menu-submenu-popup>.ant-menu {
+:where(.css-dev-only-do-not-override-zl9ks2).ant-menu-light.ant-menu-submenu-popup>.ant-menu,
+:where(.css-dev-only-do-not-override-zl9ks2).ant-menu-light>.ant-menu.ant-menu-submenu-popup>.ant-menu {
   background-color: black !important;
   color: white !important;
 }
 
-.abbo i.ant-menu-submenu-arrow{
+.abbo i.ant-menu-submenu-arrow {
   display: none !important;
+}
+
+
+/*********    Know more Arrow **********/
+
+.a-arrow .arrow {
+  width: 20px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  background: #000000 !important;
+  position: absolute !important;
+  bottom: 6px;
+  right: -25px;
+  display: inline-block !important;
+}
+
+.a-arrow .arrow:before {
+  position: absolute;
+  content: "";
+  width: 6px;
+  height: 1px;
+  background-color: #000000;
+  transform: rotate(327deg);
+  right: 0;
+  top: 2px;
+}
+
+.a-arrow .arrow:after {
+  position: absolute;
+  content: "";
+  width: 6px;
+  height: 1px;
+  background-color: #000000;
+  transform: rotate(34deg);
+  right: 0;
+  top: -2px;
+}
+
+@media only screen and (max-width: 1023px) {
+  .a-arrow .arrow {
+    bottom: 5px;
+  }
 }

@@ -6,6 +6,7 @@ import { Autoplay, Navigation } from "swiper/modules";
 // import "../imageSwipper/ImageSwipper.css"
 import "swiper/css";
 import "swiper/css/navigation";
+import Link from "next/link";
 
 const ImageSwipper = ({
   hasH3,
@@ -16,6 +17,7 @@ const ImageSwipper = ({
   slidesPerView,
   irisLogo,
   swipperGap,
+  knowMoreLink,
 }) => {
   const [arrowPrevActive, setArrowPrevActive] = useState(false);
   const [arrowNextActive, setArrowNextActive] = useState(false);
@@ -46,18 +48,30 @@ const ImageSwipper = ({
 
             {/*********  Laptop  *********/}
 
-            <span className=" text-black text-sm 2xl:leading-[15px] mt-6 lg:block hidden pillat-thin">
-              <span className="w-[100%] ">
+            <span className="text-black text-sm 2xl:leading-[15px] mt-6 lg:block hidden pillat-thin">
+              <span className="relative w-[100%] ">
                 {hasP}
-                <span className="font-bold"> {hasKnowMore}</span>
+                <Link href={`${knowMoreLink}`} class="a-arrow">
+                  {" "}
+                  <span className="text-black font-bold">
+                    see to believe{" "}
+                  </span>{" "}
+                  <span class="arrow"></span>
+                </Link>
               </span>
             </span>
 
             {/*********  Mobile  *********/}
 
-            <span className="w-[100%] lg:hidden block text-black text-xs sm:text-sm mt-2 pillat-thin">
+            <span className=" w-[100%] lg:hidden block text-black text-xs sm:text-sm mt-2 pillat-thin">
               {hasP}
-              <span className="font-bold"> {hasKnowMore}</span>
+              <Link href={`${knowMoreLink}`} class="a-arrow relative">
+                {" "}
+                <span className="text-black font-bold">
+                  see to believe{" "}
+                </span>{" "}
+                <span class="arrow"></span>
+              </Link>
             </span>
           </div>
         </div>
@@ -91,7 +105,7 @@ const ImageSwipper = ({
             modules={[Autoplay]}
             autoplay={{
               delay: 1000,
-              pauseOnMouseEnter : true,
+              pauseOnMouseEnter: true,
             }}
             className="mySwiper "
           >

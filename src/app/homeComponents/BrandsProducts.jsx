@@ -94,6 +94,7 @@ const BrandsProducts = () => {
     "through our network, we are introducing you to a world that keeps pace with technology and change, enables simplicity from complexity and shape the future. ";
   const aasKnowmore = "know more --";
 
+
   return (
     <>
       <div id="brandsHomeScrollRef">
@@ -107,6 +108,7 @@ const BrandsProducts = () => {
           slidesPerView={5}
           irisLogo={irisLogo}
           swipperGap={swipperGap}
+          knowMoreLink={"brands-products"}
         />
       </div>
       <div id="clientsHomeScrollRef">
@@ -133,6 +135,7 @@ const BrandsProducts = () => {
           swipperGap={40}
           navigation={false}
           animation={affiliationAnimation}
+          knowMoreLink={"google"}
         />
       </div>
     </>
