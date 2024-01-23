@@ -13,6 +13,9 @@ import "../navbar/Navbar.css";
 import Drawer from "react-modern-drawer";
 import "react-modern-drawer/dist/index.css";
 import { Menu } from "antd";
+import { useRouter } from "next/navigation";
+import Lottie from "react-lottie-player";
+import bannerAnimation from "../../../../public/symmetryAnimations/homeBannerAnimation.json";
 
 import Rive from "@rive-app/react-canvas";
 import RiveAnimation from "../../../../public/symmetryAnimations/banner-Rive.riv";
@@ -24,7 +27,105 @@ import { ScrollToPlugin } from "gsap/all";
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(ScrollToPlugin);
 
-const Navbar = () => {
+const Navbar = ({toggleRed , setToggleRed}) => {
+  const router = useRouter();
+  const [linkName, setLinkName] = useState("");
+  const [isAnimating, setIsAnimating] = useState(false);
+  const lottieAnimationRef = useRef(null);
+  const loaderRef = useRef(null);
+
+  useEffect(() => {
+    const body = document.body
+
+    body.style.overflow = "hidden"
+  }, [])
+  
+
+  useEffect(() => {
+    if (isAnimating && linkName) {
+      const timeoutId = setTimeout(() => {
+        router.push(linkName);
+      }, 2000); // 2 seconds delay
+
+      return () => clearTimeout(timeoutId); // Clear the timeout if component unmounts
+    }
+  }, [isAnimating, linkName, router]);
+
+  const blueAnimationFuncStart = () => {
+    const lottieTl = gsap.timeline({
+      repeat: 1,
+      repeatDelay: 1,
+      yoyo: true,
+    });
+
+    lottieTl.from(lottieAnimationRef.current, {
+      duration: 2,
+      opacity: 0,
+    });
+
+    lottieTl.to(lottieAnimationRef.current, {
+      duration: 1.5,
+      opacity: 1,
+    });
+  };
+
+  const blueAnimationFuncEnd = () => {
+    gsap.to(lottieAnimationRef.current, {
+      duration: 1,
+      opacity: 0,
+    });
+  };
+
+  // const loaderAnimationFunc = () => {
+  //   const container = document.getElementById("page-loader");
+  //   const body = document.body;
+  //   container.style.pointerEvents = "none";
+
+  //   setIsAnimating(true);
+
+  //   var tl = gsap.timeline({
+  //     repeat: 1,
+  //     repeatDelay: 5,
+  //     yoyo: true,
+  //     onStart: () => {
+  //       blueAnimationFuncStart();
+  //       body.style.overflow = "hidden";
+  //     },
+  //     onComplete: () => {
+  //       container.style.display = "none";
+  //       blueAnimationFuncEnd();
+  //       body.style.overflow = "visible";
+  //       container.style.pointerEvents = "auto";
+  //       setIsAnimating(false);
+  //     },
+  //   });
+
+  //   tl.from("#page-loader", {
+  //     y: "1000px",
+  //     backgroundColor: "black",
+  //     color: "black",
+  //     duration: 1,
+  //     ease: "power1",
+  //     zIndex: 50,
+  //     onComplete: () => {
+  //       container.style.display = "flex";
+  //     },
+  //   });
+
+  //   tl.to(
+  //     "#page-loader",
+  //     {
+  //       y: "-10px",
+  //       backgroundColor: "black",
+  //       color: "black",
+  //       duration: 1,
+  //       ease: "power1",
+  //       zIndex: 50,
+  //     },
+  //     "-=0.0"
+  //   );
+  // };
+
   const [activeBg, setActiveBg] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
   const [getNavRefId, setNavRefId] = useState();
@@ -32,8 +133,8 @@ const Navbar = () => {
   const navRef = useRef();
   const hamburgerLogoRef = useRef();
   const subMenuRef = useRef();
-  const socialLinksRef = useRef()
-  const menuAnimationRef = useRef()
+  const socialLinksRef = useRef();
+  const menuAnimationRef = useRef();
 
   useEffect(() => {
     var actionNav = gsap.to(navRef.current, {
@@ -443,36 +544,35 @@ const Navbar = () => {
   /***********  Hamburger GSAP animation toggle  ***********/
 
   const gsapToggle = () => {
-    setToggleGsap(!toggleGsap)
+    setToggleGsap(!toggleGsap);
 
     gsap.to(hamburgerLogoRef.current, {
       x: toggleGsap ? 15 : -300,
       opacity: toggleGsap ? 1 : 0,
-      duration: toggleGsap ?  0.2 : 0.4,
+      duration: toggleGsap ? 0.2 : 0.4,
       delay: toggleGsap ? 1.3 : 0.5,
     });
 
     gsap.to(menuAnimationRef.current, {
       // x: toggleGsap ? 15 : -400,
       opacity: toggleGsap ? 1 : 0,
-      duration: toggleGsap ?  0.5 : 0.7,
+      duration: toggleGsap ? 0.5 : 0.7,
       delay: toggleGsap ? 1.7 : 0.1,
     });
 
     gsap.to(subMenuRef.current, {
       x: toggleGsap ? 15 : -300,
       opacity: toggleGsap ? 1 : 0,
-      duration: toggleGsap ?  0.2 : 0.4,
+      duration: toggleGsap ? 0.2 : 0.4,
       delay: toggleGsap ? 2 : 0.3,
     });
 
     gsap.to(socialLinksRef.current, {
       x: toggleGsap ? 15 : -300,
       opacity: toggleGsap ? 1 : 0,
-      duration: toggleGsap ?  0.2 : 0.4,
+      duration: toggleGsap ? 0.2 : 0.4,
       delay: toggleGsap ? 2.3 : 0,
     });
-
   };
 
   return (
@@ -562,7 +662,10 @@ const Navbar = () => {
             >
               <>
                 <div className="ml-2 mt-4 md:mx-10">
-                  <div ref={hamburgerLogoRef} className="w-[55vw] ml-1 opacity-0 translate-x-[-300px]">
+                  <div
+                    ref={hamburgerLogoRef}
+                    className="w-[55vw] ml-1 opacity-0 translate-x-[-300px]"
+                  >
                     <Image src={logo} />
                   </div>
 
@@ -611,7 +714,10 @@ const Navbar = () => {
                         <div className="flex justify-between items-center">
                           <div>
                             <div className="text-white flex flex-col gap-2 mr-1 text-xl pillat-normal lg:gap-5 ">
-                              <div  ref={subMenuRef}  className="opacity-0 translate-x-[-300px]">
+                              <div
+                                ref={subMenuRef}
+                                className="opacity-0 translate-x-[-300px]"
+                              >
                                 <Menu
                                   // onClick={onClick}
                                   style={{
@@ -622,7 +728,10 @@ const Navbar = () => {
                                 />
                               </div>
 
-                              <div ref={socialLinksRef} className="flex gap-3 ml-2 mt-5 opacity-0 translate-x-[-300px]">
+                              <div
+                                ref={socialLinksRef}
+                                className="flex gap-3 ml-2 mt-5 opacity-0 translate-x-[-300px]"
+                              >
                                 <div className="border border-green-400 rounded-lg my-auto px-1 py-1 cursor-pointer hamburger-social-icons-div">
                                   <Image
                                     src={linkdinLogo}
@@ -647,7 +756,10 @@ const Navbar = () => {
                               </div>
                             </div>
                           </div>
-                          <div ref={menuAnimationRef} className="hidden md:block opacity-0">
+                          <div
+                            ref={menuAnimationRef}
+                            className="hidden md:block opacity-0"
+                          >
                             <Rive
                               src={RiveAnimation}
                               autoplay={true}
@@ -670,3 +782,29 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+
+
+{
+  /* <div
+id="page-loader"
+className="bg-red-500 justify-center items-center h-[110vh] w-[100%] absolute top-0 hidden "
+style={{ transform: "translateY(700px)" }}
+ref={loaderRef}
+>
+<div
+  ref={lottieAnimationRef}
+  className="opacity-0 w-96 h-96"
+>
+  <Lottie
+    loop
+    animationData={bannerAnimation}
+    play
+    // style={{ width: 350, height: 350 }}
+  />
+</div>
+</div> */
+}
+
+// onClick={() => loaderAnimationFunc()}
+

@@ -1,9 +1,16 @@
-import React from "react";
+"use client"
+import React, { useEffect } from "react";
 
 const AboutUs = ({titleWidth , autoMx}) => {
+  useEffect(() => {
+    const body = document.body
+
+    body.style.overflow = "hidden"
+  }, [])
+
   return (
     <div>
-      <div id="contactUsHomeScrollRef" className="my-10 border-b border-green-400 pb-14">
+      <div id="contactUsHomeScrollRef" className="pb-10 border-b border-green-400 ">
         <div className="text-black">
           <div className={`text-xl sm:text-6xl lg:text-5xl text-center w-[100%] pillat-normal ${titleWidth} ${autoMx}`}>
             <h2>connect with us today to transform your business</h2>

@@ -14,31 +14,37 @@ const inter = Inter({ subsets: ["latin"] });
 export default function RootLayout({ children }) {
 
   useEffect(() => {
-    const initLocomotiveScroll = async () => {
-      try {
-        const LocomotiveScroll = (await import("locomotive-scroll")).default;
+    const body = document.body
+
+    body.style.overflow = "hidden"
+  }, [])
+
+  // useEffect(() => {
+  //   const initLocomotiveScroll = async () => {
+  //     try {
+  //       const LocomotiveScroll = (await import("locomotive-scroll")).default;
   
-        const locomotiveScroll = new LocomotiveScroll({
-          lenisOptions: {
-            easing: (t) => t * (2 - t), // Smooth ease-out cubic function
-            lerp: 0.1,
-            smoothTouch: true,
-            smoothWheel: true,
-            duration: 1,
-          },
-        });
-      } catch (error) {
-        console.error("Error loading Locomotive Scroll:", error);
-      }
-    };
+  //       const locomotiveScroll = new LocomotiveScroll({
+  //         lenisOptions: {
+  //           easing: (t) => t * (2 - t), // Smooth ease-out cubic function
+  //           lerp: 0.1,
+  //           smoothTouch: true,
+  //           smoothWheel: true,
+  //           duration: 1,
+  //         },
+  //       });
+  //     } catch (error) {
+  //       console.error("Error loading Locomotive Scroll:", error);
+  //     }
+  //   };
   
-    initLocomotiveScroll();
-  }, []);
+  //   initLocomotiveScroll();
+  // }, []);
 
   return (
     <html lang="en" className="">
       <body className={inter.className}>
-        <div className="">{children}</div>
+        <div className="no-scroll">{children}</div>
       </body>
     </html>
   );

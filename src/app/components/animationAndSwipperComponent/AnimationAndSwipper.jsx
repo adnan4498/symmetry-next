@@ -10,11 +10,15 @@ import Lottie from "react-lottie-player";
 // import square from "../../../../public/square-neon.png";
 import rivAnimation from "../../../../public/symmetryAnimations/home-banner.riv";
 import Rive from "@rive-app/react-canvas";
+import Link from "next/link";
 
 const AnimationAndSwipper = ({
-  aasH3,
-  aasH2,
-  aasP,
+  interactiveTitle,
+  interactiveHeading,
+  interactiveText,
+  mobilityTitle,
+  mobilityHeading,
+  mobilityText,
   aasKnowMore,
   swipperContent,
   animation,
@@ -45,31 +49,40 @@ const AnimationAndSwipper = ({
             <div className="mt-5">
               <div className="border-b border-green-500 pt-6">
                 <p className="text-3xl xl:text-4xl mb-4 text-black pillat-normal">
-                  {aasH3}
+                  {interactiveTitle ||   mobilityTitle}
                 </p>
               </div>
               <div className=" w-full mt-4">
                 <span className="rainbow-text text-4xl sm:text-6xl md:text-5xl lg:text-5xl 2xl:text-7xl pillat-normal">
                   <span
                     className=""
-                    dangerouslySetInnerHTML={{ __html: aasH2 }}
+                    dangerouslySetInnerHTML={{ __html: interactiveHeading || mobilityHeading }}
                   />
                 </span>
 
                 {/*********  Laptop  *********/}
 
                 <span className="border-l border-gray-400 text-black text-xs 2xl:text-sm pl-4 ml-3 w-[55%] 2xl:w-[45%] xl:max-w-[600px] 2xl:leading-[15px] mt-3 lg:inline-block hidden pillat-thin">
-                  <span className="w-[100%] ">
-                    {aasP}
-                    <span className="font-bold"> {aasKnowMore}</span>
+                  <span className="w-[100%] relative">
+                    {interactiveText || mobilityText}
+                    <Link href={""} class="a-arrow">
+                      <span className="text-black font-bold">know more</span>
+                      <span class="arrow"></span>
+                    </Link>
                   </span>
                 </span>
 
                 {/*********  Mobile  *********/}
 
                 <span className="w-[100%] lg:hidden block text-black text-xs sm:text-sm mt-2 pillat-thin">
-                  {aasP}
-                  <span className="font-bold"> {aasKnowMore}</span>
+                  {interactiveText ||   mobilityText}
+                  <Link href={""} class="a-arrow relative">
+                    {" "}
+                    <span className="text-black font-bold">
+                      know more{" "}
+                    </span>{" "}
+                    <span class="arrow"></span>
+                  </Link>
                 </span>
               </div>
             </div>
@@ -98,7 +111,7 @@ const AnimationAndSwipper = ({
                 onSlideChange={handleActive}
                 autoplay={{
                   delay: 1000,
-                  pauseOnMouseEnter : true,
+                  pauseOnMouseEnter: true,
                 }}
                 navigation={{
                   nextEl: ".swiper-button-next",

@@ -10,7 +10,7 @@ import InteractiveMarketing from "./homeComponents/InteractiveMarketing";
 export default function Home() {
   return (
     <>
-      <div className="">
+      <div className="overflow-y-hidden">
         <Navbar className="" />
         <DeliveringSection />
         <HeritageSection />

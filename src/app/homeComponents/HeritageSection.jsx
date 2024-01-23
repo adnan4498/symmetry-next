@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
@@ -8,8 +8,16 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "../homeComponents/HeritageSection.css";
 import infinity from "../../../public/infinity-sign.webp";
+import Link from "next/link";
 
 const HeritageSection = () => {
+
+  useEffect(() => {
+    const body = document.body
+
+    body.style.overflow = "hidden"
+  }, [])
+
   const [activeAni, setActiveAni] = useState();
   const [arrowPrevActive, setArrowPrevActive] = useState(false);
   const [arrowNextActive, setArrowNextActive] = useState(false);
@@ -78,25 +86,25 @@ const HeritageSection = () => {
   return (
     <>
       <div className="md:absolute md:z-10 md:right-0 md:left-0  border border-gray-400 rounded-2xl -mt-52 lg:mt-[-300px]  bg-white lg:w-[70%] lg:mx-auto px-5 lg:px-8 ">
-        <div className="mt-5">
+        <div className="mt-5 lg:mb-10">
           <div className="border-b border-green-500 pt-6">
             <p className="text-3xl xl:text-4xl mb-4 text-black pillat-normal">
               our heritage
             </p>
           </div>
-          <div className=" w-[90%] mt-4">
+          <div className=" w-full mt-4">
             <span className="rainbow-text text-4xl sm:text-6xl md:text-5xl lg:text-7xl 2xl:text-7xl pillat-normal">
-              legacy of unlocking possibilities
+              legacy of unlocking <br className="hidden xl:block"></br> possibilities
             </span>
 
             {/*********  Laptop  *********/}
 
             <span className="border-l border-gray-400 text-black text-xs 2xl:text-sm pl-4 ml-3 w-[55%] 2xl:w-[45%] xl:max-w-[600px] 2xl:leading-[15px] mt-3 lg:inline-block hidden pillat-thin">
-              <span className="w-[100%] ">
+              <span className="w-[100%] relative">
                 limitless passion, ground-breaking innovation and boundless
                 creativity allow us to create market-leading digital
                 opportunities that continue to power our partners’ success.{" "}
-                <span className="font-bold text-black"> know more</span>
+                <Link href={"transformation"} class="a-arrow"> <span className="text-black font-bold">know more </span> <span class="arrow "></span></Link>
               </span>
             </span>
 
@@ -106,7 +114,7 @@ const HeritageSection = () => {
               limitless passion, ground-breaking innovation and boundless
               creativity allow us to create market-leading digital opportunities
               that continue to power our partners’ success.{" "}
-              <span className="font-bold"> know more</span>
+              <Link href={"transformation"} class="a-arrow relative"> <span className="text-black font-bold">know more </span> <span class="arrow"></span></Link>
             </span>
           </div>
         </div>

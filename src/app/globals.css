@@ -362,3 +362,10 @@ li.ant-menu-item.ant-menu-item-only-child {
     bottom: 5px;
   }
 }
+
+.no-scroll {
+  overflow-y: hidden !important;
+}
+.sss{
+  background-color: red;
+}
