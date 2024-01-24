@@ -152,9 +152,9 @@ const HeritageSection = () => {
             className="mySwiper "
           >
             {heritageSwipperContent.map((item, index) => (
-              <>
-                <SwiperSlide>
-                  <div className="h-[px] relative overflow-hidden">
+            
+                <SwiperSlide key={item.id}>
+                  <div  className="h-[px] relative overflow-hidden">
                     <div
                       onMouseOver={() => hoverFunc(item.id)}
                       onMouseLeave={() => hoverFuncOut()}
@@ -206,7 +206,7 @@ const HeritageSection = () => {
                     </div>
                   </div>
                 </SwiperSlide>
-              </>
+              
             ))}
           </Swiper>
 

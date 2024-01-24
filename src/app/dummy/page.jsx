@@ -349,8 +349,7 @@ const Page = () => {
 
               <div className="grid grid-cols-2 sm:grid-cols-3 mx-auto gap-10 lg:mx-0 lg:gap-5 w-[70%] mt-5 ">
                 {boardDirectors.map((item, index) => (
-                  <>
-                    <div>
+                    <div key={item.id}>
                       <div className="border border-green-700 rounded-md min-w-[100px] max-w-[100px] py-[3px] px-1">
                         <Image src={item.img} />
                       </div>
@@ -361,7 +360,6 @@ const Page = () => {
                         {item.post}
                       </p>
                     </div>
-                  </>
                 ))}
               </div>
             </div>

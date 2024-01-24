@@ -121,7 +121,7 @@ const AnimationAndSwipper = ({
                 className="mySwiper "
               >
                 {swipperContent.map((item, index) => (
-                  <>
+                  
                     <SwiperSlide key={item.id}>
                       <div
                         className={`rounded-lg swipper-hover-class transition-all ease-in-out duration-300`}
@@ -145,7 +145,7 @@ const AnimationAndSwipper = ({
                         </div>
                       </div>
                     </SwiperSlide>
-                  </>
+                  
                 ))}
               </Swiper>
               <div className="swiper-navigation-buttons flex justify-center gap-2 lg:gap-[10px] 2xl:gap-3 w-full mt-10">

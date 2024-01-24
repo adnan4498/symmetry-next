@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useEffect } from "react";
 import TextSlidingComponent from "../components/textSlidingComponent/TextSlidingComponent";
 import HeadingAndSwipper from "../components/headingAndSwipperComponent/HeadingAndSwipper";
@@ -9,10 +9,10 @@ import gsap from "gsap";
 
 const BusinessDivision = () => {
   useEffect(() => {
-    const body = document.body
+    const body = document.body;
 
-    body.style.overflow = "hidden"
-  }, [])
+    body.style.overflow = "hidden";
+  }, []);
 
   {
     /******* Headings and texts *******/
@@ -23,7 +23,7 @@ const BusinessDivision = () => {
   const transformationText =
     "digital Technology can move mountains, shape cultures and change people’s perceptions. We envision a future that leverages the best of technology to create transformative experiences that aren't possible without it.";
   const hasKnowmore = "know more --";
-  const businessMarque = true
+  const businessMarque = true;
 
   const commerceTitle = "commerce";
   const commerceHeading = "empowering efficient <br /> growth";
@@ -39,8 +39,7 @@ const BusinessDivision = () => {
   const interactiveHeading = "enhancing customer <br /> relationships";
   const interactiveText =
     "our unrivaled insights, innovative thinking, strategic approach, content services and technology solutions can help you create meaningful and lasting relationships with your customers.";
-  const interactiveAnima = interactiveAnimation
-
+  const interactiveAnima = interactiveAnimation;
 
   const businessTitle = "business divisions";
   const businessText =
@@ -82,6 +81,9 @@ const BusinessDivision = () => {
   const slidesPerView = "3";
   const swipperGap = "20";
 
+  const transformationSwipperShow = true;
+  const commerceSwipperShow = true;
+
   return (
     <>
       <div id="businessHomeScrollRef" className="">
@@ -100,6 +102,7 @@ const BusinessDivision = () => {
           slidesPerView={slidesPerView}
           swipperGap={swipperGap}
           knowMoreLink={"transformation"}
+          transformationSwipperShow={transformationSwipperShow}
         />
         <AnimationAndSwipper
           interactiveTitle={interactiveTitle}
@@ -111,7 +114,7 @@ const BusinessDivision = () => {
           swipperGap={swipperGap}
           animation={interactiveAnima}
         />
-        <HeadingAndSwipper
+        {/* <HeadingAndSwipper
           commerceTitle={commerceTitle}
           commerceHeading={commerceHeading}
           commerceText={commerceText}
@@ -119,7 +122,8 @@ const BusinessDivision = () => {
           swipperContent={swipperContent}
           slidesPerView={slidesPerView}
           swipperGap={swipperGap}
-        />
+          commerceSwipperShow={commerceSwipperShow}
+        /> */}
         <AnimationAndSwipper
           mobilityTitle={mobilityTitle}
           mobilityHeading={mobilityHeading}

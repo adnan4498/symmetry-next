@@ -392,7 +392,9 @@ const page = () => {
 
         <div id="fmcgTabRef" className="md:mx-12 sm:ml-2 ml-2 mt-14">
           <div className="mx-auto lg:mt-10 ">
-            <h2 className="text-4xl lg:text-6xl pillat-normal text-black">fmcg</h2>
+            <h2 className="text-4xl lg:text-6xl pillat-normal text-black">
+              fmcg
+            </h2>
             <div className="w-[90%] mx-auto sm:mt-12 mt-3">
               <SimpleSwipper
                 swipperContent={fmcgSwipperContent}
@@ -405,39 +407,42 @@ const page = () => {
 
         <div id="realEstateTabRef" className="md:mx-12 sm:ml-2 ml-2 mt-14">
           <div className="mx-auto lg:mt-10 ">
-            <h2 className="text-4xl lg:text-6xl pillat-normal text-black">real estate</h2>
+            <h2 className="text-4xl lg:text-6xl pillat-normal text-black">
+              real estate
+            </h2>
             <div className="w-[90%] mx-auto flex items-center gap-11 mt-12">
               {realEstateContent.map((item, index) => (
-                <>
-                  <div className="">
-                    <div className="border border-gray-400 rounded-md  ">
-                      <div className="flex justify-center items-center py-3 px-3 ">
-                        <Image src={item.img} className="lg:w-[7vw]" />
-                      </div>
+                <div key={item.id} className="">
+                  <div className="border border-gray-400 rounded-md  ">
+                    <div className="flex justify-center items-center py-3 px-3 ">
+                      <Image src={item.img} className="lg:w-[7vw]" />
                     </div>
                   </div>
-                </>
+                </div>
               ))}
             </div>
           </div>
         </div>
 
-        <div id="pharmaceuticalTabRef" className="md:mx-12 sm:ml-2 ml-2 mt-14 lg:mt-44">
+        <div
+          id="pharmaceuticalTabRef"
+          className="md:mx-12 sm:ml-2 ml-2 mt-14 lg:mt-44"
+        >
           <div className="mx-auto lg:mt-10 ">
             <h2 className="text-4xl lg:text-6xl pillat-normal text-black">
               pharmaceutical
             </h2>
             <div className="w-[90%] mx-auto flex items-center gap-11 mt-12">
               {pharmaceuticalContent.map((item, index) => (
-                <>
-                  <div className="">
+              
+                  <div key={item.id} className="">
                     <div className="border border-gray-400 rounded-md  ">
                       <div className="flex justify-center items-center py-3 px-3 ">
                         <Image src={item.img} className="lg:w-[7vw]" />
                       </div>
                     </div>
                   </div>
-                </>
+                
               ))}
             </div>
           </div>
@@ -445,7 +450,9 @@ const page = () => {
 
         <div id="othersTabRef" className="md:mx-12 sm:ml-2 ml-2 mt-14 lg:mt-44">
           <div className="mx-auto lg:mt-10 ">
-            <h2 className="text-4xl lg:text-6xl pillat-normal text-black">others</h2>
+            <h2 className="text-4xl lg:text-6xl pillat-normal text-black">
+              others
+            </h2>
             <div className="w-[90%] mx-auto sm:mt-12 mt-3">
               <SimpleSwipper
                 swipperContent={othersSwipperContent}

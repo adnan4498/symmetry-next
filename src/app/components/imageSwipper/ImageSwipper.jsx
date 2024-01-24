@@ -110,8 +110,7 @@ const ImageSwipper = ({
             className="mySwiper "
           >
             {swipperContent.map((item, index) => (
-              <>
-                <SwiperSlide>
+                <SwiperSlide key={item.id}>
                   <div className="cursor-pointer">
                     <div className="flex justify-center items-center border border-gray-400 rounded-md">
                       <div className=" md:w-10/12 md:h-24 flex justify-center items-center ">
@@ -120,7 +119,6 @@ const ImageSwipper = ({
                     </div>
                   </div>
                 </SwiperSlide>
-              </>
             ))}
           </Swiper>
 

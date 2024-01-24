@@ -41,8 +41,7 @@ const SimpleSwipper = ({
             className="mySwiper "
           >
             {swipperContent.map((item, index) => (
-              <>
-                <SwiperSlide>
+                <SwiperSlide key={item.id}>
                   <div className="sm:h-[250px] h-[150px]">
                     <div className="border border-gray-400 rounded-md  ">
                       <div className="flex justify-center items-center py-3 ">
@@ -51,7 +50,6 @@ const SimpleSwipper = ({
                     </div>
                   </div>
                 </SwiperSlide>
-              </>
             ))}
           </Swiper>
         </div>

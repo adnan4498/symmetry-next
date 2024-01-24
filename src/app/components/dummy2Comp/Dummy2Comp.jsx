@@ -44,9 +44,9 @@ const Dummy2Comp = () => {
     <>
       <div className="flex fixed gap-20 bg-black">
         {navbarItems.map((item , index)=>(
-          <>
-            <span onClick={() => gsap.to(window, { duration: 1, scrollTo: { y: item.ref, offsetY: 70 } })} >{item.name}</span>
-          </>
+          
+            <span key={item.id} onClick={() => gsap.to(window, { duration: 1, scrollTo: { y: item.ref, offsetY: 70 } })} >{item.name}</span>
+          
         ))}
       </div>
     

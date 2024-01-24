@@ -473,8 +473,7 @@ const page = () => {
             </div>
             <div className="mt-10">
               {invesorsInfo.map((item, index) => (
-                <>
-                  <div className="border-b border-green-300 flex flex-col lg:flex-row text-center lg:text-start lg:justify-between leading-[20px] pb-5 mt-5">
+                  <div key={item.id} className="border-b border-green-300 flex flex-col lg:flex-row text-center lg:text-start lg:justify-between leading-[20px] pb-5 mt-5">
                     <div className="lg:w-6/12 text-gray-600 pillat-normal">
                       {item.title}
                     </div>
@@ -482,7 +481,6 @@ const page = () => {
                       {item.desc}
                     </div>
                   </div>
-                </>
               ))}
             </div>
           </div>
@@ -546,8 +544,7 @@ const page = () => {
 
             <div className="mt-1">
               {boardMembers.map((item, index) => (
-                <>
-                  <div className="border-b border-green-300 flex flex-col lg:flex-row text-center lg:text-start lg:justify-between leading-[20px] pb-5 mt-5">
+                  <div key={item.id} className="border-b border-green-300 flex flex-col lg:flex-row text-center lg:text-start lg:justify-between leading-[20px] pb-5 mt-5">
                     <div className="lg:w-6/12 font-semibold text-base text-black">
                       {item.name}
                     </div>
@@ -555,7 +552,6 @@ const page = () => {
                       {item.post}
                     </div>
                   </div>
-                </>
               ))}
             </div>
 
@@ -567,8 +563,8 @@ const page = () => {
 
             <div className="">
               {auditCommitte.map((item, index) => (
-                <>
-                  <div className="border-b border-green-300 flex flex-col lg:flex-row text-center lg:text-start lg:justify-between leading-[20px] pb-5 mt-5">
+                
+                  <div key={item.id} className="border-b border-green-300 flex flex-col lg:flex-row text-center lg:text-start lg:justify-between leading-[20px] pb-5 mt-5">
                     <div className="lg:w-6/12 font-semibold text-smm text-black">
                       {item.name}
                     </div>
@@ -576,7 +572,7 @@ const page = () => {
                       {item.post}
                     </div>
                   </div>
-                </>
+                
               ))}
             </div>
 
@@ -588,8 +584,8 @@ const page = () => {
 
             <div className="mt-1">
               {remunirationCommitte.map((item, index) => (
-                <>
-                  <div className="border-b border-green-300 flex flex-col lg:flex-row text-center lg:text-start lg:justify-between leading-[20px] pb-5 mt-5">
+                
+                  <div key={item.id} className="border-b border-green-300 flex flex-col lg:flex-row text-center lg:text-start lg:justify-between leading-[20px] pb-5 mt-5">
                     <div className="lg:w-6/12 font-semibold text-sm text-black">
                       {item.name}
                     </div>
@@ -597,7 +593,7 @@ const page = () => {
                       {item.post}
                     </div>
                   </div>
-                </>
+                
               ))}
             </div>
           </div>
@@ -716,8 +712,8 @@ const page = () => {
                       ].map(
                         (checkItem, checkItemIndex) =>
                           item[checkItem] && (
-                            <>
-                              <div className=" mx-auto my-10 flex justify-center">
+                            
+                              <div key={item.id} className=" mx-auto my-10 flex justify-center">
                                 <div
                                   key={checkItemIndex}
                                   className="text-center min-w-[130px]"
@@ -737,7 +733,7 @@ const page = () => {
                                   </div>
                                 </div>
                               </div>
-                            </>
+                            
                           )
                       )}
                     </>
@@ -773,8 +769,8 @@ const page = () => {
                 </h>
               </div>
               {investorContacts.map((item, index) => (
-                <>
-                  <div className="border-b border-green-300 flex flex-col lg:flex-row text-center lg:text-start lg:justify-between leading-[20px] pb-5 mt-5">
+                
+                  <div key={item.id} className="border-b border-green-300 flex flex-col lg:flex-row text-center lg:text-start lg:justify-between leading-[20px] pb-5 mt-5">
                     <div className="lg:w-6/12 text-gray-500 pillat-normal ">
                       {item.title}
                     </div>
@@ -782,7 +778,7 @@ const page = () => {
                       {item.desc}
                     </div>
                   </div>
-                </>
+                
               ))}
             </div>
 
@@ -791,8 +787,8 @@ const page = () => {
                 <h className="font-bold text-sm lg:text-lg ">complaints</h>
               </div>
               {investorContacts.map((item, index) => (
-                <>
-                  <div className="border-b border-green-300 flex flex-col lg:flex-row text-center lg:text-start lg:justify-between leading-[20px] pb-5 mt-5">
+                
+                  <div key={item.id} className="border-b border-green-300 flex flex-col lg:flex-row text-center lg:text-start lg:justify-between leading-[20px] pb-5 mt-5">
                     <div className="lg:w-6/12 text-gray-500 pillat-normal">
                       {item.title}
                     </div>
@@ -800,7 +796,7 @@ const page = () => {
                       {item.desc}
                     </div>
                   </div>
-                </>
+                
               ))}
             </div>
 

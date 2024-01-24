@@ -292,17 +292,15 @@ const TextSlidingComponent = ({
               className="mySwiper "
             >
               {swipperContent.map((item, index) => (
-                <>
-                  <SwiperSlide>
-                    <div className="cursor-pointer">
-                      <div className="flex justify-center items-center border border-gray-400 rounded-md">
-                        <div className=" md:w-5/12 lg:w-8/12 md:h-24 flex justify-center items-center ">
-                          <Image src={item.img} />
-                        </div>
+                <SwiperSlide key={item.id}>
+                  <div className="cursor-pointer">
+                    <div className="flex justify-center items-center border border-gray-400 rounded-md">
+                      <div className=" md:w-5/12 lg:w-8/12 md:h-24 flex justify-center items-center ">
+                        <Image src={item.img} />
                       </div>
                     </div>
-                  </SwiperSlide>
-                </>
+                  </div>
+                </SwiperSlide>
               ))}
             </Swiper>
 
