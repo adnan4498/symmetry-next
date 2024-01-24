@@ -21,20 +21,20 @@ const DeliveringSection = () => {
 
   const heading = useRef();
 
-  useEffect(() => {
-    gsap.to(heading.current, {
-      scrollTrigger: {
-        trigger: heading.current,
-        toggleActions: "restart restart none none",
-        // start : ,
-        // end : 400,
-        // markers : true
-      },
-      duration: 4,
-      opacity: 1,
-      y: 0,
-    });
-  }, []);
+  // useEffect(() => {
+  //   gsap.to(heading.current, {
+  //     scrollTrigger: {
+  //       trigger: heading.current,
+  //       toggleActions: "restart restart none none",
+  //       // start : ,
+  //       // end : 400,
+  //       // markers : true
+  //     },
+  //     duration: 4,
+  //     opacity: 1,
+  //     y: 0,
+  //   });
+  // }, []);
 
   return (
     <>
@@ -43,7 +43,7 @@ const DeliveringSection = () => {
           <div className="mx-3 sm:py-12 py-8 md:mx-12">
             <div className="relative">
               <div
-                className="md:max-w-[600px] 2xl:max-w-[800px] w-full opacity-0 "
+                className="md:max-w-[600px] 2xl:max-w-[800px] w-full opacity-1 "
                 ref={heading}
               >
                 <span className="text-4xl sm:text-6xl md:text-5xl lg:text-7xl 2xl:text-8xl rainbow-text">

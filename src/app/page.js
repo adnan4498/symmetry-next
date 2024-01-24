@@ -8,36 +8,73 @@ import BusinessDivision from "./homeComponents/BusinessDivision";
 import DeliveringSection from "./homeComponents/DeliveringSection";
 import HeritageSection from "./homeComponents/HeritageSection";
 import InteractiveMarketing from "./homeComponents/InteractiveMarketing";
+import startingAnimation from "../../public/symmetryAnimations/startingAnimation.json";
 import { gsap } from "gsap";
+import Lottie from "react-lottie-player";
 
 export default function Home() {
-  const navBlackDiv = useRef(null);
+  const webStartAnimationRef = useRef(null);
+  const loaderRefHome = useRef(null);
+  const lottieAnimationRef = useRef(null);
 
   // asd
 
   useEffect(() => {
-    const theDiv = navBlackDiv.current;
-    const body = document.body
+    const webStartAnimation = webStartAnimationRef.current;
+    const body = document.body;
 
-    gsap.to(navBlackDiv.current, {
-      y: "1000px",
+    const animationtl = gsap.timeline({
+      repeat : 1,
+      repeatDelay : 0,
+      yoyo : true
+    })
+
+    gsap.to(webStartAnimationRef.current, {
+      y: "700px",
+      delay: 5,
       duration: 2,
-      ease: "power1.inOut",
+      // ease: "power1.inOut",
       onComplete: () => {
-        theDiv.style.display = "none";
-        body.style.overflow = "visible"
+        webStartAnimation.style.display = "none";
+        body.style.overflow = "visible";
       },
     });
+
+    animationtl.from(lottieAnimationRef.current ,{
+      duration : 1.5,
+      opacity : 0,
+    })
+
+    animationtl.to(lottieAnimationRef.current ,{
+      duration : 1.5,
+      opacity : 1,
+    })
+
   }, []);
 
   return (
     <>
       <div className="">
         <div
-          id="blueDivId"
-          ref={navBlackDiv}
+          ref={webStartAnimationRef}
           className="bg-black absolute w-full h-[100vh] z-50"
-        ></div>{" "}
+        >
+          <div
+            className="bg-black flex justify-center items-center h-[100vh]"
+            // style={{ transform: "translateY(700px)" }}
+            ref={loaderRefHome}
+          >
+            <div ref={lottieAnimationRef} className="opacity-0 w-96 h-96">
+              <Lottie
+                loop
+                animationData={startingAnimation}
+                play
+                // style={{ width: 350, height: 350 }}
+              />
+            </div>
+          </div>{" "}
+        </div>
+
         <Navbar className="" />
         <DeliveringSection />
         <HeritageSection />
