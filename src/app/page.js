@@ -24,6 +24,7 @@ export default function Home() {
       onComplete: () => {
         theDiv.style.display = "none";
         body.style.overflow = "visible"
+        /* this is overflow visible */
       },
     });
   }, []);

@@ -51,7 +51,6 @@ const HeadingAndSwipper = ({
   const [linkName, setLinkName] = useState("");
   const blueDiv = useRef(null);
 
-
   useEffect(() => {
     if (isAnimating) {
       const timeoutId = setTimeout(() => {
@@ -61,7 +60,6 @@ const HeadingAndSwipper = ({
       return () => clearTimeout(timeoutId); // Clear the timeout if component unmounts
     }
   }, [isAnimating, linkName, router]);
-
 
   const blueAnimationFuncStart = () => {
     console.log("hello");
@@ -111,6 +109,7 @@ const HeadingAndSwipper = ({
         container.style.display = "none";
         blueAnimationFuncEnd();
         body.style.overflow = "visible";
+        /* this is overflow visible */
         container.style.pointerEvents = "auto";
         setIsAnimating(false);
       },
