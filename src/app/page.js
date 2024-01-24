@@ -13,6 +13,8 @@ import { gsap } from "gsap";
 export default function Home() {
   const navBlackDiv = useRef(null);
 
+  // asd
+
   useEffect(() => {
     const theDiv = navBlackDiv.current;
     const body = document.body
