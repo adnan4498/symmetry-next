@@ -516,8 +516,8 @@ const BlackBannerComponent = ({ aboutH2, aboutText }) => {
 
     var tl = gsap.timeline({
       repeat: 1,
-      repeatDelay: 5,
-      yoyo: true,
+      repeatDelay: 10, /* increased repeat delay so that the black animation dosent repeat while linking back to home */
+      yoyo: false,
       onStart: () => {
         blueAnimationFuncStart();
         body.style.overflow = "hidden";
@@ -539,7 +539,7 @@ const BlackBannerComponent = ({ aboutH2, aboutText }) => {
       y: "800px",
       backgroundColor: "black",
       color: "black",
-      duration: 3,
+      duration: 0.7,
       // ease: "power1.inOut",
       zIndex: 50,
       onComplete: () => {
@@ -553,7 +553,7 @@ const BlackBannerComponent = ({ aboutH2, aboutText }) => {
         y: "-180px",
         backgroundColor: "black",
         color: "black",
-        duration: 3,
+        duration: 0.7,
         // ease: "power1.inOut",
         zIndex: 50,
         onComplete: () => {
@@ -593,23 +593,6 @@ const BlackBannerComponent = ({ aboutH2, aboutText }) => {
 
     // startNavigationTimer();
   };
-
-  // const startNavigationTimer = () => {
-  //   const intervalId = setInterval(() => {
-  //     // Code to be executed every second
-  //     // You can update a timer state if needed
-  //   }, 1000);
-
-  //   // Clear the interval after 3 seconds
-  //   setTimeout(() => {
-  //     clearInterval(intervalId);
-
-  //     // Navigate to "/"
-  //     window.location.href = "/";
-  //   }, 1000);
-
-  //   router
-  // };
 
   return (
     <>

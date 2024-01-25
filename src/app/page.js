@@ -51,7 +51,6 @@ export default function Home() {
     });
   }, []);
 
-  const rootProp = "ROOT PROP"
 
   return (
     <>
@@ -86,7 +85,7 @@ export default function Home() {
         <AboutUs />
         <Footer />
 
-        <RootLayout rootProp={rootProp} />
+        {/* <RootLayout rootProp={rootProp} /> */}
       </div>
     </>
   );

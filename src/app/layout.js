@@ -34,7 +34,7 @@ export default function RootLayout({ children  , rootProp}) {
             duration: 1,
           },
         });
-        locomotiveScroll.destroy();
+        // locomotiveScroll.destroy();
 
       } catch (error) {
         console.error("Error loading Locomotive Scroll:", error);
@@ -48,7 +48,6 @@ export default function RootLayout({ children  , rootProp}) {
   return (
     <html lang="en" className="">
       <body className={inter.className}>
-        <div className="bg-red-500 h-[120vh] w-full">{rootProp}</div>
         <div className="no-scroll">{children}</div>
       </body>
     </html>
