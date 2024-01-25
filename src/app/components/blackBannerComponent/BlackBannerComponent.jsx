@@ -38,6 +38,7 @@ const BlackBannerComponent = ({ aboutH2, aboutText }) => {
 
   const endingBlackRef = useRef(null);
   const endingBlackRivAnimRef = useRef(null);
+  const locomotiveScrollRef = useRef(null);
 
   /******  toggeling drawer code and antd sub menu items  *******/
 
@@ -311,6 +312,30 @@ const BlackBannerComponent = ({ aboutH2, aboutText }) => {
     };
   }
 
+  /* This useEffect Enables Locomotive Scroll for this page */
+
+  useEffect(() => {
+    const initLocomotiveScroll = async () => {
+      try {
+        const LocomotiveScroll = (await import("locomotive-scroll")).default;
+        console.log("locomotive useEffect enabled transformation");
+        locomotiveScrollRef.current = new LocomotiveScroll({
+          lenisOptions: {
+            easing: (t) => t * (2 - t),
+            lerp: 0.1,
+            smoothTouch: true,
+            smoothWheel: true,
+            duration: 1,
+          },
+        });
+      } catch (error) {
+        console.error("Error loading Locomotive Scroll:", error);
+      }
+    };
+
+    initLocomotiveScroll();
+  }, []);
+
   /******   scrolling animations effect that moves navbar up and down  ******/
 
   useEffect(() => {
@@ -462,7 +487,6 @@ const BlackBannerComponent = ({ aboutH2, aboutText }) => {
       },
     });
 
-
     const insideAnimation = gsap.timeline({
       repeat: 1,
       repeatDelay: 0,
@@ -483,7 +507,6 @@ const BlackBannerComponent = ({ aboutH2, aboutText }) => {
   /******  this function will take back to home with black animation  ******/
 
   const toHomeAnimFunc = () => {
-    console.log("hello inside transform");
     // const container = document.getElementById("page-loader");
     const container = endingBlackRef.current;
     const body = document.body;
@@ -498,6 +521,10 @@ const BlackBannerComponent = ({ aboutH2, aboutText }) => {
       onStart: () => {
         blueAnimationFuncStart();
         body.style.overflow = "hidden";
+        if (locomotiveScrollRef.current) {
+          console.log("locomotive destroyed in black banner");
+          locomotiveScrollRef.current.destroy();
+        }
       },
       onComplete: () => {
         container.style.display = "none";
@@ -512,8 +539,8 @@ const BlackBannerComponent = ({ aboutH2, aboutText }) => {
       y: "800px",
       backgroundColor: "black",
       color: "black",
-      duration: 0.7,
-      ease: "power1.inOut",
+      duration: 3,
+      // ease: "power1.inOut",
       zIndex: 50,
       onComplete: () => {
         container.style.display = "flex";
@@ -526,16 +553,17 @@ const BlackBannerComponent = ({ aboutH2, aboutText }) => {
         y: "-180px",
         backgroundColor: "black",
         color: "black",
-        duration: 0.7,
-        ease: "power1.inOut",
+        duration: 3,
+        // ease: "power1.inOut",
         zIndex: 50,
+        onComplete: () => {
+          router.push("/");
+        },
       },
       "-=0.0"
     );
 
     const blueAnimationFuncStart = () => {
-      console.log("hello");
-
       const lottieTl = gsap.timeline({
         repeat: 1,
         repeatDelay: 0,
@@ -544,15 +572,15 @@ const BlackBannerComponent = ({ aboutH2, aboutText }) => {
 
       lottieTl.from(endingBlackRivAnimRef.current, {
         duration: 1,
-        opacity: 0, 
+        opacity: 0,
       });
 
       lottieTl.to(endingBlackRivAnimRef.current, {
         duration: 1,
-        opacity: 1, 
-        onComplete : ()=>{
-          router.push("/")
-        }
+        opacity: 1,
+        // onComplete : ()=>{
+        //   router.push("/")
+        // }
       });
     };
 
@@ -611,7 +639,7 @@ const BlackBannerComponent = ({ aboutH2, aboutText }) => {
         <div
           // id="page-loader"
           className="bg-black justify-center items-center h-[200vh] w-[200%] absolute hidden top-0 left-[-50px] z-50"
-          style={{ transform: "translateY(800px)" }}
+          style={{ transform: "translateY(800px)" ,  }}
           ref={endingBlackRef}
         >
           <div

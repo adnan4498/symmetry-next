@@ -11,6 +11,7 @@ import InteractiveMarketing from "./homeComponents/InteractiveMarketing";
 import startingAnimation from "../../public/symmetryAnimations/startingAnimation.json";
 import { gsap } from "gsap";
 import Lottie from "react-lottie-player";
+import RootLayout from "./layout";
 
 export default function Home() {
   const homeStartAnimRef = useRef(null);
@@ -50,6 +51,8 @@ export default function Home() {
     });
   }, []);
 
+  const rootProp = "ROOT PROP"
+
   return (
     <>
       <div className="">
@@ -82,6 +85,8 @@ export default function Home() {
         <BrandsProducts />
         <AboutUs />
         <Footer />
+
+        <RootLayout rootProp={rootProp} />
       </div>
     </>
   );
