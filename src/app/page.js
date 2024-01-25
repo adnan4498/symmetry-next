@@ -13,58 +13,55 @@ import { gsap } from "gsap";
 import Lottie from "react-lottie-player";
 
 export default function Home() {
-  const webStartAnimationRef = useRef(null);
-  const loaderRefHome = useRef(null);
-  const lottieAnimationRef = useRef(null);
-
-  // asd
+  const homeStartAnimRef = useRef(null);
+  const homeRiveAnimRef = useRef(null);
 
   useEffect(() => {
-    const webStartAnimation = webStartAnimationRef.current;
+    /* the word "the" before animationRef is used to get a reference to animationRef. to be styled below in code. 
+       refs cannot be stlyled directly but after making a reference, we can style them.*/
+    const theHomeStartAnimRef = homeStartAnimRef.current;
     const body = document.body;
 
-    const animationtl = gsap.timeline({
-      repeat : 1,
-      repeatDelay : 0,
-      yoyo : true
-    })
-
-    gsap.to(webStartAnimationRef.current, {
+    gsap.to(homeStartAnimRef.current, {
       y: "700px",
-      delay: 5,
-      duration: 2,
+      delay: 2.2,
+      duration: 1,
       // ease: "power1.inOut",
       onComplete: () => {
-        webStartAnimation.style.display = "none";
+        theHomeStartAnimRef.style.display = "none";
         body.style.overflow = "visible";
       },
     });
 
-    animationtl.from(lottieAnimationRef.current ,{
-      duration : 1.5,
-      opacity : 0,
-    })
+    const insideAnimation = gsap.timeline({
+      repeat: 1,
+      repeatDelay: 0,
+      yoyo: true,
+    });
 
-    animationtl.to(lottieAnimationRef.current ,{
-      duration : 1.5,
-      opacity : 1,
-    })
+    insideAnimation.from(homeRiveAnimRef.current, {
+      duration: 0.7,
+      opacity: 0,
+    });
 
+    insideAnimation.to(homeRiveAnimRef.current, {
+      duration: 0.7,
+      opacity: 1,
+    });
   }, []);
 
   return (
     <>
       <div className="">
         <div
-          ref={webStartAnimationRef}
+          ref={homeStartAnimRef}
           className="bg-black absolute w-full h-[100vh] z-50"
         >
           <div
             className="bg-black flex justify-center items-center h-[100vh]"
             // style={{ transform: "translateY(700px)" }}
-            ref={loaderRefHome}
           >
-            <div ref={lottieAnimationRef} className="opacity-0 w-96 h-96">
+            <div ref={homeRiveAnimRef} className="opacity-0 w-96 h-96">
               <Lottie
                 loop
                 animationData={startingAnimation}
@@ -72,7 +69,7 @@ export default function Home() {
                 // style={{ width: 350, height: 350 }}
               />
             </div>
-          </div>{" "}
+          </div>
         </div>
 
         <Navbar className="" />

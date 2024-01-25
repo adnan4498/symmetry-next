@@ -51,18 +51,6 @@ const HeadingAndSwipper = ({
   const [linkName, setLinkName] = useState("");
   const blueDiv = useRef(null);
 
-
-  useEffect(() => {
-    if (isAnimating) {
-      const timeoutId = setTimeout(() => {
-        router.push("transformation");
-      }, 1500); // 2 seconds delay
-
-      return () => clearTimeout(timeoutId); // Clear the timeout if component unmounts
-    }
-  }, [isAnimating, linkName, router]);
-
-
   const blueAnimationFuncStart = () => {
     console.log("hello");
 
@@ -74,7 +62,10 @@ const HeadingAndSwipper = ({
 
     lottieTl.from(lottieAnimationCompanyRef.current, {
       duration: 2,
-      opacity: 0, // Check this value
+      opacity: 0, 
+      onComplete : () =>{
+        router.push("transformation");
+      }
     });
 
     lottieTl.to(lottieAnimationCompanyRef.current, {
@@ -91,7 +82,7 @@ const HeadingAndSwipper = ({
   };
 
   const loaderAnimationFunc = () => {
-    console.log("hello");
+    console.log("hello outside transform");
     // const container = document.getElementById("page-loader");
     const container = loaderRefCompany.current;
     const body = document.body;
@@ -101,7 +92,7 @@ const HeadingAndSwipper = ({
 
     var tl = gsap.timeline({
       repeat: 1,
-      repeatDelay: 3,
+      repeatDelay: 2,
       yoyo: true,
       onStart: () => {
         blueAnimationFuncStart();
@@ -111,7 +102,7 @@ const HeadingAndSwipper = ({
         container.style.display = "none";
         blueAnimationFuncEnd();
         body.style.overflow = "visible";
-        container.style.pointerEvents = "auto";
+        container.style.pointerEvents = "auto"; 
         setIsAnimating(false);
       },
     });
@@ -120,7 +111,7 @@ const HeadingAndSwipper = ({
       y: "800px",
       backgroundColor: "black",
       color: "black",
-      duration: 1,
+      duration: 0.7,
       ease: "power1.inOut",
       zIndex: 50,
       onComplete: () => {
@@ -134,7 +125,7 @@ const HeadingAndSwipper = ({
         y: "-180px",
         backgroundColor: "black",
         color: "black",
-        duration: 1,
+        duration: 0.7,
         ease: "power1.inOut",
         zIndex: 50,
       },
@@ -163,7 +154,7 @@ const HeadingAndSwipper = ({
             />
           </div>
         </div>
-        <div className="md:mx-12 mx-3 lg:mx-auto lg:w-[55%] ">
+        <div className="md:mx-12 mx-3 lg:mx-auto lg:w-[57%] ">
           <div className="mt-5">
             <div className=" border-b border-green-500 pt-6">
               <p className="text-3xl xl:text-4xl mb-4 text-black pillat-normal">
@@ -260,7 +251,7 @@ const HeadingAndSwipper = ({
                         } `}
                       >
                         <div className="">
-                          <h2 className="text-3xl w-[120px] xl:w-[170px]  flex items-end min-h-[110px] mb-2 leading-[30px] pillat-thin">
+                          <h2 className="text-3xl w-[120px] xl:w-[170px] flex items-end min-h-[110px] mb-2 leading-[30px] pillat-thin">
                             {item.h2}
                           </h2>
                           <p className=" text-xs leading-[17px] pillat-normal">

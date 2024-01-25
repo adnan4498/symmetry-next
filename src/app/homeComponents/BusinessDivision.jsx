@@ -114,7 +114,7 @@ const BusinessDivision = () => {
           swipperGap={swipperGap}
           animation={interactiveAnima}
         />
-        {/* <HeadingAndSwipper
+        <HeadingAndSwipper
           commerceTitle={commerceTitle}
           commerceHeading={commerceHeading}
           commerceText={commerceText}
@@ -123,7 +123,7 @@ const BusinessDivision = () => {
           slidesPerView={slidesPerView}
           swipperGap={swipperGap}
           commerceSwipperShow={commerceSwipperShow}
-        /> */}
+        />
         <AnimationAndSwipper
           mobilityTitle={mobilityTitle}
           mobilityHeading={mobilityHeading}

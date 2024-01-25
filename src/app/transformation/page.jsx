@@ -14,6 +14,7 @@ import iotAnimation from "../../../public/symmetryAnimations/iotAnimation.json";
 import digitalAnimation from "../../../public/symmetryAnimations/digitalStrategy.json";
 import techConsultingAnimation from "../../../public/symmetryAnimations/techConsultingAnimation.json";
 import consultancyAnimation from "../../../public/symmetryAnimations/consultancyAnimation.json";
+import startingAnimation from "../../../public/symmetryAnimations/startingAnimation.json";
 
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
@@ -28,8 +29,9 @@ const page = () => {
   const textDiv = useRef();
   const pinkDiv = useRef();
   const animationDiv = useRef();
-  
-  const blueDiv = useRef(null)
+
+  const transformationStartBlackRef = useRef(null);
+  const transformationRiveAnimRef = useRef(null);
 
   useEffect(() => {
     let mm = gsap.matchMedia();
@@ -130,18 +132,38 @@ const page = () => {
   }, []);
 
   useEffect(() => {
-    const theDiv = document.getElementById("blueDivId");
-    const body = document.body
+    /* the word "the" before animationRef is used to get a reference to animationRef. to be styled below in code. 
+       refs cannot be stlyled directly but after making a reference, we can style them.*/
+    const theTransformationBlackAnimation = transformationStartBlackRef.current;
+    const body = document.body;
 
-    gsap.to(blueDiv.current, {
+    gsap.to(transformationStartBlackRef.current, {
       y: "1000px",
-      duration: 2,
+      delay: 1.5,
+      duration: 1.2,
       ease: "power1.inOut",
       onComplete: () => {
-        theDiv.style.display = "none";
-        body.style.overflow = "visible"
+        theTransformationBlackAnimation.style.display = "none";
+        body.style.overflow = "visible";
       },
     });
+
+    const insideAnimation = gsap.timeline({
+      repeat: 1,
+      repeatDelay: 0,
+      yoyo: true,
+    });
+
+    insideAnimation.from(transformationRiveAnimRef.current, {
+      duration: 0.5,
+      opacity: 0,
+    });
+
+    insideAnimation.to(transformationRiveAnimRef.current, {
+      duration: 0.5,
+      opacity: 1,
+    });
+
   }, []);
 
   const aboutH2 = "transformation";
@@ -190,11 +212,24 @@ const page = () => {
     <>
       <div>
         <div
-          id="blueDivId"
-          ref={blueDiv}
+          ref={transformationStartBlackRef}
           className="bg-black absolute w-full h-[200vh] z-50"
           style={{ transform: "translateY(-72px)" }}
-        ></div>
+        >
+           <div
+            className="bg-black flex justify-center items-center h-[100vh]"
+            // style={{ transform: "translateY(700px)" }}
+          >
+            <div ref={transformationRiveAnimRef} className="opacity-0 w-96 h-96">
+              <Lottie
+                loop
+                animationData={startingAnimation}
+                play
+                // style={{ width: 350, height: 350 }}
+              />
+            </div>
+          </div>
+        </div>
 
         <BlackBannerComponent aboutText={aboutText} aboutH2={aboutH2} />
         <div ref={redDiv} className="bg-white  pt-[450px]">

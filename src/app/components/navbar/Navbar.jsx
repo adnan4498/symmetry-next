@@ -45,8 +45,6 @@ const Navbar = ({ toggleRed, setToggleRed }) => {
   const socialLinksRef = useRef();
   const menuAnimationRef = useRef();
 
-  /********    Starting Black Animation    ********/
-
   useEffect(() => {
     var actionNav = gsap.to(navRef.current, {
       scrollTrigger: {
