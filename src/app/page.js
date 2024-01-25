@@ -17,6 +17,7 @@ export default function Home() {
   const homeStartAnimRef = useRef(null);
   const homeRiveAnimRef = useRef(null);
 
+
   useEffect(() => {
     /* the word "the" before animationRef is used to get a reference to animationRef. to be styled below in code. 
        refs cannot be stlyled directly but after making a reference, we can style them.*/
@@ -25,14 +26,16 @@ export default function Home() {
 
     gsap.to(homeStartAnimRef.current, {
       y: "700px",
-      delay: 2.2,
-      duration: 1,
+      delay: 2.5,
+      duration: 0.7,
       // ease: "power1.inOut",
       onComplete: () => {
         theHomeStartAnimRef.style.display = "none";
         body.style.overflow = "visible";
       },
     });
+
+    /* inside animation is the Rive animation being rendered in black animation */
 
     const insideAnimation = gsap.timeline({
       repeat: 1,
@@ -41,12 +44,12 @@ export default function Home() {
     });
 
     insideAnimation.from(homeRiveAnimRef.current, {
-      duration: 0.7,
+      duration: 0.9,
       opacity: 0,
     });
 
     insideAnimation.to(homeRiveAnimRef.current, {
-      duration: 0.7,
+      duration: 0.9,
       opacity: 1,
     });
   }, []);

@@ -41,6 +41,7 @@ export default function RootLayout({ children  , rootProp}) {
       }
     }, 3000);
 
+
     // Clear the timeout to avoid executing the function more than once. after 3 seconds scroll is enabled
     return () => clearTimeout(timeoutId);
   }, []);

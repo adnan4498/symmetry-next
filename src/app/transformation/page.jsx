@@ -133,40 +133,40 @@ const page = () => {
     mm.revert();
   }, []);
 
-  useEffect(() => {
-    /* the word "the" before animationRef is used to get a reference to animationRef. to be styled below in code. 
-       refs cannot be stlyled directly but after making a reference, we can style them.*/
-    const theTransformationBlackAnimation = transformationStartBlackRef.current;
-    const body = document.body;
+  // useEffect(() => {
+  //   /* the word "the" before animationRef is used to get a reference to animationRef. to be styled below in code. 
+  //      refs cannot be stlyled directly but after making a reference, we can style them.*/
+  //   const theTransformationBlackAnimation = transformationStartBlackRef.current;
+  //   const body = document.body;
 
-    gsap.to(transformationStartBlackRef.current, {
-      y: "1000px",
-      delay: 1.5,
-      duration: 1.2,
-      ease: "power1.inOut",
-      onComplete: () => {
-        theTransformationBlackAnimation.style.display = "none";
-        body.style.overflow = "visible";
-      },
-    });
+  //   gsap.to(transformationStartBlackRef.current, {
+  //     y: "1000px",
+  //     delay: 1.5,
+  //     duration: 1.2,
+  //     ease: "power1.inOut",
+  //     onComplete: () => {
+  //       theTransformationBlackAnimation.style.display = "none";
+  //       body.style.overflow = "visible";
+  //     },
+  //   });
 
-    const insideAnimation = gsap.timeline({
-      repeat: 1,
-      repeatDelay: 0,
-      yoyo: true,
-    });
+  //   const insideAnimation = gsap.timeline({
+  //     repeat: 1,
+  //     repeatDelay: 0,
+  //     yoyo: true,
+  //   });
 
-    insideAnimation.from(transformationRiveAnimRef.current, {
-      duration: 0.5,
-      opacity: 0,
-    });
+  //   insideAnimation.from(transformationRiveAnimRef.current, {
+  //     duration: 0.5,
+  //     opacity: 0,
+  //   });
 
-    insideAnimation.to(transformationRiveAnimRef.current, {
-      duration: 0.5,
-      opacity: 1,
-    });
+  //   insideAnimation.to(transformationRiveAnimRef.current, {
+  //     duration: 0.5,
+  //     opacity: 1,
+  //   });
 
-  }, []);
+  // }, []);
 
   const aboutH2 = "transformation";
   const aboutText =
@@ -213,7 +213,7 @@ const page = () => {
   return (
     <>
       <div>
-        <div
+        {/* <div
           ref={transformationStartBlackRef}
           className="bg-black absolute w-full h-[200vh] z-50"
           style={{ transform: "translateY(-72px)" }}
@@ -231,7 +231,7 @@ const page = () => {
               />
             </div>
           </div>
-        </div>
+        </div> */}
 
         <BlackBannerComponent aboutText={aboutText} aboutH2={aboutH2} />
         <div ref={redDiv} className="bg-white  pt-[450px]">
