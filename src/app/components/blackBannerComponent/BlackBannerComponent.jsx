@@ -603,7 +603,7 @@ const BlackBannerComponent = ({ aboutH2, aboutText }) => {
         {/******  Starting Black Animation Div  ******/}
         <div
           ref={innerNavBlackRef}
-          className="bg-black absolute w-full h-[100vh] z-50 hidden"
+          className="bg-black absolute w-full h-[100vh] z-50 "
         >
           <div
             className="bg-black flex justify-center items-center h-[100vh]"

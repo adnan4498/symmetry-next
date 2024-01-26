@@ -40,52 +40,15 @@ const HeadingAndSwipper = ({
 
   const toTransformationBlackRef = useRef(null);
   const toTransformationRiveAnimRef = useRef(null);
-  const locomotiveScrollRef = useRef(null);
 
 
   /****  Use Effect ****/
-
-  useEffect(() => {
-    const initLocomotiveScroll = async () => {
-      try {
-        const LocomotiveScroll = (await import("locomotive-scroll")).default;
-        console.log("locomotive useEffect enabled transformation");
-
-        // Create the locomotiveScroll instance
-        locomotiveScrollRef.current = new LocomotiveScroll({
-          // const locomotiveScroll = new LocomotiveScroll({
-          lenisOptions: {
-            easing: (t) => t * (2 - t),
-            lerp: 0.1,
-            smoothTouch: true,
-            smoothWheel: true,
-            duration: 1,
-          },
-        });
-
-        // Destroy the locomotiveScroll instance immediately after creation
-        // if (locomotiveScrollRef.current) {
-        //   locomotiveScrollRef.current.destroy();
-        // }
-
-        // locomotiveScrollRef.current.destroy()
-      } catch (error) {
-        console.error("Error loading Locomotive Scroll:", error);
-      }
-    };
-
-    initLocomotiveScroll();
-  }, []);
-
-  const enablingLocomotive = () =>{
-    locomotiveScrollRef.current.destroy()
-  }
 
   /**** Gsap Funcions ****/
 
   const loaderAnimationFunc = () => {
     // Scroll to the top of the page when unmount / refresh
-    window.scrollTo(0, 1650);
+    // window.scrollTo(0, 1610);
 
     const theToTransformationBlack = toTransformationBlackRef.current;
     const body = document.body;
@@ -94,26 +57,20 @@ const HeadingAndSwipper = ({
       y: "800px",
       duration: 0.7,
       onStart: () => {
-        theToTransformationBlack.style.display = "flex";
+        theToTransformationBlack.style.display = "block";
         body.style.overflow = "hidden";
-        if (locomotiveScrollRef.current) {
-          locomotiveScrollRef.current.destroy();
-        }
-
-        // locomotiveScrollRef.current.destroy();
       },
-      onComplete: () => {},
     });
 
     gsap.to(toTransformationBlackRef.current, {
       y: "-50px",
       duration: 0.7,
       onStart: () => {
-        theToTransformationBlack.style.display = "flex";
+        theToTransformationBlack.style.display = "block";
         body.style.overflow = "hidden";
       },
       onComplete: () => {
-        // router.push("transformation")
+        router.push("transformation")
       },
     });
   };
@@ -139,19 +96,9 @@ const HeadingAndSwipper = ({
       <div className="relative">
         <div
           ref={toTransformationBlackRef}
-          className="bg-black w-full h-[130vh] absolute z-50 top-0 hidden"
+          className="bg-black w-full h-[200vh] absolute z-50 top-0 hidden"
           style={{ transform: "translateY(800px)" }}
         >
-          {/* <div
-            ref={toTransformationRiveAnimRef}
-            className="opacity-0 w-96 h-96"
-          >
-            <Rive
-              src={startingAnimation}
-              loop
-              play
-            />
-          </div> */}
         </div>
 
         <div className="md:mx-12 mx-3 lg:mx-auto lg:w-[58%] ">
@@ -172,7 +119,6 @@ const HeadingAndSwipper = ({
               </span>
 
               {/*********  Laptop  *********/}
-                  <div onClick={() => enablingLocomotive()} className="bg-red-500">asdasd</div>
               <span className="border-l border-gray-400 text-black text-xs 2xl:text-sm pl-4 ml-3 w-[55%] 2xl:w-[45%] xl:max-w-[600px] 2xl:leading-[15px] mt-3 lg:inline-block hidden pillat-thin">
                 <span className="w-[100%] relative ">
                   {transformationText || commerceText}

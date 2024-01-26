@@ -20,31 +20,31 @@ export default function RootLayout({ children  , rootProp}) {
 
 
   /****   locomotive scroll is disabled for 3 seconds to ensure user do not scroll in the middle of black animation at start.   ****/
-  // useEffect(() => {
-  //   const timeoutId = setTimeout(async () => {
-  //     try {
-  //       const LocomotiveScroll = (await import("locomotive-scroll")).default;
+  useEffect(() => {
+    const timeoutId = setTimeout(async () => {
+      try {
+        const LocomotiveScroll = (await import("locomotive-scroll")).default;
 
-  //       const locomotiveScroll = new LocomotiveScroll({
-  //         lenisOptions: {
-  //           easing: (t) => t * (2 - t), // Smooth ease-out cubic function
-  //           lerp: 0.1,
-  //           smoothTouch: true,
-  //           smoothWheel: true,
-  //           duration: 1,
-  //         },
-  //       });
-  //       // locomotiveScroll.destroy();
+        const locomotiveScroll = new LocomotiveScroll({
+          lenisOptions: {
+            easing: (t) => t * (2 - t), // Smooth ease-out cubic function
+            lerp: 0.1,
+            smoothTouch: true,
+            smoothWheel: true,
+            duration: 1,
+          },
+        });
+        // locomotiveScroll.destroy();
         
-  //     } catch (error) {
-  //       console.error("Error loading Locomotive Scroll:", error);
-  //     }
-  //   }, 1000);
+      } catch (error) {
+        console.error("Error loading Locomotive Scroll:", error);
+      }
+    }, 1000);
 
 
-  //   // Clear the timeout to avoid executing the function more than once. after 3 seconds scroll is enabled
-  //   return () => clearTimeout(timeoutId);
-  // }, []);
+    // Clear the timeout to avoid executing the function more than once. after 3 seconds scroll is enabled
+    return () => clearTimeout(timeoutId);
+  }, []);
 
   return (
     <html lang="en" className="">

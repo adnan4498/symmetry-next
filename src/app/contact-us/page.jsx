@@ -1,6 +1,5 @@
 "use client";
 import { useEffect, useRef } from "react";
-import LocomotiveScroll from "locomotive-scroll";
 import BlackBannerComponent from "../components/blackBannerComponent/BlackBannerComponent";
 import Tabs from "../components/tabs/Tabs";
 import AnimationTextReversing from "../components/animationTextReversing/AnimationTextReversing";
