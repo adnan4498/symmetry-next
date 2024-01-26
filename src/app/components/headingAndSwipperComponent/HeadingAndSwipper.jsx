@@ -10,6 +10,8 @@ import Link from "next/link";
 import { gsap } from "gsap";
 import Lottie from "react-lottie-player";
 import bannerAnimation from "../../../../public/symmetryAnimations/homeBannerAnimation.json";
+import Rive from "@rive-app/react-canvas";
+import startingAnimation from "../../../../public/symmetryAnimations/starting-animation.riv";
 import { useRouter } from "next/navigation";
 
 const HeadingAndSwipper = ({
@@ -26,9 +28,97 @@ const HeadingAndSwipper = ({
   transformationSwipperShow,
   commerceSwipperShow,
 }) => {
+  const router = useRouter();
+
+  /****  Use States ****/
+
   const [active, setActive] = useState(0);
   const [arrowPrevActive, setArrowPrevActive] = useState(false);
   const [arrowNextActive, setArrowNextActive] = useState(false);
+
+  /****  Use Refs ****/
+
+  const toTransformationBlackRef = useRef(null);
+  const toTransformationRiveAnimRef = useRef(null);
+  const locomotiveScrollRef = useRef(null);
+
+
+  /****  Use Effect ****/
+
+  useEffect(() => {
+    const initLocomotiveScroll = async () => {
+      try {
+        const LocomotiveScroll = (await import("locomotive-scroll")).default;
+        console.log("locomotive useEffect enabled transformation");
+
+        // Create the locomotiveScroll instance
+        locomotiveScrollRef.current = new LocomotiveScroll({
+          // const locomotiveScroll = new LocomotiveScroll({
+          lenisOptions: {
+            easing: (t) => t * (2 - t),
+            lerp: 0.1,
+            smoothTouch: true,
+            smoothWheel: true,
+            duration: 1,
+          },
+        });
+
+        // Destroy the locomotiveScroll instance immediately after creation
+        // if (locomotiveScrollRef.current) {
+        //   locomotiveScrollRef.current.destroy();
+        // }
+
+        // locomotiveScrollRef.current.destroy()
+      } catch (error) {
+        console.error("Error loading Locomotive Scroll:", error);
+      }
+    };
+
+    initLocomotiveScroll();
+  }, []);
+
+  const enablingLocomotive = () =>{
+    locomotiveScrollRef.current.destroy()
+  }
+
+  /**** Gsap Funcions ****/
+
+  const loaderAnimationFunc = () => {
+    // Scroll to the top of the page when unmount / refresh
+    window.scrollTo(0, 1650);
+
+    const theToTransformationBlack = toTransformationBlackRef.current;
+    const body = document.body;
+
+    gsap.from(toTransformationBlackRef.current, {
+      y: "800px",
+      duration: 0.7,
+      onStart: () => {
+        theToTransformationBlack.style.display = "flex";
+        body.style.overflow = "hidden";
+        if (locomotiveScrollRef.current) {
+          locomotiveScrollRef.current.destroy();
+        }
+
+        // locomotiveScrollRef.current.destroy();
+      },
+      onComplete: () => {},
+    });
+
+    gsap.to(toTransformationBlackRef.current, {
+      y: "-50px",
+      duration: 0.7,
+      onStart: () => {
+        theToTransformationBlack.style.display = "flex";
+        body.style.overflow = "hidden";
+      },
+      onComplete: () => {
+        // router.push("transformation")
+      },
+    });
+  };
+
+  /**** Other Funcions ****/
 
   const handleActive = (swiper) => {
     setActive(swiper.realIndex);
@@ -44,117 +134,27 @@ const HeadingAndSwipper = ({
     setArrowNextActive(true);
   };
 
-  const router = useRouter();
-  const lottieAnimationCompanyRef = useRef(null);
-  const loaderRefCompany = useRef(null);
-  const [isAnimating, setIsAnimating] = useState(false);
-  const [linkName, setLinkName] = useState("");
-  const blueDiv = useRef(null);
-
-  const blueAnimationFuncStart = () => {
-    console.log("hello");
-
-    const lottieTl = gsap.timeline({
-      repeat: 1,
-      repeatDelay: 1,
-      yoyo: true,
-    });
-
-    lottieTl.from(lottieAnimationCompanyRef.current, {
-      duration: 2,
-      opacity: 0, 
-      onComplete : () =>{
-        router.push("transformation");
-      }
-    });
-
-    lottieTl.to(lottieAnimationCompanyRef.current, {
-      duration: 2.5,
-      opacity: 1, // Check this value
-    });
-  };
-
-  const blueAnimationFuncEnd = () => {
-    gsap.to(lottieAnimationCompanyRef.current, {
-      duration: 1,
-      opacity: 0,
-    });
-  };
-
-  const loaderAnimationFunc = () => {
-    console.log("hello outside transform");
-    // const container = document.getElementById("page-loader");
-    const container = loaderRefCompany.current;
-    const body = document.body;
-    container.style.pointerEvents = "none";
-
-    setIsAnimating(true);
-
-    var tl = gsap.timeline({
-      repeat: 1,
-      repeatDelay: 2,
-      yoyo: true,
-      onStart: () => {
-        blueAnimationFuncStart();
-        body.style.overflow = "hidden";
-      },
-      onComplete: () => {
-        container.style.display = "none";
-        blueAnimationFuncEnd();
-        body.style.overflow = "visible";
-        container.style.pointerEvents = "auto"; 
-        setIsAnimating(false);
-      },
-    });
-
-    tl.from(loaderRefCompany.current, {
-      y: "800px",
-      backgroundColor: "black",
-      color: "black",
-      duration: 0.7,
-      ease: "power1.inOut",
-      zIndex: 50,
-      onComplete: () => {
-        container.style.display = "flex";
-      },
-    });
-
-    tl.to(
-      loaderRefCompany.current,
-      {
-        y: "-180px",
-        backgroundColor: "black",
-        color: "black",
-        duration: 0.7,
-        ease: "power1.inOut",
-        zIndex: 50,
-      },
-      "-=0.0"
-    );
-  };
-
   return (
     <>
       <div className="relative">
         <div
-          // id="page-loader"
-          className="bg-black justify-center items-center h-[200vh] w-[100%] absolute hidden top-0  z-50"
+          ref={toTransformationBlackRef}
+          className="bg-black w-full h-[130vh] absolute z-50 top-0 hidden"
           style={{ transform: "translateY(800px)" }}
-          ref={loaderRefCompany}
         >
-          <div
-            ref={lottieAnimationCompanyRef}
-            className="opacity-0 w-96 h-96 flex justify-center items-center"
+          {/* <div
+            ref={toTransformationRiveAnimRef}
+            className="opacity-0 w-96 h-96"
           >
-            <Lottie
+            <Rive
+              src={startingAnimation}
               loop
-              // animationData={bannerAnimation}
               play
-              // style={{ width: 350, height: 350 }}
             />
-          </div>
+          </div> */}
         </div>
-        <div className="md:mx-12 mx-3 lg:mx-auto lg:w-[57%] ">
+
+        <div className="md:mx-12 mx-3 lg:mx-auto lg:w-[58%] ">
           <div className="mt-5">
             <div className=" border-b border-green-500 pt-6">
               <p className="text-3xl xl:text-4xl mb-4 text-black pillat-normal">
@@ -172,7 +172,7 @@ const HeadingAndSwipper = ({
               </span>
 
               {/*********  Laptop  *********/}
-
+                  <div onClick={() => enablingLocomotive()} className="bg-red-500">asdasd</div>
               <span className="border-l border-gray-400 text-black text-xs 2xl:text-sm pl-4 ml-3 w-[55%] 2xl:w-[45%] xl:max-w-[600px] 2xl:leading-[15px] mt-3 lg:inline-block hidden pillat-thin">
                 <span className="w-[100%] relative ">
                   {transformationText || commerceText}

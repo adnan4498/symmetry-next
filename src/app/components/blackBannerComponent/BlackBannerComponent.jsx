@@ -550,7 +550,7 @@ const BlackBannerComponent = ({ aboutH2, aboutText }) => {
     tl.to(
       endingBlackRef.current,
       {
-        y: "-180px",
+        y: "-150px",
         backgroundColor: "black",
         color: "black",
         duration: 0.7,
