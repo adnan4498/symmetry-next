@@ -29,11 +29,9 @@ export default function Home() {
 
     gsap.to(homeStartAnimRef.current, {
       y: "850px",
-      // delay: 2.5,
-      // duration: 0.1,
+      delay: 2.5,
+      duration: 0.9,
       // ease: "power1.inOut",
-      delay: 0.1,
-      duration: 0.1,
       onComplete: () => {
         theHomeStartAnimRef.style.display = "none";
         body.style.overflow = "visible";

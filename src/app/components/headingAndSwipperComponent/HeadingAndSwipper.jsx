@@ -48,14 +48,13 @@ const HeadingAndSwipper = ({
 
   const loaderAnimationFunc = () => {
     // Scroll to the top of the page when unmount / refresh
-    // window.scrollTo(0, 1610);
+    // window.scrollTo(0, 1650);
 
     const theToTransformationBlack = toTransformationBlackRef.current;
     const body = document.body;
 
     gsap.from(toTransformationBlackRef.current, {
       y: "800px",
-      duration: 0.7,
       onStart: () => {
         theToTransformationBlack.style.display = "block";
         body.style.overflow = "hidden";
@@ -63,17 +62,15 @@ const HeadingAndSwipper = ({
     });
 
     gsap.to(toTransformationBlackRef.current, {
-      y: "-50px",
+      y: "-350px",
       duration: 0.7,
-      onStart: () => {
-        theToTransformationBlack.style.display = "block";
-        body.style.overflow = "hidden";
-      },
       onComplete: () => {
         router.push("transformation")
       },
     });
   };
+
+  // loaderAnimationFunc()
 
   /**** Other Funcions ****/
 

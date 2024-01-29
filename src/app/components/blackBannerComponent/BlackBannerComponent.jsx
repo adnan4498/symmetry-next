@@ -23,7 +23,6 @@ gsap.registerPlugin(ScrollTrigger);
 const BlackBannerComponent = ({ aboutH2, aboutText }) => {
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
-  const [isAnimating, setIsAnimating] = useState(false);
 
   const blackDiv = useRef();
   const redDiv = useRef();
@@ -318,7 +317,7 @@ const BlackBannerComponent = ({ aboutH2, aboutText }) => {
     const initLocomotiveScroll = async () => {
       try {
         const LocomotiveScroll = (await import("locomotive-scroll")).default;
-        console.log("locomotive useEffect enabled transformation");
+        // console.log("locomotive useEffect enabled transformation");
         locomotiveScrollRef.current = new LocomotiveScroll({
           lenisOptions: {
             easing: (t) => t * (2 - t),
@@ -478,8 +477,8 @@ const BlackBannerComponent = ({ aboutH2, aboutText }) => {
 
     gsap.to(innerNavBlackRef.current, {
       y: "700px",
-      delay: 1.5,
-      duration: 1,
+      delay: 2.5,
+      duration: 0.9,
       // ease: "power1.inOut",
       onComplete: () => {
         theInnerNavBlackRef.style.display = "none";
@@ -487,6 +486,8 @@ const BlackBannerComponent = ({ aboutH2, aboutText }) => {
       },
     });
 
+    /* The Rive Aniamtion inside the black screen */
+    
     const insideAnimation = gsap.timeline({
       repeat: 1,
       repeatDelay: 0,
@@ -494,12 +495,12 @@ const BlackBannerComponent = ({ aboutH2, aboutText }) => {
     });
 
     insideAnimation.from(innerNavAnimRef.current, {
-      duration: 1.5,
+      duration: 0.9,
       opacity: 0,
     });
 
     insideAnimation.to(innerNavAnimRef.current, {
-      duration: 1.5,
+      duration: 0.9,
       opacity: 1,
     });
   }, []);
@@ -512,86 +513,35 @@ const BlackBannerComponent = ({ aboutH2, aboutText }) => {
     const body = document.body;
     container.style.pointerEvents = "none";
 
-    setIsAnimating(true);
-
-    var tl = gsap.timeline({
-      repeat: 1,
-      repeatDelay: 10, /* increased repeat delay so that the black animation dosent repeat while linking back to home */
-      yoyo: false,
-      onStart: () => {
-        blueAnimationFuncStart();
-        body.style.overflow = "hidden";
-        if (locomotiveScrollRef.current) {
-          console.log("locomotive destroyed in black banner");
-          locomotiveScrollRef.current.destroy();
-        }
-      },
-      onComplete: () => {
-        container.style.display = "none";
-        blueAnimationFuncEnd();
-        body.style.overflow = "visible";
-        container.style.pointerEvents = "auto";
-        setIsAnimating(false);
-      },
-    });
-
-    tl.from(endingBlackRef.current, {
+    gsap.from(endingBlackRef.current, {
       y: "800px",
       backgroundColor: "black",
       color: "black",
       duration: 0.7,
       // ease: "power1.inOut",
       zIndex: 50,
-      onComplete: () => {
+      onStart: () => {
         container.style.display = "flex";
+        body.style.overflow = "hidden";
+        if (locomotiveScrollRef.current) {
+          // console.log("locomotive destroyed in black banner");
+          locomotiveScrollRef.current.destroy();
+        }
       },
     });
 
-    tl.to(
-      endingBlackRef.current,
-      {
-        y: "-150px",
-        backgroundColor: "black",
-        color: "black",
-        duration: 0.7,
-        // ease: "power1.inOut",
-        zIndex: 50,
-        onComplete: () => {
-          router.push("/");
-        },
+    gsap.to(endingBlackRef.current, {
+      y: "-50px",
+      backgroundColor: "black",
+      color: "black",
+      duration: 0.7,
+      // ease: "power1.inOut",
+      zIndex: 50,
+      onComplete: () => {
+        router.push("/");
+        console.log("pushed to home ");
       },
-      "-=0.0"
-    );
-
-    const blueAnimationFuncStart = () => {
-      const lottieTl = gsap.timeline({
-        repeat: 1,
-        repeatDelay: 0,
-        yoyo: true,
-      });
-
-      lottieTl.from(endingBlackRivAnimRef.current, {
-        duration: 1,
-        opacity: 0,
-      });
-
-      lottieTl.to(endingBlackRivAnimRef.current, {
-        duration: 1,
-        opacity: 1,
-        // onComplete : ()=>{
-        //   router.push("/")
-        // }
-      });
-    };
-
-    const blueAnimationFuncEnd = () => {
-      gsap.to(endingBlackRivAnimRef.current, {
-        duration: 1,
-        opacity: 0,
-      });
-    };
-
-    // startNavigationTimer();
+    });
   };
 
   return (
@@ -603,13 +553,13 @@ const BlackBannerComponent = ({ aboutH2, aboutText }) => {
         {/******  Starting Black Animation Div  ******/}
         <div
           ref={innerNavBlackRef}
-          className="bg-black absolute w-full h-[100vh] z-50 "
+          className="bg-black absolute w-[110%] left-[-10px] top-[-10px] h-[110vh] z-50 "
         >
           <div
-            className="bg-black flex justify-center items-center h-[100vh]"
+            className="flex justify-center items-center h-[100vh]"
             // style={{ transform: "translateY(700px)" }}
           >
-            <div ref={innerNavAnimRef} className="opacity-0 w-96 h-96">
+            <div ref={innerNavAnimRef} className="opacity-0 w-56 h-56">
               <Lottie
                 loop
                 animationData={startingAnimation}
@@ -622,21 +572,9 @@ const BlackBannerComponent = ({ aboutH2, aboutText }) => {
         <div
           // id="page-loader"
           className="bg-black justify-center items-center h-[200vh] w-[200%] absolute hidden top-0 left-[-50px] z-50"
-          style={{ transform: "translateY(800px)" ,  }}
+          style={{ transform: "translateY(800px)" }}
           ref={endingBlackRef}
-        >
-          <div
-            ref={endingBlackRivAnimRef}
-            className="opacity-0 w-96 h-96 flex justify-center items-center"
-          >
-            <Lottie
-              loop
-              // animationData={bannerAnimation}
-              play
-              // style={{ width: 350, height: 350 }}
-            />
-          </div>
-        </div>
+        ></div>
         <div className="">
           <div className="flex justify-between items-center gap-3">
             {/* <Link href="/"> */}
