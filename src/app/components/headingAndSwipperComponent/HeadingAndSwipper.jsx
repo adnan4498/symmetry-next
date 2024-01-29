@@ -62,7 +62,7 @@ const HeadingAndSwipper = ({
     });
 
     gsap.to(toTransformationBlackRef.current, {
-      y: "-350px",
+      y: "-355px",
       duration: 0.7,
       onComplete: () => {
         router.push("transformation")
