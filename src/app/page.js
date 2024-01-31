@@ -28,7 +28,7 @@ export default function Home() {
     const body = document.body;
 
     gsap.to(homeStartAnimRef.current, {
-      y: "850px",
+      y: "990px",
       delay: 2.5,
       duration: 0.9,
       // ease: "power1.inOut",

@@ -476,7 +476,7 @@ const BlackBannerComponent = ({ aboutH2, aboutText }) => {
     const body = document.body;
 
     gsap.to(innerNavBlackRef.current, {
-      y: "700px",
+      y: "950px",
       delay: 2.5,
       duration: 0.9,
       // ease: "power1.inOut",
@@ -553,7 +553,7 @@ const BlackBannerComponent = ({ aboutH2, aboutText }) => {
         {/******  Starting Black Animation Div  ******/}
         <div
           ref={innerNavBlackRef}
-          className="bg-black absolute w-[110%] left-[-10px] top-[-10px] h-[110vh] z-50 "
+          className="bg-black absolute md:w-[110%] sm:w-[130%] w-[150%] md:left-[-60px] left-[-90px] top-[-10px] h-[110vh] z-50 "
         >
           <div
             className="flex justify-center items-center h-[100vh]"
