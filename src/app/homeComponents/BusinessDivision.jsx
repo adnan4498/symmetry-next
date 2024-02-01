@@ -25,6 +25,12 @@ const BusinessDivision = () => {
   const hasKnowmore = "know more --";
   const businessMarque = true;
 
+  const interactiveTitle = "interactive marketing";
+  const interactiveHeading = "enhancing customer <br /> relationships";
+  const interactiveText =
+    "our unrivaled insights, innovative thinking, strategic approach, content services and technology solutions can help you create meaningful and lasting relationships with your customers.";
+  const interactiveAnima = interactiveAnimation;
+
   const commerceTitle = "commerce";
   const commerceHeading = "empowering efficient <br /> growth";
   const commerceText =
@@ -35,17 +41,11 @@ const BusinessDivision = () => {
   const mobilityText =
     "mobile technologies have transformed business processes and capabilities. we operate at the crossroads of mobility, digital technology and operations to help you create value for your customers ";
 
-  const interactiveTitle = "interactive marketing";
-  const interactiveHeading = "enhancing customer <br /> relationships";
-  const interactiveText =
-    "our unrivaled insights, innovative thinking, strategic approach, content services and technology solutions can help you create meaningful and lasting relationships with your customers.";
-  const interactiveAnima = interactiveAnimation;
-
   const businessTitle = "business divisions";
   const businessText =
     "we provide digital products and services that solve today’s challenges by leveraging your organization’s unique potential to create tomorrow’s opportunities and deliver real business results.";
 
-  const swipperContent = [
+  const transformationSwipperContent = [
     {
       id: 0,
       h2: "digital strategy",
@@ -78,6 +78,54 @@ const BusinessDivision = () => {
     },
   ];
 
+  const interactiveSwipperContent = [
+    {
+      id: 0,
+      h2: "strategy",
+      text: "Personalizing brand, marketing and digital experiences to build",
+    },
+    {
+      id: 1,
+      h2: "digital advertising",
+      text: "Deploying data-backed media decisions that drive unprecedented visibility, enhanced business results and maximized return on investment",
+    },
+    {
+      id: 2,
+      h2: "creative & content",
+      text: "Crafting custom-branded experiences through engaging, interactive and immersive content across digital channels",
+    },
+    {
+      id: 3,
+      h2: "design",
+      text: "Creating memorable immersive experiences by harnessing creativity and technology",
+    },
+    {
+      id: 4,
+      h2: "social media marketing",
+      text: "Nurturing online communities by listening and engaging with the right audience, backed by best-in-class practices",
+    },
+    {
+      id: 5,
+      h2: "performance marketing",
+      text: "Cultivating data-driven, technology-powered, personalized experiences for every customer that drive the most bang for the buck",
+    },
+    {
+      id: 6,
+      h2: "influencer marketing",
+      text: "Connecting with the right influencer at the right time, to curate captivating stories told by the right people",
+    },
+    {
+      id: 7,
+      h2: "digital pr",
+      text: "managing relationships, outreach and generating effective persuasive content that elevates brand reputation and profile",
+    },
+    {
+      id: 8,
+      h2: "search",
+      text: "Leveraging knowledge, experience and expertise to deliver high-quality strategies that aid discovery and yield results",
+    },
+  ];
+
   const slidesPerView = "3";
   const swipperGap = "20";
 
@@ -98,7 +146,7 @@ const BusinessDivision = () => {
           transformationHeading={transformationHeading}
           transformationText={transformationText}
           hasKnowmore={hasKnowmore}
-          swipperContent={swipperContent}
+          swipperContent={transformationSwipperContent}
           slidesPerView={slidesPerView}
           swipperGap={swipperGap}
           knowMoreLink={"transformation"}
@@ -109,7 +157,7 @@ const BusinessDivision = () => {
           interactiveHeading={interactiveHeading}
           interactiveText={interactiveText}
           aasKnowmore={"know more"}
-          swipperContent={swipperContent}
+          swipperContent={interactiveSwipperContent}
           slidesPerView={slidesPerView}
           swipperGap={swipperGap}
           animation={interactiveAnima}
@@ -119,7 +167,7 @@ const BusinessDivision = () => {
           commerceHeading={commerceHeading}
           commerceText={commerceText}
           hasKnowmore={hasKnowmore}
-          swipperContent={swipperContent}
+          swipperContent={transformationSwipperContent}
           slidesPerView={slidesPerView}
           swipperGap={swipperGap}
           commerceSwipperShow={commerceSwipperShow}
@@ -129,7 +177,7 @@ const BusinessDivision = () => {
           mobilityHeading={mobilityHeading}
           mobilityText={mobilityText}
           aasKnowmore={"know more"}
-          swipperContent={swipperContent}
+          swipperContent={transformationSwipperContent}
           slidesPerView={slidesPerView}
           swipperGap={swipperGap}
           animation={mobilityAnimation}

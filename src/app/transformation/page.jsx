@@ -133,41 +133,6 @@ const page = () => {
     mm.revert();
   }, []);
 
-  // useEffect(() => {
-  //   /* the word "the" before animationRef is used to get a reference to animationRef. to be styled below in code. 
-  //      refs cannot be stlyled directly but after making a reference, we can style them.*/
-  //   const theTransformationBlackAnimation = transformationStartBlackRef.current;
-  //   const body = document.body;
-
-  //   gsap.to(transformationStartBlackRef.current, {
-  //     y: "1000px",
-  //     delay: 1.5,
-  //     duration: 1.2,
-  //     ease: "power1.inOut",
-  //     onComplete: () => {
-  //       theTransformationBlackAnimation.style.display = "none";
-  //       body.style.overflow = "visible";
-  //     },
-  //   });
-
-  //   const insideAnimation = gsap.timeline({
-  //     repeat: 1,
-  //     repeatDelay: 0,
-  //     yoyo: true,
-  //   });
-
-  //   insideAnimation.from(transformationRiveAnimRef.current, {
-  //     duration: 0.5,
-  //     opacity: 0,
-  //   });
-
-  //   insideAnimation.to(transformationRiveAnimRef.current, {
-  //     duration: 0.5,
-  //     opacity: 1,
-  //   });
-
-  // }, []);
-
   const aboutH2 = "transformation";
   const aboutText =
     "Digital Technology can move mountains, shape culture, and change people’s perceptions. We envision a future that leverages the best of technology to transformative experiences that aren't possible without it.";
@@ -213,26 +178,6 @@ const page = () => {
   return (
     <>
       <div>
-        {/* <div
-          ref={transformationStartBlackRef}
-          className="bg-black absolute w-full h-[200vh] z-50"
-          style={{ transform: "translateY(-72px)" }}
-        >
-           <div
-            className="bg-black flex justify-center items-center h-[100vh]"
-            // style={{ transform: "translateY(700px)" }}
-          >
-            <div ref={transformationRiveAnimRef} className="opacity-0 w-96 h-96">
-              <Lottie
-                loop
-                animationData={startingAnimation}
-                play
-                // style={{ width: 350, height: 350 }}
-              />
-            </div>
-          </div>
-        </div> */}
-
         <BlackBannerComponent aboutText={aboutText} aboutH2={aboutH2} />
         <div ref={redDiv} className="bg-white  pt-[450px]">
           <div

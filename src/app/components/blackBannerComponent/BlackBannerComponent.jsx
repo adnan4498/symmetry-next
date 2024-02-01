@@ -18,6 +18,7 @@ import Rive from "@rive-app/react-canvas";
 import RiveAnimation from "../../../../public/symmetryAnimations/banner-Rive.riv";
 import startingAnimation from "../../../../public/symmetryAnimations/startingAnimation.json";
 import { useRouter } from "next/navigation";
+import GsapTopAnimation from "../gsapComponent/GsapTopAnimation";
 
 gsap.registerPlugin(ScrollTrigger);
 const BlackBannerComponent = ({ aboutH2, aboutText }) => {
@@ -32,11 +33,7 @@ const BlackBannerComponent = ({ aboutH2, aboutText }) => {
   const pinkDiv = useRef();
   const animationDiv = useRef();
 
-  const innerNavBlackRef = useRef(null);
-  const innerNavAnimRef = useRef(null);
-
   const endingBlackRef = useRef(null);
-  const endingBlackRivAnimRef = useRef(null);
   const locomotiveScrollRef = useRef(null);
 
   /******  toggeling drawer code and antd sub menu items  *******/
@@ -467,44 +464,6 @@ const BlackBannerComponent = ({ aboutH2, aboutText }) => {
     mm.revert();
   }, []);
 
-  /******  this is the starting black animation , when entering the page   ******/
-
-  useEffect(() => {
-    /* the word "the" before animationRef is used to get a reference to animationRef. to be styled below in code. 
-       refs cannot be stlyled directly but after making a reference, we can style them.*/
-    const theInnerNavBlackRef = innerNavBlackRef.current;
-    const body = document.body;
-
-    gsap.to(innerNavBlackRef.current, {
-      y: "950px",
-      delay: 2.5,
-      duration: 0.9,
-      // ease: "power1.inOut",
-      onComplete: () => {
-        theInnerNavBlackRef.style.display = "none";
-        body.style.overflow = "visible";
-      },
-    });
-
-    /* The Rive Aniamtion inside the black screen */
-    
-    const insideAnimation = gsap.timeline({
-      repeat: 1,
-      repeatDelay: 0,
-      yoyo: true,
-    });
-
-    insideAnimation.from(innerNavAnimRef.current, {
-      duration: 0.9,
-      opacity: 0,
-    });
-
-    insideAnimation.to(innerNavAnimRef.current, {
-      duration: 0.9,
-      opacity: 1,
-    });
-  }, []);
-
   /******  this function will take back to home with black animation  ******/
 
   const toHomeAnimFunc = () => {
@@ -546,29 +505,14 @@ const BlackBannerComponent = ({ aboutH2, aboutText }) => {
 
   return (
     <>
+      {/* Starting Animation */}
+
+      <GsapTopAnimation />
+
       <div
         ref={blackDiv}
         className="bg-black h-[350px] lg:h-[370px] text-white pt-10 md:pl-10 pl-3 fixed w-full z-30"
       >
-        {/******  Starting Black Animation Div  ******/}
-        <div
-          ref={innerNavBlackRef}
-          className="bg-black absolute md:w-[110%] sm:w-[130%] w-[150%] md:left-[-60px] left-[-90px] top-[-10px] h-[110vh] z-50 "
-        >
-          <div
-            className="flex justify-center items-center h-[100vh]"
-            // style={{ transform: "translateY(700px)" }}
-          >
-            <div ref={innerNavAnimRef} className="opacity-0 w-56 h-56">
-              <Lottie
-                loop
-                animationData={startingAnimation}
-                play
-                // style={{ width: 350, height: 350 }}
-              />
-            </div>
-          </div>
-        </div>
         <div
           // id="page-loader"
           className="bg-black justify-center items-center h-[200vh] w-[200%] absolute hidden top-0 left-[-50px] z-50"

@@ -8,6 +8,7 @@ import "swiper/css/navigation";
 import Link from "next/link";
 
 import { gsap } from "gsap";
+import GsapBottomAnimation from "../gsapComponent/GsapBottomAnimation"
 import Lottie from "react-lottie-player";
 import bannerAnimation from "../../../../public/symmetryAnimations/homeBannerAnimation.json";
 import Rive from "@rive-app/react-canvas";
@@ -30,49 +31,15 @@ const HeadingAndSwipper = ({
 }) => {
   const router = useRouter();
 
-  /****  Use States ****/
-
   const [active, setActive] = useState(0);
   const [arrowPrevActive, setArrowPrevActive] = useState(false);
   const [arrowNextActive, setArrowNextActive] = useState(false);
+  const [triggerBottomAnimation, setTriggerBottomAnimation] = useState(false);
 
-  /****  Use Refs ****/
-
-  const toTransformationBlackRef = useRef(null);
-  const toTransformationRiveAnimRef = useRef(null);
-
-
-  /****  Use Effect ****/
-
-  /**** Gsap Funcions ****/
-
-  const loaderAnimationFunc = () => {
-    // Scroll to the top of the page when unmount / refresh
-    // window.scrollTo(0, 1650);
-
-    const theToTransformationBlack = toTransformationBlackRef.current;
-    const body = document.body;
-
-    gsap.from(toTransformationBlackRef.current, {
-      y: "800px",
-      onStart: () => {
-        theToTransformationBlack.style.display = "block";
-        body.style.overflow = "hidden";
-      },
-    });
-
-    gsap.to(toTransformationBlackRef.current, {
-      y: "-355px",
-      duration: 0.7,
-      onComplete: () => {
-        router.push("transformation")
-      },
-    });
+  const triggerBotAnimFunc = () => {
+    setTriggerBottomAnimation(true)
   };
 
-  // loaderAnimationFunc()
-
-  /**** Other Funcions ****/
 
   const handleActive = (swiper) => {
     setActive(swiper.realIndex);
@@ -88,15 +55,13 @@ const HeadingAndSwipper = ({
     setArrowNextActive(true);
   };
 
+  console.log(triggerBottomAnimation , "animation state")
+
   return (
     <>
       <div className="relative">
-        <div
-          ref={toTransformationBlackRef}
-          className="bg-black w-full h-[200vh] absolute z-50 top-0 hidden"
-          style={{ transform: "translateY(800px)" }}
-        >
-        </div>
+      {triggerBottomAnimation && <GsapBottomAnimation /> }
+        
 
         <div className="md:mx-12 mx-3 lg:mx-auto lg:w-[58%] ">
           <div className="mt-5">
@@ -161,14 +126,14 @@ const HeadingAndSwipper = ({
                     spaceBetween: 20,
                   },
                 }}
-                modules={[Autoplay, Navigation]}
+                // modules={[Autoplay, Navigation]}
                 speed={700}
                 loop={true}
                 onSlideChange={handleActive}
-                autoplay={{
-                  delay: 1000,
-                  pauseOnMouseEnter: true,
-                }}
+                // autoplay={{
+                //   delay: 1000,
+                //   pauseOnMouseEnter: true,
+                // }}
                 navigation={{
                   nextEl: ".swiper-button-next",
                   prevEl: ".swiper-button-prev",
@@ -180,7 +145,7 @@ const HeadingAndSwipper = ({
                   <SwiperSlide
                     key={item.id}
                     onClick={() => {
-                      loaderAnimationFunc();
+                      triggerBotAnimFunc();
                     }}
                   >
                     <div

@@ -29,7 +29,7 @@ import Lottie from "react-lottie-player";
 import Navbar2 from "../components/navbar2/Navbar2";
 import Rive from "@rive-app/react-canvas";
 
-const Company = () => {
+const page = () => {
   const blackDiv = useRef();
   const redDiv = useRef();
   const aboutDiv = useRef();
@@ -38,34 +38,54 @@ const Company = () => {
   const pinkDiv = useRef();
   const animationDiv = useRef();
 
-  const aboutH2 = "about us";
+  const aboutH2 = "interactive marketing";
   const aboutText =
-    "symmetry group is a digital technology and experiences company that specializes in digital products and services. Our prime focus is on transformation and digitalization of marketing, sales and other consumer centric functions of organizations.";
+    "we offer a unified platform of technology solutions, creative thinking, brand activation, user experience design, and management services that help organizations build better relationships with their customers.";
 
   const tabsData = [
     {
       id: 0,
-      item: "company",
+      item: "strategy",
       refId: "#companyTabRef",
     },
     {
       id: 1,
-      item: "vision",
+      item: "digital advertising",
       refId: "#visionTabRef",
     },
     {
       id: 2,
-      item: "mission",
+      item: "creative & content",
       refId: "#missionTabRef",
     },
     {
       id: 3,
-      item: "board of directors",
+      item: "design",
       refId: "#boardDirectorsTabRef",
     },
     {
       id: 4,
-      item: "initiatives",
+      item: "social media marketing",
+      refId: "#initiativesTabRef",
+    },
+    {
+      id: 5,
+      item: "performance marketing",
+      refId: "#initiativesTabRef",
+    },
+    {
+      id: 6,
+      item: "influencer marketing",
+      refId: "#initiativesTabRef",
+    },
+    {
+      id: 7,
+      item: "digital pr",
+      refId: "#initiativesTabRef",
+    },
+    {
+      id: 8,
+      item: "search",
       refId: "#initiativesTabRef",
     },
   ];
@@ -231,34 +251,30 @@ const Company = () => {
             >
               <div className="text-black">
                 <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light pillat-normal">
-                  company
+                  strategy
                 </h2>
               </div>
               <div className="text-gray-500 text-[14px] pillat-normal">
                 <p>
-                  with expertise in digital strategy, consulting,
-                  transformation, digital commerce, data science, mobility,
-                  retail/research & interactive marketing, the company offers a
-                  complete suite assisting its clients at all stages of their
-                  digital journeys to ensure our partner's success, we focus on
-                  four core areas:
+                  technology and data are the bridges between new media and how
+                  consumers live their lives. with insights, we can personalize
+                  your brand, marketing and digital experiences to empower your
+                  customers with authenticity, value, convenience and choice.
                 </p>
               </div>
               <div className="text-gray-500 pillat-normal">
                 <ul className="flex flex-col gap-2">
                   <li>
-                    <span className="text-green-500 mr-1">O</span>{" "}
-                    transformation
+                    <span className="text-green-500 mr-1">O</span> brand
+                    strategy{" "}
                   </li>
                   <li>
                     <span className="text-green-500 mr-1">O</span> interactive
-                    marketing
+                    digital marketing strategy
                   </li>
                   <li>
-                    <span className="text-green-500 mr-1">O</span> commerce
-                  </li>
-                  <li>
-                    <span className="text-green-500 mr-1">O</span> mobility
+                    <span className="text-green-500 mr-1">O</span> digital
+                    customer engagement strategy
                   </li>
                 </ul>
               </div>
@@ -286,7 +302,193 @@ const Company = () => {
             >
               <div className="text-black">
                 <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light pillat-normal">
-                  vision
+                  digial advertising
+                </h2>
+              </div>
+              <div className="text-gray-500 text-[14px] pillat-normal ">
+                <p className="">
+                  we make informed media decisions based on rigorous data and
+                  models. from one-off ad tests to transformational media plans,
+                  our teams serve all your needs, helping you gain unprecedented
+                  visibility into the effectiveness of your advertising, leading
+                  to improved results and return on investment.
+                </p>
+              </div>
+              <div className="text-gray-500 pillat-normal">
+                <ul className="flex flex-col gap-2">
+                  <li>
+                    <span className="text-green-500 mr-1">O</span> media
+                    planning
+                  </li>
+                  <li>
+                    <span className="text-green-500 mr-1">O</span> media buying
+                  </li>
+                  <li>
+                    <span className="text-green-500 mr-1">O</span> operations,
+                    trafficking & optimization
+                  </li>
+                  <li>
+                    <span className="text-green-500 mr-1">O</span> monitoring &
+                    tracking
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
+              <Lottie
+                loop
+                animationData={visionAnimation}
+                play
+                // style={{ width: 350, height: 350 }}
+              />
+            </div>
+          </AnimationTextReversing>
+          <AnimationTextReversing>
+            <div
+              id="missionTabRef"
+              className="mission-div flex flex-col gap-5 lg:w-6/12"
+            >
+              <div className="text-black">
+                <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light pillat-normal">
+                  creative & content
+                </h2>
+              </div>
+              <div className="text-gray-500 text-[14px] pillat-normal">
+                <p className="">
+                  we are essential collaborators in the development and
+                  production of engaging, interactive and immersive content
+                  across many digital channels. from concept to completion, we
+                  produce custom-branded experiences that drive brand affinity
+                  and buzzworthy results for your audience.
+                </p>
+              </div>
+
+              <div className="text-gray-500 pillat-normal">
+                <ul className="flex flex-col gap-2">
+                  <li>
+                    <span className="text-green-500 mr-1">O</span> ideas &
+                    concepts
+                  </li>
+                  <li>
+                    <span className="text-green-500 mr-1">O</span> storytelling
+                  </li>
+                  <li>
+                    <span className="text-green-500 mr-1">O</span>content
+                    production
+                  </li>
+                  <li>
+                    <span className="text-green-500 mr-1">O</span> content
+                    management
+                  </li>
+                  <li>
+                    <span className="text-green-500 mr-1">O</span> content
+                    operations
+                  </li>
+                  <li>
+                    <span className="text-green-500 mr-1">O</span> immersive
+                    experiences
+                  </li>
+                  <li>
+                    <span className="text-green-500 mr-1">O</span> animations
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
+              <Lottie
+                loop
+                animationData={missionAnimation}
+                play
+                // style={{ width: 350, height: 350 }}
+              />{" "}
+            </div>
+          </AnimationTextReversing>
+          {/* <AnimationTextReversing flexDirection="row-reverse">
+            <div
+              id="missionTabRef"
+              className="mission-div flex flex-col gap-5 lg:w-6/12"
+            >
+              <div className="text-black">
+                <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light pillat-normal">
+                  design
+                </h2>
+              </div>
+              <div className="text-gray-500 text-[14px] pillat-normal">
+                <p className="">
+                  we harness creativity and technology to create incredible,
+                  immersive experiences. our passion is crafting experiences
+                  that people love and remember.
+                </p>
+              </div>
+
+              <div className="text-gray-500 pillat-normal">
+                <ul className="flex flex-col gap-2">
+                  <li>
+                    <span className="text-green-500 mr-1">O</span> digital &
+                    physical experience design
+                  </li>
+                  <li>
+                    <span className="text-green-500 mr-1">O</span> augmented &
+                    virtual experiences design
+                  </li>
+                  <li>
+                    <span className="text-green-500 mr-1">O</span>web & mobile
+                    app design
+                  </li>
+                  <li>
+                    <span className="text-green-500 mr-1">O</span> ui/ux design
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
+              <Lottie
+                loop
+                animationData={directorsAnimation}
+                play
+                // style={{ width: 350, height: 350 }}
+              />{" "}
+            </div>
+          </AnimationTextReversing> */}
+          {/* <AnimationTextReversing>
+            <div
+              id="initiativesTabRef"
+              className="vision-div flex flex-col gap-5 lg:w-6/12"
+            >
+              <div className="text-black">
+                <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light pillat-normal">
+                  social media marketing
+                </h2>
+                <div className="flex flex-col gap-3 mt-2">
+                  <div className="text-gray-500 text-[14px]  mt-2 pillat-normal">
+                    <p>
+                      we help transform businesses by creating and implementing
+                      impactful social media strategies. we enable you to
+                      optimize your online communities by listening and engaging
+                      with the right audience, based on brand and industry best
+                      practices.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
+              <Lottie
+                loop
+                animationData={initiativeAnimation}
+                play
+                // style={{ width: 350, height: 350 }}
+              />{" "}
+            </div>
+          </AnimationTextReversing> */}
+          {/* <AnimationTextReversing flexDirection="row-reverse">
+            <div
+              id="visionTabRef"
+              className="vision-div flex flex-col gap-5 lg:w-6/12"
+            >
+              <div className="text-black">
+                <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light pillat-normal">
+                  performance marketing
                 </h2>
                 <h3 className="!font-extrabold mt-3 pillat-normal">
                   we exist to integrate the world better.
@@ -312,15 +514,15 @@ const Company = () => {
                 // style={{ width: 350, height: 350 }}
               />
             </div>
-          </AnimationTextReversing>
-          <AnimationTextReversing>
+          </AnimationTextReversing> */}
+          {/* <AnimationTextReversing>
             <div
               id="missionTabRef"
               className="mission-div flex flex-col gap-5 lg:w-6/12"
             >
               <div className="text-black">
                 <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light pillat-normal">
-                  mission
+                  influencer marketing
                 </h2>
                 <h3 className="!font-extrabold mt-3 pillat-normal">
                   create market-leading digital experiences that power our
@@ -344,7 +546,7 @@ const Company = () => {
                 // style={{ width: 350, height: 350 }}
               />{" "}
             </div>
-          </AnimationTextReversing>
+          </AnimationTextReversing> */}
           <AnimationTextReversing flexDirection="row-reverse">
             <div
               id="boardDirectorsTabRef"
@@ -352,7 +554,7 @@ const Company = () => {
             >
               <div className="text-black">
                 <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light pillat-normal">
-                  board of directors
+                  digital pr
                 </h2>
               </div>
 
@@ -388,7 +590,7 @@ const Company = () => {
             >
               <div className="text-black">
                 <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light pillat-normal">
-                  initiatives
+                  search
                 </h2>
                 <div className="flex flex-col gap-3 mt-2">
                   <div className="text-gray-500 text-[14px]  mt-2">
@@ -457,4 +659,4 @@ const Company = () => {
   );
 };
 
-export default Company;
+export default page;
