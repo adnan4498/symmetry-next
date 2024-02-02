@@ -21,7 +21,7 @@ import { useRouter } from "next/navigation";
 import GsapTopAnimation from "../gsapComponent/GsapTopAnimation";
 
 gsap.registerPlugin(ScrollTrigger);
-const BlackBannerComponent = ({ aboutH2, aboutText }) => {
+const BlackBannerComponent = ({ aboutH2, aboutText, customBgColor }) => {
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
 
@@ -511,7 +511,8 @@ const BlackBannerComponent = ({ aboutH2, aboutText }) => {
 
       <div
         ref={blackDiv}
-        className="bg-black h-[350px] lg:h-[370px] text-white pt-10 md:pl-10 pl-3 fixed w-full z-30"
+        className={`  h-[350px] lg:h-[370px] text-white pt-10 md:pl-10 pl-3 fixed w-full z-30`}
+        style={{ background: `${customBgColor || "black"}` }}
       >
         <div
           // id="page-loader"
