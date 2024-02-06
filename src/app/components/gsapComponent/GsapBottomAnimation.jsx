@@ -22,7 +22,7 @@ const GsapBottomAnimation = ({getLink}) => {
 
     gsap.to(toTransformationBlackRef.current, {
       y: "-420px",
-      duration: 0.7,
+      duration: 0.5,
       onComplete: () => {
         router.push(getLink || "transformation");
       },

@@ -15,11 +15,11 @@ import director7 from "../../../public/board-director-img-7.webp";
 import ConnectWithUs from "../components/connectWithUsComponent/ConnectWithUs";
 import Footer from "../components/footer/Footer";
 import companyAnimation from "../../../public/symmetryAnimations/companyAnimation.json";
-import visionAnimation from "../../../public/symmetryAnimations/visionAnimation.json";
-import missionAnimation from "../../../public/symmetryAnimations/missionAnimation.json";
-import directorsAnimation from "../../../public/symmetryAnimations/directorsAnimation.json";
+import companyAnim2 from "../../../public/symmetryAnimations/company-animation-2-riveee.riv";
+import companyAnim3 from "../../../public/symmetryAnimations/company-animation-3-riveee.riv";
+import companyAnim4 from "../../../public/symmetryAnimations/company-animation-4-rive.riv";
 import initiativeAnimation from "../../../public/symmetryAnimations/initiativeAnimation.json";
-import dummyRiv from "../../../public/symmetryAnimations/home-banner.riv";
+import dummyRiv from "../../../public/symmetryAnimations/company-animation-1-rive.riv";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
@@ -263,20 +263,8 @@ const Company = () => {
                 </ul>
               </div>
             </div>
-            <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-              {/* <Image src={square} width={200} alt="animation here" /> */}
-              {/* <Lottie
-                loop
-                animationData={companyAnimation}
-                play
-                // style={{ width: 350, height: 350 }}
-              /> */}
-              <Rive
-                src={dummyRiv}
-                // stateMachines="bumpy"
-                autoplay={true} // Or play={true}
-                play={true}
-              />
+            <div className="flex justify-center items-center lg:w-5/12 lg:h-72 lg:mt-0 mt-10">
+              <Rive src={dummyRiv} autoplay={true} play={true} />
             </div>
           </AnimationTextReversing>
           <AnimationTextReversing flexDirection="row-reverse">
@@ -304,13 +292,8 @@ const Company = () => {
                 </p>
               </div>
             </div>
-            <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-              <Lottie
-                loop
-                animationData={visionAnimation}
-                play
-                // style={{ width: 350, height: 350 }}
-              />
+            <div className="flex justify-center items-center lg:w-5/12 lg:h-72 lg:mt-0 mt-10">
+              <Rive src={companyAnim2} autoplay={true} play={true} />
             </div>
           </AnimationTextReversing>
           <AnimationTextReversing>
@@ -336,13 +319,8 @@ const Company = () => {
                 </p>
               </div>
             </div>
-            <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-              <Lottie
-                loop
-                animationData={missionAnimation}
-                play
-                // style={{ width: 350, height: 350 }}
-              />{" "}
+            <div className="flex justify-center items-center lg:w-5/12 lg:h-72 lg:mt-0 mt-10">
+              <Rive src={companyAnim3} autoplay={true} play={true} />
             </div>
           </AnimationTextReversing>
           <AnimationTextReversing flexDirection="row-reverse">
@@ -356,7 +334,7 @@ const Company = () => {
                 </h2>
               </div>
 
-              <div className="grid grid-cols-2 sm:grid-cols-3 mx-auto gap-10 lg:mx-0 lg:gap-5 w-[70%] mt-5 ">
+              <div className="grid grid-cols-2 sm:grid-cols-3 mx-auto gap-10 lg:mx-0 lg:gap-5 w-[70%] mt-5">
                 {boardDirectors.map((item, index) => (
                   <div key={item.id}>
                     <div className="border border-green-700 rounded-md min-w-[100px] max-w-[100px] py-[3px] px-1">
@@ -372,13 +350,8 @@ const Company = () => {
                 ))}
               </div>
             </div>
-            <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-              <Lottie
-                loop
-                animationData={directorsAnimation}
-                play
-                // style={{ width: 350, height: 350 }}
-              />{" "}
+            <div className="flex justify-center items-center lg:w-5/12 lg:h-72 lg:mt-0 mt-10">
+              <Rive src={companyAnim4} autoplay={true} play={true} />
             </div>
           </AnimationTextReversing>
           <AnimationTextReversing>

@@ -157,17 +157,9 @@ const Navbar = ({ toggleRed, setToggleRed }) => {
   /***********  Antd Hamburger Sub Menu Items  ***********/
 
   const toggleDrawer = () => {
-    const myInterval = setInterval(() => {
+    const myTimeout = setTimeout(() => {
       setIsOpen((prevState) => !prevState);
     }, 700);
-
-    const killMyInterval = setInterval(() => {
-      clearInterval(myInterval);
-    }, 700);
-
-    setInterval(() => {
-      clearInterval(killMyInterval);
-    }, 20000);
   };
 
   const items = [

@@ -24,6 +24,7 @@ gsap.registerPlugin(ScrollTrigger);
 const BlackBannerComponent = ({ aboutH2, aboutText, customBgColor }) => {
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
+  const [toggleGsap, setToggleGsap] = useState(true);
 
   const blackDiv = useRef();
   const redDiv = useRef();
@@ -36,20 +37,19 @@ const BlackBannerComponent = ({ aboutH2, aboutText, customBgColor }) => {
   const endingBlackRef = useRef(null);
   const locomotiveScrollRef = useRef(null);
 
+  const hamburgerLogoRef = useRef();
+
+  const navRef = useRef();
+  const subMenuRef = useRef();
+  const socialLinksRef = useRef();
+  const menuAnimationRef = useRef();
+
   /******  toggeling drawer code and antd sub menu items  *******/
 
   const toggleDrawer = () => {
-    const myInterval = setInterval(() => {
+    const myTimeout = setTimeout(() => {
       setIsOpen((prevState) => !prevState);
-    }, 400);
-
-    const killMyInterval = setInterval(() => {
-      clearInterval(myInterval);
-    }, 400);
-
-    setInterval(() => {
-      clearInterval(killMyInterval);
-    }, 20000);
+    }, 700);
   };
 
   const items = [
@@ -464,6 +464,40 @@ const BlackBannerComponent = ({ aboutH2, aboutText, customBgColor }) => {
     mm.revert();
   }, []);
 
+  /***********  Hamburger GSAP animation toggle  ***********/
+
+  const gsapToggle = () => {
+    setToggleGsap(!toggleGsap);
+
+    gsap.to(hamburgerLogoRef.current, {
+      x: toggleGsap ? 15 : -300,
+      opacity: toggleGsap ? 1 : 0,
+      duration: toggleGsap ? 0.2 : 0.4,
+      delay: toggleGsap ? 1.3 : 0.5,
+    });
+
+    gsap.to(menuAnimationRef.current, {
+      // x: toggleGsap ? 15 : -400,
+      opacity: toggleGsap ? 1 : 0,
+      duration: toggleGsap ? 0.5 : 0.7,
+      delay: toggleGsap ? 1.7 : 0.1,
+    });
+
+    gsap.to(subMenuRef.current, {
+      x: toggleGsap ? 15 : -300,
+      opacity: toggleGsap ? 1 : 0,
+      duration: toggleGsap ? 0.2 : 0.4,
+      delay: toggleGsap ? 2 : 0.3,
+    });
+
+    gsap.to(socialLinksRef.current, {
+      x: toggleGsap ? 15 : -300,
+      opacity: toggleGsap ? 1 : 0,
+      duration: toggleGsap ? 0.2 : 0.4,
+      delay: toggleGsap ? 2.3 : 0,
+    });
+  };
+
   /******  this function will take back to home with black animation  ******/
 
   const toHomeAnimFunc = () => {
@@ -476,7 +510,7 @@ const BlackBannerComponent = ({ aboutH2, aboutText, customBgColor }) => {
       y: "800px",
       backgroundColor: "black",
       color: "black",
-      duration: 0.7,
+      duration: 0.5,
       // ease: "power1.inOut",
       zIndex: 50,
       onStart: () => {
@@ -493,7 +527,7 @@ const BlackBannerComponent = ({ aboutH2, aboutText, customBgColor }) => {
       y: "-50px",
       backgroundColor: "black",
       color: "black",
-      duration: 0.7,
+      duration: 0.5,
       // ease: "power1.inOut",
       zIndex: 50,
       onComplete: () => {
@@ -544,7 +578,13 @@ const BlackBannerComponent = ({ aboutH2, aboutText, customBgColor }) => {
                   className="top-[-15px] lg:top-[0px] absolute cursor-pointer w-[50vw] h-[50vw] max-w-[90px] max-h-[150px] !right-[-20px] md:!right-[10px]"
                   style={{ zIndex: "99999" }}
                 >
-                  <input type="checkbox" onClick={toggleDrawer} />
+                  <input
+                    type="checkbox"
+                    onClick={() => {
+                      toggleDrawer();
+                      gsapToggle();
+                    }}
+                  />{" "}
                   <svg
                     viewBox="0 0 100 100"
                     className=""
@@ -570,7 +610,10 @@ const BlackBannerComponent = ({ aboutH2, aboutText, customBgColor }) => {
             >
               <>
                 <div className="ml-2 mt-4 md:mx-10">
-                  <div className="w-[55vw] ml-1">
+                  <div
+                    ref={hamburgerLogoRef}
+                    className="w-[55vw] ml-1 opacity-0 translate-x-[-300px]"
+                  >
                     <Image src={logo} />
                   </div>
 
@@ -619,7 +662,10 @@ const BlackBannerComponent = ({ aboutH2, aboutText, customBgColor }) => {
                         <div className="flex justify-between items-center">
                           <div>
                             <div className="text-white flex flex-col gap-2 mr-1 text-xl pillat-normal lg:gap-5 ">
-                              <div className="">
+                              <div
+                                ref={subMenuRef}
+                                className="opacity-0 translate-x-[-300px]"
+                              >
                                 <Menu
                                   // onClick={onClick}
                                   style={{
@@ -630,7 +676,10 @@ const BlackBannerComponent = ({ aboutH2, aboutText, customBgColor }) => {
                                 />
                               </div>
 
-                              <div className="flex gap-3 ml-2 mt-5  ">
+                              <div
+                                ref={socialLinksRef}
+                                className="flex gap-3 ml-2 mt-5 opacity-0 translate-x-[-300px]"
+                              >
                                 <div className="border border-green-400 rounded-lg my-auto px-1 py-1 cursor-pointer hamburger-social-icons-div">
                                   <Image
                                     src={linkdinLogo}
@@ -655,7 +704,10 @@ const BlackBannerComponent = ({ aboutH2, aboutText, customBgColor }) => {
                               </div>
                             </div>
                           </div>
-                          <div className="hidden md:block ">
+                          <div
+                            ref={menuAnimationRef}
+                            className="hidden md:block opacity-0"
+                          >
                             <Rive
                               src={RiveAnimation}
                               autoplay={true}

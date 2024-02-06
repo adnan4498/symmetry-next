@@ -399,3 +399,8 @@ li.ant-menu-item.ant-menu-item-only-child {
 .blue-gradient-class {
   background: linear-gradient(40deg, #0d53bd 40%, #13b0a8 90%);
 }
+
+.g{
+  display: none !important;
+  opacity: 0 !important;
+}
