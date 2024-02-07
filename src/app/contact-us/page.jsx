@@ -9,9 +9,15 @@ import ConnectWithUs from "../components/connectWithUsComponent/ConnectWithUs";
 import AboutUs from "../homeComponents/AboutUs";
 import Footer from "../components/footer/Footer";
 import Lottie from "react-lottie-player";
-import islamabadAnimation from "../../../public/symmetryAnimations/islamabadAnimation.json";
+import contactUsAnim1 from "../../../public/symmetryAnimations/contact-us-karachi-animation.riv";
+import contactUsAnim2 from "../../../public/symmetryAnimations/contact-us-islamabad-animation.riv";
+import contactUsAnim3 from "../../../public/symmetryAnimations/contact-us-lahore-animation.riv";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+
+import companyBannerAnim from "../../../public/symmetryAnimations/company-animation-main-rive.riv";
+
+import Rive from "@rive-app/react-canvas";
 
 gsap.registerPlugin(ScrollTrigger);
 const page = () => {
@@ -152,7 +158,7 @@ const page = () => {
 
   return (
     <>
-      <BlackBannerComponent aboutText={aboutText} aboutH2={aboutH2} />
+      <BlackBannerComponent aboutText={aboutText} aboutH2={aboutH2} bannerAnimation={companyBannerAnim} />
       <div ref={redDiv} className="bg-white  pt-[450px]">
         <div
           ref={pinkDiv}
@@ -191,13 +197,8 @@ const page = () => {
                 </ul>
               </div>
             </div>
-            <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-              <Lottie
-                loop
-                animationData={islamabadAnimation}
-                play
-                // style={{ width: 350, height: 350 }}
-              />{" "}
+            <div className="flex justify-center items-center lg:w-5/12 lg:h-72 lg:mt-0 mt-10">
+              <Rive src={contactUsAnim1} autoplay={true} play={true} />
             </div>
           </AnimationTextReversing>
 
@@ -226,13 +227,8 @@ const page = () => {
                 </ul>
               </div>
             </div>
-            <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-              <Lottie
-                loop
-                animationData={islamabadAnimation}
-                play
-                // style={{ width: 350, height: 350 }}
-              />{" "}
+            <div className="flex justify-center items-center lg:w-5/12 lg:h-72 lg:mt-0 mt-10">
+              <Rive src={contactUsAnim2} autoplay={true} play={true} />
             </div>
           </AnimationTextReversing>
 
@@ -256,13 +252,8 @@ const page = () => {
                 </ul>
               </div>
             </div>
-            <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-              <Lottie
-                loop
-                animationData={islamabadAnimation}
-                play
-                // style={{ width: 350, height: 350 }}
-              />{" "}
+            <div className="flex justify-center items-center lg:w-5/12 lg:h-72 lg:mt-0 mt-10">
+              <Rive src={contactUsAnim3} autoplay={true} play={true} />
             </div>
           </AnimationTextReversing>
 

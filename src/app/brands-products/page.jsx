@@ -8,18 +8,21 @@ import BlackBannerComponent from "../components/blackBannerComponent/BlackBanner
 import ConnectWithUs from "../components/connectWithUsComponent/ConnectWithUs";
 import Footer from "../components/footer/Footer";
 import Lottie from "react-lottie-player";
-import symmetryAnimation from "../../../public/symmetryAnimations/brandsSymmetryAnimation.json";
-import irisAnimation from "../../../public/symmetryAnimations/irisAnimation.json";
-import symmetryTradeAnimation from "../../../public/symmetryAnimations/symmetryTradeAnimation.json";
-import coralAnimation from "../../../public/symmetryAnimations/coralAnimation.json";
-import coralPerformanceAnimation from "../../../public/symmetryAnimations/coralPerformanceAnimation.json";
-import appabilitiesAnimation from "../../../public/symmetryAnimations/appabilitiesAnimation.json";
-import survitAnimation from "../../../public/symmetryAnimations/survitAnimation.json";
-import mobitsAnimation from "../../../public/symmetryAnimations/mobitsAnimation.json";
-import influenceAiAnimation from "../../../public/symmetryAnimations/influenceAiAnimation.json";
+
+import brandsProductBannerAnim from "../../../public/symmetryAnimations/brands-product-animation-main-rive.riv";
+import brandsProductAnim1 from "../../../public/symmetryAnimations/brands-product-animation-1-rive.riv";
+import brandsProductAnim2 from "../../../public/symmetryAnimations/brands-product-animation-2-rive.riv";
+import brandsProductAnim3 from "../../../public/symmetryAnimations/brands-product-animation-3-rive.riv";
+import brandsProductAnim4 from "../../../public/symmetryAnimations/brands-product-animation-4-rive.riv";
+import brandsProductAnim4b from "../../../public/symmetryAnimations/brands-product-animation-4-rive.riv";
+import brandsProductAnim5 from "../../../public/symmetryAnimations/brands-product-animation-5-rive.riv";
+import brandsProductAnim6 from "../../../public/symmetryAnimations/brands-product-animation-6-rive.riv";
+import brandsProductAnim7 from "../../../public/symmetryAnimations/brands-product-animation-7-rive.riv";
+import brandsProductAnim8 from "../../../public/symmetryAnimations/brands-product-animation-8-rive.riv";
 
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import Rive from "@rive-app/react-canvas";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -184,11 +187,11 @@ const page = () => {
 
   return (
     <>
-      <BlackBannerComponent aboutText={aboutText} aboutH2={aboutH2} />
+      <BlackBannerComponent aboutText={aboutText} aboutH2={aboutH2} bannerAnimation={brandsProductBannerAnim} />
       <div ref={redDiv} className="bg-white  pt-[450px]">
         <div
           ref={pinkDiv}
-          className="bg-white h-[130px] md:h-[130px] mt-[-80px] 2xl:mt-[-50px] text-black fixed w-full z-10"
+          className="bg-white h-[130px] md:h-[130px] mt-[-80px] 2xl:mt-[-50px] text-black fixed w-full z-10" 
         >
           <Tabs tabsData={tabsData} slidesPerView={4} />
         </div>
@@ -212,13 +215,8 @@ const page = () => {
                   </p>
                 </div>
               </div>
-              <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-                <Lottie
-                  loop
-                  animationData={symmetryAnimation}
-                  play
-                  // style={{ width: 350, height: 350 }}
-                />{" "}
+              <div className="flex justify-center items-center lg:w-5/12 lg:h-72 lg:mt-0 mt-10">
+              <Rive src={brandsProductAnim1} autoplay={true} play={true} />
               </div>
             </AnimationTextReversing>
 
@@ -239,13 +237,8 @@ const page = () => {
                   </p>
                 </div>
               </div>
-              <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-                <Lottie
-                  loop
-                  animationData={irisAnimation}
-                  play
-                  // style={{ width: 350, height: 350 }}
-                />{" "}
+              <div className="flex justify-center items-center lg:w-5/12 lg:h-72 lg:mt-0 mt-10">
+              <Rive src={brandsProductAnim2} autoplay={true} play={true} />
               </div>
             </AnimationTextReversing>
 
@@ -266,13 +259,8 @@ const page = () => {
                   </p>
                 </div>
               </div>
-              <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-                <Lottie
-                  loop
-                  animationData={symmetryTradeAnimation}
-                  play
-                  // style={{ width: 350, height: 350 }}
-                />{" "}
+              <div className="flex justify-center items-center lg:w-5/12 lg:h-72 lg:mt-0 mt-10">
+              <Rive src={brandsProductAnim3} autoplay={true} play={true} />
               </div>
             </AnimationTextReversing>
 
@@ -295,13 +283,8 @@ const page = () => {
                   </p>
                 </div>
               </div>
-              <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-                <Lottie
-                  loop
-                  animationData={coralAnimation}
-                  play
-                  // style={{ width: 350, height: 350 }}
-                />{" "}
+              <div className="flex justify-center items-center lg:w-5/12 lg:h-72 lg:mt-0 mt-10">
+              <Rive src={brandsProductAnim4} autoplay={true} play={true} />
               </div>
             </AnimationTextReversing>
 
@@ -326,13 +309,8 @@ const page = () => {
                   </p>
                 </div>
               </div>
-              <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-                <Lottie
-                  loop
-                  animationData={coralPerformanceAnimation}
-                  play
-                  // style={{ width: 350, height: 350 }}
-                />{" "}
+              <div className="flex justify-center items-center lg:w-5/12 lg:h-72 lg:mt-0 mt-10">
+              <Rive src={brandsProductAnim4b} autoplay={true} play={true} />
               </div>
             </AnimationTextReversing>
 
@@ -352,13 +330,8 @@ const page = () => {
                   </p>
                 </div>
               </div>
-              <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-                <Lottie
-                  loop
-                  animationData={appabilitiesAnimation}
-                  play
-                  // style={{ width: 350, height: 350 }}
-                />{" "}
+              <div className="flex justify-center items-center lg:w-5/12 lg:h-72 lg:mt-0 mt-10">
+              <Rive src={brandsProductAnim5} autoplay={true} play={true} />
               </div>
             </AnimationTextReversing>
 
@@ -411,13 +384,8 @@ const page = () => {
                   </ul>
                 </div>
               </div>
-              <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-                <Lottie
-                  loop
-                  animationData={survitAnimation}
-                  play
-                  // style={{ width: 350, height: 350 }}
-                />{" "}
+              <div className="flex justify-center items-center lg:w-5/12 lg:h-72 lg:mt-0 mt-10">
+              <Rive src={brandsProductAnim6} autoplay={true} play={true} />
               </div>
             </AnimationTextReversing>
 
@@ -444,13 +412,8 @@ const page = () => {
                   </p>
                 </div>
               </div>
-              <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-                <Lottie
-                  loop
-                  animationData={mobitsAnimation}
-                  play
-                  // style={{ width: 350, height: 350 }}
-                />{" "}
+              <div className="flex justify-center items-center lg:w-5/12 lg:h-72 lg:mt-0 mt-10">
+              <Rive src={brandsProductAnim7} autoplay={true} play={true} />
               </div>
             </AnimationTextReversing>
 
@@ -471,13 +434,8 @@ const page = () => {
                   </p>
                 </div>
               </div>
-              <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-                <Lottie
-                  loop
-                  animationData={influenceAiAnimation}
-                  play
-                  // style={{ width: 350, height: 350 }}
-                />{" "}
+              <div className="flex justify-center items-center lg:w-5/12 lg:h-72 lg:mt-0 mt-10">
+              <Rive src={brandsProductAnim8} autoplay={true} play={true} />
               </div>
             </AnimationTextReversing>
           </div>

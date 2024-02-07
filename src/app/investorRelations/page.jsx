@@ -11,13 +11,15 @@ import disclaimerImg from "../../../public/disclaimer-img.png";
 import ConnectWithUs from "../components/connectWithUsComponent/ConnectWithUs";
 import Lottie from "react-lottie-player";
 import Footer from "../components/footer/Footer";
-import investorinformationAnimation from "../../../public/symmetryAnimations/investorInformationAnimation.json";
-import governanceAnimation from "../../../public/symmetryAnimations/governanceAnimation.json";
-import financialAnimation from "../../../public/symmetryAnimations/financialAnimation.json";
-import corporateAnimation from "../../../public/symmetryAnimations/corporateBriefings.json";
-import noticesAnimation from "../../../public/symmetryAnimations/noticesAnimation.json";
-import importantAnimation from "../../../public/symmetryAnimations/importantAnimation.json";
-import contactAnimation from "../../../public/symmetryAnimations/contactsAnimation.json";
+import investorAnim1 from "../../../public/symmetryAnimations/investor-animation-1-rive.riv";
+import investorAnim2 from "../../../public/symmetryAnimations/investor-animation-2-rive.riv";
+import investorAnim3 from "../../../public/symmetryAnimations/investor-animation-3-rive.riv";
+import investorAnim4 from "../../../public/symmetryAnimations/investor-animation-4-rive.riv";
+import investorAnim5 from "../../../public/symmetryAnimations/investor-animation-5-rive.riv";
+import investorAnim6 from "../../../public/symmetryAnimations/investor-animation-6-rive.riv";
+import investorAnim7 from "../../../public/symmetryAnimations/investor-animation-7-rive.riv";
+import companyBannerAnim from "../../../public/symmetryAnimations/company-animation-main-rive.riv";
+import Rive from "@rive-app/react-canvas";
 
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
@@ -452,7 +454,7 @@ const page = () => {
 
   return (
     <>
-      <BlackBannerComponent aboutText={aboutText} aboutH2={aboutH2} />
+      <BlackBannerComponent aboutText={aboutText} aboutH2={aboutH2} bannerAnimation={companyBannerAnim} />
       <div ref={redDiv} className="bg-white  pt-[450px]">
         <div
           ref={pinkDiv}
@@ -485,12 +487,7 @@ const page = () => {
             </div>
           </div>
           <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-            <Lottie
-              loop
-              animationData={investorinformationAnimation}
-              play
-              // style={{ width: 350, height: 350 }}
-            />
+          <Rive src={investorAnim1} autoplay={true} play={true} />
           </div>
         </AnimationTextReversing>
 
@@ -598,12 +595,8 @@ const page = () => {
             </div>
           </div>
           <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-            <Lottie
-              loop
-              animationData={governanceAnimation}
-              play
-              // style={{ width: 350, height: 350 }}
-            />{" "}
+          <Rive src={investorAnim2} autoplay={true} play={true} />
+
           </div>
         </AnimationTextReversing>
 
@@ -625,12 +618,8 @@ const page = () => {
             </div>
           </div>
           <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-            <Lottie
-              loop
-              animationData={financialAnimation}
-              play
-              // style={{ width: 350, height: 350 }}
-            />{" "}
+          <Rive src={investorAnim3} autoplay={true} play={true} />
+
           </div>
         </AnimationTextReversing>
 
@@ -652,12 +641,8 @@ const page = () => {
             </div>
           </div>
           <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-            <Lottie
-              loop
-              animationData={corporateAnimation}
-              play
-              // style={{ width: 350, height: 350 }}
-            />{" "}
+          <Rive src={investorAnim4} autoplay={true} play={true} />
+
           </div>
         </AnimationTextReversing>
 
@@ -679,12 +664,8 @@ const page = () => {
             </div>
           </div>
           <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-            <Lottie
-              loop
-              animationData={noticesAnimation}
-              play
-              // style={{ width: 350, height: 350 }}
-            />{" "}
+          <Rive src={investorAnim5} autoplay={true} play={true} />
+
           </div>
         </AnimationTextReversing>
 
@@ -743,12 +724,8 @@ const page = () => {
             </div>
           </div>
           <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-            <Lottie
-              loop
-              animationData={importantAnimation}
-              play
-              // style={{ width: 350, height: 350 }}
-            />{" "}
+          <Rive src={investorAnim6} autoplay={true} play={true} />
+
           </div>
         </AnimationTextReversing>
 
@@ -819,12 +796,8 @@ const page = () => {
             </div>
           </div>
           <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-            <Lottie
-              loop
-              animationData={contactAnimation}
-              play
-              // style={{ width: 350, height: 350 }}
-            />{" "}
+          <Rive src={investorAnim7} autoplay={true} play={true} />
+
           </div>
         </AnimationTextReversing>
 

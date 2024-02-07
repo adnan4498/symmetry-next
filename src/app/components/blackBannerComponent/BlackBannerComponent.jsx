@@ -21,7 +21,7 @@ import { useRouter } from "next/navigation";
 import GsapTopAnimation from "../gsapComponent/GsapTopAnimation";
 
 gsap.registerPlugin(ScrollTrigger);
-const BlackBannerComponent = ({ aboutH2, aboutText, customBgColor }) => {
+const BlackBannerComponent = ({ aboutH2, aboutText, customBgColor, bannerAnimation }) => {
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
   const [toggleGsap, setToggleGsap] = useState(true);
@@ -733,13 +733,11 @@ const BlackBannerComponent = ({ aboutH2, aboutText, customBgColor }) => {
         <div>
           <div
             ref={animationDiv}
-            className="lg:block hidden absolute w-auto right-[-100px] 2xl:right-[-40px] top-[0px] z-0"
+            className="lg:block hidden absolute w-full h-72 left-[35%] 2xl:right-[-40px] top-[10px] z-0"
+            // className="w-44 h-44"
           >
-            <Lottie
-              loop
-              animationData={aboutBannerAnimation}
-              play
-              // style={{ width: 350, height: 350 }}
+            <Rive src={bannerAnimation} autoplay={true} play={true} 
+            // style={{width : "44px" , height : "44px"}}
             />
           </div>
         </div>

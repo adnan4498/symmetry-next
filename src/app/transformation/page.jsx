@@ -16,8 +16,12 @@ import techConsultingAnimation from "../../../public/symmetryAnimations/techCons
 import consultancyAnimation from "../../../public/symmetryAnimations/consultancyAnimation.json";
 import startingAnimation from "../../../public/symmetryAnimations/startingAnimation.json";
 
+import companyBannerAnim from "../../../public/symmetryAnimations/company-animation-main-rive.riv";
+
+
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import Rive from "@rive-app/react-canvas";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -178,7 +182,7 @@ const page = () => {
   return (
     <>
       <div>
-        <BlackBannerComponent aboutText={aboutText} aboutH2={aboutH2} />
+      <BlackBannerComponent aboutText={aboutText} aboutH2={aboutH2} bannerAnimation={companyBannerAnim} />
         <div ref={redDiv} className="bg-white  pt-[450px]">
           <div
             ref={pinkDiv}

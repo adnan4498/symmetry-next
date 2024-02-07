@@ -14,6 +14,8 @@ import realEstateLogo from "../../../public/real-estate-logo.webp";
 import pharmaceuticalLogo from "../../../public/pharmaceutical-logo.webp";
 import othersKhaadiLogo from "../../../public/others-khaadi-logo.webp";
 
+import clientBannerAnim from "../../../public/symmetryAnimations/client-animation-main-rive.riv";
+
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
@@ -352,7 +354,7 @@ const page = () => {
 
   return (
     <>
-      <BlackBannerComponent aboutText={aboutText} aboutH2={aboutH2} />
+      <BlackBannerComponent aboutText={aboutText} aboutH2={aboutH2} bannerAnimation={clientBannerAnim}/>
       <div ref={redDiv} className="bg-white  pt-[450px]">
         <div
           ref={pinkDiv}

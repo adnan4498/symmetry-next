@@ -14,7 +14,8 @@ import director6 from "../../../public/board-director-img-6.webp";
 import director7 from "../../../public/board-director-img-7.webp";
 import ConnectWithUs from "../components/connectWithUsComponent/ConnectWithUs";
 import Footer from "../components/footer/Footer";
-import companyAnimation from "../../../public/symmetryAnimations/companyAnimation.json";
+// import companyBannerAnim from "../../../../public/symmetryAnimations/company-animation-main-rive.riv";
+import companyBannerAnim from "../../../public/symmetryAnimations/company-animation-main-rive.riv";
 import companyAnim2 from "../../../public/symmetryAnimations/company-animation-2-riveee.riv";
 import companyAnim3 from "../../../public/symmetryAnimations/company-animation-3-riveee.riv";
 import companyAnim4 from "../../../public/symmetryAnimations/company-animation-4-rive.riv";
@@ -215,7 +216,7 @@ const Company = () => {
 
   return (
     <>
-      <BlackBannerComponent aboutText={aboutText} aboutH2={aboutH2} />
+      <BlackBannerComponent aboutText={aboutText} aboutH2={aboutH2} bannerAnimation={companyBannerAnim} />
       <div ref={redDiv} className="bg-white  pt-[450px]">
         <div
           ref={pinkDiv}
