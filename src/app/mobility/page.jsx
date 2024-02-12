@@ -24,6 +24,12 @@ import missionAnimation from "../../../public/symmetryAnimations/missionAnimatio
 import directorsAnimation from "../../../public/symmetryAnimations/directorsAnimation.json";
 import initiativeAnimation from "../../../public/symmetryAnimations/initiativeAnimation.json";
 
+import mobilityBannerAnim from "../../../public/symmetryAnimations/mobility-animation-main-rive.riv";
+import mobilityAnim1 from "../../../public/symmetryAnimations/mobility-animation-1-rive.riv"
+import mobilityAnim2 from "../../../public/symmetryAnimations/mobility-animation-2-rive.riv"
+import mobilityAnim3 from "../../../public/symmetryAnimations/mobility-animation-3-rive.riv"
+import mobilityAnim4 from "../../../public/symmetryAnimations/mobility-animation-4-rive.riv"
+
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import Rive from "rive-react";
@@ -172,10 +178,11 @@ const page = () => {
 
   return (
     <>
-      <BlackBannerComponent
+        <BlackBannerComponent
         aboutText={aboutText}
         aboutH2={aboutH2}
         customBgColor={customBgColor}
+        bannerAnimation={mobilityBannerAnim}
       />
       <div ref={redDiv} className="bg-white  pt-[450px]">
         <div
@@ -230,20 +237,8 @@ const page = () => {
                   </ul>
                 </div>
               </div>
-              <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-                {/* <Image src={square} width={200} alt="animation here" /> */}
-                {/* <Lottie
-                loop
-                animationData={companyAnimation}
-                play
-                // style={{ width: 350, height: 350 }}
-              /> */}
-                <Rive
-                  src={dummyRiv}
-                  // stateMachines="bumpy"
-                  autoplay={true} // Or play={true}
-                  play={true}
-                />
+              <div className="flex justify-center items-center lg:w-5/12 lg:h-72 lg:mt-0 mt-10">
+                <Rive src={mobilityAnim1} autoplay={true} play={true} />
               </div>
             </AnimationTextReversing>
 
@@ -266,13 +261,8 @@ const page = () => {
                   </p>
                 </div>
               </div>
-              <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-                <Lottie
-                  loop
-                  animationData={visionAnimation}
-                  play
-                  // style={{ width: 350, height: 350 }}
-                />
+              <div className="flex justify-center items-center lg:w-5/12 lg:h-72 lg:mt-0 mt-10">
+                <Rive src={mobilityAnim2} autoplay={true} play={true} />
               </div>
             </AnimationTextReversing>
 
@@ -295,13 +285,8 @@ const page = () => {
                   </p>
                 </div>
               </div>
-              <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-                <Lottie
-                  loop
-                  animationData={missionAnimation}
-                  play
-                  // style={{ width: 350, height: 350 }}
-                />{" "}
+              <div className="flex justify-center items-center lg:w-5/12 lg:h-72 lg:mt-0 mt-10">
+                <Rive src={mobilityAnim3} autoplay={true} play={true} />
               </div>
             </AnimationTextReversing>
 
@@ -323,13 +308,8 @@ const page = () => {
                   </p>
                 </div>
               </div>
-              <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-                <Lottie
-                  loop
-                  animationData={directorsAnimation}
-                  play
-                  // style={{ width: 350, height: 350 }}
-                />{" "}
+              <div className="flex justify-center items-center lg:w-5/12 lg:h-72 lg:mt-0 mt-10">
+                <Rive src={mobilityAnim4} autoplay={true} play={true} />
               </div>
             </AnimationTextReversing>
           </div>

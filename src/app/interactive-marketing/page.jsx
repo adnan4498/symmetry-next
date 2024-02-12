@@ -24,6 +24,18 @@ import missionAnimation from "../../../public/symmetryAnimations/missionAnimatio
 import directorsAnimation from "../../../public/symmetryAnimations/directorsAnimation.json";
 import initiativeAnimation from "../../../public/symmetryAnimations/initiativeAnimation.json";
 
+import interactiveBannerAnim from "../../../public/symmetryAnimations/interactive-animation-main-rive.riv";
+import interactiveAnim1 from "../../../public/symmetryAnimations/interactive-animation-1-rive.riv"
+import interactiveAnim2 from "../../../public/symmetryAnimations/interactive-animation-2-rive.riv"
+import interactiveAnim3 from "../../../public/symmetryAnimations/interactive-animation-3-rive.riv"
+import interactiveAnim4 from "../../../public/symmetryAnimations/interactive-animation-4-rive.riv"
+import interactiveAnim5 from "../../../public/symmetryAnimations/interactive-animation-5-rive.riv"
+import interactiveAnim6 from "../../../public/symmetryAnimations/interactive-animation-6-rive.riv"
+import interactiveAnim7 from "../../../public/symmetryAnimations/interactive-animation-7-rive.riv"
+import interactiveAnim8 from "../../../public/symmetryAnimations/interactive-animation-8-rive.riv"
+import interactiveAnim9 from "../../../public/symmetryAnimations/interactive-animation-9-rive.riv"
+
+
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import Rive from "rive-react";
@@ -189,20 +201,36 @@ const page = () => {
     },
   ];
 
-  const customBgColor = "linear-gradient(40deg, #0d53bd 40%, #13b0a8 90%)"
-  const customBorderColor = "#2563eb"
-  const toggleBorderColor = true
-  const connectText = "reimagine your customer interactions with us"
+  const customBgColor = "linear-gradient(40deg, #0d53bd 40%, #13b0a8 90%)";
+  const customBorderColor = "#2563eb";
+  const toggleBorderColor = true;
+  const connectText = "reimagine your customer interactions with us";
+
+  const InteractivebannerTop = "0px"
+  const InteractivebannerLeft = "38%"
 
   return (
     <>
-      <BlackBannerComponent aboutText={aboutText} aboutH2={aboutH2} customBgColor={customBgColor}  bannerAnimation={companyBannerAnim}/>
+      <BlackBannerComponent
+        aboutText={aboutText}
+        aboutH2={aboutH2}
+        customBgColor={customBgColor}
+        bannerAnimation={interactiveBannerAnim}
+        bannerTop={InteractivebannerTop}
+        bannerLeft={InteractivebannerLeft}
+      />
       <div ref={redDiv} className="bg-white  pt-[450px]">
         <div
           ref={pinkDiv}
           className="bg-white h-[130px] md:h-[130px] mt-[-80px] 2xl:mt-[-50px] text-black fixed w-full z-10"
         >
-          <Tabs tabsData={tabsData} slidesPerView={4} customBgColor={customBgColor} customBorderColor={customBorderColor} toggleBorderColor={toggleBorderColor} />
+          <Tabs
+            tabsData={tabsData}
+            slidesPerView={4}
+            customBgColor={customBgColor}
+            customBorderColor={customBorderColor}
+            toggleBorderColor={toggleBorderColor}
+          />
         </div>
         <div>
           <div>
@@ -242,20 +270,8 @@ const page = () => {
                   </ul>
                 </div>
               </div>
-              <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-                {/* <Image src={square} width={200} alt="animation here" /> */}
-                {/* <Lottie
-                loop
-                animationData={companyAnimation}
-                play
-                // style={{ width: 350, height: 350 }}
-              /> */}
-                <Rive
-                  src={dummyRiv}
-                  // stateMachines="bumpy"
-                  autoplay={true} // Or play={true}
-                  play={true}
-                />
+              <div className="flex justify-center items-center lg:w-5/12 lg:h-72 lg:mt-0 mt-10">
+                <Rive src={interactiveAnim1} autoplay={true} play={true} />
               </div>
             </AnimationTextReversing>
 
@@ -300,13 +316,8 @@ const page = () => {
                   </ul>
                 </div>
               </div>
-              <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-                <Lottie
-                  loop
-                  animationData={visionAnimation}
-                  play
-                  // style={{ width: 350, height: 350 }}
-                />
+              <div className="flex justify-center items-center lg:w-5/12 lg:h-72 lg:mt-0 mt-10">
+                <Rive src={interactiveAnim2} autoplay={true} play={true} />
               </div>
             </AnimationTextReversing>
 
@@ -362,13 +373,8 @@ const page = () => {
                   </ul>
                 </div>
               </div>
-              <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-                <Lottie
-                  loop
-                  animationData={missionAnimation}
-                  play
-                  // style={{ width: 350, height: 350 }}
-                />{" "}
+              <div className="flex justify-center items-center lg:w-5/12 lg:h-72 lg:mt-0 mt-10">
+                <Rive src={interactiveAnim3} autoplay={true} play={true} />
               </div>
             </AnimationTextReversing>
 
@@ -411,13 +417,8 @@ const page = () => {
                   </ul>
                 </div>
               </div>
-              <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-                <Lottie
-                  loop
-                  animationData={directorsAnimation}
-                  play
-                  // style={{ width: 350, height: 350 }}
-                />{" "}
+              <div className="flex justify-center items-center lg:w-5/12 lg:h-72 lg:mt-0 mt-10">
+                <Rive src={interactiveAnim4} autoplay={true} play={true} />
               </div>
             </AnimationTextReversing>
 
@@ -469,13 +470,8 @@ const page = () => {
                   </ul>
                 </div>
               </div>
-              <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-                <Lottie
-                  loop
-                  animationData={directorsAnimation}
-                  play
-                  // style={{ width: 350, height: 350 }}
-                />{" "}
+              <div className="flex justify-center items-center lg:w-5/12 lg:h-72 lg:mt-0 mt-10">
+                <Rive src={interactiveAnim5} autoplay={true} play={true} />
               </div>
             </AnimationTextReversing>
 
@@ -528,13 +524,8 @@ const page = () => {
                   </ul>
                 </div>
               </div>
-              <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-                <Lottie
-                  loop
-                  animationData={directorsAnimation}
-                  play
-                  // style={{ width: 350, height: 350 }}
-                />{" "}
+              <div className="flex justify-center items-center lg:w-5/12 lg:h-72 lg:mt-0 mt-10">
+                <Rive src={interactiveAnim6} autoplay={true} play={true} />
               </div>
             </AnimationTextReversing>
 
@@ -580,13 +571,8 @@ const page = () => {
                   </ul>
                 </div>
               </div>
-              <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-                <Lottie
-                  loop
-                  animationData={directorsAnimation}
-                  play
-                  // style={{ width: 350, height: 350 }}
-                />{" "}
+              <div className="flex justify-center items-center lg:w-5/12 lg:h-72 lg:mt-0 mt-10">
+                <Rive src={interactiveAnim7} autoplay={true} play={true} />
               </div>
             </AnimationTextReversing>
 
@@ -627,13 +613,8 @@ const page = () => {
                   </ul>
                 </div>
               </div>
-              <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-                <Lottie
-                  loop
-                  animationData={directorsAnimation}
-                  play
-                  // style={{ width: 350, height: 350 }}
-                />{" "}
+              <div className="flex justify-center items-center lg:w-5/12 lg:h-72 lg:mt-0 mt-10">
+                <Rive src={interactiveAnim8} autoplay={true} play={true} />
               </div>
             </AnimationTextReversing>
 
@@ -669,19 +650,18 @@ const page = () => {
                   </ul>
                 </div>
               </div>
-              <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-                <Lottie
-                  loop
-                  animationData={directorsAnimation}
-                  play
-                  // style={{ width: 350, height: 350 }}
-                />{" "}
+              <div className="flex justify-center items-center lg:w-5/12 lg:h-72 lg:mt-0 mt-10">
+                <Rive src={interactiveAnim9} autoplay={true} play={true} />
               </div>
             </AnimationTextReversing>
           </div>
         </div>
 
-        <ConnectWithUs bgColor={customBgColor} connectText={connectText} textColor="text-white" />
+        <ConnectWithUs
+          bgColor={customBgColor}
+          connectText={connectText}
+          textColor="text-white"
+        />
         <Footer />
       </div>
     </>

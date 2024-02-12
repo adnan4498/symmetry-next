@@ -23,6 +23,14 @@ import visionAnimation from "../../../public/symmetryAnimations/visionAnimation.
 import missionAnimation from "../../../public/symmetryAnimations/missionAnimation.json";
 import directorsAnimation from "../../../public/symmetryAnimations/directorsAnimation.json";
 import initiativeAnimation from "../../../public/symmetryAnimations/initiativeAnimation.json";
+import commerceBannerAnim from "../../../public/symmetryAnimations/commerce-animation-main-2-rive.riv";
+
+import commerceAnim1 from "../../../public/symmetryAnimations/commerce-animation-00-rive.riv"
+import commerceAnim2 from "../../../public/symmetryAnimations/commerce-animation-1-rive.riv"
+import commerceAnim3 from "../../../public/symmetryAnimations/commerce-animation-3-rive.riv"
+import commerceAnim4 from "../../../public/symmetryAnimations/commerce-animation-4-rive.riv"
+
+// import dummyRiv from "../../../public/symmetryAnimations/company-animation-1-rive.riv";
 
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
@@ -171,11 +179,7 @@ const page = () => {
 
   return (
     <>
-      <BlackBannerComponent
-        aboutText={aboutText}
-        aboutH2={aboutH2}
-        customBgColor={customBgColor}
-      />
+      <BlackBannerComponent aboutText={aboutText} aboutH2={aboutH2} bannerAnimation={commerceBannerAnim} />
       <div ref={redDiv} className="bg-white  pt-[450px]">
         <div
           ref={pinkDiv}
@@ -230,21 +234,9 @@ const page = () => {
                   </ul>
                 </div>
               </div>
-              <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-                {/* <Image src={square} width={200} alt="animation here" /> */}
-                {/* <Lottie
-                loop
-                animationData={companyAnimation}
-                play
-                // style={{ width: 350, height: 350 }}
-              /> */}
-                <Rive
-                  src={dummyRiv}
-                  // stateMachines="bumpy"
-                  autoplay={true} // Or play={true}
-                  play={true}
-                />
-              </div>
+              <div className="flex justify-center items-center lg:w-5/12 lg:h-72 lg:mt-0 mt-10">
+              <Rive src={commerceAnim1} autoplay={true} play={true} />
+            </div>
             </AnimationTextReversing>
 
             <AnimationTextReversing flexDirection="row-reverse">
@@ -265,14 +257,9 @@ const page = () => {
                   </p>
                 </div>
               </div>
-              <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-                <Lottie
-                  loop
-                  animationData={visionAnimation}
-                  play
-                  // style={{ width: 350, height: 350 }}
-                />
-              </div>
+              <div className="flex justify-center items-center lg:w-5/12 lg:h-72 lg:mt-0 mt-10">
+              <Rive src={commerceAnim2} autoplay={true} play={true} />
+            </div>
             </AnimationTextReversing>
 
             <AnimationTextReversing>
@@ -294,14 +281,9 @@ const page = () => {
                   </p>
                 </div>
               </div>
-              <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-                <Lottie
-                  loop
-                  animationData={missionAnimation}
-                  play
-                  // style={{ width: 350, height: 350 }}
-                />{" "}
-              </div>
+              <div className="flex justify-center items-center lg:w-5/12 lg:h-72 lg:mt-0 mt-10">
+              <Rive src={commerceAnim3} autoplay={true} play={true} />
+            </div>
             </AnimationTextReversing>
 
             <AnimationTextReversing flexDirection="row-reverse">
@@ -323,14 +305,9 @@ const page = () => {
                   </p>
                 </div>
               </div>
-              <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-                <Lottie
-                  loop
-                  animationData={directorsAnimation}
-                  play
-                  // style={{ width: 350, height: 350 }}
-                />{" "}
-              </div>
+              <div className="flex justify-center items-center lg:w-5/12 lg:h-72 lg:mt-0 mt-10">
+              <Rive src={commerceAnim4} autoplay={true} play={true} />
+            </div>
             </AnimationTextReversing>
 
           </div>
