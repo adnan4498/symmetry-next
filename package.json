@@ -25,6 +25,7 @@
     "react-hamburger-drawer": "^21.11.26",
     "react-lottie-player": "^1.5.5",
     "react-modern-drawer": "^1.2.2",
+    "react-select": "^5.8.0",
     "rive-react": "^4.7.0",
     "swiper": "^11.0.5"
   },
