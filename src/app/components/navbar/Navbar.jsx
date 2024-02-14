@@ -514,8 +514,8 @@ const Navbar = ({ toggleRed, setToggleRed }) => {
                       <span
                         className={`hidden lg:inline-flex ${
                           activeBg == index
-                            ? "rotate-[90deg]"
-                            : "rotate-[45deg]"
+                            ? "rotate-[45deg]"
+                            : "rotate-[90deg]"
                         } rainbow-border transition-all duration-300 `}
                       ></span>
                     </div>

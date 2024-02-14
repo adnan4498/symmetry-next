@@ -78,10 +78,10 @@ const TextSlidingComponent = ({
     setArrowNextActive(true);
   };
   return (
-    <div className="bg-[#fafafa]">
-      <div className="mx-3 mb-10 mt-36 md:mx-12 overflow-hidden">
+    <div className="">
+      <div className="mx-3 mb-10 mt-5 lg:mt-44 md:mt-36 md:mx-12 overflow-hidden">
         <div
-          className={`w-full ${
+          className={`w-full  ${
             isBorder ? "border-b border-green-500 pb-1" : ""
           }  w-[40%]`}
         >
@@ -255,7 +255,7 @@ const TextSlidingComponent = ({
           <p className="text-xs lg:text-sm text-gray-600 font-[300] mt-3 leading-[16px] pillat-normal">
             {businessText || clientText}
             <Link href={"clients"} class="a-arrow relative">
-              <span className="text-black font-bold">see it for yourself</span>
+              <span className="text-black font-bold text-[14px] sm:text-[12px] sm:ml-0 ml-1 ">see it for yourself</span>
               <span class="arrow"></span>
             </Link>
           </p>
@@ -280,7 +280,7 @@ const TextSlidingComponent = ({
                   spaceBetween: swipperGap,
                 },
               }}
-              modules={[Autoplay]}
+              modules={[Autoplay , Navigation]}
               speed={700}
               loop={true}
               // navigation={true}
@@ -288,6 +288,10 @@ const TextSlidingComponent = ({
               autoplay={{
                 delay: 1000,
                 pauseOnMouseEnter: true,
+              }}
+              navigation={{
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
               }}
               className="mySwiper "
             >

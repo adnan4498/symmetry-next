@@ -48,7 +48,7 @@ const DeliveringSection = () => {
               >
                 <span className="text-4xl sm:text-6xl md:text-5xl lg:text-7xl 2xl:text-8xl rainbow-text">
                   <span className=" heading pillat-normal">
-                    delivering digital experiences that make the world <br></br>
+                    delivering digital <br className="md:hidden block"></br> experiences that make the world <br className="hidden md:block"></br>
                     better
                   </span>
                 </span>

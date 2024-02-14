@@ -91,7 +91,7 @@ const AnimationAndSwipper = ({
 
                 {/*********  Mobile  *********/}
 
-                <span className="w-[100%] lg:hidden block text-black text-xs sm:text-sm mt-2 pillat-thin">
+                <span className="w-[100%] lg:hidden block text-black text-sm sm:text-sm mt-2 pillat-thin">
                   {interactiveText || mobilityText}
                   <Link href={""} class="a-arrow relative">
                     {" "}

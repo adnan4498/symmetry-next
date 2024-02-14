@@ -80,8 +80,8 @@ const HeadingAndSwipper = ({
                 />
               </span>
 
-              {/*********  Laptop  *********/}
-              <span className="border-l border-gray-400 text-black text-xs 2xl:text-sm pl-4 ml-3 w-[55%] 2xl:w-[45%] xl:max-w-[600px] 2xl:leading-[15px] mt-3 lg:inline-block hidden pillat-thin">
+              {/*********  Desktop  *********/}
+              <span className="border-l border-gray-400 text-[#181818] text-xs 2xl:text-sm pl-4 ml-3 w-[55%] 2xl:w-[45%] xl:max-w-[600px] 2xl:leading-[15px] mt-3 lg:inline-block hidden pillat-thin">
                 <span className="w-[100%] relative ">
                   {transformationText || commerceText}
                   <Link href={`${knowMoreLink}`} class="a-arrow">
@@ -96,7 +96,7 @@ const HeadingAndSwipper = ({
 
               {/*********  Mobile  *********/}
 
-              <span className="w-[100%] lg:hidden block text-black text-xs sm:text-sm mt-2 pillat-thin">
+              <span className="w-[100%] lg:hidden block text-[#181818] font-extrabold text-sm sm:text-sm mt-2 pillat-thin">
                 {transformationText || commerceText}
                 <Link href={`${knowMoreLink}`} class="a-arrow relative">
                   {" "}
@@ -126,14 +126,14 @@ const HeadingAndSwipper = ({
                     spaceBetween: 20,
                   },
                 }}
-                // modules={[Autoplay, Navigation]}
+                modules={[Autoplay, Navigation]}
                 speed={700}
                 loop={true}
                 onSlideChange={handleActive}
-                // autoplay={{
-                //   delay: 1000,
-                //   pauseOnMouseEnter: true,
-                // }}
+                autoplay={{
+                  delay: 1000,
+                  pauseOnMouseEnter: true,
+                }}
                 navigation={{
                   nextEl: ".swiper-button-next",
                   prevEl: ".swiper-button-prev",

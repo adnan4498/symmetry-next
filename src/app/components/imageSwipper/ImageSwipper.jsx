@@ -34,7 +34,7 @@ const ImageSwipper = ({
 
   return (
     <>
-      <div className="md:mx-12 mx-3 lg:mx-auto lg:w-[55%]">
+      <div className="md:mx-12 mx-3 lg:mx-auto lg:w-[53%]">
         <div className="mt-5">
           <div className="border-b border-green-500 pt-6">
             <p className="text-3xl lg:text-4xl xl:text-5xl mb-4 text-black pillat-normal">
@@ -63,7 +63,7 @@ const ImageSwipper = ({
 
             {/*********  Mobile  *********/}
 
-            <span className=" w-[100%] lg:hidden block text-black text-xs sm:text-sm mt-2 pillat-thin">
+            <span className=" w-[100%] lg:hidden block text-black text-[13px] sm:text-sm mt-2 pillat-thin">
             {brandsText}
               <Link href={`${knowMoreLink}`} class="a-arrow relative">
                 {" "}
@@ -102,10 +102,14 @@ const ImageSwipper = ({
             loop={true}
             // navigation={true}
             centeredSlides={true}
-            modules={[Autoplay]}
+            modules={[Autoplay, Navigation]}
             autoplay={{
               delay: 1000,
               pauseOnMouseEnter: true,
+            }}
+            navigation={{
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
             }}
             className="mySwiper "
           >
