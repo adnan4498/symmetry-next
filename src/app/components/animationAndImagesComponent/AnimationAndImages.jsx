@@ -126,7 +126,7 @@ const AnimationAndImages = ({
                       <SwiperSlide key={item.id}>
                         <div className="h-[100px] md:h-[150px] lg:h-[200px]">
                           <div className="flex justify-center items-center border border-gray-400 rounded-md">
-                            <div className=" md:w-5/12 lg:w-8/12 md:h-28 flex justify-center items-center ">
+                            <div className=" md:w-5/12 lg:w-7/12 md:h-28 flex justify-center items-center ">
                               <Image src={item.img} />
                             </div>
                           </div>

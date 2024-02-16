@@ -404,3 +404,47 @@ li.ant-menu-item.ant-menu-item-only-child {
   display: none !important;
   opacity: 0 !important;
 }
+
+
+/* select css for country in about section */
+
+.css-13cymwt-control {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: default;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  min-height: 30px !important;
+  outline: 0 !important;
+  position: relative;
+  -webkit-transition: all 100ms;
+  transition: all 100ms;
+  background-color: hsl(0, 0%, 100%);
+  border-color: hsl(0, 0%, 80%);
+  border-style: solid;
+  border-width: 1px;
+  box-sizing: border-box;
+  border-right: 0px !important;
+  border-top: 0px !important;
+  border-left: 0px !important;
+  height: 33px !important;
+}
+
+span.css-1u9des2-indicatorSeparator{
+  width: 0px !important;
+}
+
+path{
+  stroke: lightgray !important;
+}
