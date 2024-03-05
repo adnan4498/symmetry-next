@@ -141,15 +141,15 @@ const Footer = () => {
                 {footerMenuItems.map((item, index) => (
                   <div key={index} className="text-black">
                     {item.link ? (
-                        <h2
-                          onClick={() => {
-                            triggerBotAnimFunc();
-                            setGetLink(item.link);
-                          }}
-                          className="font-semibold text-lg min-h-[70px] mb-2 footer-text-color-toggle cursor-pointer"
-                        >
-                          {item.title}
-                        </h2>
+                      <h2
+                        onClick={() => {
+                          triggerBotAnimFunc();
+                          setGetLink(item.link);
+                        }}
+                        className="font-semibold text-lg min-h-[70px] mb-2 footer-text-color-toggle cursor-pointer"
+                      >
+                        {item.title}
+                      </h2>
                     ) : (
                       <h2 className="font-semibold text-lg min-h-[70px] mb-2 footer-text-color-toggle cursor-pointer">
                         {item.title}

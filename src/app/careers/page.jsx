@@ -13,6 +13,7 @@ import careersBannerAnim from "../../../public/symmetryAnimations/careers-animat
 
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -124,7 +125,7 @@ const page = () => {
   }, []);
 
   const aboutH2 = "current openings";
-  const aboutText = "apply today and help us change the ";
+  const aboutText = "apply today and help us change the industry";
 
   const tabsData = [
     {
@@ -139,13 +140,6 @@ const page = () => {
     },
   ];
 
-  const onFinish = (values) => {
-    console.log("Success:", values);
-  };
-  const onFinishFailed = (errorInfo) => {
-    console.log("Failed:", errorInfo);
-  };
-
   const city = [
     { value: "karachi", label: "Karachi" },
     { value: "islamabad", label: "Islamabad" },
@@ -158,6 +152,54 @@ const page = () => {
     { value: "design", label: "design" },
     { value: "media", label: "media" },
     { value: "strategy and planning", label: "strategy and planning" },
+  ];
+
+  const jobDetails = [
+    {
+      id: 0,
+      city: "karachi",
+      jobTitle: "php developer",
+    },
+    {
+      id: 1,
+      city: "karachi",
+      jobTitle: "graphic design specialist",
+    },
+    {
+      id: 2,
+      city: "islamabad",
+      jobTitle: "digital strategist",
+    },
+    {
+      id: 3,
+      city: "karachi",
+      jobTitle: "creative associate digital",
+    },
+    {
+      id: 4,
+      city: "karachi",
+      jobTitle: "android developer",
+    },
+    {
+      id: 5,
+      city: "karachi",
+      jobTitle: "front end developer",
+    },
+    {
+      id: 6,
+      city: "karachi",
+      jobTitle: "account manager",
+    },
+    {
+      id: 7,
+      city: "karachi",
+      jobTitle: "creative manager",
+    },
+    {
+      id: 8,
+      city: "lahore",
+      jobTitle: "back end developer",
+    },
   ];
 
   return (
@@ -213,8 +255,7 @@ const page = () => {
                               state.isFocused || state.isSelected
                                 ? "black"
                                 : "white",
-                            ":active": {
-                            },
+                            ":active": {},
                             color:
                               state.isFocused || state.isSelected
                                 ? "white"
@@ -245,8 +286,7 @@ const page = () => {
                               state.isFocused || state.isSelected
                                 ? "black"
                                 : "white",
-                            ":active": {
-                            },
+                            ":active": {},
                             color:
                               state.isFocused || state.isSelected
                                 ? "white"
@@ -277,8 +317,7 @@ const page = () => {
                               state.isFocused || state.isSelected
                                 ? "black"
                                 : "white",
-                            ":active": {
-                            },
+                            ":active": {},
                             color:
                               state.isFocused || state.isSelected
                                 ? "white"
@@ -293,6 +332,37 @@ const page = () => {
                     </div>
                   </div>
                 </div>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-7 ">
+                {jobDetails.map((item, index) => (
+                  <div
+                    key={index}
+                    className="w-full border-[1px] border-gray-300 rounded-xl p-4 pt-8 pillat-normal bg-[#fafafa] relative overflow-hidden cursor-pointer"
+                  >
+                    <div className="min-h-[250px]">
+                      <p className="text-gray-500 text-sm">{item.city}</p>
+                      <h2 className="text-black text-4xl w-10">
+                        {item.jobTitle}
+                      </h2>
+                    </div>
+                    <div className="flex justify-between gap-4 mb-3">
+                      <Link href={jobDetails}>
+                      <div className="text-gray-500 border text-sm border-gray-500 rounded-lg py-2 px-2 text-center w-44 careers-buttons-gradient-bg careers-buttons-gradient-border ">
+                        apply now
+                      </div>
+                      </Link>
+                      <div className="text-gray-500 border text-sm border-gray-500 rounded-lg py-2 px-2 text-center w-44 careers-buttons-gradient-bg careers-buttons-gradient-border">
+                        details
+                      </div>
+                    </div>
+                    <div
+                      className={`absolute top-[-120px] right-[-180px] border border-gray-300 rounded-[50px] w-72 h-72`}
+                    ></div>
+                    <div
+                      className={`absolute top-[-70px] right-[-240px] border border-gray-300 rounded-[50px] w-72 h-72`}
+                    ></div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>

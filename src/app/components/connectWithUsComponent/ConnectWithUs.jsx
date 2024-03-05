@@ -1,7 +1,6 @@
 import React from "react";
 
 const ConnectWithUs = ({ bgColor, textColor, connectText }) => {
-  console.log(bgColor, "bg-colorrr");
   return (
     <div className="mt-10 mb-16">
       <div

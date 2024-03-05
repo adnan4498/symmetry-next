@@ -6,14 +6,16 @@ import { Autoplay, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import Link from "next/link";
+import GsapScrollAnimationComp from "../../components/gsapComp/GsapScrollAnimationComp"
 
-import { gsap } from "gsap";
-import GsapBottomAnimation from "../gsapComponent/GsapBottomAnimation"
+import gsap from "gsap";
+import GsapBottomAnimation from "../gsapComponent/GsapBottomAnimation";
 import Lottie from "react-lottie-player";
 import bannerAnimation from "../../../../public/symmetryAnimations/homeBannerAnimation.json";
 import Rive from "@rive-app/react-canvas";
 import startingAnimation from "../../../../public/symmetryAnimations/starting-animation.riv";
 import { useRouter } from "next/navigation";
+import ScrollTrigger from "gsap/ScrollTrigger";
 
 const HeadingAndSwipper = ({
   transformationTitle,
@@ -36,10 +38,16 @@ const HeadingAndSwipper = ({
   const [arrowNextActive, setArrowNextActive] = useState(false);
   const [triggerBottomAnimation, setTriggerBottomAnimation] = useState(false);
 
-  const triggerBotAnimFunc = () => {
-    setTriggerBottomAnimation(true)
-  };
+  const animationRefs = GsapScrollAnimationComp();
 
+
+  // useEffect(() => {
+  
+  // }, []);
+
+  const triggerBotAnimFunc = () => {
+    setTriggerBottomAnimation(true);
+  };
 
   const handleActive = (swiper) => {
     setActive(swiper.realIndex);
@@ -55,24 +63,28 @@ const HeadingAndSwipper = ({
     setArrowNextActive(true);
   };
 
-  console.log(triggerBottomAnimation , "animation state")
-
   return (
     <>
       <div className="relative">
-      {triggerBottomAnimation && <GsapBottomAnimation /> }
-        
+        {triggerBottomAnimation && <GsapBottomAnimation />}
 
         <div className="md:mx-12 mx-3 lg:mx-auto lg:w-[58%] ">
           <div className="mt-5">
-            <div className=" border-b border-green-500 pt-6">
+            <div
+              className="border-b border-green-500 pt-6 opacity-0 transform translate-y-[50px]"
+              ref={animationRefs.headingAndSwipperTitleRef}
+            >
               <p className="text-3xl xl:text-4xl mb-4 text-black pillat-normal">
                 {transformationTitle || commerceTitle}
               </p>
             </div>
-            <div className=" w-full mt-4">
-              <span className="rainbow-text text-4xl sm:text-6xl md:text-5xl lg:text-5xl 2xl:text-7xl pillat-normal">
+            <div className="w-full mt-4 opacity-0 transform translate-y-[50px]" ref={animationRefs.headingAndSwipperHeadingRef}>
+              <span
+                className="rainbow-text text-4xl sm:text-6xl md:text-5xl lg:text-5xl 2xl:text-7xl pillat-normal"
+                // ref={heading3Heading}
+              >
                 <span
+                  ref={animationRefs.headingAndSwipperHeadingRef}
                   className=""
                   dangerouslySetInnerHTML={{
                     __html: transformationHeading || commerceHeading,
@@ -108,7 +120,10 @@ const HeadingAndSwipper = ({
           </div>
 
           {(transformationSwipperShow || commerceSwipperShow) && (
-            <div className="mb-10 mt-10 md:mx-auto">
+            <div
+              className="mb-10 mt-10 md:mx-auto opacity-0 transform translate-y-[50px]"
+              ref={animationRefs.headingAndSwipperRef}
+            >
               <Swiper
                 spaceBetween={20}
                 slidesPerView={1.5}

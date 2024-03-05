@@ -8,6 +8,7 @@ import { Autoplay, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "../../homeComponents/Dummy.css";
+import GsapScrollAnimationComp from "../../components/gsapComp/GsapScrollAnimationComp";
 import Link from "next/link";
 gsap.registerPlugin(ScrollTrigger);
 
@@ -28,30 +29,9 @@ const TextSlidingComponent = ({
   const [arrowPrevActive, setArrowPrevActive] = useState(false);
   const [arrowNextActive, setArrowNextActive] = useState(false);
 
-  const heading2 = useRef();
-  const heading3 = useRef();
+  const animationRefs = GsapScrollAnimationComp();
 
   useEffect(() => {
-    gsap.to(heading2.current, {
-      scrollTrigger: {
-        trigger: heading2.current,
-        toggleActions: "restart restart none none",
-      },
-      duration: 4,
-      opacity: 1,
-      y: -20,
-    });
-
-    gsap.to(heading3.current, {
-      scrollTrigger: {
-        trigger: heading3.current,
-        toggleActions: "restart restart none none",
-      },
-      duration: 4,
-      opacity: 1,
-      y: -5,
-    });
-
     const root = document.documentElement;
     const marqueeElementsDisplayed = getComputedStyle(root).getPropertyValue(
       "--marquee-elements-displayed"
@@ -81,21 +61,24 @@ const TextSlidingComponent = ({
     <div className="">
       <div className="mx-3 mb-10 mt-5 lg:mt-44 md:mt-36 md:mx-12 overflow-hidden">
         <div
-          className={`w-full  ${
+          className={`w-full transform translate-y-[50px]  ${
             isBorder ? "border-b border-green-500 pb-1" : ""
           }  w-[40%]`}
         >
           <h2
-            className="text-gray-600 text-4xl lg:text-4xl opacity-0 pillat-normal"
-            ref={heading3}
+            className="text-gray-600 text-4xl lg:text-4xl opacity-0 pillat-normal transform translate-y-[50px]"
+            ref={animationRefs.TextSlidingHeadingRef}
           >
             {businessTitle || clientTitle}
           </h2>
         </div>
 
         {businessMarque && (
-          <div class="marquee">
-            <ul class="marquee-content gap-10">
+          <div
+            className="marquee opacity-0 transform translate-y-[50px] mt-2 lg:mt-8"
+            ref={animationRefs.TextSlidingSliderRef}
+          >
+            <ul className="marquee-content gap-10">
               <li className="!text-[160px] !2xl:text-[200px]  !text-black">
                 skillfully
               </li>
@@ -155,7 +138,10 @@ const TextSlidingComponent = ({
         )}
 
         {clientMarque && (
-          <div class="marquee">
+          <div
+            className="marquee opacity-0 transform translate-y-[50px] mt-2 lg:mt-8"
+            ref={animationRefs.TextSlidingSliderRef}
+          >
             <ul class="marquee-content gap-10">
               <li className="!text-[160px] !2xl:text-[200px]  !text-black">
                 transforming
@@ -252,10 +238,15 @@ const TextSlidingComponent = ({
         )}
 
         <div className="sm:w-[80%] lg:max-w-[600px] ">
-          <p className="text-xs lg:text-sm text-gray-600 font-[300] mt-3 leading-[16px] pillat-normal">
+          <p
+            className="text-xs lg:text-sm text-gray-600 font-[300] mt leading-[16px] pillat-normal opacity-0 transform translate-y-[50px]"
+            ref={animationRefs.TextSlidingSliderTextRef}
+          >
             {businessText || clientText}
             <Link href={"clients"} class="a-arrow relative">
-              <span className="text-black font-bold text-[14px] sm:text-[12px] sm:ml-0 ml-1 ">see it for yourself</span>
+              <span className="text-black font-bold text-[14px] sm:text-[12px] sm:ml-0 ml-1 ">
+                see it for yourself
+              </span>
               <span class="arrow"></span>
             </Link>
           </p>
@@ -280,7 +271,7 @@ const TextSlidingComponent = ({
                   spaceBetween: swipperGap,
                 },
               }}
-              modules={[Autoplay , Navigation]}
+              modules={[Autoplay, Navigation]}
               speed={700}
               loop={true}
               // navigation={true}

@@ -15,6 +15,7 @@ const HeritageSection = () => {
     const body = document.body;
 
     body.style.overflow = "hidden";
+    
   }, []);
 
   const [activeAni, setActiveAni] = useState();
@@ -44,9 +45,6 @@ const HeritageSection = () => {
     setBorderHover("right-[-180px] transition-all ease-in-out duration-500");
     setBorderHover2("right-[-240px] transition-all ease-in-out duration-500");
   };
-
-  console.log(borderHover, "b1");
-  console.log(borderHover2, "b2");
 
   const heritageSwipperContent = [
     {
@@ -127,7 +125,7 @@ const HeritageSection = () => {
           </div>
         </div>
 
-        <div className="mb-10 mt-5 md:max-w-[800px] md:mx-auto lg:max-w-[97%] ">
+        <div className="mb-10 mt-5 md:max-w-[800px] md:mx-auto lg:max-w-[97%]">
           <Swiper
             spaceBetween={20}
             slidesPerView={1.5}

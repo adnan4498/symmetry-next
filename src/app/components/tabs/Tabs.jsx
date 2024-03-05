@@ -71,8 +71,7 @@ const Tabs = ({
                         })
                       }
                       onMouseOver={() => tabHovered(item.id)}
-                      // className={`tabs-custom-bg cursor-pointer ${
-                      className={`${toggleBorderColor ? "tabs-interactive-custom-bg" : toggleBorderMobilityColor ? "tabs-mobility-custom-bg" : "tabs-custom-bg" }     cursor-pointer ${
+                      className={`${toggleBorderColor ? "tabs-interactive-custom-bg" : toggleBorderMobilityColor ? "tabs-mobility-custom-bg" : "tabs-custom-bg" } cursor-pointer ${
                         index === array.length - 1
                           ? "rounded-e-full"
                           : index === 0
