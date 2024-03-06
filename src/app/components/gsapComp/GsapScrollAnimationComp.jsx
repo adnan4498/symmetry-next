@@ -23,7 +23,7 @@ const GsapScrollAnimationComp = () => {
     TextSlidingSliderTextRef: useRef(),
     headingAndSwipperTitleRef: useRef(),
     headingAndSwipperHeadingRef: useRef(),
-    headingAndSwipperRef: useRef(),
+    headingAndSwipperRef: useRef()
   };
 
   useEffect(() => {
