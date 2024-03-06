@@ -209,6 +209,9 @@ const page = () => {
   const InteractivebannerTop = "0px"
   const InteractivebannerLeft = "38%"
 
+  const animationRefs = GsapScrollAnimationComp();
+
+
   return (
     <>
       <BlackBannerComponent

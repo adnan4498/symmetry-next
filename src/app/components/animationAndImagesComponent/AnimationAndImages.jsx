@@ -11,6 +11,7 @@ import dummyRiv from "../../../../public/symmetryAnimations/home-banner.riv";
 import Rive from "@rive-app/react-canvas";
 import Link from "next/link";
 import blackArrow from "../../../../public/black-arrow.png";
+import GsapScrollAnimationComp from "../../components/gsapComp/GsapScrollAnimationComp";
 
 const AnimationAndImages = ({
   aasH3,
@@ -26,20 +27,29 @@ const AnimationAndImages = ({
 }) => {
   // console.log(aasKnowMore , "KNOW MOREEEE affiliation")
 
+  const animationRefs = GsapScrollAnimationComp();
+
   return (
     <>
       <div className="relative mx-3 md:mx-12 lg:ml-12 lg:mr-[2px] lg:w-[%]">
         <div className="lg:flex justify-between items-center">
           <div className="lg:w-[62%]">
             <div className="mt-5">
-              <div className="border-b border-green-500 pt-6">
+              <div
+                className="border-b border-green-500 pt-6 opacity-0 transform translate-y-[50px]"
+                ref={animationRefs.headingAndSwipperTitleRef}
+              >
                 <p className="text-3xl lg:text-5xl 2xl:text-7xl mb-4 text-black pillat-normal">
                   {aasH3}
                 </p>
               </div>
-              <div className=" w-full mt-4">
+              <div
+                className="w-full mt-4 opacity-0 transform translate-y-[50px]"
+                ref={animationRefs.headingAndSwipperHeadingRef}
+              >
                 <span className="rainbow-text text-4xl sm:text-6xl md:text-5xl lg:text-6xl 2xl:text-8xl pillat-normal">
                   <span
+                    ref={animationRefs.headingAndSwipperHeadingRef}
                     className=""
                     dangerouslySetInnerHTML={{ __html: aasH2 }}
                   />
@@ -64,14 +74,19 @@ const AnimationAndImages = ({
                 <span className="w-[100%] lg:hidden block text-black text-xs sm:text-sm mt-2 pillat-thin">
                   {aasP}
                   <Link href={`${knowMoreLink}`} className="a-arrow relative">
-                    <span className="text-black font-bold text-[13px]">see to believe</span>
+                    <span className="text-black font-bold text-[13px]">
+                      see to believe
+                    </span>
                     <span className="arrow"></span>
                   </Link>
                 </span>
               </div>
             </div>
 
-            <div className="mb-10 mt-10 md:mx-auto swipper-icons-color-toggle cursor-pointer">
+            <div
+              className="mb-10 mt-10 md:mx-auto swipper-icons-color-toggle cursor-pointer opacity-0 transform translate-y-[50px]"
+              ref={animationRefs.headingAndSwipperRef}
+            >
               <Swiper
                 spaceBetween={20}
                 slidesPerView={slidesPerView}

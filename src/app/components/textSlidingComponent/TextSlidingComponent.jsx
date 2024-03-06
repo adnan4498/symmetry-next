@@ -29,7 +29,6 @@ const TextSlidingComponent = ({
   const [arrowPrevActive, setArrowPrevActive] = useState(false);
   const [arrowNextActive, setArrowNextActive] = useState(false);
 
-  const animationRefs = GsapScrollAnimationComp();
 
   useEffect(() => {
     const root = document.documentElement;
@@ -57,16 +56,19 @@ const TextSlidingComponent = ({
     setArrowPrevActive(false);
     setArrowNextActive(true);
   };
+
+  const animationRefs = GsapScrollAnimationComp();
+
   return (
     <div className="">
       <div className="mx-3 mb-10 mt-5 lg:mt-44 md:mt-36 md:mx-12 overflow-hidden">
         <div
-          className={`w-full transform translate-y-[50px]  ${
-            isBorder ? "border-b border-green-500 pb-1" : ""
+          className={`w-full ${
+            isBorder ? "border-b border-green-500 pb-1 transform translate-y-[50px] " : ""
           }  w-[40%]`}
         >
           <h2
-            className="text-gray-600 text-4xl lg:text-4xl opacity-0 pillat-normal transform translate-y-[50px]"
+            className="text-gray-600 text-4xl lg:text-4xl opacity-0 pillat-normal pb-3 transform translate-y-[50px]"
             ref={animationRefs.TextSlidingHeadingRef}
           >
             {businessTitle || clientTitle}
@@ -253,7 +255,10 @@ const TextSlidingComponent = ({
         </div>
 
         {isImageSwipper && (
-          <div className="mt-9 swipper-icons-color-toggle">
+          <div className="mt-9 swipper-icons-color-toggle opacity-0 transform translate-y-[50px] "
+          ref={animationRefs.headingAndSwipperRef}
+
+          >
             <Swiper
               spaceBetween={20}
               slidesPerView={1.5}

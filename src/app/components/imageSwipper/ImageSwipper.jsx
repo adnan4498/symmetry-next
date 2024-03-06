@@ -7,6 +7,7 @@ import { Autoplay, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import Link from "next/link";
+import GsapScrollAnimationComp from "../../components/gsapComp/GsapScrollAnimationComp";
 
 const ImageSwipper = ({
   brandsTitle,
@@ -32,18 +33,29 @@ const ImageSwipper = ({
     setArrowNextActive(true);
   };
 
+  const animationRefs = GsapScrollAnimationComp();
+
   return (
     <>
       <div className="md:mx-12 mx-3 lg:mx-auto lg:w-[53%]">
         <div className="mt-5">
-          <div className="border-b border-green-500 pt-6">
+          <div
+            className="border-b border-green-500 pt-6 opacity-0 transform translate-y-[50px]"
+            ref={animationRefs.headingAndSwipperTitleRef}
+          >
             <p className="text-3xl lg:text-4xl xl:text-5xl mb-4 text-black pillat-normal">
               {brandsTitle}
             </p>
           </div>
-          <div className=" w-full mt-4">
+          <div
+            className="w-full mt-4 opacity-0 transform translate-y-[50px]"
+            ref={animationRefs.headingAndSwipperHeadingRef}
+          >
             <span className="rainbow-text text-4xl sm:text-6xl md:text-5xl lg:text-7xl 2xl:text-8xl pillat-normal">
-              <span className="" dangerouslySetInnerHTML={{ __html: brandsHeading }} />
+              <span
+                className=""
+                dangerouslySetInnerHTML={{ __html: brandsHeading }}
+              />
             </span>
 
             {/*********  Laptop  *********/}
@@ -64,11 +76,11 @@ const ImageSwipper = ({
             {/*********  Mobile  *********/}
 
             <span className=" w-[100%] lg:hidden block text-black text-[13px] sm:text-sm mt-2 pillat-thin">
-            {brandsText}
+              {brandsText}
               <Link href={`${knowMoreLink}`} class="a-arrow relative">
                 {" "}
                 <span className="text-black font-bold">
-                explore our world{" "}
+                  explore our world{" "}
                 </span>{" "}
                 <span class="arrow"></span>
               </Link>
@@ -80,7 +92,10 @@ const ImageSwipper = ({
           <h2 className="text-5xl md:text-6xl  text-[#13a772]">Swipper Here</h2>
         </div> */}
 
-        <div className="mb-10 mt-10 md:mx-auto swipper-icons-color-toggle">
+        <div
+          className="mb-10 mt-10 md:mx-auto opacity-0 transform translate-y-[50px]"
+          ref={animationRefs.headingAndSwipperRef}
+        >
           <Swiper
             spaceBetween={20}
             slidesPerView={1.5}
@@ -114,15 +129,15 @@ const ImageSwipper = ({
             className="mySwiper "
           >
             {swipperContent.map((item, index) => (
-                <SwiperSlide key={item.id}>
-                  <div className="cursor-pointer">
-                    <div className="flex justify-center items-center border border-gray-400 rounded-md">
-                      <div className=" md:w-10/12 md:h-24 flex justify-center items-center ">
-                        <Image src={item.img} />
-                      </div>
+              <SwiperSlide key={item.id}>
+                <div className="cursor-pointer">
+                  <div className="flex justify-center items-center border border-gray-400 rounded-md">
+                    <div className=" md:w-10/12 md:h-24 flex justify-center items-center ">
+                      <Image src={item.img} />
                     </div>
                   </div>
-                </SwiperSlide>
+                </div>
+              </SwiperSlide>
             ))}
           </Swiper>
 

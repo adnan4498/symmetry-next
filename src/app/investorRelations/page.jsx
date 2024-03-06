@@ -23,6 +23,7 @@ import Rive from "@rive-app/react-canvas";
 
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import GsapScrollAnimationComp from "../components/gsapComp/GsapScrollAnimationComp";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -452,9 +453,15 @@ const page = () => {
     },
   ];
 
+  const animationRefs = GsapScrollAnimationComp();
+
   return (
     <>
-      <BlackBannerComponent aboutText={aboutText} aboutH2={aboutH2} bannerAnimation={companyBannerAnim} />
+      <BlackBannerComponent
+        aboutText={aboutText}
+        aboutH2={aboutH2}
+        bannerAnimation={companyBannerAnim}
+      />
       <div ref={redDiv} className="bg-white  pt-[450px]">
         <div
           ref={pinkDiv}
@@ -475,26 +482,30 @@ const page = () => {
             </div>
             <div className="mt-10">
               {invesorsInfo.map((item, index) => (
-                  <div key={item.id} className="border-b border-green-300 flex flex-col lg:flex-row text-center lg:text-start lg:justify-between leading-[20px] pb-5 mt-5">
-                    <div className="lg:w-6/12 text-gray-600 pillat-normal">
-                      {item.title}
-                    </div>
-                    <div className="lg:w-6/12 font-semibold text-black ">
-                      {item.desc}
-                    </div>
+                <div
+                  key={item.id}
+                  className="border-b border-green-300 flex flex-col lg:flex-row text-center lg:text-start lg:justify-between leading-[20px] pb-5 mt-5"
+                >
+                  <div className="lg:w-6/12 text-gray-600 pillat-normal">
+                    {item.title}
                   </div>
+                  <div className="lg:w-6/12 font-semibold text-black ">
+                    {item.desc}
+                  </div>
+                </div>
               ))}
             </div>
           </div>
           <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-          <Rive src={investorAnim1} autoplay={true} play={true} />
+            <Rive src={investorAnim1} autoplay={true} play={true} />
           </div>
         </AnimationTextReversing>
 
         <AnimationTextReversing flexDirection="row-reverse">
           <div
             id="governanceTabRef"
-            className="mission-div flex flex-col gap-5 lg:w-6/12"
+            className="mission-div flex flex-col gap-5 lg:w-6/12 opacity-0 transform translate-y-[50px]"
+            ref={animationRefs.headingAndSwipperTitleRef}
           >
             <div className="text-black">
               <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light pillat-normal">
@@ -535,20 +546,31 @@ const page = () => {
                 our commitment to high-quality management and governance.
               </p>
             </div>
-            <div className="mt-10">
-              <h className="font-bold text-base text-black ">board members</h>
+            <div className="mt-10 ">
+              <p
+                className="font-bold text-base text-black opacity-0 transform translate-y-[50px]"
+                ref={animationRefs.headingAndSwipperHeadingRef}
+              >
+                board members
+              </p>
             </div>
 
-            <div className="mt-1">
+            <div
+              className="mt-1 opacity-0 transform translate-y-[50px]"
+              ref={animationRefs.headingAndSwipperRef}
+            >
               {boardMembers.map((item, index) => (
-                  <div key={item.id} className="border-b border-green-300 flex flex-col lg:flex-row text-center lg:text-start lg:justify-between leading-[20px] pb-5 mt-5">
-                    <div className="lg:w-6/12 font-semibold text-base text-black">
-                      {item.name}
-                    </div>
-                    <div className="lg:w-6/12 text-gray-500 font-[300] text-sm pillat-normal">
-                      {item.post}
-                    </div>
+                <div
+                  key={item.id}
+                  className="border-b border-green-300 flex flex-col lg:flex-row text-center lg:text-start lg:justify-between leading-[20px] pb-5 mt-5 "
+                >
+                  <div className="lg:w-6/12 font-semibold text-base text-black">
+                    {item.name}
                   </div>
+                  <div className="lg:w-6/12 text-gray-500 font-[300] text-sm pillat-normal">
+                    {item.post}
+                  </div>
+                </div>
               ))}
             </div>
 
@@ -560,16 +582,17 @@ const page = () => {
 
             <div className="">
               {auditCommitte.map((item, index) => (
-                
-                  <div key={item.id} className="border-b border-green-300 flex flex-col lg:flex-row text-center lg:text-start lg:justify-between leading-[20px] pb-5 mt-5">
-                    <div className="lg:w-6/12 font-semibold text-smm text-black">
-                      {item.name}
-                    </div>
-                    <div className="lg:w-6/12 text-gray-500 font-[300] text-sm">
-                      {item.post}
-                    </div>
+                <div
+                  key={item.id}
+                  className="border-b border-green-300 flex flex-col lg:flex-row text-center lg:text-start lg:justify-between leading-[20px] pb-5 mt-5"
+                >
+                  <div className="lg:w-6/12 font-semibold text-smm text-black">
+                    {item.name}
                   </div>
-                
+                  <div className="lg:w-6/12 text-gray-500 font-[300] text-sm">
+                    {item.post}
+                  </div>
+                </div>
               ))}
             </div>
 
@@ -581,22 +604,22 @@ const page = () => {
 
             <div className="mt-1">
               {remunirationCommitte.map((item, index) => (
-                
-                  <div key={item.id} className="border-b border-green-300 flex flex-col lg:flex-row text-center lg:text-start lg:justify-between leading-[20px] pb-5 mt-5">
-                    <div className="lg:w-6/12 font-semibold text-sm text-black">
-                      {item.name}
-                    </div>
-                    <div className="lg:w-6/12 text-gray-500 font-[300] text-sm pillat-normal">
-                      {item.post}
-                    </div>
+                <div
+                  key={item.id}
+                  className="border-b border-green-300 flex flex-col lg:flex-row text-center lg:text-start lg:justify-between leading-[20px] pb-5 mt-5"
+                >
+                  <div className="lg:w-6/12 font-semibold text-sm text-black">
+                    {item.name}
                   </div>
-                
+                  <div className="lg:w-6/12 text-gray-500 font-[300] text-sm pillat-normal">
+                    {item.post}
+                  </div>
+                </div>
               ))}
             </div>
           </div>
           <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-          <Rive src={investorAnim2} autoplay={true} play={true} />
-
+            <Rive src={investorAnim2} autoplay={true} play={true} />
           </div>
         </AnimationTextReversing>
 
@@ -618,8 +641,7 @@ const page = () => {
             </div>
           </div>
           <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-          <Rive src={investorAnim3} autoplay={true} play={true} />
-
+            <Rive src={investorAnim3} autoplay={true} play={true} />
           </div>
         </AnimationTextReversing>
 
@@ -641,8 +663,7 @@ const page = () => {
             </div>
           </div>
           <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-          <Rive src={investorAnim4} autoplay={true} play={true} />
-
+            <Rive src={investorAnim4} autoplay={true} play={true} />
           </div>
         </AnimationTextReversing>
 
@@ -664,8 +685,7 @@ const page = () => {
             </div>
           </div>
           <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-          <Rive src={investorAnim5} autoplay={true} play={true} />
-
+            <Rive src={investorAnim5} autoplay={true} play={true} />
           </div>
         </AnimationTextReversing>
 
@@ -693,28 +713,29 @@ const page = () => {
                       ].map(
                         (checkItem, checkItemIndex) =>
                           item[checkItem] && (
-                            
-                              <div key={item.id} className=" mx-auto my-10 flex justify-center">
-                                <div
-                                  key={checkItemIndex}
-                                  className="text-center min-w-[130px]"
-                                >
-                                  <div className="border border-green-400 flex flex-col justify-center items-center rounded-md py-5">
-                                    <div>
-                                      <Image
-                                        src={pdfImg}
-                                        className="w-16 sm:w-20"
-                                      />
-                                    </div>
-                                  </div>
-                                  <div className="w-36">
-                                    <p className="text-sm !leading-[20px] mt-3 text-gray-600 lg:text-lg text-center pillat-normal">
-                                      {item[checkItem]}
-                                    </p>
+                            <div
+                              key={item.id}
+                              className=" mx-auto my-10 flex justify-center"
+                            >
+                              <div
+                                key={checkItemIndex}
+                                className="text-center min-w-[130px]"
+                              >
+                                <div className="border border-green-400 flex flex-col justify-center items-center rounded-md py-5">
+                                  <div>
+                                    <Image
+                                      src={pdfImg}
+                                      className="w-16 sm:w-20"
+                                    />
                                   </div>
                                 </div>
+                                <div className="w-36">
+                                  <p className="text-sm !leading-[20px] mt-3 text-gray-600 lg:text-lg text-center pillat-normal">
+                                    {item[checkItem]}
+                                  </p>
+                                </div>
                               </div>
-                            
+                            </div>
                           )
                       )}
                     </>
@@ -724,8 +745,7 @@ const page = () => {
             </div>
           </div>
           <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-          <Rive src={investorAnim6} autoplay={true} play={true} />
-
+            <Rive src={investorAnim6} autoplay={true} play={true} />
           </div>
         </AnimationTextReversing>
 
@@ -746,16 +766,17 @@ const page = () => {
                 </h>
               </div>
               {investorContacts.map((item, index) => (
-                
-                  <div key={item.id} className="border-b border-green-300 flex flex-col lg:flex-row text-center lg:text-start lg:justify-between leading-[20px] pb-5 mt-5">
-                    <div className="lg:w-6/12 text-gray-500 pillat-normal ">
-                      {item.title}
-                    </div>
-                    <div className="lg:w-6/12 font-semibold text-black">
-                      {item.desc}
-                    </div>
+                <div
+                  key={item.id}
+                  className="border-b border-green-300 flex flex-col lg:flex-row text-center lg:text-start lg:justify-between leading-[20px] pb-5 mt-5"
+                >
+                  <div className="lg:w-6/12 text-gray-500 pillat-normal ">
+                    {item.title}
                   </div>
-                
+                  <div className="lg:w-6/12 font-semibold text-black">
+                    {item.desc}
+                  </div>
+                </div>
               ))}
             </div>
 
@@ -764,16 +785,17 @@ const page = () => {
                 <h className="font-bold text-sm lg:text-lg ">complaints</h>
               </div>
               {investorContacts.map((item, index) => (
-                
-                  <div key={item.id} className="border-b border-green-300 flex flex-col lg:flex-row text-center lg:text-start lg:justify-between leading-[20px] pb-5 mt-5">
-                    <div className="lg:w-6/12 text-gray-500 pillat-normal">
-                      {item.title}
-                    </div>
-                    <div className="lg:w-6/12 font-semibold text-black">
-                      {item.desc}
-                    </div>
+                <div
+                  key={item.id}
+                  className="border-b border-green-300 flex flex-col lg:flex-row text-center lg:text-start lg:justify-between leading-[20px] pb-5 mt-5"
+                >
+                  <div className="lg:w-6/12 text-gray-500 pillat-normal">
+                    {item.title}
                   </div>
-                
+                  <div className="lg:w-6/12 font-semibold text-black">
+                    {item.desc}
+                  </div>
+                </div>
               ))}
             </div>
 
@@ -796,8 +818,7 @@ const page = () => {
             </div>
           </div>
           <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-          <Rive src={investorAnim7} autoplay={true} play={true} />
-
+            <Rive src={investorAnim7} autoplay={true} play={true} />
           </div>
         </AnimationTextReversing>
 

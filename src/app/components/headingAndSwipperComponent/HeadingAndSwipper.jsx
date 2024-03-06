@@ -38,9 +38,7 @@ const HeadingAndSwipper = ({
   const [arrowNextActive, setArrowNextActive] = useState(false);
   const [triggerBottomAnimation, setTriggerBottomAnimation] = useState(false);
 
-  const animationRefs = GsapScrollAnimationComp();
-
-
+  
   // useEffect(() => {
   
   // }, []);
@@ -52,17 +50,19 @@ const HeadingAndSwipper = ({
   const handleActive = (swiper) => {
     setActive(swiper.realIndex);
   };
-
+  
   const handleArrowPrevActive = () => {
     setArrowNextActive(false);
     setArrowPrevActive(true);
   };
-
+  
   const handleArrowNextActive = () => {
     setArrowPrevActive(false);
     setArrowNextActive(true);
   };
-
+  
+  const animationRefs = GsapScrollAnimationComp();
+  
   return (
     <>
       <div className="relative">
