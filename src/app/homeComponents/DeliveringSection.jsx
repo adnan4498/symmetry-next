@@ -15,7 +15,6 @@ const DeliveringSection = () => {
 
   useEffect(() => {
     const body = document.body
-
     body.style.overflow = "hidden"
   }, [])
 

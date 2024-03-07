@@ -138,7 +138,7 @@ const page = () => {
   const aboutText =
     "we are dedicated to providing timely and accurate information about our company's performance, financial health, and strategic initiatives. explore the resources here to stay informed and connected as we navigate the journey of growth together.";
 
-  const bgColor = "bg-black";
+  const bgColor = "black";
   const textColor = "text-white";
 
   const tabsData = [
@@ -504,8 +504,8 @@ const page = () => {
         <AnimationTextReversing flexDirection="row-reverse">
           <div
             id="governanceTabRef"
-            className="mission-div flex flex-col gap-5 lg:w-6/12 opacity-0 transform translate-y-[50px]"
-            ref={animationRefs.headingAndSwipperTitleRef}
+            className="mission-div flex flex-col gap-5 lg:w-6/12 opacity-0 transform translate-y-[0px]"
+            ref={animationRefs.firstFadeInAnimation}
           >
             <div className="text-black">
               <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light pillat-normal">
@@ -546,18 +546,16 @@ const page = () => {
                 our commitment to high-quality management and governance.
               </p>
             </div>
-            <div className="mt-10 ">
-              <p
-                className="font-bold text-base text-black opacity-0 transform translate-y-[50px]"
-                ref={animationRefs.headingAndSwipperHeadingRef}
-              >
-                board members
-              </p>
+            <div
+              className="opacity-0 transform translate-y-[10px]"
+              ref={animationRefs.secondFadeInAnimation}
+            >
+              <p className="font-bold text-base text-black">board members</p>
             </div>
 
             <div
-              className="mt-1 opacity-0 transform translate-y-[50px]"
-              ref={animationRefs.headingAndSwipperRef}
+              className="mt-1 opacity-0 transform translate-y-[40px]"
+              ref={animationRefs.thirdFadeInAnimation}
             >
               {boardMembers.map((item, index) => (
                 <div
@@ -626,7 +624,8 @@ const page = () => {
         <AnimationTextReversing>
           <div
             id="financialReportsTabRef"
-            className="vision-div flex flex-col gap-5 lg:w-6/12 my-10"
+            className="vision-div flex flex-col gap-5 lg:w-6/12 my-10  opacity-0 transform translate-y-[50px]"
+            ref={animationRefs.fourthFadeInAnimation}
           >
             <div className="text-black">
               <h2 className="text-5xl lg:text-6xl 2xl:text-7xl font-light pillat-normal">
@@ -648,7 +647,8 @@ const page = () => {
         <AnimationTextReversing flexDirection="row-reverse">
           <div
             id="corporateBriefingsTabRef"
-            className="vision-div flex flex-col gap-5 lg:w-6/12 my-10"
+            className="vision-div flex flex-col gap-5 lg:w-6/12 my-10 opacity-0 transform translate-y-[50px]"
+            ref={animationRefs.fifthFadeInAnimation}
           >
             <div className="text-black">
               <h2 className="text-5xl lg:text-6xl 2xl:text-7xl font-light pillat-normal">
@@ -670,7 +670,8 @@ const page = () => {
         <AnimationTextReversing>
           <div
             id="noticesTabRef"
-            className="vision-div flex flex-col gap-5 lg:w-6/12 my-10"
+            className="vision-div flex flex-col gap-5 lg:w-6/12 my-10 opacity-0 transform translate-y-[50px]"
+            ref={animationRefs.sixthFadeInAnimation}
           >
             <div className="text-black">
               <h2 className="text-5xl lg:text-6xl 2xl:text-7xl font-light pillat-normal">
@@ -692,7 +693,8 @@ const page = () => {
         <AnimationTextReversing flexDirection="row-reverse">
           <div
             id="importantDocsTabRef"
-            className="vision-div flex flex-col gap-5 lg:w-6/12 my-10"
+            className="vision-div flex flex-col gap-5 lg:w-6/12 my-10  opacity-0 transform translate-y-[50px]"
+            ref={animationRefs.seventhFadeInAnimation}
           >
             <div className="text-black">
               <h2 className="text-5xl lg:text-6xl 2xl:text-7xl font-light pillat-normal">
@@ -752,7 +754,8 @@ const page = () => {
         <AnimationTextReversing>
           <div
             id="investorContactTabRef"
-            className="vision-div flex flex-col gap-5 lg:w-6/12 my-10"
+            className="vision-div flex flex-col gap-5 lg:w-6/12 my-10 opacity-0 transform translate-y-[50px]"
+            ref={animationRefs.eightFadeInAnimation}
           >
             <div className="text-black">
               <h2 className="text-5xl lg:text-6xl 2xl:text-7xl font-light pillat-normal">
@@ -780,9 +783,14 @@ const page = () => {
               ))}
             </div>
 
-            <div className="mt-10">
-              <div className="text-center lg:text-start mt-5 mb-12">
-                <h className="font-bold text-sm lg:text-lg ">complaints</h>
+            <div
+              className="mt-0 opacity-0 "
+              ref={animationRefs.ninthFadeInAnimation}
+            >
+              <div className="text-center lg:text-start mt-3 mb-12 ">
+                <h className="font-bold text-sm lg:text-lg text-black">
+                  complaints
+                </h>
               </div>
               {investorContacts.map((item, index) => (
                 <div
@@ -799,22 +807,29 @@ const page = () => {
               ))}
             </div>
 
-            <div className="mt-20">
-              <p className="text-gray-500 pillat-normal">
-                <span className="!font-extrabold text-black">disclaimer :</span>{" "}
-                in case your complaint has not been properly redressed by us,
-                you may lodge your complaint with Securities and Exchange
-                Commission of Pakistan (the “SECP”). However, please note that
-                SECP will entertain only those complaints which were at first
-                directly requested to be redressed by the company and the
-                company has failed to redress the same. Further, the complaints
-                that are not relevant to SECP’s regulatory domain/competence
-                shall not be entertained by the SECP.
-              </p>
-            </div>
+            <div
+              className="opacity-0 transform translate-y-[40px]"
+              ref={animationRefs.tenthFadeInAnimation}
+            >
+              <div className="mt-20">
+                <p className="text-gray-500 pillat-normal">
+                  <span className="!font-extrabold text-black">
+                    disclaimer :
+                  </span>{" "}
+                  in case your complaint has not been properly redressed by us,
+                  you may lodge your complaint with Securities and Exchange
+                  Commission of Pakistan (the “SECP”). However, please note that
+                  SECP will entertain only those complaints which were at first
+                  directly requested to be redressed by the company and the
+                  company has failed to redress the same. Further, the
+                  complaints that are not relevant to SECP’s regulatory
+                  domain/competence shall not be entertained by the SECP.
+                </p>
+              </div>
 
-            <div>
-              <Image src={disclaimerImg} alt="dislaimer img" />
+              <div className="mt-7">
+                <Image src={disclaimerImg} alt="dislaimer img" />
+              </div>
             </div>
           </div>
           <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">

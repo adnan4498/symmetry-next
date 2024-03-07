@@ -164,7 +164,7 @@ const HeritageSection = () => {
                     onMouseOver={() => hoverFunc(item.id)}
                     onMouseLeave={() => hoverFuncOut()}
                     className=" border border-gray-400 rounded-lg pl-4 py-10 min-h-[300px] max-w-[px] bg-[#fafafa]"
-                  >
+                  > 
                     {!item.img ? (
                       <>
                         <div className="flex items-baseline absolute z-50">
@@ -217,7 +217,7 @@ const HeritageSection = () => {
           <div className="swiper-navigation-buttons flex justify-center gap-2 lg:gap-[10px] 2xl:gap-3 w-full mt-10">
             <button
               onClick={() => handleArrowPrevActive()}
-              className={`swiper-button-prev hover:custom-arrow-border ${
+              className={`swiper-button-prev  ${
                 arrowPrevActive ? "arrows-bg after:!text-white " : ""
               } !static custom-arrow-border rounded-md rotate-[45deg] !w-7 !h-7 md:!w-8 md:!h-8 lg:!w-8 lg:!h-8 2xl:!w-9 2xl:!h-9 `}
             ></button>

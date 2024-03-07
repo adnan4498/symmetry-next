@@ -18,6 +18,7 @@ import clientBannerAnim from "../../../public/symmetryAnimations/client-animatio
 
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import GsapScrollAnimationComp from "../components/gsapComp/GsapScrollAnimationComp";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -352,9 +353,15 @@ const page = () => {
     },
   ];
 
+  const animationRefs = GsapScrollAnimationComp();
+
   return (
     <>
-      <BlackBannerComponent aboutText={aboutText} aboutH2={aboutH2} bannerAnimation={clientBannerAnim}/>
+      <BlackBannerComponent
+        aboutText={aboutText}
+        aboutH2={aboutH2}
+        bannerAnimation={clientBannerAnim}
+      />
       <div ref={redDiv} className="bg-white  pt-[450px]">
         <div
           ref={pinkDiv}
@@ -377,7 +384,11 @@ const page = () => {
           </div>
         </div>
 
-        <div id="bankingTabRef" className="md:mx-12 sm:ml-2 ml-2 mt-14">
+        <div
+          id="bankingTabRef"
+          className="md:mx-12 sm:ml-2 ml-2 mt-14 opacity-0 transform translate-y-[20px]"
+          ref={animationRefs.firstFadeInAnimation}
+        >
           <div className="mx-auto">
             <h2 className="text-4xl lg:text-6xl pillat-normal text-black">
               banking & finance
@@ -392,7 +403,11 @@ const page = () => {
           </div>
         </div>
 
-        <div id="fmcgTabRef" className="md:mx-12 sm:ml-2 ml-2 mt-14">
+        <div
+          id="bankingTabRef"
+          className="md:mx-12 sm:ml-2 ml-2 mt-14 opacity-0 transform translate-y-[20px]"
+          ref={animationRefs.secondFadeInAnimation}
+        >
           <div className="mx-auto lg:mt-10 ">
             <h2 className="text-4xl lg:text-6xl pillat-normal text-black">
               fmcg
@@ -407,7 +422,11 @@ const page = () => {
           </div>
         </div>
 
-        <div id="realEstateTabRef" className="md:mx-12 sm:ml-2 ml-2 mt-14">
+        <div
+          id="bankingTabRef"
+          className="md:mx-12 sm:ml-2 ml-2 mt-14 opacity-0 transform translate-y-[20px]"
+          ref={animationRefs.thirdFadeInAnimation}
+        >
           <div className="mx-auto lg:mt-10 ">
             <h2 className="text-4xl lg:text-6xl pillat-normal text-black">
               real estate
@@ -428,7 +447,8 @@ const page = () => {
 
         <div
           id="pharmaceuticalTabRef"
-          className="md:mx-12 sm:ml-2 ml-2 mt-14 lg:mt-44"
+          className="md:mx-12 sm:ml-2 ml-2 mt-14 lg:mt-44  opacity-0 transform translate-y-[20px]"
+          ref={animationRefs.fourthFadeInAnimation}
         >
           <div className="mx-auto lg:mt-10 ">
             <h2 className="text-4xl lg:text-6xl pillat-normal text-black">
@@ -436,21 +456,23 @@ const page = () => {
             </h2>
             <div className="w-[90%] mx-auto flex items-center gap-11 mt-12">
               {pharmaceuticalContent.map((item, index) => (
-              
-                  <div key={item.id} className="">
-                    <div className="border border-gray-400 rounded-md  ">
-                      <div className="flex justify-center items-center py-3 px-3 ">
-                        <Image src={item.img} className="lg:w-[7vw]" />
-                      </div>
+                <div key={item.id} className="">
+                  <div className="border border-gray-400 rounded-md  ">
+                    <div className="flex justify-center items-center py-3 px-3 ">
+                      <Image src={item.img} className="lg:w-[7vw]" />
                     </div>
                   </div>
-                
+                </div>
               ))}
             </div>
           </div>
         </div>
 
-        <div id="othersTabRef" className="md:mx-12 sm:ml-2 ml-2 mt-14 lg:mt-44">
+        <div
+          id="othersTabRef"
+          className="md:mx-12 sm:ml-2 ml-2 mt-14 opacity-0 transform translate-y-[20px]"
+          ref={animationRefs.fifthFadeInAnimation}
+        >
           <div className="mx-auto lg:mt-10 ">
             <h2 className="text-4xl lg:text-6xl pillat-normal text-black">
               others
@@ -465,7 +487,7 @@ const page = () => {
           </div>
         </div>
 
-        <ConnectWithUs bgColor="bg-black" textColor="text-white" />
+        <ConnectWithUs bgColor="black" textColor="text-white" />
         <Footer />
       </div>
     </>

@@ -23,6 +23,7 @@ import brandsProductAnim8 from "../../../public/symmetryAnimations/brands-produc
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import Rive from "@rive-app/react-canvas";
+import GsapScrollAnimationComp from "../components/gsapComp/GsapScrollAnimationComp";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -185,20 +186,29 @@ const page = () => {
     },
   ];
 
+  const animationRefs = GsapScrollAnimationComp();
+
   return (
     <>
-      <BlackBannerComponent aboutText={aboutText} aboutH2={aboutH2} bannerAnimation={brandsProductBannerAnim} />
+      <BlackBannerComponent
+        aboutText={aboutText}
+        aboutH2={aboutH2}
+        bannerAnimation={brandsProductBannerAnim}
+      />
       <div ref={redDiv} className="bg-white  pt-[450px]">
         <div
           ref={pinkDiv}
-          className="bg-white h-[130px] md:h-[130px] mt-[-80px] 2xl:mt-[-50px] text-black fixed w-full z-10" 
+          className="bg-white h-[130px] md:h-[130px] mt-[-80px] 2xl:mt-[-50px] text-black fixed w-full z-10"
         >
           <Tabs tabsData={tabsData} slidesPerView={4} />
         </div>
         <div>
           <div>
             <AnimationTextReversing>
-              <div id="symmetryDigitalTabRef" className="vision-div flex flex-col gap-5 lg:w-6/12">
+              <div
+                id="symmetryDigitalTabRef"
+                className="vision-div flex flex-col gap-5 lg:w-6/12"
+              >
                 <div className="text-black">
                   <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light pillat-normal">
                     Symmetry
@@ -216,12 +226,16 @@ const page = () => {
                 </div>
               </div>
               <div className="flex justify-center items-center lg:w-5/12 lg:h-72 lg:mt-0 mt-10">
-              <Rive src={brandsProductAnim1} autoplay={true} play={true} />
+                <Rive src={brandsProductAnim1} autoplay={true} play={true} />
               </div>
             </AnimationTextReversing>
 
             <AnimationTextReversing flexDirection="row-reverse">
-              <div id="irisTabRef" className="vision-div flex flex-col gap-5 lg:w-6/12">
+              <div
+                id="irisTabRef"
+                className="vision-div flex flex-col gap-5 lg:w-6/12 opacity-0 transform translate-y-[20px]"
+                ref={animationRefs.firstFadeInAnimation}
+              >
                 <div className="text-black">
                   <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light pillat-normal">
                     iris
@@ -238,12 +252,16 @@ const page = () => {
                 </div>
               </div>
               <div className="flex justify-center items-center lg:w-5/12 lg:h-72 lg:mt-0 mt-10">
-              <Rive src={brandsProductAnim2} autoplay={true} play={true} />
+                <Rive src={brandsProductAnim2} autoplay={true} play={true} />
               </div>
             </AnimationTextReversing>
 
             <AnimationTextReversing>
-              <div  id="symmetryTradeTabRef" className="vision-div flex flex-col gap-5 lg:w-6/12">
+              <div
+                id="symmetryTradeTabRef"
+                className="vision-div flex flex-col gap-5 lg:w-6/12 opacity-0 transform translate-y-[20px]"
+                ref={animationRefs.secondFadeInAnimation}
+              >
                 <div className="text-black">
                   <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light pillat-normal">
                     Symmetry trade
@@ -260,12 +278,16 @@ const page = () => {
                 </div>
               </div>
               <div className="flex justify-center items-center lg:w-5/12 lg:h-72 lg:mt-0 mt-10">
-              <Rive src={brandsProductAnim3} autoplay={true} play={true} />
+                <Rive src={brandsProductAnim3} autoplay={true} play={true} />
               </div>
             </AnimationTextReversing>
 
             <AnimationTextReversing flexDirection="row-reverse">
-              <div id="coralTabRef" className="vision-div flex flex-col gap-5 lg:w-6/12">
+              <div
+                id="coralTabRef"
+                className="vision-div flex flex-col gap-5 lg:w-6/12 opacity-0 transform translate-y-[20px]"
+                ref={animationRefs.thirdFadeInAnimation}
+              >
                 <div className="text-black">
                   <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light pillat-normal">
                     coral
@@ -284,12 +306,16 @@ const page = () => {
                 </div>
               </div>
               <div className="flex justify-center items-center lg:w-5/12 lg:h-72 lg:mt-0 mt-10">
-              <Rive src={brandsProductAnim4} autoplay={true} play={true} />
+                <Rive src={brandsProductAnim4} autoplay={true} play={true} />
               </div>
             </AnimationTextReversing>
 
             <AnimationTextReversing>
-              <div id="coralPerformanceTabRef" className="vision-div flex flex-col gap-5 lg:w-6/12">
+              <div
+                id="coralPerformanceTabRef"
+                className="vision-div flex flex-col gap-5 lg:w-6/12 opacity-0 transform translate-y-[20px]"
+                ref={animationRefs.fourthFadeInAnimation}
+              >
                 <div className="text-black">
                   <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light pillat-normal">
                     coral performance
@@ -310,12 +336,16 @@ const page = () => {
                 </div>
               </div>
               <div className="flex justify-center items-center lg:w-5/12 lg:h-72 lg:mt-0 mt-10">
-              <Rive src={brandsProductAnim4b} autoplay={true} play={true} />
+                <Rive src={brandsProductAnim4b} autoplay={true} play={true} />
               </div>
             </AnimationTextReversing>
 
             <AnimationTextReversing flexDirection="row-reverse">
-              <div id="appabilitiesTabRef" className="vision-div flex flex-col gap-5 lg:w-6/12">
+              <div
+                id="appabilitiesTabRef"
+                className="vision-div flex flex-col gap-5 lg:w-6/12 opacity-0 transform translate-y-[20px]"
+                ref={animationRefs.fifthFadeInAnimation}
+              >
                 <div className="text-black">
                   <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light pillat-normal">
                     appabilities
@@ -331,12 +361,16 @@ const page = () => {
                 </div>
               </div>
               <div className="flex justify-center items-center lg:w-5/12 lg:h-72 lg:mt-0 mt-10">
-              <Rive src={brandsProductAnim5} autoplay={true} play={true} />
+                <Rive src={brandsProductAnim5} autoplay={true} play={true} />
               </div>
             </AnimationTextReversing>
 
             <AnimationTextReversing>
-              <div id="survitTabRef" className="vision-div flex flex-col gap-5 lg:w-6/12">
+              <div
+                id="survitTabRef"
+                className="vision-div flex flex-col gap-5 lg:w-6/12 opacity-0 transform translate-y-[20px]"
+                ref={animationRefs.sixthFadeInAnimation}
+              >
                 <div className="text-black">
                   <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light pillat-normal">
                     survit
@@ -385,12 +419,16 @@ const page = () => {
                 </div>
               </div>
               <div className="flex justify-center items-center lg:w-5/12 lg:h-72 lg:mt-0 mt-10">
-              <Rive src={brandsProductAnim6} autoplay={true} play={true} />
+                <Rive src={brandsProductAnim6} autoplay={true} play={true} />
               </div>
             </AnimationTextReversing>
 
             <AnimationTextReversing flexDirection="row-reverse">
-              <div id="mobitsTabRef" className="vision-div flex flex-col gap-5 lg:w-6/12">
+              <div
+                id="mobitsTabRef"
+                className="vision-div flex flex-col gap-5 lg:w-6/12 opacity-0 transform translate-y-[20px]"
+                ref={animationRefs.seventhFadeInAnimation}
+              >
                 <div className="text-black">
                   <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light pillat-normal">
                     mobits
@@ -413,12 +451,16 @@ const page = () => {
                 </div>
               </div>
               <div className="flex justify-center items-center lg:w-5/12 lg:h-72 lg:mt-0 mt-10">
-              <Rive src={brandsProductAnim7} autoplay={true} play={true} />
+                <Rive src={brandsProductAnim7} autoplay={true} play={true} />
               </div>
             </AnimationTextReversing>
 
             <AnimationTextReversing>
-              <div id="influenceTabRef" className="vision-div flex flex-col gap-5 lg:w-6/12">
+              <div
+                id="influenceTabRef"
+                className="vision-div flex flex-col gap-5 lg:w-6/12 opacity-0 transform translate-y-[20px]"
+                ref={animationRefs.eightFadeInAnimation}
+              >
                 <div className="text-black">
                   <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light pillat-normal">
                     influence.ai
@@ -435,13 +477,13 @@ const page = () => {
                 </div>
               </div>
               <div className="flex justify-center items-center lg:w-5/12 lg:h-72 lg:mt-0 mt-10">
-              <Rive src={brandsProductAnim8} autoplay={true} play={true} />
+                <Rive src={brandsProductAnim8} autoplay={true} play={true} />
               </div>
             </AnimationTextReversing>
           </div>
         </div>
 
-        <ConnectWithUs bgColor="bg-black" textColor="text-white" />
+        <ConnectWithUs bgColor="black" textColor="text-white" />
         <Footer />
       </div>
     </>

@@ -101,6 +101,17 @@ body {
   transition-duration: 500ms;
 }
 
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background-image: radial-gradient(at top right, #f1e522 25%, #5aa63d 60%);
+  background-size: 140% 140%;
+}
+
+.swiper-button-next:hover::after,
+.swiper-button-prev:hover::after {
+  color: white !important;
+}
+
 .swipper-active-class {
   background: radial-gradient(
     at right top,
@@ -306,7 +317,7 @@ body {
   rotate: -45deg;
 }
 
-. {
+.{
   background-image: radial-gradient(at top right, #f1e522 25%, #5aa63d 60%);
 }
 
@@ -514,6 +525,6 @@ path {
       rgba(93, 156, 17, 1),
       rgba(242, 213, 0, 1)
     );
-    background-size: auto;
+  background-size: auto;
   color: white;
 }

@@ -67,7 +67,7 @@ const AnimationAndSwipper = ({
               <div className="mt-5">
                 <div
                   className="border-b border-green-500 pt-6 opacity-0 transform translate-y-[50px]"
-                  ref={animationRefs.headingAndSwipperTitleRef}
+                  ref={animationRefs.firstFadeInAnimation}
                 >
                   <p className="text-3xl xl:text-4xl mb-4 text-black pillat-normal">
                     {interactiveTitle || mobilityTitle}
@@ -75,11 +75,11 @@ const AnimationAndSwipper = ({
                 </div>
                 <div
                   className="w-full mt-4 opacity-0 transform translate-y-[50px]"
-                  ref={animationRefs.headingAndSwipperHeadingRef}
+                  ref={animationRefs.secondFadeInAnimation}
                 >
                   <span className="rainbow-text text-4xl sm:text-6xl md:text-5xl lg:text-5xl 2xl:text-7xl pillat-normal">
                     <span
-                      ref={animationRefs.headingAndSwipperHeadingRef}
+                      ref={animationRefs.thirdFadeInAnimation}
                       className=""
                       dangerouslySetInnerHTML={{
                         __html: interactiveHeading || mobilityHeading,
@@ -116,7 +116,7 @@ const AnimationAndSwipper = ({
 
               <div
                 className="mb-10 mt-10 md:mx-auto opacity-0 transform translate-y-[50px]"
-                ref={animationRefs.headingAndSwipperRef}
+                ref={animationRefs.fourthFadeInAnimation}
               >
                 <Swiper
                   spaceBetween={20}

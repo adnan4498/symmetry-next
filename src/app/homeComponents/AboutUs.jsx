@@ -242,13 +242,13 @@ const AboutUs = ({ titleWidth, autoMx }) => {
         <div className="text-black">
           <div
             className={`text-xl sm:text-6xl lg:text-5xl text-center w-[100%] pillat-normal opacity-0 transform translate-y-[50px] ${titleWidth} ${autoMx}`}
-            ref={animationRefs.headingAndSwipperTitleRef}
+            ref={animationRefs.firstFadeInAnimation}
           >
             <h2>connect with us today to transform your business</h2>
           </div>
           <div
             className="text-center text-gray-600 sm:mt-12 mt-4 sm:text-lg lg:text-2xl lg:flex justify-center items-center gap-10 lg:gap-[12vw] pillat-normal opacity-0 transform translate-y-[50px]"
-            ref={animationRefs.headingAndSwipperHeadingRef}
+            ref={animationRefs.secondFadeInAnimation}
           >
             <div>
               <h3>+92 21 3517 1991</h3>
@@ -263,7 +263,7 @@ const AboutUs = ({ titleWidth, autoMx }) => {
 
         <div
           className="text-black my-10 mx-5 flex flex-col lg:flex-row lg:justify-center gap-5 lg:mt-16 lg:gap-[7vw] pillat-normal opacity-0 transform translate-y-[50px]"
-          ref={animationRefs.headingAndSwipperRef}
+          ref={animationRefs.thirdFadeInAnimation}
         >
           <div className="flex flex-col gap-5 lg:w-[20%] ">
             <div className=" border-gray-300 px-3 pb-1">

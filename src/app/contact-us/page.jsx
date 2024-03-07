@@ -16,6 +16,7 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
 import companyBannerAnim from "../../../public/symmetryAnimations/company-animation-main-rive.riv";
+import GsapScrollAnimationComp from "../components/gsapComp/GsapScrollAnimationComp";
 
 import Rive from "@rive-app/react-canvas";
 
@@ -156,9 +157,15 @@ const page = () => {
     },
   ];
 
+  const animationRefs = GsapScrollAnimationComp();
+
   return (
     <>
-      <BlackBannerComponent aboutText={aboutText} aboutH2={aboutH2} bannerAnimation={companyBannerAnim} />
+      <BlackBannerComponent
+        aboutText={aboutText}
+        aboutH2={aboutH2}
+        bannerAnimation={companyBannerAnim}
+      />
       <div ref={redDiv} className="bg-white  pt-[450px]">
         <div
           ref={pinkDiv}
@@ -169,7 +176,10 @@ const page = () => {
 
         <div ref={scrollContainerRef} className="">
           <AnimationTextReversing>
-            <div id="karachiTabRef" className="company-div flex flex-col gap-5 lg:w-6/12">
+            <div
+              id="karachiTabRef"
+              className="company-div flex flex-col gap-5 lg:w-6/12"
+            >
               <div className="text-black">
                 <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light pillat-normal">
                   karachi
@@ -203,7 +213,11 @@ const page = () => {
           </AnimationTextReversing>
 
           <AnimationTextReversing flexDirection="row-reverse">
-            <div id="islamabadTabRef" className="company-div flex flex-col gap-5 lg:w-6/12 pillat-normal">
+            <div
+              id="islamabadTabRef"
+              className="company-div flex flex-col gap-5 lg:w-6/12 opacity-0 transform translate-y-[20px]"
+              ref={animationRefs.firstFadeInAnimation}
+            >
               <div className="text-black">
                 <h2 className="text-5xl lg:text-6xl 2xl:text-7xl font-light">
                   islamabad
@@ -233,7 +247,11 @@ const page = () => {
           </AnimationTextReversing>
 
           <AnimationTextReversing>
-            <div id="lahoreTabRef" className="company-div flex flex-col gap-5 lg:w-6/12 pillat-normal">
+            <div
+              id="lahoreTabRef"
+              className="company-div flex flex-col gap-5 lg:w-6/12 pillat-normal opacity-0 transform translate-y-[20px]"
+              ref={animationRefs.secondFadeInAnimation}
+            >
               <div className="text-black">
                 <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light">
                   lahore

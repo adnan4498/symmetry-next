@@ -460,7 +460,7 @@ const page = () => {
             </AnimationTextReversing>
           </div>
 
-          <ConnectWithUs bgColor="bg-black" textColor="text-white" />
+          <ConnectWithUs bgColor="black" textColor="text-white" />
           <Footer />
         </div>
       </div>

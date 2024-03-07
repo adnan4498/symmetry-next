@@ -69,7 +69,7 @@ const TextSlidingComponent = ({
         >
           <h2
             className="text-gray-600 text-4xl lg:text-4xl opacity-0 pillat-normal pb-3 transform translate-y-[50px]"
-            ref={animationRefs.TextSlidingHeadingRef}
+            ref={animationRefs.firstFadeInAnimation}
           >
             {businessTitle || clientTitle}
           </h2>
@@ -78,7 +78,7 @@ const TextSlidingComponent = ({
         {businessMarque && (
           <div
             className="marquee opacity-0 transform translate-y-[50px] mt-2 lg:mt-8"
-            ref={animationRefs.TextSlidingSliderRef}
+            ref={animationRefs.secondFadeInAnimation}
           >
             <ul className="marquee-content gap-10">
               <li className="!text-[160px] !2xl:text-[200px]  !text-black">
@@ -142,7 +142,7 @@ const TextSlidingComponent = ({
         {clientMarque && (
           <div
             className="marquee opacity-0 transform translate-y-[50px] mt-2 lg:mt-8"
-            ref={animationRefs.TextSlidingSliderRef}
+            ref={animationRefs.thirdFadeInAnimation}
           >
             <ul class="marquee-content gap-10">
               <li className="!text-[160px] !2xl:text-[200px]  !text-black">
@@ -242,7 +242,7 @@ const TextSlidingComponent = ({
         <div className="sm:w-[80%] lg:max-w-[600px] ">
           <p
             className="text-xs lg:text-sm text-gray-600 font-[300] mt leading-[16px] pillat-normal opacity-0 transform translate-y-[50px]"
-            ref={animationRefs.TextSlidingSliderTextRef}
+            ref={animationRefs.fourthFadeInAnimation}
           >
             {businessText || clientText}
             <Link href={"clients"} class="a-arrow relative">
@@ -256,7 +256,7 @@ const TextSlidingComponent = ({
 
         {isImageSwipper && (
           <div className="mt-9 swipper-icons-color-toggle opacity-0 transform translate-y-[50px] "
-          ref={animationRefs.headingAndSwipperRef}
+          ref={animationRefs.fifthFadeInAnimation}
 
           >
             <Swiper
