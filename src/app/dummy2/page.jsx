@@ -40,6 +40,7 @@ const Page = () => {
           trigger: item.refID,
           start: "top center",
           end: "bottom center",
+          markers : true,
           toggleActions: "play none none none",
           onEnter: () => {
             // Reset all list items to their initial color
@@ -50,7 +51,7 @@ const Page = () => {
             // Set the color of the current list item to red
             gsap.to(liRefs[item.item].current, { color: "red" });
           },
-          onEnterBack: () => {
+          onEnterBack: () => {  
             // Reset all list items to their initial color
             Object.values(liRefs).forEach((ref) => {
               gsap.to(ref.current, { color: "initial" });

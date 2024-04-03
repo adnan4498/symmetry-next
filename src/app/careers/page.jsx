@@ -346,13 +346,14 @@ const page = () => {
                       </h2>
                     </div>
                     <div className="flex justify-between gap-4 mb-3">
-                      <Link href={jobDetails}>
                       <div className="text-gray-500 border text-sm border-gray-500 rounded-lg py-2 px-2 text-center w-44 careers-buttons-gradient-bg careers-buttons-gradient-border ">
-                        apply now
+                        {/* <Link href={`/careers/${item.jobTitle.replaceAll(' ','')}`}>apply now</Link> */}
+                        <Link href={`/careers/${item.jobTitle}`}>
+                          apply now
+                        </Link>
                       </div>
-                      </Link>
                       <div className="text-gray-500 border text-sm border-gray-500 rounded-lg py-2 px-2 text-center w-44 careers-buttons-gradient-bg careers-buttons-gradient-border">
-                        details
+                        <Link href={`/careers/${item.jobTitle}`}>details</Link>
                       </div>
                     </div>
                     <div

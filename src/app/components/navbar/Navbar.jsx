@@ -582,7 +582,7 @@ const Navbar = ({ toggleRed, setToggleRed }) => {
                             <div className="text-2xl font-bold">+</div>
                           </div>
                           <div className="flex justify-between mx-2">
-                            <div>business divisions</div>
+                            <div>business divisions</div> 
                             <div className="text-2xl font-bold">+</div>
                           </div>
                           <div className="flex justify-between mx-2">
@@ -606,7 +606,7 @@ const Navbar = ({ toggleRed, setToggleRed }) => {
                       </div>
                     </div>
 
-                    {/*********  Laptop   *********/}
+                    {/*********  Desktop   *********/}
 
                     <div>
                       <div className="mt-16 hidden lg:block">

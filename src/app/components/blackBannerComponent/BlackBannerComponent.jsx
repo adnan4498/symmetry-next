@@ -21,7 +21,10 @@ import { useRouter } from "next/navigation";
 import GsapTopAnimation from "../gsapComponent/GsapTopAnimation";
 
 gsap.registerPlugin(ScrollTrigger);
-const BlackBannerComponent = ({ aboutH2, aboutText, customBgColor, bannerAnimation , bannerTop , bannerLeft }) => {
+const BlackBannerComponent = ({ aboutH2, aboutText, customBgColor, bannerAnimation , bannerTop , bannerLeft , bannerHeadingSize , headingScrollSizeChange = true  }) => {
+
+  console.log(headingScrollSizeChange , "heading BOOLean")
+
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
   const [toggleGsap, setToggleGsap] = useState(true);
@@ -376,7 +379,7 @@ const BlackBannerComponent = ({ aboutH2, aboutText, customBgColor, bannerAnimati
           });
 
           gsap.to(aboutDiv.current, {
-            fontSize: "60px",
+            fontSize: "55px",
           });
           gsap.to(textDiv.current, {
             opacity: "0",
@@ -410,9 +413,9 @@ const BlackBannerComponent = ({ aboutH2, aboutText, customBgColor, bannerAnimati
                   ? "100px"
                   : isTablet
                   ? "96px"
-                  : isMobile
-                  ? "96px"
-                  : "100px",
+                  : isMobile && !headingScrollSizeChange 
+                  ? "70px"
+                  : "80px",
               });
               gsap.to(symmetryDiv.current, {
                 width: is2xl
@@ -532,7 +535,6 @@ const BlackBannerComponent = ({ aboutH2, aboutText, customBgColor, bannerAnimati
       zIndex: 50,
       onComplete: () => {
         router.push("/");
-        console.log("pushed to home ");
       },
     });
   };
@@ -726,7 +728,7 @@ const BlackBannerComponent = ({ aboutH2, aboutText, customBgColor, bannerAnimati
         </div>
         <div
           ref={aboutDiv}
-          className="text-7xl lg:text-8xl 2xl:text-[150px] pt-10 pillat-normal relative z-30"
+          className={`text-${bannerHeadingSize || "7xl"} lg:text-8xl 2xl:text-[150px] pt-10 pillat-normal relative z-30`}
         >
           {aboutH2}
         </div>
