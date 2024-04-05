@@ -499,7 +499,7 @@ const Navbar = ({ toggleRed, setToggleRed }) => {
                     onMouseOut={() => setActiveBg(0)}
                     className={`${
                       activeBg == index ? "rainbow-text" : "text-white"
-                    } text-white`}
+                    } text-white`} 
                   >
                     <div
                       onClick={() =>
