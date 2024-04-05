@@ -51,7 +51,7 @@ const Tabs = ({ tabsData, slidesPerView }) => {
             <>
               {tabsData.map((item, index, array) => (
                 <>
-                  <SwiperSlide key={item.id}>
+                  <SwiperSlide key={index}>
                     <div
                       onClick={() =>
                         gsap.to(window, {

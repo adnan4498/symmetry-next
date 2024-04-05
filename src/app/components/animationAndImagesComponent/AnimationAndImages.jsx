@@ -53,7 +53,7 @@ const AnimationAndImages = ({
                 <span className=" border-l border-gray-400 text-black text-xs 2xl:text-sm pl-4 ml-3 w-[55%] 2xl:w-[45%] xl:max-w-[600px] 2xl:leading-[15px] mt-3 lg:inline-block hidden pillat-thin">
                   <span className="relative w-[100%] ">
                     {aasP}
-                    <Link href={`${knowMoreLink}`} className="a-arrow"> <span className="text-black font-bold">see to believe </span> <span className="arrow "></span></Link>
+                    <Link href={`${knowMoreLink}`} class="a-arrow"> <span className="text-black font-bold">see to believe </span> <span class="arrow "></span></Link>
                   </span>
                 </span>
 
@@ -61,7 +61,7 @@ const AnimationAndImages = ({
 
                 <span className="w-[100%] lg:hidden block text-black text-xs sm:text-sm mt-2 pillat-thin">
                   {aasP}
-                  <Link href={`${knowMoreLink}`} className="a-arrow relative"> <span className="text-black font-bold">see to believe </span> <span classN="arrow"></span></Link>
+                  <Link href={`${knowMoreLink}`} class="a-arrow relative"> <span className="text-black font-bold">see to believe </span> <span class="arrow"></span></Link>
                 </span>
               </div>
             </div>
@@ -92,8 +92,8 @@ const AnimationAndImages = ({
                 className="mySwiper "
               >
                 {swipperContent.map((item, index) => (
-                  
-                    <Swiper key={item.id}
+                  <>
+                    <Swiper
                       spaceBetween={20}
                       slidesPerView={1.5}
                       breakpoints={{
@@ -118,7 +118,8 @@ const AnimationAndImages = ({
                       className="mySwiper "
                     >
                       {swipperContent.map((item, index) => (
-                          <SwiperSlide key={item.id}>
+                        <>
+                          <SwiperSlide>
                             <div className="h-[300px] ">
                               <div className="flex justify-center items-center border border-gray-400 rounded-md">
                                 <div className=" md:w-8/12 md:h-28 flex justify-center items-center ">
@@ -127,9 +128,10 @@ const AnimationAndImages = ({
                               </div>
                             </div>
                           </SwiperSlide>
+                        </>
                       ))}
                     </Swiper>
-                  
+                  </>
                 ))}
               </Swiper>
             </div>

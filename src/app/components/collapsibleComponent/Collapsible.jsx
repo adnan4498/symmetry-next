@@ -33,7 +33,8 @@ const CollapsibleComp = ({ dataArr }) => {
             ].map(
               (quarter, quarterIndex) =>
                 item[quarter] && (
-                    <div key={item.id} className=" mx-auto my-10 flex justify-center">
+                  <>
+                    <div className=" mx-auto my-10 flex justify-center">
                       <div
                         key={quarterIndex}
                         className="text-center min-w-[130px]"
@@ -49,6 +50,7 @@ const CollapsibleComp = ({ dataArr }) => {
                         </div>
                       </div>
                     </div>
+                  </>
                 )
             )}
           </div>

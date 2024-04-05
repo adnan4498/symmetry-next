@@ -1,4 +1,4 @@
-"use client";
+"use client"
 import { useEffect, useRef } from "react";
 import Footer from "./components/footer/Footer";
 import Navbar from "./components/navbar/Navbar";
@@ -8,11 +8,13 @@ import BusinessDivision from "./homeComponents/BusinessDivision";
 import DeliveringSection from "./homeComponents/DeliveringSection";
 import HeritageSection from "./homeComponents/HeritageSection";
 import InteractiveMarketing from "./homeComponents/InteractiveMarketing";
-import { gsap } from "gsap";
+import gsap from "gsap";
 
 export default function Home() {
+
   const navBlackDiv = useRef(null);
 
+  // asd
   useEffect(() => {
     const theDiv = navBlackDiv.current;
     const body = document.body
@@ -31,12 +33,7 @@ export default function Home() {
 
   return (
     <>
-      <div className="">
-        <div
-          id="blueDivId"
-          ref={navBlackDiv}
-          className="bg-black absolute w-full h-[100vh] z-50"
-        ></div>{" "}
+      <div className="overflow-y-hidden">
         <Navbar className="" />
         <DeliveringSection />
         <HeritageSection />

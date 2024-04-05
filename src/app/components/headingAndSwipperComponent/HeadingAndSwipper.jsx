@@ -7,10 +7,10 @@ import "swiper/css";
 import "swiper/css/navigation";
 import Link from "next/link";
 
-import { gsap } from "gsap";
 import Lottie from "react-lottie-player";
 import bannerAnimation from "../../../../public/symmetryAnimations/homeBannerAnimation.json";
 import { useRouter } from "next/navigation";
+import gsap from "gsap";
 
 const HeadingAndSwipper = ({
   transformationTitle,
@@ -23,10 +23,9 @@ const HeadingAndSwipper = ({
   swipperContent,
   slidesPerView,
   knowMoreLink,
-  transformationSwipperShow,
-  commerceSwipperShow,
 }) => {
   const [active, setActive] = useState(0);
+  const [isAnimating , setIsAnimating] = useState()
   const [arrowPrevActive, setArrowPrevActive] = useState(false);
   const [arrowNextActive, setArrowNextActive] = useState(false);
 
@@ -45,53 +44,49 @@ const HeadingAndSwipper = ({
   };
 
   const router = useRouter();
-  const lottieAnimationCompanyRef = useRef(null);
-  const loaderRefCompany = useRef(null);
-  const [isAnimating, setIsAnimating] = useState(false);
   const [linkName, setLinkName] = useState("");
   const blueDiv = useRef(null);
 
   useEffect(() => {
-    if (isAnimating) {
+    if (isAnimating && linkName) {
       const timeoutId = setTimeout(() => {
-        router.push("transformation");
-      }, 1500); // 2 seconds delay
+        router.push(linkName);
+      }, 1000); // 2 seconds delay
 
       return () => clearTimeout(timeoutId); // Clear the timeout if component unmounts
     }
   }, [isAnimating, linkName, router]);
 
-  const blueAnimationFuncStart = () => {
-    console.log("hello");
+  const lottieAnimationRef = useRef(null);
+  const loaderRef = useRef(null);
 
+  const blueAnimationFuncStart = () => {
     const lottieTl = gsap.timeline({
       repeat: 1,
       repeatDelay: 1,
       yoyo: true,
     });
 
-    lottieTl.from(lottieAnimationCompanyRef.current, {
+    lottieTl.from(lottieAnimationRef.current, {
       duration: 2,
-      opacity: 0, // Check this value
+      opacity: 0,
     });
 
-    lottieTl.to(lottieAnimationCompanyRef.current, {
-      duration: 2.5,
-      opacity: 1, // Check this value
+    lottieTl.to(lottieAnimationRef.current, {
+      duration: 1.5,
+      opacity: 1,
     });
   };
 
   const blueAnimationFuncEnd = () => {
-    gsap.to(lottieAnimationCompanyRef.current, {
+    gsap.to(lottieAnimationRef.current, {
       duration: 1,
       opacity: 0,
     });
   };
 
   const loaderAnimationFunc = () => {
-    console.log("hello");
-    // const container = document.getElementById("page-loader");
-    const container = loaderRefCompany.current;
+    const container = document.getElementById("page-loader");
     const body = document.body;
     container.style.pointerEvents = "none";
 
@@ -99,7 +94,7 @@ const HeadingAndSwipper = ({
 
     var tl = gsap.timeline({
       repeat: 1,
-      repeatDelay: 3,
+      repeatDelay: 1,
       yoyo: true,
       onStart: () => {
         blueAnimationFuncStart();
@@ -115,12 +110,12 @@ const HeadingAndSwipper = ({
       },
     });
 
-    tl.from(loaderRefCompany.current, {
-      y: "800px",
+    tl.from("#page-loader", {
+      y: "1000px",
       backgroundColor: "black",
       color: "black",
       duration: 1,
-      ease: "power1.inOut",
+      ease: "power1",
       zIndex: 50,
       onComplete: () => {
         container.style.display = "flex";
@@ -128,13 +123,13 @@ const HeadingAndSwipper = ({
     });
 
     tl.to(
-      loaderRefCompany.current,
+      "#page-loader",
       {
-        y: "-180px",
+        y: "-100px",
         backgroundColor: "black",
         color: "black",
         duration: 1,
-        ease: "power1.inOut",
+        ease: "power1",
         zIndex: 50,
       },
       "-=0.0"
@@ -144,28 +139,31 @@ const HeadingAndSwipper = ({
   return (
     <>
       <div className="relative">
-        <div
-          // id="page-loader"
-          className="bg-black justify-center items-center h-[200vh] w-[100%] absolute hidden top-0  z-50"
-          style={{ transform: "translateY(800px)" }}
-          ref={loaderRefCompany}
-        >
-          <div
-            ref={lottieAnimationCompanyRef}
-            className="opacity-0 w-96 h-96 flex justify-center items-center"
-          >
-            <Lottie
-              loop
-              // animationData={bannerAnimation}
-              play
-              // style={{ width: 350, height: 350 }}
-            />
-          </div>
-        </div>
         <div className="md:mx-12 mx-3 lg:mx-auto lg:w-[55%] ">
+          <div
+            id="page-loader"
+            className="bg-black justify-center items-center h-[110vh] w-[120%] absolute left-[-30px] top-0 hidden"
+            style={{ transform: "translateY(700px)" }}
+            ref={loaderRef}
+          >
+            <div ref={lottieAnimationRef} className="opacity-0 w-96 h-96">
+              <Lottie
+                loop
+                animationData={bannerAnimation}
+                play
+                // style={{ width: 350, height: 350 }}
+              />
+            </div>
+          </div>
           <div className="mt-5">
             <div className=" border-b border-green-500 pt-6">
-              <p className="text-3xl xl:text-4xl mb-4 text-black pillat-normal">
+              <p
+                onClick={() => {
+                  loaderAnimationFunc();
+                  setLinkName("company");
+                }}
+                className="text-3xl xl:text-4xl mb-4 text-black pillat-normal"
+              >
                 {transformationTitle || commerceTitle}
               </p>
             </div>
@@ -207,47 +205,42 @@ const HeadingAndSwipper = ({
             </div>
           </div>
 
-          {(transformationSwipperShow || commerceSwipperShow) && (
-            <div className="mb-10 mt-10 md:mx-auto">
-              <Swiper
-                spaceBetween={20}
-                slidesPerView={1.5}
-                breakpoints={{
-                  500: {
-                    slidesPerView: 2,
-                    spaceBetween: 40,
-                  },
-                  768: {
-                    slidesPerView: 2.9,
-                    spaceBetween: 40,
-                  },
-                  1024: {
-                    slidesPerView: slidesPerView,
-                    spaceBetween: 20,
-                  },
-                }}
-                modules={[Autoplay, Navigation]}
-                speed={700}
-                loop={true}
-                onSlideChange={handleActive}
-                autoplay={{
-                  delay: 1000,
-                  pauseOnMouseEnter: true,
-                }}
-                navigation={{
-                  nextEl: ".swiper-button-next",
-                  prevEl: ".swiper-button-prev",
-                }}
-                centeredSlides={true}
-                className="mySwiper "
-              >
-                {swipperContent.map((item, index) => (
-                  <SwiperSlide
-                    key={item.id}
-                    onClick={() => {
-                      loaderAnimationFunc();
-                    }}
-                  >
+          <div className="mb-10 mt-10 md:mx-auto">
+            <Swiper
+              spaceBetween={20}
+              slidesPerView={1.5}
+              breakpoints={{
+                500: {
+                  slidesPerView: 2,
+                  spaceBetween: 40,
+                },
+                768: {
+                  slidesPerView: 2.9,
+                  spaceBetween: 40,
+                },
+                1024: {
+                  slidesPerView: slidesPerView,
+                  spaceBetween: 20,
+                },
+              }}
+              modules={[Autoplay, Navigation]}
+              speed={700}
+              loop={true}
+              onSlideChange={handleActive}
+              autoplay={{
+                delay: 1000,
+                pauseOnMouseEnter: true,
+              }}
+              navigation={{
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+              }}
+              centeredSlides={true}
+              className="mySwiper "
+            >
+              {swipperContent.map((item, index) => (
+                <>
+                  <SwiperSlide key={item.id}>
                     <div
                       className={` rounded-lg swipper-hover-class transition-all ease-in-out duration-300 `}
                     >
@@ -270,25 +263,25 @@ const HeadingAndSwipper = ({
                       </div>
                     </div>
                   </SwiperSlide>
-                ))}
-              </Swiper>
+                </>
+              ))}
+            </Swiper>
 
-              <div className="swiper-navigation-buttons flex justify-center gap-2 lg:gap-[10px] 2xl:gap-3 w-full mt-10">
-                <button
-                  onClick={() => handleArrowPrevActive()}
-                  className={`swiper-button-prev ${
-                    arrowPrevActive ? "arrows-bg after:!text-white " : ""
-                  } !static custom-arrow-border rounded-md rotate-[45deg] !w-7 !h-7 md:!w-8 md:!h-8 lg:!w-8 lg:!h-8 `}
-                ></button>
-                <button
-                  onClick={() => handleArrowNextActive()}
-                  className={`swiper-button-next ${
-                    arrowNextActive ? "arrows-bg  after:!text-white " : ""
-                  } !static custom-arrow-border  rounded-md rotate-[45deg] !w-7 !h-7 md:!w-8 md:!h-8 lg:!w-8 lg:!h-8`}
-                ></button>
-              </div>
+            <div className="swiper-navigation-buttons flex justify-center gap-2 lg:gap-[10px] 2xl:gap-3 w-full mt-10">
+              <button
+                onClick={() => handleArrowPrevActive()}
+                className={`swiper-button-prev ${
+                  arrowPrevActive ? "arrows-bg after:!text-white " : ""
+                } !static custom-arrow-border rounded-md rotate-[45deg] !w-7 !h-7 md:!w-8 md:!h-8 lg:!w-8 lg:!h-8 `}
+              ></button>
+              <button
+                onClick={() => handleArrowNextActive()}
+                className={`swiper-button-next ${
+                  arrowNextActive ? "arrows-bg  after:!text-white " : ""
+                } !static custom-arrow-border  rounded-md rotate-[45deg] !w-7 !h-7 md:!w-8 md:!h-8 lg:!w-8 lg:!h-8`}
+              ></button>
             </div>
-          )}
+          </div>
         </div>
       </div>
     </>

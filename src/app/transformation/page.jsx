@@ -28,8 +28,6 @@ const page = () => {
   const textDiv = useRef();
   const pinkDiv = useRef();
   const animationDiv = useRef();
-  
-  const blueDiv = useRef(null)
 
   useEffect(() => {
     let mm = gsap.matchMedia();
@@ -128,22 +126,6 @@ const page = () => {
 
     mm.revert();
   }, []);
-
-  useEffect(() => {
-    const theDiv = document.getElementById("blueDivId");
-    const body = document.body
-
-    gsap.to(blueDiv.current, {
-      y: "1000px",
-      duration: 2,
-      ease: "power1.inOut",
-      onComplete: () => {
-        theDiv.style.display = "none";
-        body.style.overflow = "visible"
-      },
-    });
-  }, []);
-
   const aboutH2 = "transformation";
   const aboutText =
     "Digital Technology can move mountains, shape culture, and change people’s perceptions. We envision a future that leverages the best of technology to transformative experiences that aren't possible without it.";
@@ -189,13 +171,6 @@ const page = () => {
   return (
     <>
       <div>
-        <div
-          id="blueDivId"
-          ref={blueDiv}
-          className="bg-black absolute w-full h-[200vh] z-50"
-          style={{ transform: "translateY(-72px)" }}
-        ></div>
-
         <BlackBannerComponent aboutText={aboutText} aboutH2={aboutH2} />
         <div ref={redDiv} className="bg-white  pt-[450px]">
           <div
