@@ -11,7 +11,14 @@ import { ScrollToPlugin } from "gsap/all";
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(ScrollToPlugin);
 
-const Tabs = ({ tabsData, slidesPerView }) => {
+const Tabs = ({
+  tabsData,
+  slidesPerView,
+  customBgColor,
+  customBorderColor,
+  toggleBorderColor,
+  toggleBorderMobilityColor
+}) => {
   const [tabRounded, setTabRounded] = useState();
   const [shownArray, setShownArray] = useState([0, 1, 2, 3]);
 
@@ -28,7 +35,11 @@ const Tabs = ({ tabsData, slidesPerView }) => {
   return (
     <div className="text-black">
       <div className="w-[80%] mx-auto">
-        <div className="mt-9 border border-green-400 rounded-full ">
+        {/* <div className="mt-9 border border-[#4ade80] rounded-full "*/}
+        <div
+          className="mt-9 border rounded-full"
+          style={{ borderColor: `${customBorderColor || "#4ade80"}` }}
+        >
           <Swiper
             breakpoints={{
               500: {
@@ -60,7 +71,7 @@ const Tabs = ({ tabsData, slidesPerView }) => {
                         })
                       }
                       onMouseOver={() => tabHovered(item.id)}
-                      className={`tabs-custom-bg cursor-pointer ${
+                      className={`${toggleBorderColor ? "tabs-interactive-custom-bg" : toggleBorderMobilityColor ? "tabs-mobility-custom-bg" : "tabs-custom-bg" } cursor-pointer ${
                         index === array.length - 1
                           ? "rounded-e-full"
                           : index === 0
@@ -85,3 +96,6 @@ const Tabs = ({ tabsData, slidesPerView }) => {
 };
 
 export default Tabs;
+
+
+// tabs-mobility-custom-bg

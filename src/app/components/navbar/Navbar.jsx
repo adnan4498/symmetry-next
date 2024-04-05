@@ -248,17 +248,9 @@ const Navbar = ({toggleRed , setToggleRed}) => {
   /***********  Antd Hamburger Sub Menu Items  ***********/
 
   const toggleDrawer = () => {
-    const myInterval = setInterval(() => {
+    const myTimeout = setTimeout(() => {
       setIsOpen((prevState) => !prevState);
     }, 700);
-
-    const killMyInterval = setInterval(() => {
-      clearInterval(myInterval);
-    }, 700);
-
-    setInterval(() => {
-      clearInterval(killMyInterval);
-    }, 20000);
   };
 
   const items = [
@@ -590,7 +582,6 @@ const Navbar = ({toggleRed , setToggleRed}) => {
               </div>
             </Link>
             {liItems.map((item, index) => (
-              <>
                 <div className="ss pillat-thin lg:block hidden">
                   <ul className="flex items-center gap-3 xl:gap-5 text-[1vw] 2xl:text-xl cursor-pointer">
                     <li
@@ -601,28 +592,18 @@ const Navbar = ({toggleRed , setToggleRed}) => {
                         activeBg == index ? "rainbow-text" : "text-white"
                       } text-white`}
                     >
-                      <div
-                        onClick={() =>
-                          gsap.to(window, {
-                            duration: 1.5,
-                            scrollTo: { y: item.refId, offsetY: 100 },
-                          })
-                        }
-                      >
-                        {item.name}
-                        {/* {console.log(item.refId, "ref id")} */}
-                        <span
-                          className={`hidden lg:inline-flex ${
-                            activeBg == index
-                              ? "rotate-[90deg]"
-                              : "rotate-[45deg]"
-                          } rainbow-border transition-all duration-300 `}
-                        ></span>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-              </>
+                      {item.name}
+                      {/* {console.log(item.refId, "ref id")} */}
+                      <span
+                        className={`hidden lg:inline-flex ${
+                          activeBg == index
+                            ? "rotate-[45deg]"
+                            : "rotate-[90deg]"
+                        } rainbow-border transition-all duration-300 `}
+                      ></span>
+                  </li>
+                </ul>
+              </div>
             ))}
             <div className="">
               <div class="menu cross menu--1">
@@ -683,7 +664,7 @@ const Navbar = ({toggleRed , setToggleRed}) => {
                             <div className="text-2xl font-bold">+</div>
                           </div>
                           <div className="flex justify-between mx-2">
-                            <div>business divisions</div>
+                            <div>business divisions</div> 
                             <div className="text-2xl font-bold">+</div>
                           </div>
                           <div className="flex justify-between mx-2">
@@ -707,7 +688,7 @@ const Navbar = ({toggleRed , setToggleRed}) => {
                       </div>
                     </div>
 
-                    {/*********  Laptop   *********/}
+                    {/*********  Desktop   *********/}
 
                     <div>
                       <div className="mt-16 hidden lg:block">

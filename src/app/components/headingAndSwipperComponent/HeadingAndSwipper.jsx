@@ -6,11 +6,23 @@ import { Autoplay, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import Link from "next/link";
+import GsapScrollAnimationComp from "../../components/gsapComp/GsapScrollAnimationComp"
 
+<<<<<<< HEAD
+=======
+import gsap from "gsap";
+import GsapBottomAnimation from "../gsapComponent/GsapBottomAnimation";
+>>>>>>> 1c836b79563aa1ef5bd2f03eb34d11d66c34120a
 import Lottie from "react-lottie-player";
 import bannerAnimation from "../../../../public/symmetryAnimations/homeBannerAnimation.json";
+import Rive from "@rive-app/react-canvas";
+import startingAnimation from "../../../../public/symmetryAnimations/starting-animation.riv";
 import { useRouter } from "next/navigation";
+<<<<<<< HEAD
 import gsap from "gsap";
+=======
+import ScrollTrigger from "gsap/ScrollTrigger";
+>>>>>>> 1c836b79563aa1ef5bd2f03eb34d11d66c34120a
 
 const HeadingAndSwipper = ({
   transformationTitle,
@@ -24,24 +36,37 @@ const HeadingAndSwipper = ({
   slidesPerView,
   knowMoreLink,
 }) => {
+  const router = useRouter();
+
   const [active, setActive] = useState(0);
   const [isAnimating , setIsAnimating] = useState()
   const [arrowPrevActive, setArrowPrevActive] = useState(false);
   const [arrowNextActive, setArrowNextActive] = useState(false);
+  const [triggerBottomAnimation, setTriggerBottomAnimation] = useState(false);
+
+  
+  // useEffect(() => {
+  
+  // }, []);
+
+  const triggerBotAnimFunc = () => {
+    setTriggerBottomAnimation(true);
+  };
 
   const handleActive = (swiper) => {
     setActive(swiper.realIndex);
   };
-
+  
   const handleArrowPrevActive = () => {
     setArrowNextActive(false);
     setArrowPrevActive(true);
   };
-
+  
   const handleArrowNextActive = () => {
     setArrowPrevActive(false);
     setArrowNextActive(true);
   };
+<<<<<<< HEAD
 
   const router = useRouter();
   const [linkName, setLinkName] = useState("");
@@ -164,12 +189,33 @@ const HeadingAndSwipper = ({
                 }}
                 className="text-3xl xl:text-4xl mb-4 text-black pillat-normal"
               >
+=======
+  
+  const animationRefs = GsapScrollAnimationComp();
+  
+  return (
+    <>
+      <div className="relative">
+        {triggerBottomAnimation && <GsapBottomAnimation />}
+
+        <div className="md:mx-12 mx-3 lg:mx-auto lg:w-[58%] ">
+          <div className="mt-5">
+            <div
+              className="border-b border-green-500 pt-6 opacity-0 transform translate-y-[50px]"
+              ref={animationRefs.fifthFadeInAnimation}
+            >
+              <p className="text-3xl xl:text-4xl mb-4 text-black pillat-normal">
+>>>>>>> 1c836b79563aa1ef5bd2f03eb34d11d66c34120a
                 {transformationTitle || commerceTitle}
               </p>
             </div>
-            <div className=" w-full mt-4">
-              <span className="rainbow-text text-4xl sm:text-6xl md:text-5xl lg:text-5xl 2xl:text-7xl pillat-normal">
+            <div className="w-full mt-4 opacity-0 transform translate-y-[50px]" ref={animationRefs.secondFadeInAnimation}>
+              <span
+                className="rainbow-text text-4xl sm:text-6xl md:text-5xl lg:text-5xl 2xl:text-7xl pillat-normal"
+                // ref={heading3Heading}
+              >
                 <span
+                  ref={animationRefs.thirdFadeInAnimation}
                   className=""
                   dangerouslySetInnerHTML={{
                     __html: transformationHeading || commerceHeading,
@@ -177,9 +223,8 @@ const HeadingAndSwipper = ({
                 />
               </span>
 
-              {/*********  Laptop  *********/}
-
-              <span className="border-l border-gray-400 text-black text-xs 2xl:text-sm pl-4 ml-3 w-[55%] 2xl:w-[45%] xl:max-w-[600px] 2xl:leading-[15px] mt-3 lg:inline-block hidden pillat-thin">
+              {/*********  Desktop  *********/}
+              <span className="border-l border-gray-400 text-[#181818] text-xs 2xl:text-sm pl-4 ml-3 w-[55%] 2xl:w-[45%] xl:max-w-[600px] 2xl:leading-[15px] mt-3 lg:inline-block hidden pillat-thin">
                 <span className="w-[100%] relative ">
                   {transformationText || commerceText}
                   <Link href={`${knowMoreLink}`} class="a-arrow">
@@ -194,7 +239,7 @@ const HeadingAndSwipper = ({
 
               {/*********  Mobile  *********/}
 
-              <span className="w-[100%] lg:hidden block text-black text-xs sm:text-sm mt-2 pillat-thin">
+              <span className="w-[100%] lg:hidden block text-[#181818] font-extrabold text-sm sm:text-sm mt-2 pillat-thin">
                 {transformationText || commerceText}
                 <Link href={`${knowMoreLink}`} class="a-arrow relative">
                   {" "}
@@ -205,6 +250,7 @@ const HeadingAndSwipper = ({
             </div>
           </div>
 
+<<<<<<< HEAD
           <div className="mb-10 mt-10 md:mx-auto">
             <Swiper
               spaceBetween={20}
@@ -241,6 +287,52 @@ const HeadingAndSwipper = ({
               {swipperContent.map((item, index) => (
                 <>
                   <SwiperSlide key={item.id}>
+=======
+          {(transformationSwipperShow || commerceSwipperShow) && (
+            <div
+              className="mb-10 mt-10 md:mx-auto opacity-0 transform translate-y-[50px]"
+              ref={animationRefs.fourthFadeInAnimation}
+            >
+              <Swiper
+                spaceBetween={20}
+                slidesPerView={1.5}
+                breakpoints={{
+                  500: {
+                    slidesPerView: 2,
+                    spaceBetween: 40,
+                  },
+                  768: {
+                    slidesPerView: 2.9,
+                    spaceBetween: 40,
+                  },
+                  1024: {
+                    slidesPerView: slidesPerView,
+                    spaceBetween: 20,
+                  },
+                }}
+                modules={[Autoplay, Navigation]}
+                speed={700}
+                loop={true}
+                onSlideChange={handleActive}
+                autoplay={{
+                  delay: 1000,
+                  pauseOnMouseEnter: true,
+                }}
+                navigation={{
+                  nextEl: ".swiper-button-next",
+                  prevEl: ".swiper-button-prev",
+                }}
+                centeredSlides={true}
+                className="mySwiper "
+              >
+                {swipperContent.map((item, index) => (
+                  <SwiperSlide
+                    key={item.id}
+                    onClick={() => {
+                      triggerBotAnimFunc();
+                    }}
+                  >
+>>>>>>> 1c836b79563aa1ef5bd2f03eb34d11d66c34120a
                     <div
                       className={` rounded-lg swipper-hover-class transition-all ease-in-out duration-300 `}
                     >
@@ -252,7 +344,7 @@ const HeadingAndSwipper = ({
                         } `}
                       >
                         <div className="">
-                          <h2 className="text-3xl w-[120px] xl:w-[170px]  flex items-end min-h-[110px] mb-2 leading-[30px] pillat-thin">
+                          <h2 className="text-3xl w-[120px] xl:w-[170px] flex items-end min-h-[110px] mb-2 leading-[30px] pillat-thin">
                             {item.h2}
                           </h2>
                           <p className=" text-xs leading-[17px] pillat-normal">

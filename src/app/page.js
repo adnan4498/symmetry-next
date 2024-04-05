@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { useEffect, useRef } from "react";
 import Footer from "./components/footer/Footer";
 import Navbar from "./components/navbar/Navbar";
@@ -8,32 +8,24 @@ import BusinessDivision from "./homeComponents/BusinessDivision";
 import DeliveringSection from "./homeComponents/DeliveringSection";
 import HeritageSection from "./homeComponents/HeritageSection";
 import InteractiveMarketing from "./homeComponents/InteractiveMarketing";
-import gsap from "gsap";
+import startingAnimation from "../../public/symmetryAnimations/starting-animation.riv";
+import { gsap } from "gsap";
+import Lottie from "react-lottie-player";
+import RootLayout from "./layout";
+import Rive from "@rive-app/react-canvas";
+import GsapTopAnimation from "./components/gsapComponent/GsapTopAnimation";
 
 export default function Home() {
-
-  const navBlackDiv = useRef(null);
-
-  // asd
-  useEffect(() => {
-    const theDiv = navBlackDiv.current;
-    const body = document.body
-
-    gsap.to(navBlackDiv.current, {
-      y: "1000px",
-      duration: 2,
-      ease: "power1.inOut",
-      onComplete: () => {
-        theDiv.style.display = "none";
-        body.style.overflow = "visible"
-        /* this is overflow visible */
-      },
-    });
-  }, []);
+  const homeStartAnimRef = useRef(null);
+  const homeRiveAnimRef = useRef(null);
 
   return (
     <>
-      <div className="overflow-y-hidden">
+      <div className="">
+
+      {/* Starting Animation */}
+        <GsapTopAnimation />
+
         <Navbar className="" />
         <DeliveringSection />
         <HeritageSection />
@@ -44,6 +36,7 @@ export default function Home() {
         <BrandsProducts />
         <AboutUs />
         <Footer />
+
       </div>
     </>
   );

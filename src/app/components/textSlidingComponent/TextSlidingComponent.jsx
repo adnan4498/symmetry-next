@@ -8,6 +8,7 @@ import { Autoplay, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "../../homeComponents/Dummy.css";
+import GsapScrollAnimationComp from "../../components/gsapComp/GsapScrollAnimationComp";
 import Link from "next/link";
 gsap.registerPlugin(ScrollTrigger);
 
@@ -28,30 +29,8 @@ const TextSlidingComponent = ({
   const [arrowPrevActive, setArrowPrevActive] = useState(false);
   const [arrowNextActive, setArrowNextActive] = useState(false);
 
-  const heading2 = useRef();
-  const heading3 = useRef();
 
   useEffect(() => {
-    gsap.to(heading2.current, {
-      scrollTrigger: {
-        trigger: heading2.current,
-        toggleActions: "restart restart none none",
-      },
-      duration: 4,
-      opacity: 1,
-      y: -20,
-    });
-
-    gsap.to(heading3.current, {
-      scrollTrigger: {
-        trigger: heading3.current,
-        toggleActions: "restart restart none none",
-      },
-      duration: 4,
-      opacity: 1,
-      y: -5,
-    });
-
     const root = document.documentElement;
     const marqueeElementsDisplayed = getComputedStyle(root).getPropertyValue(
       "--marquee-elements-displayed"
@@ -77,25 +56,31 @@ const TextSlidingComponent = ({
     setArrowPrevActive(false);
     setArrowNextActive(true);
   };
+
+  const animationRefs = GsapScrollAnimationComp();
+
   return (
-    <div className="bg-[#fafafa]">
-      <div className="mx-3 mb-10 mt-36 md:mx-12 overflow-hidden">
+    <div className="">
+      <div className="mx-3 mb-10 mt-5 lg:mt-44 md:mt-36 md:mx-12 overflow-hidden">
         <div
           className={`w-full ${
-            isBorder ? "border-b border-green-500 pb-1" : ""
+            isBorder ? "border-b border-green-500 pb-1 transform translate-y-[50px] " : ""
           }  w-[40%]`}
         >
           <h2
-            className="text-gray-600 text-4xl lg:text-4xl opacity-0 pillat-normal"
-            ref={heading3}
+            className="text-gray-600 text-4xl lg:text-4xl opacity-0 pillat-normal pb-3 transform translate-y-[50px]"
+            ref={animationRefs.firstFadeInAnimation}
           >
             {businessTitle || clientTitle}
           </h2>
         </div>
 
         {businessMarque && (
-          <div class="marquee">
-            <ul class="marquee-content gap-10">
+          <div
+            className="marquee opacity-0 transform translate-y-[50px] mt-2 lg:mt-8"
+            ref={animationRefs.secondFadeInAnimation}
+          >
+            <ul className="marquee-content gap-10">
               <li className="!text-[160px] !2xl:text-[200px]  !text-black">
                 skillfully
               </li>
@@ -155,7 +140,10 @@ const TextSlidingComponent = ({
         )}
 
         {clientMarque && (
-          <div class="marquee">
+          <div
+            className="marquee opacity-0 transform translate-y-[50px] mt-2 lg:mt-8"
+            ref={animationRefs.thirdFadeInAnimation}
+          >
             <ul class="marquee-content gap-10">
               <li className="!text-[160px] !2xl:text-[200px]  !text-black">
                 transforming
@@ -252,17 +240,25 @@ const TextSlidingComponent = ({
         )}
 
         <div className="sm:w-[80%] lg:max-w-[600px] ">
-          <p className="text-xs lg:text-sm text-gray-600 font-[300] mt-3 leading-[16px] pillat-normal">
+          <p
+            className="text-xs lg:text-sm text-gray-600 font-[300] mt leading-[16px] pillat-normal opacity-0 transform translate-y-[50px]"
+            ref={animationRefs.fourthFadeInAnimation}
+          >
             {businessText || clientText}
             <Link href={"clients"} class="a-arrow relative">
-              <span className="text-black font-bold">see it for yourself</span>
+              <span className="text-black font-bold text-[14px] sm:text-[12px] sm:ml-0 ml-1 ">
+                see it for yourself
+              </span>
               <span class="arrow"></span>
             </Link>
           </p>
         </div>
 
         {isImageSwipper && (
-          <div className="mt-9 swipper-icons-color-toggle">
+          <div className="mt-9 swipper-icons-color-toggle opacity-0 transform translate-y-[50px] "
+          ref={animationRefs.fifthFadeInAnimation}
+
+          >
             <Swiper
               spaceBetween={20}
               slidesPerView={1.5}
@@ -280,7 +276,7 @@ const TextSlidingComponent = ({
                   spaceBetween: swipperGap,
                 },
               }}
-              modules={[Autoplay]}
+              modules={[Autoplay, Navigation]}
               speed={700}
               loop={true}
               // navigation={true}
@@ -288,6 +284,10 @@ const TextSlidingComponent = ({
               autoplay={{
                 delay: 1000,
                 pauseOnMouseEnter: true,
+              }}
+              navigation={{
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
               }}
               className="mySwiper "
             >

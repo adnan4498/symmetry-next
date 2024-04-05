@@ -1,6 +1,5 @@
 "use client";
 import { useEffect, useRef } from "react";
-import LocomotiveScroll from "locomotive-scroll";
 import BlackBannerComponent from "../components/blackBannerComponent/BlackBannerComponent";
 import Tabs from "../components/tabs/Tabs";
 import AnimationTextReversing from "../components/animationTextReversing/AnimationTextReversing";
@@ -10,9 +9,16 @@ import ConnectWithUs from "../components/connectWithUsComponent/ConnectWithUs";
 import AboutUs from "../homeComponents/AboutUs";
 import Footer from "../components/footer/Footer";
 import Lottie from "react-lottie-player";
-import islamabadAnimation from "../../../public/symmetryAnimations/islamabadAnimation.json";
+import contactUsAnim1 from "../../../public/symmetryAnimations/contact-us-karachi-animation.riv";
+import contactUsAnim2 from "../../../public/symmetryAnimations/contact-us-islamabad-animation.riv";
+import contactUsAnim3 from "../../../public/symmetryAnimations/contact-us-lahore-animation.riv";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+
+import companyBannerAnim from "../../../public/symmetryAnimations/company-animation-main-rive.riv";
+import GsapScrollAnimationComp from "../components/gsapComp/GsapScrollAnimationComp";
+
+import Rive from "@rive-app/react-canvas";
 
 gsap.registerPlugin(ScrollTrigger);
 const page = () => {
@@ -151,9 +157,15 @@ const page = () => {
     },
   ];
 
+  const animationRefs = GsapScrollAnimationComp();
+
   return (
     <>
-      <BlackBannerComponent aboutText={aboutText} aboutH2={aboutH2} />
+      <BlackBannerComponent
+        aboutText={aboutText}
+        aboutH2={aboutH2}
+        bannerAnimation={companyBannerAnim}
+      />
       <div ref={redDiv} className="bg-white  pt-[450px]">
         <div
           ref={pinkDiv}
@@ -164,7 +176,10 @@ const page = () => {
 
         <div ref={scrollContainerRef} className="">
           <AnimationTextReversing>
-            <div id="karachiTabRef" className="company-div flex flex-col gap-5 lg:w-6/12">
+            <div
+              id="karachiTabRef"
+              className="company-div flex flex-col gap-5 lg:w-6/12"
+            >
               <div className="text-black">
                 <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light pillat-normal">
                   karachi
@@ -192,18 +207,17 @@ const page = () => {
                 </ul>
               </div>
             </div>
-            <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-              <Lottie
-                loop
-                animationData={islamabadAnimation}
-                play
-                // style={{ width: 350, height: 350 }}
-              />{" "}
+            <div className="flex justify-center items-center lg:w-5/12 lg:h-72 lg:mt-0 mt-10">
+              <Rive src={contactUsAnim1} autoplay={true} play={true} />
             </div>
           </AnimationTextReversing>
 
           <AnimationTextReversing flexDirection="row-reverse">
-            <div id="islamabadTabRef" className="company-div flex flex-col gap-5 lg:w-6/12 pillat-normal">
+            <div
+              id="islamabadTabRef"
+              className="company-div flex flex-col gap-5 lg:w-6/12 opacity-0 transform translate-y-[20px]"
+              ref={animationRefs.firstFadeInAnimation}
+            >
               <div className="text-black">
                 <h2 className="text-5xl lg:text-6xl 2xl:text-7xl font-light">
                   islamabad
@@ -227,18 +241,17 @@ const page = () => {
                 </ul>
               </div>
             </div>
-            <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-              <Lottie
-                loop
-                animationData={islamabadAnimation}
-                play
-                // style={{ width: 350, height: 350 }}
-              />{" "}
+            <div className="flex justify-center items-center lg:w-5/12 lg:h-72 lg:mt-0 mt-10">
+              <Rive src={contactUsAnim2} autoplay={true} play={true} />
             </div>
           </AnimationTextReversing>
 
           <AnimationTextReversing>
-            <div id="lahoreTabRef" className="company-div flex flex-col gap-5 lg:w-6/12 pillat-normal">
+            <div
+              id="lahoreTabRef"
+              className="company-div flex flex-col gap-5 lg:w-6/12 pillat-normal opacity-0 transform translate-y-[20px]"
+              ref={animationRefs.secondFadeInAnimation}
+            >
               <div className="text-black">
                 <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light">
                   lahore
@@ -257,13 +270,8 @@ const page = () => {
                 </ul>
               </div>
             </div>
-            <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-              <Lottie
-                loop
-                animationData={islamabadAnimation}
-                play
-                // style={{ width: 350, height: 350 }}
-              />{" "}
+            <div className="flex justify-center items-center lg:w-5/12 lg:h-72 lg:mt-0 mt-10">
+              <Rive src={contactUsAnim3} autoplay={true} play={true} />
             </div>
           </AnimationTextReversing>
 

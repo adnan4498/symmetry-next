@@ -14,12 +14,13 @@ import director6 from "../../../public/board-director-img-6.webp";
 import director7 from "../../../public/board-director-img-7.webp";
 import ConnectWithUs from "../components/connectWithUsComponent/ConnectWithUs";
 import Footer from "../components/footer/Footer";
-import companyAnimation from "../../../public/symmetryAnimations/companyAnimation.json";
-import visionAnimation from "../../../public/symmetryAnimations/visionAnimation.json";
-import missionAnimation from "../../../public/symmetryAnimations/missionAnimation.json";
-import directorsAnimation from "../../../public/symmetryAnimations/directorsAnimation.json";
+// import companyBannerAnim from "../../../../public/symmetryAnimations/company-animation-main-rive.riv";
+import companyBannerAnim from "../../../public/symmetryAnimations/company-animation-main-rive.riv";
+import companyAnim2 from "../../../public/symmetryAnimations/company-animation-2-riveee.riv";
+import companyAnim3 from "../../../public/symmetryAnimations/company-animation-3-riveee.riv";
+import companyAnim4 from "../../../public/symmetryAnimations/company-animation-4-rive.riv";
 import initiativeAnimation from "../../../public/symmetryAnimations/initiativeAnimation.json";
-import dummyRiv from "../../../public/symmetryAnimations/home-banner.riv";
+import dummyRiv from "../../../public/symmetryAnimations/company-animation-1-rive.riv";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
@@ -215,7 +216,7 @@ const Company = () => {
 
   return (
     <>
-      <BlackBannerComponent aboutText={aboutText} aboutH2={aboutH2} />
+      <BlackBannerComponent aboutText={aboutText} aboutH2={aboutH2} bannerAnimation={companyBannerAnim} />
       <div ref={redDiv} className="bg-white  pt-[450px]">
         <div
           ref={pinkDiv}
@@ -225,7 +226,10 @@ const Company = () => {
         </div>
         <div className="bg-white h-[1800px] text-black z-0">
           <AnimationTextReversing>
-            <div id="companyTabRef" className="company-div flex flex-col gap-5 lg:w-6/12">
+            <div
+              id="companyTabRef"
+              className="company-div flex flex-col gap-5 lg:w-6/12"
+            >
               <div className="text-black">
                 <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light pillat-normal">
                   company
@@ -260,24 +264,15 @@ const Company = () => {
                 </ul>
               </div>
             </div>
-            <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-              {/* <Image src={square} width={200} alt="animation here" /> */}
-              {/* <Lottie
-                loop
-                animationData={companyAnimation}
-                play
-                // style={{ width: 350, height: 350 }}
-              /> */}
-              <Rive
-                src={dummyRiv}
-                // stateMachines="bumpy"
-                autoplay={true} // Or play={true}
-                play={true}
-              />
+            <div className="flex justify-center items-center lg:w-5/12 lg:h-72 lg:mt-0 mt-10">
+              <Rive src={dummyRiv} autoplay={true} play={true} />
             </div>
           </AnimationTextReversing>
           <AnimationTextReversing flexDirection="row-reverse">
-            <div id="visionTabRef" className="vision-div flex flex-col gap-5 lg:w-6/12">
+            <div
+              id="visionTabRef"
+              className="vision-div flex flex-col gap-5 lg:w-6/12"
+            >
               <div className="text-black">
                 <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light pillat-normal">
                   vision
@@ -298,17 +293,15 @@ const Company = () => {
                 </p>
               </div>
             </div>
-            <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-              <Lottie
-                loop
-                animationData={visionAnimation}
-                play
-                // style={{ width: 350, height: 350 }}
-              />
+            <div className="flex justify-center items-center lg:w-5/12 lg:h-72 lg:mt-0 mt-10">
+              <Rive src={companyAnim2} autoplay={true} play={true} />
             </div>
           </AnimationTextReversing>
           <AnimationTextReversing>
-            <div id="missionTabRef" className="mission-div flex flex-col gap-5 lg:w-6/12">
+            <div
+              id="missionTabRef"
+              className="mission-div flex flex-col gap-5 lg:w-6/12"
+            >
               <div className="text-black">
                 <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light pillat-normal">
                   mission
@@ -327,52 +320,46 @@ const Company = () => {
                 </p>
               </div>
             </div>
-            <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-              <Lottie
-                loop
-                animationData={missionAnimation}
-                play
-                // style={{ width: 350, height: 350 }}
-              />{" "}
+            <div className="flex justify-center items-center lg:w-5/12 lg:h-72 lg:mt-0 mt-10">
+              <Rive src={companyAnim3} autoplay={true} play={true} />
             </div>
           </AnimationTextReversing>
           <AnimationTextReversing flexDirection="row-reverse">
-            <div id="boardDirectorsTabRef" className="board-directors-div flex flex-col gap-5 lg:w-6/12">
+            <div
+              id="boardDirectorsTabRef"
+              className="board-directors-div flex flex-col gap-5 lg:w-6/12"
+            >
               <div className="text-black">
                 <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light pillat-normal">
                   board of directors
                 </h2>
               </div>
 
-              <div className="grid grid-cols-2 sm:grid-cols-3 mx-auto gap-10 lg:mx-0 lg:gap-5 w-[70%] mt-5 ">
+              <div className="grid grid-cols-2 sm:grid-cols-3 mx-auto gap-10 lg:mx-0 lg:gap-5 w-[70%] mt-5">
                 {boardDirectors.map((item, index) => (
-                  <>
-                    <div>
-                      <div className="border border-green-700 rounded-md min-w-[100px] max-w-[100px] py-[3px] px-1">
-                        <Image src={item.img} />
-                      </div>
-                      <p className="mt-2 min-h-[40px] leading-[18px] pillat-normal">
-                        {item.name}
-                      </p>
-                      <p className="text-gray-500 text-xs pillat-normal">
-                        {item.post}
-                      </p>
+                  <div key={item.id}>
+                    <div className="border border-green-700 rounded-md min-w-[100px] max-w-[100px] py-[3px] px-1">
+                      <Image src={item.img} />
                     </div>
-                  </>
+                    <p className="mt-2 min-h-[40px] leading-[18px] pillat-normal">
+                      {item.name}
+                    </p>
+                    <p className="text-gray-500 text-xs pillat-normal">
+                      {item.post}
+                    </p>
+                  </div>
                 ))}
               </div>
             </div>
-            <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-              <Lottie
-                loop
-                animationData={directorsAnimation}
-                play
-                // style={{ width: 350, height: 350 }}
-              />{" "}
+            <div className="flex justify-center items-center lg:w-5/12 lg:h-72 lg:mt-0 mt-10">
+              <Rive src={companyAnim4} autoplay={true} play={true} />
             </div>
           </AnimationTextReversing>
           <AnimationTextReversing>
-            <div id="initiativesTabRef" className="vision-div flex flex-col gap-5 lg:w-6/12">
+            <div
+              id="initiativesTabRef"
+              className="vision-div flex flex-col gap-5 lg:w-6/12"
+            >
               <div className="text-black">
                 <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light pillat-normal">
                   initiatives
@@ -391,10 +378,10 @@ const Company = () => {
                   </div>
                   <div className="text-gray-500 text-[14px] mt-2  pillat-normal">
                     <p className="">
-                      <span className="!font-extrabold text-black">djoint</span> is a
-                      flagship initiative launched by Symmetry Group and has
-                      since been implemented across all our agencies. In Djoint
-                      sessions, the senior most management of the Group
+                      <span className="!font-extrabold text-black">djoint</span>{" "}
+                      is a flagship initiative launched by Symmetry Group and
+                      has since been implemented across all our agencies. In
+                      Djoint sessions, the senior most management of the Group
                       discusses the latest digital trends and broad spectrum
                       digital strategies with the audience. In-house sessions
                       are attended by both, new and existing employees, as part

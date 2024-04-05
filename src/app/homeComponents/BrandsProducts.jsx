@@ -332,6 +332,7 @@ const BrandsProducts = () => {
   const knowMore = "see it for yourself --";
   const clientMarque = true
 
+  /* aas (Animation and Swipper) */
 
   const aasH3 = "affiliation & partnerships";
   const aasH2 = "collaborating for <br /> growth";

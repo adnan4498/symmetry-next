@@ -14,6 +14,7 @@ module.exports = {
       },
         backgroundColor: {
         'swipper-custom': 'radial-gradient(at right top, rgb(241, 229, 34) 10%, rgb(90, 166, 61) 35%, rgb(13, 110, 133) 72%)',
+        'blue-gradient': 'linear-gradient(40deg, #0d53bd 40%, #13b0a8 90%)',
       },
       screens: {
         '3xl': '1900px',

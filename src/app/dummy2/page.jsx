@@ -1,41 +1,93 @@
 "use client";
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useEffect } from "react";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger"; // Import ScrollTrigger
+
+import GsapComp from "../components/gsapComp/GsapScrollAnimationComp";
+
+gsap.registerPlugin(ScrollTrigger); // Register ScrollTrigger
 
 const Page = () => {
-  const [toggleGsap, setToggleGsap] = useState(true);
-  const redDivRef = useRef(null);
-
-  // const toggleState = () => {};
-  // useEffect(() => {
-  // }, [setToggleGsap]);
-  console.log(toggleGsap, "Outsite toggling");
-  
-  const gsapToggleFunc = () => {
-    console.log(toggleGsap,"insert");
-    setToggleGsap(!toggleGsap); 
-    
-    gsap.to(redDivRef.current, {
-      x: toggleGsap ? 200 : 0,
-      duration: 1,
-      opacity: toggleGsap ? 0 : 1,
-    });
-    
-    console.log(toggleGsap,"insert2");
+  const gsapCompRef = GsapComp();
+  const liRefs = {
+    home: useRef(null),
+    about: useRef(null),
+    contact: useRef(null),
   };
+
+  const liItems = [
+    {
+      id: 0,
+      item: "home",
+      refID: "#homeRef",
+    },
+    {
+      id: 1,
+      item: "about",
+      refID: "#aboutRef",
+    },
+    {
+      id: 2,
+      item: "contact",
+      refID: "#contactRef",
+    },
+  ];
+
+  useEffect(() => {
+    liItems.forEach((item) => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: item.refID,
+          start: "top center",
+          end: "bottom center",
+          markers : true,
+          toggleActions: "play none none none",
+          onEnter: () => {
+            // Reset all list items to their initial color
+            Object.values(liRefs).forEach((ref) => {
+              gsap.to(ref.current, { color: "initial" });
+            });
+
+            // Set the color of the current list item to red
+            gsap.to(liRefs[item.item].current, { color: "red" });
+          },
+          onEnterBack: () => {  
+            // Reset all list items to their initial color
+            Object.values(liRefs).forEach((ref) => {
+              gsap.to(ref.current, { color: "initial" });
+            });
+
+            // Set the color of the current list item to red
+            gsap.to(liRefs[item.item].current, { color: "red" });
+          },
+        },
+      });
+
+      return () => {
+        tl.kill();
+      };
+    });
+  }, [liRefs]);
 
   return (
     <>
-      <div className="mt-20 ml-20">
-        <div
-          ref={redDivRef}
-          onClick={() => {
-            gsapToggleFunc();
-            // toggleState();
-          }}
-          className="bg-red-500 w-20 h-20"
-        >
-          1
+      <div>
+        <div className="bg-red-300 flex justify-center gap-40 h-20 items-center fixed w-full">
+          {liItems.map((item) => (
+            <div key={item.id} className="text-6xl" ref={liRefs[item.item]}>
+              <div>{item.item}</div>
+            </div>
+          ))}
+        </div>
+
+        <div id="homeRef" className="bg-red-500 h-[100vh]">
+          home
+        </div>
+        <div id="aboutRef" className="bg-blue-500 h-[100vh]">
+          about
+        </div>
+        <div id="contactRef" className="bg-green-500 h-[100vh]">
+          contact
         </div>
       </div>
     </>

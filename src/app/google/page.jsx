@@ -8,7 +8,17 @@ import Image from "next/image";
 import ConnectWithUs from "../components/connectWithUsComponent/ConnectWithUs";
 import Footer from "../components/footer/Footer";
 import Lottie from "react-lottie-player";
-import microsoftAnimation from "../../../public/symmetryAnimations/microsoftAnimation.json";
+
+// import microsoftAnimation from "../../../public/symmetryAnimations/microsoftAnimation.json";
+import affiliationAnimation1 from "../../../public/symmetryAnimations/affiliation-animation-1-rive.riv";
+import affiliationAnimation2 from "../../../public/symmetryAnimations/affiliation-animation-2-rive.riv";
+import affiliationAnimation3 from "../../../public/symmetryAnimations/affiliation-animation-3-rive.riv";
+import affiliationAnimation4 from "../../../public/symmetryAnimations/affiliation-animation-last-rive.riv";
+
+import affiliationBannerAnim from "../../../public/symmetryAnimations/affiliation-animation-main-rive.riv";
+import GsapScrollAnimationComp from "../components/gsapComp/GsapScrollAnimationComp";
+
+import Rive from "@rive-app/react-canvas";
 
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
@@ -145,9 +155,15 @@ const page = () => {
     },
   ];
 
+  const animationRefs = GsapScrollAnimationComp();
+
   return (
     <>
-      <BlackBannerComponent aboutText={aboutText} aboutH2={aboutH2} />
+      <BlackBannerComponent
+        aboutText={aboutText}
+        aboutH2={aboutH2}
+        bannerAnimation={affiliationBannerAnim}
+      />
       <div ref={redDiv} className="bg-white  pt-[450px]">
         <div
           ref={pinkDiv}
@@ -172,18 +188,16 @@ const page = () => {
               </p>
             </div>
           </div>
-          <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-            <Lottie
-              loop
-              animationData={microsoftAnimation}
-              play
-              // style={{ width: 350, height: 350 }}
-            />{" "}
+          <div className="flex justify-center items-center lg:w-5/12 lg:h-72 lg:mt-0 mt-10">
+            <Rive src={affiliationAnimation1} autoplay={true} play={true} />
           </div>
         </AnimationTextReversing>
 
         <AnimationTextReversing flexDirection="row-reverse">
-          <div className="company-div flex flex-col gap-5 lg:w-6/12">
+          <div
+            className="company-div flex flex-col gap-5 lg:w-6/12 opacity-0 transform translate-y-[20px]"
+            ref={animationRefs.firstFadeInAnimation}
+          >
             <div className="text-black">
               <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light pillat-normal">
                 microsoft
@@ -199,18 +213,16 @@ const page = () => {
               </p>
             </div>
           </div>
-          <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-            <Lottie
-              loop
-              animationData={microsoftAnimation}
-              play
-              // style={{ width: 350, height: 350 }}
-            />{" "}
+          <div className="flex justify-center items-center lg:w-5/12 lg:h-72 lg:mt-0 mt-10">
+            <Rive src={affiliationAnimation2} autoplay={true} play={true} />
           </div>
         </AnimationTextReversing>
 
         <AnimationTextReversing>
-          <div className="company-div flex flex-col gap-5 lg:w-6/12 pillat-normal">
+          <div
+            className="company-div flex flex-col gap-5 lg:w-6/12 opacity-0 transform translate-y-[20px]"
+            ref={animationRefs.secondFadeInAnimation}
+          >
             <div className="text-black">
               <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light">
                 ali baba
@@ -243,18 +255,16 @@ const page = () => {
               </ul>
             </div>
           </div>
-          <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-            <Lottie
-              loop
-              animationData={microsoftAnimation}
-              play
-              // style={{ width: 350, height: 350 }}
-            />{" "}
+          <div className="flex justify-center items-center lg:w-5/12 lg:h-72 lg:mt-0 mt-10">
+            <Rive src={affiliationAnimation3} autoplay={true} play={true} />
           </div>
         </AnimationTextReversing>
 
         <AnimationTextReversing flexDirection="row-reverse">
-          <div className="company-div flex flex-col gap-5 lg:w-6/12 pillat-normal">
+          <div
+            className="company-div flex flex-col gap-5 lg:w-6/12 opacity-0 transform translate-y-[20px]"
+            ref={animationRefs.thirdFadeInAnimation}
+          >
             <div className="text-black">
               <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light">
                 iso
@@ -272,17 +282,12 @@ const page = () => {
               </p>
             </div>
           </div>
-          <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-            <Lottie
-              loop
-              animationData={microsoftAnimation}
-              play
-              // style={{ width: 350, height: 350 }}
-            />{" "}
+          <div className="flex justify-center items-center lg:w-5/12 lg:h-72 lg:mt-0 mt-10">
+            <Rive src={affiliationAnimation4} autoplay={true} play={true} />
           </div>
         </AnimationTextReversing>
 
-        <ConnectWithUs bgColor="bg-black" textColor="text-white" />
+        <ConnectWithUs bgColor="black" textColor="text-white" />
         <Footer />
       </div>
     </>

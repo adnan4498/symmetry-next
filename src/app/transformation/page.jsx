@@ -7,16 +7,19 @@ import AnimationTextReversing from "../components/animationTextReversing/Animati
 import BlackBannerComponent from "../components/blackBannerComponent/BlackBannerComponent";
 import ConnectWithUs from "../components/connectWithUsComponent/ConnectWithUs";
 import Footer from "../components/footer/Footer";
-import Lottie from "react-lottie-player";
-import dataScienceAnimation from "../../../public/symmetryAnimations/dataScienceAnimation.json";
-import webSoftwareAnimation from "../../../public/symmetryAnimations/webSoftwareAnimation.json";
-import iotAnimation from "../../../public/symmetryAnimations/iotAnimation.json";
-import digitalAnimation from "../../../public/symmetryAnimations/digitalStrategy.json";
-import techConsultingAnimation from "../../../public/symmetryAnimations/techConsultingAnimation.json";
-import consultancyAnimation from "../../../public/symmetryAnimations/consultancyAnimation.json";
+
+import transformationAnim1 from "../../../public/symmetryAnimations/transformation-animation-1-rive.riv"
+import transformationAnim2 from "../../../public/symmetryAnimations/transformation-animation-2-rive.riv"
+import transformationAnim3 from "../../../public/symmetryAnimations/transformation-animation-3-rive.riv"
+import transformationAnim4 from "../../../public/symmetryAnimations/transformation-animation-4-rive.riv"
+import transformationAnim5 from "../../../public/symmetryAnimations/transformation-animation-50-rive.riv"
+import transformationAnim6 from "../../../public/symmetryAnimations/transformation-animation-60-rive.riv"
+
+import transformationBannerAnim from "../../../public/symmetryAnimations/transformation-main-banner-rive.riv";
 
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import Rive from "@rive-app/react-canvas";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -171,7 +174,11 @@ const page = () => {
   return (
     <>
       <div>
-        <BlackBannerComponent aboutText={aboutText} aboutH2={aboutH2} />
+        <BlackBannerComponent
+          aboutText={aboutText}
+          aboutH2={aboutH2}
+          bannerAnimation={transformationBannerAnim}
+        />
         <div ref={redDiv} className="bg-white  pt-[450px]">
           <div
             ref={pinkDiv}
@@ -223,14 +230,9 @@ const page = () => {
                   </ul>
                 </div>
               </div>
-              <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-                <Lottie
-                  loop
-                  animationData={dataScienceAnimation}
-                  play
-                  // style={{ width: 350, height: 350 }}
-                />{" "}
-              </div>
+              <div className="flex justify-center items-center lg:w-5/12 lg:h-72 lg:mt-0 mt-10">
+              <Rive src={transformationAnim1} autoplay={true} play={true} />
+            </div>
             </AnimationTextReversing>
 
             <AnimationTextReversing flexDirection="row-reverse">
@@ -280,14 +282,9 @@ const page = () => {
                   </ul>
                 </div>
               </div>
-              <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-                <Lottie
-                  loop
-                  animationData={webSoftwareAnimation}
-                  play
-                  // style={{ width: 350, height: 350 }}
-                />{" "}
-              </div>
+              <div className="flex justify-center items-center lg:w-5/12 lg:h-72 lg:mt-0 mt-10">
+              <Rive src={transformationAnim2} autoplay={true} play={true} />
+            </div>
             </AnimationTextReversing>
 
             <AnimationTextReversing>
@@ -320,14 +317,9 @@ const page = () => {
                   </ul>
                 </div>
               </div>
-              <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-                <Lottie
-                  loop
-                  animationData={iotAnimation}
-                  play
-                  // style={{ width: 350, height: 350 }}
-                />{" "}
-              </div>
+              <div className="flex justify-center items-center lg:w-5/12 lg:h-72 lg:mt-0 mt-10">
+              <Rive src={transformationAnim3} autoplay={true} play={true} />
+            </div>
             </AnimationTextReversing>
 
             <AnimationTextReversing flexDirection="row-reverse">
@@ -378,14 +370,9 @@ const page = () => {
                   </ul>
                 </div>
               </div>
-              <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-                <Lottie
-                  loop
-                  animationData={digitalAnimation}
-                  play
-                  // style={{ width: 350, height: 350 }}
-                />{" "}
-              </div>
+              <div className="flex justify-center items-center lg:w-5/12 lg:h-72 lg:mt-0 mt-10">
+              <Rive src={transformationAnim4} autoplay={true} play={true} />
+            </div>
             </AnimationTextReversing>
 
             <AnimationTextReversing>
@@ -424,14 +411,9 @@ const page = () => {
                   </ul>
                 </div>
               </div>
-              <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-                <Lottie
-                  loop
-                  animationData={techConsultingAnimation}
-                  play
-                  // style={{ width: 350, height: 350 }}
-                />{" "}
-              </div>
+              <div className="flex justify-center items-center lg:w-5/12 lg:h-72 lg:mt-0 mt-10">
+              <Rive src={transformationAnim5} autoplay={true} play={true} />
+            </div>
             </AnimationTextReversing>
 
             <AnimationTextReversing flexDirection="row-reverse">
@@ -471,18 +453,13 @@ const page = () => {
                   </ul>
                 </div>
               </div>
-              <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
-                <Lottie
-                  loop
-                  animationData={consultancyAnimation}
-                  play
-                  // style={{ width: 350, height: 350 }}
-                />{" "}
-              </div>
+              <div className="flex justify-center items-center lg:w-5/12 lg:h-72 lg:mt-0 mt-10">
+              <Rive src={transformationAnim6} autoplay={true} play={true} />
+            </div>
             </AnimationTextReversing>
           </div>
 
-          <ConnectWithUs bgColor="bg-black" textColor="text-white" />
+          <ConnectWithUs bgColor="black" textColor="text-white" />
           <Footer />
         </div>
       </div>

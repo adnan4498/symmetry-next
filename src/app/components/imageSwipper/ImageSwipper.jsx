@@ -7,6 +7,7 @@ import { Autoplay, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import Link from "next/link";
+import GsapScrollAnimationComp from "../../components/gsapComp/GsapScrollAnimationComp";
 
 const ImageSwipper = ({
   brandsTitle,
@@ -32,18 +33,29 @@ const ImageSwipper = ({
     setArrowNextActive(true);
   };
 
+  const animationRefs = GsapScrollAnimationComp();
+
   return (
     <>
-      <div className="md:mx-12 mx-3 lg:mx-auto lg:w-[55%]">
+      <div className="md:mx-12 mx-3 lg:mx-auto lg:w-[53%]">
         <div className="mt-5">
-          <div className="border-b border-green-500 pt-6">
+          <div
+            className="border-b border-green-500 pt-6 opacity-0 transform translate-y-[50px]"
+            ref={animationRefs.firstFadeInAnimation}
+          >
             <p className="text-3xl lg:text-4xl xl:text-5xl mb-4 text-black pillat-normal">
               {brandsTitle}
             </p>
           </div>
-          <div className=" w-full mt-4">
+          <div
+            className="w-full mt-4 opacity-0 transform translate-y-[50px]"
+            ref={animationRefs.secondFadeInAnimation}
+          >
             <span className="rainbow-text text-4xl sm:text-6xl md:text-5xl lg:text-7xl 2xl:text-8xl pillat-normal">
-              <span className="" dangerouslySetInnerHTML={{ __html: brandsHeading }} />
+              <span
+                className=""
+                dangerouslySetInnerHTML={{ __html: brandsHeading }}
+              />
             </span>
 
             {/*********  Laptop  *********/}
@@ -63,12 +75,12 @@ const ImageSwipper = ({
 
             {/*********  Mobile  *********/}
 
-            <span className=" w-[100%] lg:hidden block text-black text-xs sm:text-sm mt-2 pillat-thin">
-            {brandsText}
+            <span className=" w-[100%] lg:hidden block text-black text-[13px] sm:text-sm mt-2 pillat-thin">
+              {brandsText}
               <Link href={`${knowMoreLink}`} class="a-arrow relative">
                 {" "}
                 <span className="text-black font-bold">
-                explore our world{" "}
+                  explore our world{" "}
                 </span>{" "}
                 <span class="arrow"></span>
               </Link>
@@ -80,7 +92,10 @@ const ImageSwipper = ({
           <h2 className="text-5xl md:text-6xl  text-[#13a772]">Swipper Here</h2>
         </div> */}
 
-        <div className="mb-10 mt-10 md:mx-auto swipper-icons-color-toggle">
+        <div
+          className="mb-10 mt-10 md:mx-auto opacity-0 transform translate-y-[50px]"
+          ref={animationRefs.thirdFadeInAnimation}
+        >
           <Swiper
             spaceBetween={20}
             slidesPerView={1.5}
@@ -102,14 +117,19 @@ const ImageSwipper = ({
             loop={true}
             // navigation={true}
             centeredSlides={true}
-            modules={[Autoplay]}
+            modules={[Autoplay, Navigation]}
             autoplay={{
               delay: 1000,
               pauseOnMouseEnter: true,
             }}
+            navigation={{
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+            }}
             className="mySwiper "
           >
             {swipperContent.map((item, index) => (
+<<<<<<< HEAD
               <>
                 <SwiperSlide>
                   <div className="cursor-pointer">
@@ -121,6 +141,17 @@ const ImageSwipper = ({
                   </div>
                 </SwiperSlide>
               </>
+=======
+              <SwiperSlide key={item.id}>
+                <div className="cursor-pointer">
+                  <div className="flex justify-center items-center border border-gray-400 rounded-md">
+                    <div className=" md:w-10/12 md:h-24 flex justify-center items-center ">
+                      <Image src={item.img} />
+                    </div>
+                  </div>
+                </div>
+              </SwiperSlide>
+>>>>>>> 1c836b79563aa1ef5bd2f03eb34d11d66c34120a
             ))}
           </Swiper>
 

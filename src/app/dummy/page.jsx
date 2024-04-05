@@ -218,7 +218,7 @@ const Page = () => {
 
   return (
     <>
-      <BlackBannerComponent aboutText={aboutText} aboutH2={aboutH2} />
+      <BlackBannerComponent aboutText={aboutText} aboutH2={aboutH2} bannerAnimation={companyBannerAnim}/>
       <div ref={redDiv} className="bg-white  pt-[450px]">
         <div
           ref={pinkDiv}

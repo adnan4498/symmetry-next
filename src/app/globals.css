@@ -1,8 +1,3 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -21,6 +16,10 @@ body {
   color: rgb(var(--foreground-rgb));
   background: white;
 }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 @keyframes rainbow-text-simple-animation {
   0% {
@@ -68,7 +67,6 @@ body {
   letter-spacing: 0.8px;
 }
 
-
 .swipper-icons-color-toggle img {
   -webkit-filter: grayscale(100%) contrast(0.8);
   filter: grayscale(100%);
@@ -78,10 +76,12 @@ body {
 }
 
 .swipper-hover-class {
-  background: radial-gradient(at right top,
-      rgb(250, 250, 250) 0%,
-      rgb(250, 250, 250) 35%,
-      rgb(250, 250, 250) 100%);
+  background: radial-gradient(
+    at right top,
+    rgb(250, 250, 250) 0%,
+    rgb(250, 250, 250) 35%,
+    rgb(250, 250, 250) 100%
+  );
   transition: all ease-in-out 500ms;
   /* Combine transition properties */
   transition-duration: 500ms;
@@ -89,21 +89,36 @@ body {
 }
 
 .swipper-hover-class:hover {
-  background: radial-gradient(at right top,
-      rgb(241, 229, 34) 10%,
-      rgb(90, 166, 61) 35%,
-      rgb(13, 110, 133) 72%);
+  background: radial-gradient(
+    at right top,
+    rgb(241, 229, 34) 10%,
+    rgb(90, 166, 61) 35%,
+    rgb(13, 110, 133) 72%
+  );
   color: white;
   transition: all ease-in-out 500ms;
   /* Combine transition properties */
   transition-duration: 500ms;
 }
 
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background-image: radial-gradient(at top right, #f1e522 25%, #5aa63d 60%);
+  background-size: 140% 140%;
+}
+
+.swiper-button-next:hover::after,
+.swiper-button-prev:hover::after {
+  color: white !important;
+}
+
 .swipper-active-class {
-  background: radial-gradient(at right top,
-      rgb(241, 229, 34) 10%,
-      rgb(90, 166, 61) 35%,
-      rgb(13, 110, 133) 72%);
+  background: radial-gradient(
+    at right top,
+    rgb(241, 229, 34) 10%,
+    rgb(90, 166, 61) 35%,
+    rgb(13, 110, 133) 72%
+  );
   color: white;
   transition: all ease-in-out 500ms;
   /* Combine transition properties */
@@ -115,12 +130,14 @@ body {
 }
 
 .rainbow-text {
-  background-image: linear-gradient(45deg,
-      rgba(13, 83, 189, 1) 0%,
-      rgba(19, 176, 168, 1) 20%,
-      rgba(21, 176, 60, 1) 30%,
-      rgba(93, 156, 17, 1) 45%,
-      rgb(152, 186, 18) 65%);
+  background-image: linear-gradient(
+    45deg,
+    rgba(13, 83, 189, 1) 0%,
+    rgba(19, 176, 168, 1) 20%,
+    rgba(21, 176, 60, 1) 30%,
+    rgba(93, 156, 17, 1) 45%,
+    rgb(152, 186, 18) 65%
+  );
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -132,59 +149,71 @@ body {
 
 @keyframes rainbow-border-animation {
   0% {
-    border-image-source: linear-gradient(45deg,
-        rgba(13, 83, 189, 1) 0%,
-        rgba(19, 176, 168, 1) 20%,
-        rgba(21, 176, 60, 1) 30%,
-        rgba(93, 156, 17, 1) 45%,
-        rgb(152, 186, 18) 65%);
+    border-image-source: linear-gradient(
+      45deg,
+      rgba(13, 83, 189, 1) 0%,
+      rgba(19, 176, 168, 1) 20%,
+      rgba(21, 176, 60, 1) 30%,
+      rgba(93, 156, 17, 1) 45%,
+      rgb(152, 186, 18) 65%
+    );
   }
 
   25% {
-    border-image-source: linear-gradient(45deg,
-        rgb(152, 186, 18) 0%,
-        rgba(13, 83, 189, 1) 20%,
-        rgba(19, 176, 168, 1) 30%,
-        rgba(21, 176, 60, 1) 45%,
-        rgba(93, 156, 17, 1) 65%);
+    border-image-source: linear-gradient(
+      45deg,
+      rgb(152, 186, 18) 0%,
+      rgba(13, 83, 189, 1) 20%,
+      rgba(19, 176, 168, 1) 30%,
+      rgba(21, 176, 60, 1) 45%,
+      rgba(93, 156, 17, 1) 65%
+    );
   }
 
   50% {
-    border-image-source: linear-gradient(45deg,
-        rgba(93, 156, 17, 1) 0%,
-        rgb(152, 186, 18) 20%,
-        rgba(13, 83, 189, 1) 30%,
-        rgba(19, 176, 168, 1) 45%,
-        rgba(21, 176, 60, 1) 65%);
+    border-image-source: linear-gradient(
+      45deg,
+      rgba(93, 156, 17, 1) 0%,
+      rgb(152, 186, 18) 20%,
+      rgba(13, 83, 189, 1) 30%,
+      rgba(19, 176, 168, 1) 45%,
+      rgba(21, 176, 60, 1) 65%
+    );
   }
 
   75% {
-    border-image-source: linear-gradient(45deg,
-        rgba(21, 176, 60, 1) 0%,
-        rgba(93, 156, 17, 1) 20%,
-        rgb(152, 186, 18) 30%,
-        rgba(13, 83, 189, 1) 45%,
-        rgba(19, 176, 168, 1) 65%);
+    border-image-source: linear-gradient(
+      45deg,
+      rgba(21, 176, 60, 1) 0%,
+      rgba(93, 156, 17, 1) 20%,
+      rgb(152, 186, 18) 30%,
+      rgba(13, 83, 189, 1) 45%,
+      rgba(19, 176, 168, 1) 65%
+    );
   }
 
   100% {
-    border-image-source: linear-gradient(45deg,
-        rgba(19, 176, 168, 1) 0%,
-        rgba(21, 176, 60, 1) 20%,
-        rgba(93, 156, 17, 1) 30%,
-        rgb(152, 186, 18) 45%,
-        rgba(13, 83, 189, 1) 65%);
+    border-image-source: linear-gradient(
+      45deg,
+      rgba(19, 176, 168, 1) 0%,
+      rgba(21, 176, 60, 1) 20%,
+      rgba(93, 156, 17, 1) 30%,
+      rgb(152, 186, 18) 45%,
+      rgba(13, 83, 189, 1) 65%
+    );
   }
 }
 
 .rainbow-border {
   border: 1px solid transparent;
-  border-image: linear-gradient(45deg,
-      rgba(13, 83, 189, 1) 0%,
-      rgba(19, 176, 168, 1) 20%,
-      rgba(21, 176, 60, 1) 30%,
-      rgba(93, 156, 17, 1) 45%,
-      rgb(152, 186, 18) 65%);
+  border-image: linear-gradient(
+    45deg,
+    rgba(13, 83, 189, 1) 0%,
+    rgba(19, 176, 168, 1) 20%,
+    rgba(21, 176, 60, 1) 30%,
+    rgba(93, 156, 17, 1) 45%,
+    rgb(152, 186, 18) 65%
+  );
   border-image-slice: 1;
   display: inline-block;
   width: 12px;
@@ -197,9 +226,6 @@ body {
   animation: rainbow-border-animation 10s linear infinite;
 }
 
-
-
-
 .swipper-icons-color-toggle img:hover {
   -webkit-filter: grayscale(0%);
   filter: grayscale(0%);
@@ -207,12 +233,14 @@ body {
 }
 
 .footer-text-color-toggle:hover {
-  background-image: linear-gradient(45deg,
-      rgba(13, 83, 189, 1) 0%,
-      rgba(19, 176, 168, 1) 30%,
-      rgba(21, 176, 60, 1) 50%,
-      rgba(93, 156, 17, 1) 70%,
-      rgba(242, 213, 0, 1) 100%);
+  background-image: linear-gradient(
+    45deg,
+    rgba(13, 83, 189, 1) 0%,
+    rgba(19, 176, 168, 1) 30%,
+    rgba(21, 176, 60, 1) 50%,
+    rgba(93, 156, 17, 1) 70%,
+    rgba(242, 213, 0, 1) 100%
+  );
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -229,10 +257,12 @@ body {
 .lets-discuss-btn:hover {
   transition: all ease-in-out 500ms, background 500ms;
   /* Combine transition properties */
-  background: radial-gradient(at right top,
-      rgb(241, 229, 34) 10%,
-      rgb(90, 166, 61) 35%,
-      rgb(13, 110, 133) 72%);
+  background: radial-gradient(
+    at right top,
+    rgb(241, 229, 34) 10%,
+    rgb(90, 166, 61) 35%,
+    rgb(13, 110, 133) 72%
+  );
   color: white;
   /* transition-duration: 500ms; */
 }
@@ -243,14 +273,37 @@ body {
   -moz-transition: all ease-in-out 0.3s;
   -ms-transition: all ease-in-out 0.3s;
   -o-transition: all ease-in-out 0.3s;
-  background: radial-gradient(at top right,
-      #f1e522 20%,
-      #5aa63d 50%,
-      #0d6e85 70%);
+  background: radial-gradient(
+    at top right,
+    #f1e522 20%,
+    #5aa63d 50%,
+    #0d6e85 70%
+  );
   background-size: 150% 150%;
   color: white;
 }
 
+.tabs-interactive-custom-bg:hover {
+  transition: all ease-in-out 0.3s;
+  -webkit-transition: all ease-in-out 0.3s;
+  -moz-transition: all ease-in-out 0.3s;
+  -ms-transition: all ease-in-out 0.3s;
+  -o-transition: all ease-in-out 0.3s;
+  background: linear-gradient(40deg, #0d53bd 40%, #13b0a8 90%);
+  background-size: 150% 150%;
+  color: white;
+}
+
+.tabs-mobility-custom-bg:hover {
+  transition: all ease-in-out 0.3s;
+  -webkit-transition: all ease-in-out 0.3s;
+  -moz-transition: all ease-in-out 0.3s;
+  -ms-transition: all ease-in-out 0.3s;
+  -o-transition: all ease-in-out 0.3s;
+  background: linear-gradient(40deg, #5d9c11 60%, #13b0a8 100%);
+  background-size: 150% 150%;
+  color: white;
+}
 
 /********   Swipper Arrows Gradient Background    ********/
 
@@ -264,7 +317,7 @@ body {
   rotate: -45deg;
 }
 
-.arrows-bg {
+.{
   background-image: radial-gradient(at top right, #f1e522 25%, #5aa63d 60%);
 }
 
@@ -311,8 +364,13 @@ li.ant-menu-item.ant-menu-item-only-child {
   /* background-color: red !important; */
 }
 
-:where(.css-dev-only-do-not-override-zl9ks2).ant-menu-light.ant-menu-submenu-popup>.ant-menu,
-:where(.css-dev-only-do-not-override-zl9ks2).ant-menu-light>.ant-menu.ant-menu-submenu-popup>.ant-menu {
+:where(
+    .css-dev-only-do-not-override-zl9ks2
+  ).ant-menu-light.ant-menu-submenu-popup
+  > .ant-menu,
+:where(.css-dev-only-do-not-override-zl9ks2).ant-menu-light
+  > .ant-menu.ant-menu-submenu-popup
+  > .ant-menu {
   background-color: black !important;
   color: white !important;
 }
@@ -320,7 +378,6 @@ li.ant-menu-item.ant-menu-item-only-child {
 .abbo i.ant-menu-submenu-arrow {
   display: none !important;
 }
-
 
 /*********    Know more Arrow **********/
 
@@ -366,6 +423,108 @@ li.ant-menu-item.ant-menu-item-only-child {
 .no-scroll {
   overflow-y: hidden !important;
 }
-.sss{
+.sss {
   background-color: red;
+}
+
+.blue-gradient-class {
+  background: linear-gradient(40deg, #0d53bd 40%, #13b0a8 90%);
+}
+
+.g {
+  display: none !important;
+  opacity: 0 !important;
+}
+
+/* select css for country in about section */
+
+.css-13cymwt-control {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: default;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  min-height: 30px !important;
+  outline: 0 !important;
+  position: relative;
+  -webkit-transition: all 100ms;
+  transition: all 100ms;
+  background-color: hsl(0, 0%, 100%);
+  border-color: hsl(0, 0%, 80%);
+  border-style: solid;
+  border-width: 1px;
+  box-sizing: border-box;
+  border-right: 0px !important;
+  border-top: 0px !important;
+  border-left: 0px !important;
+  height: 33px !important;
+}
+
+span.css-1u9des2-indicatorSeparator {
+  width: 0px !important;
+}
+
+path {
+  stroke: lightgray !important;
+}
+
+/*****  Careers Gradient Button / Border  *****/
+
+.careers-buttons-gradient-border {
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  -webkit-transition: all ease-in-out 0.5s;
+  -moz-transition: all ease-in-out 0.5s;
+  -ms-transition: all ease-in-out 0.5s;
+  -o-transition: all ease-in-out 0.5s;
+  background-size: 150% 150%;
+  margin: 0;
+  padding: 0 0 0px 0;
+  width: 155px;
+  height: 46px;
+  position: relative;
+  text-transform: lowercase;
+  background-image: linear-gradient(#fafafa, #fafafa),
+    radial-gradient(
+      circle at top right,
+      rgba(13, 83, 189, 1),
+      rgba(19, 176, 168, 1),
+      rgba(21, 176, 60, 1),
+      rgba(93, 156, 17, 1),
+      rgba(242, 213, 0, 1)
+    );
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  border: double 1px transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+}
+
+.careers-buttons-gradient-bg:hover {
+  animation: btn-anim 8s ease infinite;
+  -webkit-animation: btn-anim 8s ease infinite;
+  background-image: linear-gradient(#fafafa00, #fafafa00),
+    radial-gradient(
+      circle at top right,
+      rgba(13, 83, 189, 1),
+      rgba(19, 176, 168, 1),
+      rgba(21, 176, 60, 1),
+      rgba(93, 156, 17, 1),
+      rgba(242, 213, 0, 1)
+    );
+  background-size: auto;
+  color: white;
 }
