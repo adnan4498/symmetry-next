@@ -256,7 +256,7 @@ const page = ({ params }) => {
         <div ref={redDiv} className="bg-white  pt-[450px]">
           <div
             ref={pinkDiv}
-            className="bg-white h-[130px] md:h-[130px] mt-[-80px] 2xl:mt-[-50px] text-black fixed w-full z-10"
+            className="bg-white h-[130px] md:h-[130px] mt-[-80px] 2xl:mt-[-50px] text-black fixed w-full z-10" 
           >
             <Tabs tabsData={tabsData} slidesPerView={4} />
           </div>
