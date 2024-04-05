@@ -18,6 +18,7 @@ import Link from "next/link";
 gsap.registerPlugin(ScrollTrigger);
 
 const page = ({ params }) => {
+  console.log(params , "params testing")
   const blackDiv = useRef();
   const redDiv = useRef();
   const aboutDiv = useRef();
@@ -25,8 +26,6 @@ const page = ({ params }) => {
   const textDiv = useRef();
   const pinkDiv = useRef();
   const animationDiv = useRef();
-
-  console.log(params, "params");
 
   useEffect(() => {
     let mm = gsap.matchMedia();
@@ -197,13 +196,14 @@ const page = ({ params }) => {
   const bannerLeft = "40%";
   const bannerHeadingSize = "6xl";
   const headingScrollSizeChange = false;
+  const applyNow = "apply-now"
 
   return (
     <>
       <div>
         <BlackBannerComponent
           aboutText={aboutText}
-          aboutH2={params.applyNow.replaceAll(/%|20/g, " ")}
+          aboutH2={params.details.replaceAll(/%|20/g, " ")}
           bannerAnimation={careersBannerAnim}
           bannerLeft={bannerLeft}
           bannerHeadingSize={bannerHeadingSize}
@@ -217,7 +217,7 @@ const page = ({ params }) => {
             <Tabs tabsData={tabsData} slidesPerView={4} />
           </div>
 
-          <div className="ml-3 lg:mx-10">
+          <div className="ml-3 lg:mx-12 lg:pt-1">
             <div className="block lg:flex justify-between lg:mt-10">
               <div>
                 <h2 className="text-2xl sm:text-4xl text-[#212529]">karachi</h2>
@@ -235,12 +235,11 @@ const page = ({ params }) => {
               </div>
 
               <div className="flex gap-3 mb-3 mt-2">
-                <div className="text-gray-500 border text-sm border-gray-500 rounded-lg py-2 px-2 text-center w-44 careers-buttons-gradient-bg careers-buttons-gradient-border ">
-                  {/* <Link href={`/careers/${item.jobTitle.replaceAll(' ','')}`}>apply now</Link> */}
-                  apply now
+                <div className="text-gray-500 border text-sm border-gray-500 rounded-lg py-2 px-2 text-center w-44 careers-buttons-gradient-bg careers-buttons-gradient-border cursor-pointer">
+                  <Link href={`/careers/${params.details.replaceAll(/%|20/g, " ")}/${applyNow}`}>apply now</Link>
                 </div>
-                <div className="text-gray-500 border text-sm border-gray-500 rounded-lg py-2 px-2 text-center w-44 careers-buttons-gradient-bg careers-buttons-gradient-border">
-                  details
+                <div className="text-gray-500 border text-sm border-gray-500 rounded-lg py-2 px-2 text-center w-44 careers-buttons-gradient-bg careers-buttons-gradient-border cursor-pointer">
+                  current opening
                 </div>
               </div>
             </div>
@@ -296,7 +295,7 @@ const page = ({ params }) => {
                 </div>
               ))}
 
-              <div className="text-gray-500 mt-5 lg:mt-8">
+              <div className="text-gray-500 mt-5 lg:mt-12">
                 <div className="flex gap-1">
                   <span className="text-black font-bold">department:</span>
                   <h3>design</h3>
@@ -313,7 +312,7 @@ const page = ({ params }) => {
                 </div>
               </div>
 
-              <div>
+              <div className="lg:flex justify-between lg:mt-12">
                 <div className="text-gray-500 mt-5 lg:mt-8">
                   <span className="text-black font-bold text-base">
                     karachi
@@ -325,7 +324,7 @@ const page = ({ params }) => {
                   <h4>phone +92 21 3517 1991</h4>
                 </div>
 
-                <div className="bg-black text-white text-2xl font-bold my-10 text-center">
+                <div className="bg-black text-white text-2xl font-bold my-10 text-center lg:w-4/12">
                   Google Map Here
                 </div>
               </div>
