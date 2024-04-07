@@ -158,26 +158,6 @@ const HeritageSection = () => {
             className="mySwiper "
           >
             {heritageSwipperContent.map((item, index) => (
-<<<<<<< HEAD
-              <>
-                <SwiperSlide>
-                  <div className="h-[px] relative overflow-hidden">
-                    <div
-                      onMouseOver={() => hoverFunc(item.id)}
-                      onMouseLeave={() => hoverFuncOut()}
-                      className=" border border-gray-400 rounded-lg pl-4 py-10 min-h-[300px] max-w-[px] bg-[#fafafa]"
-                    >
-                      {!item.img ? (
-                        <>
-                          <div className="flex items-baseline absolute z-50">
-                            <div className="text-[140px] m-0 p-0 leading-[120px] text-[#666666] custom-font-family NeumaticFont -tracking-[8px] ">
-                              {" "}
-                              {item.h2}{" "}
-                            </div>
-                            <div className="text-3xl text-[#666666] NeumaticFont font-bold">
-                              {item.h3}
-                            </div>
-=======
               <SwiperSlide key={item.id}>
                 <div className="h-[px] relative overflow-hidden">
                   <div
@@ -191,7 +171,6 @@ const HeritageSection = () => {
                           <div className="text-[140px] m-0 p-0 leading-[120px] text-[#666666] custom-font-family NeumaticFont -tracking-[8px] ">
                             {" "}
                             {item.h2}{" "}
->>>>>>> 1c836b79563aa1ef5bd2f03eb34d11d66c34120a
                           </div>
                           <div className="text-3xl text-[#666666] NeumaticFont font-bold">
                             {item.h3}
@@ -230,13 +209,8 @@ const HeritageSection = () => {
                       ""
                     )}
                   </div>
-<<<<<<< HEAD
-                </SwiperSlide>
-              </>
-=======
                 </div>
               </SwiperSlide>
->>>>>>> 1c836b79563aa1ef5bd2f03eb34d11d66c34120a
             ))}
           </Swiper>
 

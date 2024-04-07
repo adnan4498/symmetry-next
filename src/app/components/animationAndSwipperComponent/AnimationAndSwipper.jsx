@@ -118,11 +118,6 @@ const AnimationAndSwipper = ({
                 className="mb-10 mt-10 md:mx-auto opacity-0 transform translate-y-[50px]"
                 ref={animationRefs.fourthFadeInAnimation}
               >
-<<<<<<< HEAD
-                {swipperContent.map((item, index) => (
-                  <>
-                    <SwiperSlide key={item.id}>
-=======
                 <Swiper
                   spaceBetween={20}
                   slidesPerView={1.5}
@@ -162,7 +157,6 @@ const AnimationAndSwipper = ({
                         triggerBotAnimFunc();
                       }}
                     >
->>>>>>> 1c836b79563aa1ef5bd2f03eb34d11d66c34120a
                       <div
                         className={`rounded-lg swipper-hover-class transition-all ease-in-out duration-300`}
                       >
@@ -185,24 +179,6 @@ const AnimationAndSwipper = ({
                         </div>
                       </div>
                     </SwiperSlide>
-<<<<<<< HEAD
-                  </>
-                ))}
-              </Swiper>
-              <div className="swiper-navigation-buttons flex justify-center gap-2 lg:gap-[10px] 2xl:gap-3 w-full mt-10">
-                <button
-                  onClick={() => handleArrowPrevActive()}
-                  className={`swiper-button-prev ${
-                    arrowPrevActive ? "arrows-bg after:!text-white " : ""
-                  } !static custom-arrow-border rounded-md rotate-[45deg] !w-7 !h-7 md:!w-8 md:!h-8 lg:!w-8 lg:!h-8 `}
-                ></button>
-                <button
-                  onClick={() => handleArrowNextActive()}
-                  className={`swiper-button-next ${
-                    arrowNextActive ? "arrows-bg  after:!text-white " : ""
-                  } !static custom-arrow-border  rounded-md rotate-[45deg] !w-7 !h-7 md:!w-8 md:!h-8 lg:!w-8 lg:!h-8`}
-                ></button>
-=======
                   ))}
                 </Swiper>
                 <div className="swiper-navigation-buttons flex justify-center gap-2 lg:gap-[10px] 2xl:gap-3 w-full mt-10">
@@ -219,7 +195,6 @@ const AnimationAndSwipper = ({
                     } !static custom-arrow-border  rounded-md rotate-[45deg] !w-7 !h-7 md:!w-8 md:!h-8 lg:!w-8 lg:!h-8`}
                   ></button>
                 </div>
->>>>>>> 1c836b79563aa1ef5bd2f03eb34d11d66c34120a
               </div>
             </div>
             <div className="absolute hidden lg:block lg:w-[23vw] xl:w-[16vw] 2xl:w-[14vw] h-full  top-0 right-0">

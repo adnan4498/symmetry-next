@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useEffect } from "react";
 import TextSlidingComponent from "../components/textSlidingComponent/TextSlidingComponent";
 import HeadingAndSwipper from "../components/headingAndSwipperComponent/HeadingAndSwipper";
@@ -9,10 +9,10 @@ import gsap from "gsap";
 
 const BusinessDivision = () => {
   useEffect(() => {
-    const body = document.body
+    const body = document.body;
 
-    body.style.overflow = "hidden"
-  }, [])
+    body.style.overflow = "hidden";
+  }, []);
 
   {
     /******* Headings and texts *******/
@@ -23,7 +23,7 @@ const BusinessDivision = () => {
   const transformationText =
     "digital Technology can move mountains, shape cultures and change people’s perceptions. We envision a future that leverages the best of technology to create transformative experiences that aren't possible without it.";
   const hasKnowmore = "know more --";
-  const businessMarque = true
+  const businessMarque = true;
 
   const interactiveTitle = "interactive marketing";
   const interactiveHeading = "enhancing customer <br /> relationships";
@@ -41,16 +41,6 @@ const BusinessDivision = () => {
   const mobilityText =
     "mobile technologies have transformed business processes and capabilities. we operate at the crossroads of mobility, digital technology and operations to help you create value for your customers ";
 
-<<<<<<< HEAD
-  const interactiveTitle = "interactive marketing";
-  const interactiveHeading = "enhancing customer <br /> relationships";
-  const interactiveText =
-    "our unrivaled insights, innovative thinking, strategic approach, content services and technology solutions can help you create meaningful and lasting relationships with your customers.";
-  const interactiveAnima = interactiveAnimation
-
-
-=======
->>>>>>> 1c836b79563aa1ef5bd2f03eb34d11d66c34120a
   const businessTitle = "business divisions";
   const businessText =
     "we provide digital products and services that solve today’s challenges by leveraging your organization’s unique potential to create tomorrow’s opportunities and deliver real business results.";
@@ -139,6 +129,9 @@ const BusinessDivision = () => {
   const slidesPerView = "3";
   const swipperGap = "20";
 
+  const transformationSwipperShow = true;
+  const commerceSwipperShow = true;
+
   return (
     <>
       <div id="businessHomeScrollRef" className="">
@@ -157,6 +150,7 @@ const BusinessDivision = () => {
           slidesPerView={slidesPerView}
           swipperGap={swipperGap}
           knowMoreLink={"transformation"}
+          transformationSwipperShow={transformationSwipperShow}
         />
         <AnimationAndSwipper
           interactiveTitle={interactiveTitle}
@@ -176,10 +170,7 @@ const BusinessDivision = () => {
           swipperContent={transformationSwipperContent}
           slidesPerView={slidesPerView}
           swipperGap={swipperGap}
-<<<<<<< HEAD
-=======
           commerceSwipperShow={commerceSwipperShow}
->>>>>>> 1c836b79563aa1ef5bd2f03eb34d11d66c34120a
         />
         <AnimationAndSwipper
           mobilityTitle={mobilityTitle}

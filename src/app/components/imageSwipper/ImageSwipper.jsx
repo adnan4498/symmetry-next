@@ -129,19 +129,6 @@ const ImageSwipper = ({
             className="mySwiper "
           >
             {swipperContent.map((item, index) => (
-<<<<<<< HEAD
-              <>
-                <SwiperSlide>
-                  <div className="cursor-pointer">
-                    <div className="flex justify-center items-center border border-gray-400 rounded-md">
-                      <div className=" md:w-10/12 md:h-24 flex justify-center items-center ">
-                        <Image src={item.img} />
-                      </div>
-                    </div>
-                  </div>
-                </SwiperSlide>
-              </>
-=======
               <SwiperSlide key={item.id}>
                 <div className="cursor-pointer">
                   <div className="flex justify-center items-center border border-gray-400 rounded-md">
@@ -151,7 +138,6 @@ const ImageSwipper = ({
                   </div>
                 </div>
               </SwiperSlide>
->>>>>>> 1c836b79563aa1ef5bd2f03eb34d11d66c34120a
             ))}
           </Swiper>
 

@@ -27,104 +27,13 @@ import { ScrollToPlugin } from "gsap/all";
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(ScrollToPlugin);
 
-const Navbar = ({toggleRed , setToggleRed}) => {
+const Navbar = ({ toggleRed, setToggleRed }) => {
   const router = useRouter();
-  const [linkName, setLinkName] = useState("");
-  const [isAnimating, setIsAnimating] = useState(false);
-  const lottieAnimationRef = useRef(null);
-  const loaderRef = useRef(null);
 
   useEffect(() => {
-    const body = document.body
-
-    body.style.overflow = "hidden"
-  }, [])
-  
-
-  useEffect(() => {
-    if (isAnimating && linkName) {
-      const timeoutId = setTimeout(() => {
-        router.push(linkName);
-      }, 2000); // 2 seconds delay
-
-      return () => clearTimeout(timeoutId); // Clear the timeout if component unmounts
-    }
-  }, [isAnimating, linkName, router]);
-
-  const blueAnimationFuncStart = () => {
-    const lottieTl = gsap.timeline({
-      repeat: 1,
-      repeatDelay: 1,
-      yoyo: true,
-    });
-
-    lottieTl.from(lottieAnimationRef.current, {
-      duration: 2,
-      opacity: 0,
-    });
-
-    lottieTl.to(lottieAnimationRef.current, {
-      duration: 1.5,
-      opacity: 1,
-    });
-  };
-
-  const blueAnimationFuncEnd = () => {
-    gsap.to(lottieAnimationRef.current, {
-      duration: 1,
-      opacity: 0,
-    });
-  };
-
-  // const loaderAnimationFunc = () => {
-  //   const container = document.getElementById("page-loader");
-  //   const body = document.body;
-  //   container.style.pointerEvents = "none";
-
-  //   setIsAnimating(true);
-
-  //   var tl = gsap.timeline({
-  //     repeat: 1,
-  //     repeatDelay: 5,
-  //     yoyo: true,
-  //     onStart: () => {
-  //       blueAnimationFuncStart();
-  //       body.style.overflow = "hidden";
-  //     },
-  //     onComplete: () => {
-  //       container.style.display = "none";
-  //       blueAnimationFuncEnd();
-  //       body.style.overflow = "visible";
-  //       container.style.pointerEvents = "auto";
-  //       setIsAnimating(false);
-  //     },
-  //   });
-
-  //   tl.from("#page-loader", {
-  //     y: "1000px",
-  //     backgroundColor: "black",
-  //     color: "black",
-  //     duration: 1,
-  //     ease: "power1",
-  //     zIndex: 50,
-  //     onComplete: () => {
-  //       container.style.display = "flex";
-  //     },
-  //   });
-
-  //   tl.to(
-  //     "#page-loader",
-  //     {
-  //       y: "-10px",
-  //       backgroundColor: "black",
-  //       color: "black",
-  //       duration: 1,
-  //       ease: "power1",
-  //       zIndex: 50,
-  //     },
-  //     "-=0.0"
-  //   );
-  // };
+    const body = document.body;
+    body.style.overflow = "hidden";
+  }, []);
 
   const [activeBg, setActiveBg] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
@@ -152,7 +61,7 @@ const Navbar = ({toggleRed , setToggleRed}) => {
       },
       y: "-=100",
       duration: 0.3,
-      ease: "power2.inOut",
+      ease: "power1.inOut",
       // paused: true,
     });
   }, []);
@@ -569,7 +478,7 @@ const Navbar = ({toggleRed , setToggleRed}) => {
 
   return (
     <>
-      <div className="bg-black w-full z-50 fixed" ref={navRef}>
+      <div className="bg-black w-full z-30 fixed" ref={navRef}>
         <div className="py-5 mx-2 md:mx-12">
           <div className="flex justify-between items-center gap-3">
             <Link href="/">
@@ -582,15 +491,23 @@ const Navbar = ({toggleRed , setToggleRed}) => {
               </div>
             </Link>
             {liItems.map((item, index) => (
-                <div className="ss pillat-thin lg:block hidden">
-                  <ul className="flex items-center gap-3 xl:gap-5 text-[1vw] 2xl:text-xl cursor-pointer">
-                    <li
-                      key={item.id}
-                      onMouseOver={() => navHoverFunc(item.id, item.refId)}
-                      onMouseOut={() => setActiveBg(0)}
-                      className={`${
-                        activeBg == index ? "rainbow-text" : "text-white"
-                      } text-white`}
+              <div key={item.id} className="ss pillat-thin lg:block hidden">
+                <ul className="flex items-center gap-3 xl:gap-5 text-[1vw] 2xl:text-xl cursor-pointer">
+                  <li
+                    key={item.id}
+                    onMouseOver={() => navHoverFunc(item.id, item.refId)}
+                    onMouseOut={() => setActiveBg(0)}
+                    className={`${
+                      activeBg == index ? "rainbow-text" : "text-white"
+                    } text-white`} 
+                  >
+                    <div
+                      onClick={() =>
+                        gsap.to(window, {
+                          duration: 1.5,
+                          scrollTo: { y: item.refId, offsetY: 100 },
+                        })
+                      }
                     >
                       {item.name}
                       {/* {console.log(item.refId, "ref id")} */}
@@ -601,6 +518,7 @@ const Navbar = ({toggleRed , setToggleRed}) => {
                             : "rotate-[90deg]"
                         } rainbow-border transition-all duration-300 `}
                       ></span>
+                    </div>
                   </li>
                 </ul>
               </div>
@@ -672,7 +590,7 @@ const Navbar = ({toggleRed , setToggleRed}) => {
                             <div className="text-2xl font-bold">+</div>
                           </div>
                           <div className="flex justify-between mx-2">
-                            <div>clients</div>
+                            <div>clients</div>  
                             <div className="text-2xl font-bold">+</div>
                           </div>
                           <div className="flex justify-between mx-2">
@@ -764,8 +682,6 @@ const Navbar = ({toggleRed , setToggleRed}) => {
 
 export default Navbar;
 
-
-
 {
   /* <div
 id="page-loader"
@@ -788,4 +704,3 @@ ref={loaderRef}
 }
 
 // onClick={() => loaderAnimationFunc()}
-
