@@ -590,7 +590,7 @@ const Navbar = ({ toggleRed, setToggleRed }) => {
                             <div className="text-2xl font-bold">+</div>
                           </div>
                           <div className="flex justify-between mx-2">
-                            <div>clients</div>
+                            <div>clients</div>  
                             <div className="text-2xl font-bold">+</div>
                           </div>
                           <div className="flex justify-between mx-2">

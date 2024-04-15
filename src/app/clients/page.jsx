@@ -409,9 +409,7 @@ const page = () => {
           ref={animationRefs.secondFadeInAnimation}
         >
           <div className="mx-auto lg:mt-10 ">
-            <h2 className="text-4xl lg:text-6xl pillat-normal text-black">
-              fmcg
-            </h2>
+            <h2 className="text-4xl lg:text-6xl pillat-normal text-black">fmcg</h2>
             <div className="w-[90%] mx-auto sm:mt-12 mt-3">
               <SimpleSwipper
                 swipperContent={fmcgSwipperContent}
@@ -428,9 +426,7 @@ const page = () => {
           ref={animationRefs.thirdFadeInAnimation}
         >
           <div className="mx-auto lg:mt-10 ">
-            <h2 className="text-4xl lg:text-6xl pillat-normal text-black">
-              real estate
-            </h2>
+            <h2 className="text-4xl lg:text-6xl pillat-normal text-black">real estate</h2>
             <div className="w-[90%] mx-auto flex items-center gap-11 mt-12">
               {realEstateContent.map((item, index) => (
                 <div key={item.id} className="">
@@ -474,9 +470,7 @@ const page = () => {
           ref={animationRefs.fifthFadeInAnimation}
         >
           <div className="mx-auto lg:mt-10 ">
-            <h2 className="text-4xl lg:text-6xl pillat-normal text-black">
-              others
-            </h2>
+            <h2 className="text-4xl lg:text-6xl pillat-normal text-black">others</h2>
             <div className="w-[90%] mx-auto sm:mt-12 mt-3">
               <SimpleSwipper
                 swipperContent={othersSwipperContent}

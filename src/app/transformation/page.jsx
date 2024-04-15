@@ -129,7 +129,6 @@ const page = () => {
 
     mm.revert();
   }, []);
-
   const aboutH2 = "transformation";
   const aboutText =
     "Digital Technology can move mountains, shape culture, and change people’s perceptions. We envision a future that leverages the best of technology to transformative experiences that aren't possible without it.";
