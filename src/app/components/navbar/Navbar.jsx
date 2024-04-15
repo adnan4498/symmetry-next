@@ -535,7 +535,7 @@ const Navbar = ({ toggleRed, setToggleRed }) => {
                       toggleDrawer();
                       gsapToggle();
                     }}
-                  />
+                  /> 
                   <svg
                     viewBox="0 0 100 100"
                     className=""
