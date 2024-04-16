@@ -262,10 +262,10 @@ const page = ({ params }) => {
           </div>
 
           <div
-            className="text-black my-10 mx-5 lg:mx-10 flex flex-col lg:justify-center gap-5 lg:mt-16 lg:gap-[7vw] pillat-normal"
+            className="text-black my-10 mx-5 lg:mx-10 flex flex-col lg:justify-center gap-5 lg:mt-16 lg:gap-[0vw] pillat-normal"
             // ref={animationRefs.thirdFadeInAnimation}
           >
-            <div className="flex flex-col lg:flex-row gap-20 justify-center ">
+            <div className="flex flex-col lg:flex-row gap-2 lg:gap-5 justify-center lg:justify-normal lg:mx-auto ">
               <div className=" border-gray-300 px-3 pb-1">
                 <div>
                   <h2>designation</h2>
@@ -292,7 +292,7 @@ const page = ({ params }) => {
                     >
                       <Select
                         options={designations}
-                        className="w-full lg:w-[220px] xl:w-[280px] 2xl:w-[450px] -ml-[10px] "
+                        className="w-full lg:w-[300px] xl:w-[400px] 2xl:w-[450px] -ml-[10px] "
                         placeholder="select your country"
                         isSearchable={true} // Enable searching
                         isClearable={true} // Enable clearing the selection
@@ -350,10 +350,10 @@ const page = ({ params }) => {
                           borderRight: "0px",
                           borderTop: "0px",
                           borderLeft: "0px",
-                          // width: "260px",
+                          // width: "400px",
                           marginLeft: "-11px",
                         }}
-                        className="w-full lg:w-[220px] xl:w-[280px] 2xl:w-[450px]"
+                        className="w-full lg:w-[280px] xl:w-[350px] 2xl:w-[450px]"
                       />
                     </Form.Item>
                   </Form>
@@ -390,17 +390,17 @@ const page = ({ params }) => {
                           borderRight: "0px",
                           borderTop: "0px",
                           borderLeft: "0px",
-                          // width: "260px",
+                          // width: "400px",
                           marginLeft: "-11px",
                         }}
-                        className="w-full lg:w-[220px] xl:w-[280px] 2xl:w-[450px]"
+                        className="w-full lg:w-[280px] xl:w-[350px] 2xl:w-[450px]"
                       />
                     </Form.Item>
                   </Form>
                 </div>
               </div>
             </div>
-            <div className="flex flex-col lg:flex-row gap-20 justify-center">
+            <div className="flex flex-col lg:flex-row gap-20 justify-center lg:justify-between">
               <div className=" border-gray-300 px-3 pb-1">
                 <div>
                   <h2>city</h2>
@@ -537,7 +537,7 @@ const page = ({ params }) => {
                 </div>
               </div>
             </div>
-            <div className="flex flex-col lg:flex-row gap-20 justify-center">
+            <div className="flex flex-col lg:flex-row gap-20 justify-center lg:justify-between">
               <div className=" border-gray-300 px-3 pb-1">
                 <div>
                   <h2>cover letter</h2>

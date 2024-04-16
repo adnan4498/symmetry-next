@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
@@ -12,12 +12,14 @@ import Rive from "@rive-app/react-canvas";
 import Link from "next/link";
 import blackArrow from "../../../../public/black-arrow.png";
 import GsapScrollAnimationComp from "../../components/gsapComp/GsapScrollAnimationComp";
+import GsapBottomAnimation from "../gsapComponent/GsapBottomAnimation";
 
 const AnimationAndImages = ({
   aasH3,
   aasH2,
   aasP,
   aasKnowMore,
+  getLink,
   swipperContent,
   slidesPerView,
   swipperGap,
@@ -26,11 +28,17 @@ const AnimationAndImages = ({
   knowMoreLink,
 }) => {
   // console.log(aasKnowMore , "KNOW MOREEEE affiliation")
+  const [triggerBottomAnimation, setTriggerBottomAnimation] = useState(false);
+
+  const triggerBotAnimFunc = () => {
+    setTriggerBottomAnimation(true);
+  };
 
   const animationRefs = GsapScrollAnimationComp();
 
   return (
     <>
+      {triggerBottomAnimation && <GsapBottomAnimation getLink={getLink}/>}
       <div className="relative mx-3 md:mx-12 lg:ml-12 lg:mr-[2px] lg:w-[%]">
         <div className="lg:flex justify-between items-center">
           <div className="lg:w-[62%]">
@@ -58,7 +66,12 @@ const AnimationAndImages = ({
                 {/*********  Laptop  *********/}
 
                 <span className=" border-l border-gray-400 text-black text-xs 2xl:text-sm pl-4 ml-3 w-[55%] 2xl:w-[45%] xl:max-w-[600px] 2xl:leading-[15px] mt-3 lg:inline-block hidden pillat-thin">
-                  <span className="relative w-[100%] ">
+                  <span
+                    onClick={() => {
+                      triggerBotAnimFunc();
+                    }}
+                    className="relative w-[100%] "
+                  >
                     {aasP}
                     <Link href={`${knowMoreLink}`} className="a-arrow">
                       <span className="text-black font-bold">
@@ -71,7 +84,12 @@ const AnimationAndImages = ({
 
                 {/*********  Mobile  *********/}
 
-                <span className="w-[100%] lg:hidden block text-black text-xs sm:text-sm mt-2 pillat-thin">
+                <span
+                  onClick={() => {
+                    triggerBotAnimFunc();
+                  }}
+                  className="w-[100%] lg:hidden block text-black text-xs sm:text-sm mt-2 pillat-thin"
+                >
                   {aasP}
                   <Link href={`${knowMoreLink}`} className="a-arrow relative">
                     <span className="text-black font-bold text-[13px]">
@@ -91,12 +109,16 @@ const AnimationAndImages = ({
                 spaceBetween={20}
                 slidesPerView={slidesPerView}
                 breakpoints={{
+                  300: {
+                    slidesPerView: 3,
+                    spaceBetween: 40,
+                  },
                   500: {
                     slidesPerView: 2,
                     spaceBetween: 40,
                   },
                   768: {
-                    slidesPerView: 2.9,
+                    slidesPerView: 3,
                     spaceBetween: 40,
                   },
                   1024: {
@@ -122,7 +144,7 @@ const AnimationAndImages = ({
                         spaceBetween: 40,
                       },
                       768: {
-                        slidesPerView: 2.9,
+                        slidesPerView: 3,
                         spaceBetween: 40,
                       },
                       1024: {

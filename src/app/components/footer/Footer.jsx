@@ -4,6 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import investorImg from "../../../../public/footer-investors-img.webp";
 import linkdinImg from "../../../../public/footer-linkdin-img.webp";
+import xImg from "../../../../public/x-logo-footer.webp";
+import fbImg from "../../../../public/fb-logo.webp"
 import phoneIcon from "../../../../public/phone-footer-icon.webp";
 import mailIcon from "../../../../public/mail-footer-icon.webp";
 import GsapBottomAnimation from "../gsapComponent/GsapBottomAnimation";
@@ -178,7 +180,7 @@ const Footer = () => {
                   <Image src={investorImg} alt="investors img" width={50} />
                 </div>
                 <div className="text-black">
-                  <h2 className="font-[500] text-lg">investors complaints</h2>
+                  <h2 className="font-[500] text-base">investors complaints</h2>
                   <div className="flex gap-10 text-sm pillat-normal">
                     <div className="flex items-center gap-3">
                       <div>
@@ -197,7 +199,7 @@ const Footer = () => {
               </div>
 
               <div className="text-black">
-                <h2 className="text-xl pillat-normal !font-extrabold mb-1">
+                <h2 className="text-lg pillat-normal !font-extrabold mb-1">
                   follow us
                 </h2>
                 <div className="flex justify-center items-center gap-2">
@@ -205,10 +207,10 @@ const Footer = () => {
                     <Image src={linkdinImg} width={30} />
                   </div>
                   <div className="border border-gray-400 rounded-md">
-                    <Image src={linkdinImg} width={30} />
+                    <Image src={fbImg} width={30} />
                   </div>
                   <div className="border border-gray-400 rounded-md">
-                    <Image src={linkdinImg} width={30} />
+                    <Image src={xImg} width={30} />
                   </div>
                 </div>
               </div>

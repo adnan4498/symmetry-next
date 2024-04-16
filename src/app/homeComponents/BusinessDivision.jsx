@@ -23,23 +23,31 @@ const BusinessDivision = () => {
   const transformationText =
     "digital Technology can move mountains, shape cultures and change people’s perceptions. We envision a future that leverages the best of technology to create transformative experiences that aren't possible without it.";
   const hasKnowmore = "know more --";
+  const transofrmationKnowMoreLink = "transformation"
   const businessMarque = true;
+  const paddingBottom = "0"
+  const componentMarginTop = "mt-60"
 
   const interactiveTitle = "interactive marketing";
   const interactiveHeading = "enhancing customer <br /> relationships";
   const interactiveText =
     "our unrivaled insights, innovative thinking, strategic approach, content services and technology solutions can help you create meaningful and lasting relationships with your customers.";
   const interactiveAnima = interactiveAnimation;
+  const interactiveKnowMoreLink = "interactive-marketing"
+  const interactiveLink = "interactive-marketing"
 
   const commerceTitle = "commerce";
   const commerceHeading = "empowering efficient <br /> growth";
-  const commerceText =
-    "digital commerce lets you sell anywhere, anytime, and on any device. we help your customers find your products regardless of whether they are at home, in the office, or in line at the grocery store";
+  const commerceText = "digital commerce lets you sell anywhere, anytime, and on any device. we help your customers find your products regardless of whether they are at home, in the office, or in line at the grocery store";
+  const commerceKnowMoreLink = "commerce"
+  const commerceLink = "commerce"
+
 
   const mobilityTitle = "mobility";
   const mobilityHeading = "embracing the mobile <br /> advantage";
-  const mobilityText =
-    "mobile technologies have transformed business processes and capabilities. we operate at the crossroads of mobility, digital technology and operations to help you create value for your customers ";
+  const mobilityText = "mobile technologies have transformed business processes and capabilities. we operate at the crossroads of mobility, digital technology and operations to help you create value for your customers ";
+  const mobilityKnowMoreLink = "mobility"
+  const mobilityLink = "mobility"
 
   const businessTitle = "business divisions";
   const businessText =
@@ -126,6 +134,29 @@ const BusinessDivision = () => {
     },
   ];
 
+  const commerceSwipperContent = [
+    {
+      id: 0,
+      h2: "third party integration",
+      text: "Enabling seamless linking with external partners and services to enhance functionality and capability",
+    },
+    {
+      id: 1,
+      h2: "global e-commerce deployment  ",
+      text: "partnering with the world's largest e-commerce platform (alibaba) to provide enablement and support",
+    },
+    {
+      id: 2,
+      h2: "digital commerce design",
+      text: "delivering smart e-commerce solutions, personalized for needs and optimized to help grow businesses ",
+    },
+    {
+      id: 3,
+      h2: "back-end system development",
+      text: "architecting robust technological tailored for current and future business needs",
+    },
+  ];
+
   const slidesPerView = "3";
   const swipperGap = "20";
 
@@ -140,6 +171,8 @@ const BusinessDivision = () => {
           businessText={businessText}
           slidesPerView={slidesPerView}
           businessMarque={businessMarque}
+          paddingBottom={paddingBottom}
+          componentMarginTop={componentMarginTop}
         />
         <HeadingAndSwipper
           transformationTitle={transformationTitle}
@@ -149,7 +182,7 @@ const BusinessDivision = () => {
           swipperContent={transformationSwipperContent}
           slidesPerView={slidesPerView}
           swipperGap={swipperGap}
-          knowMoreLink={"transformation"}
+          knowMoreLink={transofrmationKnowMoreLink}
           transformationSwipperShow={transformationSwipperShow}
         />
         <AnimationAndSwipper
@@ -157,6 +190,8 @@ const BusinessDivision = () => {
           interactiveHeading={interactiveHeading}
           interactiveText={interactiveText}
           aasKnowmore={"know more"}
+          knowMoreLink= {interactiveKnowMoreLink}
+          getLink={interactiveLink}
           swipperContent={interactiveSwipperContent}
           slidesPerView={slidesPerView}
           swipperGap={swipperGap}
@@ -167,7 +202,9 @@ const BusinessDivision = () => {
           commerceHeading={commerceHeading}
           commerceText={commerceText}
           hasKnowmore={hasKnowmore}
-          swipperContent={transformationSwipperContent}
+          getLink={commerceLink}
+          knowMoreLink={commerceKnowMoreLink}
+          swipperContent={commerceSwipperContent}
           slidesPerView={slidesPerView}
           swipperGap={swipperGap}
           commerceSwipperShow={commerceSwipperShow}
@@ -177,6 +214,8 @@ const BusinessDivision = () => {
           mobilityHeading={mobilityHeading}
           mobilityText={mobilityText}
           aasKnowmore={"know more"}
+          knowMoreLink= {mobilityKnowMoreLink}
+          getLink={mobilityLink}
           swipperContent={transformationSwipperContent}
           slidesPerView={slidesPerView}
           swipperGap={swipperGap}

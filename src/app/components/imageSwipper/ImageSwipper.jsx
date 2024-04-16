@@ -8,12 +8,14 @@ import "swiper/css";
 import "swiper/css/navigation";
 import Link from "next/link";
 import GsapScrollAnimationComp from "../../components/gsapComp/GsapScrollAnimationComp";
+import GsapBottomAnimation from "../gsapComponent/GsapBottomAnimation";
 
 const ImageSwipper = ({
   brandsTitle,
   brandsHeading,
   brandsText,
   hasKnowMore,
+  getLink,
   swipperContent,
   slidesPerView,
   irisLogo,
@@ -22,6 +24,11 @@ const ImageSwipper = ({
 }) => {
   const [arrowPrevActive, setArrowPrevActive] = useState(false);
   const [arrowNextActive, setArrowNextActive] = useState(false);
+  const [triggerBottomAnimation, setTriggerBottomAnimation] = useState(false);
+
+  const triggerBotAnimFunc = () => {
+    setTriggerBottomAnimation(true);
+  };
 
   const handleArrowPrevActive = () => {
     setArrowNextActive(false);
@@ -37,6 +44,7 @@ const ImageSwipper = ({
 
   return (
     <>
+      {triggerBottomAnimation && <GsapBottomAnimation getLink={getLink} />}
       <div className="md:mx-12 mx-3 lg:mx-auto lg:w-[53%]">
         <div className="mt-5">
           <div
@@ -58,12 +66,17 @@ const ImageSwipper = ({
               />
             </span>
 
-            {/*********  Laptop  *********/}
+            {/*********  Desktop  *********/}
 
             <span className="text-black text-sm 2xl:leading-[15px] mt-6 lg:block hidden pillat-thin">
-              <span className="relative w-[100%] ">
+              <span
+                onClick={() => {
+                  triggerBotAnimFunc();
+                }}
+                className="relative w-[100%] "
+              >
                 {brandsText}
-                <Link href={`${knowMoreLink}`} class="a-arrow">
+                <Link href={`${getLink}`} class="a-arrow">
                   {" "}
                   <span className="text-black font-bold">
                     explore our world{" "}
@@ -75,7 +88,12 @@ const ImageSwipper = ({
 
             {/*********  Mobile  *********/}
 
-            <span className=" w-[100%] lg:hidden block text-black text-[13px] sm:text-sm mt-2 pillat-thin">
+            <span
+              onClick={() => {
+                triggerBotAnimFunc();
+              }}
+              className=" w-[100%] lg:hidden block text-black text-[13px] sm:text-sm mt-2 pillat-thin"
+            >
               {brandsText}
               <Link href={`${knowMoreLink}`} class="a-arrow relative">
                 {" "}
@@ -93,7 +111,7 @@ const ImageSwipper = ({
         </div> */}
 
         <div
-          className="mb-10 mt-10 md:mx-auto opacity-0 transform translate-y-[50px]"
+          className="mb-10 mt-10 md:mx-auto swipper-icons-color-toggle opacity-0 transform translate-y-[50px]"
           ref={animationRefs.thirdFadeInAnimation}
         >
           <Swiper
@@ -105,7 +123,7 @@ const ImageSwipper = ({
                 spaceBetween: 40,
               },
               768: {
-                slidesPerView: 2.9,
+                slidesPerView: 3,
                 spaceBetween: 40,
               },
               1024: {

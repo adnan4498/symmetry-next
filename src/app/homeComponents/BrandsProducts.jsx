@@ -82,6 +82,7 @@ const BrandsProducts = () => {
   const brandsText =
     "we weave technology-driven ideas into existence across a spectrum of specialized products and services within our four divisions.";
   const hasKnowMore = "explore our world --";
+  const brandsProductsLink = "brands-products"
 
   const swipperContent = [
     {
@@ -326,11 +327,14 @@ const BrandsProducts = () => {
   const swipperGap = "60";
 
 
-  const clientTitle = "Clients";
+  const clientTitle = "clients";
   const clientText =
     "for organizations on the journey towards innovation, growth and digital-first thinking, we assist in building and deploying the right solutions, integrated to business needs and customized for business success.";
   const knowMore = "see it for yourself --";
+  const clientLink = "clients"
   const clientMarque = true
+  const paddingBottom = "20"
+  const componentMarginTop = "mt-10"
 
   /* aas (Animation and Swipper) */
 
@@ -339,6 +343,7 @@ const BrandsProducts = () => {
   const aasP =
     "through our network, we are introducing you to a world that keeps pace with technology and change, enables simplicity from complexity and shape the future. ";
   const aasKnowmore = "know more --";
+  const affiliationLink = "google"
 
 
   return (
@@ -354,7 +359,7 @@ const BrandsProducts = () => {
           slidesPerView={5}
           irisLogo={irisLogo}
           swipperGap={swipperGap}
-          knowMoreLink={"brands-products"}
+          getLink={brandsProductsLink}
         />
       </div>
       <div id="clientsHomeScrollRef">
@@ -362,12 +367,15 @@ const BrandsProducts = () => {
           clientTitle={clientTitle}
           clientText={clientText}
           knowMore={knowMore}
+          getLink={clientLink}
           isBorder={true}
           isImageSwipper={true}
           slidesPerView={9}
           swipperGap={30}
           swipperContent={clientSwipperContent}
           clientMarque={clientMarque}
+          paddingBottom={paddingBottom}
+          componentMarginTop={componentMarginTop}
         />
       </div>
       <div id="affiliationsHomeScrollRef">
@@ -376,8 +384,9 @@ const BrandsProducts = () => {
           aasH2={aasH2}
           aasP={aasP}
           aasKnowmore={aasKnowmore}
+          getLink={affiliationLink}
           swipperContent={affiliationSwipperContent}
-          slidesPerView={5}
+          slidesPerView={4}
           swipperGap={40}
           navigation={false}
           animation={affiliationAnimation}

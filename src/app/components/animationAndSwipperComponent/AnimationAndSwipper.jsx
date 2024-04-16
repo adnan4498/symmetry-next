@@ -24,6 +24,8 @@ const AnimationAndSwipper = ({
   mobilityHeading,
   mobilityText,
   aasKnowMore,
+  knowMoreLink,
+  getLink,
   swipperContent,
   animation,
 }) => {
@@ -60,7 +62,7 @@ const AnimationAndSwipper = ({
   return (
     <>
       <div className="relative">
-        {triggerBottomAnimation && <GsapBottomAnimation />}
+        {triggerBottomAnimation && <GsapBottomAnimation getLink={getLink} />}
         <div className="relative mx-3 md:mx-12 lg:ml-12 lg:mr-[2px] lg:w-[%]">
           <div className=" lg:flex justify-between items-center">
             <div className="lg:w-[62%]">
@@ -90,9 +92,11 @@ const AnimationAndSwipper = ({
                   {/*********  Desktop  *********/}
 
                   <span className="border-l border-gray-400 text-black text-xs 2xl:text-sm pl-4 ml-3 w-[55%] 2xl:w-[45%] xl:max-w-[600px] 2xl:leading-[15px] mt-3 lg:inline-block hidden pillat-thin">
-                    <span className="w-[100%] relative">
+                    <span      onClick={() => {
+                    triggerBotAnimFunc();
+                  }} className="w-[100%] relative">
                       {interactiveText || mobilityText}
-                      <Link href={""} class="a-arrow">
+                      <Link href={knowMoreLink} class="a-arrow">
                         <span className="text-black font-bold">know more</span>
                         <span class="arrow"></span>
                       </Link>
@@ -101,7 +105,9 @@ const AnimationAndSwipper = ({
 
                   {/*********  Mobile  *********/}
 
-                  <span className="w-[100%] lg:hidden block text-black text-sm sm:text-sm mt-2 pillat-thin">
+                  <span      onClick={() => {
+                    triggerBotAnimFunc();
+                  }} className="w-[100%] lg:hidden block text-black text-sm sm:text-sm mt-2 pillat-thin">
                     {interactiveText || mobilityText}
                     <Link href={""} class="a-arrow relative">
                       {" "}
@@ -127,7 +133,7 @@ const AnimationAndSwipper = ({
                       spaceBetween: 40,
                     },
                     768: {
-                      slidesPerView: 2.9,
+                      slidesPerView: 3,
                       spaceBetween: 40,
                     },
                     1024: {

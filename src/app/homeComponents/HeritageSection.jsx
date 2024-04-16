@@ -19,21 +19,9 @@ const HeritageSection = () => {
   }, []);
 
   const [activeAni, setActiveAni] = useState();
-  const [arrowPrevActive, setArrowPrevActive] = useState(false);
-  const [arrowNextActive, setArrowNextActive] = useState(false);
 
   const [borderHover, setBorderHover] = useState();
   const [borderHover2, setBorderHover2] = useState();
-
-  const handleArrowPrevActive = () => {
-    setArrowNextActive(false);
-    setArrowPrevActive(true);
-  };
-
-  const handleArrowNextActive = () => {
-    setArrowPrevActive(false);
-    setArrowNextActive(true);
-  };
 
   const hoverFunc = (id) => {
     setBorderHover("right-[-200px] transition-all ease-in-out duration-500");
@@ -97,16 +85,16 @@ const HeritageSection = () => {
 
             {/*********  Laptop  *********/}
 
-            <span className="border-l border-gray-400 text-black text-xs 2xl:text-sm pl-4 ml-3 w-[55%] 2xl:w-[45%] xl:max-w-[600px] 2xl:leading-[15px] mt-3 lg:inline-block hidden pillat-thin">
+            <span className="border-l border-gray-400 text-black text-xs 2xl:text-sm pl-4 ml-3 w-[55%] lg:w-[50%] 2xl:w-[45%] xl:max-w-[600px] 2xl:leading-[15px] mt-3 lg:inline-block hidden pillat-thin">
               <span className="w-[100%] relative">
                 limitless passion, ground-breaking innovation and boundless
                 creativity allow us to create market-leading digital
                 opportunities that continue to power our partners’ success.{" "}
-                <Link href={"transformation"} class="a-arrow">
+                {/* <Link href={"transformation"} class="a-arrow">
                   {" "}
                   <span className="text-black font-bold">know more </span>{" "}
                   <span class="arrow "></span>
-                </Link>
+                </Link> */}
               </span>
             </span>
 
@@ -116,11 +104,11 @@ const HeritageSection = () => {
               limitless passion, ground-breaking innovation and boundless
               creativity allow us to create market-leading digital opportunities
               that continue to power our partners’ success.{" "}
-              <Link href={"transformation"} class="a-arrow relative">
+              {/* <Link href={"transformation"} class="a-arrow relative">
                 {" "}
                 <span className="text-black font-bold">know more </span>{" "}
                 <span class="arrow"></span>
-              </Link>
+              </Link> */}
             </span>
           </div>
         </div>
@@ -135,7 +123,7 @@ const HeritageSection = () => {
                 spaceBetween: 40,
               },
               768: {
-                slidesPerView: 2.9,
+                slidesPerView: 3,
                 spaceBetween: 40,
               },
               1024: {
@@ -216,16 +204,10 @@ const HeritageSection = () => {
 
           <div className="swiper-navigation-buttons flex justify-center gap-2 lg:gap-[10px] 2xl:gap-3 w-full mt-10">
             <button
-              onClick={() => handleArrowPrevActive()}
-              className={`swiper-button-prev  ${
-                arrowPrevActive ? "arrows-bg after:!text-white " : ""
-              } !static custom-arrow-border rounded-md rotate-[45deg] !w-7 !h-7 md:!w-8 md:!h-8 lg:!w-8 lg:!h-8 2xl:!w-9 2xl:!h-9 `}
+              className={`swiper-button-prev  !static custom-arrow-border rounded-md rotate-[45deg] !w-7 !h-7 md:!w-8 md:!h-8 lg:!w-8 lg:!h-8 2xl:!w-9 2xl:!h-9 `}
             ></button>
             <button
-              onClick={() => handleArrowNextActive()}
-              className={`swiper-button-next ${
-                arrowNextActive ? "arrows-bg  after:!text-white " : ""
-              } !static custom-arrow-border  rounded-md rotate-[45deg] !w-7 !h-7 md:!w-8 md:!h-8 lg:!w-8 lg:!h-8 2xl:!w-9 2xl:!h-9`}
+              className={`swiper-button-next  !static custom-arrow-border  rounded-md rotate-[45deg] !w-7 !h-7 md:!w-8 md:!h-8 lg:!w-8 lg:!h-8 2xl:!w-9 2xl:!h-9`}
             ></button>
           </div>
         </div>

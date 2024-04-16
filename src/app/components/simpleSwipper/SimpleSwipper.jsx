@@ -25,7 +25,7 @@ const SimpleSwipper = ({
                 spaceBetween: 40,
               },
               768: {
-                slidesPerView: 2.9,
+                slidesPerView: 3,
                 spaceBetween: 40,
               },
               1024: {
