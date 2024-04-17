@@ -22,22 +22,10 @@ const ImageSwipper = ({
   swipperGap,
   knowMoreLink,
 }) => {
-  const [arrowPrevActive, setArrowPrevActive] = useState(false);
-  const [arrowNextActive, setArrowNextActive] = useState(false);
   const [triggerBottomAnimation, setTriggerBottomAnimation] = useState(false);
 
   const triggerBotAnimFunc = () => {
     setTriggerBottomAnimation(true);
-  };
-
-  const handleArrowPrevActive = () => {
-    setArrowNextActive(false);
-    setArrowPrevActive(true);
-  };
-
-  const handleArrowNextActive = () => {
-    setArrowPrevActive(false);
-    setArrowNextActive(true);
   };
 
   const animationRefs = GsapScrollAnimationComp();
@@ -161,16 +149,10 @@ const ImageSwipper = ({
 
           <div className="swiper-navigation-buttons flex justify-center gap-2 lg:gap-[10px] 2xl:gap-3 w-full mt-10">
             <button
-              onClick={() => handleArrowPrevActive()}
-              className={`swiper-button-prev ${
-                arrowPrevActive ? "arrows-bg after:!text-white " : ""
-              } !static custom-arrow-border rounded-md rotate-[45deg] !w-7 !h-7 md:!w-8 md:!h-8 lg:!w-8 lg:!h-8 `}
+              className={`swiper-button-prev  !static custom-arrow-border rounded-md rotate-[45deg] !w-7 !h-7 md:!w-8 md:!h-8 lg:!w-8 lg:!h-8 `}
             ></button>
             <button
-              onClick={() => handleArrowNextActive()}
-              className={`swiper-button-next ${
-                arrowNextActive ? "arrows-bg  after:!text-white " : ""
-              } !static custom-arrow-border  rounded-md rotate-[45deg] !w-7 !h-7 md:!w-8 md:!h-8 lg:!w-8 lg:!h-8`}
+              className={`swiper-button-next !static custom-arrow-border  rounded-md rotate-[45deg] !w-7 !h-7 md:!w-8 md:!h-8 lg:!w-8 lg:!h-8`}
             ></button>
           </div>
         </div>

@@ -61,6 +61,23 @@ const HeadingAndSwipper = ({
     setArrowNextActive(true);
   };
 
+
+  const [activeAni, setActiveAni] = useState();
+
+  const [borderHover, setBorderHover] = useState();
+  const [borderHover2, setBorderHover2] = useState();
+
+  const hoverFunc = (id) => {
+    setBorderHover("border border-white transition-all ease-in-out duration-1000");
+    setBorderHover2("border border-white transition-all ease-in-out duration-1000");
+    setActiveAni(id);
+  };
+
+  const hoverFuncOut = () => {
+    setBorderHover("border border-gray-300 transition-all ease-in-out duration-1000");
+    setBorderHover2("border border-gray-300 transition-all ease-in-out duration-1000");
+  };
+
   const animationRefs = GsapScrollAnimationComp();
 
   return (
@@ -168,10 +185,13 @@ const HeadingAndSwipper = ({
               >
                 {swipperContent.map((item, index) => (
                   <SwiperSlide
+                  className="h-[px] relative overflow-hidden cursor-pointer"
                     key={item.id}
                     onClick={() => {
                       triggerBotAnimFunc();
                     }}
+                    onMouseOver={() => hoverFunc(item.id)}
+                    onMouseLeave={() => hoverFuncOut()}
                   >
                     <div
                       className={` rounded-lg swipper-hover-class transition-all ease-in-out duration-300 `}
@@ -191,8 +211,18 @@ const HeadingAndSwipper = ({
                             {item.text}
                           </p>
                         </div>
-                        <div></div>
                       </div>
+
+                      <div
+                          className={`absolute top-[-120px] right-[-220px] border border-gray-300 rounded-[50px] w-72 h-72  ${
+                            activeAni == index ? borderHover : ""
+                          } `}
+                        ></div>
+                        <div
+                          className={`absolute top-[-70px] right-[-270px] border border-gray-300 rounded-[50px] w-72 h-72 ${
+                            activeAni == index ? borderHover2 : ""
+                          }`}
+                        ></div>
                     </div>
                   </SwiperSlide>
                 ))}

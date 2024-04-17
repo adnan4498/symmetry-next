@@ -22,8 +22,7 @@ export default function Home() {
   return (
     <>
       <div className="">
-
-      {/* Starting Animation */}
+        {/* Starting Animation */}
         <GsapTopAnimation />
 
         <Navbar className="" />
@@ -36,7 +35,6 @@ export default function Home() {
         <BrandsProducts />
         <AboutUs />
         <Footer />
-
       </div>
     </>
   );

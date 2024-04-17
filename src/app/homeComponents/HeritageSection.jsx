@@ -25,7 +25,7 @@ const HeritageSection = () => {
 
   const hoverFunc = (id) => {
     setBorderHover("right-[-200px] transition-all ease-in-out duration-500");
-    setBorderHover2("right-[-229px] transition-all ease-in-out duration-500");
+    setBorderHover2("right-[-255px] transition-all ease-in-out duration-500");
     setActiveAni(id);
   };
 
@@ -147,7 +147,7 @@ const HeritageSection = () => {
           >
             {heritageSwipperContent.map((item, index) => (
               <SwiperSlide key={item.id}>
-                <div className="h-[px] relative overflow-hidden">
+                <div className="h-[px] relative overflow-hidden cursor-pointer">
                   <div
                     onMouseOver={() => hoverFunc(item.id)}
                     onMouseLeave={() => hoverFuncOut()}
@@ -155,7 +155,7 @@ const HeritageSection = () => {
                   > 
                     {!item.img ? (
                       <>
-                        <div className="flex items-baseline absolute z-50">
+                        <div className="flex items-baseline absolute z-50 ">
                           <div className="text-[140px] m-0 p-0 leading-[120px] text-[#666666] custom-font-family NeumaticFont -tracking-[8px] ">
                             {" "}
                             {item.h2}{" "}
