@@ -139,7 +139,7 @@ const HeritageSection = () => {
               prevEl: ".swiper-button-prev",
             }}
             autoplay={{
-              delay: 1000,
+              delay: 1000000,
               pauseOnMouseEnter: true,
             }}
             centeredSlides={true}
@@ -192,6 +192,16 @@ const HeritageSection = () => {
                         <p className="text-base  text-gray-700 -mt-[7px]">
                           {item.text}
                         </p>
+                        <div
+                          className={`absolute top-[-120px] right-[-180px] border border-gray-300 rounded-[50px] w-72 h-72  ${
+                            activeAni == index ? borderHover : ""
+                          } `}
+                        ></div>
+                        <div
+                          className={`absolute top-[-70px] right-[-240px] border border-gray-300 rounded-[50px] w-72 h-72 ${
+                            activeAni == index ? borderHover2 : ""
+                          }`}
+                        ></div>
                       </>
                     ) : (
                       ""

@@ -45,6 +45,11 @@ const Navbar = ({ toggleRed, setToggleRed }) => {
   const socialLinksRef = useRef();
   const menuAnimationRef = useRef();
 
+  /****** Mobile *******/
+
+  const subMenuRefMobile = useRef()
+  const socialLinksRefMobile = useRef()
+
   useEffect(() => {
     var actionNav = gsap.to(navRef.current, {
       scrollTrigger: {
@@ -433,6 +438,71 @@ const Navbar = ({ toggleRed, setToggleRed }) => {
     ),
   ];
 
+  const mobileMenuItems = [
+    {
+      id: 0,
+      title: (
+        <>
+          <div className="flex justify-between gap-5 border-b border-green-400 mt-2 md:text-lg">
+            <div>2024</div>
+            {/* <div className={`${collapseIcon ? "bg-red-500" : "bg-green-500"}`} >+</div> */}
+            <div onClick={() => setCollapseIcon(!collapseIcon)}>
+              {collapseIcon ? "+" : "-"}
+            </div>
+          </div>
+        </>
+      ),
+      firstQuarter: "1st quarter",
+    },
+    {
+      id: 1,
+      title: (
+        <>
+          <div className="flex justify-between gap-5 border-b border-green-400 mt-2 md:text-lg">
+            <div>2023</div>
+            <div onClick={() => setCollapseIcon2(!collapseIcon2)}>
+              {collapseIcon2 ? "+" : "-"}
+            </div>{" "}
+          </div>
+        </>
+      ),
+      firstQuarter: "1st quarter",
+      secondQuarter: "2nd quarter",
+      thirdQuarter: "3rd quarter",
+      annualReport: "annual report",
+    },
+    {
+      id: 2,
+      title: (
+        <>
+          <div className="flex justify-between gap-5 border-b border-green-400 mt-2 md:text-lg">
+            <div>2022</div>
+            <div onClick={() => setCollapseIcon3(!collapseIcon3)}>
+              {collapseIcon3 ? "+" : "-"}
+            </div>{" "}
+          </div>
+        </>
+      ),
+      firstQuarter: "1st quarter",
+      thirdQuarter: "3rd quarter",
+      annualReport: "annual report",
+    },
+    {
+      id: 3,
+      title: (
+        <>
+          <div className="flex justify-between gap-5 border-b border-green-400 mt-2 md:text-lg">
+            <div>2021</div>
+            <div onClick={() => setCollapseIcon4(!collapseIcon4)}>
+              {collapseIcon4 ? "+" : "-"}
+            </div>{" "}
+          </div>
+        </>
+      ),
+      annualReport: "annual report",
+    },
+  ];
+
   function getItem(label, key, children, type) {
     return {
       key,
@@ -446,6 +516,8 @@ const Navbar = ({ toggleRed, setToggleRed }) => {
 
   const gsapToggle = () => {
     setToggleGsap(!toggleGsap);
+
+    /***** Desktop Animations ******/
 
     gsap.to(hamburgerLogoRef.current, {
       x: toggleGsap ? 15 : -300,
@@ -474,6 +546,24 @@ const Navbar = ({ toggleRed, setToggleRed }) => {
       duration: toggleGsap ? 0.2 : 0.4,
       delay: toggleGsap ? 2.3 : 0,
     });
+
+    /***** Mobile Animations ******/
+
+    gsap.to(subMenuRefMobile.current, {
+      x: toggleGsap ? 15 : -300,
+      opacity: toggleGsap ? 1 : 0,
+      duration: toggleGsap ? 0.2 : 0.4,
+      delay: toggleGsap ? 2 : 0.3,
+    });
+
+    gsap.to(socialLinksRefMobile.current, {
+      x: toggleGsap ? 15 : -300,
+      opacity: toggleGsap ? 1 : 0,
+      duration: toggleGsap ? 0.2 : 0.4,
+      delay: toggleGsap ? 2.3 : 0,
+    });
+
+
   };
 
   return (
@@ -499,7 +589,7 @@ const Navbar = ({ toggleRed, setToggleRed }) => {
                     onMouseOut={() => setActiveBg(0)}
                     className={`${
                       activeBg == index ? "rainbow-text" : "text-white"
-                    } text-white`} 
+                    } text-white`}
                   >
                     <div
                       onClick={() =>
@@ -535,7 +625,7 @@ const Navbar = ({ toggleRed, setToggleRed }) => {
                       toggleDrawer();
                       gsapToggle();
                     }}
-                  /> 
+                  />
                   <svg
                     viewBox="0 0 100 100"
                     className=""
@@ -563,7 +653,7 @@ const Navbar = ({ toggleRed, setToggleRed }) => {
                 <div className="ml-2 mt-4 md:mx-10">
                   <div
                     ref={hamburgerLogoRef}
-                    className="w-[55vw] ml-1 opacity-0 translate-x-[-300px]"
+                    className="w-[55vw] opacity-0 translate-x-[-300px]"
                   >
                     <Image src={logo} />
                   </div>
@@ -573,34 +663,64 @@ const Navbar = ({ toggleRed, setToggleRed }) => {
 
                     <div>
                       <div className="mt-16 lg:hidden">
-                        <div className="text-white flex flex-col gap-2 mr-1 text-2xl pillat-normal">
-                          <div className="flex justify-between mx-2 ">
+                        <div
+                          className="text-white flex flex-col gap-2 mr-1 text-2xl pillat-normal opacity-0 translate-x-[-300px]"
+                          ref={subMenuRefMobile}
+                        >
+                          <div className="flex justify-between  mr-5">
                             <div>about us</div>
                           </div>
-                          <div className="flex justify-between mx-2 text-2xl">
+                          <div className="flex justify-between  text-2xl mr-5">
                             <div>investor relations</div>
                             <div className="text-2xl font-bold">+</div>
                           </div>
-                          <div className="flex justify-between mx-2">
-                            <div>business divisions</div> 
+                          <div className="flex justify-between mr-5">
+                            <div>business divisions</div>
                             <div className="text-2xl font-bold">+</div>
                           </div>
-                          <div className="flex justify-between mx-2">
+                          <div className="flex justify-between mr-5">
                             <div>brands & products</div>
                             <div className="text-2xl font-bold">+</div>
                           </div>
-                          <div className="flex justify-between mx-2">
-                            <div>clients</div>  
+                          <div className="flex justify-between mr-5">
+                            <div>clients</div>
                             <div className="text-2xl font-bold">+</div>
                           </div>
-                          <div className="flex justify-between mx-2">
+                          <div className="flex justify-between mr-5">
                             <div>affiliation & partnerships</div>
                           </div>
-                          <div className="flex justify-between mx-2">
+                          <div className="flex justify-between mr-5">
                             <div>careers</div>
                           </div>
-                          <div className="flex justify-between mx-2">
+                          <div className="flex justify-between mr-5">
                             <div>contact us</div>
+                          </div>
+                        </div>
+
+                        <div
+                          ref={socialLinksRefMobile}
+                          className="flex gap-3 mt-5 opacity-0 translate-x-[-300px]"
+                        >
+                          <div className="border border-green-400 rounded-lg my-auto px-1 py-1 cursor-pointer hamburger-social-icons-div">
+                            <Image
+                              src={linkdinLogo}
+                              width={28}
+                              className="hamburger-social-icon"
+                            />
+                          </div>
+                          <div className="border border-green-400 rounded-lg my-auto px-1 py-1 cursor-pointer hamburger-social-icons-div">
+                            <Image
+                              src={fbLogo}
+                              width={28}
+                              className="hamburger-social-icon"
+                            />
+                          </div>
+                          <div className="border border-green-400 rounded-lg my-auto px-1 py-1 cursor-pointer hamburger-social-icons-div">
+                            <Image
+                              src={twitterLogo}
+                              width={28}
+                              className="hamburger-social-icon"
+                            />
                           </div>
                         </div>
                       </div>
