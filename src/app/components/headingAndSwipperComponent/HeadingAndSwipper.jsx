@@ -61,21 +61,28 @@ const HeadingAndSwipper = ({
     setArrowNextActive(true);
   };
 
-
   const [activeAni, setActiveAni] = useState();
 
   const [borderHover, setBorderHover] = useState();
   const [borderHover2, setBorderHover2] = useState();
 
   const hoverFunc = (id) => {
-    setBorderHover("border border-white transition-all ease-in-out duration-1000");
-    setBorderHover2("border border-white transition-all ease-in-out duration-1000");
+    setBorderHover(
+      "border border-white transition-all ease-in-out duration-1000"
+    );
+    setBorderHover2(
+      "border border-white transition-all ease-in-out duration-1000"
+    );
     setActiveAni(id);
   };
 
   const hoverFuncOut = () => {
-    setBorderHover("border border-gray-300 transition-all ease-in-out duration-1000");
-    setBorderHover2("border border-gray-300 transition-all ease-in-out duration-1000");
+    setBorderHover(
+      "border border-gray-300 transition-all ease-in-out duration-1000"
+    );
+    setBorderHover2(
+      "border border-gray-300 transition-all ease-in-out duration-1000"
+    );
   };
 
   const animationRefs = GsapScrollAnimationComp();
@@ -83,7 +90,7 @@ const HeadingAndSwipper = ({
   return (
     <>
       <div className="relative">
-        {triggerBottomAnimation && <GsapBottomAnimation getLink={getLink}/>}
+        {triggerBottomAnimation && <GsapBottomAnimation getLink={getLink} />}
 
         <div className="md:mx-12 mx-3 lg:mx-auto lg:w-[58%] ">
           <div className="mt-5">
@@ -133,9 +140,12 @@ const HeadingAndSwipper = ({
 
               {/*********  Mobile  *********/}
 
-              <span      onClick={() => {
-                    triggerBotAnimFunc();
-                  }} className="w-[100%] lg:hidden block text-[#181818] font-extrabold text-sm sm:text-sm mt-2 pillat-thin">
+              <span
+                onClick={() => {
+                  triggerBotAnimFunc();
+                }}
+                className="w-[100%] lg:hidden block text-[#181818] font-extrabold text-sm sm:text-sm mt-2 pillat-thin"
+              >
                 {transformationText || commerceText}
                 <Link href={`${knowMoreLink}`} class="a-arrow relative">
                   {" "}
@@ -185,7 +195,7 @@ const HeadingAndSwipper = ({
               >
                 {swipperContent.map((item, index) => (
                   <SwiperSlide
-                  className="h-[px] relative overflow-hidden cursor-pointer"
+                    className="h-[px] relative overflow-hidden cursor-pointer"
                     key={item.id}
                     onClick={() => {
                       triggerBotAnimFunc();
@@ -214,15 +224,15 @@ const HeadingAndSwipper = ({
                       </div>
 
                       <div
-                          className={`absolute top-[-120px] right-[-220px] border border-gray-300 rounded-[50px] w-72 h-72  ${
-                            activeAni == index ? borderHover : ""
-                          } `}
-                        ></div>
-                        <div
-                          className={`absolute top-[-70px] right-[-270px] border border-gray-300 rounded-[50px] w-72 h-72 ${
-                            activeAni == index ? borderHover2 : ""
-                          }`}
-                        ></div>
+                        className={`absolute top-[-120px] right-[-230px] border border-gray-300 rounded-[50px] w-72 h-72  ${
+                          activeAni == index ? borderHover : ""
+                        } `}
+                      ></div>
+                      <div
+                        className={`absolute top-[-70px] right-[-270px] border border-gray-300 rounded-[50px] w-72 h-72 ${
+                          activeAni == index ? borderHover2 : ""
+                        }`}
+                      ></div>
                     </div>
                   </SwiperSlide>
                 ))}

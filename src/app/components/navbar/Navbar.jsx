@@ -23,11 +23,18 @@ import RiveAnimation from "../../../../public/symmetryAnimations/banner-Rive.riv
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/all";
+import CollapsibleComp from "../collapsibleComponent/Collapsible";
+import CollapsibleFooter from "../collapsibleFooter/CollapsibleFooter";
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(ScrollToPlugin);
 
 const Navbar = ({ toggleRed, setToggleRed }) => {
+  const [collapseIcon, setCollapseIcon] = useState(true);
+  const [collapseIcon1, setCollapseIcon1] = useState(true);
+  const [collapseIcon2, setCollapseIcon2] = useState(true);
+  const [collapseIcon3, setCollapseIcon3] = useState(true);
+  
   const router = useRouter();
 
   useEffect(() => {
@@ -47,8 +54,8 @@ const Navbar = ({ toggleRed, setToggleRed }) => {
 
   /****** Mobile *******/
 
-  const subMenuRefMobile = useRef()
-  const socialLinksRefMobile = useRef()
+  const subMenuRefMobile = useRef();
+  const socialLinksRefMobile = useRef();
 
   useEffect(() => {
     var actionNav = gsap.to(navRef.current, {
@@ -443,63 +450,151 @@ const Navbar = ({ toggleRed, setToggleRed }) => {
       id: 0,
       title: (
         <>
-          <div className="flex justify-between gap-5 border-b border-green-400 mt-2 md:text-lg">
-            <div>2024</div>
+          <div className="flex justify-between gap-5 mt-2 ">
+            <div>about us</div>
             {/* <div className={`${collapseIcon ? "bg-red-500" : "bg-green-500"}`} >+</div> */}
-            <div onClick={() => setCollapseIcon(!collapseIcon)}>
+            {/* <div className="text-2xl font-bold" >
               {collapseIcon ? "+" : "-"}
-            </div>
+            </div> */}
           </div>
         </>
       ),
-      firstQuarter: "1st quarter",
     },
     {
       id: 1,
       title: (
         <>
-          <div className="flex justify-between gap-5 border-b border-green-400 mt-2 md:text-lg">
-            <div>2023</div>
-            <div onClick={() => setCollapseIcon2(!collapseIcon2)}>
-              {collapseIcon2 ? "+" : "-"}
-            </div>{" "}
+          <div onClick={() => setCollapseIcon(!collapseIcon)} className={`flex justify-between gap-5 mt-2 ${!collapseIcon ? "footer-text-color-toggle-2" : "text-white"} `}>
+            <div>investors relations</div>
+            {/* <div className={`${collapseIcon ? "bg-red-500" : "bg-green-500"}`} >+</div> */}
+            <div className="text-2xl font-bold" >
+              {collapseIcon ? "+" : "-"}
+            </div>
           </div>
         </>
       ),
-      firstQuarter: "1st quarter",
-      secondQuarter: "2nd quarter",
-      thirdQuarter: "3rd quarter",
-      annualReport: "annual report",
+      companyInformation: "company information",
+      governance: "governance",
+      financialReports: "financial reports",
+      corporateBriefings: "corporate briefings",
+      noticesAnnouncements : "notices & announcements",
+      importantDocuments : "important documents",
+      investorContacts : "investor contacts",
     },
     {
       id: 2,
       title: (
         <>
-          <div className="flex justify-between gap-5 border-b border-green-400 mt-2 md:text-lg">
-            <div>2022</div>
-            <div onClick={() => setCollapseIcon3(!collapseIcon3)}>
-              {collapseIcon3 ? "+" : "-"}
-            </div>{" "}
+          <div onClick={() => setCollapseIcon1(!collapseIcon1)} className={`flex justify-between gap-5 mt-2 ${!collapseIcon1 ? "footer-text-color-toggle-2" : "text-white"} `}>
+            <div>business divisions</div>
+            {/* <div className={`${collapseIcon ? "bg-red-500" : "bg-green-500"}`} >+</div> */}
+            <div className="text-2xl font-bold" >
+              {collapseIcon1 ? "+" : "-"}
+            </div>
           </div>
         </>
       ),
-      firstQuarter: "1st quarter",
-      thirdQuarter: "3rd quarter",
-      annualReport: "annual report",
+      transformation: "transformation",
+      interactiveMarketing: "interactive marketing",
+      commerce: "commerce",
+      mobility: "mobility",
     },
     {
       id: 3,
       title: (
         <>
-          <div className="flex justify-between gap-5 border-b border-green-400 mt-2 md:text-lg">
-            <div>2021</div>
-            <div onClick={() => setCollapseIcon4(!collapseIcon4)}>
-              {collapseIcon4 ? "+" : "-"}
-            </div>{" "}
+          <div onClick={() => setCollapseIcon2(!collapseIcon2)} className={`flex justify-between gap-5 mt-2 ${!collapseIcon2 ? "footer-text-color-toggle-2" : "text-white"} `}>
+            <div>brands & products</div>
+            {/* <div className={`${collapseIcon ? "bg-red-500" : "bg-green-500"}`} >+</div> */}
+            <div className="text-2xl font-bold" >
+              {collapseIcon2 ? "+" : "-"}
+            </div>
           </div>
         </>
       ),
-      annualReport: "annual report",
+      symmetryDigital: "symmetry digital",
+      irisDigital: "iris digital",
+      symmetryTrade: "symmetry trade",
+      coral: "coral",
+      coralPerformance: "coral performance",
+      appabilities: "appabilities",
+      survit: "survit",
+      mobits: "mobits",
+    },
+    {
+      id: 4,
+      title: (
+        <>
+          <div onClick={() => setCollapseIcon3(!collapseIcon3)} className={`flex justify-between gap-5 mt-2 ${!collapseIcon3 ? "footer-text-color-toggle-2" : "text-white"} `}>
+            <div>clients</div>
+            {/* <div className={`${collapseIcon ? "bg-red-500" : "bg-green-500"}`} >+</div> */}
+            <div className="text-2xl font-bold" >
+              {collapseIcon3 ? "+" : "-"}
+            </div>
+          </div>
+        </>
+      ),
+      telecom: "telecom",
+      bankingFinance: "banking & finance",
+      fmcg: "fmcg",
+      realEstate: "real estate",
+      pharmaceutical: "pharmaceutical",
+      others: "others",
+    },
+    {
+      id: 5,
+      title: (
+        <>
+          <div className="flex justify-between gap-5 mt-2 ">
+            <div>affiliations & partnerships </div>
+            {/* <div className="text-2xl font-bold" >
+              {collapseIcon ? "+" : "-"}
+            </div> */}
+          </div>
+        </>
+      ),
+    },
+    {
+      id: 6,
+      title: (
+        <>
+          <div className="flex justify-between gap-5 mt-2 ">
+            <div>careers </div>
+            {/* <div className={`${collapseIcon ? "bg-red-500" : "bg-green-500"}`} >+</div> */}
+            {/* <div className="text-2xl font-bold" >
+              {collapseIcon ? "+" : "-"}
+            </div> */}
+          </div>
+        </>
+      ),
+    },
+    {
+      id: 7,
+      title: (
+        <>
+          <div className="flex justify-between gap-5 mt-2 ">
+            <div>middle east</div>
+            {/* <div className={`${collapseIcon ? "bg-red-500" : "bg-green-500"}`} >+</div> */}
+            {/* <div className="text-2xl font-bold" >
+              {collapseIcon ? "+" : "-"}
+            </div> */}
+          </div>
+        </>
+      ),
+    },
+    {
+      id: 8,
+      title: (
+        <>
+          <div className="flex justify-between gap-5 mt-2 ">
+            <div>contact us</div>
+            {/* <div className={`${collapseIcon ? "bg-red-500" : "bg-green-500"}`} >+</div> */}
+            {/* <div className="text-2xl font-bold" >
+              {collapseIcon ? "+" : "-"}
+            </div> */}
+          </div>
+        </>
+      ),
     },
   ];
 
@@ -562,9 +657,9 @@ const Navbar = ({ toggleRed, setToggleRed }) => {
       duration: toggleGsap ? 0.2 : 0.4,
       delay: toggleGsap ? 2.3 : 0,
     });
-
-
   };
+
+ const textColor = "text-white"
 
   return (
     <>
@@ -667,14 +762,13 @@ const Navbar = ({ toggleRed, setToggleRed }) => {
                           className="text-white flex flex-col gap-2 mr-1 text-2xl pillat-normal opacity-0 translate-x-[-300px]"
                           ref={subMenuRefMobile}
                         >
-                          <div className="flex justify-between  mr-5">
-                            <div>about us</div>
+                          <div className="flex   text-2xl mr-5">
+                            <div className="text flex flex-col text-white w-full">
+                              <CollapsibleFooter dataArr={mobileMenuItems} textColor={textColor} />
+                            </div>
                           </div>
-                          <div className="flex justify-between  text-2xl mr-5">
-                            <div>investor relations</div>
-                            <div className="text-2xl font-bold">+</div>
-                          </div>
-                          <div className="flex justify-between mr-5">
+
+                          {/* <div className="flex justify-between mr-5">
                             <div>business divisions</div>
                             <div className="text-2xl font-bold">+</div>
                           </div>
@@ -694,7 +788,7 @@ const Navbar = ({ toggleRed, setToggleRed }) => {
                           </div>
                           <div className="flex justify-between mr-5">
                             <div>contact us</div>
-                          </div>
+                          </div> */}
                         </div>
 
                         <div

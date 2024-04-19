@@ -191,7 +191,7 @@ const AnimationAndSwipper = ({
                         </div>
                         
                       <div
-                          className={`absolute top-[-120px] right-[-220px] border border-gray-300 rounded-[50px] w-72 h-72  ${
+                          className={`absolute top-[-120px] right-[-230px] border border-gray-300 rounded-[50px] w-72 h-72  ${
                             activeAni == index ? borderHover : ""
                           } `}
                         ></div>

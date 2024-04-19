@@ -139,7 +139,7 @@ const HeritageSection = () => {
               prevEl: ".swiper-button-prev",
             }}
             autoplay={{
-              delay: 1000000,
+              delay: 1000,
               pauseOnMouseEnter: true,
             }}
             centeredSlides={true}

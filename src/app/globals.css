@@ -246,6 +246,20 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
+.footer-text-color-toggle-2{
+  background-image: linear-gradient(
+    45deg,
+    rgba(13, 83, 189, 1) 0%,
+    rgba(19, 176, 168, 1) 30%,
+    rgba(21, 176, 60, 1) 50%,
+    rgba(93, 156, 17, 1) 70%,
+    rgba(242, 213, 0, 1) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .lets-discuss-btn {
   color: black;
   transition: all ease-in-out 500ms, background 500ms;

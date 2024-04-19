@@ -64,10 +64,10 @@ const TextSlidingComponent = ({
 
     <div className="">
       <div
-        className={`mx-3 mb-10 mt-5 lg:${componentMarginTop} md:mt-36 md:mx-12 overflow-hidden`}
+        className={`mx-3 mb-10 mt-5 lg:${componentMarginTop} md:mt-36 md:mx- overflow-hidden`}
       >
         <div
-          className={`w-full ${
+          className={`w-full lg:ml-[48px] ${
             isBorder
               ? " w-[100%] lg:w-[35%] border-b border-green-500 pb-1 transform translate-y-[50px] "
               : ""
@@ -252,7 +252,7 @@ const TextSlidingComponent = ({
           className="sm:w-[80%] lg:max-w-[600px] "
         >
           <p
-            className="text-xs lg:text-sm text-gray-600 font-[300] mt leading-[16px] pillat-normal opacity-0 transform translate-y-[50px]"
+            className="text-xs lg:text-sm text-gray-600 font-[300] mt leading-[16px] pillat-normal opacity-0 lg:ml-[48px] transform translate-y-[50px]"
             ref={animationRefs.fourthFadeInAnimation}
           >
             {businessText || clientText}

@@ -3,12 +3,9 @@ import React, { useRef, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger"; // Import ScrollTrigger
 
-import GsapComp from "../components/gsapComp/GsapScrollAnimationComp";
-
 gsap.registerPlugin(ScrollTrigger); // Register ScrollTrigger
 
 const Page = () => {
-  const gsapCompRef = GsapComp();
   const liRefs = {
     home: useRef(null),
     about: useRef(null),
