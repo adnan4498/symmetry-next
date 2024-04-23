@@ -39,6 +39,7 @@ import interactiveAnim9 from "../../../public/symmetryAnimations/interactive-ani
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import Rive from "rive-react";
+import GsapScrollAnimationComp from "../components/gsapComp/GsapScrollAnimationComp";
 
 gsap.registerPlugin(ScrollTrigger);
 

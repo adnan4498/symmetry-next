@@ -24,13 +24,13 @@ const AnimationAndSwipper = ({
   mobilityHeading,
   mobilityText,
   aasKnowMore,
+  knowMoreLink,
+  getLink,
   swipperContent,
   animation,
 }) => {
   const router = useRouter();
   const [active, setActive] = useState(0);
-  const [arrowPrevActive, setArrowPrevActive] = useState(false);
-  const [arrowNextActive, setArrowNextActive] = useState(false);
   const [triggerBottomAnimation, setTriggerBottomAnimation] = useState(false);
 
   const toTransformationBlackRef = useRef(null);
@@ -45,14 +45,20 @@ const AnimationAndSwipper = ({
     setActive(swiper.realIndex);
   };
 
-  const handleArrowPrevActive = () => {
-    setArrowNextActive(false);
-    setArrowPrevActive(true);
+  const [activeAni, setActiveAni] = useState();
+
+  const [borderHover, setBorderHover] = useState();
+  const [borderHover2, setBorderHover2] = useState();
+
+  const hoverFunc = (id) => {
+    setBorderHover("border border-white transition-all ease-in-out duration-1000");
+    setBorderHover2("border border-white transition-all ease-in-out duration-1000");
+    setActiveAni(id);
   };
 
-  const handleArrowNextActive = () => {
-    setArrowPrevActive(false);
-    setArrowNextActive(true);
+  const hoverFuncOut = () => {
+    setBorderHover("border border-gray-300 transition-all ease-in-out duration-1000");
+    setBorderHover2("border border-gray-300 transition-all ease-in-out duration-1000");
   };
 
   const animationRefs = GsapScrollAnimationComp();
@@ -60,7 +66,7 @@ const AnimationAndSwipper = ({
   return (
     <>
       <div className="relative">
-        {triggerBottomAnimation && <GsapBottomAnimation />}
+        {triggerBottomAnimation && <GsapBottomAnimation getLink={getLink} />}
         <div className="relative mx-3 md:mx-12 lg:ml-12 lg:mr-[2px] lg:w-[%]">
           <div className=" lg:flex justify-between items-center">
             <div className="lg:w-[62%]">
@@ -90,9 +96,11 @@ const AnimationAndSwipper = ({
                   {/*********  Desktop  *********/}
 
                   <span className="border-l border-gray-400 text-black text-xs 2xl:text-sm pl-4 ml-3 w-[55%] 2xl:w-[45%] xl:max-w-[600px] 2xl:leading-[15px] mt-3 lg:inline-block hidden pillat-thin">
-                    <span className="w-[100%] relative">
+                    <span      onClick={() => {
+                    triggerBotAnimFunc();
+                  }} className="w-[100%] relative">
                       {interactiveText || mobilityText}
-                      <Link href={""} class="a-arrow">
+                      <Link href={knowMoreLink} class="a-arrow">
                         <span className="text-black font-bold">know more</span>
                         <span class="arrow"></span>
                       </Link>
@@ -101,7 +109,9 @@ const AnimationAndSwipper = ({
 
                   {/*********  Mobile  *********/}
 
-                  <span className="w-[100%] lg:hidden block text-black text-sm sm:text-sm mt-2 pillat-thin">
+                  <span      onClick={() => {
+                    triggerBotAnimFunc();
+                  }} className="w-[100%] lg:hidden block text-black text-sm sm:text-sm mt-2 pillat-thin">
                     {interactiveText || mobilityText}
                     <Link href={""} class="a-arrow relative">
                       {" "}
@@ -127,7 +137,7 @@ const AnimationAndSwipper = ({
                       spaceBetween: 40,
                     },
                     768: {
-                      slidesPerView: 2.9,
+                      slidesPerView: 3,
                       spaceBetween: 40,
                     },
                     1024: {
@@ -152,10 +162,13 @@ const AnimationAndSwipper = ({
                 >
                   {swipperContent.map((item, index) => (
                     <SwiperSlide
-                      key={item.id}
-                      onClick={() => {
-                        triggerBotAnimFunc();
-                      }}
+                    className="h-[px] relative overflow-hidden cursor-pointer"
+                    key={item.id}
+                    onClick={() => {
+                      triggerBotAnimFunc();
+                    }}
+                    onMouseOver={() => hoverFunc(item.id)}
+                    onMouseLeave={() => hoverFuncOut()}
                     >
                       <div
                         className={`rounded-lg swipper-hover-class transition-all ease-in-out duration-300`}
@@ -175,24 +188,28 @@ const AnimationAndSwipper = ({
                               {item.text}
                             </p>
                           </div>
-                          <div></div>
                         </div>
+                        
+                      <div
+                          className={`absolute top-[-120px] right-[-230px] border border-gray-300 rounded-[50px] w-72 h-72  ${
+                            activeAni == index ? borderHover : ""
+                          } `}
+                        ></div>
+                        <div
+                          className={`absolute top-[-70px] right-[-270px] border border-gray-300 rounded-[50px] w-72 h-72 ${
+                            activeAni == index ? borderHover2 : ""
+                          }`}
+                        ></div>
                       </div>
                     </SwiperSlide>
                   ))}
                 </Swiper>
                 <div className="swiper-navigation-buttons flex justify-center gap-2 lg:gap-[10px] 2xl:gap-3 w-full mt-10">
                   <button
-                    onClick={() => handleArrowPrevActive()}
-                    className={`swiper-button-prev ${
-                      arrowPrevActive ? "arrows-bg after:!text-white " : ""
-                    } !static custom-arrow-border rounded-md rotate-[45deg] !w-7 !h-7 md:!w-8 md:!h-8 lg:!w-8 lg:!h-8 `}
+                    className={`swiper-button-prev  !static custom-arrow-border rounded-md rotate-[45deg] !w-7 !h-7 md:!w-8 md:!h-8 lg:!w-8 lg:!h-8 `}
                   ></button>
                   <button
-                    onClick={() => handleArrowNextActive()}
-                    className={`swiper-button-next ${
-                      arrowNextActive ? "arrows-bg  after:!text-white " : ""
-                    } !static custom-arrow-border  rounded-md rotate-[45deg] !w-7 !h-7 md:!w-8 md:!h-8 lg:!w-8 lg:!h-8`}
+                    className={`swiper-button-next  !static custom-arrow-border  rounded-md rotate-[45deg] !w-7 !h-7 md:!w-8 md:!h-8 lg:!w-8 lg:!h-8`}
                   ></button>
                 </div>
               </div>

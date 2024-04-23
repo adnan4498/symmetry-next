@@ -8,35 +8,31 @@ import "swiper/css";
 import "swiper/css/navigation";
 import Link from "next/link";
 import GsapScrollAnimationComp from "../../components/gsapComp/GsapScrollAnimationComp";
+import GsapBottomAnimation from "../gsapComponent/GsapBottomAnimation";
 
 const ImageSwipper = ({
   brandsTitle,
   brandsHeading,
   brandsText,
   hasKnowMore,
+  getLink,
   swipperContent,
   slidesPerView,
   irisLogo,
   swipperGap,
   knowMoreLink,
 }) => {
-  const [arrowPrevActive, setArrowPrevActive] = useState(false);
-  const [arrowNextActive, setArrowNextActive] = useState(false);
+  const [triggerBottomAnimation, setTriggerBottomAnimation] = useState(false);
 
-  const handleArrowPrevActive = () => {
-    setArrowNextActive(false);
-    setArrowPrevActive(true);
-  };
-
-  const handleArrowNextActive = () => {
-    setArrowPrevActive(false);
-    setArrowNextActive(true);
+  const triggerBotAnimFunc = () => {
+    setTriggerBottomAnimation(true);
   };
 
   const animationRefs = GsapScrollAnimationComp();
 
   return (
     <>
+      {triggerBottomAnimation && <GsapBottomAnimation getLink={getLink} />}
       <div className="md:mx-12 mx-3 lg:mx-auto lg:w-[53%]">
         <div className="mt-5">
           <div
@@ -58,12 +54,17 @@ const ImageSwipper = ({
               />
             </span>
 
-            {/*********  Laptop  *********/}
+            {/*********  Desktop  *********/}
 
             <span className="text-black text-sm 2xl:leading-[15px] mt-6 lg:block hidden pillat-thin">
-              <span className="relative w-[100%] ">
+              <span
+                onClick={() => {
+                  triggerBotAnimFunc();
+                }}
+                className="relative w-[100%] "
+              >
                 {brandsText}
-                <Link href={`${knowMoreLink}`} class="a-arrow">
+                <Link href={`${getLink}`} class="a-arrow">
                   {" "}
                   <span className="text-black font-bold">
                     explore our world{" "}
@@ -75,7 +76,12 @@ const ImageSwipper = ({
 
             {/*********  Mobile  *********/}
 
-            <span className=" w-[100%] lg:hidden block text-black text-[13px] sm:text-sm mt-2 pillat-thin">
+            <span
+              onClick={() => {
+                triggerBotAnimFunc();
+              }}
+              className=" w-[100%] lg:hidden block text-black text-[13px] sm:text-sm mt-2 pillat-thin"
+            >
               {brandsText}
               <Link href={`${knowMoreLink}`} class="a-arrow relative">
                 {" "}
@@ -93,7 +99,7 @@ const ImageSwipper = ({
         </div> */}
 
         <div
-          className="mb-10 mt-10 md:mx-auto opacity-0 transform translate-y-[50px]"
+          className="mb-10 mt-10 md:mx-auto swipper-icons-color-toggle opacity-0 transform translate-y-[50px]"
           ref={animationRefs.thirdFadeInAnimation}
         >
           <Swiper
@@ -105,7 +111,7 @@ const ImageSwipper = ({
                 spaceBetween: 40,
               },
               768: {
-                slidesPerView: 2.9,
+                slidesPerView: 3,
                 spaceBetween: 40,
               },
               1024: {
@@ -143,16 +149,10 @@ const ImageSwipper = ({
 
           <div className="swiper-navigation-buttons flex justify-center gap-2 lg:gap-[10px] 2xl:gap-3 w-full mt-10">
             <button
-              onClick={() => handleArrowPrevActive()}
-              className={`swiper-button-prev ${
-                arrowPrevActive ? "arrows-bg after:!text-white " : ""
-              } !static custom-arrow-border rounded-md rotate-[45deg] !w-7 !h-7 md:!w-8 md:!h-8 lg:!w-8 lg:!h-8 `}
+              className={`swiper-button-prev  !static custom-arrow-border rounded-md rotate-[45deg] !w-7 !h-7 md:!w-8 md:!h-8 lg:!w-8 lg:!h-8 `}
             ></button>
             <button
-              onClick={() => handleArrowNextActive()}
-              className={`swiper-button-next ${
-                arrowNextActive ? "arrows-bg  after:!text-white " : ""
-              } !static custom-arrow-border  rounded-md rotate-[45deg] !w-7 !h-7 md:!w-8 md:!h-8 lg:!w-8 lg:!h-8`}
+              className={`swiper-button-next !static custom-arrow-border  rounded-md rotate-[45deg] !w-7 !h-7 md:!w-8 md:!h-8 lg:!w-8 lg:!h-8`}
             ></button>
           </div>
         </div>

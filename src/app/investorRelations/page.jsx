@@ -2,7 +2,7 @@
 import AnimationTextReversing from "../components/animationTextReversing/AnimationTextReversing";
 import BlackBannerComponent from "../components/blackBannerComponent/BlackBannerComponent";
 import Tabs from "../components/tabs/Tabs";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import CollapsibleComp from "../components/collapsibleComponent/Collapsible";
 // import square from "../../../../public/square-neon.png";
@@ -28,6 +28,11 @@ import GsapScrollAnimationComp from "../components/gsapComp/GsapScrollAnimationC
 gsap.registerPlugin(ScrollTrigger);
 
 const page = () => {
+  const [collapseIcon, setCollapseIcon] = useState(true);
+  const [collapseIcon2, setCollapseIcon2] = useState(true);
+  const [collapseIcon3, setCollapseIcon3] = useState(true);
+  const [collapseIcon4, setCollapseIcon4] = useState(true);
+
   const blackDiv = useRef();
   const redDiv = useRef();
   const aboutDiv = useRef();
@@ -336,7 +341,10 @@ const page = () => {
         <>
           <div className="flex justify-between gap-5 border-b border-green-400 mt-2 md:text-lg">
             <div>2024</div>
-            <div>+</div>
+            {/* <div className={`${collapseIcon ? "bg-red-500" : "bg-green-500"}`} >+</div> */}
+            <div onClick={() => setCollapseIcon(!collapseIcon)}>
+              {collapseIcon ? "+" : "-"}
+            </div>
           </div>
         </>
       ),
@@ -348,7 +356,9 @@ const page = () => {
         <>
           <div className="flex justify-between gap-5 border-b border-green-400 mt-2 md:text-lg">
             <div>2023</div>
-            <div>+</div>
+            <div onClick={() => setCollapseIcon2(!collapseIcon2)}>
+              {collapseIcon2 ? "+" : "-"}
+            </div>{" "}
           </div>
         </>
       ),
@@ -363,7 +373,9 @@ const page = () => {
         <>
           <div className="flex justify-between gap-5 border-b border-green-400 mt-2 md:text-lg">
             <div>2022</div>
-            <div>+</div>
+            <div onClick={() => setCollapseIcon3(!collapseIcon3)}>
+              {collapseIcon3 ? "+" : "-"}
+            </div>{" "}
           </div>
         </>
       ),
@@ -377,7 +389,9 @@ const page = () => {
         <>
           <div className="flex justify-between gap-5 border-b border-green-400 mt-2 md:text-lg">
             <div>2021</div>
-            <div>+</div>
+            <div onClick={() => setCollapseIcon4(!collapseIcon4)}>
+              {collapseIcon4 ? "+" : "-"}
+            </div>{" "}
           </div>
         </>
       ),
@@ -633,7 +647,10 @@ const page = () => {
               </h2>
             </div>
 
-            <div className="">
+            <div
+              className=""
+              // onClick={()=> setCollapseIcon(!collapseIcon)}
+            >
               <div className="text flex flex-col text-black">
                 <CollapsibleComp dataArr={financialReportsData} />
               </div>

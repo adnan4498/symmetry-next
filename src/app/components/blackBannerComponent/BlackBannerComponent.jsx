@@ -728,7 +728,7 @@ const BlackBannerComponent = ({ aboutH2, aboutText, customBgColor, bannerAnimati
         </div>
         <div
           ref={aboutDiv}
-          className={`text-${bannerHeadingSize || "7xl"} lg:text-8xl 2xl:text-[150px] pt-10 pillat-normal relative z-30`}
+          className={`text-5xl rainbow-text lg:text-8xl 2xl:text-[150px] pt-10 pillat-normal relative z-30`}
         >
           {aboutH2}
         </div>

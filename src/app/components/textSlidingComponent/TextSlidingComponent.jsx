@@ -10,12 +10,14 @@ import "swiper/css/navigation";
 import "../../homeComponents/Dummy.css";
 import GsapScrollAnimationComp from "../../components/gsapComp/GsapScrollAnimationComp";
 import Link from "next/link";
+import GsapBottomAnimation from "../gsapComponent/GsapBottomAnimation";
 gsap.registerPlugin(ScrollTrigger);
 
 const TextSlidingComponent = ({
   businessTitle,
   businessText,
   knowMore,
+  getLink,
   clientTitle,
   clientText,
   isBorder,
@@ -25,10 +27,11 @@ const TextSlidingComponent = ({
   swipperContent,
   clientMarque,
   businessMarque,
+  paddingBottom,
+  componentMarginTop,
 }) => {
-  const [arrowPrevActive, setArrowPrevActive] = useState(false);
-  const [arrowNextActive, setArrowNextActive] = useState(false);
 
+  const [triggerBottomAnimation, setTriggerBottomAnimation] = useState(false);
 
   useEffect(() => {
     const root = document.documentElement;
@@ -47,28 +50,31 @@ const TextSlidingComponent = ({
     }
   }, []);
 
-  const handleArrowPrevActive = () => {
-    setArrowNextActive(false);
-    setArrowPrevActive(true);
-  };
-
-  const handleArrowNextActive = () => {
-    setArrowPrevActive(false);
-    setArrowNextActive(true);
+  const triggerBotAnimFunc = () => {
+    setTriggerBottomAnimation(true);
   };
 
   const animationRefs = GsapScrollAnimationComp();
 
+  // const getLink = "google"
+
   return (
+    <>
+    {triggerBottomAnimation && <GsapBottomAnimation getLink={getLink} />}
+
     <div className="">
-      <div className="mx-3 mb-10 mt-5 lg:mt-44 md:mt-36 md:mx-12 overflow-hidden">
+      <div
+        className={`mx-3 mb-10 mt-5 lg:${componentMarginTop} md:mt-36 md:mx- overflow-hidden`}
+      >
         <div
-          className={`w-full ${
-            isBorder ? "border-b border-green-500 pb-1 transform translate-y-[50px] " : ""
+          className={`w-full lg:ml-[48px] ${
+            isBorder
+              ? " w-[100%] lg:w-[35%] border-b border-green-500 pb-1 transform translate-y-[50px] "
+              : ""
           }  w-[40%]`}
         >
           <h2
-            className="text-gray-600 text-4xl lg:text-4xl opacity-0 pillat-normal pb-3 transform translate-y-[50px]"
+            className={`text-gray-600 text-4xl lg:text-4xl opacity-0 pillat-normal pb-3 lg:pb-0 transform translate-y-[50px]`}
             ref={animationRefs.firstFadeInAnimation}
           >
             {businessTitle || clientTitle}
@@ -77,7 +83,7 @@ const TextSlidingComponent = ({
 
         {businessMarque && (
           <div
-            className="marquee opacity-0 transform translate-y-[50px] mt-2 lg:mt-8"
+            className="marquee opacity-0 transform translate-y-[50px] mt-0 lg:-mt-7"
             ref={animationRefs.secondFadeInAnimation}
           >
             <ul className="marquee-content gap-10">
@@ -239,9 +245,14 @@ const TextSlidingComponent = ({
           </div>
         )}
 
-        <div className="sm:w-[80%] lg:max-w-[600px] ">
+        <div
+          onClick={() => {
+            triggerBotAnimFunc();
+          }}
+          className="sm:w-[80%] lg:max-w-[600px] "
+        >
           <p
-            className="text-xs lg:text-sm text-gray-600 font-[300] mt leading-[16px] pillat-normal opacity-0 transform translate-y-[50px]"
+            className="text-xs lg:text-sm text-gray-600 font-[300] mt leading-[16px] pillat-normal opacity-0 lg:ml-[48px] transform translate-y-[50px]"
             ref={animationRefs.fourthFadeInAnimation}
           >
             {businessText || clientText}
@@ -255,9 +266,9 @@ const TextSlidingComponent = ({
         </div>
 
         {isImageSwipper && (
-          <div className="mt-9 swipper-icons-color-toggle opacity-0 transform translate-y-[50px] "
-          ref={animationRefs.fifthFadeInAnimation}
-
+          <div
+            className="mt-9 swipper-icons-color-toggle opacity-0 transform translate-y-[50px] "
+            ref={animationRefs.fifthFadeInAnimation}
           >
             <Swiper
               spaceBetween={20}
@@ -268,7 +279,7 @@ const TextSlidingComponent = ({
                   spaceBetween: 40,
                 },
                 768: {
-                  slidesPerView: 2.9,
+                  slidesPerView: 3,
                   spaceBetween: 40,
                 },
                 1024: {
@@ -308,16 +319,10 @@ const TextSlidingComponent = ({
 
             <div className="swiper-navigation-buttons flex justify-center  gap-2 lg:gap-[10px] 2xl:gap-3 w-full mt-16 mb-3">
               <button
-                onClick={() => handleArrowPrevActive()}
-                className={`swiper-button-prev ${
-                  arrowPrevActive ? "arrows-bg after:!text-white " : ""
-                } !static custom-arrow-border rounded-md rotate-[45deg] !w-7 !h-7 md:!w-8 md:!h-8 lg:!w-8 lg:!h-8 `}
+                className={`swiper-button-prev $ !static custom-arrow-border rounded-md rotate-[45deg] !w-7 !h-7 md:!w-8 md:!h-8 lg:!w-8 lg:!h-8 `}
               ></button>
               <button
-                onClick={() => handleArrowNextActive()}
-                className={`swiper-button-next ${
-                  arrowNextActive ? "arrows-bg  after:!text-white " : ""
-                } !static custom-arrow-border  rounded-md rotate-[45deg] !w-7 !h-7 md:!w-8 md:!h-8 lg:!w-8 lg:!h-8`}
+                className={`swiper-button-next !static custom-arrow-border  rounded-md rotate-[45deg] !w-7 !h-7 md:!w-8 md:!h-8 lg:!w-8 lg:!h-8`}
               ></button>
             </div>
           </div>
@@ -328,6 +333,7 @@ const TextSlidingComponent = ({
       </div> */}
       </div>
     </div>
+    </>
   );
 };
 

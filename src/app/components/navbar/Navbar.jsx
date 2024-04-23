@@ -23,11 +23,18 @@ import RiveAnimation from "../../../../public/symmetryAnimations/banner-Rive.riv
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/all";
+import CollapsibleComp from "../collapsibleComponent/Collapsible";
+import CollapsibleFooter from "../collapsibleFooter/CollapsibleFooter";
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(ScrollToPlugin);
 
 const Navbar = ({ toggleRed, setToggleRed }) => {
+  const [collapseIcon, setCollapseIcon] = useState(true);
+  const [collapseIcon1, setCollapseIcon1] = useState(true);
+  const [collapseIcon2, setCollapseIcon2] = useState(true);
+  const [collapseIcon3, setCollapseIcon3] = useState(true);
+  
   const router = useRouter();
 
   useEffect(() => {
@@ -44,6 +51,11 @@ const Navbar = ({ toggleRed, setToggleRed }) => {
   const subMenuRef = useRef();
   const socialLinksRef = useRef();
   const menuAnimationRef = useRef();
+
+  /****** Mobile *******/
+
+  const subMenuRefMobile = useRef();
+  const socialLinksRefMobile = useRef();
 
   useEffect(() => {
     var actionNav = gsap.to(navRef.current, {
@@ -433,6 +445,159 @@ const Navbar = ({ toggleRed, setToggleRed }) => {
     ),
   ];
 
+  const mobileMenuItems = [
+    {
+      id: 0,
+      title: (
+        <>
+          <div className="flex justify-between gap-5 mt-2 ">
+            <div>about us</div>
+            {/* <div className={`${collapseIcon ? "bg-red-500" : "bg-green-500"}`} >+</div> */}
+            {/* <div className="text-2xl font-bold" >
+              {collapseIcon ? "+" : "-"}
+            </div> */}
+          </div>
+        </>
+      ),
+    },
+    {
+      id: 1,
+      title: (
+        <>
+          <div onClick={() => setCollapseIcon(!collapseIcon)} className={`flex justify-between gap-5 mt-2 ${!collapseIcon ? "footer-text-color-toggle-2" : "text-white"} `}>
+            <div>investors relations</div>
+            {/* <div className={`${collapseIcon ? "bg-red-500" : "bg-green-500"}`} >+</div> */}
+            <div className="text-2xl font-bold" >
+              {collapseIcon ? "+" : "-"}
+            </div>
+          </div>
+        </>
+      ),
+      companyInformation: "company information",
+      governance: "governance",
+      financialReports: "financial reports",
+      corporateBriefings: "corporate briefings",
+      noticesAnnouncements : "notices & announcements",
+      importantDocuments : "important documents",
+      investorContacts : "investor contacts",
+    },
+    {
+      id: 2,
+      title: (
+        <>
+          <div onClick={() => setCollapseIcon1(!collapseIcon1)} className={`flex justify-between gap-5 mt-2 ${!collapseIcon1 ? "footer-text-color-toggle-2" : "text-white"} `}>
+            <div>business divisions</div>
+            {/* <div className={`${collapseIcon ? "bg-red-500" : "bg-green-500"}`} >+</div> */}
+            <div className="text-2xl font-bold" >
+              {collapseIcon1 ? "+" : "-"}
+            </div>
+          </div>
+        </>
+      ),
+      transformation: "transformation",
+      interactiveMarketing: "interactive marketing",
+      commerce: "commerce",
+      mobility: "mobility",
+    },
+    {
+      id: 3,
+      title: (
+        <>
+          <div onClick={() => setCollapseIcon2(!collapseIcon2)} className={`flex justify-between gap-5 mt-2 ${!collapseIcon2 ? "footer-text-color-toggle-2" : "text-white"} `}>
+            <div>brands & products</div>
+            {/* <div className={`${collapseIcon ? "bg-red-500" : "bg-green-500"}`} >+</div> */}
+            <div className="text-2xl font-bold" >
+              {collapseIcon2 ? "+" : "-"}
+            </div>
+          </div>
+        </>
+      ),
+      symmetryDigital: "symmetry digital",
+      irisDigital: "iris digital",
+      symmetryTrade: "symmetry trade",
+      coral: "coral",
+      coralPerformance: "coral performance",
+      appabilities: "appabilities",
+      survit: "survit",
+      mobits: "mobits",
+    },
+    {
+      id: 4,
+      title: (
+        <>
+          <div onClick={() => setCollapseIcon3(!collapseIcon3)} className={`flex justify-between gap-5 mt-2 ${!collapseIcon3 ? "footer-text-color-toggle-2" : "text-white"} `}>
+            <div>clients</div>
+            {/* <div className={`${collapseIcon ? "bg-red-500" : "bg-green-500"}`} >+</div> */}
+            <div className="text-2xl font-bold" >
+              {collapseIcon3 ? "+" : "-"}
+            </div>
+          </div>
+        </>
+      ),
+      telecom: "telecom",
+      bankingFinance: "banking & finance",
+      fmcg: "fmcg",
+      realEstate: "real estate",
+      pharmaceutical: "pharmaceutical",
+      others: "others",
+    },
+    {
+      id: 5,
+      title: (
+        <>
+          <div className="flex justify-between gap-5 mt-2 ">
+            <div>affiliations & partnerships </div>
+            {/* <div className="text-2xl font-bold" >
+              {collapseIcon ? "+" : "-"}
+            </div> */}
+          </div>
+        </>
+      ),
+    },
+    {
+      id: 6,
+      title: (
+        <>
+          <div className="flex justify-between gap-5 mt-2 ">
+            <div>careers </div>
+            {/* <div className={`${collapseIcon ? "bg-red-500" : "bg-green-500"}`} >+</div> */}
+            {/* <div className="text-2xl font-bold" >
+              {collapseIcon ? "+" : "-"}
+            </div> */}
+          </div>
+        </>
+      ),
+    },
+    {
+      id: 7,
+      title: (
+        <>
+          <div className="flex justify-between gap-5 mt-2 ">
+            <div>middle east</div>
+            {/* <div className={`${collapseIcon ? "bg-red-500" : "bg-green-500"}`} >+</div> */}
+            {/* <div className="text-2xl font-bold" >
+              {collapseIcon ? "+" : "-"}
+            </div> */}
+          </div>
+        </>
+      ),
+    },
+    {
+      id: 8,
+      title: (
+        <>
+          <div className="flex justify-between gap-5 mt-2 ">
+            <div>contact us</div>
+            {/* <div className={`${collapseIcon ? "bg-red-500" : "bg-green-500"}`} >+</div> */}
+            {/* <div className="text-2xl font-bold" >
+              {collapseIcon ? "+" : "-"}
+            </div> */}
+          </div>
+        </>
+      ),
+    },
+  ];
+
   function getItem(label, key, children, type) {
     return {
       key,
@@ -446,6 +611,8 @@ const Navbar = ({ toggleRed, setToggleRed }) => {
 
   const gsapToggle = () => {
     setToggleGsap(!toggleGsap);
+
+    /***** Desktop Animations ******/
 
     gsap.to(hamburgerLogoRef.current, {
       x: toggleGsap ? 15 : -300,
@@ -474,7 +641,25 @@ const Navbar = ({ toggleRed, setToggleRed }) => {
       duration: toggleGsap ? 0.2 : 0.4,
       delay: toggleGsap ? 2.3 : 0,
     });
+
+    /***** Mobile Animations ******/
+
+    gsap.to(subMenuRefMobile.current, {
+      x: toggleGsap ? 15 : -300,
+      opacity: toggleGsap ? 1 : 0,
+      duration: toggleGsap ? 0.2 : 0.4,
+      delay: toggleGsap ? 2 : 0.3,
+    });
+
+    gsap.to(socialLinksRefMobile.current, {
+      x: toggleGsap ? 15 : -300,
+      opacity: toggleGsap ? 1 : 0,
+      duration: toggleGsap ? 0.2 : 0.4,
+      delay: toggleGsap ? 2.3 : 0,
+    });
   };
+
+ const textColor = "text-white"
 
   return (
     <>
@@ -499,7 +684,7 @@ const Navbar = ({ toggleRed, setToggleRed }) => {
                     onMouseOut={() => setActiveBg(0)}
                     className={`${
                       activeBg == index ? "rainbow-text" : "text-white"
-                    } text-white`} 
+                    } text-white`}
                   >
                     <div
                       onClick={() =>
@@ -563,7 +748,7 @@ const Navbar = ({ toggleRed, setToggleRed }) => {
                 <div className="ml-2 mt-4 md:mx-10">
                   <div
                     ref={hamburgerLogoRef}
-                    className="w-[55vw] ml-1 opacity-0 translate-x-[-300px]"
+                    className="w-[55vw] opacity-0 translate-x-[-300px]"
                   >
                     <Image src={logo} />
                   </div>
@@ -573,34 +758,63 @@ const Navbar = ({ toggleRed, setToggleRed }) => {
 
                     <div>
                       <div className="mt-16 lg:hidden">
-                        <div className="text-white flex flex-col gap-2 mr-1 text-2xl pillat-normal">
-                          <div className="flex justify-between mx-2 ">
-                            <div>about us</div>
+                        <div
+                          className="text-white flex flex-col gap-2 mr-1 text-2xl pillat-normal opacity-0 translate-x-[-300px]"
+                          ref={subMenuRefMobile}
+                        >
+                          <div className="flex   text-2xl mr-5">
+                            <div className="text flex flex-col text-white w-full">
+                              <CollapsibleFooter dataArr={mobileMenuItems} textColor={textColor} />
+                            </div>
                           </div>
-                          <div className="flex justify-between mx-2 text-2xl">
-                            <div>investor relations</div>
+
+                          {/* <div className="flex justify-between mr-5">
+                            <div>business divisions</div>
                             <div className="text-2xl font-bold">+</div>
                           </div>
-                          <div className="flex justify-between mx-2">
-                            <div>business divisions</div> 
-                            <div className="text-2xl font-bold">+</div>
-                          </div>
-                          <div className="flex justify-between mx-2">
+                          <div className="flex justify-between mr-5">
                             <div>brands & products</div>
                             <div className="text-2xl font-bold">+</div>
                           </div>
-                          <div className="flex justify-between mx-2">
-                            <div>clients</div>  
+                          <div className="flex justify-between mr-5">
+                            <div>clients</div>
                             <div className="text-2xl font-bold">+</div>
                           </div>
-                          <div className="flex justify-between mx-2">
+                          <div className="flex justify-between mr-5">
                             <div>affiliation & partnerships</div>
                           </div>
-                          <div className="flex justify-between mx-2">
+                          <div className="flex justify-between mr-5">
                             <div>careers</div>
                           </div>
-                          <div className="flex justify-between mx-2">
+                          <div className="flex justify-between mr-5">
                             <div>contact us</div>
+                          </div> */}
+                        </div>
+
+                        <div
+                          ref={socialLinksRefMobile}
+                          className="flex gap-3 mt-5 opacity-0 translate-x-[-300px]"
+                        >
+                          <div className="border border-green-400 rounded-lg my-auto px-1 py-1 cursor-pointer hamburger-social-icons-div">
+                            <Image
+                              src={linkdinLogo}
+                              width={28}
+                              className="hamburger-social-icon"
+                            />
+                          </div>
+                          <div className="border border-green-400 rounded-lg my-auto px-1 py-1 cursor-pointer hamburger-social-icons-div">
+                            <Image
+                              src={fbLogo}
+                              width={28}
+                              className="hamburger-social-icon"
+                            />
+                          </div>
+                          <div className="border border-green-400 rounded-lg my-auto px-1 py-1 cursor-pointer hamburger-social-icons-div">
+                            <Image
+                              src={twitterLogo}
+                              width={28}
+                              className="hamburger-social-icon"
+                            />
                           </div>
                         </div>
                       </div>
