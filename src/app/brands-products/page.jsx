@@ -230,7 +230,7 @@ const page = () => {
               </div>
             </AnimationTextReversing>
 
-            <AnimationTextReversing flexDirection="row-reverse">
+            <AnimationTextReversing flexDirection="flex-row-reverse">
               <div
                 id="irisTabRef"
                 className="vision-div flex flex-col gap-5 lg:w-6/12 opacity-0 transform translate-y-[20px]"
@@ -282,7 +282,7 @@ const page = () => {
               </div>
             </AnimationTextReversing>
 
-            <AnimationTextReversing flexDirection="row-reverse">
+            <AnimationTextReversing flexDirection="flex-row-reverse">
               <div
                 id="coralTabRef"
                 className="vision-div flex flex-col gap-5 lg:w-6/12 opacity-0 transform translate-y-[20px]"
@@ -340,7 +340,7 @@ const page = () => {
               </div>
             </AnimationTextReversing>
 
-            <AnimationTextReversing flexDirection="row-reverse">
+            <AnimationTextReversing flexDirection="flex-row-reverse">
               <div
                 id="appabilitiesTabRef"
                 className="vision-div flex flex-col gap-5 lg:w-6/12 opacity-0 transform translate-y-[20px]"
@@ -423,7 +423,7 @@ const page = () => {
               </div>
             </AnimationTextReversing>
 
-            <AnimationTextReversing flexDirection="row-reverse">
+            <AnimationTextReversing flexDirection="flex-row-reverse">
               <div
                 id="mobitsTabRef"
                 className="vision-div flex flex-col gap-5 lg:w-6/12 opacity-0 transform translate-y-[20px]"

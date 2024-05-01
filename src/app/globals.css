@@ -112,6 +112,10 @@ body {
   color: white !important;
 }
 
+.swiper-button-tabs-prev::after {
+  color: black !important;
+}
+
 .swipper-active-class {
   background: radial-gradient(
     at right top,
@@ -204,6 +208,18 @@ body {
   }
 }
 
+@keyframes rainbow-symmetry-border {
+  0% {
+    background-position: 0 50%;
+}
+50% {
+    background-position: 100% 50%;
+}
+100% {
+    background-position: 0% 50%;
+}
+}
+
 .rainbow-border {
   border: 1px solid transparent;
   border-image: linear-gradient(
@@ -224,6 +240,23 @@ body {
   /* Adjust the margin as needed */
   /* transform: rotate(45deg); */
   animation: rainbow-border-animation 10s linear infinite;
+}
+
+.rainbow-symmetry-border {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(
+    45deg,
+    rgba(13, 83, 189, 1) 0%,
+    rgba(19, 176, 168, 1) 20%,
+    rgba(21, 176, 60, 1) 30%,
+    rgba(93, 156, 17, 1) 45%,
+    rgb(152, 186, 18) 65%
+  );
+  background-size: 300% 300%;
+  animation: rainbow-symmetry-border 3s ease infinite;
+  -webkit-animation: rainbow-symmetry-border 3s ease infinite;
+  /* margin: 0px 0 0 0; */
 }
 
 .swipper-icons-color-toggle img:hover {
@@ -321,15 +354,18 @@ body {
 
 /********   Swipper Arrows Gradient Background    ********/
 
+.swiper-button-next::after
 .swiper-button-prev::after {
   font-size: 10px !important;
   rotate: -45deg;
 }
 
-.swiper-button-next::after {
+.swiper-button-tabs-next::after
+.swiper-button-tabs-prev::after{
   font-size: 10px !important;
-  rotate: -45deg;
+  rotate: 0deg;
 }
+
 
 .{
   background-image: radial-gradient(at top right, #f1e522 25%, #5aa63d 60%);

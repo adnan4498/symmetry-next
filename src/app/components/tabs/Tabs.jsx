@@ -7,6 +7,7 @@ import "swiper/css/navigation";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/all";
+import { Navigation } from "swiper/modules";
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(ScrollToPlugin);
@@ -17,12 +18,12 @@ const Tabs = ({
   customBgColor,
   customBorderColor,
   toggleBorderColor,
-  toggleBorderMobilityColor
+  toggleBorderMobilityColor,
 }) => {
   const [tabRounded, setTabRounded] = useState();
   const [shownArray, setShownArray] = useState([0, 1, 2, 3]);
 
-  const tabHovered = (id) => {
+  const tabHovered = (id) => {  
     setTabRounded(id);
   };
 
@@ -55,6 +56,11 @@ const Tabs = ({
                 spaceBetween: 0,
               },
             }}
+            modules={[Navigation]}
+            navigation={{
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+            }}
             speed={700}
             onSlideChange={(swiper) => updateShownArray(swiper)}
             className="mySwiper"
@@ -71,7 +77,13 @@ const Tabs = ({
                         })
                       }
                       onMouseOver={() => tabHovered(item.id)}
-                      className={`${toggleBorderColor ? "tabs-interactive-custom-bg" : toggleBorderMobilityColor ? "tabs-mobility-custom-bg" : "tabs-custom-bg" } cursor-pointer ${
+                      className={`${
+                        toggleBorderColor
+                          ? "tabs-interactive-custom-bg"
+                          : toggleBorderMobilityColor
+                          ? "tabs-mobility-custom-bg"
+                          : "tabs-custom-bg"
+                      } cursor-pointer ${
                         index === array.length - 1
                           ? "rounded-e-full"
                           : index === 0
@@ -89,6 +101,15 @@ const Tabs = ({
               ))}
             </>
           </Swiper>
+
+          <div className="swiper-navigation-buttons  ">
+            <button
+              className={`swiper-button-prev !left-[50px] !w-7 !h-7 md:!w-8 md:!h-8 lg:!w-8 lg:!h-8 2xl:!w-9 2xl:!h-9 `}
+            ></button>
+            <button
+              className={`swiper-button-next !w-7 !h-7 md:!w-8 md:!h-8 lg:!w-8 lg:!h-8 2xl:!w-9 2xl:!h-9`}
+            ></button>
+          </div>
         </div>
       </div>
     </div>
@@ -96,6 +117,5 @@ const Tabs = ({
 };
 
 export default Tabs;
-
 
 // tabs-mobility-custom-bg

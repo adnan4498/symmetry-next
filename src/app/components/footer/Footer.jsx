@@ -287,6 +287,7 @@ const Footer = () => {
         {triggerBottomAnimation && <GsapBottomAnimation getLink={getLink} />}
         <div className="bg-[#fafafa]">
           {/****** Mobile  *******/}
+          <div className="rainbow-symmetry-border lg:hidden"></div>
 
           <div className="mx-3 md:mx-5 lg:hidden pt-10">
             <div className="text-black flex flex-col gap-2">
@@ -300,7 +301,8 @@ const Footer = () => {
 
           {/****** Laptop  *******/}
 
-          <div className="border-b border-green-400 lg:pb-8 pb-0 pt-10">
+        <div className="rainbow-symmetry-border"></div>
+          <div className="lg:pb-8 pb-0 pt-10">
             <div className="hidden lg:block mx-10">
               <div className="gap-4 grid grid-cols-7">
                 {footerDesktopItems.map((item, index) => (
@@ -335,6 +337,9 @@ const Footer = () => {
               </div>
             </div>
           </div>
+
+          <div className="rainbow-symmetry-border"></div>
+
 
           <div className="investors-div lg:block hidden mx-16 my-4">
             <div className="flex justify-between">

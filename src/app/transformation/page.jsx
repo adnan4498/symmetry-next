@@ -235,7 +235,7 @@ const page = () => {
             </div>
             </AnimationTextReversing>
 
-            <AnimationTextReversing flexDirection="row-reverse">
+            <AnimationTextReversing flexDirection="flex-row-reverse">
               <div
                 id="webSoftwareTabRef"
                 className="company-div flex flex-col gap-5 lg:w-6/12"
@@ -322,7 +322,7 @@ const page = () => {
             </div>
             </AnimationTextReversing>
 
-            <AnimationTextReversing flexDirection="row-reverse">
+            <AnimationTextReversing flexDirection="flex-row-reverse">
               <div
                 id="digitalStrategyTabRef"
                 className="company-div flex flex-col gap-5 lg:w-6/12"
@@ -416,7 +416,7 @@ const page = () => {
             </div>
             </AnimationTextReversing>
 
-            <AnimationTextReversing flexDirection="row-reverse">
+            <AnimationTextReversing flexDirection="flex-row-reverse">
               <div
                 id="digitalConsultancyTabRef"
                 className="company-div flex flex-col gap-5 lg:w-6/12"

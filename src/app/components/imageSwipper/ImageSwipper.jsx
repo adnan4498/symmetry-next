@@ -42,6 +42,7 @@ const ImageSwipper = ({
             <p className="text-3xl lg:text-4xl xl:text-5xl mb-4 text-black pillat-normal">
               {brandsTitle}
             </p>
+            <div className="rainbow-symmetry-border"></div>
           </div>
           <div
             className="w-full mt-4 opacity-0 transform translate-y-[50px]"

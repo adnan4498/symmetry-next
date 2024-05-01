@@ -279,7 +279,7 @@ const Page = () => {
               />
             </div>
           </AnimationTextReversing>
-          <AnimationTextReversing flexDirection="row-reverse">
+          <AnimationTextReversing flexDirection="flex-row-reverse">
             <div className="vision-div flex flex-col gap-5 lg:w-6/12">
               <div className="text-black">
                 <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light pillat-normal">
@@ -339,7 +339,7 @@ const Page = () => {
               />{" "}
             </div>
           </AnimationTextReversing>
-          <AnimationTextReversing flexDirection="row-reverse">
+          <AnimationTextReversing flexDirection="flex-row-reverse">
             <div className="board-directors-div flex flex-col gap-5 lg:w-6/12">
               <div className="text-black">
                 <h2 className="text-5xl lg:text-6xl  2xl:text-7xl font-light pillat-normal">
