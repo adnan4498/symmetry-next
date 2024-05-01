@@ -69,7 +69,7 @@ const TextSlidingComponent = ({
         <div
           className={`w-full lg:ml-[48px] ${
             isBorder
-              ? " w-[100%] lg:w-[35%] border-b border-green-500 pb-1 transform translate-y-[50px] "
+              ? " w-[100%] lg:w-[35%] border-b border-transparent pb-1 transform translate-y-[50px]"
               : ""
           }  w-[40%]`}
         >
@@ -79,6 +79,7 @@ const TextSlidingComponent = ({
           >
             {businessTitle || clientTitle}
           </h2>
+          <div className={` ${isBorder ? "rainbow-symmetry-border mt-2" : ""}`}></div>
         </div>
 
         {businessMarque && (

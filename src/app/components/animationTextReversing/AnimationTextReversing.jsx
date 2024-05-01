@@ -5,7 +5,7 @@ const AnimationTextReversing = ({ children, flexDirection }) => {
   return (
     <>
       <div className="mx-3 md:mx-12 mt-10">
-        <div className={`lg:flex justify-between lg:flex-${flexDirection}`}>
+        <div className={`lg:flex justify-between ${flexDirection}`}>
           {children}
         </div>
       </div>

@@ -515,7 +515,7 @@ const page = () => {
           </div>
         </AnimationTextReversing>
 
-        <AnimationTextReversing flexDirection="row-reverse">
+        <AnimationTextReversing flexDirection="flex-row-reverse">
           <div
             id="governanceTabRef"
             className="mission-div flex flex-col gap-5 lg:w-6/12 opacity-0 transform translate-y-[0px]"
@@ -661,7 +661,7 @@ const page = () => {
           </div>
         </AnimationTextReversing>
 
-        <AnimationTextReversing flexDirection="row-reverse">
+        <AnimationTextReversing flexDirection="flex-row-reverse">
           <div
             id="corporateBriefingsTabRef"
             className="vision-div flex flex-col gap-5 lg:w-6/12 my-10 opacity-0 transform translate-y-[50px]"
@@ -707,7 +707,7 @@ const page = () => {
           </div>
         </AnimationTextReversing>
 
-        <AnimationTextReversing flexDirection="row-reverse">
+        <AnimationTextReversing flexDirection="flex-row-reverse">
           <div
             id="importantDocsTabRef"
             className="vision-div flex flex-col gap-5 lg:w-6/12 my-10  opacity-0 transform translate-y-[50px]"

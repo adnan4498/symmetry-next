@@ -34,7 +34,7 @@ const Navbar = ({ toggleRed, setToggleRed }) => {
   const [collapseIcon1, setCollapseIcon1] = useState(true);
   const [collapseIcon2, setCollapseIcon2] = useState(true);
   const [collapseIcon3, setCollapseIcon3] = useState(true);
-  
+
   const router = useRouter();
 
   useEffect(() => {
@@ -58,6 +58,8 @@ const Navbar = ({ toggleRed, setToggleRed }) => {
   const socialLinksRefMobile = useRef();
 
   useEffect(() => {
+    /* Navbar shows and  closes base on scrolling up and down */
+
     var actionNav = gsap.to(navRef.current, {
       scrollTrigger: {
         trigger: navRef.current,
@@ -74,7 +76,29 @@ const Navbar = ({ toggleRed, setToggleRed }) => {
       y: "-=100",
       duration: 0.3,
       ease: "power1.inOut",
-      // paused: true,
+    });
+
+    // Changing li item color when reaching to its div
+    liItems.forEach((item, index) => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: item.refId,
+          start: "top center",
+          end: "bottom center",
+          toggleActions: "play none none none",
+          markers : false,
+          onEnter: () => {
+            setActiveBg(index); // Change active background index
+          },
+          onEnterBack: () => {
+            setActiveBg(index); // Change active background index
+          },
+        },
+      });
+
+      return () => {
+        tl.kill();
+      };
     });
   }, []);
 
@@ -464,12 +488,15 @@ const Navbar = ({ toggleRed, setToggleRed }) => {
       id: 1,
       title: (
         <>
-          <div onClick={() => setCollapseIcon(!collapseIcon)} className={`flex justify-between gap-5 mt-2 ${!collapseIcon ? "footer-text-color-toggle-2" : "text-white"} `}>
+          <div
+            onClick={() => setCollapseIcon(!collapseIcon)}
+            className={`flex justify-between gap-5 mt-2 ${
+              !collapseIcon ? "footer-text-color-toggle-2" : "text-white"
+            } `}
+          >
             <div>investors relations</div>
             {/* <div className={`${collapseIcon ? "bg-red-500" : "bg-green-500"}`} >+</div> */}
-            <div className="text-2xl font-bold" >
-              {collapseIcon ? "+" : "-"}
-            </div>
+            <div className="text-2xl font-bold">{collapseIcon ? "+" : "-"}</div>
           </div>
         </>
       ),
@@ -477,18 +504,23 @@ const Navbar = ({ toggleRed, setToggleRed }) => {
       governance: "governance",
       financialReports: "financial reports",
       corporateBriefings: "corporate briefings",
-      noticesAnnouncements : "notices & announcements",
-      importantDocuments : "important documents",
-      investorContacts : "investor contacts",
+      noticesAnnouncements: "notices & announcements",
+      importantDocuments: "important documents",
+      investorContacts: "investor contacts",
     },
     {
       id: 2,
       title: (
         <>
-          <div onClick={() => setCollapseIcon1(!collapseIcon1)} className={`flex justify-between gap-5 mt-2 ${!collapseIcon1 ? "footer-text-color-toggle-2" : "text-white"} `}>
+          <div
+            onClick={() => setCollapseIcon1(!collapseIcon1)}
+            className={`flex justify-between gap-5 mt-2 ${
+              !collapseIcon1 ? "footer-text-color-toggle-2" : "text-white"
+            } `}
+          >
             <div>business divisions</div>
             {/* <div className={`${collapseIcon ? "bg-red-500" : "bg-green-500"}`} >+</div> */}
-            <div className="text-2xl font-bold" >
+            <div className="text-2xl font-bold">
               {collapseIcon1 ? "+" : "-"}
             </div>
           </div>
@@ -503,10 +535,15 @@ const Navbar = ({ toggleRed, setToggleRed }) => {
       id: 3,
       title: (
         <>
-          <div onClick={() => setCollapseIcon2(!collapseIcon2)} className={`flex justify-between gap-5 mt-2 ${!collapseIcon2 ? "footer-text-color-toggle-2" : "text-white"} `}>
+          <div
+            onClick={() => setCollapseIcon2(!collapseIcon2)}
+            className={`flex justify-between gap-5 mt-2 ${
+              !collapseIcon2 ? "footer-text-color-toggle-2" : "text-white"
+            } `}
+          >
             <div>brands & products</div>
             {/* <div className={`${collapseIcon ? "bg-red-500" : "bg-green-500"}`} >+</div> */}
-            <div className="text-2xl font-bold" >
+            <div className="text-2xl font-bold">
               {collapseIcon2 ? "+" : "-"}
             </div>
           </div>
@@ -525,10 +562,15 @@ const Navbar = ({ toggleRed, setToggleRed }) => {
       id: 4,
       title: (
         <>
-          <div onClick={() => setCollapseIcon3(!collapseIcon3)} className={`flex justify-between gap-5 mt-2 ${!collapseIcon3 ? "footer-text-color-toggle-2" : "text-white"} `}>
+          <div
+            onClick={() => setCollapseIcon3(!collapseIcon3)}
+            className={`flex justify-between gap-5 mt-2 ${
+              !collapseIcon3 ? "footer-text-color-toggle-2" : "text-white"
+            } `}
+          >
             <div>clients</div>
             {/* <div className={`${collapseIcon ? "bg-red-500" : "bg-green-500"}`} >+</div> */}
-            <div className="text-2xl font-bold" >
+            <div className="text-2xl font-bold">
               {collapseIcon3 ? "+" : "-"}
             </div>
           </div>
@@ -659,7 +701,7 @@ const Navbar = ({ toggleRed, setToggleRed }) => {
     });
   };
 
- const textColor = "text-white"
+  const textColor = "text-white";
 
   return (
     <>
@@ -683,7 +725,7 @@ const Navbar = ({ toggleRed, setToggleRed }) => {
                     onMouseOver={() => navHoverFunc(item.id, item.refId)}
                     onMouseOut={() => setActiveBg(0)}
                     className={`${
-                      activeBg == index ? "rainbow-text" : "text-white"
+                      activeBg === index ? "rainbow-text" : "text-white"
                     } text-white`}
                   >
                     <div
@@ -695,13 +737,12 @@ const Navbar = ({ toggleRed, setToggleRed }) => {
                       }
                     >
                       {item.name}
-                      {/* {console.log(item.refId, "ref id")} */}
                       <span
                         className={`hidden lg:inline-flex ${
-                          activeBg == index
+                          activeBg === index
                             ? "rotate-[45deg]"
                             : "rotate-[90deg]"
-                        } rainbow-border transition-all duration-300 `}
+                        } rainbow-border transition-all duration-300`}
                       ></span>
                     </div>
                   </li>
@@ -764,7 +805,10 @@ const Navbar = ({ toggleRed, setToggleRed }) => {
                         >
                           <div className="flex   text-2xl mr-5">
                             <div className="text flex flex-col text-white w-full">
-                              <CollapsibleFooter dataArr={mobileMenuItems} textColor={textColor} />
+                              <CollapsibleFooter
+                                dataArr={mobileMenuItems}
+                                textColor={textColor}
+                              />
                             </div>
                           </div>
 

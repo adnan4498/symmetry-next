@@ -237,7 +237,7 @@ const AboutUs = ({ titleWidth, autoMx }) => {
     <div>
       <div
         id="contactUsHomeScrollRef"
-        className="pb-10 border-b border-green-400 "
+        className="pb-10"
       >
         <div className="text-black">
           <div
@@ -447,9 +447,11 @@ const AboutUs = ({ titleWidth, autoMx }) => {
               </div>
             </div>
 
+         
+
             <div className=" border-gray-300 px-3 pb-1">
               <div>
-                <h2>mobile</h2>
+                <h2>message</h2>
               </div>
               <div className="mt-3">
                 <Form
@@ -475,13 +477,13 @@ const AboutUs = ({ titleWidth, autoMx }) => {
                     name="username"
                     rules={[
                       {
-                        required: true,
-                        message: "Please enter your mobile number",
+                        required: false,
+                        message: "Please enter your message",
                       },
                     ]}
                   >
                     <Input
-                      placeholder="enter your mobile number"
+                      placeholder="type your message"
                       style={{
                         borderRadius: "0px",
                         borderRight: "0px",
@@ -490,7 +492,7 @@ const AboutUs = ({ titleWidth, autoMx }) => {
                         // width: "260px",
                         marginLeft: "-11px",
                       }}
-                      className="w-full lg:w-[220px] xl:w-[280px] 2xl:w-[450px]"
+                      className="w-full lg:w-[220px] xl:w-[650px] 2xl:w-[800px]"
                     />
                   </Form.Item>
 
@@ -646,7 +648,7 @@ const AboutUs = ({ titleWidth, autoMx }) => {
 
             <div className=" border-gray-300 px-3 pb-1">
               <div>
-                <h2>message</h2>
+                <h2>mobile</h2>
               </div>
               <div className="mt-3">
                 <Form
@@ -673,12 +675,12 @@ const AboutUs = ({ titleWidth, autoMx }) => {
                     rules={[
                       {
                         required: true,
-                        message: "Please enter your message",
+                        message: "Please enter your mobile number",
                       },
                     ]}
                   >
                     <Input
-                      placeholder="type your message"
+                      placeholder="enter your mobile number"
                       style={{
                         borderRadius: "0px",
                         borderRight: "0px",

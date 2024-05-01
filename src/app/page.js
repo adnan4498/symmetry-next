@@ -27,7 +27,9 @@ export default function Home() {
 
         <Navbar className="" />
         <DeliveringSection />
-        <HeritageSection />
+        <div id="heritageHomeScrollRef">
+          <HeritageSection />
+        </div>
         <div className="md:pt-[300px]">
           <BusinessDivision />
         </div>

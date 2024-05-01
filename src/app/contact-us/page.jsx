@@ -212,7 +212,7 @@ const page = () => {
             </div>
           </AnimationTextReversing>
 
-          <AnimationTextReversing flexDirection="row-reverse">
+          <AnimationTextReversing flexDirection="flex-row-reverse">
             <div
               id="islamabadTabRef"
               className="company-div flex flex-col gap-5 lg:w-6/12 opacity-0 transform translate-y-[20px]"

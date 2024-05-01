@@ -95,12 +95,14 @@ const HeadingAndSwipper = ({
         <div className="md:mx-12 mx-3 lg:mx-auto lg:w-[58%] ">
           <div className="mt-5">
             <div
-              className="border-b border-green-500 pt-6 opacity-0 transform translate-y-[50px]"
+              className="pt-6 opacity-0 transform translate-y-[50px]"
               ref={animationRefs.fifthFadeInAnimation}
             >
               <p className="text-3xl xl:text-4xl mb-4 text-black pillat-normal">
                 {transformationTitle || commerceTitle}
               </p>
+              <div className="rainbow-symmetry-border"></div>
+
             </div>
             <div
               className="w-full mt-4 opacity-0 transform translate-y-[50px]"
