@@ -151,21 +151,16 @@ const page = () => {
     },
     {
       id: 3,
-      item: "coral",
-      refId: "#coralTabRef",
-    },
-    {
-      id: 4,
       item: "real estate",
       refId: "#realEstateTabRef",
     },
     {
-      id: 5,
+      id: 4,
       item: "pharmaceutical",
       refId: "#pharmaceuticalTabRef",
     },
     {
-      id: 6,
+      id: 5,
       item: "others",
       refId: "#othersTabRef",
     },
@@ -404,7 +399,7 @@ const page = () => {
         </div>
 
         <div
-          id="bankingTabRef"
+          id="fmcgTabRef"
           className="md:mx-12 sm:ml-2 ml-2 mt-14 opacity-0 transform translate-y-[20px]"
           ref={animationRefs.secondFadeInAnimation}
         >
@@ -421,7 +416,7 @@ const page = () => {
         </div>
 
         <div
-          id="bankingTabRef"
+          id="realEstateTabRef"
           className="md:mx-12 sm:ml-2 ml-2 mt-14 opacity-0 transform translate-y-[20px]"
           ref={animationRefs.thirdFadeInAnimation}
         >

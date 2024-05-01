@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -15,30 +15,45 @@ gsap.registerPlugin(ScrollToPlugin);
 const Tabs = ({
   tabsData,
   slidesPerView,
-  customBgColor,
   customBorderColor,
   toggleBorderColor,
   toggleBorderMobilityColor,
 }) => {
-  const [tabRounded, setTabRounded] = useState();
-  const [shownArray, setShownArray] = useState([0, 1, 2, 3]);
+  const [activeBg, setActiveBg] = useState(0);
+  const [getTabsRefId, setTabsRefId] = useState();
 
-  const tabHovered = (id) => {  
-    setTabRounded(id);
-  };
 
-  const updateShownArray = (swiper) => {
-    const newShownArray = Array.from({ length: slidesPerView }, (_, i) => i);
+  useEffect(() => {
+    // Changing li item color when reaching to its div
+    tabsData.forEach((item, index) => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: item.refId,
+          start: "top center",
+          end: "bottom center",
+          toggleActions: "play none none none",
+          markers: false,
+          onEnter: () => {
+            setActiveBg(index); // Change active background index
+          },
+          onEnterBack: () => {
+            setActiveBg(index); // Change active background index
+          },
+        },
+      });
 
-    setShownArray(newShownArray);
-  };
+      return () => {
+        tl.kill();
+      };
+    });
+  }, []);
 
   return (
     <div className="text-black">
       <div className="w-[80%] mx-auto">
         {/* <div className="mt-9 border border-[#4ade80] rounded-full "*/}
         <div
-          className="mt-9 border rounded-full"
+          className="mt-9 border rounded-full overflow-hidden"
           style={{ borderColor: `${customBorderColor || "#4ade80"}` }}
         >
           <Swiper
@@ -62,35 +77,24 @@ const Tabs = ({
               prevEl: ".swiper-button-prev",
             }}
             speed={700}
-            onSlideChange={(swiper) => updateShownArray(swiper)}
-            className="mySwiper"
+            // onSlideChange={(swiper) => updateShownArray(swiper)}
+            className="mySwiper my-tabs-swipper"
           >
             <>
               {tabsData.map((item, index, array) => (
                 <>
                   <SwiperSlide key={index}>
                     <div
-                      onClick={() =>
-                        gsap.to(window, {
-                          duration: 1,
-                          scrollTo: { y: item.refId, offsetY: 330 },
-                        })
+                      onClick={() => gsap.to(window, { duration: 1, scrollTo: { y: item.refId, offsetY: 330 },})
                       }
-                      onMouseOver={() => tabHovered(item.id)}
                       className={`${
                         toggleBorderColor
                           ? "tabs-interactive-custom-bg"
                           : toggleBorderMobilityColor
                           ? "tabs-mobility-custom-bg"
                           : "tabs-custom-bg"
-                      } cursor-pointer ${
-                        index === array.length - 1
-                          ? "rounded-e-full"
-                          : index === 0
-                          ? "rounded-s-full"
-                          : ""
-                      }
-                    py-[10px]`}
+                      } cursor-pointer 
+                    py-[10px] ${activeBg === index ? "ss-custom-bg" : ""}`}
                     >
                       <div className="text-center">
                         <div className="">{item.item}</div>
@@ -102,12 +106,12 @@ const Tabs = ({
             </>
           </Swiper>
 
-          <div className="swiper-navigation-buttons  ">
+          <div className="swiper-navigation-buttons swipper-tabs-navigation-buttons">
             <button
-              className={`swiper-button-prev !left-[50px] !w-7 !h-7 md:!w-8 md:!h-8 lg:!w-8 lg:!h-8 2xl:!w-9 2xl:!h-9 `}
+              className={`tabs-arrow-color swiper-button-prev swipper-button-tabs-prev `}
             ></button>
             <button
-              className={`swiper-button-next !w-7 !h-7 md:!w-8 md:!h-8 lg:!w-8 lg:!h-8 2xl:!w-9 2xl:!h-9`}
+              className={`tabs-arrow-color swiper-button-next swipper-button-tabs-next`}
             ></button>
           </div>
         </div>

@@ -102,10 +102,10 @@ const Navbar = ({ toggleRed, setToggleRed }) => {
     });
   }, []);
 
-  const navHoverFunc = (itemId, refId) => {
-    setActiveBg(itemId);
-    setNavRefId(refId);
-  };
+  // const navHoverFunc = (itemId, refId) => {
+  //   setActiveBg(itemId);
+  //   setNavRefId(refId);
+  // };
 
   const liItems = [
     {
@@ -722,8 +722,8 @@ const Navbar = ({ toggleRed, setToggleRed }) => {
                 <ul className="flex items-center gap-3 xl:gap-5 text-[1vw] 2xl:text-xl cursor-pointer">
                   <li
                     key={item.id}
-                    onMouseOver={() => navHoverFunc(item.id, item.refId)}
-                    onMouseOut={() => setActiveBg(0)}
+                    // onMouseOver={() => navHoverFunc(item.id, item.refId)}
+                    // onMouseOut={() => setActiveBg(0)}
                     className={`${
                       activeBg === index ? "rainbow-text" : "text-white"
                     } text-white`}
