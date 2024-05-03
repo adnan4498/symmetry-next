@@ -212,12 +212,14 @@ const page = () => {
 
   const animationRefs = GsapScrollAnimationComp();
 
+  const noRainbowText = true
 
   return (
     <>
       <BlackBannerComponent
         aboutText={aboutText}
         aboutH2={aboutH2}
+        noRainbowText={noRainbowText}
         customBgColor={customBgColor}
         bannerAnimation={interactiveBannerAnim}
         bannerTop={InteractivebannerTop}

@@ -86,7 +86,7 @@ const Navbar = ({ toggleRed, setToggleRed }) => {
           start: "top center",
           end: "bottom center",
           toggleActions: "play none none none",
-          markers : false,
+          markers: false,
           onEnter: () => {
             setActiveBg(index); // Change active background index
           },
@@ -752,7 +752,7 @@ const Navbar = ({ toggleRed, setToggleRed }) => {
             <div className="">
               <div class="menu cross menu--1">
                 <label
-                  className="top-[-15px] lg:top-[0px] absolute cursor-pointer w-[50vw] h-[50vw] max-w-[90px] max-h-[150px] !right-[-20px] md:!right-[10px]"
+                  className="top-[-15px] lg:top-[0px] absolute cursor-pointer w-[50vw] h-[50vw] max-w-[90px] max-h-[50px] !right-[-20px] md:!right-[10px]"
                   style={{ zIndex: "99999" }}
                 >
                   <input
@@ -840,25 +840,42 @@ const Navbar = ({ toggleRed, setToggleRed }) => {
                           className="flex gap-3 mt-5 opacity-0 translate-x-[-300px]"
                         >
                           <div className="border border-green-400 rounded-lg my-auto px-1 py-1 cursor-pointer hamburger-social-icons-div">
-                            <Image
-                              src={linkdinLogo}
-                              width={28}
-                              className="hamburger-social-icon"
-                            />
+                            <Link
+                              href={
+                                "https://www.linkedin.com/company/symmetry-group/"
+                              }
+                              target="blank"
+                            >
+                              <Image
+                                src={linkdinLogo}
+                                width={28}
+                                className="hamburger-social-icon"
+                              />
+                            </Link>
                           </div>
                           <div className="border border-green-400 rounded-lg my-auto px-1 py-1 cursor-pointer hamburger-social-icons-div">
-                            <Image
-                              src={fbLogo}
-                              width={28}
-                              className="hamburger-social-icon"
-                            />
+                            <Link
+                              href={"https://www.facebook.com/SymmetryGroup/"}
+                              target="blank"
+                            >
+                              <Image
+                                src={fbLogo}
+                                width={28}
+                                className="hamburger-social-icon"
+                              />
+                            </Link>
                           </div>
                           <div className="border border-green-400 rounded-lg my-auto px-1 py-1 cursor-pointer hamburger-social-icons-div">
-                            <Image
-                              src={twitterLogo}
-                              width={28}
-                              className="hamburger-social-icon"
-                            />
+                            <Link
+                              href={"https://twitter.com/SymmetryGroupHQ/"}
+                              target="blank"
+                            >
+                              <Image
+                                src={twitterLogo}
+                                width={28}
+                                className="hamburger-social-icon"
+                              />
+                            </Link>
                           </div>
                         </div>
                       </div>
@@ -886,31 +903,48 @@ const Navbar = ({ toggleRed, setToggleRed }) => {
                               </div>
 
                               <div
-                                ref={socialLinksRef}
-                                className="flex gap-3 ml-2 mt-5 opacity-0 translate-x-[-300px]"
-                              >
-                                <div className="border border-green-400 rounded-lg my-auto px-1 py-1 cursor-pointer hamburger-social-icons-div">
-                                  <Image
-                                    src={linkdinLogo}
-                                    width={28}
-                                    className="hamburger-social-icon"
-                                  />
-                                </div>
-                                <div className="border border-green-400 rounded-lg my-auto px-1 py-1 cursor-pointer hamburger-social-icons-div">
-                                  <Image
-                                    src={fbLogo}
-                                    width={28}
-                                    className="hamburger-social-icon"
-                                  />
-                                </div>
-                                <div className="border border-green-400 rounded-lg my-auto px-1 py-1 cursor-pointer hamburger-social-icons-div">
-                                  <Image
-                                    src={twitterLogo}
-                                    width={28}
-                                    className="hamburger-social-icon"
-                                  />
-                                </div>
-                              </div>
+                          ref={socialLinksRefMobile}
+                          className="flex gap-3 mt-5 opacity-0 translate-x-[-300px]"
+                        >
+                          <div className="border border-green-400 rounded-lg my-auto px-1 py-1 cursor-pointer hamburger-social-icons-div">
+                            <Link
+                              href={
+                                "https://www.linkedin.com/company/symmetry-group/"
+                              }
+                              target="blank"
+                            >
+                              <Image
+                                src={linkdinLogo}
+                                width={28}
+                                className="hamburger-social-icon"
+                              />
+                            </Link>
+                          </div>
+                          <div className="border border-green-400 rounded-lg my-auto px-1 py-1 cursor-pointer hamburger-social-icons-div">
+                            <Link
+                              href={"https://www.facebook.com/SymmetryGroup/"}
+                              target="blank"
+                            >
+                              <Image
+                                src={fbLogo}
+                                width={28}
+                                className="hamburger-social-icon"
+                              />
+                            </Link>
+                          </div>
+                          <div className="border border-green-400 rounded-lg my-auto px-1 py-1 cursor-pointer hamburger-social-icons-div">
+                            <Link
+                              href={"https://twitter.com/SymmetryGroupHQ/"}
+                              target="blank"
+                            >
+                              <Image
+                                src={twitterLogo}
+                                width={28}
+                                className="hamburger-social-icon"
+                              />
+                            </Link>
+                          </div>
+                        </div>
                             </div>
                           </div>
                           <div

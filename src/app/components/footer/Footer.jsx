@@ -106,7 +106,9 @@ const Footer = () => {
       title: (
         <>
           <div className="flex justify-between gap-5 mt-2 ">
-            <div onClick={()=> setGetLink("company" , triggerBotAnimFunc())}>about us</div>
+            <div onClick={() => setGetLink("company", triggerBotAnimFunc())}>
+              about us
+            </div>
             {/* <div className={`${collapseIcon ? "bg-red-500" : "bg-green-500"}`} >+</div> */}
             {/* <div className="text-2xl font-bold" >
               {collapseIcon ? "+" : "-"}
@@ -114,7 +116,7 @@ const Footer = () => {
           </div>
         </>
       ),
-      link : "company",
+      link: "company",
     },
     {
       id: 1,
@@ -126,7 +128,13 @@ const Footer = () => {
               !collapseIcon ? "footer-text-color-toggle-2" : "text-black"
             } `}
           >
-            <div onClick={()=> setGetLink("investorRelations" , triggerBotAnimFunc())}>investors relations</div>
+            <div
+              onClick={() =>
+                setGetLink("investorRelations", triggerBotAnimFunc())
+              }
+            >
+              investors relations
+            </div>
             {/* <div className={`${collapseIcon ? "bg-red-500" : "bg-green-500"}`} >+</div> */}
             <div className="text-2xl font-bold">{collapseIcon ? "+" : "-"}</div>
           </div>
@@ -139,7 +147,7 @@ const Footer = () => {
       noticesAnnouncements: "notices & announcements",
       importantDocuments: "important documents",
       investorContacts: "investor contacts",
-      link : "investorRelations",
+      link: "investorRelations",
     },
     {
       id: 2,
@@ -151,7 +159,9 @@ const Footer = () => {
               !collapseIcon1 ? "footer-text-color-toggle-2" : "text-black"
             } `}
           >
-            <div onClick={()=> setGetLink("" , triggerBotAnimFunc())}>business divisions</div>
+            <div onClick={() => setGetLink("", triggerBotAnimFunc())}>
+              business divisions
+            </div>
             {/* <div className={`${collapseIcon ? "bg-red-500" : "bg-green-500"}`} >+</div> */}
             <div className="text-2xl font-bold">
               {collapseIcon1 ? "+" : "-"}
@@ -175,7 +185,13 @@ const Footer = () => {
               !collapseIcon2 ? "footer-text-color-toggle-2" : "text-black"
             } `}
           >
-            <div onClick={()=> setGetLink("brands-products" , triggerBotAnimFunc())}>brands & products</div>
+            <div
+              onClick={() =>
+                setGetLink("brands-products", triggerBotAnimFunc())
+              }
+            >
+              brands & products
+            </div>
             {/* <div className={`${collapseIcon ? "bg-red-500" : "bg-green-500"}`} >+</div> */}
             <div className="text-2xl font-bold">
               {collapseIcon2 ? "+" : "-"}
@@ -203,7 +219,9 @@ const Footer = () => {
               !collapseIcon3 ? "footer-text-color-toggle-2" : "text-black"
             } `}
           >
-            <div onClick={()=> setGetLink("clients" , triggerBotAnimFunc())}>clients</div>
+            <div onClick={() => setGetLink("clients", triggerBotAnimFunc())}>
+              clients
+            </div>
             {/* <div className={`${collapseIcon ? "bg-red-500" : "bg-green-500"}`} >+</div> */}
             <div className="text-2xl font-bold">
               {collapseIcon3 ? "+" : "-"}
@@ -224,7 +242,9 @@ const Footer = () => {
       title: (
         <>
           <div className="flex justify-between gap-5 mt-2 ">
-            <div onClick={()=> setGetLink("google" , triggerBotAnimFunc())}>affiliations & partnerships </div>
+            <div onClick={() => setGetLink("google", triggerBotAnimFunc())}>
+              affiliations & partnerships{" "}
+            </div>
             {/* <div className="text-2xl font-bold" >
               {collapseIcon ? "+" : "-"}
             </div> */}
@@ -238,7 +258,9 @@ const Footer = () => {
       title: (
         <>
           <div className="flex justify-between gap-5 mt-2 ">
-            <div onClick={()=> setGetLink("careers" , triggerBotAnimFunc())}>careers </div>
+            <div onClick={() => setGetLink("careers", triggerBotAnimFunc())}>
+              careers{" "}
+            </div>
             {/* <div className={`${collapseIcon ? "bg-red-500" : "bg-green-500"}`} >+</div> */}
             {/* <div className="text-2xl font-bold" >
               {collapseIcon ? "+" : "-"}
@@ -246,7 +268,7 @@ const Footer = () => {
           </div>
         </>
       ),
-      link : "careers",
+      link: "careers",
     },
     {
       id: 7,
@@ -267,7 +289,9 @@ const Footer = () => {
       title: (
         <>
           <div className="flex justify-between gap-5 mt-2 ">
-            <div onClick={()=> setGetLink("contact-us" , triggerBotAnimFunc())}>contact us</div>
+            <div onClick={() => setGetLink("contact-us", triggerBotAnimFunc())}>
+              contact us
+            </div>
             {/* <div className={`${collapseIcon ? "bg-red-500" : "bg-green-500"}`} >+</div> */}
             {/* <div className="text-2xl font-bold" >
               {collapseIcon ? "+" : "-"}
@@ -279,7 +303,7 @@ const Footer = () => {
     },
   ];
 
-  const textColor = "text-black"
+  const textColor = "text-black";
 
   return (
     <>
@@ -293,15 +317,76 @@ const Footer = () => {
             <div className="text-black flex flex-col gap-2">
               <div className="flex text-2xl">
                 <div className="text flex flex-col text-black w-full">
-                  <CollapsibleFooter dataArr={footerMobileItems} textColor={textColor} setGetLink={setGetLink}/>
+                  <CollapsibleFooter
+                    dataArr={footerMobileItems}
+                    textColor={textColor}
+                    setGetLink={setGetLink}
+                  />
                 </div>
               </div>
             </div>
           </div>
 
-          {/****** Laptop  *******/}
+          <div className="rainbow-symmetry-border lg:mt-0 mt-4 "></div>
+          <div className="investors-div lg:hidden mt-2 mx-2">
+            <div className="flex gap-2">
+              <div>
+                <Image src={investorImg} width={50} />
+              </div>
+              <div className="ml-[2px]">
+                <div className="text-black text-xs">investor complaints</div>
+                <div className=" mt-2 text-sm pillat-normal">
+                  <div className="flex gap-2 pb-[2px] text-black text-xs">
+                    <div>
+                      <Image src={phoneIcon} width={15} />
+                    </div>
+                    <div className="">+92 21 3534 0688 ext. 105</div>
+                  </div>
+                  <div className="flex gap-2 text-black text-xs">
+                    <div>
+                      <Image src={mailIcon} width={15} />
+                    </div>
+                    <Link href={"mailto:complaints@symmetrygroup.biz"} target="_blank">
+                      <div> complaints@symmetrygroup.biz </div>
+                      </Link>
+                  </div>
+                </div>
+              </div>
+              <div className="text-black">
+                <h2 className="text-xs pillat-normal !font-extrabold mb[2px]">
+                  follow us
+                </h2>
+                <div className="flex justify-center items-center gap-1">
+                  <div className="border border-gray-400 rounded-md cursor-pointer">
+                    <Link
+                      href={"https://www.linkedin.com/company/symmetry-group/"}
+                      target="blank"
+                    >
+                      <Image src={linkdinImg} width={25} />
+                    </Link>
+                  </div>
+                  <div className="border border-gray-400 rounded-md">
+                    <Link
+                      href={"https://www.facebook.com/SymmetryGroup/"}
+                      target="blank"
+                    >
+                      <Image src={fbImg} width={25} />
+                    </Link>
+                  </div>
+                  <div className="border border-gray-400 rounded-md">
+                    <Link
+                      href={"https://twitter.com/SymmetryGroupHQ/"}
+                      target="blank"
+                    >
+                      <Image src={xImg} width={25} />
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-        <div className="rainbow-symmetry-border"></div>
+          {/****** Desktop *******/}
           <div className="lg:pb-8 pb-0 pt-10">
             <div className="hidden lg:block mx-10">
               <div className="gap-4 grid grid-cols-7">
@@ -340,7 +425,6 @@ const Footer = () => {
 
           <div className="rainbow-symmetry-border"></div>
 
-
           <div className="investors-div lg:block hidden mx-16 my-4">
             <div className="flex justify-between">
               <div className="flex gap-10">
@@ -360,7 +444,9 @@ const Footer = () => {
                       <div>
                         <Image src={mailIcon} width={15} />
                       </div>
+                      <Link href={"mailto:complaints@symmetrygroup.biz"} target="_blank">
                       <div> complaints@symmetrygroup.biz </div>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -371,14 +457,29 @@ const Footer = () => {
                   follow us
                 </h2>
                 <div className="flex justify-center items-center gap-2">
-                  <div className="border border-gray-400 rounded-md">
-                    <Image src={linkdinImg} width={30} />
+                  <div className="border border-gray-400 rounded-md cursor-pointer">
+                    <Link
+                      href={"https://www.linkedin.com/company/symmetry-group/"}
+                      target="blank"
+                    >
+                      <Image src={linkdinImg} width={30} />
+                    </Link>
                   </div>
                   <div className="border border-gray-400 rounded-md">
-                    <Image src={fbImg} width={30} />
+                    <Link
+                      href={"https://www.facebook.com/SymmetryGroup/"}
+                      target="blank"
+                    >
+                      <Image src={fbImg} width={30} />
+                    </Link>
                   </div>
                   <div className="border border-gray-400 rounded-md">
-                    <Image src={xImg} width={30} />
+                    <Link
+                      href={"https://twitter.com/SymmetryGroupHQ/"}
+                      target="blank"
+                    >
+                      <Image src={xImg} width={30} />
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -391,4 +492,3 @@ const Footer = () => {
 };
 
 export default Footer;
-

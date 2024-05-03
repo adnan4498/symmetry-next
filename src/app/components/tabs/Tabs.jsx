@@ -29,7 +29,7 @@ const Tabs = ({
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: item.refId,
-          start: "top center",
+          start: "top 65%",
           end: "bottom center",
           toggleActions: "play none none none",
           markers: false,
@@ -94,7 +94,7 @@ const Tabs = ({
                           ? "tabs-mobility-custom-bg"
                           : "tabs-custom-bg"
                       } cursor-pointer 
-                    py-[10px] ${activeBg === index ? "ss-custom-bg" : ""}`}
+                    py-[10px] ${activeBg === index && toggleBorderColor ? "tabs-interactive-custom-bg" : activeBg === index ? "ss-custom-bg" : "" }`}
                     >
                       <div className="text-center">
                         <div className="">{item.item}</div>

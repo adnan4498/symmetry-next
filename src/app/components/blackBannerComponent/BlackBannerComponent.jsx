@@ -21,7 +21,7 @@ import { useRouter } from "next/navigation";
 import GsapTopAnimation from "../gsapComponent/GsapTopAnimation";
 
 gsap.registerPlugin(ScrollTrigger);
-const BlackBannerComponent = ({ aboutH2, aboutText, customBgColor, bannerAnimation , bannerTop , bannerLeft , bannerHeadingSize , headingScrollSizeChange = true  }) => {
+const BlackBannerComponent = ({ aboutH2, aboutText, customBgColor, bannerAnimation , bannerTop , bannerLeft , bannerHeadingSize , headingScrollSizeChange = true , noRainbowText = false }) => {
 
   console.log(headingScrollSizeChange , "heading BOOLean")
 
@@ -374,6 +374,7 @@ const BlackBannerComponent = ({ aboutH2, aboutText, customBgColor, bannerAnimati
           );
           gsap.to(animationDiv.current, {
             opacity: "0",
+            height: "0px",
             transition: "all  0.1s",
             delay: 0.1,
           });
@@ -383,6 +384,7 @@ const BlackBannerComponent = ({ aboutH2, aboutText, customBgColor, bannerAnimati
           });
           gsap.to(textDiv.current, {
             opacity: "0",
+            height: "0px",
             transition: "all  0.1s",
             delay: 0.1,
           });
@@ -433,6 +435,7 @@ const BlackBannerComponent = ({ aboutH2, aboutText, customBgColor, bannerAnimati
 
           gsap.to(textDiv.current, {
             opacity: "1",
+            // height: "100%",
             transition: "all  0.1s",
             delay: 0.1,
           });
@@ -441,6 +444,7 @@ const BlackBannerComponent = ({ aboutH2, aboutText, customBgColor, bannerAnimati
           });
           gsap.to(animationDiv.current, {
             opacity: "1",
+            height: "100%",
             transition: "all  0.1s",
             delay: 0.1,
           });
@@ -728,7 +732,7 @@ const BlackBannerComponent = ({ aboutH2, aboutText, customBgColor, bannerAnimati
         </div>
         <div
           ref={aboutDiv}
-          className={`text-5xl rainbow-text lg:text-8xl 2xl:text-[150px] pt-10 pillat-normal relative z-30`}
+          className={`text-5xl ${noRainbowText ? "text-white" : "rainbow-text"}  lg:text-8xl 2xl:text-[150px] pt-10 pillat-normal relative z-30`}
         >
           {aboutH2}
         </div>
