@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useRef } from "react";
 import Tabs from "../../../components/tabs/Tabs";
-import AnimationTextReversing from "../../components/animationTextReversing/AnimationTextReversing";
+// import AnimationTextReversing from "../../components/animationTextReversing/AnimationTextReversing";
 import BlackBannerComponent from "../../../components/blackBannerComponent/BlackBannerComponent";
 import ConnectWithUs from "../../../components/connectWithUsComponent/ConnectWithUs";
 import Footer from "../../../components/footer/Footer";
