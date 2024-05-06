@@ -135,7 +135,7 @@ const ImageSwipper = ({
             }}
             className="mySwiper "
           >
-            {/* {swipperContent.map((item, index) => (
+            {swipperContent.map((item, index) => (
               <SwiperSlide key={item.id}>
                 <div className="cursor-pointer">
                   <div className="flex justify-center items-center border border-gray-400 rounded-md">
@@ -145,7 +145,7 @@ const ImageSwipper = ({
                   </div>
                 </div>
               </SwiperSlide>
-            ))} */}
+            ))}
           </Swiper>
 
           <div className="swiper-navigation-buttons flex justify-center gap-2 lg:gap-[10px] 2xl:gap-3 w-full mt-10">

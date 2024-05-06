@@ -165,41 +165,41 @@ const page = () => {
       city: "karachi",
       jobTitle: "graphic design specialist",
     },
-    {
-      id: 2,
-      city: "islamabad",
-      jobTitle: "digital strategist",
-    },
-    {
-      id: 3,
-      city: "karachi",
-      jobTitle: "creative associate digital",
-    },
-    {
-      id: 4,
-      city: "karachi",
-      jobTitle: "android developer",
-    },
-    {
-      id: 5,
-      city: "karachi",
-      jobTitle: "front end developer",
-    },
-    {
-      id: 6,
-      city: "karachi",
-      jobTitle: "account manager",
-    },
-    {
-      id: 7,
-      city: "karachi",
-      jobTitle: "creative manager",
-    },
-    {
-      id: 8,
-      city: "lahore",
-      jobTitle: "back end developer",
-    },
+    // {
+    //   id: 2,
+    //   city: "islamabad",
+    //   jobTitle: "digital strategist",
+    // },
+    // {
+    //   id: 3,
+    //   city: "karachi",
+    //   jobTitle: "creative associate digital",
+    // },
+    // {
+    //   id: 4,
+    //   city: "karachi",
+    //   jobTitle: "android developer",
+    // },
+    // {
+    //   id: 5,
+    //   city: "karachi",
+    //   jobTitle: "front end developer",
+    // },
+    // {
+    //   id: 6,
+    //   city: "karachi",
+    //   jobTitle: "account manager",
+    // },
+    // {
+    //   id: 7,
+    //   city: "karachi",
+    //   jobTitle: "creative manager",
+    // },
+    // {
+    //   id: 8,
+    //   city: "lahore",
+    //   jobTitle: "back end developer",
+    // },
   ];
 
   return (
@@ -334,7 +334,7 @@ const page = () => {
                 </div>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-7 ">
-                {/* {jobDetails.map((item, index) => (
+                {jobDetails.map((item, index) => (
                   <div
                     key={index}
                     className="w-full border-[1px] border-gray-300 rounded-xl p-4 pt-8 pillat-normal bg-[#fafafa] relative overflow-hidden cursor-pointer"
@@ -362,7 +362,7 @@ const page = () => {
                       className={`absolute top-[-70px] right-[-240px] border border-gray-300 rounded-[50px] w-72 h-72`}
                     ></div>
                   </div>
-                ))} */}
+                ))}
               </div>
             </div>
           </div>

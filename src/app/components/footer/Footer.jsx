@@ -390,7 +390,7 @@ const Footer = () => {
           <div className="lg:pb-8 pb-0 pt-10">
             <div className="hidden lg:block mx-10">
               <div className="gap-4 grid grid-cols-7">
-                {/* {footerDesktopItems.map((item, index) => (
+                {footerDesktopItems.map((item, index) => (
                   <div key={index} className="text-black">
                     {item.link ? (
                       <h2
@@ -418,7 +418,7 @@ const Footer = () => {
                       ))}
                     </ul>
                   </div>
-                ))} */}
+                ))}
               </div>
             </div>
           </div>

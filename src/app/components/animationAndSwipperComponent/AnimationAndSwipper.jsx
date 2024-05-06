@@ -161,7 +161,7 @@ const AnimationAndSwipper = ({
                   centeredSlides={true}
                   className="mySwiper "
                 >
-                  {/* {swipperContent.map((item, index) => (
+                  {swipperContent.map((item, index) => (
                     <SwiperSlide
                     className="h-[px] relative overflow-hidden cursor-pointer"
                     key={item.id}
@@ -203,7 +203,7 @@ const AnimationAndSwipper = ({
                         ></div>
                       </div>
                     </SwiperSlide>
-                  ))} */}
+                  ))}
                 </Swiper>
                 <div className="swiper-navigation-buttons flex justify-center gap-2 lg:gap-[10px] 2xl:gap-3 w-full mt-10">
                   <button

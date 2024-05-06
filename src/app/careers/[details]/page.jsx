@@ -1,5 +1,5 @@
-"use client";
-import React, { useEffect, useRef } from "react";
+// "use client";
+import React from "react";
 import Tabs from "../../components/tabs/Tabs";
 import AnimationTextReversing from "../../components/animationTextReversing/AnimationTextReversing";
 import BlackBannerComponent from "../../components/blackBannerComponent/BlackBannerComponent";
@@ -17,113 +17,127 @@ import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
 
+export async function generateStaticParams() {
+  // Fetch or define your job details here
+  const jobDetails = [
+    { id: 0, city: "karachi", jobTitle: "php developer" },
+    { id: 1, city: "karachi", jobTitle: "graphic design specialist" },
+    // ... add more details as needed
+  ];
+
+  // Return an array of objects with `params` property for each route
+  return jobDetails.map((item) => ({
+    params: { jobTitle: item.jobTitle }, // Replace with your dynamic parameter name
+  }));
+}
+
 const page = ({ params }) => {
   console.log(params , "params testing")
-  const blackDiv = useRef();
-  const redDiv = useRef();
-  const aboutDiv = useRef();
-  const symmetryDiv = useRef();
-  const textDiv = useRef();
-  const pinkDiv = useRef();
-  const animationDiv = useRef();
+  // const blackDiv = useRef();
+  // const redDiv = useRef();
+  // const aboutDiv = useRef();
+  // const symmetryDiv = useRef();
+  // const textDiv = useRef();
+  // const pinkDiv = useRef();
+  // const animationDiv = useRef();
 
-  useEffect(() => {
-    let mm = gsap.matchMedia();
+  // useEffect(() => {
+  //   let mm = gsap.matchMedia();
 
-    gsap.to(blackDiv.current, {
-      scrollTrigger: {
-        trigger: blackDiv.current,
-        // markers: true,
-        start: "80px",
-        end: "82px",
-        onEnter: () => {
-          mm.add(
-            {
-              isMobile: "(min-width : 300px)",
-              isTablet: "(min-width : 768px)",
-              isDesktop: "(min-width : 1024px)",
-              is2xl: "(min-width : 1600px)",
-            },
-            (context) => {
-              let { isMobile, isTablet, isDesktop, is2xl } = context.conditions;
-              gsap.to(blackDiv.current, {
-                height: ((isMobile = "200px"), (isTablet = "220px")),
-              });
-              gsap.to(pinkDiv.current, {
-                marginTop: "-234px",
-              });
-            }
-          );
-          gsap.to(animationDiv.current, {
-            opacity: "0",
-            transition: "all  0.1s",
-            delay: 0.1,
-          });
-          gsap.to(aboutDiv.current, {
-            fontSize: "60px",
-          });
-          gsap.to(textDiv.current, {
-            opacity: "0",
-            transition: "all  0.1s",
-            delay: 0.1,
-          });
-        },
-        onEnterBack: () => {
-          gsap.to(blackDiv.current, {
-            height: "384px",
-          });
-          // gsap.to(symmetryDiv.current, {
-          //   fontSize: "60px",
-          // });
-          gsap.to(aboutDiv.current, {
-            fontSize: "96px",
-          });
-          gsap.to(textDiv.current, {
-            opacity: "1",
-            transition: "all  0.1s",
-            delay: 0.1,
-          });
-          mm.add(
-            {
-              is2xl: "(min-width : 1600px)",
-              isDesktop: "(min-width : 1024px)",
-              isTablet: "(min-width : 768px)",
-              isMobile: "(min-width : 300px)",
-            },
-            (context) => {
-              let { is2xl, isDesktop, isTablet, isMobile } = context.conditions;
-              gsap.to(pinkDiv.current, {
-                marginTop: is2xl ? "-80px" : "-100px",
-              });
-            }
-          );
-          gsap.to(animationDiv.current, {
-            opacity: "1",
-            transition: "all  0.1s",
-            delay: 0.1,
-          });
-        },
-      },
-    });
+  //   gsap.to(blackDiv.current, {
+  //     scrollTrigger: {
+  //       trigger: blackDiv.current,
+  //       // markers: true,
+  //       start: "80px",
+  //       end: "82px",
+  //       onEnter: () => {
+  //         mm.add(
+  //           {
+  //             isMobile: "(min-width : 300px)",
+  //             isTablet: "(min-width : 768px)",
+  //             isDesktop: "(min-width : 1024px)",
+  //             is2xl: "(min-width : 1600px)",
+  //           },
+  //           (context) => {
+  //             let { isMobile, isTablet, isDesktop, is2xl } = context.conditions;
+  //             gsap.to(blackDiv.current, {
+  //               height: ((isMobile = "200px"), (isTablet = "220px")),
+  //             });
+  //             gsap.to(pinkDiv.current, {
+  //               marginTop: "-234px",
+  //             });
+  //           }
+  //         );
+  //         gsap.to(animationDiv.current, {
+  //           opacity: "0",
+  //           transition: "all  0.1s",
+  //           delay: 0.1,
+  //         });
+  //         gsap.to(aboutDiv.current, {
+  //           fontSize: "60px",
+  //         });
+  //         gsap.to(textDiv.current, {
+  //           opacity: "0",
+  //           transition: "all  0.1s",
+  //           delay: 0.1,
+  //         });
+  //       },
+  //       onEnterBack: () => {
+  //         gsap.to(blackDiv.current, {
+  //           height: "384px",
+  //         });
+  //         // gsap.to(symmetryDiv.current, {
+  //         //   fontSize: "60px",
+  //         // });
+  //         gsap.to(aboutDiv.current, {
+  //           fontSize: "96px",
+  //         });
+  //         gsap.to(textDiv.current, {
+  //           opacity: "1",
+  //           transition: "all  0.1s",
+  //           delay: 0.1,
+  //         });
+  //         mm.add(
+  //           {
+  //             is2xl: "(min-width : 1600px)",
+  //             isDesktop: "(min-width : 1024px)",
+  //             isTablet: "(min-width : 768px)",
+  //             isMobile: "(min-width : 300px)",
+  //           },
+  //           (context) => {
+  //             let { is2xl, isDesktop, isTablet, isMobile } = context.conditions;
+  //             gsap.to(pinkDiv.current, {
+  //               marginTop: is2xl ? "-80px" : "-100px",
+  //             });
+  //           }
+  //         );
+  //         gsap.to(animationDiv.current, {
+  //           opacity: "1",
+  //           transition: "all  0.1s",
+  //           delay: 0.1,
+  //         });
+  //       },
+  //     },
+  //   });
 
-    gsap.to(redDiv.current, {
-      scrollTrigger: {
-        trigger: redDiv.current,
-        // markers: true,
-        start: "400px",
-        end: "620px",
-        onEnter: () => {
-          gsap.to(pinkDiv.current, {
-            scrollTrigger: {
-              pin: true,
-            },
-          });
-        },
-      },
-    });
+  //   gsap.to(redDiv.current, {
+  //     scrollTrigger: {
+  //       trigger: redDiv.current,
+  //       // markers: true,
+  //       start: "400px",
+  //       end: "620px",
+  //       onEnter: () => {
+  //         gsap.to(pinkDiv.current, {
+  //           scrollTrigger: {
+  //             pin: true,
+  //           },
+  //         });
+  //       },
+  //     },
+  //   });
 
-    mm.revert();
-  }, []);
+  //   mm.revert();
+  // }, []);
 
   const aboutText = "apply today and help us change the industry";
 
@@ -209,9 +223,9 @@ const page = ({ params }) => {
           bannerHeadingSize={bannerHeadingSize}
           headingScrollSizeChange={headingScrollSizeChange}
         />
-        <div ref={redDiv} className="bg-white  pt-[450px]">
+        <div  className="bg-white  pt-[450px]">
           <div
-            ref={pinkDiv}
+            
             className="bg-white h-[105px] md:h-[105px] mt-[-100px] 2xl:mt-[-50px] text-black fixed w-full z-10"
           >
             <Tabs tabsData={tabsData} slidesPerView={4} />
@@ -270,7 +284,7 @@ const page = ({ params }) => {
               </h3>
 
               <div className="lg:mt-5">
-                {/* {yourRoles.map((item, index) => (
+                {yourRoles.map((item, index) => (
                   <div className="text-gray-500 flex gap-3 mt-2 ">
                     <span
                       className={`inline-flex  rotate-[45deg] w-2/12 mt-[6px]
@@ -278,14 +292,14 @@ const page = ({ params }) => {
                     ></span>
                     <h4 className="w-10/12">{item.role}</h4>
                   </div>
-                ))} */}
+                ))}
               </div>
 
               <h2 className="text-black font-bold my-5">
                 qualifications/degree/certifications
               </h2>
 
-              {/* {qualification.map((item, index) => (
+              {qualification.map((item, index) => (
                 <div className="text-gray-500 flex gap-3 mt-2 ">
                   <span
                     className={`inline-flex  rotate-[45deg] w-2/12 mt-[6px]
@@ -293,7 +307,7 @@ const page = ({ params }) => {
                   ></span>
                   <h4 className="w-10/12">{item.data}</h4>
                 </div>
-              ))} */}
+              ))}
 
               <div className="text-gray-500 mt-5 lg:mt-12">
                 <div className="flex gap-1">

@@ -1,7 +1,9 @@
 // next.config.js
 
 module.exports = {
-    reactStrictMode: false,
+  output: 'export',
+  reactStrictMode: true,
+  images: { unoptimized: true },
     webpack: (config, { isServer }) => {
       // Add a rule to handle Rive files
       config.module.rules.push({

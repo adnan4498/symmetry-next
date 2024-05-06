@@ -15,7 +15,7 @@ const CollapsibleComp = ({ dataArr }) => {
 
   return (
     <>
-      {/* {dataArr.map((item, index) => (
+      {dataArr.map((item, index) => (
         <Collapsible
           key={item.id}
           trigger={item.title}
@@ -60,7 +60,7 @@ const CollapsibleComp = ({ dataArr }) => {
             )}
           </div>
         </Collapsible>
-      ))} */}
+      ))}
     </>
   );
 };

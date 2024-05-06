@@ -81,7 +81,7 @@ const Tabs = ({
             className="mySwiper my-tabs-swipper"
           >
             <>
-              {/* {tabsData.map((item, index, array) => (
+              {tabsData.map((item, index, array) => (
                 <>
                   <SwiperSlide key={index}>
                     <div
@@ -102,7 +102,7 @@ const Tabs = ({
                     </div>
                   </SwiperSlide>
                 </>
-              ))} */}
+              ))}
             </>
           </Swiper>
 

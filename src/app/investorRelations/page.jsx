@@ -41,103 +41,103 @@ const page = () => {
   const pinkDiv = useRef();
   const animationDiv = useRef();
 
-  useEffect(() => {
-    let mm = gsap.matchMedia();
+  // useEffect(() => {
+  //   let mm = gsap.matchMedia();
 
-    gsap.to(blackDiv.current, {
-      scrollTrigger: {
-        trigger: blackDiv.current,
-        // markers: true,
-        start: "80px",
-        end: "82px",
-        onEnter: () => {
-          mm.add(
-            {
-              isMobile: "(min-width : 300px)",
-              isTablet: "(min-width : 768px)",
-              isDesktop: "(min-width : 1024px)",
-              is2xl: "(min-width : 1600px)",
-            },
-            (context) => {
-              let { isMobile, isTablet, isDesktop, is2xl } = context.conditions;
-              gsap.to(blackDiv.current, {
-                height: ((isMobile = "200px"), (isTablet = "220px")),
-              });
-              gsap.to(pinkDiv.current, {
-                marginTop: "-234px",
-              });
-            }
-          );
-          gsap.to(animationDiv.current, {
-            opacity: "0",
-            transition: "all  0.1s",
-            delay: 0.1,
-          });
-          gsap.to(aboutDiv.current, {
-            fontSize: "60px",
-          });
-          gsap.to(textDiv.current, {
-            opacity: "0",
-            transition: "all  0.1s",
-            delay: 0.1,
-          });
-        },
-        onEnterBack: () => {
-          gsap.to(blackDiv.current, {
-            height: "384px",
-          });
-          // gsap.to(symmetryDiv.current, {
-          //   fontSize: "60px",
-          // });
-          gsap.to(aboutDiv.current, {
-            fontSize: "96px",
-          });
-          gsap.to(textDiv.current, {
-            opacity: "1",
-            transition: "all  0.1s",
-            delay: 0.1,
-          });
-          mm.add(
-            {
-              is2xl: "(min-width : 1600px)",
-              isDesktop: "(min-width : 1024px)",
-              isTablet: "(min-width : 768px)",
-              isMobile: "(min-width : 300px)",
-            },
-            (context) => {
-              let { is2xl, isDesktop, isTablet, isMobile } = context.conditions;
-              gsap.to(pinkDiv.current, {
-                marginTop: is2xl ? "-80px" : "-100px",
-              });
-            }
-          );
-          gsap.to(animationDiv.current, {
-            opacity: "1",
-            transition: "all  0.1s",
-            delay: 0.1,
-          });
-        },
-      },
-    });
+  //   gsap.to(blackDiv.current, {
+  //     scrollTrigger: {
+  //       trigger: blackDiv.current,
+  //       // markers: true,
+  //       start: "80px",
+  //       end: "82px",
+  //       onEnter: () => {
+  //         mm.add(
+  //           {
+  //             isMobile: "(min-width : 300px)",
+  //             isTablet: "(min-width : 768px)",
+  //             isDesktop: "(min-width : 1024px)",
+  //             is2xl: "(min-width : 1600px)",
+  //           },
+  //           (context) => {
+  //             let { isMobile, isTablet, isDesktop, is2xl } = context.conditions;
+  //             gsap.to(blackDiv.current, {
+  //               height: ((isMobile = "200px"), (isTablet = "220px")),
+  //             });
+  //             gsap.to(pinkDiv.current, {
+  //               marginTop: "-234px",
+  //             });
+  //           }
+  //         );
+  //         gsap.to(animationDiv.current, {
+  //           opacity: "0",
+  //           transition: "all  0.1s",
+  //           delay: 0.1,
+  //         });
+  //         gsap.to(aboutDiv.current, {
+  //           fontSize: "60px",
+  //         });
+  //         gsap.to(textDiv.current, {
+  //           opacity: "0",
+  //           transition: "all  0.1s",
+  //           delay: 0.1,
+  //         });
+  //       },
+  //       onEnterBack: () => {
+  //         gsap.to(blackDiv.current, {
+  //           height: "384px",
+  //         });
+  //         // gsap.to(symmetryDiv.current, {
+  //         //   fontSize: "60px",
+  //         // });
+  //         gsap.to(aboutDiv.current, {
+  //           fontSize: "96px",
+  //         });
+  //         gsap.to(textDiv.current, {
+  //           opacity: "1",
+  //           transition: "all  0.1s",
+  //           delay: 0.1,
+  //         });
+  //         mm.add(
+  //           {
+  //             is2xl: "(min-width : 1600px)",
+  //             isDesktop: "(min-width : 1024px)",
+  //             isTablet: "(min-width : 768px)",
+  //             isMobile: "(min-width : 300px)",
+  //           },
+  //           (context) => {
+  //             let { is2xl, isDesktop, isTablet, isMobile } = context.conditions;
+  //             gsap.to(pinkDiv.current, {
+  //               marginTop: is2xl ? "-80px" : "-100px",
+  //             });
+  //           }
+  //         );
+  //         gsap.to(animationDiv.current, {
+  //           opacity: "1",
+  //           transition: "all  0.1s",
+  //           delay: 0.1,
+  //         });
+  //       },
+  //     },
+  //   });
 
-    gsap.to(redDiv.current, {
-      scrollTrigger: {
-        trigger: redDiv.current,
-        // markers: true,
-        start: "400px",
-        end: "620px",
-        onEnter: () => {
-          gsap.to(pinkDiv.current, {
-            scrollTrigger: {
-              pin: true,
-            },
-          });
-        },
-      },
-    });
+  //   gsap.to(redDiv.current, {
+  //     scrollTrigger: {
+  //       trigger: redDiv.current,
+  //       // markers: true,
+  //       start: "400px",
+  //       end: "620px",
+  //       onEnter: () => {
+  //         gsap.to(pinkDiv.current, {
+  //           scrollTrigger: {
+  //             pin: true,
+  //           },
+  //         });
+  //       },
+  //     },
+  //   });
 
-    mm.revert();
-  }, []);
+  //   mm.revert();
+  // }, []);
 
   const aboutH2 = "investors relations";
   const aboutText =
@@ -495,7 +495,7 @@ const page = () => {
               </h2>
             </div>
             <div className="mt-10">
-              {/* {invesorsInfo.map((item, index) => (
+              {invesorsInfo.map((item, index) => (
                 <div
                   key={item.id}
                   className="border-b border-green-300 flex flex-col lg:flex-row text-center lg:text-start lg:justify-between leading-[20px] pb-5 mt-5"
@@ -507,7 +507,7 @@ const page = () => {
                     {item.desc}
                   </div>
                 </div>
-              ))} */}
+              ))}
             </div>
           </div>
           <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
@@ -571,7 +571,7 @@ const page = () => {
               className="mt-1 opacity-0 transform translate-y-[40px]"
               ref={animationRefs.thirdFadeInAnimation}
             >
-              {/* {boardMembers.map((item, index) => (
+              {boardMembers.map((item, index) => (
                 <div
                   key={item.id}
                   className="border-b border-green-300 flex flex-col lg:flex-row text-center lg:text-start lg:justify-between leading-[20px] pb-5 mt-5 "
@@ -583,7 +583,7 @@ const page = () => {
                     {item.post}
                   </div>
                 </div>
-              ))} */}
+              ))}
             </div>
 
             <div className="my-3 lg:mt-7">
@@ -593,7 +593,7 @@ const page = () => {
             </div>
 
             <div className="">
-              {/* {auditCommitte.map((item, index) => (
+              {auditCommitte.map((item, index) => (
                 <div
                   key={item.id}
                   className="border-b border-green-300 flex flex-col lg:flex-row text-center lg:text-start lg:justify-between leading-[20px] pb-5 mt-5"
@@ -605,7 +605,7 @@ const page = () => {
                     {item.post}
                   </div>
                 </div>
-              ))} */}
+              ))}
             </div>
 
             <div className="my-3">
@@ -615,7 +615,7 @@ const page = () => {
             </div>
 
             <div className="mt-1">
-              {/* {remunirationCommitte.map((item, index) => (
+              {remunirationCommitte.map((item, index) => (
                 <div
                   key={item.id}
                   className="border-b border-green-300 flex flex-col lg:flex-row text-center lg:text-start lg:justify-between leading-[20px] pb-5 mt-5"
@@ -627,7 +627,7 @@ const page = () => {
                     {item.post}
                   </div>
                 </div>
-              ))} */}
+              ))}
             </div>
           </div>
           <div className="flex justify-center items-center lg:w-5/12 lg:mt-0 mt-10">
@@ -722,7 +722,7 @@ const page = () => {
             <div className="">
               <div className="text flex flex-col text-black">
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-3 xl:grid-cols-4 lg:gap-10  max-w-[1000px] pillat-normal">
-                  {/* {importantDocumentsData.map((item, index) => (
+                  {importantDocumentsData.map((item, index) => (
                     <>
                       {[
                         "companyProfile",
@@ -758,7 +758,7 @@ const page = () => {
                           )
                       )}
                     </>
-                  ))} */}
+                  ))}
                 </div>
               </div>
             </div>
@@ -785,7 +785,7 @@ const page = () => {
                   shareholder's contact
                 </h>
               </div>
-              {/* {investorContacts.map((item, index) => (
+              {investorContacts.map((item, index) => (
                 <div
                   key={item.id}
                   className="border-b border-green-300 flex flex-col lg:flex-row text-center lg:text-start lg:justify-between leading-[20px] pb-5 mt-5"
@@ -797,7 +797,7 @@ const page = () => {
                     {item.desc}
                   </div>
                 </div>
-              ))} */}
+              ))}
             </div>
 
             <div
@@ -809,7 +809,7 @@ const page = () => {
                   complaints
                 </h>
               </div>
-              {/* {investorContacts.map((item, index) => (
+              {investorContacts.map((item, index) => (
                 <div
                   key={item.id}
                   className="border-b border-green-300 flex flex-col lg:flex-row text-center lg:text-start lg:justify-between leading-[20px] pb-5 mt-5"
@@ -821,7 +821,7 @@ const page = () => {
                     {item.desc}
                   </div>
                 </div>
-              ))} */}
+              ))}
             </div>
 
             <div

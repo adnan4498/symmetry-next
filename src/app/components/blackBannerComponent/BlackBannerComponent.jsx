@@ -1,3 +1,4 @@
+"use client"
 import React, { useEffect, useRef, useState } from "react";
 // import square from "../../../../public/square-neon.png";
 import gsap from "gsap";

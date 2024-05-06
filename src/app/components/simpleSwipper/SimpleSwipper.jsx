@@ -40,7 +40,7 @@ const SimpleSwipper = ({
             // modules={[Navigation]}
             className="mySwiper "
           >
-            {/* {swipperContent.map((item, index) => (
+            {swipperContent.map((item, index) => (
               <>
                 <SwiperSlide>
                   <div className="sm:h-[250px] h-[150px]">
@@ -52,7 +52,7 @@ const SimpleSwipper = ({
                   </div>
                 </SwiperSlide>
               </>
-            ))} */}
+            ))}
           </Swiper>
         </div>
       </div>

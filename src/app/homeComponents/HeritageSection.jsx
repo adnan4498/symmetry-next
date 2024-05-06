@@ -144,7 +144,7 @@ const HeritageSection = () => {
             centeredSlides={true}
             className="mySwiper "
           >
-            {/* {heritageSwipperContent.map((item, index) => (
+            {heritageSwipperContent.map((item, index) => (
               <SwiperSlide key={item.id}>
                 <div className="h-[px] relative overflow-hidden cursor-pointer">
                   <div
@@ -208,7 +208,7 @@ const HeritageSection = () => {
                   </div>
                 </div>
               </SwiperSlide>
-            ))} */}
+            ))}
           </Swiper>
 
           <div className="swiper-navigation-buttons flex justify-center gap-2 lg:gap-[10px] 2xl:gap-3 w-full mt-10">
