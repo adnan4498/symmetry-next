@@ -8,9 +8,8 @@ const CollapsibleFooter = ({ dataArr , textColor, setGetLink }) => {
   
   return (
     <>
-      {dataArr.map((item, index) => (
+      {/* {dataArr.map((item, index) => (
         <>
-        {/* {console.log(item.link , "footer links")} */}
         <Collapsible key={item.id} trigger={item.title} className="pillat-normal">
           <div className="max-w-[1000px] ">
             {[
@@ -59,7 +58,7 @@ const CollapsibleFooter = ({ dataArr , textColor, setGetLink }) => {
           </div>
         </Collapsible>
         </>
-      ))}
+      ))} */}
     </>
   );
 };

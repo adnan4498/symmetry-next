@@ -423,7 +423,7 @@ const page = () => {
           <div className="mx-auto lg:mt-10 ">
             <h2 className="text-4xl lg:text-6xl pillat-normal text-black">real estate</h2>
             <div className="w-[90%] mx-auto flex items-center gap-11 mt-12">
-              {realEstateContent.map((item, index) => (
+              {/* {realEstateContent.map((item, index) => (
                 <div key={item.id} className="">
                   <div className="border border-gray-400 rounded-md  ">
                     <div className="flex justify-center items-center py-3 px-3 ">
@@ -431,7 +431,7 @@ const page = () => {
                     </div>
                   </div>
                 </div>
-              ))}
+              ))} */}
             </div>
           </div>
         </div>
@@ -446,7 +446,7 @@ const page = () => {
               pharmaceutical
             </h2>
             <div className="w-[90%] mx-auto flex items-center gap-11 mt-12">
-              {pharmaceuticalContent.map((item, index) => (
+              {/* {pharmaceuticalContent.map((item, index) => (
                 <div key={item.id} className="">
                   <div className="border border-gray-400 rounded-md  ">
                     <div className="flex justify-center items-center py-3 px-3 ">
@@ -454,7 +454,7 @@ const page = () => {
                     </div>
                   </div>
                 </div>
-              ))}
+              ))} */}
             </div>
           </div>
         </div>

@@ -303,7 +303,7 @@ const TextSlidingComponent = ({
               }}
               className="mySwiper "
             >
-              {swipperContent.map((item, index) => (
+              {/* {swipperContent.map((item, index) => (
                 <>
                   <SwiperSlide>
                     <div className="cursor-pointer">
@@ -315,7 +315,7 @@ const TextSlidingComponent = ({
                     </div>
                   </SwiperSlide>
                 </>
-              ))}
+              ))} */}
             </Swiper>
 
             <div className="swiper-navigation-buttons flex justify-center  gap-2 lg:gap-[10px] 2xl:gap-3 w-full mt-16 mb-3">

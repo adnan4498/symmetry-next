@@ -336,7 +336,7 @@ const Company = () => {
               </div>
 
               <div className="grid grid-cols-2 sm:grid-cols-3 mx-auto gap-10 lg:mx-0 lg:gap-5 w-[70%] mt-5">
-                {boardDirectors.map((item, index) => (
+                {/* {boardDirectors.map((item, index) => (
                   <div key={item.id}>
                     <div className="border border-green-700 rounded-md min-w-[100px] max-w-[100px] py-[3px] px-1">
                       <Image src={item.img} />
@@ -348,7 +348,7 @@ const Company = () => {
                       {item.post}
                     </p>
                   </div>
-                ))}
+                ))} */}
               </div>
             </div>
             <div className="flex justify-center items-center lg:w-5/12 lg:h-72 lg:mt-0 mt-10">

@@ -134,7 +134,7 @@ const AnimationAndImages = ({
                 // modules={[Navigation]}
                 className="mySwiper "
               >
-                {swipperContent.map((item, index) => (
+                {/* {swipperContent.map((item, index) => (
                   <Swiper
                     key={item.id}
                     spaceBetween={20}
@@ -172,7 +172,7 @@ const AnimationAndImages = ({
                       </SwiperSlide>
                     ))}
                   </Swiper>
-                ))}
+                ))} */}
               </Swiper>
             </div>
           </div>

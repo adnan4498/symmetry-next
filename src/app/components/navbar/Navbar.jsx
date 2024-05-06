@@ -717,13 +717,11 @@ const Navbar = ({ toggleRed, setToggleRed }) => {
                 />
               </div>
             </Link>
-            {liItems.map((item, index) => (
+            {/* {liItems.map((item, index) => (
               <div key={item.id} className="ss pillat-thin lg:block hidden">
                 <ul className="flex items-center gap-3 xl:gap-5 text-[1vw] 2xl:text-xl cursor-pointer">
                   <li
                     key={item.id}
-                    // onMouseOver={() => navHoverFunc(item.id, item.refId)}
-                    // onMouseOut={() => setActiveBg(0)}
                     className={`${
                       activeBg === index ? "rainbow-text" : "text-white"
                     } text-white`}
@@ -748,7 +746,7 @@ const Navbar = ({ toggleRed, setToggleRed }) => {
                   </li>
                 </ul>
               </div>
-            ))}
+            ))} */}
             <div className="">
               <div class="menu cross menu--1">
                 <label

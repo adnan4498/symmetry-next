@@ -334,7 +334,7 @@ const page = () => {
                 </div>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-7 ">
-                {jobDetails.map((item, index) => (
+                {/* {jobDetails.map((item, index) => (
                   <div
                     key={index}
                     className="w-full border-[1px] border-gray-300 rounded-xl p-4 pt-8 pillat-normal bg-[#fafafa] relative overflow-hidden cursor-pointer"
@@ -347,7 +347,6 @@ const page = () => {
                     </div>
                     <div className="flex justify-between gap-4 mb-3">
                       <div className="text-gray-500 border text-sm border-gray-500 rounded-lg py-2 px-2 text-center w-44 careers-buttons-gradient-bg careers-buttons-gradient-border ">
-                        {/* <Link href={`/careers/${item.jobTitle.replaceAll(' ','')}`}>apply now</Link> */}
                         <Link href={`/careers/${item.jobTitle}`}>
                           apply now
                         </Link>
@@ -363,7 +362,7 @@ const page = () => {
                       className={`absolute top-[-70px] right-[-240px] border border-gray-300 rounded-[50px] w-72 h-72`}
                     ></div>
                   </div>
-                ))}
+                ))} */}
               </div>
             </div>
           </div>

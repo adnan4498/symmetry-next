@@ -15,7 +15,6 @@ const HeritageSection = () => {
     const body = document.body;
 
     body.style.overflow = "hidden";
-    
   }, []);
 
   const [activeAni, setActiveAni] = useState();
@@ -139,22 +138,22 @@ const HeritageSection = () => {
               prevEl: ".swiper-button-prev",
             }}
             autoplay={{
-              delay: 1000000,
+              delay: 1000,
               pauseOnMouseEnter: true,
             }}
             centeredSlides={true}
             className="mySwiper "
           >
-            {heritageSwipperContent.map((item, index) => (
+            {/* {heritageSwipperContent.map((item, index) => (
               <SwiperSlide key={item.id}>
                 <div className="h-[px] relative overflow-hidden cursor-pointer">
                   <div
                     onMouseOver={() => hoverFunc(item.id)}
                     onMouseLeave={() => hoverFuncOut()}
                     className=" border border-gray-400 rounded-lg pl-4 py-10 min-h-[300px] max-w-[px] bg-[#fafafa]"
-                  > 
+                  >
                     {!item.img ? (
-                      <>
+                      <div>
                         <div className="flex items-baseline absolute z-50 ">
                           <div className="text-[140px] m-0 p-0 leading-[120px] text-[#666666] custom-font-family NeumaticFont -tracking-[8px] ">
                             {" "}
@@ -164,10 +163,6 @@ const HeritageSection = () => {
                             {item.h3}
                           </div>
                         </div>
-                        {/* <h6 className="text-[140px] m-0 p-0 leading-[120px] text-[#666666] custom-font-family NeumaticFont -tracking-[8px] ">
-                            {item.h2}{" "}
-                            <span className="text-3xl ">{item.h3}</span>
-                          </h6> */}
                         <div
                           className={`absolute top-[-120px] right-[-180px] border border-gray-300 rounded-[50px] w-72 h-72  ${
                             activeAni == index ? borderHover : ""
@@ -181,14 +176,18 @@ const HeritageSection = () => {
                         <p className="text-gray-700 pillat-normal absolute top-[170px]">
                           {item.text}
                         </p>
-                      </>
+                      </div>
                     ) : (
                       ""
                     )}
 
                     {item.img ? (
-                      <>
-                        <Image src={"/infinity-sign.webp"}  height={0} width={130} />
+                      <div>
+                        <Image
+                          src={"/infinity-sign.webp"}
+                          height={0}
+                          width={130}
+                        />
                         <p className="text-gray-700 pillat-normal absolute top-[170px]">
                           {item.text}
                         </p>
@@ -202,14 +201,14 @@ const HeritageSection = () => {
                             activeAni == index ? borderHover2 : ""
                           }`}
                         ></div>
-                      </>
+                      </div>
                     ) : (
                       ""
                     )}
                   </div>
                 </div>
               </SwiperSlide>
-            ))}
+            ))} */}
           </Swiper>
 
           <div className="swiper-navigation-buttons flex justify-center gap-2 lg:gap-[10px] 2xl:gap-3 w-full mt-10">

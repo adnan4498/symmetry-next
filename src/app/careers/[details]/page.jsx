@@ -270,7 +270,7 @@ const page = ({ params }) => {
               </h3>
 
               <div className="lg:mt-5">
-                {yourRoles.map((item, index) => (
+                {/* {yourRoles.map((item, index) => (
                   <div className="text-gray-500 flex gap-3 mt-2 ">
                     <span
                       className={`inline-flex  rotate-[45deg] w-2/12 mt-[6px]
@@ -278,14 +278,14 @@ const page = ({ params }) => {
                     ></span>
                     <h4 className="w-10/12">{item.role}</h4>
                   </div>
-                ))}
+                ))} */}
               </div>
 
               <h2 className="text-black font-bold my-5">
                 qualifications/degree/certifications
               </h2>
 
-              {qualification.map((item, index) => (
+              {/* {qualification.map((item, index) => (
                 <div className="text-gray-500 flex gap-3 mt-2 ">
                   <span
                     className={`inline-flex  rotate-[45deg] w-2/12 mt-[6px]
@@ -293,7 +293,7 @@ const page = ({ params }) => {
                   ></span>
                   <h4 className="w-10/12">{item.data}</h4>
                 </div>
-              ))}
+              ))} */}
 
               <div className="text-gray-500 mt-5 lg:mt-12">
                 <div className="flex gap-1">
